@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graphconf"
+    nsURI="http://www.topcased.org/1.0/graphconf" nsPrefix="graphconf">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractGraphConf" abstract="true">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="A DiagramGraphConf is associated with a DiagramConfiguration. It contains informations on the graphical representation of the diagram associated."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="presentation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultForegroundColor"
+        eType="#//Color"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultFont" eType="#//Font"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineStyle" eType="#//LineStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bridge" lowerBound="1"
+        eType="#//Bridge" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
+        eType="#//Constraint" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramGraphConf">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="A DiagramGraphConf is associated with a DiagramConfiguration. It contains informations on the graphical representation of the diagram associated."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node" upperBound="-1" eType="#//NodeGraphConf"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edge" upperBound="-1" eType="#//EdgeGraphConf"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultBackgroundColor"
+        eType="#//Color"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultForegroundColor"
+        eType="#//Color"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultFont" eType="#//Font"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeGraphConf" eSuperTypes="#//AbstractGraphConf">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="A NodeGraphConf is associated with a NodePartConfiguration. It gives informations on the graphical element."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimumWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimumHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isWidthResizable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isHeightResizable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultBackgroundColor"
+        eType="#//Color"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeGraphConf" eSuperTypes="#//AbstractGraphConf">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="An EdgeGraphConf is associated with an EdgePartConfiguration. It gives informations on the graphical element."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultRouter" eType="#//RouterType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LineStyle">
+    <eLiterals name="SOLID" value="1"/>
+    <eLiterals name="DASH" value="2"/>
+    <eLiterals name="DOT" value="3"/>
+    <eLiterals name="DASHDOT" value="4"/>
+    <eLiterals name="DASHDOTDOT" value="5"/>
+    <eLiterals name="CUSTOM" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RouterType">
+    <eLiterals name="ObliqueRouter"/>
+    <eLiterals name="RectilinearRouter" value="1"/>
+    <eLiterals name="TreeRouter" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Color" instanceClassName="org.eclipse.swt.graphics.Color"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Font" instanceClassName="org.eclipse.swt.graphics.Font"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Bridge" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EMFBridge" eSuperTypes="#//Bridge">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringBridge" eSuperTypes="#//Bridge">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

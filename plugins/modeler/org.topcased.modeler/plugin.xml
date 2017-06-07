@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension-point id="templates" name="Templates" schema="schema/templates.exsd"/>
+   <extension-point id="outline" name="Outline" schema="schema/outline.exsd"/>
+   <extension-point id="diagrams" name="Diagrams" schema="schema/diagrams.exsd"/>
+   <extension-point id="registeredModels" name="Registered Model" schema="schema/registeredModels.exsd"/>
+   <extension-point id="evaluators" name="Evaluators" schema="schema/evaluators.exsd"/>
+   <extension-point id="semanticDependencies" name="Semantic Dependencies Detector" schema="schema/semanticDependencies.exsd"/>
+   <extension-point id="synchronizedModelDiagramRule" name="Synchronized Model Diagram Rule" schema="schema/synchronizedModelDiagramRule.exsd"/>
+   <extension-point id="duplicationAdapter" name="Subtree Duplication Customizations" schema="schema/duplicationAdapter.exsd"/>
+   <extension-point id="topcasedPreferenceInitializer" name="Topcased Preference Initializer" schema="schema/topcasedPreferenceInitializer.exsd"/>
+   <extension-point id="dropactions" name="DropActions" schema="schema/dropactions.exsd"/>
+   <extension-point id="openingResolve" name="Opening Resolve" schema="schema/openingResolve.exsd"/>
+   <extension-point id="commandsStackListeners" name="Commands Stack Listeners" schema="schema/commandsStackListeners.exsd"/>
+   <extension-point id="customEditPart" name="Add an EditPart to each diagram from each plugin " schema="schema/customEditPart.exsd"/>
+   <extension-point id="pluginPreferenceStoreForOffscreen" name="Plugin Preference Store For Offscreen" schema="schema/pluginPreferenceStoreForOffscreen.exsd"/>
+   <extension-point id="paletteConfiguration" name="Customize the diagrams palette elements" schema="schema/paletteConfiguration.exsd"/>
+   <extension-point id="propertysectionfilter" name="override Property Section" schema="schema/PropertySectionFilter.exsd"/>
+   <extension-point id="moveElementFilter" name="moveElementFilter" schema="schema/moveElementFilter.exsd"/>
+   <extension-point id="defaultName" name="defaultName" schema="schema/defaultName.exsd"/>
+   <extension-point id="OutlineVirtualContainer" name="Outline Virtual Container" schema="schema/OutlineVirtualContainer.exsd"/>
+   <extension-point id="actionPrecondition" name="Action Precondition" schema="schema/actionPrecondition.exsd"/>
+   <extension-point id="orderSerialization" name="Order Serialization" schema="schema/orderSerialization.exsd"/>
+   <extension-point id="eannotationToHideInOutline" name="Eannotations To Hide In Outline" schema="schema/eannotationToHideInOutline.exsd"/>
+   <extension-point id="documentable" name="Documentable" schema="schema/documentable.exsd"/>
+   <extension-point id="optimizedResize" name="Optimised Resize" schema="schema/optimizedResize.exsd"/>
+   
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.topcased.modeler.newdiagram"
+            name="Topcased Diagrams"
+            parentCategory="org.topcased.facilities.newWizards"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            icon="icons/topcased-icon16.gif"
+            class="org.topcased.modeler.internal.ModelerPerspectiveFactory"
+            name="Topcased Modeling"
+            id="org.topcased.modeler.perspective"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            category="org.topcased.facilities.views"
+            class="org.topcased.modeler.documentation.DocView"
+            icon="icons/documentation.gif"
+            id="org.topcased.modeler.documentation.DocView"
+            name="Documentation (deprecated)"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.topcased.facilities.preferences.TopcasedPreferencePage"
+            class="org.topcased.modeler.internal.preferences.ModelerPreferencePage"
+            id="org.topcased.modeler.preferences.ModelerPreferencePage"
+            name="Editors"/>
+      <page
+            category="org.topcased.modeler.preferences.ModelerPreferencePage"
+            class="org.topcased.modeler.internal.preferences.PageFormatPreferencePage"
+            id="org.topcased.modeler.preferences.PageFormatPreferencePage"
+            name="Page Format"/>
+      <page
+            category="org.topcased.modeler.preferences.ModelerPreferencePage"
+            class="org.topcased.modeler.internal.preferences.PageMarginPreferencePage"
+            id="org.topcased.modeler.preferences.PageMarginPreferencePage"
+            name="Page Margins"/>
+      <page
+            category="org.topcased.modeler.preferences.ModelerPreferencePage"
+            class="org.topcased.modeler.internal.preferences.NotePreferencePage"
+            id="org.topcased.modeler.internal.preferences.NotePreferencePage"
+            name="Note"/>
+   </extension>
+      <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            category="org.topcased.facilities.preferences.property.TopcasedPreferencePage"
+            class="org.topcased.modeler.internal.preferences.ModelerPreferencePage"
+            id="org.topcased.modeler.preferences.property.ModelerPreferencePage"
+            name="Editors">
+            <enabledWhen>
+               <adapt type="org.eclipse.core.resources.IProject"/>
+            </enabledWhen>
+      </page>
+      <page
+            category="org.topcased.modeler.preferences.property.ModelerPreferencePage"
+            class="org.topcased.modeler.internal.preferences.PageFormatPreferencePage"
+            id="org.topcased.modeler.preferences.property.PageFormatPreferencePage"
+            name="Page Format">
+            <enabledWhen>
+               <adapt type="org.eclipse.core.resources.IProject"/>
+            </enabledWhen>
+            </page>
+      <page
+            category="org.topcased.modeler.preferences.property.ModelerPreferencePage"
+            class="org.topcased.modeler.internal.preferences.PageMarginPreferencePage"
+            id="org.topcased.modeler.preferences.property.PageMarginPreferencePage"
+            name="Page Margins">
+            <enabledWhen>
+               <adapt type="org.eclipse.core.resources.IProject"/>
+            </enabledWhen>
+            </page>
+                  <page
+            category="org.topcased.modeler.preferences.property.ModelerPreferencePage"
+            class="org.topcased.modeler.internal.preferences.NotePreferencePage"
+            id="org.topcased.modeler.internal.preferences.property.NotePreferencePage"
+            name="Note">
+            <enabledWhen>
+               <adapt type="org.eclipse.core.resources.IProject"/>
+            </enabledWhen>
+            </page>
+<!--      <page
+            class="org.topcased.modeler.internal.preferences.ModelerPreferencePage"
+            id="org.topcased.modeler.preferences.property.ModelerPreferencePage"
+            name="Editors">
+            <enabledWhen>
+	         	 <instanceof value="org.eclipse.core.resources.IProject"/>
+	        </enabledWhen>
+	  </page>-->
+ <!--     <page
+            category="org.topcased.modeler.preferences.property.ModelerPreferencePage"
+            class="org.topcased.modeler.internal.preferences.PageFormatPreferencePage"
+            id="org.topcased.modeler.preferences.property.PageFormatPreferencePage"
+            objectClass="org.eclipse.jdt.core.IJavaProject"
+            name="Page Format"/>
+      <page
+            category="org.topcased.modeler.preferences.property.ModelerPreferencePage"
+            class="org.topcased.modeler.internal.preferences.PageMarginPreferencePage"
+            id="org.topcased.modeler.preferences.property.PageMarginPreferencePage"
+            objectClass="org.eclipse.jdt.core.IJavaProject"
+            name="Page Margins"/>-->
+   </extension>
+      <extension
+            point="org.eclipse.ui.commandImages">
+         <image
+               commandId="org.topcased.modeler.removeUUIDCommand"
+               icon="icons/deleteFromModel.gif">
+         </image>
+      </extension>
+   
+      <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <menu
+               label="Transform Into"
+               mnemonic="T">
+            <visibleWhen
+                  checkEnabled="false">
+               <or>
+                  <and>
+                     <with
+                           variable="activeMenuSelection">
+                        <iterate
+                              ifEmpty="false">
+                           <instanceof
+                                 value="org.eclipse.emf.ecore.EObject">
+                           </instanceof>
+                        </iterate>
+                     </with>
+                     <with
+                           variable="activePartId">
+                        <equals
+                              value="org.eclipse.ui.views.ContentOutline">
+                        </equals>
+                     </with>
+                  </and>
+                  <and>
+                     <with
+                           variable="activePartId">
+                        <equals
+                              value="org.topcased.ui.navigator.view">
+                        </equals>
+                     </with>
+                     <with
+                           variable="activeMenuSelection">
+                        <iterate
+                              ifEmpty="false">
+                           <instanceof
+                                 value="org.eclipse.emf.ecore.EObject">
+                           </instanceof>
+                        </iterate>
+                     </with>
+                  </and>
+                  <with
+                        variable="activeMenuSelection">
+                     <iterate
+                           ifEmpty="false">
+                        <instanceof
+                              value="org.topcased.modeler.edit.IModelElementEditPart">
+                        </instanceof>
+                     </iterate>
+                  </with>
+               </or>
+            </visibleWhen>
+            <dynamic
+                  class="org.topcased.modeler.actions.GenericTransformAction"
+                  id="org.topcased.modeler.generictransformsubmenu">
+            </dynamic>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="org.topcased.modeler.removeUUIDCommand"
+               label="&amp;Remove UUID Annotations"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <with
+                        variable="activeMenuSelection">
+                     <iterate
+                           ifEmpty="false">
+                        <instanceof
+                              value="org.eclipse.emf.ecore.EObject">
+                        </instanceof>
+                     </iterate>
+                  </with>
+                  <with
+                        variable="activePartId">
+                     <equals
+                           value="org.eclipse.ui.views.ContentOutline">
+                     </equals>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="org.topcased.modeler.generateOrder"
+               label="Automatic Virtual Order"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <with
+                        variable="activeMenuSelection">
+                     <iterate
+                           ifEmpty="false">
+                        <instanceof
+                              value="org.eclipse.emf.ecore.EObject">
+                        </instanceof>
+                     </iterate>
+                  </with>
+                  <with
+                        variable="activePartId">
+                     <equals
+                           value="org.eclipse.ui.views.ContentOutline">
+                     </equals>
+                  </with>
+                  <with
+                        variable="activeMenuSelection">
+                     <iterate
+                           ifEmpty="false">
+                        <test
+                              forcePluginActivation="true"
+                              property="org.topcased.modeler.isOrderAvailable">
+                        </test>
+                     </iterate>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.views.ContentOutline?after=additions">
+         <command
+               commandId="org.topcased.modeler.virtualorder"
+               icon="icons/decorators/virtual.gif"
+               label="Virtual Order"
+               style="toggle"
+               tooltip="displays elements in the outline using virtual order instead of contents order">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <with
+                        variable="activeEditor">
+                     <instanceof
+                           value="org.topcased.modeler.editor.Modeler">
+                     </instanceof>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+      <menuContribution
+            locationURI="popup:org.topcased.modeler?after=additions">
+         <command
+               commandId="org.topcased.modeler.enablewrite"
+               icon="icons/enable_write.png"
+               label="Enable write"
+               style="push"
+               tooltip="Enable write on the current editor">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.topcased.modeler.contribution1"
+            nameFilter="*di"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="org.topcased.modeler.actions.SetAuthorAnnotation"
+               enablesFor="1"
+               icon="icons/topcased-icon16.gif"
+               id="org.topcased.modeler.eAuthorAnnotation"
+               label="Add author name eAnnotation"
+               menubarPath="org.topcased.facilities.menu.topcased/org.topcased.facilities.menu.other/topcasedGroup">
+         </action>
+         <action
+               class="org.topcased.modeler.actions.MoveDiagramsAction"
+               enablesFor="1"
+               icon="icons/topcased-icon16.gif"
+               id="org.topcased.modeler.fixdiagram"
+               label="Clean controlled diagrams"
+               menubarPath="org.topcased.facilities.menu.topcased/org.topcased.facilities.menu.other/topcasedGroup">
+         </action>
+         <action
+         		class="org.topcased.modeler.actions.UnreferencedDiagramAction"
+				enablesFor="1"
+				icon="icons/topcased-icon16.gif"
+				id="org.topcased.modeler.unreferenceddiagram"
+				label="Remove unreferenced diagrams"
+				menubarPath="org.topcased.facilities.menu.topcased/org.topcased.facilities.menu.other/topcasedGroup">
+		</action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors.documentProviders">
+      <provider
+            class="org.eclipse.ui.editors.text.TextFileDocumentProvider"
+            id="org.topcased.modeler.ExternalResourceDocumentProvider"
+            inputTypes="org.topcased.modeler.documentation.ExternalResourceEditorInput"/>
+   </extension>
+      <extension
+            point="org.eclipse.ui.handlers">
+         <handler
+               class="org.topcased.modeler.handlers.RemoveUUIDHandler"
+               commandId="org.topcased.modeler.removeUUIDCommand">
+         </handler>
+         <handler
+               class="org.topcased.modeler.internal.ordering.ChangeOrderHandler"
+               commandId="org.topcased.modeler.generateOrder">
+         </handler>
+         <handler
+               class="org.topcased.modeler.handlers.EnableWriteHandler"
+               commandId="org.topcased.modeler.enablewrite">
+         </handler>
+      </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.eclipse.ui.category.edit"
+            description="Allows the user to move backward the selected graph node element in a TopCased editor."
+            id="org.topcased.modeler.moveBackward"
+            name="Move backward"/>
+      <command
+            categoryId="org.eclipse.ui.category.edit"
+            description="Allows the user to move forward the selected graph node element in a TopCased editor."
+            id="org.topcased.modeler.moveForward"
+            name="Move forward"/>
+      <command
+            categoryId="org.eclipse.ui.category.edit"
+            description="Allows the user to move to back the selected graph node element in a TopCased editor."
+            id="org.topcased.modeler.moveToBack"
+            name="Move to back"/>
+      <command
+            categoryId="org.eclipse.ui.category.edit"
+            description="Allows the user to move to front the selected graph node element in a TopCased editor."
+            id="org.topcased.modeler.moveToFront"
+            name="Move to front"/>
+      <command
+            categoryId="org.eclipse.ui.category.edit"
+            description="Allows the user to delete the selected graph element and its associated model element in a Topcased editor."
+            id="org.topcased.modeler.deleteModelObject"
+            name="Delete From Model"/>
+      <command
+            categoryId="org.eclipse.ui.category.edit"
+            description="Allows the user to refresh the current diagram."
+            id="org.topcased.modeler.refresh"
+            name="Refresh current diagram"/>
+      <command
+            description="Remove the UUID Annotations of the Model Object and its children"
+            id="org.topcased.modeler.removeUUIDCommand"
+            name="Remove UUID Annotations">
+      </command>
+      <command
+            description="Describe a logical order for the elements contained"
+            id="org.topcased.modeler.generateOrder"
+            name="Automatic Order">
+      </command>
+      <command
+            description="display the outline using logical order instead of content order (useful for documentation generation)"
+            id="org.topcased.modeler.virtualorder"
+            name="Virtual Order">
+         <state
+               class="org.eclipse.ui.handlers.RegistryToggleState:false"
+               id="org.eclipse.ui.commands.toggleState">
+         </state>
+         <defaultHandler
+               class="org.topcased.modeler.internal.ordering.LogicalOrderHandler">
+         </defaultHandler>
+      </command>
+      <command
+            categoryId="org.eclipse.ui.category.edit"
+            id="org.topcased.modeler.enablewrite"
+            name="Enable write on the current editor">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="org.topcased.modeler.moveBackward"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+ARROW_DOWN"/>
+      <key
+            commandId="org.topcased.modeler.moveForward"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+ARROW_UP"/>
+      <key
+            commandId="org.topcased.modeler.moveToBack"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+PAGE_DOWN"/>
+      <key
+            commandId="org.topcased.modeler.moveToFront"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+PAGE_UP"/>
+      <key
+            commandId="org.topcased.modeler.deleteModelObject"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M2+DEL"/>
+      <key
+            commandId="org.topcased.modeler.refresh"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+F5"/>
+   </extension>
+   <extension
+         point="org.topcased.modeler.outline">
+      <createChildMenu
+            class="org.topcased.modeler.editor.outline.DefaultCreateChildMenu"
+            id="org.topcased.modeler.defaultCreateChildMenu"
+            name="Default"/>
+      <filter
+            class="org.topcased.modeler.editor.outline.filters.AdditionalResourcesFilter"
+            id="org.topcased.modeler.AdditionalResourcesFilter"
+            name="Hide Additional Resources"/>
+      <filter
+            class="org.topcased.modeler.editor.outline.filters.DiagramFilter"
+            id="org.topcased.modeler.DiagramFilter"
+            name="Hide Diagrams"/>
+      <filter
+            class="org.topcased.modeler.editor.outline.filters.OnlyDiagramsFilter"
+            id="org.topcased.modeler.OnlyDiagramsFilter"
+            name="Show only diagrams"/>
+      <sorter
+            class="org.topcased.modeler.editor.outline.sorters.AlphabeticalSorter"
+            icon="icons/outline/alphabetic_sorter.gif"
+            id="org.topcased.modeler.AlphabeticalSorter"
+            name="Alphabetical order"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension targetID="org.topcased.modeler.perspective">
+         <newWizardShortcut id="org.eclipse.ui.wizards.new.folder"/>
+         <newWizardShortcut id="org.eclipse.ui.wizards.new.file"/>
+      </perspectiveExtension>
+   </extension>
+   
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="org.topcased.modeler.editor.Modeler"
+            labelProvider="org.topcased.modeler.editor.properties.ModelerLabelProvider"
+            typeMapper="org.topcased.modeler.editor.properties.ModelerTypeMapper">
+         <propertyCategory category="model"/>
+         <propertyCategory category="modelDetails"/>
+         <propertyCategory category="graphics"/>
+         <propertyCategory category="note"/>
+         <propertyCategory category="advanced"/>
+      </propertyContributor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="org.topcased.modeler.editor.Modeler">
+         <propertyTab
+            category="model"
+            id="org.topcased.modeler.modelTab"
+            label="Model"/>
+         <propertyTab
+            category="graphics"
+            id="org.topcased.modeler.graphicsTab"
+            label="Graphics"/>
+         <propertyTab
+            category="note"
+            id="org.topcased.modeler.noteTab"
+            label="Note"/>
+         <propertyTab
+            category="advanced"
+            id="org.topcased.modeler.advancedTab"
+            label="Advanced"/>
+      </propertyTabs>
+   </extension>
+   
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+		<propertySections contributorId="org.topcased.modeler.editor.Modeler">
+			<propertySection
+         		class="org.topcased.modeler.editor.properties.sections.DiagramNameElementSection"
+         		id="org.topcased.modeler.uml.internal.properties.sections.DiagramNameElementSection"
+         		tab="org.topcased.modeler.modelTab">
+      			<input type="org.topcased.modeler.di.model.Diagram"/>
+		    </propertySection>
+			<propertySection
+				id="org.topcased.modeler.AdvancedSection"
+				class="org.topcased.tabbedproperties.sections.AdvancedPropertySection"
+				tab="org.topcased.modeler.advancedTab">
+				<input type="org.eclipse.emf.ecore.EObject"/>
+				<input type="org.eclipse.emf.edit.provider.IWrapperItemProvider"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.PositionSection"
+				class="org.topcased.modeler.editor.properties.sections.graphics.PositionPropertySection"
+				filter="org.topcased.modeler.editor.properties.filters.GraphElementFilter"
+				tab="org.topcased.modeler.graphicsTab"/>
+			<propertySection
+				id="org.topcased.modeler.SizeSection"
+				class="org.topcased.modeler.editor.properties.sections.graphics.SizePropertySection"
+				filter="org.topcased.modeler.editor.properties.filters.GraphNodeFilter"
+				tab="org.topcased.modeler.graphicsTab"				
+				afterSection="org.topcased.modeler.PositionSection"/>
+			<propertySection
+				id="org.topcased.modeler.FontSection"
+				class="org.topcased.modeler.editor.properties.sections.graphics.FontPropertySection"
+				filter="org.topcased.modeler.editor.properties.filters.GraphElementFilter"
+				tab="org.topcased.modeler.graphicsTab"
+				afterSection="org.topcased.modeler.SizeSection"/>
+			<propertySection
+				id="org.topcased.modeler.ForegroundColorSection"
+				class="org.topcased.modeler.editor.properties.sections.graphics.ForegroundColorPropertySection"
+				filter="org.topcased.modeler.editor.properties.filters.GraphElementFilter"
+				tab="org.topcased.modeler.graphicsTab"
+				afterSection="org.topcased.modeler.FontSection"/>
+			 <propertySection
+				id="org.topcased.modeler.BackgroundColorSection"
+				class="org.topcased.modeler.editor.properties.sections.graphics.BackgroundColorPropertySection"
+				filter="org.topcased.modeler.editor.properties.filters.GraphNodeFilter"
+				tab="org.topcased.modeler.graphicsTab"
+				afterSection="org.topcased.modeler.ForegroundColorSection"/>
+			 <!--propertySection
+				id="org.topcased.modeler.VisibilitySection"
+				class="org.topcased.modeler.editor.properties.sections.graphics.VisibilityPropertySection"
+				filter="org.topcased.modeler.editor.properties.filters.GraphElementFilter"
+				tab="org.topcased.modeler.graphicsTab"
+				afterSection="org.topcased.modeler.BackgroundColorSection"/-->
+			 <propertySection
+				id="org.topcased.modeler.RouterSection"
+				class="org.topcased.modeler.editor.properties.sections.graphics.RouterPropertySection"
+				filter="org.topcased.modeler.editor.properties.filters.GraphEdgeFilter"
+				tab="org.topcased.modeler.graphicsTab"
+				afterSection="org.topcased.modeler.BackgroundColorSection"/>
+			<propertySection
+				id="org.topcased.modeler.editor.properties.sections.graphics.EdgeObjectVisibilityPropertySection"
+				class="org.topcased.modeler.editor.properties.sections.graphics.EdgeObjectVisibilityPropertySection"
+				filter="org.topcased.modeler.editor.properties.filters.GraphEdgeFilter"
+				tab="org.topcased.modeler.graphicsTab"
+				afterSection="org.topcased.modeler.RouterSection"/>
+			<propertySection
+				id="org.topcased.modeler.PageFormatSection"
+				class="org.topcased.modeler.editor.properties.sections.graphics.PageFormatPropertySection"
+				filter="org.topcased.modeler.editor.properties.filters.DiagramFilter"
+				tab="org.topcased.modeler.graphicsTab"
+				afterSection="org.topcased.modeler.RouterSection"/>
+			<propertySection
+				id="org.topcased.modeler.PageOrientationSection"
+				class="org.topcased.modeler.editor.properties.sections.graphics.PageOrientationPropertySection"
+				filter="org.topcased.modeler.editor.properties.filters.DiagramFilter"
+				tab="org.topcased.modeler.graphicsTab"
+				afterSection="org.topcased.modeler.PageFormatSection"/>
+			<propertySection
+				id="org.topcased.modeler.PageMarginSection"
+				class="org.topcased.modeler.editor.properties.sections.graphics.PageMarginPropertySection"
+				filter="org.topcased.modeler.editor.properties.filters.DiagramFilter"
+				tab="org.topcased.modeler.graphicsTab"
+				afterSection="org.topcased.modeler.PageOrientationSection"/>
+			<propertySection
+				id="org.topcased.modeler.editor.properties.sections.graphics.NoteValuePropertySection"
+				class="org.topcased.modeler.editor.properties.sections.graphics.NoteValuePropertySection"
+				filter="org.topcased.modeler.editor.properties.filters.NoteFilter"
+				tab="org.topcased.modeler.noteTab"/>
+            
+         </propertySections>
+	</extension>
+     <extension
+         id="org.topcased.modeler.internal.decorators.ErrorDecoratorProvider"
+         name="Validation Errors Decorator"
+         point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <decoratorProvider
+            class="org.topcased.modeler.internal.decorators.ErrorDecoratorProvider">
+         <Priority
+               name="Lowest">
+         </Priority>
+         <object
+               class="org.eclipse.emf.ecore.EObject(org.eclipse.emf.ecore)"
+               id="EObject">
+         </object>
+         <context
+               decoratorTargets="EObject">
+         </context>
+      </decoratorProvider>
+   </extension>
+   
+     <extension
+         id="org.topcased.modeler.internal.decorators.ModelerDecoratorProvider"
+         name="Modeler Decorators"
+         point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <decoratorProvider
+            class="org.topcased.modeler.internal.decorators.ModelerDecoratorProvider">
+         <Priority
+               name="Lowest">
+         </Priority>
+         <object
+               class="org.eclipse.emf.ecore.EObject(org.eclipse.emf.ecore)"
+               id="EObject">
+         </object>
+         <context
+               decoratorTargets="EObject">
+         </context>
+      </decoratorProvider>
+   </extension>
+   
+   <extension point="org.topcased.modeler.evaluators">
+      <evaluator
+         class="org.topcased.modeler.evaluator.ocl.OCLEvaluator"
+         id="org.topcased.modeler.oclEvaluator"
+         language="ocl">
+         <description>
+            Basic OCL evaluation
+         </description>
+      </evaluator>
+   </extension>
+   <extension
+         point="org.topcased.modeler.synchronizedModelDiagramRule">
+      <synchronizedModelDiagramRule
+            graphicType="org.topcased.modeler.edit.BaseEditPart"
+            modelInterface="org.eclipse.emf.ecore.EObject"
+            synchronizationRule="org.topcased.modeler.extensions.SynchronizedModelDiagramRule">
+         <description>
+            The basic behavior for BaseEditPart representing an EObject checks that an object's edit part is in a container that represents its parent container in the model.
+         </description>
+      </synchronizedModelDiagramRule>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer class="org.topcased.modeler.internal.preferences.ModelerPreferenceInitializer"/>
+   </extension>
+   <extension
+         id="synchronizedmodeldiagramrule.problem"
+         name="Synchronization problem between model and diagrams"
+         point="org.eclipse.core.resources.markers">
+      <persistent  value="true" />
+      <super  type="org.eclipse.core.resources.problemmarker" />
+      <attribute
+            name="uri">
+      </attribute>
+   </extension>
+
+
+      <extension
+            point="org.topcased.modeler.commandsStackListeners">
+         <command
+               commandStackListener="org.topcased.modeler.commands.MoveDiagramCommandStackListener">
+         </command>
+         <command
+               commandStackListener="org.topcased.modeler.commands.MoveElementCommandStackListener">
+         </command>
+      </extension>
+      <extension
+            point="org.topcased.modeler.actionPrecondition">
+         <precondition
+               action="Delete"
+               checker="org.topcased.modeler.actions.preconditions.DeleteConfirmationChecker"
+               priority="Highest">
+         </precondition>
+         <precondition
+               action="DeleteModel"
+               checker="org.topcased.modeler.actions.preconditions.DeleteConfirmationChecker"
+               priority="Highest">
+         </precondition>
+         <precondition
+               action="DeleteGraph"
+               checker="org.topcased.modeler.actions.preconditions.DeleteGraphConfirmationChecker"
+               priority="Highest">
+         </precondition>
+      </extension>
+      <extension
+            point="org.topcased.modeler.orderSerialization">
+         <Order
+               instance="org.topcased.modeler.internal.ordering.EModelElementOrder"
+               priority="LOWEST">
+         </Order>
+         <OrderAlgorithm
+               algorithm="org.topcased.modeler.internal.ordering.LabelAlgorithm"
+               name="Order By Label"
+               priority="LOWEST">
+         </OrderAlgorithm>
+      </extension>
+      <extension
+            point="org.eclipse.core.expressions.propertyTesters">
+         <propertyTester
+               class="org.topcased.modeler.internal.ordering.OrderAvailablePropertyTester"
+               id="org.topcased.modeler.orderavailable"
+               namespace="org.topcased.modeler"
+               properties="isOrderAvailable"
+               type="org.eclipse.emf.ecore.EObject">
+         </propertyTester>
+      </extension>
+      <extension
+            point="org.eclipse.ui.decorators">
+         <decorator
+               adaptable="true"
+               class="org.topcased.modeler.internal.ordering.VirtualOrderDecorator"
+               icon="icons/decorators/virtual.gif"
+               id="org.topcased.modeler.virtualdecorator"
+               label="Virtual Order"
+               lightweight="true"
+               state="true">
+            <enablement>
+               <objectClass
+                     name="org.eclipse.emf.ecore.EObject">
+               </objectClass></enablement>
+            <description>
+               The virtual order decorator means the elements displayed bellow the elements are ordered using logical order and not content order
+            </description>
+         </decorator>
+      </extension>
+      <extension
+            point="org.topcased.modeler.eannotationToHideInOutline">
+         <EAnnotation
+               source="http://www.topcased.org/order">
+         </EAnnotation>
+         <EAnnotation
+               source="http://www.topcased.org/documentation">
+         </EAnnotation>
+      </extension>
+      <extension
+            point="org.topcased.modeler.documentable">
+         <documentable
+               instance="org.topcased.modeler.documentation.EModelElementDocumentable"
+               priority="LOWEST">
+         </documentable>
+      </extension>
+   <extension
+         point="org.topcased.builder.taskTagExtensions">
+      <ResourceHandler
+            class="org.topcased.modeler.builders.LegacyTodoNoteBuilder">
+            id="org.topcased.modeler.di.default"
+      </ResourceHandler>
+   </extension>
+</plugin>

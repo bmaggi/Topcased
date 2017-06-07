@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.topcased.modeler.ocl.diagrams/src"
+    modelPluginID="org.topcased.modeler.ocl.diagrams" modelName="OCLDiagrams" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../org.topcased.modeler.di/model/DI.genmodel#//model ../../org.topcased.modeler.diagrams/model/Diagrams.genmodel#//model platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.ocl/model/OCL.genmodel#//ocl">
+  <foreignModel>OCLDiagrams.ecore</foreignModel>
+  <genPackages prefix="Ocl" basePackage="org.topcased.modeler" disposableProviderFactory="true"
+      ecorePackage="OCLDiagrams.ecore#/">
+    <nestedGenPackages prefix="Ocldiagrams" resource="XML" disposableProviderFactory="true"
+        ecorePackage="OCLDiagrams.ecore#//ocldiagrams">
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/AnyType"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/BagType"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/CollectionType"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/ElementType"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/InvalidType"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/MessageType"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/OrderedSetType"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/PrimitiveType"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/SequenceType"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/SetType"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/TupleType"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/TypeType"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/VoidType"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/CallOperationAction">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference OCLDiagrams.ecore#//ocldiagrams/CallOperationAction/operation"/>
+      </genClasses>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/Constraint">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCLDiagrams.ecore#//ocldiagrams/Constraint/specification"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference OCLDiagrams.ecore#//ocldiagrams/Constraint/constrainedElements"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCLDiagrams.ecore#//ocldiagrams/Constraint/stereotype"/>
+      </genClasses>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/SendSignalAction">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference OCLDiagrams.ecore#//ocldiagrams/SendSignalAction/signal"/>
+      </genClasses>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/ExpressionInOCL"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/AssociationCallExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/BooleanLiteralExp"/>
+      <genClasses image="false" ecoreClass="OCLDiagrams.ecore#//ocldiagrams/CallExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/CollectionItem"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/CollectionLiteralExp"/>
+      <genClasses image="false" ecoreClass="OCLDiagrams.ecore#//ocldiagrams/CollectionLiteralPart"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/CollectionRange"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/EnumLiteralExp"/>
+      <genClasses image="false" ecoreClass="OCLDiagrams.ecore#//ocldiagrams/FeatureCallExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/IfExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/IntegerLiteralExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/UnlimitedNaturalLiteralExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/InvalidLiteralExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/IterateExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/IteratorExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/LetExp"/>
+      <genClasses image="false" ecoreClass="OCLDiagrams.ecore#//ocldiagrams/LiteralExp"/>
+      <genClasses image="false" ecoreClass="OCLDiagrams.ecore#//ocldiagrams/LoopExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/MessageExp"/>
+      <genClasses image="false" ecoreClass="OCLDiagrams.ecore#//ocldiagrams/NavigationCallExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/NullLiteralExp"/>
+      <genClasses image="false" ecoreClass="OCLDiagrams.ecore#//ocldiagrams/NumericLiteralExp"/>
+      <genClasses image="false" ecoreClass="OCLDiagrams.ecore#//ocldiagrams/OCLExpression"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/OperationCallExp"/>
+      <genClasses image="false" ecoreClass="OCLDiagrams.ecore#//ocldiagrams/PrimitiveLiteralExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/PropertyCallExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/RealLiteralExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/StateExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/StringLiteralExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/TupleLiteralExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/TupleLiteralPart"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/TypeExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/UnspecifiedValueExp"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/Variable"/>
+      <genClasses ecoreClass="OCLDiagrams.ecore#//ocldiagrams/VariableExp"/>
+      <genClasses image="false" ecoreClass="OCLDiagrams.ecore#//ocldiagrams/BusinessType"/>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

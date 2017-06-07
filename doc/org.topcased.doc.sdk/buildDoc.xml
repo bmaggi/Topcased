@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="build.docs">
+
+<!-- Note that this script is called from the automated build system and expects
+     the following properties to be passed in:
+     	javadoc.exe
+     	buildRoot
+     	buildDirectory
+     	fullEmfVersion (needed until EMF packages their documentation in single jar)
+     
+     Also note that it is expected that this script is called as part of the 
+     automated build, and particularly that the SDK component has been built
+     and installed into the target eclipse, along with GMF's dependencies.
+-->
+
+	<property name="doc.plugin.dir" value="${buildDirectory}/plugins/org.topcased.doc.sdk" />
+	<property name="javadoc.location" value="${doc.plugin.dir}/reference/api"/>
+	<property name="javadoc.link.location" value="${buildDirectory}/javadoc.link.location"/>
+	
+	<target name="build.docs" depends="init" description="Build Topcased documentation">
+		<antcall target="javadoc"/>
+		<antcall target="convertSchemaToHtml"/>
+		<antcall target="buildZip"/>
+	</target>
+	
+	<target name="init">
+		<delete dir="${javadoc.location}" />
+		<delete dir="${javadoc.link.location}" />
+	</target>
+	
+	<target name="computeClasspath" unless="javadoc.classpath">
+		<!-- Construct the javadoc classpath and store it in a property. -->
+		<echo level="info" message="Computing classpath ..."/>
+		
+		<!-- Add platform dependencies required by your plug-in here.
+			 Note that this pattern expects GMF and its dependencies to have 
+			 been installed into the platform directory structure, as is
+			 the case during the build. -->
+		<patternset id="platform.classpath.pattern">
+			<include name="**/*.jar"/>
+		</patternset>
+			
+		<pathconvert property="javadoc.classpath" targetos="windows">
+			<path>				
+				<fileset dir="${baseLocation}">
+					<patternset refid="platform.classpath.pattern"/>
+		    	</fileset>
+			</path>
+		</pathconvert>
+		<echo level="info" message="Done computing classpath."/>
+		<echo level="debug" message="Classpath is: ${javadoc.classpath}"/>
+	</target>
+	
+	<target name="extractLinks">
+		<mkdir dir="${javadoc.link.location}"/>
+		
+		<patternset id="package.list">
+			<include name="**/package-list"/>
+		</patternset>
+		
+		<!-- We only need the package-list files out of these -->
+		<unzip dest="${javadoc.link.location}/draw2d/">
+			<patternset refid="package.list"/>
+			<fileset dir="${baseLocation}/plugins">
+				<include name="org.eclipse.draw2d.doc.isv*/doc.zip"/>
+			</fileset>
+		</unzip>
+		
+		<unzip dest="${javadoc.link.location}/gef/">
+			<patternset refid="package.list"/>
+			<fileset dir="${baseLocation}/plugins">
+				<include name="org.eclipse.gef.doc.isv*/doc.zip"/>
+			</fileset>
+		</unzip>
+		
+		<unzip dest="${javadoc.link.location}/emf/">
+			<patternset refid="package.list"/>			
+			<fileset dir="${baseLocation}/plugins">
+				<include name="org.eclipse.emf.doc*/doc.zip"/>
+			</fileset>
+		</unzip>
+		
+		<unzip dest="${javadoc.link.location}/platform/">
+			<patternset refid="package.list"/>
+			<fileset dir="${baseLocation}/plugins">
+				<include name="org.eclipse.platform.doc.isv*/doc.zip"/>
+			</fileset>
+		</unzip>
+	</target>
+	
+	<target name="javadoc" depends="extractLinks,computeClasspath">
+		
+		<!-- Add your plug-ins to one of the "subsystem" (domain) doc sets below or, if
+		     necessary, create a new doc set. Order matters, please add subsystems 
+		     according to layer order -->
+		
+		<javadoc-subsystem subsystem="common" tocTitle="Commons">
+			<package-sets>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.facilities/src" excludes="**/internal/**"/>
+<!--		    	<packageset dir="${buildRoot}/plugins/org.topcased.model.management/src" excludes="**/internal/**"/> -->
+			</package-sets>
+			<package-groups>
+				<group title="Common Packages" packages="*"/>
+			</package-groups>
+		</javadoc-subsystem>
+	
+		<javadoc-subsystem subsystem="modelers" tocTitle="Modelers">
+			<package-sets>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.core/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.draw2d/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.efs/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.export/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.di/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.diagrams/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.graphconf/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.tabbedproperties/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.ui/src" excludes="**/internal/**"/>
+		    </package-sets>
+			<package-groups>
+				<group title="Modelers Packages" packages="*"/>
+			</package-groups>
+		</javadoc-subsystem>
+		
+		<javadoc-subsystem subsystem="sam" tocTitle="SAM">
+			<package-sets>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.sam/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.sam/src" excludes="**/internal/**"/>
+			</package-sets>
+			<package-groups>
+				<group title="SAM Packages" packages="*"/>
+			</package-groups>
+		</javadoc-subsystem>
+	
+		<javadoc-subsystem subsystem="uml" tocTitle="UML">
+			<package-sets>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.uml/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.uml.sequencediagram/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.uml.activitydiagram/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.uml.statemachinediagram/src" excludes="**/internal/**"/>
+	    		<packageset dir="${buildRoot}/plugins/org.topcased.modeler.uml.componentdiagram/src" excludes="**/internal/**"/>
+	    		<packageset dir="${buildRoot}/plugins/org.topcased.modeler.uml.deploymentdiagram/src" excludes="**/internal/**"/>
+	    		<packageset dir="${buildRoot}/plugins/org.topcased.modeler.uml.compositestructuresdiagram/src"/>
+			</package-sets>
+			<package-groups>
+				<group title="UML Packages" packages="*"/>
+			</package-groups>
+		</javadoc-subsystem>
+
+		<javadoc-subsystem subsystem="sysml" tocTitle="SysML">
+			<package-sets>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.sysml/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.sysml/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.sysml.blockdefinitiondiagram/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.sysml.internalblockdiagram/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.sysml.parametricdiagram/src" excludes="**/internal/**"/>
+	    		<packageset dir="${buildRoot}/plugins/org.topcased.modeler.sysml.requirementdiagram/src" excludes="**/internal/**"/>
+			</package-sets>
+			<package-groups>
+				<group title="SysML Packages" packages="*"/>
+			</package-groups>
+		</javadoc-subsystem>
+		
+		<javadoc-subsystem subsystem="generators" tocTitle="Generators">
+			<package-sets>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.generator/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.generator/src" excludes="**/internal/**"/>
+		    <!--	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.gmfconverter/src" excludes="**/internal/**"/>-->
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.diagramconfigurator/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.modeler.editorconfigurator/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.outline.configurator/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.outline.generator/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.properties.configurator/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.properties.generator/src" excludes="**/internal/**"/>
+			</package-sets>
+			<package-groups>
+				<group title="Generators Packages" packages="*"/>
+			</package-groups>
+		</javadoc-subsystem>
+		
+	<!--	<javadoc-subsystem subsystem="admin" tocTitle="Administration Tools">
+			<package-sets>
+				<packageset dir="${buildRoot}/plugins/org.topcased.service.plugincustomization/src" excludes="**/internal/**"/>
+		   		<packageset dir="${buildRoot}/plugins/org.topcased.service.projecttotemplate/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.service.updatesite/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.service.updatesiteproject/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.service.templatetoproject/src" excludes="**/internal/**"/>
+			</package-sets>
+			<package-groups>
+				<group title="Admin Packages" packages="*"/>
+			</package-groups>
+		</javadoc-subsystem>-->
+		
+		<javadoc-subsystem subsystem="bus" tocTitle="Bus">
+			<package-sets>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.bus.core/src" excludes="**/internal/**"/>
+		    <!--	<packageset dir="${buildRoot}/plugins/org.topcased.export.bnftosablecc/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.externalbus.core/src" excludes="**/internal/**"/>
+		   		<packageset dir="${buildRoot}/plugins/org.topcased.generator.services/src" excludes="**/internal/**"/>-->
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.service.changeuri/src" excludes="**/internal/**"/>
+		    <!--	<packageset dir="${buildRoot}/plugins/org.topcased.service.getservices/src" excludes="**/internal/**"/>-->
+		    <!--	<packageset dir="${buildRoot}/plugins/org.topcased.service.importcopymodel/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.service.importmappingatl/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.service.publishmetamodel/src" excludes="**/internal/**"/>-->
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.service.readxmiemf/src" excludes="**/internal/**"/>
+		    <!--	<packageset dir="${buildRoot}/plugins/org.topcased.service.transformation/src" excludes="**/internal/**"/>-->
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.service.writeemfxmi/src" excludes="**/internal/**"/>
+		    <!--	<packageset dir="${buildRoot}/plugins/org.topcased.web.server/src" excludes="**/internal/**"/>-->
+			</package-sets>
+			<package-groups>
+				<group title="Bus Packages" packages="*"/>
+			</package-groups>
+		</javadoc-subsystem>
+		
+		<javadoc-subsystem subsystem="ocl" tocTitle="OCL">
+			<package-sets>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.editors.ocleditor/src" excludes="**/internal/**"/>
+			</package-sets>
+			<package-groups>
+				<group title="OCL Packages" packages="*"/>
+			</package-groups>
+		</javadoc-subsystem>
+		
+		<javadoc-subsystem subsystem="validation" tocTitle="Validation">
+			<package-sets>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.validation.core/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.validation.emft/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.validation.ocl/src" excludes="**/internal/**"/>
+		    	<packageset dir="${buildRoot}/plugins/org.topcased.validation.ui/src" excludes="**/internal/**"/>
+			</package-sets>
+			<package-groups>
+				<group title="Validation Packages" packages="*"/>
+			</package-groups>
+		</javadoc-subsystem>
+
+    </target>
+	
+    <!--
+		Builds the Javadoc set for a subsystem (often corresponds to a "domain").
+		
+		attributes:
+			subsystem - the name of the subsystem, used in the directory where its Javadocs are generated to
+			tocTitle - Title to add to the generated TOC
+			tocLinkTo - Path to link generated TOC to (Optional)
+					
+		elements:
+			package-sets - a set of <packageset> elements specifying the "src/" directories of the plug-ins included in the subsystem
+			package-groups - a set of <group> elements specifying package groups.  Callers should include at least one group
+			bottom - the bottom copyright element to appear for the subsystem
+    -->
+	<macrodef name="javadoc-subsystem">
+		<attribute name="subsystem"/>
+		<attribute name="tocTitle"/>
+		<attribute name="tocLinkTo" default=" "/>
+		<element name="package-sets"/>
+		<element name="package-groups"/>
+		
+		<sequential>
+			<delete dir="${doc.plugin.dir}/reference/api/@{subsystem}"/>
+			<mkdir dir="${doc.plugin.dir}/reference/api/@{subsystem}"/>
+
+			<echo level="info" message="***"/>
+			<echo level="info" message="*** Building javadoc for subsystem @{subsystem}"/>
+			<echo level="info" message="***"/>
+		
+	 		<javadoc 
+	 			access="protected"
+				maxmemory="512M"
+				classpath="${javadoc.classpath}"
+				useexternalfile="true"
+				author="false"
+	        	destdir="${doc.plugin.dir}/reference/api/@{subsystem}"
+	 			windowtitle="Topcased Documentation"
+	 			source="1.5" 
+	        	noindex="false"
+	        	nonavbar="false"
+	        	executable="${javadoc.exe}"
+	        	notree="false"
+	        	splitindex="true"
+	        	stylesheetfile="${doc.plugin.dir}/stylesheet.css"
+	        	use="true"
+	        	version="false">
+				    <doctitle><![CDATA[<h2>Topcased</h2><h2>@{tocTitle} API Specification</h2>]]></doctitle>				    
+	 				<bottom><![CDATA[<p>Copyright (c) 2005 TOPCASED Contributors 2005 - 2007. All rights reserved.</font></p>]]></bottom>	
+	 				<header><![CDATA[@{tocTitle}]]></header>
+	 				<tag name="generated" scope="all" description="** Generated **"/>
+	 				<tag name="ordered" scope="all" description="Ordered:"/>
+	 				<tag name="model" scope="all" description="Model:"/>
+					<package-groups/>
+					<link offline="true" href="/help/topic/org.eclipse.emf.doc/references/javadoc/" packagelistLoc="${javadoc.link.location}/emf/references/javadoc/"/>
+					<link offline="true" href="/help/topic/org.eclipse.platform.doc.isv/reference/api/" packagelistLoc="${javadoc.link.location}/platform/reference/api/"/>
+					<link offline="true" href="/help/topic/org.eclipse.platform.doc.isv/reference/osgi/" packagelistLoc="${javadoc.link.location}/platform/reference/osgi/"/>
+					<link offline="true" href="/help/topic/org.eclipse.draw2d.doc.isv/reference/api/" packagelistLoc="${javadoc.link.location}/draw2d/reference/api/"/>
+					<link offline="true" href="/help/topic/org.eclipse.gef.doc.isv/reference/api/" packagelistLoc="${javadoc.link.location}/gef/reference/api/"/>
+			    	<package-sets/>
+			</javadoc>
+		</sequential>
+    </macrodef>
+
+	<target name="convertSchemaToHtml">
+		<property name="schema-destination" value="${doc.plugin.dir}/reference/extension-points" />
+
+		<pde.convertSchemaToHTML manifest="${buildRoot}/plugins/org.topcased.modeler/plugin.xml" destination="${schema-destination}" />
+		<pde.convertSchemaToHTML manifest="${buildRoot}/plugins/org.topcased.modeler.diagramconfigurator/plugin.xml" destination="${schema-destination}" />
+		<pde.convertSchemaToHTML manifest="${buildRoot}/plugins/org.topcased.validation.core/plugin.xml" destination="${schema-destination}" />
+		<pde.convertSchemaToHTML manifest="${buildRoot}/plugins/org.topcased.validation.ocl/plugin.xml" destination="${schema-destination}" />
+		<pde.convertSchemaToHTML manifest="${buildRoot}/plugins/org.topcased.bus.core/plugin.xml" destination="${schema-destination}" />
+	<!--	<pde.convertSchemaToHTML manifest="${buildRoot}/plugins/org.topcased.externalbus.core/plugin.xml" destination="${schema-destination}" />
+		<pde.convertSchemaToHTML manifest="${buildRoot}/plugins/org.topcased.service.transformation/plugin.xml" destination="${schema-destination}" />-->
+		<pde.convertSchemaToHTML manifest="${buildRoot}/plugins/org.topcased.modeler.export/plugin.xml" destination="${schema-destination}" />
+	</target>
+
+	<target name="buildZip">
+		<property name="docZip" value="${doc.plugin.dir}/doc.zip" />
+
+		<zip destfile="${docZip}">
+			<zipfileset dir="${doc.plugin.dir}/reference" prefix="reference"/>
+			<zipfileset dir="${doc.plugin.dir}/doc" prefix="doc"/>
+		</zip>
+	</target>
+</project>

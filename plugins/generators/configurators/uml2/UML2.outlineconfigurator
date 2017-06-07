@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<outlineconfigurator:OutlineConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:outlineconfigurator="http://www.topcased.org/OutlineConfigurator/1.0" name="UML2 Outline" projectName="org.topcased.modeler.uml2" package="org.topcased.modeler.uml2.editor.outline">
+  <createChild>
+    <items xsi:type="outlineconfigurator:Menu" id="classifier" name="Classifier">
+      <items xsi:type="outlineconfigurator:CreateChildAction" type="Hierachical">
+        <class href="UML2.genmodel#//uml2/Classifier"/>
+      </items>
+    </items>
+    <items xsi:type="outlineconfigurator:Menu" id="constraint" name="Constraint">
+      <items xsi:type="outlineconfigurator:CreateChildAction" type="Hierachical">
+        <class href="UML2.genmodel#//uml2/Constraint"/>
+      </items>
+    </items>
+    <items xsi:type="outlineconfigurator:Menu" id="trigger" name="Trigger">
+      <items xsi:type="outlineconfigurator:CreateChildAction" type="Hierachical">
+        <class href="UML2.genmodel#//uml2/Trigger"/>
+      </items>
+    </items>
+    <items xsi:type="outlineconfigurator:Menu" id="behavior" name="Behavior">
+      <items xsi:type="outlineconfigurator:CreateChildAction" type="Hierachical">
+        <class href="UML2.genmodel#//uml2/BehavioralFeature"/>
+      </items>
+    </items>
+    <items xsi:type="outlineconfigurator:Menu" id="dependency" name="Dependency">
+      <items xsi:type="outlineconfigurator:CreateChildAction" type="Hierachical">
+        <class href="UML2.genmodel#//uml2/Dependency"/>
+      </items>
+    </items>
+    <items xsi:type="outlineconfigurator:Menu" id="value" name="Value">
+      <items xsi:type="outlineconfigurator:CreateChildAction" type="Hierachical">
+        <class href="UML2.genmodel#//uml2/ValueSpecification"/>
+      </items>
+    </items>
+    <items xsi:type="outlineconfigurator:Menu" id="packageable" name="Packageable">
+      <items xsi:type="outlineconfigurator:CreateChildAction" type="Hierachical">
+        <class href="UML2.genmodel#//uml2/Package"/>
+      </items>
+    </items>
+  </createChild>
+  <genPackage href="UML2.genmodel#//uml2"/>
+</outlineconfigurator:OutlineConfiguration>

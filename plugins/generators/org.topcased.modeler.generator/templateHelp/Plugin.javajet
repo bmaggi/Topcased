@@ -1,0 +1,73 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports=""
+	 class="Plugin"
+	 version="$Id: Plugin.javajet,v 1.2 2006/10/26 15:06:23 jako Exp $" %>
+<%@ include file="cartoucheAirbus.txt"%>
+
+<%String epackage = (String) argument;%>
+package org.topcased.metamodel.help.<%=epackage%>;
+
+import org.eclipse.ui.plugin.*;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.osgi.framework.BundleContext;
+
+/**
+ * The main plugin class to be used in the desktop.
+ * @generated
+ */
+public class <%=epackage.toUpperCase()%>HelpPlugin extends AbstractUIPlugin {
+	//The shared instance.
+	private static <%=epackage.toUpperCase()%>HelpPlugin plugin;
+	
+	/**
+	 * The constructor.
+	 *
+	 * @generated
+	 */
+	public <%=epackage.toUpperCase()%>HelpPlugin() {
+		super();
+		plugin = this;
+	}
+
+	/**
+	 * This method is called upon plug-in activation
+	 *
+	 * @generated
+	 */
+	public void start(BundleContext context) throws Exception {
+		super.start(context);
+	}
+
+	/**
+	 * This method is called when the plug-in is stopped
+	 *
+	 * @generated
+	 */
+	public void stop(BundleContext context) throws Exception {
+		super.stop(context);
+		plugin = null;
+	}
+
+	/**
+	 * Returns the shared instance.
+	 *
+	 * @generated
+	 */
+	public static <%=epackage.toUpperCase()%>HelpPlugin getDefault() {
+		return plugin;
+	}
+
+	/**
+	 * Returns an image descriptor for the image file at the given
+	 * plug-in relative path.
+	 *
+	 * @param path the path
+	 * @return the image descriptor
+	 * @generated
+	 */
+	public static ImageDescriptor getImageDescriptor(String path) {
+		return AbstractUIPlugin.imageDescriptorFromPlugin("<%=epackage.toUpperCase()%>HelpPlugin", path);
+	}
+}
+

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.topcased.traceability/src"
+    modelPluginID="org.topcased.traceability" modelName="Ttm" importerID="org.eclipse.emf.importer.ecore">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+    <genAnnotations source="selectedPackages">
+      <details key="http://org.topcased.traceability.model" value="ttm.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <foreignModel>ttm.ecore</foreignModel>
+  <genPackages prefix="Ttm" resource="XMI" disposableProviderFactory="true" ecorePackage="ttm.ecore#/">
+    <genClasses ecoreClass="ttm.ecore#//Document" labelFeature="#//ttm/IdentifiedElement/ident">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//Document/analyzerID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//Document/lastModifiedDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//Document/filename"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//Document/coversItself"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ttm.ecore#//Document/project"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttm.ecore#//Document/coverPoints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ttm.ecore#//Document/incomingCoverPoints"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//Document/conversionMethodID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//Document/analyzerArguments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//Document/globalCoverageRatio"/>
+    </genClasses>
+    <genClasses ecoreClass="ttm.ecore#//Section"/>
+    <genClasses image="false" ecoreClass="ttm.ecore#//HierarchicalElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ttm.ecore#//HierarchicalElement/incomingNavigationLinks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttm.ecore#//HierarchicalElement/navigationLinks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttm.ecore#//HierarchicalElement/coverLinks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttm.ecore#//HierarchicalElement/children"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ttm.ecore#//HierarchicalElement/parent"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ttm.ecore#//IdentifiedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//IdentifiedElement/ident"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//IdentifiedElement/shortDescription"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttm.ecore#//IdentifiedElement/texts"/>
+    </genClasses>
+    <genClasses ecoreClass="ttm.ecore#//Text">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//Text/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ttm.ecore#//Text/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="ttm.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//Attribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//Attribute/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ttm.ecore#//Attribute/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="ttm.ecore#//Requirement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ttm.ecore#//Requirement/incomingCoverLinks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//Requirement/subCoveringRequirementsRatio"/>
+    </genClasses>
+    <genClasses ecoreClass="ttm.ecore#//CoverLink">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ttm.ecore#//CoverLink/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ttm.ecore#//CoverLink/to"/>
+    </genClasses>
+    <genClasses ecoreClass="ttm.ecore#//NavigationLink">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ttm.ecore#//NavigationLink/to"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ttm.ecore#//NavigationLink/from"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ttm.ecore#//AbstractLink">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//AbstractLink/unresolved"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//AbstractLink/referencedID"/>
+    </genClasses>
+    <genClasses ecoreClass="ttm.ecore#//Project">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//Project/filename"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttm.ecore#//Project/documents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttm.ecore#//Project/rules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttm.ecore#//Project/coverageResults"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//Project/anyDocumentCovered"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ttm.ecore#//Element">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttm.ecore#//Element/activatedRules"/>
+    </genClasses>
+    <genClasses ecoreClass="ttm.ecore#//RuleInstance">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ttm.ecore#//RuleInstance/element"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ttm.ecore#//RuleInstance/baseRule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//RuleInstance/displayMessage"/>
+    </genClasses>
+    <genClasses ecoreClass="ttm.ecore#//AttributeOwner">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttm.ecore#//AttributeOwner/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="ttm.ecore#//Rule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//Rule/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//Rule/level"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ttm.ecore#//Rule/ruleInstances"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//Rule/message"/>
+    </genClasses>
+    <genClasses ecoreClass="ttm.ecore#//CoverageResult">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//CoverageResult/coverage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ttm.ecore#//CoverageResult/project"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ttm.ecore#//CoverageResult/fromDocument"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ttm.ecore#//CoverageResult/toDocument"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ttm.ecore#//CoverageResult/fromCoverPoint"/>
+    </genClasses>
+    <genClasses ecoreClass="ttm.ecore#//CoverPoint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttm.ecore#//CoverPoint/andCover"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ttm.ecore#//CoverPoint/coveredDocument"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ttm.ecore#//CoverPoint/connectedDocuments"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

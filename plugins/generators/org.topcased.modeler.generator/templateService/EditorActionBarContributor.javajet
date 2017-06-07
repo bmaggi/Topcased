@@ -1,0 +1,22 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports=" org.topcased.modeler.editorconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="EditorActionBarContributor"
+	 version="$Id: EditorActionBarContributor.javajet,v 1.2 2006/05/02 14:04:34 jako Exp $" %>
+<%@ include file="cartoucheAirbus.txt"%>
+
+<%EditorConfiguration configuration = (EditorConfiguration) argument;%>
+package <%=configuration.getProjectName()%>service.actions;
+
+import org.topcased.modeler.actions.ModelerActionBarContributor;
+
+/**
+ * Generated Actions
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class <%=configuration.getPrefix()%>ServiceEditorActionBarContributor extends ModelerActionBarContributor
+{
+    // TODO defined customized actions
+}

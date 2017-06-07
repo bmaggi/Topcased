@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramconfigurator:DiagramConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagramconfigurator="http://www.topcased.org/diagramconfigurator/1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" projectName="org.topcased.modeler.carte" name="Carte Definition" package="cartediagram" prefix="Carte" copyrightText="Copyright (c) 2006 Anyware Technologies. All rights reserved. This program&#xA;and the accompanying materials are made available under the terms of the&#xA;Eclipse Public License v1.0 which accompanies this distribution, and is&#xA;available at http://www.eclipse.org/legal/epl-v10.html" samePluginAsEditor="true">
+  <palette name="CartePalette">
+    <paletteCategories name="Objects">
+      <items name="Menu" part="//@parts.0"/>
+      <items name="Vin" part="//@parts.2"/>
+      <items name="Salade" part="//@parts.3"/>
+      <items name="Quiche" part="//@parts.4"/>
+      <items name="Truite" part="//@parts.5"/>
+      <items name="Sole" part="//@parts.6"/>
+      <items name="Saucisse" part="//@parts.7"/>
+      <items name="Steak" part="//@parts.8"/>
+      <items name="Tarte" part="//@parts.9"/>
+      <items name="Glace" part="//@parts.10"/>
+      <items name="Truite2" part="//@parts.11"/>
+    </paletteCategories>
+    <paletteCategories name="Links">
+      <items name="Compose" part="//@parts.12"/>
+    </paletteCategories>
+  </palette>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.1" type="Package"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.2" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.3" type="Graphic With Bottom Label"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.4" type="Cloud" superType="//@parts.1" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.5" type="Cloud" superType="//@parts.1" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.6" type="Cloud" superType="//@parts.1" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.7" type="Cloud" superType="//@parts.1" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.8" type="Cloud" superType="//@parts.1" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.9" type="Cloud" superType="//@parts.1" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.10" type="Cloud" superType="//@parts.1" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.11" type="Cloud" superType="//@parts.1" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.12" prefix="Truite2" type="Computer" superType="//@parts.1" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.13" sourceDecoration="ARROW">
+    <sourceTargetCouple sourceNode="//@parts.0" targetNode="//@parts.1">
+      <refSourceToTarget xsi:type="ecore:EReference" href="carte.ecore#//Menu/plats"/>
+    </sourceTargetCouple>
+  </parts>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="carte.genmodel#//carte/Carte"/>
+    <diagrams diagram="/"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="carte.genmodel#//carte/Menu"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="carte.genmodel#//carte/Plat"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="carte.genmodel#//carte/Vin"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="carte.genmodel#//carte/entree/Salade"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="carte.genmodel#//carte/entree/Quiche"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="carte.genmodel#//carte/platprincipal/poisson/Truite"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="carte.genmodel#//carte/platprincipal/poisson/Sole"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="carte.genmodel#//carte/platprincipal/viande/Saucisse"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="carte.genmodel#//carte/platprincipal/viande/Steak"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="carte.genmodel#//carte/dessert/Tarte"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="carte.genmodel#//carte/dessert/Glace"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="carte.genmodel#//carte/platprincipal/viande/Truite"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" name="Compose"/>
+  <genModel href="carte.genmodel#/"/>
+  <templateRootObject href="carte.genmodel#//carte/Carte"/>
+  <editorConfigurator href="carte.editorconfigurator#/"/>
+</diagramconfigurator:DiagramConfiguration>

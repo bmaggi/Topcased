@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension-point id="markerAttributeContributer" name="MarkerAttributeContributer" schema="schema/markerAttributeContributer.exsd"/>
+   <extension-point id="objectFactory" name="ObjectFactory" schema="schema/objectFactory.exsd"/>
+
+</plugin>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution
+			adaptable="true"
+			id="org.topcased.properties.generator.generatorContribution"
+			nameFilter="*.propertiesconfigurator"
+			objectClass="org.eclipse.core.resources.IFile">
+			<action
+				class="org.topcased.properties.generator.internal.actions.GeneratePropertiesViewAction"
+				enablesFor="1"
+				icon="icons/properties.gif"
+				id="org.topcased.properties.generator.internal.actions.GeneratePropertiesViewAction"
+				label="Properties View"
+				menubarPath="org.topcased.facilities.menu.topcased/org.topcased.facilities.menu.generation/topcasedGroup"/>
+		</objectContribution>
+	</extension>
+
+</plugin>

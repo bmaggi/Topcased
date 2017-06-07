@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.topcased.modeler.diagrams.model:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.topcased.modeler.di.model="http://org.topcased.modeler.di.model" xmlns:org.topcased.modeler.diagrams.model="http://org.topcased.modeler.diagrams.model">
+  <model href="EditorConfiguration.ecore#/"/>
+  <diagrams position="0,0" size="100,100" name="EditorConfiguration" viewport="0,0">
+    <property key="pageFormatName" value="A1_real"/>
+    <property key="diagramWidth" value="2376"/>
+    <property key="diagramHeight" value="3360"/>
+    <property key="pageMarginName" value="Small Margin"/>
+    <property key="diagramTopMargin" value="20"/>
+    <property key="diagramBottomMargin" value="20"/>
+    <property key="diagramLeftMargin" value="20"/>
+    <property key="diagramRightMargin" value="20"/>
+    <property key="orientation" value="landscape"/>
+    <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge" presentation="org.topcased.modeler.ecore.ediagram">
+      <element href="EditorConfiguration.ecore#/"/>
+    </semanticModel>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="1704,62" size="201,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.21 //@diagrams.0/@contained.22"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//EditorConfiguration"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EditorConfiguration/%http:%2F%2Fwww.topcased.org%2Fdocumentation%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EditorConfiguration/name"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EditorConfiguration/projectName"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EditorConfiguration/prefix"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="159,159" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EditorConfiguration/extension"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="199,199" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EditorConfiguration/extensionDiagram"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="1483,162" size="163,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.21 //@diagrams.0/@contained.23 //@diagrams.0/@contained.24 //@diagrams.0/@contained.25"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//DiagramConfiguration"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//DiagramConfiguration/%http:%2F%2Fwww.topcased.org%2Fdocumentation%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//DiagramConfiguration/id"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//DiagramConfiguration/name"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//DiagramConfiguration/package"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="159,159" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//DiagramConfiguration/prefix"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="199,199" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//DiagramConfiguration/layout"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="1593,562" size="151,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.22 //@diagrams.0/@contained.28 //@diagrams.0/@contained.36 //@diagrams.0/@contained.39 //@diagrams.0/@contained.41"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//ObjectConfiguration"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="1483,62" size="141,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.25 //@diagrams.0/@contained.40"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//DiagramReference"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//DiagramReference/%http:%2F%2Fwww.topcased.org%2Fdocumentation%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//DiagramReference/lowerBound"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//DiagramReference/upperBound"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="1483,262" size="152,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.23 //@diagrams.0/@contained.26"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//PaletteConfiguration"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//PaletteConfiguration/%http:%2F%2Fwww.topcased.org%2Fdocumentation%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//PaletteConfiguration/name"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="1483,362" size="125,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.26 //@diagrams.0/@contained.27"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//PaletteCategory"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//PaletteCategory/%http:%2F%2Fwww.topcased.org%2Fdocumentation%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//PaletteCategory/name"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="978,262" size="277,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.24 //@diagrams.0/@contained.28 //@diagrams.0/@contained.29 //@diagrams.0/@contained.32"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//PartConfiguration"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//PartConfiguration/%http:%2F%2Fwww.topcased.org%2Fdocumentation%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//PartConfiguration/defaultForegroundColor"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//PartConfiguration/foregroundColorChangeable"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//PartConfiguration/fontChangeable"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="532,162" size="282,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.29 //@diagrams.0/@contained.30 //@diagrams.0/@contained.31 //@diagrams.0/@contained.37 //@diagrams.0/@contained.38"/>
+      <anchorage graphEdge="//@diagrams.0/@contained.30 //@diagrams.0/@contained.31"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//NodePartConfiguration"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//NodePartConfiguration/%http:%2F%2Fwww.topcased.org%2Fdocumentation%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//NodePartConfiguration/type"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//NodePartConfiguration/defaultWidth"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//NodePartConfiguration/defaultHeight"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="159,159" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//NodePartConfiguration/defaultBackgroundColor"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="199,199" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//NodePartConfiguration/backgroundColorChangeable"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="239,239" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//NodePartConfiguration/resizing"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="279,279" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//NodePartConfiguration/container"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="319,319" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//NodePartConfiguration/layout"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="359,359" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//NodePartConfiguration/directEditable"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="57,103" size="249,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.32 //@diagrams.0/@contained.33 //@diagrams.0/@contained.34 //@diagrams.0/@contained.35"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//EdgePartConfiguration"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EdgePartConfiguration/%http:%2F%2Fwww.topcased.org%2Fdocumentation%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EdgePartConfiguration/sourceDecoration"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EdgePartConfiguration/targetDecoration"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EdgePartConfiguration/defaultRouter"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="43,235" size="167,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.34 //@diagrams.0/@contained.35"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//EdgeObject"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EdgeObject/type"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="1483,462" size="121,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.27 //@diagrams.0/@contained.36"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//PaletteItem"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//PaletteItem/%http:%2F%2Fwww.topcased.org%2Fdocumentation%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//PaletteItem/name"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//PaletteItem/type"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="532,62" size="248,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.33 //@diagrams.0/@contained.37 //@diagrams.0/@contained.38"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//SourceTargetCouple"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//SourceTargetCouple/%http:%2F%2Fwww.topcased.org%2Fdocumentation%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//SourceTargetCouple/containerType"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//SourceTargetCouple/autoRef"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//SourceTargetCouple/reversible"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="911,56" size="187,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.39 //@diagrams.0/@contained.40"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//ModelObjectConfiguration"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//ModelObjectConfiguration/%http:%2F%2Fwww.topcased.org%2Fdocumentation%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="1725,462" size="193,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.41"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//SimpleObjectConfiguration"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//SimpleObjectConfiguration/%http:%2F%2Fwww.topcased.org%2Fdocumentation%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//SimpleObjectConfiguration/name"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="852,729" size="157,-1">
+      <anchorage/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//EdgeContainerType"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EdgeContainerType/NONE"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EdgeContainerType/SOURCE"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EdgeContainerType/SOURCE_CONTAINER"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="159,159" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EdgeContainerType/DIAGRAM"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="199,199" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EdgeContainerType/TARGET"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="239,239" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EdgeContainerType/TARGET_CONTAINER"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="294,729" size="128,-1">
+      <anchorage/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//ToolType"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//ToolType/NODE"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//ToolType/EDGE"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="156,729" size="128,-1">
+      <anchorage/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//ResizableType"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//ResizableType/NONE"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//ResizableType/WIDTH"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//ResizableType/HEIGHT"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="159,159" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//ResizableType/ALL"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="432,729" size="128,-1">
+      <anchorage/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//LayoutType"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//LayoutType/XYLayout"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//LayoutType/ClassLayout"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//LayoutType/ToolbarLayout"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="159,159" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//LayoutType/PortLayout"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="199,199" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//LayoutType/MultiPortLayout"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="13,729" size="128,-1">
+      <anchorage/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//DecorationType"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//DecorationType/NONE"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//DecorationType/ARROW"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//DecorationType/TRIANGLE"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="159,159" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//DecorationType/DIAMOND"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="706,729" size="130,-1">
+      <anchorage/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//RouterType"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//RouterType/ObliqueRouter"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//RouterType/RectilinearRouter"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//RouterType/TreeRouter"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="568,729" size="128,-1">
+      <anchorage/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//EdgeObjectType"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EdgeObjectType/Source"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EdgeObjectType/Middle"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="EditorConfiguration.ecore#//EdgeObjectType/Target"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.0/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//EditorConfiguration/diagrams"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.0/@anchorage.0 //@diagrams.0/@contained.2/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//EditorConfiguration/objects"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.1/@anchorage.0 //@diagrams.0/@contained.4/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//DiagramConfiguration/palette"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.1/@anchorage.0 //@diagrams.0/@contained.6/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//DiagramConfiguration/parts"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.3/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//DiagramReference/diagram"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.4/@anchorage.0 //@diagrams.0/@contained.5/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//PaletteConfiguration/paletteCategories"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.5/@anchorage.0 //@diagrams.0/@contained.10/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//PaletteCategory/items"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.6/@anchorage.0 //@diagrams.0/@contained.2/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//PartConfiguration/object"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.7/@anchorage.0 //@diagrams.0/@contained.6/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.7/@anchorage.0 //@diagrams.0/@contained.7/@anchorage.1">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//NodePartConfiguration/childElements"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.7/@anchorage.0 //@diagrams.0/@contained.7/@anchorage.1">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//NodePartConfiguration/superType"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.8/@anchorage.0 //@diagrams.0/@contained.6/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.8/@anchorage.0 //@diagrams.0/@contained.11/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//EdgePartConfiguration/sourceTargetCouple"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.8/@anchorage.0 //@diagrams.0/@contained.9/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//EdgePartConfiguration/edgeObjects"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.8/@anchorage.0 //@diagrams.0/@contained.9/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//EdgePartConfiguration/directEditable"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.10/@anchorage.0 //@diagrams.0/@contained.2/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//PaletteItem/object"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.11/@anchorage.0 //@diagrams.0/@contained.7/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//SourceTargetCouple/sourceNode"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.11/@anchorage.0 //@diagrams.0/@contained.7/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//SourceTargetCouple/targetNode"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.12/@anchorage.0 //@diagrams.0/@contained.2/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.12/@anchorage.0 //@diagrams.0/@contained.3/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="EditorConfiguration.ecore#//ModelObjectConfiguration/diagrams"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.13/@anchorage.0 //@diagrams.0/@contained.2/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+  </diagrams>
+</org.topcased.modeler.diagrams.model:Diagrams>

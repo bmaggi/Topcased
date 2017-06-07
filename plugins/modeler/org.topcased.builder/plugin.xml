@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension-point id="taskTagExtensions" name="Tag task extensions" schema="schema/taskTagExtension.exsd"/>
+
+   <extension
+         id="taskTagBuilder"
+         name="%builderProjectName"
+         point="org.eclipse.core.resources.builders">
+      <builder
+            hasNature="false">
+         <run
+               class="org.topcased.builder.TaskTagBuilder">
+         </run>
+      </builder>
+   </extension>
+   
+
+   <extension
+         id="tasksTags"
+         name="%taskTagMarkerName"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.emf.ecore.diagnostic">
+      </super>
+      <super
+            type="org.eclipse.core.resources.taskmarker">
+      </super>
+      <persistent 
+            value="true"
+      />
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.topcased.facilities.preferences.TopcasedPreferencePage"
+            class="org.topcased.builder.BuilderPreferencePage"
+            id="org.topcased.builder.BuilderPreferencePage"
+            name="%builderPrefPageName"/>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer class="org.topcased.builder.BuilderPreferenceInitializer"/>
+   </extension>
+   
+</plugin>

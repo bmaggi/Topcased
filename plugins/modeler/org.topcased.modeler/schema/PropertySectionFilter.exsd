@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.topcased.modeler" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.topcased.modeler" id="propertysectionfilter" name="Filter Property Section"/>
+      </appInfo>
+      <documentation>
+         A filter to allow third party tool to hide some properties section.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="section" minOccurs="0" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="section">
+      <complexType>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  an unique id
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The ID of the property section that will be filtered
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="filtered" type="boolean">
+            <annotation>
+               <documentation>
+                  If the section is filtered
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         Topcased version 3.2.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         &lt;extension
+         point=&quot;org.topcased.modeler.propertysectionfilter&quot;&gt;
+      &lt;section
+            filtered=&quot;true&quot;
+            name=&quot;org.topcased.modeler.uml.internal.properties.sections.TypedElementTypeSection&quot;&gt;
+      &lt;/section&gt;
+   &lt;/extension&gt;
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiinfo"/>
+      </appInfo>
+      <documentation>
+         Limitations : 
+In order for this extension point to work, the section to hide must have a specific filter defined. This filter has to extend the class SectionFilter. 
+
+If it is not the case, raise a bug against Topcased.
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Copyright (c) 2009 Atos Origin.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+      </documentation>
+   </annotation>
+
+</schema>

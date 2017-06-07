@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: HTML Exporter
+Bundle-SymbolicName: org.topcased.modeler.export.html;singleton:=true
+Bundle-Version: 3.1.0.qualifier
+Bundle-Activator: org.topcased.modeler.export.html.HTMLPlugin
+Bundle-Vendor: Topcased
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.topcased.modeler;bundle-version="3.0.0",
+ org.topcased.modeler.di;bundle-version="3.0.0",
+ org.topcased.modeler.export;bundle-version="2.5.0",
+ org.eclipse.xpand;bundle-version="0.7.0",
+ org.eclipse.emf.mwe.core;bundle-version="0.7.0",
+ org.eclipse.xtend;bundle-version="0.7.0",
+ org.eclipse.xtend.typesystem.emf;bundle-version="0.7.0"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Export-Package: org.topcased.modeler.export.html

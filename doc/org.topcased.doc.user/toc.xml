@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Topcased User Guide" topic="doc/index.html">
+	<topic label="Modeling Framework" href="doc/index.html">
+		<topic label="Description" href="doc/description.html"/>
+		<topic label="Documentation" href="doc/documentation.html">
+			<topic label="Generate an Editor" href="doc/tutorials/generateEditor.html"/>
+			<topic label="Generate a Properties View" href="doc/tutorials/generatePropertiesView.html"/>
+			<topic label="Generate an Outline Menu" href="doc/tutorials/generateOutlineMenu.html"/>
+			<topic label="Network Editor" href="doc/tutorials/tutorialNetwork.html"/>
+   <topic href="doc/scripting.html" label="Scripting Support">
+   </topic>
+		</topic>
+		<topic label="FAQ" href="doc/faq.html"/>
+	</topic>
+	<anchor id="main-anchor"/> 
+</toc>

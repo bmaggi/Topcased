@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurator:EditorConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configurator="http://www.topcased.org/configurator/1.0" name="Generated AADLCOTRE Editor" projectName="org.topcased.modeler.aadlcotre" prefix="AADLCOTRE" extension="aadlcotre" extensionDiagram="aadlcotredi">
+  <genModel href="aadlcotre.genmodel#/"/>
+  <diagrams id="org.topcased.modeler.aadlcotre.aadlspecdiagram" name="AADL Specifications Diagram" package="aadlspecdiagram" prefix="AADLSpec">
+    <palette name="AADLSpecDiagramPalette">
+      <paletteCategories name="Objects">
+        <items name="System Instance" object="//@objects.5"/>
+        <items name="Property Set" object="//@objects.1"/>
+        <items name="Property" object="//@objects.2"/>
+      </paletteCategories>
+      <paletteCategories name="Types">
+        <items name="System" object="//@objects.3"/>
+        <items name="Process" object="//@objects.6"/>
+        <items name="Data" object="//@objects.9"/>
+        <items name="Thread" object="//@objects.12"/>
+        <items name="ThreadGroup" object="//@objects.15"/>
+        <items name="Memory" object="//@objects.18"/>
+        <items name="Processor" object="//@objects.21"/>
+        <items name="Bus" object="//@objects.24"/>
+        <items name="Device" object="//@objects.27"/>
+        <items name="Property" object="//@objects.30"/>
+        <items name="Require" object="//@objects.31"/>
+        <items name="Provide" object="//@objects.32"/>
+      </paletteCategories>
+      <paletteCategories name="Implementations">
+        <items name="System" object="//@objects.4"/>
+        <items name="Process" object="//@objects.7"/>
+        <items name="Data" object="//@objects.10"/>
+        <items name="Thread" object="//@objects.13"/>
+        <items name="ThreadGroup" object="//@objects.16"/>
+        <items name="Memory" object="//@objects.19"/>
+        <items name="Processor" object="//@objects.22"/>
+        <items name="Bus" object="//@objects.25"/>
+        <items name="Device" object="//@objects.28"/>
+        <items name="Property" object="//@objects.33"/>
+        <items name="Assume Contract" object="//@objects.34"/>
+        <items name="Guarantee Contract" object="//@objects.35"/>
+        <items name="Behavior" object="//@objects.36"/>
+        <items name="Behavior With Sub" object="//@objects.37"/>
+      </paletteCategories>
+    </palette>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.5" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.1" type="Class" childElements="//@diagrams.0/@parts.2"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.2" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.3" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.4" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.6" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.7" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.9" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.10" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.12" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.13" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.15" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.16" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.18" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.19" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.21" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.22" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.24" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.25" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.27" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.28" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.30" type="Label"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.31" type="Label"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.32" type="Label"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.33" type="Label"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.34" type="Label"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.35" type="Label"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.36" type="Label"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.37" type="Label"/>
+  </diagrams>
+  <diagrams id="org.topcased.modeler.aadlcotre.systemdiagram" name="SystemDiagram" package="systemdiagram" prefix="System">
+    <palette name="SystemDiagramPalette">
+      <paletteCategories name="Instances">
+        <items name="Processor" object="//@objects.23"/>
+        <items name="Memory" object="//@objects.20"/>
+        <items name="Device" object="//@objects.29"/>
+        <items name="Bus" object="//@objects.26"/>
+      </paletteCategories>
+    </palette>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.23" type="State"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.20" type="State"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.29" type="State"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.26" type="State"/>
+  </diagrams>
+  <diagrams id="org.topcased.modeler.aadlcotre.processordiagram" name="ProcessorDiagram" package="processordiagram" prefix="Processor">
+    <palette name="ProcessorDiagramPalette">
+      <paletteCategories name="Instances">
+        <items name="Process" object="//@objects.8"/>
+      </paletteCategories>
+    </palette>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.8" type="State"/>
+  </diagrams>
+  <diagrams id="org.topcased.modeler.aadlcotre.processdiagram" name="ProcessDiagram" package="processdiagram" prefix="Process">
+    <palette name="ProcessDiagramPalette">
+      <paletteCategories name="Instances">
+        <items name="Data" object="//@objects.11"/>
+        <items name="ThreadGroup" object="//@objects.17"/>
+        <items name="Thread" object="//@objects.14"/>
+      </paletteCategories>
+    </palette>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.11" type="State"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.17" type="State"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.14" type="State"/>
+  </diagrams>
+  <diagrams id="org.topcased.modeler.aadlcotre.threadgroupdiagram" name="ThreadGroupDiagram" package="threadgroupdiagram" prefix="ThreadGroup">
+    <palette name="ThreadGroupDiagramPalette">
+      <paletteCategories name="Instances">
+        <items name="Thread" object="//@objects.14"/>
+      </paletteCategories>
+    </palette>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.14" type="State"/>
+  </diagrams>
+  <diagrams id="org.topcased.modeler.aadlcotre.behaviordiagram" name="BehaviorDiagram" package="behaviordiagram" prefix="Behavior">
+    <palette name="BehaviorDiagramPalette">
+      <paletteCategories name="CommonObjects">
+        <items name="Vars Declaration" object="//@objects.38"/>
+        <items name="Var Declaration" object="//@objects.39"/>
+        <items name="Expression" object="//@objects.40"/>
+        <items name="Exception" object="//@objects.41"/>
+      </paletteCategories>
+      <paletteCategories name="SubProgram">
+        <items name="Op Section" object="//@objects.42"/>
+      </paletteCategories>
+      <paletteCategories name="SubObjects">
+        <items name="InitialState" object="//@objects.43"/>
+        <items name="State" object="//@objects.45"/>
+        <items name="FinalState" object="//@objects.44"/>
+        <items name="Transition" type="edge" object="//@objects.46"/>
+      </paletteCategories>
+    </palette>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.38" type="Class" childElements="//@diagrams.5/@parts.1"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.39" type="Label"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.42" type="Container" childElements="//@diagrams.5/@parts.0 //@diagrams.5/@parts.3 //@diagrams.5/@parts.4 //@diagrams.5/@parts.5 //@diagrams.5/@parts.6 //@diagrams.5/@parts.7"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.40" type="Label"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.41" type="Label"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.43" type="State"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.45" type="State"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.44" type="State"/>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.46"/>
+  </diagrams>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/AADLSpecification"/>
+    <diagrams diagram="//@diagrams.0" lowerBound="1" upperBound="1"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/PropertySet"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/PropertyNameDeclaration"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/SystemType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/SystemImplementation"/>
+    <diagrams diagram="//@diagrams.1"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/SystemInstance"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/ProcessType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/ProcessImplementation"/>
+    <diagrams diagram="//@diagrams.3"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/ProcessInstance"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/DataType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/DataImplementation"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/DataInstance"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/ThreadType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/ThreadImplementation"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/ThreadInstance"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/ThreadGroupType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/ThreadGroupImplementation"/>
+    <diagrams diagram="//@diagrams.4"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/ThreadGroupInstance"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/MemoryType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/MemoryImplementation"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/MemoryInstance"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/ProcessorType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/ProcessorImplementation"/>
+    <diagrams diagram="//@diagrams.2"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/ProcessorInstance"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/BusType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/BusImplementation"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/BusInstance"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/DeviceType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/DeviceImplementation"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/DeviceInstance"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/ComponentTypePropertyAssociation"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/SubComponentAccess"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/SubProgramSpec"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/PropertyAssociation"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/AnnexAssumesSubClause"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/AnnexGaranteesSubClause"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/BehaviorWithoutSub"/>
+    <diagrams diagram="//@diagrams.5"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/BehaviorWithSub"/>
+    <diagrams diagram="//@diagrams.5"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/VarsDeclaration"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/VarDeclaration"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/Expression"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/Exception"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/OpSection"/>
+    <diagrams diagram="//@diagrams.5"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/InitialState"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/FinalState"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/State"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadlcotre.genmodel#//aadlcotre/Transition"/>
+  </objects>
+</configurator:EditorConfiguration>

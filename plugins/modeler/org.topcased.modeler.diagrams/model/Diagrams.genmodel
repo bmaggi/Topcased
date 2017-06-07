@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=""
+    modelDirectory="/org.topcased.modeler.diagrams/src" editDirectory="/org.topcased.modeler.diagrams/src"
+    editorDirectory="/org.topcased.modeler.diagrams/src" modelPluginID="org.topcased.modeler.diagrams"
+    templateDirectory="" redirection="" forceOverwrite="true" modelName="Diagrams"
+    modelPluginClass="org.topcased.modeler.diagrams.model.internal.DiagramsPlugin"
+    editPluginClass="" editorPluginClass="" featureMapWrapperClass="" testsDirectory=""
+    testSuiteClass="" importerID="org.eclipse.emf.importer.ecore" containmentProxies="true"
+    complianceLevel="5.0" usedGenPackages="../../org.topcased.modeler.di/model/DI.genmodel#//model">
+  <foreignModel>Diagrams.ecore</foreignModel>
+  <genPackages prefix="Diagrams" basePackage="org.topcased.modeler.diagrams" resource="XMI"
+      disposableProviderFactory="true" classPackageSuffix="internal.impl" presentationPackageSuffix="internal.presentation"
+      testsPackageSuffix="" generateExampleClass="false" ecorePackage="Diagrams.ecore#/">
+    <genClasses ecoreClass="Diagrams.ecore#//Diagrams">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference Diagrams.ecore#//Diagrams/model"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Diagrams.ecore#//Diagrams/diagrams"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference Diagrams.ecore#//Diagrams/activeDiagram"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Diagrams.ecore#//Diagrams/subdiagrams"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference Diagrams.ecore#//Diagrams/parent"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

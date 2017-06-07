@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurator:EditorConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configurator="http://www.topcased.org/configurator/1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Family Editor" projectName="org.topcased.modeler.family" prefix="Family" extension="family" extensionDiagram="familydi" pluginVersion="0.10.0">
+  <genModel href="family.genmodel#/"/>
+  <diagrams id="org.topcased.modeler.family.familytree" name="Family Tree" package="familytree" prefix="Family">
+    <palette name="PaletteFamlilyTree">
+      <paletteCategories name="Persons">
+        <items name="Family" part="//@diagrams.0/@parts.0"/>
+        <items name="Man" part="//@diagrams.0/@parts.2"/>
+        <items name="Woman" part="//@diagrams.0/@parts.3"/>
+      </paletteCategories>
+      <paletteCategories name="Links">
+        <items name="Wedding" part="//@diagrams.0/@parts.4"/>
+        <items name="Parent" part="//@diagrams.0/@parts.5"/>
+      </paletteCategories>
+    </palette>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.0" type="Package" childElements="//@diagrams.0/@parts.0 //@diagrams.0/@parts.2 //@diagrams.0/@parts.3" container="true" defaultWidth="200"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.5"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.1" type="Man" superType="//@diagrams.0/@parts.1" resizing="WIDTH"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.2" type="Woman" superType="//@diagrams.0/@parts.1" resizing="WIDTH"/>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.3" defaultForegroundColor="0,0,255" defaultRouter="RectilinearRouter">
+      <sourceTargetCouple sourceNode="//@diagrams.0/@parts.2" targetNode="//@diagrams.0/@parts.3">
+        <refSourceToTarget xsi:type="ecore:EReference" href="family.ecore#//Man/wife"/>
+        <refTargetToSource xsi:type="ecore:EReference" href="family.ecore#//Woman/husband"/>
+      </sourceTargetCouple>
+      <sourceTargetCouple sourceNode="//@diagrams.0/@parts.3" targetNode="//@diagrams.0/@parts.2">
+        <refSourceToTarget xsi:type="ecore:EReference" href="family.ecore#//Woman/husband"/>
+        <refTargetToSource xsi:type="ecore:EReference" href="family.ecore#//Man/wife"/>
+      </sourceTargetCouple>
+    </parts>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.4" targetDecoration="ARROW" defaultRouter="TreeRouter">
+      <sourceTargetCouple sourceNode="//@diagrams.0/@parts.2" targetNode="//@diagrams.0/@parts.1">
+        <refSourceToTarget xsi:type="ecore:EReference" href="family.ecore#//Person/children"/>
+        <refTargetToSource xsi:type="ecore:EReference" href="family.ecore#//Person/father"/>
+      </sourceTargetCouple>
+      <sourceTargetCouple sourceNode="//@diagrams.0/@parts.3" targetNode="//@diagrams.0/@parts.1">
+        <refSourceToTarget xsi:type="ecore:EReference" href="family.ecore#//Person/children"/>
+        <refTargetToSource xsi:type="ecore:EReference" href="family.ecore#//Person/mother"/>
+      </sourceTargetCouple>
+    </parts>
+  </diagrams>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="family.genmodel#//family/Family"/>
+    <diagrams diagram="//@diagrams.0"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="family.genmodel#//family/Man"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="family.genmodel#//family/Woman"/>
+  </objects>
+  <objects xsi:type="configurator:SimpleObjectConfiguration" name="Wedding"/>
+  <objects xsi:type="configurator:SimpleObjectConfiguration" name="Parent"/>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="family.genmodel#//family/Person"/>
+  </objects>
+</configurator:EditorConfiguration>

@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.topcased.modeler" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.topcased.modeler" id="actionPrecondition" name="Action Precondition"/>
+      </appInfo>
+      <documentation>
+         This extension point allows the user to specify a precondition for a predefined basic action of the editor. Before executing the action, the precondition will be checked to cancell if needed.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <sequence minOccurs="0" maxOccurs="unbounded">
+            <element ref="precondition"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="precondition">
+      <annotation>
+         <documentation>
+            A precondition to check before executing a given action.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="action" use="required">
+            <annotation>
+               <documentation>
+                  The action on which the check should be performed before execution :
+&quot;Delete&quot; for org.topcased.modeler.internal.actions.DeleteAction,
+&quot;DeleteModel&quot; for org.topcased.modeler.internal.actions.DeleteModelObjectAction,
+&quot;DeleteGraph&quot; for org.topcased.modeler.internal.actions.DeleteGraphElementAction.
+               </documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <enumeration value="Delete">
+                  </enumeration>
+                  <enumeration value="DeleteModel">
+                  </enumeration>
+                  <enumeration value="DeleteGraph">
+                  </enumeration>
+               </restriction>
+            </simpleType>
+         </attribute>
+         <attribute name="checker" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The class which will perform the check before the action is executed. This check can rely on a preference, on model information, on the result of a popup...
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.topcased.modeler.ActionConditionChecker"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="priority">
+            <annotation>
+               <documentation>
+                  The priority for checking the condition.
+You may define &quot;Highest&quot; to be sure the condition will be checked before low priority conditions.
+Default is &quot;Low&quot;.
+               </documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <enumeration value="Low">
+                  </enumeration>
+                  <enumeration value="Highest">
+                  </enumeration>
+               </restriction>
+            </simpleType>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         4.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         You will find an example in this plugin, which may display a confirmation dialog, based on a preference.
+      &lt;extension
+            point=&quot;org.topcased.modeler.actionPrecondition&quot;&gt;
+         &lt;precondition
+               action=&quot;Delete&quot;
+               checker=&quot;org.topcased.modeler.actions.preconditions.DeleteConfirmationChecker&quot;
+               priority=&quot;Highest&quot;&gt;
+         &lt;/precondition&gt;
+         &lt;precondition
+               action=&quot;DeleteModel&quot;
+               checker=&quot;org.topcased.modeler.actions.preconditions.DeleteConfirmationChecker&quot;
+               priority=&quot;Highest&quot;&gt;
+         &lt;/precondition&gt;
+      &lt;/extension&gt;
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiinfo"/>
+      </appInfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         None
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Copyright (c) 2010 AIRBUS FRANCE.
+      </documentation>
+   </annotation>
+
+</schema>

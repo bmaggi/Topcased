@@ -1,0 +1,7 @@
+MainModel : http://www.topcased.org/Diagrams/1.0
+
+context di::GraphNode
+	inv graphnode_is_resolved: 
+		semanticModel.oclIsTypeOf(di::EMFSemanticModelBridge) implies not semanticModel.oclAsType(di::EMFSemanticModelBridge).element.oclIsUndefined() and 
+			not semanticModel.oclAsType(di::EMFSemanticModelBridge).element.eIsProxy()
+--@error GraphNode <%self%> is unresolved

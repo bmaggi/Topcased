@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Rich Text documentation common
+Bundle-SymbolicName: org.topcased.richtext.common;singleton:=true
+Bundle-Version: 1.5.1.qualifier
+Bundle-ClassPath: common.jar, lib/jtidy-8.0-20060801.131059-3.jar
+Bundle-Activator: org.topcased.richtext.common.CommonPlugin
+Bundle-Vendor: Topcased
+Bundle-Localization: plugin
+Require-Bundle: com.ibm.icu;visibility:=reexport,
+ org.eclipse.core.resources;visibility:=reexport,
+ org.eclipse.core.runtime;visibility:=reexport,
+ org.apache.ant;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Export-Package: org.topcased.richtext.common,
+ org.topcased.richtext.common.html,
+ org.topcased.richtext.common.preferences,
+ org.topcased.richtext.common.serviceability,
+ org.topcased.richtext.common.utils,
+ org.topcased.richtext.common.xml
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+

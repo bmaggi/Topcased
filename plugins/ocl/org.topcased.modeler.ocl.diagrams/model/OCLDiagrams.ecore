@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ocl"
+    nsURI="http://www.eclipse.org/ocl/1.1.0/OCLDiagrams" nsPrefix="ocl">
+  <eSubpackages name="ocldiagrams" nsURI="http://www.topcased.org/ocl/1.0/OCLDiagrams"
+      nsPrefix="ocl.diagrams">
+    <eClassifiers xsi:type="ecore:EClass" name="AnyType">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/BusinessType"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/AnyType">
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BagType">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/CollectionType"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/BagType">
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionType">
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/CollectionType">
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ElementType" eSuperTypes="#//ocldiagrams/BusinessType platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/ElementType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InvalidType">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/BusinessType"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/InvalidType">
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageType">
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/MessageType">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSetType">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/CollectionType"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/OrderedSetType">
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType">
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/PrimitiveType">
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SequenceType">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/CollectionType"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/SequenceType">
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetType">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/CollectionType"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/SetType">
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TupleType">
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/TupleType">
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TypeType">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/BusinessType"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/TypeType">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VoidType">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/BusinessType"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/VoidType">
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CallOperationAction">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Constraint" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="specification" lowerBound="1"
+          containment="true">
+        <eGenericType eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//utilities/ExpressionInOCL">
+          <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
+          <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="constrainedElements"
+          upperBound="-1" eType="#//ocldiagrams/BusinessType"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotype" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SendSignalAction">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="signal" lowerBound="1"
+          eType="#//ocldiagrams/BusinessType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExpressionInOCL">
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//utilities/ExpressionInOCL">
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AssociationCallExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/NavigationCallExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/AssociationClassCallExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BooleanLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/PrimitiveLiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/BooleanLiteralExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CallExp" abstract="true">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/CallExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionItem">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/CollectionLiteralPart"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/CollectionItem">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/LiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/CollectionLiteralExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionLiteralPart" abstract="true">
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/CollectionLiteralPart">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionRange">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/CollectionLiteralPart"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/CollectionRange">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EnumLiteralExp">
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/LiteralExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/EnumLiteralExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EEnumLiteral"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FeatureCallExp" abstract="true">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/CallExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/FeatureCallExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IfExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/IfExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IntegerLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/NumericLiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/IntegerLiteralExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UnlimitedNaturalLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/NumericLiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/UnlimitedNaturalLiteralExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InvalidLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/LiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/InvalidLiteralExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IterateExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/LoopExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/IterateExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IteratorExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/LoopExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/IteratorExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LetExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/LetExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LiteralExp" abstract="true">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/LiteralExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LoopExp" abstract="true">
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/LoopExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
+      </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/CallExp"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/MessageExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="#//ocldiagrams/CallOperationAction"/>
+        <eTypeArguments eClassifier="#//ocldiagrams/SendSignalAction"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NavigationCallExp" abstract="true">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/FeatureCallExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/NavigationCallExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NullLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/LiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/NullLiteralExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NumericLiteralExp" abstract="true">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/PrimitiveLiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/NumericLiteralExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OCLExpression" abstract="true">
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/OCLExpression">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OperationCallExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/FeatureCallExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/OperationCallExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveLiteralExp" abstract="true">
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/PrimitiveLiteralExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/LiteralExp"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PropertyCallExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/NavigationCallExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/PropertyCallExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RealLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/NumericLiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/RealLiteralExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StateExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/StateExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StringLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/PrimitiveLiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/StringLiteralExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TupleLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/LiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/TupleLiteralExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TupleLiteralPart">
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/TupleLiteralPart">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TypeExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/TypeExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UnspecifiedValueExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/UnspecifiedValueExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Variable">
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/Variable">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VariableExp">
+      <eGenericSuperTypes eClassifier="#//ocldiagrams/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/VariableExp">
+        <eTypeArguments eClassifier="#//ocldiagrams/BusinessType"/>
+        <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BusinessType" abstract="true" eSuperTypes="../../org.topcased.modeler.diagrams/model/Diagrams.ecore#//Diagrams"/>
+  </eSubpackages>
+</ecore:EPackage>

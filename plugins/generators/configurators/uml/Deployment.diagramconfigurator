@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramconfigurator:DiagramConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagramconfigurator="http://www.topcased.org/diagramconfigurator/1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" projectName="org.topcased.modeler.uml.deploymentdiagram" name="Deployment Diagram" package="deploymentdiagram" prefix="Deployment" defaultFont="Sans-regular-10" copyrightText="Copyright (c) 2006 AIRBUS FRANCE. All rights reserved. This program and the&#xA;accompanying materials are made available under the terms of the Eclipse&#xA;Public License v1.0 which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html">
+  <palette name="DeploymentDiagramPalette">
+    <paletteCategories name="Objects">
+      <items name="Node" part="//@parts.4"/>
+      <items name="Device" part="//@parts.5"/>
+      <items name="Execution Environment" part="//@parts.6"/>
+      <items name="Artifact" part="//@parts.7"/>
+      <items name="Deployment Specification" part="//@parts.8"/>
+    </paletteCategories>
+    <paletteCategories name="Connections">
+      <items name="Deployment" part="//@parts.9"/>
+      <items name="Manifestation" part="//@parts.10"/>
+      <items name="CommunicationPath" part="//@parts.11"/>
+      <items name="Dependency" part="//@parts.12"/>
+      <items name="Deployment Specification Link" part="//@parts.15"/>
+    </paletteCategories>
+    <paletteCategories name="Comment">
+      <items name="Comment" part="//@parts.13"/>
+      <items name="Comment Link" part="//@parts.14"/>
+    </paletteCategories>
+  </palette>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.1" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.2" superType="//@parts.0" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.3" superType="//@parts.0" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.4" superType="//@parts.0" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.5" defaultFont="Sans-bold-10" type="Container With Inner Label" superType="//@parts.2" container="true" defaultWidth="125" defaultHeight="60" minimumWidth="80" minimumHeight="40" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.6" defaultFont="Sans-bold-10" type="Container With Inner Label" superType="//@parts.4" container="true" defaultWidth="125" defaultHeight="60" minimumWidth="100" minimumHeight="50" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.7" defaultFont="Sans-bold-10" type="Container With Inner Label" superType="//@parts.4" container="true" defaultWidth="225" defaultHeight="60" minimumWidth="200" minimumHeight="50" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.8" defaultFont="Sans-bold-10" type="Container With Inner Label" superType="//@parts.1" container="true" defaultWidth="150" defaultHeight="60" minimumWidth="140" minimumHeight="50" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.9" defaultFont="Sans-bold-10" type="BorderedLabel" superType="//@parts.7" defaultWidth="180" defaultHeight="60" minimumWidth="160" minimumHeight="50" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.10" lineStyle="CUSTOM" targetDecoration="ARROW">
+    <sourceTargetCouple containerType="TARGET" sourceNode="//@parts.1" targetNode="//@parts.2">
+      <containerObject href="UML.genmodel#//uml/DeploymentTarget"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//DeploymentTarget/deployment"/>
+      <refEdgeToSource xsi:type="ecore:EReference" href="UML.ecore#//Deployment/deployedArtifact"/>
+    </sourceTargetCouple>
+    <edgeObjects id="deploy" type="Middle"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.11" lineStyle="CUSTOM" targetDecoration="ARROW">
+    <sourceTargetCouple containerType="SOURCE" sourceNode="//@parts.7" targetNode="//@parts.3">
+      <containerObject href="UML.genmodel#//uml/Artifact"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Artifact/manifestation"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//Manifestation/utilizedElement"/>
+    </sourceTargetCouple>
+    <edgeObjects id="manifest" type="Middle"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.12" directEditable="//@parts.11/@edgeObjects.0">
+    <sourceTargetCouple containerType="DIAGRAM" sourceNode="//@parts.2" targetNode="//@parts.2">
+      <containerObject href="UML.genmodel#//uml/Package"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Package/packagedElement"/>
+    </sourceTargetCouple>
+    <edgeObjects id="name" type="Middle">
+      <eStructuralFeature xsi:type="ecore:EAttribute" href="UML.ecore#//NamedElement/name"/>
+    </edgeObjects>
+    <edgeObjects id="stereotype" type="Middle"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.13" lineStyle="CUSTOM" targetDecoration="ARROW">
+    <sourceTargetCouple containerType="DIAGRAM" sourceNode="//@parts.7" targetNode="//@parts.7">
+      <containerObject href="UML.genmodel#//uml/Package"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Package/packagedElement"/>
+      <refEdgeToSource xsi:type="ecore:EReference" href="UML.ecore#//Dependency/client"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//Dependency/supplier"/>
+    </sourceTargetCouple>
+    <edgeObjects id="stereotype" type="Middle"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.14" defaultFont="Sans-regular-10" type="Comment" superType="//@parts.0" defaultBackgroundColor="255,195,0" defaultWidth="150" defaultHeight="25" minimumWidth="50" minimumHeight="25" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.15" defaultForegroundColor="255,195,0" defaultFont="Sans-regular-10" lineStyle="CUSTOM">
+    <sourceTargetCouple sourceNode="//@parts.13" targetNode="//@parts.0">
+      <refSourceToTarget xsi:type="ecore:EReference" href="UML.ecore#//Comment/annotatedElement"/>
+    </sourceTargetCouple>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.16" lineStyle="CUSTOM">
+    <sourceTargetCouple sourceNode="//@parts.8" targetNode="//@parts.9">
+      <refTargetToSource xsi:type="ecore:EReference" href="UML.ecore#//Deployment/configuration"/>
+    </sourceTargetCouple>
+  </parts>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Package"/>
+    <diagrams diagram="/"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Element"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/DeployedArtifact"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/DeploymentTarget"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/PackageableElement"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Node"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Device"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/ExecutionEnvironment"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Artifact"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/DeploymentSpecification"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Deployment"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Manifestation"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/CommunicationPath"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Dependency"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Comment"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" name="CommentLink"/>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" name="DeploymentSpecificationLink"/>
+  <genModel href="UML.genmodel#/"/>
+  <templateRootObject href="UML.genmodel#//uml/Package"/>
+  <editorConfigurator href="UML.editorconfigurator#/"/>
+</diagramconfigurator:DiagramConfiguration>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="iterator"
+    nsURI="http://www.topcased.org/1.0.0/iterator/" nsPrefix="iterator">
+  <eClassifiers xsi:type="ecore:EClass" name="EPickerSet">
+    <eOperations name="EOperation0"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pickers" upperBound="-1"
+        eType="#//EPicker" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subsets" upperBound="-1"
+        eType="#//EPickerSet"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Query" abstract="true" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OCLQuery" eSuperTypes="#//Query">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JavaQuery" eSuperTypes="#//Query">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="javaid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EPicker" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="registeredQueries" upperBound="-1"
+        eType="#//Query" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ALGORITHM_KIND">
+    <eLiterals name="DEPTH_WISE"/>
+    <eLiterals name="WIDTH_WISE" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="REPRESENTATION_KIND">
+    <eLiterals name="STATE_WISE"/>
+    <eLiterals name="TRANSITION_WISE" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationSet" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+        eType="#//OCLOperation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OCLOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="context" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="def" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metamodelPrefix" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Iterator" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pickers" lowerBound="1"
+        eType="#//EPickerSet"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="representation" lowerBound="1"
+        eType="#//REPRESENTATION_KIND"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="algorithm" lowerBound="1"
+        eType="#//ALGORITHM_KIND"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationImports" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="checkRedundancy" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigurationModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="iterators" upperBound="-1"
+        eType="#//Iterator" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operationSets" upperBound="-1"
+        eType="#//OperationSet" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pickerSets" upperBound="-1"
+        eType="#//EPickerSet" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

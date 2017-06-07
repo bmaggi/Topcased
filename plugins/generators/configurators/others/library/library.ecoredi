@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0">
+  <model href="library.ecore#/"/>
+  <diagrams position="0,0" size="100,100" name="library" viewport="0,0">
+    <property key="pageFormatName" value="A4"/>
+    <property key="diagramWidth" value="840"/>
+    <property key="diagramHeight" value="1188"/>
+    <property key="pageMarginName" value="Small Margin"/>
+    <property key="diagramTopMargin" value="20"/>
+    <property key="diagramBottomMargin" value="20"/>
+    <property key="diagramLeftMargin" value="20"/>
+    <property key="diagramRightMargin" value="20"/>
+    <property key="orientation" value="portrait"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="org.topcased.modeler.ecore.ediagram">
+      <element href="library.ecore#/"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" position="317,397" size="147,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.5 //@diagrams.0/@contained.7 //@diagrams.0/@contained.8"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="library.ecore#//Book"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="library.ecore#//Book/%http:%2F%2F%2Forg%2Feclipse%2Femf%2Fecore%2Futil%2FExtendedMetaData%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="library.ecore#//Book/title"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="library.ecore#//Book/pages"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="library.ecore#//Book/category"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="30,21" size="150,-1">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="library.ecore#//BookCategory"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="library.ecore#//BookCategory/Mystery"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="library.ecore#//BookCategory/ScienceFiction"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="library.ecore#//BookCategory/Biography"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="205,21" size="282,-1">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="library.ecore#//BookCategoryObject"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="library.ecore#//BookCategoryObject/%http:%2F%2F%2Forg%2Feclipse%2Femf%2Fecore%2Futil%2FExtendedMetaData%"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="-5,-5" size="100,100">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge">
+            <element href="library.ecore#//BookCategoryObject/%http:%2F%2F%2Forg%2Feclipse%2Femf%2Fecore%2Futil%2FExtendedMetaData%/@details.0"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="35,35" size="100,100">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge">
+            <element href="library.ecore#//BookCategoryObject/%http:%2F%2F%2Forg%2Feclipse%2Femf%2Fecore%2Futil%2FExtendedMetaData%/@details.1"/>
+          </semanticModel>
+        </contained>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="37,277" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.6 //@diagrams.0/@contained.7"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="library.ecore#//Library"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="library.ecore#//Library/%http:%2F%2F%2Forg%2Feclipse%2Femf%2Fecore%2Futil%2FExtendedMetaData%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="library.ecore#//Library/name"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="341,158" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.5 //@diagrams.0/@contained.6 //@diagrams.0/@contained.8"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="library.ecore#//Writer"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="library.ecore#//Writer/%http:%2F%2F%2Forg%2Feclipse%2Femf%2Fecore%2Futil%2FExtendedMetaData%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="library.ecore#//Writer/name"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.0/@anchorage.0 //@diagrams.0/@contained.4/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="library.ecore#//Book/author"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.3/@anchorage.0 //@diagrams.0/@contained.4/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="library.ecore#//Library/writers"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.3/@anchorage.0 //@diagrams.0/@contained.0/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="library.ecore#//Library/books"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.4/@anchorage.0 //@diagrams.0/@contained.0/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="library.ecore#//Writer/books"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+  </diagrams>
+</diagrams:Diagrams>

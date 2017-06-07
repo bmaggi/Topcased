@@ -1,0 +1,17 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.modeler.diagramconfigurator.*"
+	 class="ModelDI"
+	 version="$Id: name.modeldijet,v 1.3 2008/03/25 18:42:49 jako Exp $" %>
+<%	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;
+	String extension = diagramConfiguration.getExtension();
+%>
+<?xml version="1.0" encoding="UTF-8"?>
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" activeDiagram="//@diagrams.0">
+  <model href="%escapedName%.<%=extension%>#/"/>
+  <diagrams position="0,0" size="100,100" name="%name%" viewport="0,0">
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="<%=diagramConfiguration.getBasePackage()%>">
+      <element href="%escapedName%.<%=extension%>#/"/>
+    </semanticModel>
+  </diagrams>
+</diagrams:Diagrams>

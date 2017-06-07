@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertiesconfigurator:TabbedView xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:propertiesconfigurator="http://www.topcased.org/PropertiesViewConfiguration/1.0" projectName="org.topcased.properties.sections" id="org.topcased.properties.configuratorID" name="org.topcased.properties.configurator.sections" basePackage="org.topcased.properties.configurator.internal">
+  <categories name="default">
+    <tabs label="General">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Project Name">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/TabbedView/projectName"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.0" label="Id">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/TabbedView/id"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.1" label="Base Package">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/TabbedView/basePackage"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.2" label="Name">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/TabbedView/name"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.3" label="GenModel">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/TabbedView/genModel"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Name">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/Category/name"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Id">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/Tab/id"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.6" label="Label">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/Tab/label"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.7" label="After Tab">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/Tab/afterTab"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.8" label="Indented">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/Tab/indented"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Id">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/AbstractSection/id"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.10" label="Label">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/AbstractSection/label"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.11" label="After Section">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/AbstractSection/afterSection"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.12" label="Feature">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/SingleFeatureSection/feature"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.13" label="MultiLine">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/SingleFeatureSection/multiline"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.12" label="Input">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/AdvancedSection/input"/>
+      </sections>
+    </tabs>
+    <tabs label="Categories" afterTab="//@categories.0/@tabs.0" indented="true">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Categories">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/TabbedView/categories"/>
+      </sections>
+    </tabs>
+    <tabs label="Tabs" afterTab="//@categories.0/@tabs.0" indented="true">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Tabs">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/Category/tabs"/>
+      </sections>
+    </tabs>
+    <tabs label="Sections" afterTab="//@categories.0/@tabs.0" indented="true">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Sections">
+        <feature href="PropertiesViewConfiguration.genmodel#//configurator/Tab/sections"/>
+      </sections>
+    </tabs>
+    <tabs label="Advanced" afterTab="//@categories.0/@tabs.0">
+      <sections xsi:type="propertiesconfigurator:AdvancedSection" label="advancedSection">
+        <input href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore/EObject"/>
+      </sections>
+    </tabs>
+  </categories>
+  <genModel href="PropertiesViewConfiguration.genmodel#/"/>
+</propertiesconfigurator:TabbedView>

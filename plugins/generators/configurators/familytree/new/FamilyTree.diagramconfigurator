@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramconfigurator:DiagramConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagramconfigurator="http://www.topcased.org/diagramconfigurator/0.10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" projectName="org.topcased.modeler.familytreediagram" name="FamilyTree Diagram" package="familytreediagram" prefix="FamilyTree" forceOverwrite="true" copyrightText="Copyright (c) 2006 Anyware Technologies. All rights reserved. This program&#xA;and the accompanying materials are made available under the terms of the&#xA;Eclipse Public License v1.0 which accompanies this distribution, and is&#xA;available at http://www.eclipse.org/legal/epl-v10.html" pluginVersion="0.11.0">
+  <palette name="FamilyTreePalette">
+    <paletteCategories name="Objects">
+      <items name="Man" part="//@parts.1"/>
+      <items name="Woman" part="//@parts.2"/>
+    </paletteCategories>
+    <paletteCategories name="Links">
+      <items name="Wedding" part="//@parts.4"/>
+      <items name="DescendantOf" part="//@parts.3"/>
+    </paletteCategories>
+  </palette>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.1" resizing="NONE" directEditable="false" defaultWidth="0" defaultHeight="0" minimumWidth="0" minimumHeight="0" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.2" defaultForegroundColor="0,0,255" type="Man" superType="//@parts.0" resizing="NONE" directEditable="false" defaultWidth="30" minimumWidth="30" minimumHeight="50" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.3" defaultForegroundColor="255,128,192" type="Woman" superType="//@parts.0" resizing="NONE" directEditable="false" defaultWidth="30" minimumWidth="30" minimumHeight="50" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.5" targetDecoration="TRIANGLE" defaultRouter="TreeRouter">
+    <sourceTargetCouple sourceNode="//@parts.0" targetNode="//@parts.4"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.4" defaultRouter="RectilinearRouter">
+    <sourceTargetCouple containerType="DIAGRAM" reversible="true" sourceNode="//@parts.1" targetNode="//@parts.2">
+      <containerObject href="familytree.genmodel#//familytree/FamilyTree"/>
+      <containerRef xsi:type="ecore:EReference" href="familytree.ecore#//FamilyTree/weddings"/>
+      <refEdgeToSource xsi:type="ecore:EReference" href="familytree.ecore#//Wedding/husband"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="familytree.ecore#//Wedding/wife"/>
+      <refSourceToTarget xsi:type="ecore:EReference" href="familytree.ecore#//Man/wife"/>
+      <refTargetToSource xsi:type="ecore:EReference" href="familytree.ecore#//Woman/husband"/>
+    </sourceTargetCouple>
+  </parts>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="familytree.genmodel#//familytree/FamilyTree"/>
+    <diagrams diagram="/"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="familytree.genmodel#//familytree/Person"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="familytree.genmodel#//familytree/Man"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="familytree.genmodel#//familytree/Woman"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="familytree.genmodel#//familytree/Wedding"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" name="DescendantOf"/>
+  <genModel href="familytree.genmodel#/"/>
+  <templateRootObject href="familytree.genmodel#//familytree/FamilyTree"/>
+  <editorConfigurator href="FamilyTree.editorconfigurator#/"/>
+</diagramconfigurator:DiagramConfiguration>

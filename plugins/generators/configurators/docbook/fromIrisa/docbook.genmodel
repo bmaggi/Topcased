@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.topcased.docbook/src"
+    modelPluginID="org.topcased.docbook" forceOverwrite="true" modelName="Docbook"
+    modelPluginClass="" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0">
+  <foreignModel>docbook.ecore</foreignModel>
+  <genPackages prefix="Docbook" basePackage="org.topcased" resource="XML" disposableProviderFactory="true"
+      generateExampleClass="false" ecorePackage="docbook.ecore#/">
+    <genClasses ecoreClass="docbook.ecore#//Book">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Book/bookinfo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Book/chapter"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Bookinfo">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//Bookinfo/book"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Bookinfo/subtitle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Bookinfo/author"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Bookinfo/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Bookinfo/pubdate"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Author">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Author/honorific"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Author/firstname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Author/surname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Author/authorblug"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//Author/bookinfo"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Subtitle">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//Subtitle/bookinfo"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Chapter">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//Chapter/book"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Chapter/mixedContent"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Title">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//Title/titledElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Title/content"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Para">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Para/content"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Section">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Section/content"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="docbook.ecore#//SectionMixedContent">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//SectionMixedContent/chapter"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//SectionMixedContent/section"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="docbook.ecore#//TitledElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//TitledElement/title"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="docbook.ecore#//ParaMixedContent">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//ParaMixedContent/para"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//ParaMixedContent/titleElement"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//ParaMixedContent/emphasis"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//ParaMixedContent/ulink"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//ParaMixedContent/link"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//ProgramListing"/>
+    <genClasses ecoreClass="docbook.ecore#//SimpleText">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//SimpleText/data"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Figure">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Figure/content"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Emphasis">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Emphasis/content"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="docbook.ecore#//XMLElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//XMLElement/id"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Tip"/>
+    <genClasses ecoreClass="docbook.ecore#//Warning"/>
+    <genClasses ecoreClass="docbook.ecore#//Link">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Link/content"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Ulink">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Ulink/content"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//MediaObject">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//MediaObject/figure"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//MediaObject/content"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//ImageObject">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//ImageObject/mediaObject"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//ImageObject/content"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//ImageData">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//ImageData/fileref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//ImageData/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//ImageData/depth"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//ImageData/imageObject"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset:RuleSet xmlns:ruleset="http://www.topcased.org/ruleset/1.0" metaModel="http:///family.ecore#/">
+  <rules context="http:///family.ecore#//Person" message="Person name cannot be empty test" level="ERROR" ruleType="ocl">
+    <ruleContent>lastName->notEmpty()</ruleContent>
+  </rules>
+  <rules context="http:///family.ecore#//Woman" message="A Woman should be married" level="WARNING" ruleType="ocl">
+    <ruleContent>husband->notEmpty()</ruleContent>
+  </rules>
+</ruleset:RuleSet>

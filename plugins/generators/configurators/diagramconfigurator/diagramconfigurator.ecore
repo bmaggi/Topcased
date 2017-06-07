@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="diagramconfigurator"
+    nsURI="http://www.topcased.org/diagramconfigurator/0.10" nsPrefix="diagramconfigurator">
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramConfiguration">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="A DiagramConfiguration contains informations used to generate a Diagram"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Prefix Package PartsPrefixUnicity ObjectsNameUnicity"/>
+    </eAnnotations>
+    <eOperations name="getBasePackage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="id"/>
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="package" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="palette" lowerBound="1"
+        eType="#//PaletteConfiguration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parts" lowerBound="1" upperBound="-1"
+        eType="#//PartConfiguration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layout" eType="#//LayoutType"
+        defaultValueLiteral="XYLayout"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objects" lowerBound="1"
+        upperBound="-1" eType="#//ObjectConfiguration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genModel" lowerBound="1"
+        eType="ecore:EClass ../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenModel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultBackgroundColor"
+        eType="#//Color" defaultValueLiteral="255,255,255"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultForegroundColor"
+        eType="#//Color" defaultValueLiteral="0,0,0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultFont" eType="#//Font"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="templateRootObject" lowerBound="1"
+        eType="ecore:EClass ../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forceOverwrite" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="overwriteGraphConf" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="organizeImports" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editorConfigurator" lowerBound="1"
+        eType="ecore:EClass ../../../plugin/org.topcased.modeler.editorconfigurator/model/editorconfigurator.ecore#//EditorConfiguration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="copyrightText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pluginVersion" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="provider" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="Topcased"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="samePluginAsEditor" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectConfiguration" abstract="true">
+    <eOperations name="getName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramReference">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="A DiagramReference is linked with a DiagramConfiguration"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="diagram" lowerBound="1"
+        eType="#//DiagramConfiguration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PaletteConfiguration">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="This object groups all the PaletteCategories"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paletteCategories" lowerBound="1"
+        upperBound="-1" eType="#//PaletteCategory" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PaletteCategory">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="A PaletteCategory contains all the PaletteItem that will be displayed"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Name PaletteItemsNameUnicity"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" lowerBound="1" upperBound="-1"
+        eType="#//PaletteItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PartConfiguration" abstract="true">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="A PartConfiguration will be associated with an EditPart at the generation process."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="object" lowerBound="1"
+        eType="#//ObjectConfiguration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="presentation" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="default"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultForegroundColor"
+        eType="#//Color" defaultValueLiteral="0,0,0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="foregroundColorChangeable"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultFont" eType="#//Font"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontChangeable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineStyle" eType="#//LineStyle"
+        defaultValueLiteral="SOLID"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
+        eType="#//Constraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodePartConfiguration" eSuperTypes="#//PartConfiguration">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="A PartConfiguration will be associated with a NodeEditPart at the generation process."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Container"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="Figure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childElements" upperBound="-1"
+        eType="#//NodePartConfiguration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//NodePartConfiguration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultBackgroundColor"
+        eType="#//Color" defaultValueLiteral="255,255,255"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundColorChangeable"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resizing" eType="#//ResizableType"
+        defaultValueLiteral="ALL"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="container" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layout" eType="#//LayoutType"
+        defaultValueLiteral="XYLayout"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="directEditable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="50"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="50"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimumWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="20"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimumHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="20"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="200"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="200"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attachedToBorder" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgePartConfiguration" eSuperTypes="#//PartConfiguration">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="A PartConfiguration will be associated with an EdgeEditPart at the generation process."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="DirectEditable"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceTargetCouple" lowerBound="1"
+        upperBound="-1" eType="#//SourceTargetCouple" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edgeObjects" upperBound="-1"
+        eType="#//EdgeObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceDecoration" eType="#//DecorationType"
+        defaultValueLiteral="NONE"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetDecoration" eType="#//DecorationType"
+        defaultValueLiteral="NONE"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultRouter" eType="#//RouterType"
+        defaultValueLiteral="ObliqueRouter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="directEditable" eType="#//EdgeObject"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Id EStructuralFeature"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//EdgeObjectType"
+        defaultValueLiteral="Source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eStructuralFeature" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PaletteItem" eSuperTypes="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="A PaletteItem is necessary associated with an ObjectConfiguration. It will represent an item in a Palette of a given Diagram"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="part" lowerBound="1" eType="#//PartConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceTargetCouple">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="It describes the different Policies to set for an EdgeEditPart"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="SourceNode TargetNode ContainerType ContainerObject ContainerRef RefSourceToEdge RefEdgeToSource RefTargetToEdge RefEdgeToTarget RefSourceToTarget RefTargetToSource RefConstraint"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="containerType" eType="#//EdgeContainerType"
+        defaultValueLiteral="NONE"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoRef" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reversible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerObject" eType="ecore:EClass ../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceNode" lowerBound="1"
+        eType="#//PartConfiguration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetNode" lowerBound="1"
+        eType="#//PartConfiguration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerRef" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refSourceToEdge" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refEdgeToSource" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refTargetToEdge" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refEdgeToTarget" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refSourceToTarget" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refTargetToSource" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelObjectConfiguration" eSuperTypes="#//ObjectConfiguration">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="A ModelObjectConfiguration is associated with a model object through the genClass reference. It is eventually linked to several DiagramReference."/>
+    </eAnnotations>
+    <eOperations name="getName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genClass" lowerBound="1"
+        eType="ecore:EClass ../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="diagrams" ordered="false"
+        upperBound="-1" eType="#//DiagramReference" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleObjectConfiguration" eSuperTypes="#//ObjectConfiguration">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="A SimpleObjectConfiguration is not linked with a model object. It has an attribute name that gives the string that will be used to reference the graphical object."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EdgeContainerType">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="The different ways where to add the Edge to the model"/>
+    </eAnnotations>
+    <eLiterals name="NONE">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <details key="documentation" value="The Edge has no model association"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SOURCE" value="1">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <details key="documentation" value="The Source Node is the container of the Edge"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SOURCE_CONTAINER" value="2">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <details key="documentation" value="The Source Container Node is the container of the Edge"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="DIAGRAM" value="3">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <details key="documentation" value="The Model object associated with the current Diagram is the container of the Edge"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="TARGET" value="4">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <details key="documentation" value="The Target Node is the container of the Edge"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="TARGET_CONTAINER" value="5">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <details key="documentation" value="The Target Container Node is the container of the Edge"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ResizableType">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="The type of the Resizable EditPolicy"/>
+    </eAnnotations>
+    <eLiterals name="NONE"/>
+    <eLiterals name="WIDTH" value="1"/>
+    <eLiterals name="HEIGHT" value="2"/>
+    <eLiterals name="ALL" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LayoutType">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="The type of Layout that it will be used to display children DiagramElement"/>
+    </eAnnotations>
+    <eLiterals name="XYLayout"/>
+    <eLiterals name="ClassLayout" value="1"/>
+    <eLiterals name="ToolbarLayout" value="2"/>
+    <eLiterals name="PortLayout" value="3"/>
+    <eLiterals name="MultiPortLayout" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DecorationType">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="Define the type of decoration that are available for a connection EndPoint."/>
+    </eAnnotations>
+    <eLiterals name="NONE"/>
+    <eLiterals name="ARROW" value="1"/>
+    <eLiterals name="TRIANGLE" value="2"/>
+    <eLiterals name="DIAMOND" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RouterType">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="The type of Layout that it will be used to display children DiagramElement"/>
+    </eAnnotations>
+    <eLiterals name="ObliqueRouter"/>
+    <eLiterals name="RectilinearRouter" value="1"/>
+    <eLiterals name="TreeRouter" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EdgeObjectType">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="The position that should be used to place the EdgeObject associated with the Edge"/>
+    </eAnnotations>
+    <eLiterals name="Source"/>
+    <eLiterals name="Middle" value="1"/>
+    <eLiterals name="Target" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LineStyle">
+    <eLiterals name="SOLID" value="1"/>
+    <eLiterals name="DASH" value="2"/>
+    <eLiterals name="DOT" value="3"/>
+    <eLiterals name="DASHDOT" value="4"/>
+    <eLiterals name="DASHDOTDOT" value="5"/>
+    <eLiterals name="CUSTOM" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Color" instanceClassName="org.eclipse.swt.graphics.Color"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Font" instanceClassName="org.eclipse.swt.graphics.Font"/>
+</ecore:EPackage>

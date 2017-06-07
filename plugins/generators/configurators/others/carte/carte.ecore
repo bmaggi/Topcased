@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="carte"
+    nsURI="http://carte" nsPrefix="carte">
+  <eAnnotations source="http://www.topcased.org/documentation">
+    <details key="documentation" value="This metamodel is used to illustrate the multiPackage cutting that may be done. This metamodel then is used the validate the subpackages support during editor configuration and generation."/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Menu">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prixTotal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plats" lowerBound="2" upperBound="-1"
+        eType="#//Plat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Plat" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vin">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantite" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="appellation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Carte">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="menus" upperBound="-1"
+        eType="#//Menu" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plats" lowerBound="1" upperBound="-1"
+        eType="#//Plat" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vins" upperBound="-1" eType="#//Vin"
+        containment="true"/>
+  </eClassifiers>
+  <eSubpackages name="entree" nsURI="http://entree" nsPrefix="entree">
+    <eClassifiers xsi:type="ecore:EClass" name="Salade" eSuperTypes="#//Plat"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Quiche" eSuperTypes="#//Plat"/>
+  </eSubpackages>
+  <eSubpackages name="platprincipal" nsURI="http://platprincipal" nsPrefix="platprincipal">
+    <eSubpackages name="poisson" nsURI="http://poisson" nsPrefix="poisson">
+      <eClassifiers xsi:type="ecore:EClass" name="Truite" eSuperTypes="#//Plat"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Sole" eSuperTypes="#//Plat"/>
+    </eSubpackages>
+    <eSubpackages name="viande" nsURI="http://viande" nsPrefix="viande">
+      <eClassifiers xsi:type="ecore:EClass" name="Saucisse" eSuperTypes="#//Plat"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Steak" eSuperTypes="#//Plat">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="cuisson" eType="#//platprincipal/viande/Cuisson"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="Cuisson">
+        <eLiterals name="APoint" literal="APoint"/>
+        <eLiterals name="Saignant" value="1"/>
+        <eLiterals name="Bleu" value="2"/>
+        <eLiterals name="BienCuit" value="3" literal="BienCuit"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Truite" eSuperTypes="#//Plat">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="cuisson" eType="#//platprincipal/viande/Cuisson"/>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="dessert" nsURI="http://dessert" nsPrefix="dessert">
+    <eClassifiers xsi:type="ecore:EClass" name="Tarte" eSuperTypes="#//Plat"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Glace" eSuperTypes="#//Plat"/>
+  </eSubpackages>
+</ecore:EPackage>

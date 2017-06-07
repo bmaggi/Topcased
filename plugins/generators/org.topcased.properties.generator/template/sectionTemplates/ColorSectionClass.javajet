@@ -1,0 +1,89 @@
+<%@ jet
+	 package="org.topcased.properties.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.properties.configurator.*  org.topcased.properties.configurator.util.GeneratorUtils"
+	 class="ColorSection"
+	 version="$Id: ColorSectionClass.javajet,v 1.1 2006/10/30 17:10:50 jako Exp $" %>
+<%
+	AbstractSection aSection = (AbstractSection)argument;
+	TabbedView tabbedView = aSection.getTab().getCategory().getParent();
+	
+	GenFeature feature = null;
+	GenPackage gPackage = null;
+	
+	String thePackage = tabbedView.getProjectName();
+	String basePackage = tabbedView.getBasePackage();
+    if (basePackage != null && !basePackage.equals(""))
+    {
+        thePackage = basePackage;
+    }
+	if (aSection instanceof SingleFeatureSection)
+	{
+		SingleFeatureSection section = (SingleFeatureSection)aSection;
+		feature = section.getFeature();
+		gPackage = feature.getGenPackage();
+	}
+	else
+	{
+		MultipleFeatureSection section = (MultipleFeatureSection)aSection;
+	}
+	%>
+package <%=thePackage%>.sections;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.RGB;
+import org.topcased.tabbedproperties.sections.AbstractColorPropertySection;
+
+import <%=gPackage.getQualifiedPackageInterfaceName()%>;
+
+/**
+ * A Section used to edit a Color type Feature with a dedicated button and ColorDialog.
+ *
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ *
+ * @generated
+ */
+public class <%=aSection.getClassName()%> extends AbstractColorPropertySection
+{
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+	 * @see org.topcased.tabbedproperties.sections.AbstractTabbedPropertySection#getLabelText()
+     * @generated
+	 */
+    protected String  getLabelText()
+    {
+        return "<%=feature.getCapName()%>:";
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+	 * @see org.topcased.tabbedproperties.sections.AbstractTabbedPropertySection#getFeature()
+     * @generated
+	 */
+    protected EStructuralFeature getFeature()
+    {
+        return <%=gPackage.getPackageInterfaceName()%>.eINSTANCE.get<%=feature.getGenClass().getInterfaceName()%>_<%=feature.getCapName()%>();
+    }
+    
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @see org.topcased.tabbedproperties.sections.AbstractColorPropertySection#getRGBValue()
+     * @generated
+	 */
+    protected RGB getRGBValue()
+    {
+    	Object color = getEObject().eGet(getFeature());
+        if (color != null && color instanceof Color)
+        {
+            return ((Color) color).getRGB();
+        }
+		return null;
+    }
+}

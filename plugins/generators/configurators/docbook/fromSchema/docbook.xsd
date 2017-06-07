@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://docbook.org/ns/docbook" xmlns:docbook="http://docbook.org/ns/docbook">
+
+  <xs:element name="book">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="docbook:title"/>
+        <xs:element minOccurs="0" ref="docbook:info"/>
+        <xs:element maxOccurs="unbounded" ref="docbook:chapter"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="title" type="xs:string"/>
+  <xs:element name="para" type="xs:string"/>
+  <xs:element name="info" type="xs:string"/>
+
+  <xs:element name="chapter">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="docbook:title"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="docbook:para"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="docbook:sect1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="sect1">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="docbook:title"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="docbook:para"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

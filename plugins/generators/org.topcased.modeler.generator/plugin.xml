@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.popupMenus">
+
+      <!-- Disable the Generation actions for the Service and ServiceReadOnly plugins -->
+      <!--objectContribution
+            adaptable="true"
+            id="org.topcased.modeler.generator.GenServiceContribution"
+            nameFilter="*.editorconfigurator"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="org.topcased.modeler.generator.action.GenerateService"
+               enablesFor="1"
+               icon="icons/Service.gif"
+               id="org.topcased.modeler.generator.action.GenerateService"
+               label="Service"
+               menubarPath="org.topcased.facilities.menu.topcased/org.topcased.facilities.menu.generation/topcasedGroup"/>
+      </objectContribution>
+
+      <objectContribution
+            adaptable="true"
+            id="org.topcased.modeler.generator.GenServiceReadOnlyContribution"
+            nameFilter="*.editorconfigurator"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="org.topcased.modeler.generator.action.GenerateServiceReadOnly"
+               enablesFor="1"
+               icon="icons/ServiceReadOnly.gif"
+               id="org.topcased.modeler.generator.action.GenerateServiceReadOnly"
+               label="Service Read Only"
+               menubarPath="org.topcased.facilities.menu.topcased/org.topcased.facilities.menu.generation/topcasedGroup"/>
+      </objectContribution-->      
+
+      <objectContribution
+            adaptable="true"
+            id="org.topcased.modeler.generator.GenHTMLDocContribution"
+            nameFilter="*.ecore"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="org.topcased.modeler.generator.internal.actions.doc.GenerateHTMLDocAction"
+               enablesFor="1"
+               icon="icons/Service.gif"
+               id="org.topcased.modeler.generator.action.GenerateHTMLDocAction"
+               label="Generate Help Plugin"
+               menubarPath="org.topcased.facilities.menu.topcased/org.topcased.facilities.menu.generation/topcasedGroup"/>
+      </objectContribution>      
+
+      <objectContribution
+            adaptable="true"
+            id="org.topcased.modeler.generator.GenPDFDocContribution"
+            nameFilter="*.ecore"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="org.topcased.modeler.generator.internal.actions.doc.GeneratePDFDocAction"
+               enablesFor="1"
+               icon="icons/Service.gif"
+               id="org.topcased.modeler.generator.action.GeneratePDFDocAction"
+               label="Generate PDF Doc"
+               menubarPath="org.topcased.facilities.menu.topcased/org.topcased.facilities.menu.generation/topcasedGroup"/>
+      </objectContribution>      
+
+      <objectContribution
+            adaptable="true"
+            id="org.topcased.modeler.generator.GenEditorContribution"
+            nameFilter="*.editorconfigurator"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="org.topcased.modeler.generator.internal.actions.GenerateEditorAction"
+               enablesFor="1"
+               icon="icons/Editor.gif"
+               id="org.topcased.modeler.generator.action.GenerateEditorAction"
+               label="Editor"
+               menubarPath="org.topcased.facilities.menu.topcased/org.topcased.facilities.menu.generation/topcasedGroup"/>
+      </objectContribution>
+      <objectContribution
+            adaptable="true"
+            id="org.topcased.modeler.generator.GenDiagramContribution"
+            nameFilter="*.diagramconfigurator"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="org.topcased.modeler.generator.internal.actions.GenerateDiagramAction"
+               enablesFor="1"
+               icon="icons/Editor.gif"
+               id="org.topcased.modeler.generator.action.GenerateDiagramAction"
+               label="Diagram"
+               menubarPath="org.topcased.facilities.menu.topcased/org.topcased.facilities.menu.generation/topcasedGroup"/>
+      </objectContribution>
+
+   </extension>
+
+</plugin>

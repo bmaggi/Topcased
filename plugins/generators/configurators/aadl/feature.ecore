@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="feature"
+    nsURI="http:///AADL/feature" nsPrefix="feature">
+  <eClassifiers xsi:type="ecore:EClass" name="Subprogram" eSuperTypes="core.ecore#//Feature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//Subprogram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subprogramClassifier" eType="ecore:EClass component.ecore#//SubprogramClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServerSubprogram" eSuperTypes="core.ecore#//Feature property.ecore#//ReferenceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//ServerSubprogram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subprogramClassifier" eType="ecore:EClass component.ecore#//SubprogramClassifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subprogram" eType="#//Subprogram"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataAccess" eSuperTypes="#//ComponentAccess connection.ecore#//DataAccessEnd">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//DataAccess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataClassifier" eType="ecore:EClass component.ecore#//DataClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusAccess" eSuperTypes="#//ComponentAccess connection.ecore#//BusAccessEnd">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//BusAccess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busClassifier" eType="ecore:EClass component.ecore#//BusClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PortDirection">
+    <eLiterals name="in"/>
+    <eLiterals name="out" value="1"/>
+    <eLiterals name="inout" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port" abstract="true" eSuperTypes="#//AbstractPort flow.ecore#//FlowPoint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" lowerBound="1"
+        eType="#//PortDirection" defaultValueLiteral="in"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataPort" eSuperTypes="#//Port connection.ecore#//ParameterEnd">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//DataPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataClassifier" eType="ecore:EClass component.ecore#//DataClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventPort" eSuperTypes="#//Port">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//EventPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventDataPort" eSuperTypes="#//Port connection.ecore#//ParameterEnd">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//EventDataPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataClassifier" eType="ecore:EClass component.ecore#//DataClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//AbstractPort connection.ecore#//ParameterEnd flow.ecore#//FlowPoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//Parameter"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" lowerBound="1"
+        eType="#//PortDirection" defaultValueLiteral="in"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataClassifier" eType="ecore:EClass component.ecore#//DataClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortGroupType" eSuperTypes="core.ecore#//Classifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//PortGroupType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inverseOf" eType="#//PortGroupType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" eType="#//PortGroupFeatures"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortGroup" eSuperTypes="#//AbstractPort connection.ecore#//FeatureContext flow.ecore#//FlowPoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portGroupType" eType="#//PortGroupType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//PortGroup"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataFeatures" eSuperTypes="core.ecore#//Features">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="features" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="namespace" value="data"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subprogram" upperBound="-1"
+        eType="#//Subprogram" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="data#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataAccess" upperBound="-1"
+        eType="#//DataAccess" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="data#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubprogramFeatures" eSuperTypes="core.ecore#//Features">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="features" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="namespace" value="subprogram"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portGroup" upperBound="-1"
+        eType="#//PortGroup" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="subprogram#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventPort" upperBound="-1"
+        eType="#//EventPort" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="subprogram#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventDataPort" upperBound="-1"
+        eType="#//EventDataPort" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="subprogram#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataAccess" upperBound="-1"
+        eType="#//DataAccess" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="subprogram#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+        eType="#//Parameter" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="subprogram#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SoftwareFeatures" abstract="true" eSuperTypes="core.ecore#//Features">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="features" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="namespace" value="software"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serverSubprogram" upperBound="-1"
+        eType="#//ServerSubprogram" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="software#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portGroup" upperBound="-1"
+        eType="#//PortGroup" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="software#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataPort" upperBound="-1"
+        eType="#//DataPort" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="software#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventPort" upperBound="-1"
+        eType="#//EventPort" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="software#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventDataPort" upperBound="-1"
+        eType="#//EventDataPort" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="software#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataAccess" upperBound="-1"
+        eType="#//DataAccess" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="software#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreadFeatures" eSuperTypes="#//SoftwareFeatures"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreadGroupFeatures" eSuperTypes="#//SoftwareFeatures"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessFeatures" eSuperTypes="#//SoftwareFeatures"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessorFeatures" eSuperTypes="core.ecore#//Features">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="features" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="namespace" value="processor"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serverSubprogram" upperBound="-1"
+        eType="#//ServerSubprogram" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="processor#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portGroup" upperBound="-1"
+        eType="#//PortGroup" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="processor#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataPort" upperBound="-1"
+        eType="#//DataPort" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="processor#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventPort" upperBound="-1"
+        eType="#//EventPort" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="processor#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventDataPort" upperBound="-1"
+        eType="#//EventDataPort" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="processor#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busAccess" upperBound="-1"
+        eType="#//BusAccess" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="processor#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MemoryFeatures" eSuperTypes="core.ecore#//Features">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busAccess" upperBound="-1"
+        eType="#//BusAccess" containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusFeatures" eSuperTypes="core.ecore#//Features">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busAccess" upperBound="-1"
+        eType="#//BusAccess" containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceFeatures" eSuperTypes="core.ecore#//Features">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="features" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="namespace" value="device"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serverSubprogram" upperBound="-1"
+        eType="#//ServerSubprogram" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="device#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portGroup" upperBound="-1"
+        eType="#//PortGroup" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="device#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataPort" upperBound="-1"
+        eType="#//DataPort" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="device#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventPort" upperBound="-1"
+        eType="#//EventPort" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="device#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventDataPort" upperBound="-1"
+        eType="#//EventDataPort" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="device#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busAccess" upperBound="-1"
+        eType="#//BusAccess" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="device#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemFeatures" eSuperTypes="#//SoftwareFeatures">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busAccess" upperBound="-1"
+        eType="#//BusAccess" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="software#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AccessDirection">
+    <eLiterals name="provided"/>
+    <eLiterals name="required" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentAccess" abstract="true" eSuperTypes="core.ecore#//Feature">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//AccessDirection"
+        defaultValueLiteral="provided"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortGroupFeatures" eSuperTypes="core.ecore#//AObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="features" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="namespace" value="portGroup"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portGroup" upperBound="-1"
+        eType="#//PortGroup" volatile="true" transient="true" derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="portGroup#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventDataPort" upperBound="-1"
+        eType="#//EventDataPort" volatile="true" transient="true" derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="portGroup#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataPort" upperBound="-1"
+        eType="#//DataPort" volatile="true" transient="true" derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="portGroup#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventPort" upperBound="-1"
+        eType="#//EventPort" volatile="true" transient="true" derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="portGroup#features"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractPort" abstract="true" eSuperTypes="core.ecore#//Feature flow.ecore#//FlowPoint"/>
+</ecore:EPackage>

@@ -1,0 +1,85 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports=" org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.modeler.diagramconfigurator.extension.FigureDeclarationsManager"
+	 class="NodeFigure"
+	 version="$Id: NodeFigure.javajet,v 1.13 2008/03/25 18:42:49 jako Exp $" %>
+<%	NodePartConfiguration nodePartConfiguration = (NodePartConfiguration) argument;
+	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) nodePartConfiguration.eContainer();
+	ObjectConfiguration objectConfiguration = nodePartConfiguration.getObject();
+	String pathExtendedFigure = FigureDeclarationsManager.getInstance().find(nodePartConfiguration.getType()).getQualifiedFigureClassName();
+	String partPrefix = nodePartConfiguration.getPrefix();
+	boolean implementIContainerFigure = nodePartConfiguration.shouldImplementIContainerFigure();
+	boolean implementILabelFigure = nodePartConfiguration.shouldImplementILabelFigure();%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>.figures;
+
+<%	if (implementIContainerFigure) {%>
+import org.eclipse.draw2d.IFigure;
+import org.topcased.draw2d.figures.IContainerFigure;
+<%	}
+	if (implementILabelFigure) {%>
+import org.topcased.draw2d.figures.ILabel;
+import org.topcased.draw2d.figures.ILabelFigure;
+<%	}%>
+
+/**
+ * @generated
+ */
+public class <%=partPrefix%>Figure extends <%=pathExtendedFigure%><%if (implementIContainerFigure || implementILabelFigure) {%> implements<%} if (implementIContainerFigure) {%> IContainerFigure<%} if (implementIContainerFigure && implementILabelFigure) {%>,<%} if (implementILabelFigure) {%> ILabelFigure<%}%>
+{
+	/**
+	 * Constructor
+	 *
+	 * @generated
+	 */
+	public <%=partPrefix%>Figure()
+	{
+<%	if ("Image With Label Figure".equals(nodePartConfiguration.getType()) || "ImageFigure".equals(nodePartConfiguration.getType())) {%>
+		// TODO : here, you can specify the image to use by passing your own Image
+		super(AbstractUIPlugin.imageDescriptorFromPlugin("org.topcased.draw2d", "$nl$/icons/noImage.gif").createImage());
+<%	} else {
+		if ("Port".equals(nodePartConfiguration.getType())) {%>
+		// TODO : here, you can specify the type of port (IN, OUT or INOUT) to have a better display
+<%		}%>
+		super();
+<%	}%>
+	}
+
+<%	if (nodePartConfiguration.alreadyExtendContainerFigure() && LayoutType.PORT_LAYOUT_LITERAL.equals(nodePartConfiguration.getLayout())) {%>
+    /**
+	 * @see org.topcased.draw2d.figures.ContainerFigure#createContainer()
+	 * @generated
+     */
+    protected IFigure createContainer()
+    {
+        IFigure container = super.createContainer();
+        container.setLayoutManager(new BorderAttachedLayout());
+        return container;
+    }
+<%	}%>
+
+<%	if (implementIContainerFigure) {%>
+    /**
+	 * @see org.topcased.draw2d.figures.IContainerFigure#getContentPane()
+	 * @generated
+     */
+    public IFigure getContentPane()
+    {
+        // TODO : return the Figure that represent the ContentPane
+        return this;
+    }
+<%	}%>
+
+<%	if (implementILabelFigure) {%>
+    /**
+	 * @see org.topcased.draw2d.figures.ILabelFigure#getLabel()
+	 * @generated
+     */
+    public ILabel getLabel()
+    {
+        // TODO : return the Figure that represent the Label
+        return null;
+    }
+<%	}%>
+
+}

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Topcased.org"
+    modelDirectory="/org.topcased.modeler.di/src" editDirectory="/org.topcased.modeler.di/src"
+    editorDirectory="/org.topcased.modeler.di/src" modelPluginID="org.topcased.modeler.di"
+    redirection="" forceOverwrite="true" modelName="DI" modelPluginClass="org.topcased.modeler.di.model.internal.DIPlugin"
+    editPluginClass="" editorPluginClass="" nonNLSMarkers="true" rootExtendsInterface="org.eclipse.emf.ecore.EModelElement"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.EModelElementImpl" codeFormatting="true"
+    testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>DI.ecore</foreignModel>
+  <genPackages prefix="DiagramInterchange" basePackage="org.topcased.modeler.di" resource="XMI"
+      disposableProviderFactory="true" classPackageSuffix="internal.impl" presentationPackageSuffix="internal.presentation"
+      generateExampleClass="false" ecorePackage="DI.ecore#_DFngkMa0Edm_DezwMpEfpg">
+    <genDataTypes ecoreDataType="DI.ecore#_DFtAIMa0Edm_DezwMpEfpg"/>
+    <genDataTypes ecoreDataType="DI.ecore#_DFtAIca0Edm_DezwMpEfpg"/>
+    <genDataTypes ecoreDataType="DI.ecore#_DFtAIsa0Edm_DezwMpEfpg"/>
+    <genDataTypes ecoreDataType="DI.ecore#//RelativeBendpoint"/>
+    <genClasses ecoreClass="DI.ecore#_DFoHoMa0Edm_DezwMpEfpg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_DFousca0Edm_DezwMpEfpg"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_DFpVwMa0Edm_DezwMpEfpg"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#_DFpVwca0Edm_DezwMpEfpg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_DFpVwsa0Edm_DezwMpEfpg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DI.ecore#_DFp80Ma0Edm_DezwMpEfpg"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DI.ecore#_DFp80ca0Edm_DezwMpEfpg"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference DI.ecore#_wL4mYMbzEdmDYYt6UUKdjQ"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#_DFqj4Ma0Edm_DezwMpEfpg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_DFryAMa0Edm_DezwMpEfpg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DI.ecore#_DFsZEMa0Edm_DezwMpEfpg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DI.ecore#_DFsZEca0Edm_DezwMpEfpg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DI.ecore#_DFsZEsa0Edm_DezwMpEfpg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DI.ecore#_G7ZsQMbpEdmDYYt6UUKdjQ"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#_DFtnMMa0Edm_DezwMpEfpg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_DFtnMsa0Edm_DezwMpEfpg"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference DI.ecore#_DFuOQMa0Edm_DezwMpEfpg"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#_DFuOQca0Edm_DezwMpEfpg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_DFuOQ8a0Edm_DezwMpEfpg"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#_DFu1UMa0Edm_DezwMpEfpg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_DFxRkMa0Edm_DezwMpEfpg"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference DI.ecore#_DFxRkca0Edm_DezwMpEfpg"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DI.ecore#_DFyfsMa0Edm_DezwMpEfpg"/>
+      <genOperations ecoreOperation="DI.ecore#//GraphConnector/isVisible"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#_DFyfsca0Edm_DezwMpEfpg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_DFzGwMa0Edm_DezwMpEfpg"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_DFzGwca0Edm_DezwMpEfpg"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_DFzGwsa0Edm_DezwMpEfpg"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference DI.ecore#_JouOIMbpEdmDYYt6UUKdjQ"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#_DFzGw8a0Edm_DezwMpEfpg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_DF078Ma0Edm_DezwMpEfpg"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DI.ecore#_DF078ca0Edm_DezwMpEfpg"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#_DF078sa0Edm_DezwMpEfpg">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference DI.ecore#//EMFSemanticModelBridge/element"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#_DF1jAca0Edm_DezwMpEfpg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_DF1jA8a0Edm_DezwMpEfpg"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#_2sw6cMboEdmDYYt6UUKdjQ">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_5B4XsMboEdmDYYt6UUKdjQ"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_6NHbwMboEdmDYYt6UUKdjQ"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DI.ecore#_H0a-8MbpEdmDYYt6UUKdjQ"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference DI.ecore#_JTWbEMbpEdmDYYt6UUKdjQ"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#_wIrF4MbpEdmDYYt6UUKdjQ"/>
+    <genClasses ecoreClass="DI.ecore#_GMGg0MbqEdmDYYt6UUKdjQ">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_lUbDsMbqEdmDYYt6UUKdjQ"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#_ItYKwMbqEdmDYYt6UUKdjQ">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_o8sK4MbqEdmDYYt6UUKdjQ"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_scnOYMbqEdmDYYt6UUKdjQ"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#_Kj-gAMbqEdmDYYt6UUKdjQ"/>
+    <genClasses ecoreClass="DI.ecore#_C1aiwMbzEdmDYYt6UUKdjQ">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_HPbP8MbzEdmDYYt6UUKdjQ"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference DI.ecore#_v9OfUMbzEdmDYYt6UUKdjQ"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#_Jc27YMb0EdmDYYt6UUKdjQ">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_TCweoMb0EdmDYYt6UUKdjQ"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_Yd88AMb0EdmDYYt6UUKdjQ"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#_LTKVsMb0EdmDYYt6UUKdjQ">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_cpRs8sb0EdmDYYt6UUKdjQ"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_dZqBAMb0EdmDYYt6UUKdjQ"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_eVohEMb0EdmDYYt6UUKdjQ"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_f8xeAMb0EdmDYYt6UUKdjQ"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_g5fk8Mb0EdmDYYt6UUKdjQ"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#_kLC1QMb0EdmDYYt6UUKdjQ"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#//EdgeObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#//EdgeObject/id"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#//EdgeObjectOffset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#//EdgeObjectOffset/offset"/>
+    </genClasses>
+    <genClasses ecoreClass="DI.ecore#//EdgeObjectUV">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#//EdgeObjectUV/uDistance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#//EdgeObjectUV/vDistance"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

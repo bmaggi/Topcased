@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.1 2009/03/19 13:35:49 clecamus Exp $
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.topcased.org/ocl/1.0/OCLDiagrams"
+            class="org.topcased.modeler.ocl.ocldiagrams.OcldiagramsPackage"
+            genModel="model/OCLDiagrams.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="ocldiagrams"
+            class="org.topcased.modeler.ocl.ocldiagrams.util.OcldiagramsResourceFactoryImpl"/>
+   </extension>
+   <extension
+         point="org.eclipse.ocl.environments">
+      <environmentFactory
+            class="org.topcased.modeler.ocl.ocldiagrams.OcldiagramsEnvironmentFactory">
+         <package
+               nsURI="http://www.topcased.org/Diagrams/1.0">
+         </package>
+         <package
+               nsURI="http://www.topcased.org/ocl/1.0/OCLDiagrams">
+         </package>
+      </environmentFactory>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="http://www.eclipse.org/ocldiagrams/stdlib/1.1"
+            target="platform:/plugin/org.topcased.modeler.ocl.diagrams/model/oclstdlib.ecore">
+      </mapping>
+   </extension>
+
+</plugin>

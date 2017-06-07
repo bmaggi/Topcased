@@ -1,0 +1,85 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="ImageRegistry"
+	 version="$Id: ImageRegistry.javajet,v 1.4 2006/12/20 17:08:26 jako Exp $" %>
+<%DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>;
+
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
+
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.swt.graphics.Image;
+import org.topcased.modeler.ImageRegistry;
+
+import <%=diagramConfiguration.getProjectName()%>.<%=diagramConfiguration.getPluginPrefix()%>Plugin;
+
+/**
+ * Handle image
+ *
+ * @generated
+ */
+public final class <%=diagramConfiguration.getPrefix()%>ImageRegistry {
+
+	/**
+	 * The bundle id of the images
+	 * @generated
+	 */
+	public static final String BUNDLE = "<%=diagramConfiguration.getBasePackage()%>.images";
+    
+	/**
+	 * The constructor
+	 *
+	 * @generated
+	 */
+	private <%=diagramConfiguration.getPrefix()%>ImageRegistry()
+    {
+    		// do nothing
+	}
+
+	/**
+	 * Clients should not dispose the Image returned.
+	 *
+	 * @param key  the key (one of the constants defined in this class)
+	 * @return the Image associated with the given key
+	 * @generated
+	 */
+	public static Image getImage(String key)
+	{
+	    return ImageRegistry.getInstance().get(<%=diagramConfiguration.getPluginPrefix()%>Plugin.getDefault().getBundle(), getImageLocation(key));
+	}
+
+	/**
+	 * Return the image location
+	 *
+	 * @param key  the key
+	 * @return the Image location associated with the given key
+	 * @generated
+	 */
+	private static String getImageLocation(String key)
+	{
+		return ResourceBundle.getBundle(BUNDLE).getString(key);
+	}
+
+	/**
+	 * Build an image descriptor for the given key
+	 *
+	 * @param key  the key
+	 * @return the ImageDescriptor associated with the given key
+	 * @generated
+	 */
+	public static ImageDescriptor getImageDescriptor(String key)
+	{
+		try
+		{
+            return ImageRegistry.getInstance().getDescriptor(<%=diagramConfiguration.getPluginPrefix()%>Plugin.getDefault().getBundle(), getImageLocation(key));
+		}
+		catch (MissingResourceException mre)
+		{
+			return null;
+		}
+	}
+    
+}

@@ -1,0 +1,44 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.modeler.editorconfigurator.* org.topcased.modeler.editorconfigurator.util.*"
+	 class="PluginXML"
+	 version="$Id: plugin.xmljet,v 1.5 2006/05/02 14:04:34 jako Exp $" %>
+<%EditorConfiguration editorConfiguration = (EditorConfiguration) argument;%>
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            icon="icons/<%=editorConfiguration.getPrefix()%>.gif"
+            class="<%=editorConfiguration.getProjectName()%>servicereadonly.editor.<%=editorConfiguration.getPrefix()%>ServiceEditor"
+            default="false"
+            contributorClass="<%=editorConfiguration.getProjectName()%>servicereadonly.actions.<%=editorConfiguration.getPrefix()%>ServiceEditorActionBarContributor"
+            name="<%=editorConfiguration.getPrefix()%> Service Read Only Editor"
+            id="<%=editorConfiguration.getProjectName()%>servicereadonly.editor.<%=editorConfiguration.getPrefix()%>ServiceEditor"
+            extensions="<%=editorConfiguration.getExtensionDiagram()%>"/>
+   </extension>
+
+   <extension point="org.topcased.bus.core.Services">
+      <service
+            class="<%=editorConfiguration.getProjectName()%>servicereadonly.services.<%=editorConfiguration.getPrefix()%>Edit"
+            name="<%=editorConfiguration.getPrefix()%> Service Read Only Edition"
+            id="<%=editorConfiguration.getProjectName()%>servicereadonly.services.<%=editorConfiguration.getPrefix()%>Edit">
+         <ontologyType
+               parentId="<%=editorConfiguration.getProjectName()%>servicereadonly.services.ontologyType1"
+               category="<%=editorConfiguration.getProjectName()%>servicereadonly.services.ontologyType1"
+               name="<%=editorConfiguration.getPrefix()%>Edit"
+               id="<%=editorConfiguration.getProjectName()%>servicereadonly.services.<%=editorConfiguration.getExtension()%>edit"/>
+         <listInputParam>
+            <parameter
+                  kind="String"
+                  description="An XMI File "
+                  path="org.topcased.service.edit.<%=editorConfiguration.getExtension()%>.filePath"
+                  name="XMIFile"
+                  id="org.topcased.service.edit.<%=editorConfiguration.getExtension()%>.filePath"
+                  version="1.0"/>
+         </listInputParam>
+      </service>
+   </extension>
+
+</plugin>

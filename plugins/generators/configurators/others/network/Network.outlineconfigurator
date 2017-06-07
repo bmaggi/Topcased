@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<outlineconfigurator:OutlineConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:outlineconfigurator="http://www.topcased.org/OutlineConfigurator/1.0" name="Network Menu" projectName="org.topcased.network.menu" package="org.topcased.network.menu" pluginClassName="NetMenuPlugin">
+  <createChild>
+    <items xsi:type="outlineconfigurator:Menu" id="Items" name="Items">
+      <items xsi:type="outlineconfigurator:CreateChildAction" type="Hierachical">
+        <class href="Network.genmodel#//network/Node"/>
+      </items>
+    </items>
+  </createChild>
+  <genPackage href="Network.genmodel#//network"/>
+</outlineconfigurator:OutlineConfiguration>

@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.topcased.modeler" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.topcased.modeler" id="orderSerialization" name="Order Serialization"/>
+      </appInfo>
+      <documentation>
+         This extension point allows developer to save order definition for a model element
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <choice>
+               <element ref="Order"/>
+               <element ref="OrderAlgorithm"/>
+            </choice>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="Order">
+      <complexType>
+         <attribute name="instance" type="string" use="required">
+            <annotation>
+               <documentation>
+                  An instance able to save, load order for element content
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.topcased.modeler.internal.ordering.IOrder"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="priority" use="required">
+            <annotation>
+               <documentation>
+                  the priority is used to browse over the different order mechanism
+               </documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <enumeration value="LOWEST">
+                  </enumeration>
+                  <enumeration value="LOW">
+                  </enumeration>
+                  <enumeration value="MIDDLE">
+                  </enumeration>
+                  <enumeration value="HIGH">
+                  </enumeration>
+                  <enumeration value="HIGHEST">
+                  </enumeration>
+               </restriction>
+            </simpleType>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="OrderAlgorithm">
+      <complexType>
+         <attribute name="algorithm" type="string" use="required">
+            <annotation>
+               <documentation>
+                  the class able to get a list of eobjects from an eobject
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.topcased.modeler.internal.ordering.IOrderAlgorithm"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="priority" use="required">
+            <annotation>
+               <documentation>
+                  the priority is used to browse over the different order mechanism
+               </documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <enumeration value="LOWEST">
+                  </enumeration>
+                  <enumeration value="LOW">
+                  </enumeration>
+                  <enumeration value="MIDDLE">
+                  </enumeration>
+                  <enumeration value="HIGH">
+                  </enumeration>
+                  <enumeration value="HIGHEST">
+                  </enumeration>
+               </restriction>
+            </simpleType>
+         </attribute>
+         <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         TOPCASED 4.1.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiinfo"/>
+      </appInfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Copyright (c) 2010 AIRBUS FRANCE and others.
+All rights reserved. This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+      </documentation>
+   </annotation>
+
+</schema>

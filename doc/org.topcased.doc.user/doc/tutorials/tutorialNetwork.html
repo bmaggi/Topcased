@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="topic" name="DC.Type" />
+<meta name="DC.Title" content="Network Editor" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="topic25189" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/visual.css" type="text/css" rel="stylesheet" />
+<title>MODELING FRAMEWORK - Tutorial : Network Editor</title>
+</head>
+<body id="topic25189"><a name="topic25189"><!-- --></a>
+
+
+	<h1 class="topictitle1">Network Editor</h1>
+
+	
+	<div id="container"><a name="container"><!-- --></a>
+		<p><a href="#topic25189__title1">1. Creation of the Network metamodel</a></p>
+
+		<p><a href="#topic25189__title2">2. Configuration and generation thanks to EMF capabilities</a></p>
+
+		<p><a href="#topic25189__title2.1">2.1. Configuration of the GenModel file</a></p>
+
+		<p><a href="#topic25189__title2.2">2.2. Generation of the EMF tree structure editor</a></p>
+
+		<p><a href="#topic25189__title3">3. Configuration and generation thanks to Topcased capabilities</a></p>
+
+		<p><a href="#topic25189__title3.1">3.1. Configuration of the Configurator file</a></p>
+
+		<p><a href="#topic25189__title3.2">3.2. Generation of the Topcased graphical editor</a></p>
+
+		
+		
+		
+		<p class="h2">Introduction :</p>
+
+		
+		<div class="p">This tutorial will guide you from the creation of a simple etamodel to the generation of the graphical editor associated. We can decompose the process in a few steps :
+			<br /><ul>
+				<li>creation of the Network metamodel with the graphical Ecore editor</li>
+
+				<li>generation of the EMF tree structure editor</li>
+
+				<li>creation of the configurator for the graphical editor with the EMF tree structure Configurator editor.</li>
+
+				<li>generation of the Network graphical editor, and customization.</li>
+
+			</ul>
+
+		</div>
+
+		
+		<div class="p"><strong>This tutorial has been developped for the 0.8.0 version of Topcased. Since the 0.9.0 version, the configuration of a graphical editor has evolved : you need to create at least two configuration files :</strong>
+			<br /><ul>
+				<li><strong>an</strong> editor configuration file that will describe the editor plugin</li>
+
+				<li>a <strong>diagram configuration</strong> file for each diagram</li>
+
+			</ul>
+
+		</div>
+
+		
+		<p>
+			However, this tutorial could be mostly followed, in addition to the "<a href="convertConfigurator0_8To0_10.php">HOW TO EXPORT CONFIGURATORS
+			(from v0.8.x to v0.10.x)</a>" documentation for the third part of this tutorial.
+		</p>
+
+		
+		<p class="h2" id="topic25189__title1"><a name="topic25189__title1"><!-- --></a>1. Creation of the Network metamodel</p>
+
+		<p>First, switch to the Topcased Modeling perspective. Select "<strong>Window &gt; Open Perspective &gt; Other...</strong>" in the menubar at the top of the workbench</p>
+
+		<img src="images/tutorialNetwork/select_perspective.jpg" alt="select_perspective" />
+		<p>... and in the new Window, select "<strong>Topcased Modeling</strong>".</p>
+
+		<img src="images/tutorialNetwork/topcased_modeling_perspective.jpg" alt="topcased_modeling_perspective" />
+		<p>This will change the perspective to set up the workbench for modeling. This perspective sets up the different views that are mainly used during modeling, and you will have access to a few shortcuts to create new models.</p>
+
+		<p>Then, create a new project that will contains our metamodel. Select "<strong>File &gt; New &gt; Project...</strong>" and select "<strong>Eclipse Modeling Framework &gt; Empty EMF project</strong>"</p>
+
+		<img src="images/generateEditor/empty_EMF_project.jpg" alt="empty_EMF_project" />
+		<p>Call your project <strong>org.topcased.network</strong>.</p>
+
+		<img src="images/tutorialNetwork/emf_project.jpg" alt="emf_project" />
+		<p>Create a folder named <strong>model</strong> in the newly created project. You will save your metamodel here.</p>
+
+		<img src="images/tutorialNetwork/new_folder.jpg" alt="new_folder" />
+		<p>
+			Then, you can create the Network metamodel with the graphical Ecore ditor : select the model folder you have just created and "<strong>Right Click &gt; New &gt; Ecore Diagram</strong>". The wizard is opened and informations are automatically
+			filled. Here you will just have to name your model <strong>network</strong>	.
+		</p>
+
+		<img src="images/tutorialNetwork/new_ecore_diagram.jpg" alt="new_ecore_diagram" />
+		<p>At this point your workspace should look like this :</p>
+
+		<img src="images/tutorialNetwork/empty_graphic_editor.jpg" alt="empty_graphic_editor" />
+		<div class="p">The <strong>Topcased Modeling perspective</strong> is composed of five main areas :
+			<br /><ol>
+				<li>The <strong>Navigator</strong> that shows your projects, folders and files structure</li>
+
+				<li>The <strong>Editing Window</strong> and the <strong>Palette</strong> to edit graphically your model</li>
+
+				<li>The <strong>Outline</strong> gives you an overview of the model edited</li>
+
+				<li>The <strong>Properties View</strong> gives you informations on the current selected model object</li>
+
+				<li>The <strong>Documentation View</strong> which is also synchronized with the current selection</li>
+
+			</ol>
+
+		</div>
+
+		
+		<p>We will create a simple metamodel with the Topcased Ecore graphical editor. At the end of the step, your metamodel will look like this :</p>
+
+		<img src="images/tutorialNetwork/network_metamodel.jpg" alt="network_metamodel" />
+		<p>Now, let look closely at the different steps necessary to create the metamodel :</p>
+
+		<p>
+			1) <strong>Create the EClass model objects</strong>. To create an EClass, select the corresponding tool in the Palette to activate it, and click on the editing window at the specified
+			location. You will have to do this to create the four EClass that composed our metamodel :
+		</p>
+
+		<br /><ul>
+			<li>Network : this represent the root model object of a Network model</li>
+
+			<li>Node : this is an abstract EClass. This is mainly used to aggregate the links of the Network</li>
+
+			<li>Computer : an object that will represent a Computer</li>
+
+			<li>Internet : an object that will represent an Internet access</li>
+
+		</ul>
+
+		<p>
+			2) <strong>Create the EAttribute model objects</strong>. You can create basic EAttributes into an EClass. Select the corresponding tool in the Palette and then click on the EClass on which the
+			EAttribute should be added. Here we will define at least a <strong>name</strong> EAttribute for the Network and the Computer model object. We will also defined two more EAttributes for the Computer.
+		</p>
+
+		<br /><ul>
+			<li>You will have to specify the "EType" property of the EAttribute. You can do this from the Properties View. Select "EString" as the type for the created EAttributes</li>
+
+		</ul>
+
+		<p>
+			3) <strong>Create the Inheritance links</strong>.
+		</p>
+
+		<br /><ul>
+			<li>
+				The <strong>Computer</strong> and the <strong>Internet</strong> EClass are "subclasses" of the <strong>Node</strong> EClass, called the "superclass". To update the model with this information, select the <strong>Inheritance Link</strong> tool in the Palette,
+				and then in the editing window, click first on the "subclass", and then click again on	the "superclass". After that, the "ESuper Types" property of the "subclass" should be updated. You can check it in the Properties View.
+			</li>
+
+		</ul>
+
+		<p>
+			4) <strong>Create the EReference model objects</strong>.
+		</p>
+
+		<br /><ul>
+			<li>
+				<strong>innerNetworks</strong> : the innerNetworks represent the fact that a Network may be composed of several Networks. By default the EReference is just a reference to a model object. But here, we want the Node to be added
+				(and not just referenced) inside the Network model object. To do that, you have to change the "containment" property of the EReference in the Properties View and set it to "true". After having done that, you should see a diamond drawn
+				at the source of the EReference.
+			</li>
+
+			<li><strong>nodes</strong> : that means that the Network may be composed of many objects of type Node. You will have to change the value of the "containment" EReference as you made it before for the innerNetworks EReference.</li>
+
+			<li>
+				<strong>inlinks</strong> and <strong>outlinks</strong> : these EReferences are quite special. In fact they are opposite, this is what we may called a Two-Way EReference. It means that when a link is made between two Nodes, the inlinks reference
+				of the first Node is updated and in the same time, outlinks reference of the second Node updated too. To do that, you have to specify the "EOpposite" property of one of the two EReference (the second is automatically updated)
+				from the Property View.
+			</li>
+
+		</ul>
+
+		<p>At this point, we should have a complete metamodel. There are just a few properties to set before finishing. Indeed, we advise you to fill the root EPackage attributes with the following values :</p>
+
+		<br /><ul>
+			<li>Name : <strong>network</strong></li>
+
+			<li>NsPrefix : <strong>network</strong> that is the prefix that will be used in the Network models serialized in XML.</li>
+
+			<li>NsURI : <strong>http://www.topcased.org/network/1.0</strong> that represents a unique identifier for the namespace to use for the Network models.</li>
+
+		</ul>
+
+		
+		<p>Our metamodel should be complete. You can save it with "Ctrl+S" or from the icon in the menu toolbar. Then, we will use the EMF generation capabilities to generate a first tree structure editor for our metamodel.</p>
+
+		
+		<p class="h2" id="topic25189__title2"><a name="topic25189__title2"><!-- --></a>2. Configuration and generation thanks to EMF capabilities</p>
+
+		
+		<p class="h3" id="topic25189__title2.1"><a name="topic25189__title2.1"><!-- --></a>2.1. Configuration of the GenModel file</p>
+
+		<p>
+			The first step is to create the <strong>network.genmodel</strong> file that will configure what will be generated at the creation of the tree structure editor. Select "<strong>New &gt; Other...</strong>", and "	<strong>Eclipse Modeling Framework &gt; EMF
+			Model</strong>". Create the file <strong>network.genmodel</strong> in the same folder as the <strong>network.ecore</strong> file. Then select "<strong>EMF core model</strong>" as the Model Importer and reference the <strong>network.ecore</strong> file as the model
+			file in the next page wizard.
+		</p>
+
+		<img src="images/generateEditor/select_model_importer.jpg" alt="select_model_importer" />
+		<p>
+			At the end of the wizard, the network.genmodel file is created and open. We might be able to generate directly the EMF tree structure editor associated but we advise you to customize the genModel file to generate all the classes in
+			the same project (By default, everything is generated in three different plugins). Here are the modifications to make :
+		</p>
+
+		<p>1) <strong>Configure the GenModel (root element) :</strong></p>
+
+		<br /><ul>
+			<li>Edit &gt; Edit directory : <strong>/org.topcased.network/src</strong> to generate classes in the same plugin as those of the model file</li>
+
+			<li>Editor &gt; Editor directory : <strong>/org.topcased.network/src</strong> to generate classes in the same plugin as those of the model file</li>
+
+			<li>Model &gt; Model Plug-in Class : <strong>org.topcased.network.NetworkPlugin</strong></li>
+
+			<li>Tests &gt; Tests Directory : leave it empty not to generate the test classes</li>
+
+			<li>Tests &gt; Test Suite Class : leave it empty not to generate the test classes</li>
+
+		</ul>
+
+		<p>2) <strong>Configure the GenPackage :</strong></p>
+
+		<br /><ul>
+			<li>All &gt; Base Package : enter <strong>org.topcased</strong> so that in relation with the name of the EPackage, generated classes are inside the org.topcased.network package hierarchy</li>
+
+			<li>Model &gt; Resource Type : select <strong>XML</strong> to be the default serialization for the models</li>
+
+		</ul>
+
+		<p>3) <strong>Configure the GenClass :</strong></p>
+
+		<br /><ul>
+			<li>
+				Edit &gt; Label Feature : here, you can select the attribute that will be displayed as the label. This feature will be used to show the label that best represent the model object. In our case, ensure that the <strong>name</strong> attribute
+				is selected for the <strong>Network</strong> and <strong>Computer</strong> model objects.</li>
+
+		</ul>
+
+		<p>4) <strong>Configure the GenFeature :</strong> here you can customize the way these properties are displayed in the Properties View. We will leave the default values.</p>
+
+		
+		<p class="h3" id="topic25189__title2.2"><a name="topic25189__title2.2"><!-- --></a>2.2. Generation of the EMF tree structure editor</p>
+
+		<p>To generate the tree structure editor, open the <strong>network.genmodel</strong> file and right click on the GenModel element and select "Generate All".</p>
+
+		<img src="images/tutorialNetwork/generate_all.jpg" alt="generate_all" />
+		<p>All classes should be generated in the same project we created at the beginning of this tutorial. We can check the generated editor :</p>
+
+		<p>
+			1) <strong>Export the plugin</strong> in the plugins directory of your Eclipse environment. Right click on your <strong>org.topcased.network</strong> plugin project, select 'Export...' and choose
+			'Deployable plug-ins and fragment'. Then a popup window appears, you will have to fill the following informations :
+		</p>
+
+		<br /><ul>
+			<li>Choose the plugin <strong>org.topcased.network</strong> that was generated with EMF</li>
+
+			<li>Export Destination : select "Directory" and browse the eclipse folder</li>
+
+			<li>Compiler options : select 1.4 or higher</li>
+
+			<li>Export options : none selected</li>
+
+		</ul>
+
+		<img src="images/tutorialNetwork/export_dialog.jpg" alt="export_dialog" />
+		<p>2) <strong>Restart Eclipse</strong> so that the plugin is loaded.</p>
+
+		<p>
+			3) <strong>Create a new Network model with the wizard</strong>. When you have selected a project or a folder, "Right Click	&gt; New &gt; Other...", then select "Example EMF Model
+			Creation Wizards &gt; Network Model". Finish the wizard with needed informations and click on finish. The EMF tree structure editor is opened with an empty model. You can
+			check that you can add "Network", "Computer" or "Internet" model object inside a Network model object, ... the Properties View shows you the properties you have defined in
+			your metamodel, ...
+		</p>
+
+		<p>4) After having check all of that you can <strong>close the editor and delete the created file</strong>.</p>
+
+		<p>Once you have generated the tree structure editor, let us configure a more convivial editor : a graphical editor.</p>
+
+		
+		<p class="h2" id="topic25189__title3"><a name="topic25189__title3"><!-- --></a>3. Configuration and generation thanks to Topcased capabilities</p>
+
+		
+		<p class="h3" id="topic25189__title3.1"><a name="topic25189__title3.1"><!-- --></a>3.1. Configuration of the Configurator file</p>
+
+		<p>In this section, we will describe how to configure the Configurator file of the Network metamodel we have created in the preceding steps of the tutorial.</p>
+
+		<p>
+			The configurator model describes what the editor will look like, which diagrams will be available, which graphical objects will be associated with a model object, the behavior of the graphical objects and links that are possible.
+			Select "New &gt; Others...", and "Example EMF Model Creation Wizards &gt; Configurator Model". The root model object must be an "Editor Configuration".
+		</p>
+
+		<p>When you have finished the wizard, the editor is opened. The configurator model only contains the root element "Editor Configuration".</p>
+
+		<p>
+			Then, you will have to specify the metamodel file you will work with. Indeed, the objects we will create will depends on the model objects of the metamodel we have created. Right click on the editing window and select "Load Resource..." :
+			then select the corresponding <strong>network.genmodel</strong> file.
+		</p>
+
+		<p>1) <strong>EditorConfiguration :</strong> this is the root model object of your configurator. You define here common properties of the generated editor and furthermore, you reference here the loaded Genmodel file. So fill the following informations :</p>
+
+		<br /><ul>
+			<li>name : <strong>Network Editor</strong></li>
+
+			<li>projectName : <strong>org.topcased.modeler.network</strong></li>
+
+			<li>prefix : <strong>Net</strong></li>
+
+			<li>extension : <strong>network</strong></li>
+
+			<li>extensionDiagram : <strong>networkdi</strong></li>
+
+			<li>genModel : select the <strong>Network</strong> GenModel</li>
+
+			<li>pluginVersion : leave the default value : it takes the same version of the ConfiguratorPlugin</li>
+
+		</ul>
+
+		<p>
+			2) <strong>DiagramConfiguration :</strong> define a type of diagram your editor will contain. In our case, the Network graphical editor will contain only one type of diagram. In the root element (EditorConfiguration) you must select
+			"New Child &gt; Diagram Configuration" and then fill the following informations.
+		</p>
+
+		<br /><ul>
+			<li>id : <strong>org.topcased.modeler.network.netdiagram</strong> a unique ID to reference the diagram</li>
+
+			<li>name : <strong>Network Diagram</strong> a name that will be displayed</li>
+
+			<li>package : <strong>netdiagram</strong> a java package name</li>
+
+			<li>prefix : <strong>Net</strong> a prefix to use for creating some classes</li>
+
+			<li>layout : choose the <strong>XYLayout</strong> : this means that the objects we will add in a Network could be located anywhere in the diagram.</li>
+
+		</ul>
+
+		<p>
+			3) <strong>ModelObjectConfiguration :</strong> then we define all the model objects we will use in the editor. Create a ModelObjectConfiguration for each object of the GenModel file (Network, Node, Computer and Internet) and
+			reference its corresponding GenClass.
+		</p>
+
+		<p>
+			4) <strong>SimpleObjectConfiguration :</strong> we can also define a graphical object that will not be associated with a model object. This is the case of the Link element. Indeed the Link will be used to connect two "Node"
+			through the "inLinks" and the "outLinks" references. So create a SimpleObjectConfiguration and name it <strong>Links</strong>.
+		</p>
+
+		<p>
+			5) <strong>DiagramReference :</strong> it is used to describe that a diagram may be associated with a particular model object. In our example, we want to be able to associate a diagram with a Network. So, select the
+			ModelObjectConfiguration corresponding to the Network model object, "Right Clic &gt; New Child &gt; DiagramReference". And in the created object, set its property "Diagram" to the only one existing DiagramConfiguration.
+		</p>
+
+		<p>
+			6) <strong>NodePartConfiguration :</strong> describe an object that will be represented as a Node in the diagram. Here are the different NodePartConfiguration you will have to create and their properties that you need to change :
+		</p>
+
+		<br /><ul>
+			<li>Network
+				<br /><ul>
+					<li>Object : select the ModelObjectConfiguration <strong>Network</strong></li>
+
+					<li>Type : select the Figure <strong>Package</strong></li>
+
+					<li>* childElements : add the <strong>Computer</strong> and the <strong>Internet</strong> NodePartConfiguration</li>
+
+					<li>container : <strong>true</strong> it may contains other nodes</li>
+
+				</ul>
+
+			</li>
+
+			<li>Node
+				<br /><ul>
+					<li>Object : select the ModelObjectConfiguration <strong>Node</strong></li>
+
+					<li>directEditable : <strong>false</strong></li>
+
+				</ul>
+
+			</li>
+
+			<li>Computer
+				<br /><ul>
+					<li>Object : select the ModelObjectConfiguration <strong>Computer</strong></li>
+
+					<li>Type : select the Figure <strong>Computer</strong></li>
+
+					<li>superType : select the NodePartConfiguration associated with the <strong>Node</strong> model object</li>
+
+					<li>directEditable : <strong>false</strong></li>
+
+				</ul>
+
+			</li>
+
+			<li>Internet
+				<br /><ul>
+					<li>Object : select the ModelObjectConfiguration <strong>Computer</strong></li>
+
+					<li>Type : select the Figure <strong>Cloud</strong></li>
+
+					<li>superType : select the NodePartConfiguration associated with the <strong>Node</strong> model object</li>
+
+					<li>directEditable : <strong>false</strong></li>
+
+				</ul>
+
+			</li>
+
+		</ul>
+
+		<p>
+			<strong>Remark :</strong> for each NodePartConfiguration, you must specify the figure that will represent the graphical object. You can define your own figures and reference them trough an extension
+			point (figureDeclaration) defined in the configurator. In our case, we have used predefined figures.
+		</p>
+
+		
+		<p>
+			7) <strong>EdgePartConfiguration :</strong> describe an object that will be represented as an Edge in the diagram. In our case, we will use it to connect two Node model objects :
+		</p>
+
+		<br /><ul>
+			<li>Links
+				<br /><ul>
+					<li>sourceDecoration : select <strong>NONE</strong></li>
+
+					<li>targetDecoration : select <strong>ARROW</strong> so that an Arrow decoration appears at the end of the link</li>
+
+					<li>
+						defaultRouter : select <strong>ObliqueRouter</strong> so that it draws a direct connection between the two end points. Other choices are RectilinearRouter (use when you want the connection always have horizontal and vertical
+						segments) and TreeRouter (used for the link of type inheritance).
+					</li>
+
+				</ul>
+
+			</li>
+
+		</ul>
+
+		<p>
+			8) <strong>SourceTargetCouple :</strong> this defines the type of nodes that can be connected and the model modifications that are relatives to that. In our case, we will create a "SourceTargetCouple" for the Links
+			EdgePartConfiguration, so select the object, "Right Click &gt; New Child &gt; Source Target Couple".
+		</p>
+
+		<br /><ul>
+			<li>autoRef : select <strong>false</strong> because we do not want that a connection is created from and to the same Node</li>
+
+			<li>reversible : leave it as <strong>false</strong> : this property is significant when the two Nodes are different</li>
+
+			<li>sourceNode : select the NodePartConfiguration associated with the <strong>Node</strong> model object</li>
+
+			<li>targetNode : select the NodePartConfiguration associated with the <strong>Node</strong> model object</li>
+
+			<li>containerType : select <strong>NONE</strong>. Indeed, here the Links graphical object is not directly associated with a model object</li>
+
+			<li>containerObject : leave it empty</li>
+
+			<li>containerRef : leave it empty too</li>
+
+			<li>refSourceToTarget : select the <strong>outlinks</strong> reference</li>
+
+			<li>refTargetToSource : select the <strong>inlinks</strong> reference</li>
+
+		</ul>
+
+		<p>
+			9) <strong>PaletteConfiguration :</strong> it is used to configure the tools that will be available in a given diagram. It is composed of several PaletteCategory objects. In our case, we have only one PaletteConfiguration : call it <strong>NetworkPalette</strong>
+		</p>
+
+		<p>
+			10) <strong>PaletteCategory :</strong> it is used to arrange the different tools associated with PartConfigurations of the Editor. It contains PaletteItem objects. In our case, we will define two PaletteCategory :
+			one that will contain the nodes (Network, Computer, Internet) of our editor, and another one that will contain the edges (Link).
+		</p>
+
+		<p>
+			11) <strong>PaletteItem :</strong> it links a tool with a PartConfiguration. This is the object that will be created from this ToolType.
+		</p>
+
+		<br /><ul>
+			<li>We will create a PaletteConfiguration for the NetworkDiagram :
+				<br /><ul>
+					<li>name : <strong>NetworkPalette</strong></li>
+
+				</ul>
+
+			</li>
+
+			<li>We will create two PaletteCategory for the PaletteConfiguration :
+				<br /><ul>
+					<li>name : <strong>Objects</strong> for the first one and <strong>Links</strong> for the second one.</li>
+
+				</ul>
+
+			</li>
+
+			<li>Then create the PaletteItem in the corresponding PaletteCategory
+				<br /><ul>
+					<li>name : EString (The name of the tool that will be displayed in the Palette)</li>
+
+					<li>part : PartConfiguration (Reference the PartConfiguration which is associated with this item. The type of the tool is determined by the type of the PartConfiguration)</li>
+
+				</ul>
+
+			</li>
+
+		</ul>
+
+		<p>At this point your configurator should look like this :</p>
+
+		<img src="images/tutorialNetwork/network_configuration.jpg" alt="network_configuration" />
+		
+		<p class="h3" id="topic25189__title3.2"><a name="topic25189__title3.2"><!-- --></a>3.2. Generation of the Topcased graphical editor</p>
+
+		<p>When you have finished to configure your editor, you can right click on the Configurator file and select the action " <strong>Topcased Generation &gt; Editor</strong>".</p>
+
+		<img src="images/tutorialNetwork/generate_editor.jpg" alt="generate_editor" />
+		<p>
+			It will generate a plugin according to the EditorConfiguration properties. After generating the graphical editor plugin, dependencies between the classes are resolved and files are formatted. If you switch to the
+			Java Perspective, you should ensure that the generated plugin has no error, it should look like this :
+		</p>
+
+		<img src="images/tutorialNetwork/generated_editor_plugin.jpg" alt="generated_editor_plugin" />
+		<p>
+			<strong>Remark :</strong> If you have generated the editor and the diagram contributions into the same plugin, you need to manually <strong>merge</strong> the <strong>plugin.xml</strong> file with the <strong>pluginXXXToMerge.xml</strong> files.
+		</p>
+
+		<p>
+			Once the graphical editor plugin generated, you should be able to run it. If you are using the 0.8.0 version or older, you have one more thing to accomplish by hand so that you can use your graphical editor : the creation of a first
+			template. However, the editor should be customized to get a more convivial one : you should add your own icons, define your own figures and manage particular behavior of your elements.
+		</p>
+
+		<p>
+			<strong>Creation of the first Template :</strong> The generated editor provides an extension point to define templates. Actually, the templates are not generated yet by the Topcased generation process, so you have to create it
+			yourself. Fortunately, there is an easy way to do that :
+		</p>
+
+		<br /><ul>
+			<li>Create a new Network model file with the EMF tree structure editor and call it "%name%".</li>
+
+			<li>Then select Network as the root object in the EMF wizard and click on finish.</li>
+
+			<li>
+				The tree structure editor is then open. You can save your model and close the editor. This model will be used as the template of the model file. So you have to copy it in the directory "templates/template1/%name%.network"
+				of your generated Topcased plugin.
+			</li>
+
+			<li>
+				Then you will have to create the template for the diagram file. So create a new diagram file from an existing model file. There you will have to reference the file %name%.network as the existing model file. Now
+				the file "%name%.networkdi" should be createdn and you should be able to create new models from this empty template.
+			</li>
+
+		</ul>
+
+		
+		<p>
+			<var class="varname">Remark : you can have a look to the cheatSheet that was designed to help you to create the first Template. Go to "Help &gt; Cheat Sheets..." and in the popup window, choose "Topcased Tutorials &gt; Create a Template"</var>
+		</p>
+
+		<img src="images/tutorialNetwork/template_cheatsheet.jpg" alt="template_cheatsheet" />
+		<p> Here is an example of a Network model you should be able to modelize without writing any line of code :</p>
+
+		<img src="images/tutorialNetwork/network_diagram.jpg" alt="network_diagram" />
+		
+		<p class="h2">Conclusion :</p>
+
+		<p>
+			Congratulations! If you have made it this far, you have successfully created and generated a simple metamodel with EMF and then created and generated its graphical editor with
+			Topcased. There is a whole lot more that could be said, but the purpose of this tutorial was just to get you started and learn the different steps needed for the configuration of
+			the editors. For more information on Topcased, visit the home page at <a href="http://www.topcased.org" target="_blank">	www.topcased.org</a>.
+		</p>
+
+		
+		
+		
+		<p class="h4">By Jacques LESCOT, Anyware Technologies</p>
+
+		<p class="h4">March, 08 2006</p>
+
+		
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.topcased.modeler" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.topcased.modeler" id="optimizedResize" name="Optimised Resize"/>
+      </appInfo>
+      <documentation>
+         Register to this extension point if you wish to resize a particular element in a diagram when exporting all diagrams as image files or when auto-resizing a diagram page.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="resizer"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="resizer">
+      <annotation>
+         <documentation>
+            Information for resizing some parts.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="resizedPart" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The type of part which should be resized for this extension.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.eclipse.gef.GraphicalEditPart"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="resizerClass" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The class providing the resize.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn="org.topcased.modeler.resize.OptimizedResizer:"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         4.1.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         
+ &lt;extension
+       id=&quot;org.topcased.modeler.uml.statemachinediagram.stateMachineResizer&quot;
+       name=&quot;State Machine resizer for regions&quot;
+       point=&quot;org.topcased.modeler.optimizedResize&quot;&gt;
+    &lt;resizer
+          resizedPart=&quot;org.topcased.modeler.uml.statemachinediagram.edit.RegionEditPart&quot;
+          resizerClass=&quot;org.topcased.modeler.uml.statemachinediagram.resize.RegionResizer&quot;&gt;
+    &lt;/resizer&gt;
+    &lt;resizer
+          resizedPart=&quot;org.topcased.modeler.uml.statemachinediagram.edit.STMDiagramEditPart&quot;
+          resizerClass=&quot;org.topcased.modeler.uml.statemachinediagram.resize.StateMachineResizer&quot;&gt;
+    &lt;/resizer&gt;
+ &lt;/extension&gt;
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiinfo"/>
+      </appInfo>
+      <documentation>
+         See class org.topcased.modeler.resize.OptimizedResizer to see which methods should or may be overriden.
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         The implementation in example works for the State machine diagram.
+It allows to resize regions to their common minimum size, then resize the state machine diagram itself to keep regions at their smallest size.
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         /*******************************************************************************
+ * Copyright (c) 2010 AIRBUS FRANCE.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Vincent Hemery (Atos Origin) - initial API and implementation
+ *******************************************************************************/
+      </documentation>
+   </annotation>
+
+</schema>

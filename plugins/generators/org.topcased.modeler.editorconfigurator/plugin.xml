@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.11 2007/04/18 15:02:49 jako Exp $
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://www.topcased.org/editorconfigurator/0.10" 
+       class = "org.topcased.modeler.editorconfigurator.provider.EditorconfiguratorItemProviderAdapterFactory"
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+  
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+       uri = "http://www.topcased.org/editorconfigurator/0.10"
+       class = "org.topcased.modeler.editorconfigurator.EditorconfiguratorPackage"
+       genModel = "model/editorconfigurator.genmodel" /> 
+   <package
+       uri = "http://www.topcased.org/editorconfigurator/1.0"
+       class = "org.topcased.modeler.editorconfigurator.EditorconfiguratorPackage"
+       genModel = "model/editorconfigurator.genmodel" /> 
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+    <parser
+       type="editorconfigurator"
+       class="org.topcased.modeler.editorconfigurator.util.EditorconfiguratorResourceFactoryImpl" />
+  </extension>
+
+
+	<extension point = "org.eclipse.ui.newWizards">
+		<category
+			id = "org.topcased.configurators.Wizard.category.ID"
+			name="Topcased Configurators"
+			parentCategory="org.topcased.facilities.newWizards"/>
+		<wizard
+			id = "org.topcased.modeler.editorconfigurator.presentation.EditorconfiguratorModelWizardID"
+			name = "%_UI_EditorconfiguratorModelWizard_label"
+			class = "org.topcased.modeler.editorconfigurator.internal.presentation.EditorconfiguratorModelWizard"
+			category = "org.topcased.facilities.newWizards/org.topcased.configurators.Wizard.category.ID"
+			icon = "icons/full/obj16/EditorconfiguratorModelFile.gif">
+			<description>%_UI_EditorconfiguratorModelWizard_description</description>
+			<selection class = "org.eclipse.core.resources.IResource" />
+		</wizard>
+	</extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "org.topcased.modeler.editorconfigurator.internal.presentation.EditorconfiguratorEditorID"
+        name = "%_UI_EditorconfiguratorEditor_label"
+        icon = "icons/full/obj16/EditorconfiguratorModelFile.gif"
+        extensions = "editorconfigurator"
+        class = "org.topcased.modeler.editorconfigurator.internal.presentation.EditorconfiguratorEditor" 
+        contributorClass="org.topcased.modeler.editorconfigurator.internal.presentation.EditorconfiguratorActionBarContributor" >
+    </editor>
+  </extension>
+
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+		<propertyContributor contributorId = "org.topcased.modeler.editorconfigurator.properties.contributorID"
+			labelProvider="org.topcased.modeler.editorconfigurator.internal.properties.providers.SectionsLabelProvider">
+		<propertyCategory category = "Editor Configurator Tabbed Properties"/>
+		</propertyContributor>
+	</extension>
+	
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+		<propertyTabs contributorId="org.topcased.modeler.editorconfigurator.properties.contributorID">
+			<propertyTab
+				category="Editor Configurator Tabbed Properties"
+				id="org.topcased.modeler.editorconfigurator.properties.all"
+				label="All"/>
+			<propertyTab
+				category="Editor Configurator Tabbed Properties"
+				id="org.topcased.modeler.editorconfigurator.properties.templatemerge"
+				label="Template &amp; Merge"
+				afterTab="org.topcased.modeler.editorconfigurator.properties.all"/>
+			<propertyTab
+				category="Editor Configurator Tabbed Properties"
+				id="org.topcased.modeler.editorconfigurator.properties.advanced"
+				label="Advanced"
+				afterTab="org.topcased.modeler.editorconfigurator.properties.templatemerge"/>    
+		</propertyTabs>
+	</extension>
+
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+		<propertySections contributorId="org.topcased.modeler.editorconfigurator.properties.contributorID">
+			<propertySection
+				id="org.topcased.modeler.editorconfigurator.properties.all.editorconfigurationnamesection.name"
+				tab="org.topcased.modeler.editorconfigurator.properties.all"
+				class="org.topcased.modeler.editorconfigurator.internal.properties.sections.EditorConfigurationNameSection">
+				<input type="org.topcased.modeler.editorconfigurator.EditorConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.editorconfigurator.properties.all.editorconfigurationprojectnamesection.projectname"
+				tab="org.topcased.modeler.editorconfigurator.properties.all"
+				afterSection="org.topcased.modeler.editorconfigurator.properties.all.editorconfigurationnamesection.name"
+				class="org.topcased.modeler.editorconfigurator.internal.properties.sections.EditorConfigurationProjectNameSection">
+				<input type="org.topcased.modeler.editorconfigurator.EditorConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.editorconfigurator.properties.all.editorconfigurationgenmodelsection.genmodel"
+				tab="org.topcased.modeler.editorconfigurator.properties.all"
+				afterSection="org.topcased.modeler.editorconfigurator.properties.all.editorconfigurationprojectnamesection.projectname"
+				class="org.topcased.modeler.editorconfigurator.internal.properties.sections.EditorConfigurationGenModelSection">
+				<input type="org.topcased.modeler.editorconfigurator.EditorConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.editorconfigurator.properties.all.editorconfigurationpluginversionsection.pluginversion"
+				tab="org.topcased.modeler.editorconfigurator.properties.all"
+				afterSection="org.topcased.modeler.editorconfigurator.properties.all.editorconfigurationgenmodelsection.genmodel"
+				class="org.topcased.modeler.editorconfigurator.internal.properties.sections.EditorConfigurationPluginVersionSection">
+				<input type="org.topcased.modeler.editorconfigurator.EditorConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.editorconfigurator.properties.all.editorconfigurationprovidersection.provider"
+				tab="org.topcased.modeler.editorconfigurator.properties.all"
+				afterSection="org.topcased.modeler.editorconfigurator.properties.all.editorconfigurationpluginversionsection.pluginversion"
+				class="org.topcased.modeler.editorconfigurator.internal.properties.sections.EditorConfigurationProviderSection">
+				<input type="org.topcased.modeler.editorconfigurator.EditorConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.editorconfigurator.properties.templatemerge.editorconfigurationforceoverwritesection.forceoverwrite"
+				tab="org.topcased.modeler.editorconfigurator.properties.templatemerge"
+				afterSection="org.topcased.modeler.editorconfigurator.properties.all.editorconfigurationprovidersection.provider"
+				class="org.topcased.modeler.editorconfigurator.internal.properties.sections.EditorConfigurationForceOverwriteSection">
+				<input type="org.topcased.modeler.editorconfigurator.EditorConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.editorconfigurator.properties.templatemerge.editorconfigurationorganizeimportssection.organizeimports"
+				tab="org.topcased.modeler.editorconfigurator.properties.templatemerge"
+				afterSection="org.topcased.modeler.editorconfigurator.properties.templatemerge.editorconfigurationforceoverwritesection.forceoverwrite"
+				class="org.topcased.modeler.editorconfigurator.internal.properties.sections.EditorConfigurationOrganizeImportsSection">
+				<input type="org.topcased.modeler.editorconfigurator.EditorConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.editorconfigurator.properties.templatemerge.editorconfigurationcopyrighttextsection.copyrighttext"
+				tab="org.topcased.modeler.editorconfigurator.properties.templatemerge"
+				afterSection="org.topcased.modeler.editorconfigurator.properties.templatemerge.editorconfigurationorganizeimportssection.organizeimports"
+				class="org.topcased.modeler.editorconfigurator.internal.properties.sections.EditorConfigurationCopyrightTextSection">
+				<input type="org.topcased.modeler.editorconfigurator.EditorConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.editorconfigurator.properties.advanced.featuresection.advancedsection"
+				tab="org.topcased.modeler.editorconfigurator.properties.advanced"
+				class="org.topcased.tabbedproperties.sections.AdvancedPropertySection">
+				<input type="org.eclipse.emf.ecore.EObject"/>  
+			</propertySection> 
+		</propertySections>
+	</extension>
+
+</plugin>

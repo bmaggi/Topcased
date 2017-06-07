@@ -1,0 +1,10 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.modeler.editorconfigurator.*"
+	 class="ImagesProperties"
+	 version="$Id: images.propertiesjet,v 1.6 2006/05/02 14:04:34 jako Exp $" %>
+
+NEW_PAGE_WZD=icons/NewPageWzd.gif
+EDITOR=icons/Editor.gif
+MODELFILE=icons/ModelFile.gif
+DIAGRAMFILE=icons/DiagramFile.gif

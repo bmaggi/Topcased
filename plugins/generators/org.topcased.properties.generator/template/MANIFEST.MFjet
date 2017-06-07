@@ -1,0 +1,39 @@
+<%@ jet
+	 package="org.topcased.properties.generator.templates"
+	 imports="org.topcased.properties.configurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="ManifestMF"
+	 version="$Id: MANIFEST.MFjet,v 1.2 2006/12/14 11:45:15 jako Exp $" %>
+<%
+  TabbedView tabbedView = (TabbedView) argument;
+  GenModel model = tabbedView.getGenModel();
+  String thePackage = tabbedView.getProjectName();
+  String basePackage = tabbedView.getBasePackage();
+	
+  if (basePackage != null && !basePackage.equals(""))
+  {
+  	  thePackage = basePackage;
+  }
+  String modelId = model.getModelPluginID();
+  String editorId = model.getEditorPluginID();
+  String editId = model.getEditPluginID();
+%>
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: <%=tabbedView.getName()%>
+Bundle-SymbolicName: <%=tabbedView.getIdUnspaced()%>; singleton:=true
+Bundle-Version: 1.0
+Bundle-Activator: <%=thePackage%>.<%=model.getModelPluginClassName() %>Sections
+Bundle-Vendor: Topcased
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources;visibility:=reexport,
+ org.eclipse.ui.views.properties.tabbed,
+ org.topcased.tabbedproperties,
+ <%=model.getModelPluginID()%><% if(!editId.equals(modelId)) {%>,
+ <%=model.getEditPluginID()%><% } if(!editorId.equals(modelId)) {%>,
+ org.eclipse.emf.edit.ui<%}%>
+Eclipse-LazyStart: true
+Export-Package: <%=thePackage%>,
+ <%=thePackage%>.providers,
+ <%=thePackage%>.sections,
+ <%=thePackage%>.sections.advanced

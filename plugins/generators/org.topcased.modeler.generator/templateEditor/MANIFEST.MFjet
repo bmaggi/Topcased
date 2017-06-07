@@ -1,0 +1,25 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.modeler.editorconfigurator.* org.topcased.modeler.editorconfigurator.util.*"
+	 class="ManifestMF"
+	 version="$Id: MANIFEST.MFjet,v 1.5 2009/07/08 13:49:35 tlandre Exp $" %>
+<%EditorConfiguration editorConfiguration = (EditorConfiguration) argument;%>
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: <%=editorConfiguration.getName()%>
+Bundle-SymbolicName: <%=editorConfiguration.getProjectName()%>; singleton:=true
+Bundle-Version: <%=editorConfiguration.getPluginVersion()%>
+Bundle-Activator: <%=editorConfiguration.getProjectName()%>.<%=editorConfiguration.getPrefix()%>Plugin
+Bundle-Vendor: <%=editorConfiguration.getProvider()%>
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore.edit,
+<%	for (Iterator j = EditorConfiguratorHelper.getRequiredPlugins(editorConfiguration).iterator(); j.hasNext();) { 
+		String pluginID = (String) j.next();
+		if (!"org.eclipse.core.runtime".equals(pluginID)) {%>
+ <%=pluginID%>,
+<%		}
+	}%>
+ org.topcased.modeler
+Eclipse-LazyStart: true
+Export-Package: <%=editorConfiguration.getProjectName()%>

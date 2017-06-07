@@ -1,0 +1,61 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.editorconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.* org.eclipse.emf.ecore.EClass"
+	 class="ModelerProvider"
+	 version="$Id$" %>
+<%	Map map = (Map) argument;
+	GenClass genClass = (GenClass) map.get("genClass");
+	EditorConfiguration editorConfiguration = (EditorConfiguration) map.get("editorConfiguration");
+	String editorPath = editorConfiguration.getProjectName();%>
+<%=editorConfiguration.getJavaCopyrightText()%>
+package <%=editorPath%>.providers;
+
+import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.EAttribute;
+<% if (genClass.getEcoreClass().getESuperTypes() == null || genClass.getEcoreClass().getESuperTypes().size() == 0 || ((EClass) genClass.getEcoreClass().getESuperTypes().get(0)).getEPackage() != genClass.getEcoreClass().getEPackage()) { %> 
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+<% } %>
+import org.topcased.modeler.providers.ILabelFeatureProvider;
+import <%=genClass.getGenPackage().getGenModel().getModelPluginID()%>.<%=genClass.getGenPackage().getPrefix()%>Package;
+
+/**
+ * This is the item provider adpater for a {@link <%=genClass.getQualifiedInterfaceName()%>} object.
+ *
+ * @generated
+ */
+public class <%=genClass.getName()%>ModelerProvider extends <% if (genClass.getEcoreClass().getESuperTypes() != null && genClass.getEcoreClass().getESuperTypes().size() > 0 && ((EClass) genClass.getEcoreClass().getESuperTypes().get(0)).getEPackage() == genClass.getEcoreClass().getEPackage()) {%><%=((EClass) genClass.getEcoreClass().getESuperTypes().get(0)).getName()%>ModelerProvider
+<%} else {%>ItemProviderAdapter
+<%}%> implements ILabelFeatureProvider
+{
+    /**
+     * This constructs an instance from a factory and a notifier.
+     *
+     * @param adapterFactory the adapter factory
+     * @generated
+     */
+    public <%=genClass.getName()%>ModelerProvider(AdapterFactory adapterFactory)
+    {
+        super(adapterFactory);
+    }
+    
+    
+    /**
+     * @see org.topcased.modeler.providers.ILabelFeatureProvider#getLabelFeature(java.lang.Object)
+     * @generated
+     */
+    public EAttribute getLabelFeature(Object object)
+    {
+<%
+if (genClass.getLabelFeature() != null)
+{
+%>    
+        return <%=genClass.getLabelFeature().getGenClass().getGenPackage().getPrefix()%>Package.eINSTANCE.get<%=genClass.getLabelFeature().getGenClass().getEcoreClass().getName()%>_<%=genClass.getLabelFeature().getCapName()%>();
+<%
+} else {
+%>
+		return null;
+<%
+}
+%>
+    }
+}

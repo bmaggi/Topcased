@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="network"
+    nsURI="http://www.topcased.org/network/1.0" nsPrefix="network">
+  <eAnnotations source="http://www.topcased.org/uuid">
+    <details key="uuid" value="11334553364720"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Network">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="11334553364721"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
+        eType="#//Node" containment="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="11334553364722"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="11334553364824"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="innerNetworks" upperBound="-1"
+        eType="#//Network" containment="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113345686913612"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="11334553364825"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inlinks" upperBound="-1"
+        eType="#//Node" eOpposite="#//Node/outlinks">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113345649551915"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outlinks" upperBound="-1"
+        eType="#//Node" eOpposite="#//Node/inlinks">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113345649551916"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Computer" eSuperTypes="#//Node">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="11334553364829"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113345533649210"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Internet" eSuperTypes="#//Node">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="113345533649211"/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>

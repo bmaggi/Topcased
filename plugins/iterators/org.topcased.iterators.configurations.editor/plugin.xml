@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.1 2013/01/18 11:00:54 omelois Exp $
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.topcased.iterators.configurations.iterator.presentation.IteratorModelWizardID"
+            name="%_UI_IteratorModelWizard_label"
+            class="org.topcased.iterators.configurations.iterator.presentation.IteratorModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/IteratorModelFile.gif">
+         <description>%_UI_IteratorModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.topcased.iterators.configurations.iterator.presentation.IteratorEditorID"
+            name="%_UI_IteratorEditor_label"
+            icon="icons/full/obj16/IteratorModelFile.gif"
+            extensions="iterator"
+            class="org.topcased.iterators.configurations.iterator.presentation.IteratorEditor"
+            contributorClass="org.topcased.iterators.configurations.iterator.presentation.IteratorActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

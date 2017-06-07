@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.topcased.modeler">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.topcased.modeler" id="evaluators" name="Evaluators"/>
+      </appInfo>
+      <documentation>
+         This extension point is used to create a extensible evaluator framework. With this framework you can add Java evaluation, OCL evaluation...
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <complexType>
+         <sequence>
+            <element ref="evaluator" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="evaluator">
+      <annotation>
+         <documentation>
+            Defines a new evaluator for the Topcased evaluation framework. An evaluator is used to evaluate a rule (a condition expressed in a known language) on a given Object in a certain context.
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="description" minOccurs="0" maxOccurs="1"/>
+         </sequence>
+         <attribute name="language" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The language in which the rules should be expressed.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The identifier
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The class doing the evaluation. It must be a subclass of &lt;samp&gt;org.topcased.modeler.evaluator.IEvaluator&lt;/samp&gt;.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn="org.topcased.modeler.evaluator.IEvaluator"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="description" type="string">
+      <annotation>
+         <documentation>
+            A description of the kind of evaluation.
+         </documentation>
+      </annotation>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         0.10.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         The evaluation framework includes a simple evaluation based on the OCL evaluation. This example shows you how this evaluator is added to the Topcased evaluation framework :
+&lt;pre&gt;
+   &lt;extension point=&quot;org.topcased.modeler.evaluators&quot;&gt;
+      &lt;evaluator
+         class=&quot;org.topcased.modeler.evaluator.ocl.OCLEvaluator&quot;
+         id=&quot;org.topcased.modeler.oclEvaluator&quot;
+         language=&quot;ocl&quot;&gt;
+         &lt;description&gt;
+            Basic OCL evaluation
+         &lt;/description&gt;
+      &lt;/evaluator&gt;
+   &lt;/extension&gt;
+&lt;/pre&gt;
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiInfo"/>
+      </appInfo>
+      <documentation>
+         An evaluator must implement the interface &lt;samp&gt;org.topcased.modeler.evaluator.IEvaluator&lt;/samp&gt;. The evaluator evaluates an &lt;samp&gt;Object&lt;/samp&gt; in a given context and a rule.
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         None
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Copyright (c) 2005, 2006 AIRBUS FRANCE and others.
+All rights reserved. This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+      </documentation>
+   </annotation>
+
+</schema>

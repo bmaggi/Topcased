@@ -1,0 +1,38 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports=""
+	 class="PluginXML"
+	 version="$Id: plugin.xmljet,v 1.2 2006/12/14 11:45:41 jako Exp $" %>
+<%String epackage = (String) argument;%>
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="org.topcased.metamodel.help.<%=epackage%>plugin"
+   name="Generated <%=epackage%> Help Plugin"
+   version="1.0"
+   provider-name="Topcased"
+   class="org.topcased.metamodel.help.<%=epackage%>.<%=epackage.toUpperCase()%>HelpPlugin">
+
+   <runtime>
+      <library name="org.topcased.metamodel.help.<%=epackage%>.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+
+   <requires>
+      <import plugin="org.eclipse.emf.edit.ui" export="true"/>
+      <import plugin="org.eclipse.core.runtime" />
+   </requires>
+
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            file="toc.xml">
+      </toc>
+      <toc
+            file="epackageToc.xml"
+            primary="true">
+      </toc>
+   </extension>
+
+</plugin>

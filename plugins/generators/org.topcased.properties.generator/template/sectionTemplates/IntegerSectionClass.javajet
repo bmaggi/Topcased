@@ -1,0 +1,88 @@
+<%@ jet
+	 package="org.topcased.properties.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.properties.configurator.* "
+	 class="IntegerSection"
+	 version="$Id: IntegerSectionClass.javajet,v 1.2 2006/11/17 17:50:21 jako Exp $" %>
+<%
+	AbstractSection aSection = (AbstractSection)argument;
+	TabbedView tabbedView = aSection.getTab().getCategory().getParent();
+	
+	GenFeature feature = null;
+	GenPackage gPackage = null;
+	
+	String thePackage = tabbedView.getProjectName();
+	String basePackage = tabbedView.getBasePackage();
+    if (basePackage != null && !basePackage.equals(""))
+    {
+        thePackage = basePackage;
+    }
+    
+	if (aSection instanceof SingleFeatureSection)
+	{
+		SingleFeatureSection section = (SingleFeatureSection)aSection;
+		feature = section.getFeature();
+		gPackage = feature.getGenPackage();
+	}
+	else
+	{
+		MultipleFeatureSection section = (MultipleFeatureSection)aSection;
+	}
+	%>
+package <%=thePackage%>.sections;
+
+import org.eclipse.emf.ecore.*;
+import org.topcased.tabbedproperties.sections.AbstractIntegerPropertySection;
+import <%=gPackage.getQualifiedPackageInterfaceName()%>;
+
+/**
+ * A section display a text field to edit/see Integer Features
+ *
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ *
+ * @generated
+ */
+public class <%=aSection.getClassName()%> extends AbstractIntegerPropertySection
+{
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+	 * @see org.topcased.tabbedproperties.sections.AbstractTabbedPropertySection#getLabelText()
+     * @generated
+	 */
+    protected String getLabelText()
+    {
+        return "<%=feature.getCapName()%>:";
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+	 * @see org.topcased.tabbedproperties.sections.AbstractTabbedPropertySection#getFeature()
+     * @generated
+	 */
+    protected EStructuralFeature getFeature()
+    {
+        return <%=gPackage.getPackageInterfaceName()%>.eINSTANCE.get<%=feature.getGenClass().getInterfaceName()%>_<%=feature.getCapName()%>();
+    }
+    
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @see org.topcased.tabbedproperties.sections.AbstractIntegerPropertySection#getFeatureInteger()
+     * @generated
+	 */
+    protected Integer getFeatureInteger()
+    {
+        Object Int  = getEObject().eGet(getFeature());
+        if (Int ==  null)
+        {
+            return new Integer(0);
+        }
+        
+		return (Integer) Int;
+    }
+}

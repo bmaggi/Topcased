@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.topcased.incubation"
+      label="%featureName"
+      version="1.0.0.qualifier"
+      provider-name="%providerName">
+
+   <description url="%license">
+      %description
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore.edit"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.cdt.managedbuilder.core"/>
+      <import plugin="org.eclipse.cdt"/>
+      <import plugin="org.eclipse.cdt.managedbuilder.gnu.ui"/>
+      <import plugin="org.eclipse.ui.console"/>
+      <import plugin="org.eclipse.cdt.core" version="5.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.cdt.debug.core" version="5.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.cdt.launch" version="5.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.debug.core"/>
+      <import plugin="org.eclipse.debug.ui"/>
+      <import plugin="org.eclipse.help"/>
+      <import plugin="org.topcased.bus.core"/>
+      <import plugin="org.topcased.service.transformation"/>
+      <import plugin="org.eclipse.ui.cheatsheets"/>
+   </requires>
+
+   <plugin
+         id="org.topcased.bnf"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.cbchain"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.doc.experimental"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.experimental"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.topcased.export.bnftosablecc"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.export.sdltofiacre"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.import.emxdi"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.mapping"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.service.importcopymodel"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.service.importmappingatl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.topprocess.tqp"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+</feature>

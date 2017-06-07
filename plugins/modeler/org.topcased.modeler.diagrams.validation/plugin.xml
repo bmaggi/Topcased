@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="missingAnchors" name="missingAnchors" schema="schema/missingAnchors.exsd"/>
+<extension
+        point="org.topcased.validation.ocl.metamodels">
+     <rules
+           file="rules/DI_GraphNode.ocl"
+           id="org.topcased.modeler.di.GraphNode"
+           level="ERROR"
+           uri="http://www.topcased.org/Diagrams/1.0">
+     </rules>
+     <rules
+           file="rules/DI_GraphEdge.ocl"
+           id="org.topcased.modeler.di.GraphEdge"
+           level="ERROR"
+           uri="http://www.topcased.org/Diagrams/1.0">
+     </rules>
+     <rules
+           file="rules/DI_Diagram.ocl"
+           id="org.topcased.modeler.di.Diagram"
+           level="ERROR"
+           uri="http://www.topcased.org/Diagrams/1.0">
+     </rules>
+  </extension>    
+
+ <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.topcased.modeler.diagrams.validation.actions"
+            nameFilter="*di"
+            objectClass="org.eclipse.core.resources.IFile">
+            <action
+               class="org.topcased.modeler.diagrams.validation.actions.MissingAnchorsAction"
+               enablesFor="1"
+               icon="icons/topcased-icon16.gif"
+               id="org.topcased.modeler.diagrams.validation.actions.MissingAnchorsAction"
+               label="Correct Anchors"            
+               menubarPath="org.topcased.facilities.menu.topcased/org.topcased.facilities.menu.other/topcasedGroup">
+         	</action>
+      </objectContribution>
+      <objectContribution
+            adaptable="true"
+            id="org.topcased.modeler.diagrams.validation.actions"
+            nameFilter="*di"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="org.topcased.modeler.diagrams.validation.actions.UpdateResourcesURI"
+               enablesFor="1"
+               icon="icons/topcased-icon16.gif"
+               id="org.topcased.modeler.diagrams.validation.actions.updateResourcesURI"
+               label="Change Resource References  "
+               menubarPath="org.topcased.facilities.menu.topcased/org.topcased.facilities.menu.other/topcasedGroup">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

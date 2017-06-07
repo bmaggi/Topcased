@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="component"
+    nsURI="http:///AADL/component" nsPrefix="component">
+  <eClassifiers xsi:type="ecore:EClass" name="SystemType" eSuperTypes="core.ecore#//ComponentType #//SystemClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
+        eType="#//SystemImpl" transient="true" eOpposite="#//SystemImpl/compType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//SystemType"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" eType="ecore:EClass feature.ecore#//SystemFeatures"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataType" eSuperTypes="core.ecore#//ComponentType #//DataClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
+        eType="#//DataImpl" transient="true" eOpposite="#//DataImpl/compType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//DataType"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" eType="ecore:EClass feature.ecore#//DataFeatures"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreadType" eSuperTypes="core.ecore#//ComponentType #//ThreadClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
+        eType="#//ThreadImpl" transient="true" eOpposite="#//ThreadImpl/compType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//ThreadType"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" eType="ecore:EClass feature.ecore#//ThreadFeatures"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreadGroupType" eSuperTypes="core.ecore#//ComponentType #//ThreadGroupClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
+        eType="#//ThreadGroupImpl" transient="true" eOpposite="#//ThreadGroupImpl/compType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//ThreadGroupType"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" eType="ecore:EClass feature.ecore#//ThreadGroupFeatures"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessType" eSuperTypes="core.ecore#//ComponentType #//ProcessClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
+        eType="#//ProcessImpl" transient="true" eOpposite="#//ProcessImpl/compType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//ProcessType"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" eType="ecore:EClass feature.ecore#//ProcessFeatures"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubprogramType" eSuperTypes="core.ecore#//ComponentType #//SubprogramClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
+        eType="#//SubprogramImpl" transient="true" eOpposite="#//SubprogramImpl/compType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//SubprogramType"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" eType="ecore:EClass feature.ecore#//SubprogramFeatures"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessorType" eSuperTypes="core.ecore#//ComponentType #//ProcessorClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
+        eType="#//ProcessorImpl" transient="true" eOpposite="#//ProcessorImpl/compType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//ProcessorType"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" eType="ecore:EClass feature.ecore#//ProcessorFeatures"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MemoryType" eSuperTypes="core.ecore#//ComponentType #//MemoryClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
+        eType="#//MemoryImpl" transient="true" eOpposite="#//MemoryImpl/compType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//MemoryType"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" eType="ecore:EClass feature.ecore#//MemoryFeatures"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusType" eSuperTypes="core.ecore#//ComponentType #//BusClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
+        eType="#//BusImpl" transient="true" eOpposite="#//BusImpl/compType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//BusType"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" eType="ecore:EClass feature.ecore#//BusFeatures"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceType" eSuperTypes="core.ecore#//ComponentType #//DeviceClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
+        eType="#//DeviceImpl" transient="true" eOpposite="#//DeviceImpl/compType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//DeviceType"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" eType="ecore:EClass feature.ecore#//DeviceFeatures"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemImpl" eSuperTypes="core.ecore#//ComponentImpl #//SystemClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" eType="#//SystemSubcomponents"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compType" lowerBound="1"
+        eType="#//SystemType" eOpposite="#//SystemType/implementations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//SystemImpl"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataImpl" eSuperTypes="core.ecore#//ComponentImpl #//DataClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" eType="#//DataSubcomponents"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compType" lowerBound="1"
+        eType="#//DataType" eOpposite="#//DataType/implementations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//DataImpl"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreadImpl" eSuperTypes="core.ecore#//ComponentImpl #//ThreadClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" eType="#//ThreadSubcomponents"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compType" lowerBound="1"
+        eType="#//ThreadType" eOpposite="#//ThreadType/implementations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//ThreadImpl"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="callSequences" eType="#//CallSequences"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreadGroupImpl" eSuperTypes="core.ecore#//ComponentImpl #//ThreadGroupClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" eType="#//ThreadGroupSubcomponents"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compType" lowerBound="1"
+        eType="#//ThreadGroupType" eOpposite="#//ThreadGroupType/implementations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//ThreadGroupImpl"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessImpl" eSuperTypes="core.ecore#//ComponentImpl #//ProcessClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" eType="#//ProcessSubcomponents"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compType" lowerBound="1"
+        eType="#//ProcessType" eOpposite="#//ProcessType/implementations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//ProcessImpl"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubprogramImpl" eSuperTypes="core.ecore#//ComponentImpl #//SubprogramClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compType" lowerBound="1"
+        eType="#//SubprogramType" eOpposite="#//SubprogramType/implementations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//SubprogramImpl"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" eType="#//SubprogramSubcomponents"
+        containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="callSequences" eType="#//CallSequences"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessorImpl" eSuperTypes="core.ecore#//ComponentImpl #//ProcessorClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" eType="#//ProcessorSubcomponents"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compType" lowerBound="1"
+        eType="#//ProcessorType" eOpposite="#//ProcessorType/implementations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//ProcessorImpl"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MemoryImpl" eSuperTypes="core.ecore#//ComponentImpl #//MemoryClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" eType="#//MemorySubcomponents"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compType" lowerBound="1"
+        eType="#//MemoryType" eOpposite="#//MemoryType/implementations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//MemoryImpl"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusImpl" eSuperTypes="core.ecore#//ComponentImpl #//BusClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compType" lowerBound="1"
+        eType="#//BusType" eOpposite="#//BusType/implementations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//BusImpl"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" eType="#//BusSubcomponents"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceImpl" eSuperTypes="core.ecore#//ComponentImpl #//DeviceClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" eType="#//DeviceSubcomponents"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compType" lowerBound="1"
+        eType="#//DeviceType" eOpposite="#//DeviceType/implementations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//DeviceImpl"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemSubcomponent" eSuperTypes="core.ecore#//Subcomponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//SystemSubcomponent"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" eType="#//SystemClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataSubcomponent" eSuperTypes="core.ecore#//Subcomponent connection.ecore#//DataAccessEnd">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//DataSubcomponent"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" eType="#//DataClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreadSubcomponent" eSuperTypes="core.ecore#//Subcomponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//ThreadSubcomponent"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" eType="#//ThreadClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreadGroupSubcomponent" eSuperTypes="core.ecore#//Subcomponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//ThreadGroupSubcomponent"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" eType="#//ThreadGroupClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessSubcomponent" eSuperTypes="core.ecore#//Subcomponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//ProcessSubcomponent"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" eType="#//ProcessClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubprogramSubcomponent" eSuperTypes="core.ecore#//Subcomponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataSubprogram" eType="ecore:EClass feature.ecore#//Subprogram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" eType="#//SubprogramClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessorSubcomponent" eSuperTypes="core.ecore#//Subcomponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//ProcessorSubcomponent"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" eType="#//ProcessorClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MemorySubcomponent" eSuperTypes="core.ecore#//Subcomponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//MemorySubcomponent"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" eType="#//MemoryClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusSubcomponent" eSuperTypes="core.ecore#//Subcomponent connection.ecore#//BusAccessEnd">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//BusSubcomponent"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" eType="#//BusClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceSubcomponent" eSuperTypes="core.ecore#//Subcomponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//DeviceSubcomponent"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" eType="#//DeviceClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemSubcomponents" eSuperTypes="core.ecore#//Subcomponents">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="systemSubcomponent" upperBound="-1"
+        eType="#//SystemSubcomponent" volatile="true" transient="true" derived="true"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="system#subcomponents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataSubcomponent" upperBound="-1"
+        eType="#//DataSubcomponent" volatile="true" transient="true" derived="true"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="system#subcomponents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processSubcomponent" upperBound="-1"
+        eType="#//ProcessSubcomponent" volatile="true" transient="true" derived="true"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="system#subcomponents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processorSubcomponent"
+        upperBound="-1" eType="#//ProcessorSubcomponent" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="system#subcomponents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="memorySubcomponent" upperBound="-1"
+        eType="#//MemorySubcomponent" volatile="true" transient="true" derived="true"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="system#subcomponents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busSubcomponent" upperBound="-1"
+        eType="#//BusSubcomponent" volatile="true" transient="true" derived="true"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="system#subcomponents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deviceSubcomponent" upperBound="-1"
+        eType="#//DeviceSubcomponent" volatile="true" transient="true" derived="true"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="system#subcomponents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subcomponents" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="namespace" value="system"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataSubcomponents" eSuperTypes="core.ecore#//Subcomponents">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataSubcomponent" upperBound="-1"
+        eType="#//DataSubcomponent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreadSubcomponents" eSuperTypes="core.ecore#//Subcomponents">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataSubcomponent" upperBound="-1"
+        eType="#//DataSubcomponent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreadGroupSubcomponents" eSuperTypes="core.ecore#//Subcomponents">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataSubcomponent" upperBound="-1"
+        eType="#//DataSubcomponent" volatile="true" transient="true" derived="true"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="threadGroup#subcomponents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threadSubcomponent" upperBound="-1"
+        eType="#//ThreadSubcomponent" volatile="true" transient="true" derived="true"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="threadGroup#subcomponents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threadGroupSubcomponent"
+        upperBound="-1" eType="#//ThreadGroupSubcomponent" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="threadGroup#subcomponents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subcomponents" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="namespace" value="threadGroup"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessSubcomponents" eSuperTypes="core.ecore#//Subcomponents">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataSubcomponent" upperBound="-1"
+        eType="#//DataSubcomponent" volatile="true" transient="true" derived="true"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="process#subcomponents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threadSubcomponent" upperBound="-1"
+        eType="#//ThreadSubcomponent" volatile="true" transient="true" derived="true"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="process#subcomponents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threadGroupSubcomponent"
+        upperBound="-1" eType="#//ThreadGroupSubcomponent" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="process#subcomponents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subcomponents" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="namespace" value="process"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessorSubcomponents" eSuperTypes="core.ecore#//Subcomponents">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="memorySubcomponent" upperBound="-1"
+        eType="#//MemorySubcomponent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MemorySubcomponents" eSuperTypes="core.ecore#//Subcomponents">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="memorySubcomponent" upperBound="-1"
+        eType="#//MemorySubcomponent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceSubcomponents" eSuperTypes="core.ecore#//Subcomponents">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threadSubcomponent" upperBound="-1"
+        eType="#//ThreadSubcomponent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataClassifier" eSuperTypes="core.ecore#//ComponentClassifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BusClassifier" eSuperTypes="core.ecore#//ComponentClassifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SubprogramSubcomponents" abstract="true"
+      eSuperTypes="core.ecore#//Subcomponents"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CallSequence" eSuperTypes="core.ecore#//ModeMember">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="call" lowerBound="1" upperBound="-1"
+        eType="#//SubprogramSubcomponent" containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubprogramClassifier" eSuperTypes="core.ecore#//ComponentClassifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CallSequences" eSuperTypes="core.ecore#//AObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="callSequence" upperBound="-1"
+        eType="#//CallSequence" containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemClassifier" eSuperTypes="core.ecore#//ComponentClassifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreadClassifier" eSuperTypes="core.ecore#//ComponentClassifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreadGroupClassifier" eSuperTypes="core.ecore#//ComponentClassifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessClassifier" eSuperTypes="core.ecore#//ComponentClassifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessorClassifier" eSuperTypes="core.ecore#//ComponentClassifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MemoryClassifier" eSuperTypes="core.ecore#//ComponentClassifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceClassifier" eSuperTypes="core.ecore#//ComponentClassifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BusSubcomponents" eSuperTypes="core.ecore#//Subcomponents"/>
+</ecore:EPackage>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=""
+    modelDirectory="/org.topcased.outline.configurator/src" editDirectory="/org.topcased.outline.configurator/src"
+    editorDirectory="/org.topcased.outline.configurator/src" modelPluginID="org.topcased.outline.configurator"
+    runtimeJar="true" modelName="OutlineConfiguration" modelPluginClass="org.topcased.outline.configurator.internal.ConfiguratorPlugin"
+    editPluginClass="" editorPluginClass="" nonNLSMarkers="true" featureMapWrapperClass=""
+    codeFormatting="true" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    usedGenPackages="../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel#//genmodel ../../../plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>OutlineConfiguration.ecore</foreignModel>
+  <genPackages prefix="OutlineConfigurator" basePackage="org.topcased.outline" disposableProviderFactory="true"
+      classPackageSuffix="internal.impl" presentationPackageSuffix="internal.presentation"
+      generateExampleClass="false" ecorePackage="OutlineConfiguration.ecore#/">
+    <genEnums ecoreEnum="OutlineConfiguration.ecore#//ChildActionType">
+      <genEnumLiterals ecoreEnumLiteral="OutlineConfiguration.ecore#//ChildActionType/Exact"/>
+      <genEnumLiterals ecoreEnumLiteral="OutlineConfiguration.ecore#//ChildActionType/Hierachical"/>
+    </genEnums>
+    <genClasses ecoreClass="OutlineConfiguration.ecore#//OutlineConfiguration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OutlineConfiguration.ecore#//OutlineConfiguration/createChild"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OutlineConfiguration.ecore#//OutlineConfiguration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OutlineConfiguration.ecore#//OutlineConfiguration/projectName"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference OutlineConfiguration.ecore#//OutlineConfiguration/genPackage"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute OutlineConfiguration.ecore#//OutlineConfiguration/package"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OutlineConfiguration.ecore#//OutlineConfiguration/pluginClassName"/>
+    </genClasses>
+    <genClasses ecoreClass="OutlineConfiguration.ecore#//CreateChildMenuConfiguration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OutlineConfiguration.ecore#//CreateChildMenuConfiguration/items"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OutlineConfiguration.ecore#//CreateChildMenuConfiguration/className"/>
+    </genClasses>
+    <genClasses ecoreClass="OutlineConfiguration.ecore#//CreateChildAction">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference OutlineConfiguration.ecore#//CreateChildAction/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OutlineConfiguration.ecore#//CreateChildAction/type"/>
+    </genClasses>
+    <genClasses ecoreClass="OutlineConfiguration.ecore#//Menu">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OutlineConfiguration.ecore#//Menu/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="OutlineConfiguration.ecore#//MenuItem">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference OutlineConfiguration.ecore#//MenuItem/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="OutlineConfiguration.ecore#//MenuGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OutlineConfiguration.ecore#//MenuGroup/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OutlineConfiguration.ecore#//MenuGroup/items"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

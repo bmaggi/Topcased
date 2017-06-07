@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramconfigurator:DiagramConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagramconfigurator="http://www.topcased.org/diagramconfigurator/1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" projectName="org.topcased.modeler.ecore" name="Ecore Diagram" package="ediagram" prefix="Ecore" copyrightText="Copyright (c) 2006 Anyware Technologies. All rights reserved. This program&#xA;and the accompanying materials are made available under the terms of the&#xA;Eclipse Public License v1.0 which accompanies this distribution, and is&#xA;available at http://www.eclipse.org/legal/epl-v10.html" samePluginAsEditor="true">
+  <palette name="EcorePaletteConfiguration">
+    <paletteCategories name="Objects">
+      <items name="EPackage" part="//@parts.0"/>
+      <items name="EClass" part="//@parts.1"/>
+      <items name="EDataType" part="//@parts.4"/>
+      <items name="EEnum" part="//@parts.5"/>
+      <items name="EAnnotation" part="//@parts.7"/>
+      <items name="EOperation" part="//@parts.2"/>
+      <items name="EAttribute" part="//@parts.3"/>
+      <items name="EEnumLiteral" part="//@parts.6"/>
+      <items name="Detail Entry" part="//@parts.8"/>
+    </paletteCategories>
+    <paletteCategories name="Connections">
+      <items name="EReference" part="//@parts.10"/>
+      <items name="Inheritance" part="//@parts.11"/>
+      <items name="EAnnotation Link" part="//@parts.12"/>
+    </paletteCategories>
+  </palette>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.0" defaultForegroundColor="139,69,19" defaultFont="Sans-regular-10" lineWidth="2" type="Package" childElements="//@parts.1 //@parts.4 //@parts.5" superType="//@parts.9" defaultBackgroundColor="244,164,96" container="true" defaultWidth="150" defaultHeight="100" minimumWidth="50" minimumHeight="30" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.1" defaultFont="Sans-regular-10" type="Class" childElements="//@parts.3 //@parts.2" superType="//@parts.9" defaultBackgroundColor="200,230,250" resizing="WIDTH" container="true" layout="ClassLayout" defaultWidth="150" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.2" defaultFont="Sans-regular-10" type="Label" superType="//@parts.9" backgroundColorChangeable="false" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.3" defaultFont="Sans-regular-10" type="Label" superType="//@parts.9" backgroundColorChangeable="false" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.9" defaultFont="Sans-regular-10" type="Class" superType="//@parts.9" defaultBackgroundColor="255,255,200" resizing="WIDTH" defaultWidth="150" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.6" defaultFont="Sans-regular-10" type="Class" childElements="//@parts.6" superType="//@parts.9" defaultBackgroundColor="245,245,245" resizing="WIDTH" container="true" layout="ClassLayout" defaultWidth="150" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.8" defaultFont="Sans-regular-10" type="Label" superType="//@parts.9" backgroundColorChangeable="false" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.4" defaultFont="Sans-regular-10" type="Class" childElements="//@parts.8" superType="//@parts.9" defaultBackgroundColor="255,195,0" resizing="WIDTH" container="true" layout="ClassLayout" defaultWidth="120" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.5" defaultFont="Sans-regular-10" type="Label" backgroundColorChangeable="false" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.7" foregroundColorChangeable="false" defaultFont="Sans-regular-10" fontChangeable="false" backgroundColorChangeable="false" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.10" defaultForegroundColor="0,0,255" defaultFont="Sans-regular-10" targetDecoration="ARROW" directEditable="//@parts.10/@edgeObjects.0">
+    <sourceTargetCouple containerType="SOURCE" autoRef="true" sourceNode="//@parts.1" targetNode="//@parts.1">
+      <containerObject href="Ecore.genmodel#//ecore/EClass"/>
+      <containerRef xsi:type="ecore:EReference" href="Ecore.ecore#//EClass/eStructuralFeatures"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="Ecore.ecore#//ETypedElement/eType"/>
+    </sourceTargetCouple>
+    <edgeObjects id="name" type="Target">
+      <eStructuralFeature xsi:type="ecore:EAttribute" href="Ecore.ecore#//ENamedElement/name"/>
+    </edgeObjects>
+    <edgeObjects id="multiplicity" type="Target"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.11" defaultFont="Sans-regular-10" fontChangeable="false" targetDecoration="TRIANGLE" defaultRouter="TreeRouter">
+    <sourceTargetCouple sourceNode="//@parts.1" targetNode="//@parts.1">
+      <refSourceToTarget xsi:type="ecore:EReference" href="Ecore.ecore#//EClass/eSuperTypes"/>
+    </sourceTargetCouple>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.12" defaultForegroundColor="255,120,0" defaultFont="Sans-regular-10" fontChangeable="false" lineStyle="CUSTOM">
+    <sourceTargetCouple sourceNode="//@parts.7" targetNode="//@parts.9">
+      <refTargetToSource xsi:type="ecore:EReference" href="Ecore.ecore#//EModelElement/eAnnotations"/>
+    </sourceTargetCouple>
+  </parts>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="Ecore.genmodel#//ecore/EPackage"/>
+    <diagrams diagram="/"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="Ecore.genmodel#//ecore/EClass"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="Ecore.genmodel#//ecore/EOperation"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="Ecore.genmodel#//ecore/EAttribute"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="Ecore.genmodel#//ecore/EAnnotation"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="Ecore.genmodel#//ecore/EStringToStringMapEntry"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="Ecore.genmodel#//ecore/EEnum"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="Ecore.genmodel#//ecore/EModelElement"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="Ecore.genmodel#//ecore/EEnumLiteral"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="Ecore.genmodel#//ecore/EDataType"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="Ecore.genmodel#//ecore/EReference"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" name="Inheritance"/>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" name="AnnotationLink"/>
+  <genModel href="Ecore.genmodel#/"/>
+  <templateRootObject href="Ecore.genmodel#//ecore/EPackage"/>
+  <editorConfigurator href="Ecore.editorconfigurator#/"/>
+</diagramconfigurator:DiagramConfiguration>

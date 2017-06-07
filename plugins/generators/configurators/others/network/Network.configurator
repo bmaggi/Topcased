@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurator:EditorConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configurator="http://www.topcased.org/configurator/1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Network" projectName="org.topcased.modeler.network" prefix="Net" extension="network" extensionDiagram="networkdi" pluginVersion="0.7.0">
+  <genModel href="Network.genmodel#/"/>
+  <diagrams id="org.topcased.modeler.network.netdiag" name="Network" package="netdiag" prefix="NetworkDiagram">
+    <palette name="netdiag">
+      <paletteCategories name="Objects">
+        <items name="Sub Network" part="//@diagrams.0/@parts.2"/>
+        <items name="Computer" part="//@diagrams.0/@parts.1"/>
+        <items name="Internet" part="//@diagrams.0/@parts.3"/>
+        <items name="Links" part="//@diagrams.0/@parts.4"/>
+      </paletteCategories>
+    </palette>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.1" directEditable="false"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.2" type="Computer" superType="//@diagrams.0/@parts.0" backgroundColorChangeable="false"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.0" type="Package" childElements="//@diagrams.0/@parts.1 //@diagrams.0/@parts.3" container="true"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.3" type="Cloud" superType="//@diagrams.0/@parts.0" directEditable="false"/>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.4">
+      <sourceTargetCouple sourceNode="//@diagrams.0/@parts.0" targetNode="//@diagrams.0/@parts.0">
+        <refSourceToTarget xsi:type="ecore:EReference" href="Network.ecore#//Node/inlinks"/>
+        <refTargetToSource xsi:type="ecore:EReference" href="Network.ecore#//Node/outlinks"/>
+      </sourceTargetCouple>
+    </parts>
+  </diagrams>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="Network.genmodel#//network/Network"/>
+    <diagrams diagram="//@diagrams.0"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="Network.genmodel#//network/Node"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="Network.genmodel#//network/Computer"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="Network.genmodel#//network/Internet"/>
+  </objects>
+  <objects xsi:type="configurator:SimpleObjectConfiguration" name="Links"/>
+</configurator:EditorConfiguration>

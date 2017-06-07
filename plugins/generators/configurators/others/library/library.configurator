@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurator:EditorConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configurator="http://www.topcased.org/configurator/1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Library Editor" projectName="org.topcased.modeler.library" prefix="Lib" extension="library" extensionDiagram="librarydi" pluginVersion="0.7.0">
+  <genModel href="library.genmodel#/"/>
+  <diagrams id="org.topcased.modeler.library.libdiagram" name="Diagram" package="libdiagram" prefix="LibDiagram">
+    <palette name="LibraryPalette">
+      <paletteCategories name="Objects">
+        <items name="Writer" part="//@diagrams.0/@parts.0"/>
+        <items name="Book" part="//@diagrams.0/@parts.1"/>
+      </paletteCategories>
+      <paletteCategories name="Relations">
+        <items name="Author" part="//@diagrams.0/@parts.2"/>
+      </paletteCategories>
+    </palette>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.2" defaultForegroundColor="255,0,0" foregroundColorChangeable="false" type="Man" resizing="NONE"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.1" defaultForegroundColor="0,255,0" foregroundColorChangeable="false" type="Container"/>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.3">
+      <sourceTargetCouple sourceNode="//@diagrams.0/@parts.0" targetNode="//@diagrams.0/@parts.1">
+        <refSourceToTarget xsi:type="ecore:EReference" href="library.ecore#//Writer/books"/>
+      </sourceTargetCouple>
+    </parts>
+  </diagrams>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="library.genmodel#//library/Library"/>
+    <diagrams diagram="//@diagrams.0"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="library.genmodel#//library/Book"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="library.genmodel#//library/Writer"/>
+  </objects>
+  <objects xsi:type="configurator:SimpleObjectConfiguration" name="Author"/>
+</configurator:EditorConfiguration>

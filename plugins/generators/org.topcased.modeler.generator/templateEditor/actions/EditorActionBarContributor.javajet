@@ -1,0 +1,20 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports=" org.topcased.modeler.editorconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="EditorActionBarContributor"
+	 version="$Id$" %>
+<%EditorConfiguration editorConfiguration = (EditorConfiguration) argument;%>
+<%=editorConfiguration.getJavaCopyrightText()%>
+package <%=editorConfiguration.getProjectName()%>.actions;
+
+import org.topcased.modeler.actions.ModelerActionBarContributor;
+
+/**
+ * Generated Actions
+ *
+ * @generated
+ */
+public class <%=editorConfiguration.getPrefix()%>EditorActionBarContributor extends ModelerActionBarContributor
+{
+    // TODO defined customized actions
+}

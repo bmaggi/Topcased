@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.19 2010/11/05 09:30:11 tlandre Exp $
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://www.topcased.org/DI/1.0" 
+       class = "org.topcased.modeler.di.model.provider.DiagramInterchangeItemProviderAdapterFactory"
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+  
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+       uri = "http://www.topcased.org/DI/1.0"
+       class = "org.topcased.modeler.di.model.DiagramInterchangePackage"
+       genModel = "model/DI.genmodel" /> 
+    <package
+       uri = "http://org.topcased.modeler.di.model"
+       class = "org.topcased.modeler.di.model.DiagramInterchangePackage" />
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+    <parser
+       type="diagraminterchange"
+       class="org.topcased.modeler.di.model.util.DiagramInterchangeResourceFactoryImpl" />
+  </extension>
+
+
+  <extension
+    point = "org.eclipse.ui.newWizards">
+     <category
+           id="org.topcased.facilities.newModels"
+           name="Topcased Models"
+           parentCategory="org.topcased.facilities.newWizards">
+     </category>
+    <wizard
+      id = "org.topcased.modeler.di.model.internal.presentation.DiagramInterchangeModelWizardID"
+      name = "%_UI_DiagramInterchangeModelWizard_label"
+      class = "org.topcased.modeler.di.model.internal.presentation.DiagramInterchangeModelWizard"
+      category = "org.topcased.facilities.newWizards/org.topcased.facilities.newModels"
+      icon = "icons/full/obj16/DiagramInterchangeModelFile.gif">
+      <description>%_UI_DiagramInterchangeModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "org.topcased.modeler.di.model.internal.presentation.DiagramInterchangeEditorID"
+        name = "%_UI_DiagramInterchangeEditor_label"
+        icon = "icons/full/obj16/DiagramInterchangeModelFile.gif"
+        extensions = "diagraminterchange"
+        class = "org.topcased.modeler.di.model.internal.presentation.DiagramInterchangeEditor" 
+        contributorClass="org.topcased.modeler.di.model.internal.presentation.DiagramInterchangeActionBarContributor" >
+    </editor>
+  </extension>
+  
+</plugin>

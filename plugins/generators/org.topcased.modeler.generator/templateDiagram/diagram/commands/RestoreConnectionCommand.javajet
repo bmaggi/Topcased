@@ -1,0 +1,414 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="RestoreConnectionCommand"
+	 version="$Id: RestoreConnectionCommand.javajet,v 1.11 2008/08/11 15:33:36 tlandre Exp $" %>
+<%	NodePartConfiguration nodePartConfiguration = (NodePartConfiguration) argument;
+	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) nodePartConfiguration.eContainer();
+	ModelObjectConfiguration modelObjectConfiguration = (ModelObjectConfiguration) nodePartConfiguration.getObject();
+	String partPrefix = nodePartConfiguration.getPrefix();
+	String objectName = modelObjectConfiguration.getGenClass().getName();%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>.commands;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.EditPart;
+import org.topcased.modeler.ModelerPropertyConstants;
+import org.topcased.modeler.commands.AbstractRestoreConnectionCommand;
+import org.topcased.modeler.di.model.GraphEdge;
+import org.topcased.modeler.di.model.GraphElement;
+import org.topcased.modeler.di.model.util.DIUtils;
+import org.topcased.modeler.editor.ICreationUtils;
+import org.topcased.modeler.utils.Utils;
+import <%=diagramConfiguration.getBasePackage()%>.<%=diagramConfiguration.getPrefix()%>SimpleObjectConstants;
+
+import <%=modelObjectConfiguration.getGenClass().getGenPackage().getInterfacePackageName()%>.<%=modelObjectConfiguration.getGenClass().getInterfaceName()%>;
+import <%=modelObjectConfiguration.getGenClass().getGenPackage().getInterfacePackageName()%>.*;
+
+/**
+ * <%=objectName%> restore connection command
+ *
+ * @generated
+ */
+<%	String superTypeName = "";
+	if (nodePartConfiguration.getSuperType() != null) {
+		superTypeName = ((ModelObjectConfiguration) nodePartConfiguration.getSuperType().getObject()).getGenClass().getName();
+	}
+	else {
+		superTypeName = "Abstract";
+	}
+%>
+public class <%=partPrefix%>RestoreConnectionCommand extends <%=superTypeName%>RestoreConnectionCommand
+{
+    /**
+	 * @param part the EditPart that is restored
+	 * @generated
+     */
+    public <%=partPrefix%>RestoreConnectionCommand(EditPart part)
+    {
+        super(part);
+    }
+
+	/**
+	 * @see org.topcased.modeler.commands.AbstractRestoreConnectionCommand#initializeCommands()
+	 * @generated
+     */
+    protected void initializeCommands()
+    {
+    	<%	if (nodePartConfiguration.getSuperType() != null) {
+    	%>
+    	super.initializeCommands();
+    	<%	}
+    	%>
+
+    	<%	if (nodePartConfiguration.isConnectable()) {
+    	%>
+        GraphElement graphElementSrc = getGraphElement();
+        EObject eObjectSrc = Utils.getElement(graphElementSrc);
+
+        if (eObjectSrc instanceof <%=objectName%>)
+        {
+           	for(GraphElement graphElementTgt : getAllGraphElements())
+        	{               
+                    boolean autoRef = graphElementTgt.equals(graphElementSrc);
+                    
+                    EObject eObjectTgt = Utils.getElement(graphElementTgt);
+            <%	for (Iterator iterator = diagramConfiguration.getParts().iterator() ; iterator.hasNext(); )
+            	{
+                	PartConfiguration part = (PartConfiguration) iterator.next();
+                	if (part instanceof EdgePartConfiguration) {
+                		for (Iterator coupleIterator = ((EdgePartConfiguration) part).getSourceTargetCouple().iterator() ; coupleIterator.hasNext() ;) {
+                			SourceTargetCouple couple = (SourceTargetCouple) coupleIterator.next();
+
+
+            		String capName="";
+            		if (couple.getRefEdgeToTarget() != null && couple.getRefEdgeToTarget().isMany())
+            		{
+            			capName ="_"+ couple.getRefEdgeToTarget().getName().substring(0,1).toUpperCase() + couple.getRefEdgeToTarget().getName().substring(1);
+            		}
+            		if (couple.getRefEdgeToTarget() != null && !couple.getRefEdgeToTarget().isMany())
+            		{
+            			capName ="_"+ couple.getRefEdgeToTarget().getName().substring(0,1).toUpperCase() + couple.getRefEdgeToTarget().getName().substring(1);
+            		}
+            		if (couple.getRefTargetToEdge() != null && couple.getRefTargetToEdge().isMany())
+            		{
+            			capName ="_"+ couple.getRefTargetToEdge().getName().substring(0,1).toUpperCase() + couple.getRefTargetToEdge().getName().substring(1);
+            		}
+            		if (couple.getRefTargetToEdge() != null && !couple.getRefTargetToEdge().isMany())
+            		{
+            			capName ="_"+ couple.getRefTargetToEdge().getName().substring(0,1).toUpperCase() + couple.getRefTargetToEdge().getName().substring(1);
+            		}
+            		if (couple.getRefTargetToSource() != null && couple.getRefTargetToSource().isMany())
+            		{
+            			capName ="_"+ couple.getRefTargetToSource().getName().substring(0,1).toUpperCase() + couple.getRefTargetToSource().getName().substring(1);
+            		}
+            		if (couple.getRefTargetToSource() != null && !couple.getRefTargetToSource().isMany())
+            		{
+            			capName ="_"+ couple.getRefTargetToSource().getName().substring(0,1).toUpperCase() + couple.getRefTargetToSource().getName().substring(1);
+            		}
+
+
+                			if (couple.getSourceNode().equals(nodePartConfiguration) || couple.getTargetNode().equals(nodePartConfiguration)) {
+                            	String objectName2 = "UNDEFINED";
+                            	if (couple.getSourceNode().equals(nodePartConfiguration)) {
+                            		objectName2 = ((ModelObjectConfiguration) couple.getTargetNode().getObject()).getGenClass().getName();
+                            	} else {
+                            		objectName2 = ((ModelObjectConfiguration) couple.getSourceNode().getObject()).getGenClass().getName();
+                            	}
+                        		String partObjectName = "UNDEFINED";
+                        		if (part.getObject() instanceof ModelObjectConfiguration) {
+                                	partObjectName = ((ModelObjectConfiguration) part.getObject()).getGenClass().getName();%>
+
+                    if (eObjectTgt instanceof <%=objectName2%>)
+                    {
+                        if (autoRef)
+                        {
+            <%  					if (couple.isAutoRef()) {%>
+                            create<%=partObjectName%>From<%=objectName%>To<%=objectName%><%=capName%>(graphElementSrc, graphElementSrc);
+            <%  					} else {%>
+                            // autoRef not allowed
+            <%  					}%>
+                        }
+                        else
+                        {
+            <%  					if (couple.getSourceNode().equals(nodePartConfiguration) || (couple.getTargetNode().equals(nodePartConfiguration) && couple.isReversible())) {%>
+                            // if the graphElementSrc is the source of the edge or if it is the target and that the SourceTargetCouple is reversible
+                            create<%=partObjectName%>From<%=objectName%>To<%=objectName2%><%=capName%>(graphElementSrc, graphElementTgt);
+            <%						}
+            						if (couple.getTargetNode().equals(nodePartConfiguration) || (couple.getSourceNode().equals(nodePartConfiguration) && couple.isReversible())) {%>
+                            // if graphElementSrc is the target of the edge or if it is the source and that the SourceTargetCouple is reversible
+                            create<%=partObjectName%>From<%=objectName2%>To<%=objectName%><%=capName%>(graphElementTgt, graphElementSrc);
+            <%						}%>
+                        }
+                    }
+
+            <%                  } else if (part.getObject() instanceof SimpleObjectConfiguration) {
+									partObjectName = ((SimpleObjectConfiguration) part.getObject()).getName();%>
+                    if (eObjectTgt instanceof <%=objectName2%>)
+                    {
+                        if (autoRef)
+                        {
+            <%						if (couple.isAutoRef()) {%>
+                            create<%=partObjectName%>From<%=objectName%>To<%=objectName%><%=capName%>(graphElementSrc, graphElementSrc);
+            <%						} else {%>
+                            // autoRef not allowed
+            <%  					}%>
+                        }
+                        else
+                        {
+            <%  					if (couple.getSourceNode().equals(nodePartConfiguration) || (couple.getTargetNode().equals(nodePartConfiguration) && couple.isReversible())) {%>
+                            // if the graphElementSrc is the source of the edge or if it is the target and that the SourceTargetCouple is reversible
+                            create<%=partObjectName%>From<%=objectName%>To<%=objectName2%><%=capName%>(graphElementSrc, graphElementTgt);
+            <%						}
+            						if (couple.getTargetNode().equals(nodePartConfiguration) || (couple.getSourceNode().equals(nodePartConfiguration) && couple.isReversible())) {%>
+                            // if graphElementSrc is the target of the edge or if it is the source and that the SourceTargetCouple is reversible
+                            create<%=partObjectName%>From<%=objectName2%>To<%=objectName%><%=capName%>(graphElementTgt, graphElementSrc);
+            <%  					}%>
+                        }
+                    }
+            <%                  }
+        	    			}
+            			}
+            		}
+            	}%>
+                
+            }
+        }
+        <%	} else {%>
+        // Do nothing
+        <%	}%>
+    }
+
+
+<%
+for (Iterator iterator = diagramConfiguration.getParts().iterator() ; iterator.hasNext(); )
+{
+	PartConfiguration part = (PartConfiguration) iterator.next();
+	if (part instanceof EdgePartConfiguration)
+	{
+		for (Iterator coupleIterator = ((EdgePartConfiguration) part).getSourceTargetCouple().iterator() ; coupleIterator.hasNext() ;)
+		{
+			SourceTargetCouple couple = (SourceTargetCouple) coupleIterator.next();
+			if (couple.getSourceNode().equals(nodePartConfiguration) || couple.getTargetNode().equals(nodePartConfiguration))
+            	{
+                	String test = "true";
+
+            		String fname = "";
+            		if (couple.getRefEdgeToTarget() != null && couple.getRefEdgeToTarget().isMany())
+            		{
+            			String capName = couple.getRefEdgeToTarget().getName().substring(0,1).toUpperCase() + couple.getRefEdgeToTarget().getName().substring(1);
+            			fname = "_"+capName;
+            			test = test + " && edgeObject.get" + capName + "().contains(targetObject)";
+            		}
+            		if (couple.getRefEdgeToTarget() != null && !couple.getRefEdgeToTarget().isMany())
+            		{
+            			String capName = couple.getRefEdgeToTarget().getName().substring(0,1).toUpperCase() + couple.getRefEdgeToTarget().getName().substring(1);
+            			fname = "_"+capName;
+            			test = test + " && targetObject.equals(edgeObject.get" + capName + "())";
+            		}
+            		if (couple.getRefEdgeToSource() != null && couple.getRefEdgeToSource().isMany())
+            		{
+            			String capName = couple.getRefEdgeToSource().getName().substring(0,1).toUpperCase() + couple.getRefEdgeToSource().getName().substring(1);
+
+            			test = test + " && edgeObject.get" + capName + "().contains(sourceObject)";
+            		}
+            		if (couple.getRefEdgeToSource() != null && !couple.getRefEdgeToSource().isMany())
+            		{
+            			String capName = couple.getRefEdgeToSource().getName().substring(0,1).toUpperCase() + couple.getRefEdgeToSource().getName().substring(1);
+
+            			test = test + " && sourceObject.equals(edgeObject.get" + capName + "())";
+            		}
+            		if (couple.getRefSourceToEdge() != null && couple.getRefSourceToEdge().isMany())
+            		{
+            			String capName = couple.getRefSourceToEdge().getName().substring(0,1).toUpperCase() + couple.getRefSourceToEdge().getName().substring(1);
+
+            			test = test + " && sourceObject.get" + capName + "().contains(edgeObject)";
+            		}
+            		if (couple.getRefSourceToEdge() != null && !couple.getRefSourceToEdge().isMany())
+            		{
+            			String capName = couple.getRefSourceToEdge().getName().substring(0,1).toUpperCase() + couple.getRefSourceToEdge().getName().substring(1);
+
+            			test = test + " && edgeObject.equals(sourceObject.get" + capName + "())";
+            		}
+            		if (couple.getRefTargetToEdge() != null && couple.getRefTargetToEdge().isMany())
+            		{
+            			String capName = couple.getRefTargetToEdge().getName().substring(0,1).toUpperCase() + couple.getRefTargetToEdge().getName().substring(1);
+            			fname = "_"+capName;
+            			test = test + " && targetObject.get" + capName + "().contains(edgeObject)";
+            		}
+            		if (couple.getRefTargetToEdge() != null && !couple.getRefTargetToEdge().isMany())
+            		{
+            			String capName = couple.getRefTargetToEdge().getName().substring(0,1).toUpperCase() + couple.getRefTargetToEdge().getName().substring(1);
+            			fname = "_"+capName;
+            			test = test + " && edgeObject.equals(targetObject.get" + capName + "())";
+            		}
+				if (couple.getRefSourceToTarget() != null && couple.getRefSourceToTarget().isMany())
+            		{
+            			String capName = couple.getRefSourceToTarget().getName().substring(0,1).toUpperCase() + couple.getRefSourceToTarget().getName().substring(1);
+
+            			test = test + " && sourceObject.get" + capName + "().contains(targetObject)";
+            		}
+            		if (couple.getRefSourceToTarget() != null && !couple.getRefSourceToTarget().isMany())
+            		{
+            			String capName = couple.getRefSourceToTarget().getName().substring(0,1).toUpperCase() + couple.getRefSourceToTarget().getName().substring(1);
+
+            			test = test + " && targetObject.equals(sourceObject.get" + capName + "())";
+            		}
+            		if (couple.getRefTargetToSource() != null && couple.getRefTargetToSource().isMany())
+            		{
+            			String capName = couple.getRefTargetToSource().getName().substring(0,1).toUpperCase() + couple.getRefTargetToSource().getName().substring(1);
+            			fname = "_"+capName;
+            			test = test + " && targetObject.get" + capName + "().contains(sourceObject)";
+            		}
+            		if (couple.getRefTargetToSource() != null && !couple.getRefTargetToSource().isMany())
+            		{
+            			String capName = couple.getRefTargetToSource().getName().substring(0,1).toUpperCase() + couple.getRefTargetToSource().getName().substring(1);
+            			fname = "_"+capName;
+            			test = test + " && sourceObject.equals(targetObject.get" + capName + "())";
+            		}
+
+				if ("true".equals(test))
+                	{
+                		test = "false";
+                	}
+                	else
+                	{
+                		test = test.substring(8);
+                	}
+
+                	String nodePartPrefix = part.getPrefix();
+            		String partObjectName = "UNDEFINED";
+            		if (part.getObject() instanceof ModelObjectConfiguration)
+            		{
+                    	partObjectName = ((ModelObjectConfiguration) part.getObject()).getGenClass().getName();
+                    	String sourceNodeClassName = ((ModelObjectConfiguration) couple.getSourceNode().getObject()).getGenClass().getName();
+                    	String targetNodeClassName = ((ModelObjectConfiguration) couple.getTargetNode().getObject()).getGenClass().getName();
+
+                    String container = "";
+                    	switch (couple.getContainerType().getValue())
+                    	{
+                    		case EdgeContainerType.SOURCE:
+                    			container = "sourceObject";
+                    			break;
+                    		case EdgeContainerType.TARGET:
+                    			container = "targetObject";
+                    			break;
+                    		case EdgeContainerType.SOURCE_CONTAINER:
+                    			container = "((" + couple.getContainerObject().getGenPackage().getInterfacePackageName() + "." + couple.getContainerObject().getInterfaceName() + ") sourceObject.eContainer())";
+                    			break;
+                    		case EdgeContainerType.TARGET_CONTAINER:
+                    			container = "((" + couple.getContainerObject().getGenPackage().getInterfacePackageName() + "." + couple.getContainerObject().getInterfaceName() + ") targetObject.eContainer())";
+                    			break;
+                    		case EdgeContainerType.DIAGRAM:
+                    			container = "((" + couple.getContainerObject().getGenPackage().getInterfacePackageName() + "." + couple.getContainerObject().getInterfaceName() + ") Utils.getDiagramModelObject(srcElt))";
+                    			break;
+                    		default:
+                    			break;
+                    	}
+%>
+	/**
+	 * @param srcElt the source element
+	 * @param targetElt the target element
+	 * @generated
+     */
+    private void create<%=partObjectName%>From<%=sourceNodeClassName%>To<%=targetNodeClassName%><%=fname%>(GraphElement srcElt, GraphElement targetElt)
+    {
+        <%=sourceNodeClassName%> sourceObject = (<%=sourceNodeClassName%>) Utils.getElement(srcElt);
+        <%=targetNodeClassName%> targetObject = (<%=targetNodeClassName%>) Utils.getElement(targetElt);
+
+<%
+					String capContainerRef = couple.getContainerRef().getName();
+	    				if (capContainerRef.length() != 0)
+	    				{
+      					capContainerRef = capContainerRef.substring(0,1).toUpperCase() + capContainerRef.substring(1);
+      				}
+					if (couple.getContainerRef().isMany())
+					{
+%>
+		EList edgeObjectList = <%=container%>.get<%=capContainerRef%>();
+        for (Iterator it = edgeObjectList.iterator(); it.hasNext();)
+        {
+        	Object obj = it.next();
+        	if (obj instanceof <%=partObjectName%>)
+        	{
+            <%=partObjectName%> edgeObject = (<%=partObjectName%>) obj;
+<%
+					}
+					else
+					{
+%>
+        {
+        	{
+            <%=partObjectName%> edgeObject = <%=container%>.get<%=capContainerRef%>();
+            if (edgeObject==null)
+            {
+            	return;
+            }
+<%
+					}
+%>
+                if (<%=test%>)
+                {
+                    // check if the relation does not exists yet
+                    List<GraphEdge> existing = getExistingEdges(srcElt, targetElt, <%=partObjectName%>.class);
+                    if (!isAlreadyPresent(existing, edgeObject))
+                    {
+                        ICreationUtils factory = getModeler().getActiveConfiguration().getCreationUtils();
+                        // restore the link with its default presentation
+                        GraphElement edge = factory.createGraphElement(edgeObject);
+                        if (edge instanceof GraphEdge)
+                        {
+                            <%=nodePartPrefix%>EdgeCreationCommand cmd = new <%=nodePartPrefix%>EdgeCreationCommand(getEditDomain(), (GraphEdge) edge, srcElt, false);
+                            cmd.setTarget(targetElt);
+                            add(cmd);
+                        }
+                    }
+                }
+            }
+        }
+    }
+<%
+                }
+                else if (part.getObject() instanceof SimpleObjectConfiguration)
+                {
+                    partObjectName = ((SimpleObjectConfiguration) part.getObject()).getName();
+					String sourceNodeClassName = ((ModelObjectConfiguration) couple.getSourceNode().getObject()).getGenClass().getName();
+                    String targetNodeClassName = ((ModelObjectConfiguration) couple.getTargetNode().getObject()).getGenClass().getName();
+%>
+	/**
+	 * @param srcElt the source element
+	 * @param targetElt the target element
+	 * @generated
+     */
+    private void create<%=partObjectName%>From<%=sourceNodeClassName%>To<%=targetNodeClassName%><%=fname%>(GraphElement srcElt, GraphElement targetElt)
+    {
+        <%=sourceNodeClassName%> sourceObject = (<%=sourceNodeClassName%>) Utils.getElement(srcElt);
+        <%=targetNodeClassName%> targetObject = (<%=targetNodeClassName%>) Utils.getElement(targetElt);
+
+        if (<%=test%>)
+        {
+            // check if the relation does not exists yet
+            if (getExistingEdges(srcElt, targetElt, <%=diagramConfiguration.getPrefix()%>SimpleObjectConstants.SIMPLE_OBJECT_<%=partObjectName.toUpperCase()%>).size() == 0)
+            {
+                GraphEdge edge = Utils.createGraphEdge(<%=diagramConfiguration.getPrefix()%>SimpleObjectConstants.SIMPLE_OBJECT_<%=partObjectName.toUpperCase()%>);
+                <%=nodePartPrefix%>EdgeCreationCommand cmd = new <%=nodePartPrefix%>EdgeCreationCommand(null, edge, srcElt, false);
+                cmd.setTarget(targetElt);
+                add(cmd);
+            }
+        }
+    }
+<%
+                }
+    			}
+    		}
+    	}
+}
+%>
+
+
+
+}

@@ -1,0 +1,78 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="NodeLayoutEditPolicy"
+	 version="$Id: NodeLayoutEditPolicy.javajet,v 1.9 2006/10/26 15:06:23 jako Exp $" %>
+<%	NodePartConfiguration nodePartConfiguration = (NodePartConfiguration) argument;
+	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) nodePartConfiguration.eContainer();
+	ObjectConfiguration objectConfiguration = nodePartConfiguration.getObject();
+	String partPrefix = nodePartConfiguration.getPrefix();%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>.policies;
+
+/**
+ * @generated
+ */
+<%	switch (nodePartConfiguration.getLayout().getValue()) {
+		case LayoutType.CLASS_LAYOUT:
+    	case LayoutType.TOOLBAR_LAYOUT:%>
+public class <%=partPrefix%>LayoutEditPolicy extends org.topcased.modeler.edit.policies.ClassLayoutEditPolicy
+<%      	break;
+    	default:%>
+public class <%=partPrefix%>LayoutEditPolicy extends org.topcased.modeler.edit.policies.ModelerLayoutEditPolicy
+<%      	break;
+	}%> 
+{
+	/**
+	 * Default contructor.
+	 *
+	 * @generated
+	 */
+	public <%=partPrefix%>LayoutEditPolicy() {
+		super();
+	}
+    
+<%	if (LayoutType.PORT_LAYOUT_LITERAL.equals(nodePartConfiguration.getLayout())) {%>    
+	/**
+     * @see org.topcased.modeler.edit.policies.ModelerLayoutEditPolicy#isAttachedToBorder(org.topcased.modeler.di.model.GraphNode)
+	 * @generated
+     */
+    protected boolean isAttachedToBorder(GraphNode node)
+    {
+<%		for (Iterator iter = nodePartConfiguration.getChildElements().iterator(); iter.hasNext();) {
+			NodePartConfiguration childNodePartConf = (NodePartConfiguration) iter.next();
+			// TODO Remove the first check (about the figure associated with the NodeEditPart)
+			if (("Port".equals(childNodePartConf.getType()) || childNodePartConf.isAttachedToBorder()) && childNodePartConf.getObject() instanceof ModelObjectConfiguration) {
+				ModelObjectConfiguration modelObjConf = (ModelObjectConfiguration) childNodePartConf.getObject();%>
+		if (Utils.getElement(node) instanceof <%=modelObjConf.getGenClass().getName()%>)
+		{
+			return true;
+		}
+<%			}
+		}%>
+        return super.isAttachedToBorder(node);
+    }
+<%	}%>
+
+<%	if (!(LayoutType.CLASS_LAYOUT_LITERAL.equals(nodePartConfiguration.getLayout()) || LayoutType.TOOLBAR_LAYOUT_LITERAL.equals(nodePartConfiguration.getLayout())) && !nodePartConfiguration.getChildElements().isEmpty()) {%>
+    /**
+     * @see org.topcased.modeler.edit.policies.ModelerLayoutEditPolicy#isValid(org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject)
+	 * @generated
+     */
+    protected boolean isValid(EObject child, EObject parent)
+    {
+<%		for (Iterator iter = nodePartConfiguration.getChildElements().iterator(); iter.hasNext();) {
+			NodePartConfiguration childNodePartConf = (NodePartConfiguration) iter.next();
+			if (childNodePartConf.getObject() instanceof ModelObjectConfiguration) {
+				ModelObjectConfiguration modelObjConf = (ModelObjectConfiguration) childNodePartConf.getObject();%>
+        if (child instanceof <%=modelObjConf.getGenClass().getName()%>)
+        {
+            return true;
+        }
+<%			}
+		}%>
+		return false;
+	}
+<%	}%>
+
+}

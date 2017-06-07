@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="configurator"
+    nsURI="http://www.topcased.org/PropertiesViewConfiguration/1.0" nsPrefix="propertiesconfigurator">
+  <eClassifiers xsi:type="ecore:EClass" name="TabbedView">
+    <eOperations name="getProjectNameUnspaced" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getIdUnspaced" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="replaceSpaces" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="toReplace" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="categories" lowerBound="1"
+        upperBound="-1" eType="#//Category" containment="true" eOpposite="#//Category/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genModel" eType="ecore:EClass ../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenModel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="basePackage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tab">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
+        eType="#//AbstractSection" containment="true" eOpposite="#//AbstractSection/tab"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="category" lowerBound="1"
+        eType="#//Category" eOpposite="#//Category/tabs"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="afterTab" eType="#//Tab"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="indented" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractSection" abstract="true">
+    <eOperations name="getClassName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tab" lowerBound="1" eType="#//Tab"
+        eOpposite="#//Tab/sections"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="afterSection" eType="#//AbstractSection"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Category">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tabs" upperBound="-1" eType="#//Tab"
+        containment="true" eOpposite="#//Tab/category"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+        eType="#//TabbedView" eOpposite="#//TabbedView/categories"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleFeatureSection" eSuperTypes="#//AbstractSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
+        eType="ecore:EClass ../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiline" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultipleFeatureSection" eSuperTypes="#//AbstractSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AdvancedSection" eSuperTypes="#//AbstractSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="input" lowerBound="1" upperBound="-1"
+        eType="ecore:EClass ../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenClass"/>
+  </eClassifiers>
+</ecore:EPackage>

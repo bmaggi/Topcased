@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=""
+    modelDirectory="/org.topcased.sam/src" editDirectory="/org.topcased.sam/src" editorDirectory="/org.topcased.sam/src"
+    modelPluginID="org.topcased.sam" redirection="" modelName="SAM" modelPluginClass="org.topcased.sam.SAMPlugin"
+    editPluginClass="" editorPluginClass="" codeFormatting="true" testsDirectory=""
+    testSuiteClass="" importerID="org.eclipse.emf.importer.ecore" containmentProxies="true"
+    complianceLevel="5.0" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>SAM.ecore</foreignModel>
+  <genPackages prefix="SAM" basePackage="org.topcased" resource="XMI" disposableProviderFactory="true"
+      testsPackageSuffix="" generateExampleClass="false" ecorePackage="SAM.ecore#/">
+    <genEnums ecoreEnum="SAM.ecore#//DataType">
+      <genEnumLiterals ecoreEnumLiteral="SAM.ecore#//DataType/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="SAM.ecore#//DataType/Real"/>
+      <genEnumLiterals ecoreEnumLiteral="SAM.ecore#//DataType/Float"/>
+      <genEnumLiterals ecoreEnumLiteral="SAM.ecore#//DataType/Double"/>
+      <genEnumLiterals ecoreEnumLiteral="SAM.ecore#//DataType/Boolean"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="SAM.ecore#//AbstractState">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//AbstractState/parentState"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//AbstractState/parentAutomaton"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//AbstractState/outlink"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//Automaton">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//Automaton/listTransitions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//Automaton/listPorts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//Automaton/listStates"/>
+      <genFeatures createChild="false" propertyCategory="" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SAM.ecore#//Automaton/isInstanceOf"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//InitialState"/>
+    <genClasses ecoreClass="SAM.ecore#//MacroState">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//MacroState/composition"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//State">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//State/inlink"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//Transition" labelFeature="#//sam/Transition/condition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SAM.ecore#//Transition/condition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SAM.ecore#//Transition/emission"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SAM.ecore#//Transition/priority"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//Transition/dest"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//Transition/parentAutomaton"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//Transition/source"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SAM.ecore#//ControlPort"/>
+    <genClasses image="false" ecoreClass="SAM.ecore#//DataPort"/>
+    <genClasses ecoreClass="SAM.ecore#//InControlPort">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//InControlPort/merge"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//InDataPort">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//InDataPort/parentDataStore"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//InDataPort/parentSync"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//InDataPort/dataMerge"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SAM.ecore#//InputPort"/>
+    <genClasses ecoreClass="SAM.ecore#//OutControlPort">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//OutControlPort/split"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//OutControlPort/merge"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//OutDataPort">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//OutDataPort/parentDataStore"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//OutDataPort/parentSync"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//OutDataPort/split"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//OutDataPort/merge"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SAM.ecore#//OutputPort"/>
+    <genClasses image="false" ecoreClass="SAM.ecore#//Port">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//Port/parentSystem"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//Port/outlink"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//Port/inlink"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//Port/parentAutomaton"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//Port/parentMultiPort"/>
+      <genFeatures createChild="false" propertyCategory="" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SAM.ecore#//Port/isInstanceOf"/>
+      <genOperations ecoreOperation="SAM.ecore#//Port/isIn"/>
+      <genOperations ecoreOperation="SAM.ecore#//Port/isOut"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//DataComposition"/>
+    <genClasses ecoreClass="SAM.ecore#//ControlFlow">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//ControlFlow/source"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//ControlFlow/dest"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//DataFlow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SAM.ecore#//DataFlow/type"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//DataFlow/source"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//DataFlow/dest"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//DataStore">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//DataStore/parentSystem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//DataStore/in"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//DataStore/out"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//DataDecomposition"/>
+    <genClasses image="false" ecoreClass="SAM.ecore#//Flow">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//Flow/parentSystem"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SAM.ecore#//Flow/group"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//System">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//System/listPorts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//System/listStores"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//System/listSynchronisation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//System/listFlows"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//System/listElements"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SAM.ecore#//System/isInstanceOf"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//Model">
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//Model/modelContent"/>
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//Model/flowGroups"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SAM.ecore#//Model/requirementModels"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SAM.ecore#//ModelContent">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//ModelContent/parentModel"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//ModelContent/parentSystem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//ModelContent/listMultiPort"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SAM.ecore#//IdentifiedItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SAM.ecore#//IdentifiedItem/comment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SAM.ecore#//IdentifiedItem/requirements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SAM.ecore#//NamedItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SAM.ecore#//NamedItem/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//MultiPort">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//MultiPort/listPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//MultiPort/parent"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SAM.ecore#//MultiPort/isInstanceOf"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SAM.ecore#//MessagePort"/>
+    <genClasses ecoreClass="SAM.ecore#//MessageFlow">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SAM.ecore#//MessageFlow/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SAM.ecore#//MessageFlow/dest"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//OutMessagePort">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//OutMessagePort/merge"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//InMessagePort">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//InMessagePort/split"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//InMessagePort/merge"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//FlowGroup">
+      <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SAM.ecore#//FlowGroup/flows"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SAM.ecore#//FlowGroup/globalComment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//FlowGroup/model"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SAM.ecore#//Gate">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SAM.ecore#//Gate/parentSystem"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SAM.ecore#//AsynchronousGate"/>
+    <genClasses image="false" ecoreClass="SAM.ecore#//SynchronousGate"/>
+    <genClasses image="false" ecoreClass="SAM.ecore#//DataSynchronisation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//DataSynchronisation/in"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//DataSynchronisation/out"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SAM.ecore#//SplitGate"/>
+    <genClasses image="false" ecoreClass="SAM.ecore#//MergeGate"/>
+    <genClasses ecoreClass="SAM.ecore#//MessageSplit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//MessageSplit/in"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//MessageSplit/outData"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//MessageSplit/outControl"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//DataMerge">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//DataMerge/in"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//DataMerge/out"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//ControlMerge">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//ControlMerge/in"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//ControlMerge/out"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//MessageMerge">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//MessageMerge/in"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SAM.ecore#//MessageMerge/out"/>
+    </genClasses>
+    <genClasses ecoreClass="SAM.ecore#//TraceableElement"/>
+  </genPackages>
+</genmodel:GenModel>

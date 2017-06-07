@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution
+			adaptable="true"
+			id="org.topcased.outline.generator.generatorContribution"
+			nameFilter="*.outlineconfigurator"
+			objectClass="org.eclipse.core.resources.IFile">
+			<action
+				class="org.topcased.outline.generator.internal.actions.GenerateOutlineAction"
+				enablesFor="1"
+				icon="icons/outline.gif"
+				id="org.topcased.outline.generator.GenerateOutlineAction"
+				label="Outline"
+				menubarPath="org.topcased.facilities.menu.topcased/org.topcased.facilities.menu.generation/topcasedGroup"/>
+		</objectContribution>
+	</extension>
+
+</plugin>

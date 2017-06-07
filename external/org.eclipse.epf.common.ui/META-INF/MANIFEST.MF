@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.topcased.richtext.common.ui
+Bundle-Version: 1.5.1.qualifier
+Bundle-Activator: org.topcased.richtext.common.ui.CommonUIPlugin
+Import-Package: org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui;visibility:=reexport,
+ org.topcased.richtext.common;visibility:=reexport
+Export-Package: org.topcased.richtext.common.ui,
+ org.topcased.richtext.common.ui.actions,
+ org.topcased.richtext.common.ui.util
+Bundle-Vendor: %providerName
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

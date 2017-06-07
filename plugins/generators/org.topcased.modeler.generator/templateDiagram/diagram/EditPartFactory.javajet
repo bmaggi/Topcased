@@ -1,0 +1,316 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="EditPartFactory"
+	 version="$Id: EditPartFactory.javajet,v 1.18 2009/01/14 18:04:01 tlandre Exp $" %>
+<%	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.EditPart;
+import org.eclipse.gef.EditPartFactory;
+import org.topcased.modeler.di.model.Diagram;
+import org.topcased.modeler.di.model.GraphEdge;
+import org.topcased.modeler.di.model.GraphNode;
+import org.topcased.modeler.editor.ModelerEditPartFactory;
+import org.topcased.modeler.evaluator.EvaluatorException;
+import org.topcased.modeler.evaluator.extension.EvaluatorsManager;
+import org.topcased.modeler.di.model.SimpleSemanticModelElement;
+import org.topcased.modeler.di.model.util.DIUtils;
+import org.topcased.modeler.edit.EListEditPart;
+import org.topcased.modeler.edit.EMFGraphNodeEditPart;
+import org.topcased.modeler.edit.EMFGraphEdgeEditPart;
+import org.topcased.modeler.edit.GraphEdgeEditPart;
+import org.topcased.modeler.edit.GraphNodeEditPart;
+import org.topcased.modeler.utils.Utils;
+
+<%	for (Iterator itGenPackages = diagramConfiguration.getGenModel().getAllGenPackagesWithClassifiers().iterator(); itGenPackages.hasNext();) {
+		GenPackage genPack = (GenPackage) itGenPackages.next();%> 
+import <%=genPack.getUtilitiesPackageName()%>.<%=genPack.getSwitchClassName()%>;
+<%	}%>
+
+import <%=diagramConfiguration.getBasePackage()%>.edit.*;
+import <%=diagramConfiguration.getBasePackage()%>.<%=diagramConfiguration.getPrefix()%>SimpleObjectConstants;
+
+/**
+ * Part Factory : associates a model object to its controller. <br>
+ *
+ * @generated
+ */
+public class <%=diagramConfiguration.getPrefix()%>EditPartFactory extends ModelerEditPartFactory
+{
+	/**
+	 * @see org.eclipse.gef.EditPartFactory#createEditPart(org.eclipse.gef.EditPart,java.lang.Object)
+	 * @generated
+	 */
+	public EditPart createEditPart(EditPart context, Object model)
+	{
+		if (model instanceof Diagram)
+		{
+			return new <%=diagramConfiguration.getPrefix()%>DiagramEditPart((Diagram) model);
+		}
+		else if (model instanceof GraphNode)
+		{
+			final GraphNode node = (GraphNode) model;
+			EObject element = Utils.getElement(node);
+			if (element != null)
+			{
+<%	for (Iterator itGenPackages = diagramConfiguration.getGenModel().getAllGenPackagesWithClassifiers().iterator(); itGenPackages.hasNext();)
+	{
+		GenPackage genPack = (GenPackage) itGenPackages.next();%>
+        		if("<%=genPack.getNSURI()%>".equals(element.eClass().getEPackage().getNsURI()))
+        		{
+        			return (EditPart) new Node<%=genPack.getPrefix()%>Switch(node).doSwitch(element);
+        		}
+<%	}%>
+			}
+
+			if (node.getSemanticModel() instanceof SimpleSemanticModelElement)
+			{
+                // Manage the Element that are not associated with a model object
+<%	for (Iterator itParts = diagramConfiguration.getParts().iterator(); itParts.hasNext();) {
+		PartConfiguration partConf = (PartConfiguration) itParts.next();
+		if (partConf instanceof NodePartConfiguration && partConf.getObject() instanceof SimpleObjectConfiguration) {
+			SimpleObjectConfiguration objConf = (SimpleObjectConfiguration) partConf.getObject();%>            
+				if (<%=diagramConfiguration.getPrefix()%>SimpleObjectConstants.SIMPLE_OBJECT_<%=objConf.getName().toUpperCase()%>.equals(((SimpleSemanticModelElement) node.getSemanticModel()).getTypeInfo()))
+				{
+					return new <%=partConf.getPrefix()%>EditPart(node);
+				}
+<%		}
+	}%>
+			}
+		}
+		else if (model instanceof GraphEdge)
+		{
+			final GraphEdge edge = (GraphEdge) model;
+			EObject element = Utils.getElement(edge);
+			if (element != null)
+			{
+<%	for (Iterator itGenPackages = diagramConfiguration.getGenModel().getAllGenPackagesWithClassifiers().iterator(); itGenPackages.hasNext();)
+	{
+		GenPackage genPack = (GenPackage) itGenPackages.next();%>
+        		if("<%=genPack.getNSURI()%>".equals(element.eClass().getEPackage().getNsURI()))
+        		{
+        			return (EditPart) new Edge<%=genPack.getPrefix()%>Switch(edge).doSwitch(element);
+        		}
+<%	}%>
+			}
+			
+            if (edge.getSemanticModel() instanceof SimpleSemanticModelElement)
+            {
+                // Manage the Element that are not associated with a model object
+<%	for (Iterator itParts = diagramConfiguration.getParts().iterator(); itParts.hasNext();) {
+		PartConfiguration partConf = (PartConfiguration) itParts.next();
+		if (partConf instanceof EdgePartConfiguration && partConf.getObject() instanceof SimpleObjectConfiguration) {
+			SimpleObjectConfiguration objConf = (SimpleObjectConfiguration) partConf.getObject();%>
+                if (<%=diagramConfiguration.getPrefix()%>SimpleObjectConstants.SIMPLE_OBJECT_<%=objConf.getName().toUpperCase()%>.equals(((SimpleSemanticModelElement) edge.getSemanticModel()).getTypeInfo()))
+                {
+                    return new <%=partConf.getPrefix()%>EditPart(edge);
+                }
+<%		}
+	}%>                    
+            }
+		}
+        return super.createEditPart(context, model);
+	}
+	
+	
+<%	for (Iterator itGenPackages = diagramConfiguration.getGenModel().getAllGenPackagesWithClassifiers().iterator(); itGenPackages.hasNext();) {
+		GenPackage genPack = (GenPackage) itGenPackages.next();%> 
+	/**
+     * @generated
+     */
+    private class Node<%=genPack.getPrefix()%>Switch extends <%=genPack.getPrefix()%>Switch
+    {
+        /**
+         * The graphical node
+         * @generated
+         */
+        private GraphNode node;
+
+        /**
+         * Constructor
+         * 
+         * @param node the graphical node
+         * @generated
+         */
+        public Node<%=genPack.getPrefix()%>Switch(GraphNode node)
+        {
+            this.node = node;
+        }
+
+<%		List modelObjectsNodeList = diagramConfiguration.getUniqueModelObjectConfList(true, false);
+    	for (Iterator iterModelNodes = modelObjectsNodeList.iterator() ; iterModelNodes.hasNext(); ) {
+    		ModelObjectConfiguration currentObjConf = (ModelObjectConfiguration) iterModelNodes.next();
+    		boolean needReturnStatement = true;
+    		if (genPack.getNSURI().equals(currentObjConf.getGenClass().getGenPackage().getNSURI())) {%>
+		/**
+         * @see <%=genPack.getUtilitiesPackageName()%>.<%=genPack.getSwitchClassName()%>#case<%=currentObjConf.getName()%>(<%=currentObjConf.getGenClass().getQualifiedInterfaceName()%>)
+         * @generated
+         */
+        public Object case<%=currentObjConf.getName()%>(<%=currentObjConf.getGenClass().getQualifiedInterfaceName()%> object)
+        {
+<%				for (Iterator itParts = diagramConfiguration.getParts().iterator(); itParts.hasNext();) {
+        			PartConfiguration partConf = (PartConfiguration) itParts.next();
+        			if (partConf instanceof NodePartConfiguration && partConf.getObject() instanceof ModelObjectConfiguration) {
+        				ModelObjectConfiguration objConf = (ModelObjectConfiguration) partConf.getObject();
+        				if (currentObjConf.equals(objConf)) {
+                    		String checkConstraints = "";
+                    		for (Iterator itConstraints = partConf.getConstraint().iterator(); itConstraints.hasNext(); ) {
+                    			Constraint constraint = (Constraint) itConstraints.next();
+            					checkConstraints = checkConstraints.concat("EvaluatorsManager.getInstance().evaluate(object, \"" + constraint.getRule() + "\", \"" + constraint.getLanguage() + "\")");
+            					if (itConstraints.hasNext())
+            					{
+            						checkConstraints = checkConstraints.concat(" && ");
+            					}
+            				}
+            				if (checkConstraints.length() > 0) {%>
+            try
+            {
+                if (<%=checkConstraints%>)
+        		{
+<%								if (LayoutType.CLASS_LAYOUT_LITERAL.equals(((NodePartConfiguration) partConf).getLayout()) || LayoutType.TOOLBAR_LAYOUT_LITERAL.equals(((NodePartConfiguration) partConf).getLayout())) {%>
+        			String feature = DIUtils.getPropertyValue(node, ModelerPropertyConstants.ESTRUCTURAL_FEATURE_ID);
+                    if (!"".equals(feature))
+                    {
+                        int featureID = Integer.parseInt(feature);
+                        return new EListEditPart(node, object.eClass().getEStructuralFeature(featureID));
+                    } else {
+                        return new <%=partConf.getPrefix()%>EditPart(node);
+                    }
+<%								} else {%>
+					return new <%=partConf.getPrefix()%>EditPart(node);
+<%								}%>
+            	}
+            }
+            catch (EvaluatorException ee)
+            {
+                <%=diagramConfiguration.getPluginPrefix()%>Plugin.log(ee);
+            }
+<%							} else {
+        						needReturnStatement = false;
+        						if (LayoutType.CLASS_LAYOUT_LITERAL.equals(((NodePartConfiguration) partConf).getLayout()) || LayoutType.TOOLBAR_LAYOUT_LITERAL.equals(((NodePartConfiguration) partConf).getLayout())) {%>
+			String feature = DIUtils.getPropertyValue(node, ModelerPropertyConstants.ESTRUCTURAL_FEATURE_ID);
+            if (!"".equals(feature))
+            {
+                int featureID = Integer.parseInt(feature);
+                return new EListEditPart(node, object.eClass().getEStructuralFeature(featureID));
+            } else {
+                return new <%=partConf.getPrefix()%>EditPart(node);
+            }
+<%								} else {%>
+			return new <%=partConf.getPrefix()%>EditPart(node);
+<%								}
+    						}
+    					}
+    				}
+    			}
+    			if (needReturnStatement) {%>
+			return new EMFGraphNodeEditPart(node);
+<%				}%>
+		}
+<%			}
+		}%>
+
+        /**
+         * @see <%=genPack.getUtilitiesPackageName()%>.<%=genPack.getSwitchClassName()%>#defaultCase(org.eclipse.emf.ecore.EObject)
+         * @generated
+         */
+        public Object defaultCase(EObject object)
+        {
+            return new EMFGraphNodeEditPart(node);
+        }
+    }
+<%	}%>
+
+
+
+<%	for (Iterator itGenPackages = diagramConfiguration.getGenModel().getAllGenPackagesWithClassifiers().iterator(); itGenPackages.hasNext();) {
+		GenPackage genPack = (GenPackage) itGenPackages.next();%> 
+	/**
+     * @generated
+     */
+    private class Edge<%=genPack.getPrefix()%>Switch extends <%=genPack.getPrefix()%>Switch
+    {
+        /**
+         * The graphical edge
+         * @generated
+         */
+        private GraphEdge edge;
+
+        /**
+         * Constructor
+         * 
+         * @param edge the graphical edge
+         * @generated
+         */
+        public Edge<%=genPack.getPrefix()%>Switch(GraphEdge edge)
+        {
+            this.edge = edge;
+        }
+
+<%		List modelObjectsEdgeList = diagramConfiguration.getUniqueModelObjectConfList(false, true);
+    	for (Iterator iterModelEdges = modelObjectsEdgeList.iterator() ; iterModelEdges.hasNext(); ) {
+    		ModelObjectConfiguration currentObjConf = (ModelObjectConfiguration) iterModelEdges.next();
+    		boolean needReturnStatement = true;
+        	if (genPack.getNSURI().equals(currentObjConf.getGenClass().getGenPackage().getNSURI())) {%>
+		/**
+         * @see <%=genPack.getUtilitiesPackageName()%>.<%=genPack.getSwitchClassName()%>#case<%=currentObjConf.getName()%>(<%=currentObjConf.getGenClass().getQualifiedInterfaceName()%>)
+         * @generated
+         */
+        public Object case<%=currentObjConf.getName()%>(<%=currentObjConf.getGenClass().getQualifiedInterfaceName()%> object)
+        {
+<%				for (Iterator itParts = diagramConfiguration.getParts().iterator(); itParts.hasNext();) {
+        			PartConfiguration partConf = (PartConfiguration) itParts.next();
+        			if (partConf instanceof EdgePartConfiguration && partConf.getObject() instanceof ModelObjectConfiguration) {
+            			ModelObjectConfiguration objConf = (ModelObjectConfiguration) partConf.getObject();
+            			if (currentObjConf.equals(objConf)) {
+            				String checkConstraints = "";
+                       		for (Iterator itConstraints = partConf.getConstraint().iterator(); itConstraints.hasNext(); ) {
+                       			Constraint constraint = (Constraint) itConstraints.next();
+                				checkConstraints = checkConstraints.concat("EvaluatorsManager.getInstance().evaluate(object, \"" + constraint.getRule() + "\", \"" + constraint.getLanguage() + "\")");
+                				if (itConstraints.hasNext())
+                				{
+                					checkConstraints = checkConstraints.concat(" && ");
+                				}
+                			}
+                			if (checkConstraints.length() > 0) {%>
+            try
+            {
+                if (<%=checkConstraints%>)
+        		{
+                    return new <%=partConf.getPrefix()%>EditPart(edge);
+                }
+            }
+            catch (EvaluatorException ee)
+            {
+                <%=diagramConfiguration.getPluginPrefix()%>Plugin.log(ee);
+            }
+<%							} else {
+						needReturnStatement = false;%>
+            return new <%=partConf.getPrefix()%>EditPart(edge);
+<%							}
+    					}
+    				}
+    			}
+    			if (needReturnStatement) {%>
+			return new EMFGraphEdgeEditPart(edge);
+<%				}%>
+		}
+<%			}
+		}%>
+
+        /**
+         * @see <%=genPack.getUtilitiesPackageName()%>.<%=genPack.getSwitchClassName()%>#defaultCase(org.eclipse.emf.ecore.EObject)
+         * @generated
+         */
+        public Object defaultCase(EObject object)
+        {
+            return new EMFGraphEdgeEditPart(edge);
+        }
+    }
+<%	}%>
+
+
+}

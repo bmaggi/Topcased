@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.topcased.docbook/src"
+    modelPluginID="org.topcased.docbook" forceOverwrite="true" modelName="Docbook"
+    testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false">
+  <foreignModel>docbook.ecore</foreignModel>
+  <genPackages prefix="Docbook" basePackage="org.topcased" resource="XML" disposableProviderFactory="true"
+      ecorePackage="docbook.ecore#/">
+    <genClasses ecoreClass="docbook.ecore#//Book">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Book/bookinfo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Book/chapter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Book/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Book/lang"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Book/version"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Info">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Info/author"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Info/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Info/pubdate"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Author">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Author/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Author/personname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Author/address"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Chapter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Chapter/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Chapter/para"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Chapter/sect1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Chapter/id"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Title">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Title/data"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Para">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute docbook.ecore#//Para/mixed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Para/data"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//Para/mediaobject"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//Para/table"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//SimpleList"/>
+    <genClasses ecoreClass="docbook.ecore#//ItemizedList">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//ItemizedList/mark"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//ItemizedList/listitem"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//OrderedList">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//OrderedList/numeration"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Sect1">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Sect1/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Sect1/sect2"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="docbook.ecore#//AbstractSect">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//AbstractSect/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//AbstractSect/para"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//AbstractSect/table"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Sect2">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Sect2/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Sect2/sect3"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Emphasis">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Emphasis/remap"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//ULink">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//ULink/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//ULink/data"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Link"/>
+    <genClasses ecoreClass="docbook.ecore#//XRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//XRef/linkend"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Example"/>
+    <genClasses ecoreClass="docbook.ecore#//Sect3">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Sect3/id"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//ListItem"/>
+    <genClasses ecoreClass="docbook.ecore#//Mediaobject">
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference docbook.ecore#//Mediaobject/imageobject"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Mediaobject/textobject"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Imageobject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Imageobject/imagedata"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//textobject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//textobject/phrase"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//imagedata">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//imagedata/align"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//imagedata/fileref"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//phrase">
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EAttribute docbook.ecore#//phrase/text"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//table">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//table/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//table/tgroup"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//tpart">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//tpart/row"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//thead"/>
+    <genClasses ecoreClass="docbook.ecore#//tbody"/>
+    <genClasses ecoreClass="docbook.ecore#//tfoot"/>
+    <genClasses ecoreClass="docbook.ecore#//row">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//row/entry"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//entry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//entry/data"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Colspec">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Colspec/colname"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Tgroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Tgroup/colspec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Tgroup/thead"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Tgroup/tbody"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//Tgroup/tfoot"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

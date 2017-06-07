@@ -1,0 +1,13 @@
+<%@ jet
+	package="org.topcased.outline.generator.templates"
+	imports="java.util.* org.topcased.modeler.configurator.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.modeler.configurator.*"
+	class="BuildProperties"
+	version="$Id: build.propertiesjet,v 1.1 2005/11/22 15:06:31 thomas Exp $" %>
+<%OutlineConfiguration configuration = (OutlineConfiguration) argument;%>
+
+<%String jarFile = configuration.getProjectName() + ".jar";%>
+bin.includes =	plugin.xml,\
+				<%=jarFile%>,\
+				templates,\
+source.<%=jarFile%> = src/
+output.<%=jarFile%> = bin/

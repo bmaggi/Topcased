@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.topcased.modeler.export.html.specific" name="Specific HTML exporter for a model" schema="schema/org.topcased.modeler.export.html.specific.exsd"/>
+   <extension point="org.eclipse.ui.popupMenus">
+         <objectContribution
+			id="org.topcased.modeler.export.html.generation"
+			adaptable="true"
+			nameFilter="*di"
+			objectClass="org.eclipse.core.resources.IFile">
+			<action
+         class="org.topcased.modeler.export.html.internal.ui.Export2HTMLAction"
+         enablesFor="1"
+         icon="icons/exportHTML.png"
+         id="org.topcased.modeler.export.html.internal.ui.ExportHTMLAction"
+         label="Export to HTML...">
+			</action>
+		</objectContribution>
+   </extension>
+
+</plugin>

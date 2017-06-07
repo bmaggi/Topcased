@@ -1,0 +1,50 @@
+import model;
+
+String getCoordinates(DiagramElement diagramElement):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getCoordinates(org.topcased.modeler.di.model.DiagramElement);
+	
+String getImageName(Diagram diagram):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getImage(org.topcased.modeler.di.model.Diagram);
+	
+String getHMTLName(Diagram diagram):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getHTML(org.topcased.modeler.di.model.Diagram);
+
+String getDiagramName(Diagram diagram):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getName(org.topcased.modeler.di.model.Diagram);
+	
+String getDocumentationPage(DiagramElement diagramElement):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getDocumentationPage(org.topcased.modeler.di.model.DiagramElement);
+
+String getDocumentationURL(DiagramElement diagramElement):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getDocumentationURL(org.topcased.modeler.di.model.DiagramElement);
+	
+String getDocumentation(GraphElement diagramElement):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getDocumentation(org.topcased.modeler.di.model.GraphElement);
+
+String getDiagramDocumentation(Diagram diagram):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getDiagramDocumentation(org.topcased.modeler.di.model.Diagram);
+
+String getDiagramDocumentationPage(Diagram diagram):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getDiagramDocumentationPage(org.topcased.modeler.di.model.Diagram);
+
+String getDiagramDocumentationURL(Diagram diagram):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getDiagramDocumentationURL(org.topcased.modeler.di.model.Diagram);
+	
+Boolean hasDiagrams(DiagramElement diagramElement):
+	JAVA org.topcased.modeler.export.html.GenerationManager.hasDiagrams(org.topcased.modeler.di.model.DiagramElement);
+	
+String getDiagram(DiagramElement diagramElement):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getDiagram(org.topcased.modeler.di.model.DiagramElement);
+	
+String getParentDiagramPage(Diagram diagram):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getParentDiagramPage(org.topcased.modeler.di.model.Diagram);
+	
+String getRootDiagramPage(Diagram diagram):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getRootDiagramPage(org.topcased.modeler.di.model.Diagram);
+	
+String getModelElementType(GraphElement diagram):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getModelElementType(org.topcased.modeler.di.model.GraphElement);
+
+List[DiagramElement] sortListByCoordinates(List[DiagramElement] listToSort) : 
+	JAVA org.topcased.modeler.export.html.GenerationManager.sortListByCoordinates(java.util.List);
+	

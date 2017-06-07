@@ -1,0 +1,14 @@
+<%@ jet
+	package="org.topcased.modeler.generator.templates"
+	imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	class="BuildProperties"
+	version="$Id: build.propertiesjet,v 1.1 2006/05/02 14:04:34 jako Exp $" %>
+<%DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+bin.includes =	plugin.xml,\
+				.,\
+				icons/,\
+				templates/,\
+				META-INF/
+				
+source.. = src/
+output.. = bin/

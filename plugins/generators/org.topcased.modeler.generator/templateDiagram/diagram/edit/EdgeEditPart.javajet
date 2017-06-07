@@ -1,0 +1,428 @@
+<%@ jet 
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="EdgeEditPart"
+	 version="$Id: EdgeEditPart.javajet,v 1.14 2008/04/18 14:09:29 jako Exp $" %>
+<%	EdgePartConfiguration edgePartConfiguration = (EdgePartConfiguration) argument;
+	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) edgePartConfiguration.eContainer();
+	ObjectConfiguration objectConfiguration = edgePartConfiguration.getObject();
+	String partPrefix = edgePartConfiguration.getPrefix();%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>.edit;
+
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.FontData;
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.PolygonDecoration;
+import org.eclipse.draw2d.PolylineConnection;
+import org.eclipse.draw2d.PolylineDecoration;
+import org.topcased.draw2d.figures.EditableLabel;
+import org.topcased.draw2d.figures.Label;
+import org.eclipse.draw2d.geometry.PointList;
+import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.Request;
+import org.eclipse.gef.RequestConstants;
+import org.eclipse.gef.requests.DirectEditRequest;
+import org.eclipse.gef.tools.DirectEditManager;
+import org.eclipse.jface.viewers.TextCellEditor;
+import org.topcased.modeler.di.model.EdgeObject;
+import org.topcased.modeler.figures.IEdgeObjectFigure;
+import org.topcased.modeler.di.model.GraphEdge;
+import org.topcased.modeler.edit.EMFGraphEdgeEditPart;
+import org.topcased.modeler.edit.LabelCellEditorLocator;
+import org.topcased.modeler.edit.ModelerLabelDirectEditManager;
+import org.topcased.modeler.edit.policies.LabelDirectEditPolicy;
+import org.topcased.modeler.ModelerColorConstants;
+import org.topcased.modeler.ModelerEditPolicyConstants;
+import org.topcased.modeler.utils.Utils;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.topcased.modeler.editor.ModelerGraphicalViewer;
+
+import <%=diagramConfiguration.getBasePackage()%>.<%=diagramConfiguration.getPrefix()%>EdgeObjectConstants;
+import <%=diagramConfiguration.getBasePackage()%>.figures.<%=partPrefix%>Figure;
+import <%=diagramConfiguration.getBasePackage()%>.preferences.<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants;
+
+/**
+ * <%=partPrefix%> controller
+ *
+ * @generated
+ */
+<% if (objectConfiguration instanceof ModelObjectConfiguration) {%>
+public class <%=partPrefix%>EditPart extends EMFGraphEdgeEditPart
+<% } else {%>
+public class <%=partPrefix%>EditPart extends GraphEdgeEditPart
+<% } %>
+{
+	<% if (edgePartConfiguration.getDirectEditable() != null) {%>
+    /**
+     * The DirectEditManager
+     * @generated
+     */
+    private DirectEditManager manager;
+	<% }%>
+    
+	/**
+	 * Constructor
+	 *
+	 * @param model the graph object
+	 * @generated
+	 */
+	public <%=partPrefix%>EditPart(GraphEdge model)
+	{
+		super(model);
+	}
+
+    /**
+	 * @see org.eclipse.gef.editparts.AbstractEditPart#createEditPolicies()
+	 * @generated
+     */
+    protected void createEditPolicies()
+    {
+        super.createEditPolicies();
+        
+<%		List connectionList = new ArrayList();
+        for (Iterator iterator = diagramConfiguration.getParts().iterator() ; iterator.hasNext(); )
+        {
+        	PartConfiguration part = (PartConfiguration) iterator.next();
+        	if (part instanceof EdgePartConfiguration)
+        	{
+        		for (Iterator coupleIterator = ((EdgePartConfiguration) part).getSourceTargetCouple().iterator() ; coupleIterator.hasNext() ;)
+        		{
+        			SourceTargetCouple couple = (SourceTargetCouple) coupleIterator.next();
+        			
+        			if (couple.getSourceNode().equals(edgePartConfiguration) || couple.getTargetNode().equals(edgePartConfiguration))
+        			{
+    					if (!connectionList.contains(part.getObject().getName()))
+    					{
+    						connectionList.add(part.getObject().getName());
+    					}
+        			}
+        		}
+        	}
+        }
+        for (Iterator iter = connectionList.iterator() ; iter.hasNext(); )
+        {
+        	String partObjectName = (String) iter.next();%>
+		installEditPolicy(<%=diagramConfiguration.getPrefix()%>EditPolicyConstants.<%=partObjectName.toUpperCase()%>_EDITPOLICY, new <%=partObjectName%>EdgeCreationEditPolicy());
+<%		}%>
+        
+        
+<%    	boolean hasMidPoint = false;
+    	boolean hasEndPoint = false;
+    	for (Iterator iter = edgePartConfiguration.getEdgeObjects().iterator(); iter.hasNext();)
+    	{
+    		EdgeObject edgeObject = (EdgeObject) iter.next();
+    		if (edgeObject.getType().equals(EdgeObjectType.MIDDLE_LITERAL))
+    		{
+    			hasMidPoint = true;
+    		} else if (edgeObject.getType().equals(EdgeObjectType.SOURCE_LITERAL) || edgeObject.getType().equals(EdgeObjectType.TARGET_LITERAL))
+    		{
+    			hasEndPoint = true;
+    		}
+    	}
+    	if (hasEndPoint)
+    	{%>
+        installEditPolicy(ModelerEditPolicyConstants.EDGE_OBJECTS_UV_EDITPOLICY, new <%=partPrefix%>EdgeObjectUVEditPolicy());
+<%    	}
+    	if (hasMidPoint)
+    	{%>
+        installEditPolicy(ModelerEditPolicyConstants.EDGE_OBJECTS_OFFSET_EDITPOLICY, new EdgeObjectOffsetEditPolicy());
+<%		}
+		if (hasEndPoint || hasMidPoint)
+		{
+			if (!edgePartConfiguration.isFontChangeable())
+			{%>
+    		installEditPolicy(ModelerEditPolicyConstants.CHANGE_FONT_EDITPOLICY, null);
+<%			}
+			if (edgePartConfiguration.getDirectEditable() != null)
+			{%>
+        installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
+<%			}
+		} else {%>
+		installEditPolicy(ModelerEditPolicyConstants.CHANGE_FONT_EDITPOLICY, null);
+<%		}%>
+		
+<%		if (!edgePartConfiguration.isForegroundColorChangeable()) {%>
+        installEditPolicy(ModelerEditPolicyConstants.CHANGE_FOREGROUND_COLOR_EDITPOLICY, null);
+<%		}%>
+    }
+    
+	/**
+	 * @return the Figure
+	 * @generated
+	 */
+	protected IFigure createFigure()
+	{
+		<%=partPrefix%>Figure connection = new <%=partPrefix%>Figure();
+		<%	if (edgePartConfiguration.getSourceDecoration().getValue() != DecorationType.NONE) {%>
+		createSourceDecoration(connection);
+		<%	}
+			if (edgePartConfiguration.getTargetDecoration().getValue() != DecorationType.NONE) {%>
+		createTargetDecoration(connection);
+		<%	}%>
+		
+        return connection;
+	}
+
+<%	if (edgePartConfiguration.getSourceDecoration().getValue() != DecorationType.NONE) {%>
+	/**
+	 * @param connection the PolylineConnection
+	 * @generated
+	 */
+	private void createSourceDecoration(PolylineConnection connection)
+	{
+		<% switch (edgePartConfiguration.getSourceDecoration().getValue())
+           {
+                case DecorationType.ARROW:%>
+		PolylineDecoration decoration = new PolylineDecoration();
+        decoration.setScale(10, 5);
+        connection.setSourceDecoration(decoration);
+		<%          break;
+                case DecorationType.TRIANGLE:%>
+        PolygonDecoration decoration = new PolygonDecoration();
+        decoration.setScale(14, 6);
+        decoration.setBackgroundColor(ModelerColorConstants.white);
+        connection.setSourceDecoration(decoration);
+		<%          break;
+                case DecorationType.DIAMOND:%>
+		PolygonDecoration decoration = new PolygonDecoration();
+		PointList decorationPointList = new PointList();
+		decorationPointList.addPoint(0, 0);
+		decorationPointList.addPoint(-1, 1);
+		decorationPointList.addPoint(-2, 0);
+		decorationPointList.addPoint(-1, -1);
+		decoration.setTemplate(decorationPointList);
+		decoration.setScale(10, 5);
+        connection.setSourceDecoration(decoration);
+		<%          break;
+                default:%>
+		// unknown decoration                
+		<%          break;
+           }
+		%>
+	}
+<%	}%>
+
+<%	if (edgePartConfiguration.getTargetDecoration().getValue() != DecorationType.NONE) {%>
+	/**
+	 * @param connection the PolylineConnection
+	 * @generated
+	 */
+	private void createTargetDecoration(PolylineConnection connection)
+	{
+		<% switch (edgePartConfiguration.getTargetDecoration().getValue())
+           {
+                case DecorationType.ARROW:%>
+		PolylineDecoration decoration = new PolylineDecoration();
+        decoration.setScale(10, 5);
+        connection.setTargetDecoration(decoration);
+		<%          break;
+                case DecorationType.TRIANGLE:%>
+        PolygonDecoration decoration = new PolygonDecoration();
+        decoration.setScale(14, 6);
+        decoration.setBackgroundColor(ModelerColorConstants.white);
+        connection.setTargetDecoration(decoration);
+		<%          break;
+                case DecorationType.DIAMOND:%>
+		PolygonDecoration decoration = new PolygonDecoration();
+		PointList decorationPointList = new PointList();
+		decorationPointList.addPoint(0, 0);
+		decorationPointList.addPoint(-1, 1);
+		decorationPointList.addPoint(-2, 0);
+		decorationPointList.addPoint(-1, -1);
+		decoration.setTemplate(decorationPointList);
+		decoration.setScale(10, 5);
+        connection.setTargetDecoration(decoration);
+		<%          break;
+                default:%>
+		// no decoration                
+		<%          break;
+           }
+		%>
+	}
+<%	}%>
+	
+<% if (edgePartConfiguration.getEdgeObjects() != null && edgePartConfiguration.getEdgeObjects().size() > 0) {%>	
+	/**
+	 * @see org.topcased.modeler.edit.GraphEdgeEditPart#getEdgeObjectFigure(org.topcased.modeler.di.model.EdgeObject)
+	 * @generated
+     */
+    public IEdgeObjectFigure getEdgeObjectFigure(EdgeObject edgeObject)
+    {
+<%		for (Iterator iter = edgePartConfiguration.getEdgeObjects().iterator(); iter.hasNext();)
+		{
+			EdgeObject edgeObject = (EdgeObject) iter.next();
+    		String edgeObjectName = edgeObject.getId();
+    		String capEdgeObjectName = edgeObjectName;
+    	    if (capEdgeObjectName.length() != 0)
+          		capEdgeObjectName = capEdgeObjectName.substring(0,1).toUpperCase() + capEdgeObjectName.substring(1);%>
+        if (<%=diagramConfiguration.getPrefix()%>EdgeObjectConstants.<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_ID.equals(edgeObject.getId()))
+        {
+            return ((<%=partPrefix%>Figure) getFigure()).get<%=capEdgeObjectName%>EdgeObjectFigure();
+        }
+<%		}%>
+        return null;
+    }
+
+    /**
+     * @see org.topcased.modeler.edit.GraphEdgeEditPart#refreshEdgeObjects()
+     * @generated
+     */
+    protected void refreshEdgeObjects()
+    {
+        super.refreshEdgeObjects();
+<%		for (Iterator iter = edgePartConfiguration.getEdgeObjects().iterator(); iter.hasNext();)
+    	{
+    		EdgeObject edgeObject = (EdgeObject) iter.next();
+    		String edgeObjectName = edgeObject.getId();
+    		String capEdgeObjectName = edgeObjectName;
+    	    if (capEdgeObjectName.length() != 0)
+          		capEdgeObjectName = capEdgeObjectName.substring(0,1).toUpperCase() + capEdgeObjectName.substring(1);%>
+        update<%=capEdgeObjectName%>Label();
+<%		}%>        
+    }
+
+<%		for (Iterator iter = edgePartConfiguration.getEdgeObjects().iterator(); iter.hasNext();)
+    	{
+    		EdgeObject edgeObject = (EdgeObject) iter.next();
+    		String edgeObjectName = edgeObject.getId();
+    		String capEdgeObjectName = edgeObjectName;
+    	    if (capEdgeObjectName.length() != 0)
+          		capEdgeObjectName = capEdgeObjectName.substring(0,1).toUpperCase() + capEdgeObjectName.substring(1);%>
+    /**
+	 * Update the <%=edgeObjectName%> Label
+	 *
+	 * @generated
+     */
+    private void update<%=capEdgeObjectName%>Label()
+    {
+<%			if (edgeObject.getEStructuralFeature() != null)
+			{%>
+        ((Label) ((<%=partPrefix%>Figure) getFigure()).get<%=capEdgeObjectName%>EdgeObjectFigure()).setText(((<%=objectConfiguration.getName()%>) getEObject()).get<%=capEdgeObjectName%>());
+<%			}
+			else
+			{%>
+		//TODO set the text to update
+        //((Label) ((<%=partPrefix%>Figure) getFigure()).get<%=capEdgeObjectName%>EdgeObjectFigure()).setText(((<%=objectConfiguration.getName()%>) getEObject()).get<%=capEdgeObjectName%>());
+<%			}%>
+    }
+<%		}
+	}%>
+
+
+<% if (edgePartConfiguration.getDirectEditable() != null) {
+	String editableLabelName = edgePartConfiguration.getDirectEditable().getId();
+	String capEdgeObjectName = editableLabelName;
+	if (capEdgeObjectName.length() != 0)
+		capEdgeObjectName = capEdgeObjectName.substring(0,1).toUpperCase() + capEdgeObjectName.substring(1);
+%>
+	//---------------------------------------
+    // Ajout des fonctions pour le DirectEdit
+	//---------------------------------------
+
+    /**
+     * Handle selection
+     *
+	 * @param value The value of the selection
+	 * @generated
+     */
+    public void setSelected(int value)
+    {
+        super.setSelected(value);
+        ((EditableLabel) ((<%=partPrefix%>Figure) getFigure()).get<%=capEdgeObjectName%>EdgeObjectFigure()).setSelected(value != 0);
+    }
+    
+    /**
+	 * @see org.eclipse.gef.EditPart#performRequest(org.eclipse.gef.Request)
+	 * @generated
+     */
+    public void performRequest(Request request)
+    {
+        if (request.getType() == RequestConstants.REQ_DIRECT_EDIT)
+        {
+            if (request instanceof DirectEditRequest
+                    && !(directEditHitTest(((DirectEditRequest) request).getLocation().getCopy())))
+            {
+                return;
+            }
+            performDirectEdit();
+        }
+    }
+
+    /**
+	 * @param  requestLoc the location of the cursor
+     * @return true if the cursor is over the EditableLabel
+	 * @generated
+     */
+    private boolean directEditHitTest(Point requestLoc)
+    {
+        Label <%=editableLabelName.toLowerCase()%>Name = (Label) ((<%=partPrefix%>Figure) getFigure()).get<%=capEdgeObjectName%>EdgeObjectFigure();
+        if (<%=editableLabelName.toLowerCase()%>Name != null)
+        {
+            <%=editableLabelName.toLowerCase()%>Name.translateToRelative(requestLoc);
+            return <%=editableLabelName.toLowerCase()%>Name.containsPoint(requestLoc);
+        }
+        return false;
+    }
+    
+    /**
+	 * @generated
+     */
+    private void performDirectEdit()
+    {
+        if (manager == null)
+        {
+            Label <%=editableLabelName.toLowerCase()%>Name = (Label) ((<%=partPrefix%>Figure) getFigure()).get<%=capEdgeObjectName%>EdgeObjectFigure();
+            manager = new ModelerLabelDirectEditManager(this, TextCellEditor.class, new LabelCellEditorLocator(
+                    <%=editableLabelName.toLowerCase()%>Name), <%=editableLabelName.toLowerCase()%>Name);
+        }
+        manager.show();
+    }
+<% }%>
+	<% 
+	if(!edgePartConfiguration.isAbstract())
+	{ 
+	%>
+    /**
+     * @see org.topcased.modeler.edit.GraphEdgeEditPart#getPreferenceDefaultRouter()
+     * 
+     * @generated
+     */
+    protected String getPreferenceDefaultRouter() {
+    	return getPreferenceStore().getString(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_EDGE_DEFAULT_ROUTER);
+    }
+    
+    /**
+     * @see org.topcased.modeler.edit.GraphEdgeEditPart#getPreferenceDefaultForegroundColor()
+     * 
+     * @generated
+     */
+    protected Color getPreferenceDefaultForegroundColor() 
+    {
+    	String preferenceForeground = getPreferenceStore().getString(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_EDGE_DEFAULT_FOREGROUND_COLOR);
+    	if(preferenceForeground.length()!=0)
+    	{
+       		return Utils.getColor(preferenceForeground);
+    	}
+    	return null;
+
+    }
+    
+    /**
+     * @see org.topcased.modeler.edit.GraphEdgeEditPart#getPreferenceDefaultFont()
+     * 
+     * @generated
+     */
+    protected Font getPreferenceDefaultFont()
+    {
+    	String preferenceFont = getPreferenceStore().getString(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_EDGE_DEFAULT_FONT);
+      	if(preferenceFont.length()!=0)
+    	{
+    		return Utils.getFont(new FontData(preferenceFont));
+    	}
+    	return null;
+    }
+    <% } %>
+}

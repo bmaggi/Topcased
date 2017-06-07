@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sam"
+    nsURI="http://www.topcased.org/SAM/1.1" nsPrefix="sam">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractState" abstract="true" eSuperTypes="#//NamedItem">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Abstraction of the states that can be contained by an Automaton."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentState" eType="#//MacroState"
+        transient="true" resolveProxies="false" eOpposite="#//MacroState/composition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentAutomaton" eType="#//Automaton"
+        transient="true" resolveProxies="false" eOpposite="#//Automaton/listStates"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outlink" upperBound="-1"
+        eType="#//Transition" resolveProxies="false" eOpposite="#//Transition/source"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Automaton" eSuperTypes="#//ModelContent">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class represents an automaton component, consisting of a set of states linked by transitions.&#xD;&#xA;An automaton cannot produce data, but it can output its current state, so only one OutDataPort is possible."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listTransitions" upperBound="-1"
+        eType="#//Transition" containment="true" resolveProxies="false" eOpposite="#//Transition/parentAutomaton"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listPorts" upperBound="-1"
+        eType="#//Port" containment="true" resolveProxies="false" eOpposite="#//Port/parentAutomaton"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listStates" lowerBound="1"
+        upperBound="-1" eType="#//AbstractState" containment="true" resolveProxies="false"
+        eOpposite="#//AbstractState/parentAutomaton"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isInstanceOf" eType="#//Automaton"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialState" eSuperTypes="#//State"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MacroState" eSuperTypes="#//AbstractState">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Due to the fact a MacroState cannot have inlinks, it cannot be a directly State.&#xD;&#xA;Furthermore, a macrostate can be composed of states."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composition" upperBound="-1"
+        eType="#//AbstractState" containment="true" resolveProxies="false" eOpposite="#//AbstractState/parentState"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//AbstractState">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A state represents the way of functionning of an automaton.&#xD;&#xA;One of the states of the automaton is the initial state.&#xD;&#xA;The states are linked by transition with a condition and possibly a priority if several transition goes from the same state."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inlink" upperBound="-1"
+        eType="#//Transition" resolveProxies="false" eOpposite="#//Transition/dest"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//TraceableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A transition represents the link between 2 states of an automaton.&#xD;&#xA;&#xD;&#xA;The condition attribute represents the event/condition string.&#xD;&#xA;&#xD;&#xA;The priority is used only is there are multiple link outgoing from one state.&#xD;&#xA;&#xD;&#xA;A transition outgoing from a macro-state has a greater priority than its internal transitions. "/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="emission" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dest" lowerBound="1" eType="#//State"
+        resolveProxies="false" eOpposite="#//State/inlink"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentAutomaton" lowerBound="1"
+        eType="#//Automaton" transient="true" resolveProxies="false" eOpposite="#//Automaton/listTransitions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//AbstractState" resolveProxies="false" eOpposite="#//AbstractState/outlink"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlPort" abstract="true" eSuperTypes="#//Port">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This represents a port allowing to the component containing it to receive or emit a control flow."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataPort" abstract="true" eSuperTypes="#//Port">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This represents a port allowing to the component containing it to receive or emit a data flow."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InControlPort" eSuperTypes="#//ControlPort #//InputPort">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class represents a kind of port.&#xD;&#xA;It allows a control flow to bring control information into the component containing this port."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="merge" eType="#//ControlMerge"
+        eOpposite="#//ControlMerge/in"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InDataPort" eSuperTypes="#//DataPort #//InputPort">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class represents a kind of port.&#xD;&#xA;It allows a data flow to bring some data into the component containing this port."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentDataStore" eType="#//DataStore"
+        transient="true" resolveProxies="false" eOpposite="#//DataStore/in"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentSync" eType="#//DataSynchronisation"
+        eOpposite="#//DataSynchronisation/in"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="merge" eType="#//DataMerge"
+        eOpposite="#//DataMerge/in"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputPort" abstract="true" eSuperTypes="#//Port">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This represents a port allowing to the component containing it to received information."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutControlPort" eSuperTypes="#//ControlPort #//OutputPort">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class represents a kind of port.&#xD;&#xA;It allows the component containing it to output control information in a control flow."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="split" eType="#//MessageSplit"
+        eOpposite="#//MessageSplit/outControl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="merge" eType="#//ControlMerge"
+        eOpposite="#//ControlMerge/out"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutDataPort" eSuperTypes="#//DataPort #//OutputPort">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class represents a kind of port.&#xD;&#xA;It allows the component containing it to output some data in a data flow."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentDataStore" eType="#//DataStore"
+        transient="true" resolveProxies="false" eOpposite="#//DataStore/out"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentSync" eType="#//DataSynchronisation"
+        transient="true" resolveProxies="false" eOpposite="#//DataSynchronisation/out"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="split" eType="#//MessageSplit"
+        eOpposite="#//MessageSplit/outData"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="merge" eType="#//DataMerge"
+        eOpposite="#//DataMerge/out"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputPort" abstract="true" eSuperTypes="#//Port">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This represents a port allowing to the component containing it to output information."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port" abstract="true" eSuperTypes="#//NamedItem">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class represents the generalization of the different kind of ports.&#xD;&#xA;A port allows the input or output of information in or from components."/>
+    </eAnnotations>
+    <eOperations name="isIn" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eOperations name="isOut" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentSystem" eType="#//System"
+        transient="true" resolveProxies="false" eOpposite="#//System/listPorts"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outlink" eType="#//Flow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inlink" eType="#//Flow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentAutomaton" eType="#//Automaton"
+        transient="true" resolveProxies="false" eOpposite="#//Automaton/listPorts"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentMultiPort" eType="#//MultiPort"
+        resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isInstanceOf" eType="#//Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataComposition" eSuperTypes="#//DataSynchronisation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A composition is a flow synchronisation used to group several flow into one."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlFlow" eSuperTypes="#//Flow">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A control flow is a flow carrying control messages to between systems or automatons.&#xD;&#xA;This class represent the link used for control purpose between 2 components.&#xD;&#xA;Note : A ControlFlow is Event typed. See DataFlow."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//ControlPort" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dest" lowerBound="1" upperBound="-1"
+        eType="#//ControlPort" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataFlow" eSuperTypes="#//Flow">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A data flow is a flow carrying data between systems or to an automaton.&#xD;&#xA;It cannot come from an autumaton.&#xD;&#xA;the Data can be stored, or retrieve, into, or from, a data store, and composed into one or decomposed from one data flow.&#xD;&#xA;This class represent the link used to give data between 2 components.&#xD;&#xA;Note : a DataFlow is scalar typed. See ControlFlow."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//DataPort" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dest" lowerBound="1" upperBound="-1"
+        eType="#//DataPort" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataStore" eSuperTypes="#//NamedItem">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A data store is a component used to store data that can be retrieved later.&#xD;&#xA;This class represent a general data store, not precising where the entry point is.&#xD;&#xA;"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentSystem" lowerBound="1"
+        eType="#//System" transient="true" resolveProxies="false" eOpposite="#//System/listStores"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="in" lowerBound="1" eType="#//InDataPort"
+        containment="true" resolveProxies="false" eOpposite="#//InDataPort/parentDataStore"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="out" lowerBound="1" eType="#//OutDataPort"
+        containment="true" resolveProxies="false" eOpposite="#//OutDataPort/parentDataStore"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataType">
+    <eLiterals name="Integer"/>
+    <eLiterals name="Real" value="1"/>
+    <eLiterals name="Float" value="2"/>
+    <eLiterals name="Double" value="3"/>
+    <eLiterals name="Boolean" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataDecomposition" eSuperTypes="#//DataSynchronisation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A decomposition is a flow synchronisation used to make several flow from a single flow.&#xD;&#xA;Each flow &quot;produced&quot; by the decomposition is a part of the original flow.&#xD;&#xA;This is not used to have several destination for one flow, by to split the data contained by the original flow."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Flow" abstract="true" eSuperTypes="#//NamedItem">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A flow is a link between 2 components used to communicate."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentSystem" lowerBound="1"
+        eType="#//System" transient="true" resolveProxies="false" eOpposite="#//System/listFlows"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="group" lowerBound="1" eType="#//FlowGroup"
+        eOpposite="#//FlowGroup/flows"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//ModelContent #//TraceableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class represents either the system to modelize or the subsystems it is composed of.&#xD;&#xA;&#xD;&#xA;A simple function will represent as a system composed of no component."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listPorts" upperBound="-1"
+        eType="#//Port" containment="true" resolveProxies="false" eOpposite="#//Port/parentSystem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listStores" upperBound="-1"
+        eType="#//DataStore" containment="true" resolveProxies="false" eOpposite="#//DataStore/parentSystem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listSynchronisation" upperBound="-1"
+        eType="#//Gate" containment="true" resolveProxies="false" eOpposite="#//Gate/parentSystem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listFlows" upperBound="-1"
+        eType="#//Flow" containment="true" resolveProxies="false" eOpposite="#//Flow/parentSystem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listElements" upperBound="-1"
+        eType="#//ModelContent" containment="true" eOpposite="#//ModelContent/parentSystem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isInstanceOf" eType="#//System"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class represent the root of the global model.&#xD;&#xA;There is only one instance of this element for each model."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelContent" lowerBound="1"
+        eType="#//ModelContent" containment="true" resolveProxies="false" eOpposite="#//ModelContent/parentModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowGroups" upperBound="-1"
+        eType="#//FlowGroup" containment="true" eOpposite="#//FlowGroup/model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirementModel" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelContent" abstract="true" eSuperTypes="#//NamedItem">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class is abstract and represents the different kinds of elements that can be the first element of the model."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentModel" eType="#//Model"
+        transient="true" resolveProxies="false" eOpposite="#//Model/modelContent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentSystem" eType="#//System"
+        transient="true" eOpposite="#//System/listElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listMultiPort" upperBound="-1"
+        eType="#//MultiPort" containment="true" resolveProxies="false" eOpposite="#//MultiPort/parent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdentifiedItem" abstract="true" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This abstract class represent any item that is unique, so possesses a unique identifier. Each of these items can be commented ou have requirements."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requirements" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedItem" abstract="true" eSuperTypes="#//IdentifiedItem">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This abstract class represent any item that can be named."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiPort" eSuperTypes="#//NamedItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listPort" lowerBound="1"
+        upperBound="-1" eType="#//Port" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+        eType="#//ModelContent" transient="true" resolveProxies="false" eOpposite="#//ModelContent/listMultiPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isInstanceOf" eType="#//MultiPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessagePort" abstract="true" eSuperTypes="#//Port">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This represents a port allowing to the component containing it to receive or emit a message flow."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageFlow" eSuperTypes="#//Flow">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A message flow is a flow carrying messages between systems or to an automaton.&#xD;&#xA;It cannot come from an automaton."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//MessagePort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dest" lowerBound="1" upperBound="-1"
+        eType="#//MessagePort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutMessagePort" eSuperTypes="#//MessagePort #//OutputPort">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class represents a kind of port.&#xD;&#xA;It allows a data flow to bring some data into the component containing this port."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="merge" eType="#//MessageMerge"
+        eOpposite="#//MessageMerge/out"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InMessagePort" eSuperTypes="#//MessagePort #//InputPort">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class represents a kind of port.&#xD;&#xA;It allows a data flow to bring some data into the component containing this port."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="split" eType="#//MessageSplit"
+        eOpposite="#//MessageSplit/in"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="merge" eType="#//MessageMerge"
+        eOpposite="#//MessageMerge/in"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowGroup" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ENamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A flow group gathers different kinds of flows sharing the same global comment."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flows" upperBound="-1"
+        eType="#//Flow" eOpposite="#//Flow/group"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="globalComment" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//Model"
+        eOpposite="#//Model/flowGroups"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gate" abstract="true" eSuperTypes="#//IdentifiedItem">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A gate is an abstract concept aimed at representing split, merge, composition and decomposition of different kinds of flows."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentSystem" lowerBound="1"
+        eType="#//System" transient="true" resolveProxies="false" eOpposite="#//System/listSynchronisation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AsynchronousGate" abstract="true" eSuperTypes="#//Gate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An asynchronous gate is an abstract concept aimed at representing split and  merge of flows."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SynchronousGate" abstract="true" eSuperTypes="#//Gate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A synchronous gate is an abstract concept aimed at representing composition and decomposition of flows."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataSynchronisation" abstract="true"
+      eSuperTypes="#//SynchronousGate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A data synchronisation is an abstract concept aimed at representing composition and decomposition of data flows."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="in" lowerBound="1" upperBound="-1"
+        eType="#//InDataPort" containment="true" resolveProxies="false" eOpposite="#//InDataPort/parentSync"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="out" lowerBound="1" upperBound="-1"
+        eType="#//OutDataPort" containment="true" resolveProxies="false" eOpposite="#//OutDataPort/parentSync"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SplitGate" abstract="true" eSuperTypes="#//AsynchronousGate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A split gate allows to split a flow in another kind of flows."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MergeGate" abstract="true" eSuperTypes="#//AsynchronousGate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A merge gate allows to merge different kinds of flows."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageSplit" eSuperTypes="#//SplitGate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A split gate allows to split a message flow in one data flow and a control flow."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="in" lowerBound="1" eType="#//InMessagePort"
+        containment="true" eOpposite="#//InMessagePort/split"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outData" lowerBound="1"
+        eType="#//OutDataPort" containment="true" eOpposite="#//OutDataPort/split"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outControl" lowerBound="1"
+        eType="#//OutControlPort" containment="true" eOpposite="#//OutControlPort/split"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataMerge" eSuperTypes="#//MergeGate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A merge of data receives several data flows in input and returns only one data flow in output."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="in" lowerBound="1" upperBound="-1"
+        eType="#//InDataPort" containment="true" resolveProxies="false" eOpposite="#//InDataPort/merge"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="out" lowerBound="1" upperBound="-1"
+        eType="#//OutDataPort" containment="true" resolveProxies="false" eOpposite="#//OutDataPort/merge"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlMerge" eSuperTypes="#//MergeGate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A merge of control receives several control flows in input and returns only one control flow in output."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="in" lowerBound="1" upperBound="-1"
+        eType="#//InControlPort" containment="true" resolveProxies="false" eOpposite="#//InControlPort/merge"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="out" lowerBound="1" upperBound="-1"
+        eType="#//OutControlPort" containment="true" resolveProxies="false" eOpposite="#//OutControlPort/merge"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageMerge" eSuperTypes="#//MergeGate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A merge of message receives several message flows in input and returns only one message flow in output."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="in" lowerBound="1" upperBound="-1"
+        eType="#//InMessagePort" containment="true" resolveProxies="false" eOpposite="#//InMessagePort/merge"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="out" lowerBound="1" upperBound="-1"
+        eType="#//OutMessagePort" containment="true" resolveProxies="false" eOpposite="#//OutMessagePort/merge"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TraceableElement" eSuperTypes="#//NamedItem">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A traceable element can be covered by a requirement.&#xA;For instance, a System or aTransition is a TraceableElement."/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>

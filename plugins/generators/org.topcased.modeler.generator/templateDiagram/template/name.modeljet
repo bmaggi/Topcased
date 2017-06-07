@@ -1,0 +1,18 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.modeler.diagramconfigurator.*"
+	 class="Model"
+	 version="$Id: name.modeljet,v 1.4 2007/06/25 15:14:12 jako Exp $" %>
+<%	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;
+	String nsPrefix = diagramConfiguration.getTemplateRootObject().getGenPackage().getNSName();
+	String nsURI = diagramConfiguration.getTemplateRootObject().getGenPackage().getNSURI();
+	String rootObject = diagramConfiguration.getTemplateRootObject().getName();
+%>
+<?xml version="1.0" encoding="UTF-8"?>
+<%	if ("XMI".equals(diagramConfiguration.getTemplateRootObject().getGenPackage().getResource().getName())) {%>
+<<%=nsPrefix%>:<%=rootObject%> xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:<%=nsPrefix%>="<%=nsURI%>">
+</<%=nsPrefix%>:<%=rootObject%>>
+<%	} else {%>
+<<%=nsPrefix%>:<%=rootObject%> xmlns:<%=nsPrefix%>="<%=nsURI%>">
+</<%=nsPrefix%>:<%=rootObject%>>
+<%	}%>

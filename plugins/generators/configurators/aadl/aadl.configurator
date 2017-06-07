@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurator:EditorConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:configurator="http://www.topcased.org/configurator/1.0" name="AADL Editor" projectName="org.topcased.modeler.aadl" prefix="AADL" extension="aadl" extensionDiagram="aadldi" pluginVersion="0.7.0">
+  <genModel href="aadl.genmodel#/"/>
+  <diagrams id="org.topcased.modeler.aadl.aadlspecdiagram" name="AADLSpecDiagram" package="aadlspecdiagram" prefix="AADLSpec">
+    <palette name="AADLSpecDiagramPalette">
+      <paletteCategories name="AADLSpec">
+        <items name="Package" part="//@diagrams.0/@parts.0"/>
+        <items name="Property Set" part="//@diagrams.0/@parts.1"/>
+        <items name="Property Definition" part="//@diagrams.0/@parts.2"/>
+        <items name="Property Constant" part="//@diagrams.0/@parts.3"/>
+      </paletteCategories>
+      <paletteCategories name="Types">
+        <items name="System" part="//@diagrams.0/@parts.4"/>
+        <items name="Data" part="//@diagrams.0/@parts.5"/>
+        <items name="Thread" part="//@diagrams.0/@parts.6"/>
+        <items name="ThreadGroup" part="//@diagrams.0/@parts.7"/>
+        <items name="Process" part="//@diagrams.0/@parts.8"/>
+        <items name="Memory" part="//@diagrams.0/@parts.9"/>
+        <items name="Processor" part="//@diagrams.0/@parts.10"/>
+        <items name="Bus" part="//@diagrams.0/@parts.11"/>
+        <items name="Device" part="//@diagrams.0/@parts.12"/>
+      </paletteCategories>
+      <paletteCategories name="Implementations">
+        <items name="System" part="//@diagrams.0/@parts.13"/>
+        <items name="Data" part="//@diagrams.0/@parts.14"/>
+        <items name="Thread" part="//@diagrams.0/@parts.15"/>
+        <items name="ThreadGroup" part="//@diagrams.0/@parts.16"/>
+        <items name="Process" part="//@diagrams.0/@parts.17"/>
+        <items name="Memory" part="//@diagrams.0/@parts.18"/>
+        <items name="Processor" part="//@diagrams.0/@parts.19"/>
+        <items name="Bus" part="//@diagrams.0/@parts.20"/>
+        <items name="Device" part="//@diagrams.0/@parts.21"/>
+      </paletteCategories>
+      <paletteCategories name="Ports">
+        <items name="Data Port" part="//@diagrams.0/@parts.22"/>
+        <items name="Event Port" part="//@diagrams.0/@parts.23"/>
+        <items name="EventData Port" part="//@diagrams.0/@parts.24"/>
+      </paletteCategories>
+      <paletteCategories name="Links">
+        <items name="Extends" part="//@diagrams.0/@parts.25"/>
+        <items name="Implements" part="//@diagrams.0/@parts.26"/>
+      </paletteCategories>
+    </palette>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.1" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.3" type="Class"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.4"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.5"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.6" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.7" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.8" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.9" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.10" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.11" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.12" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.13" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.14" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.15" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.16" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.17" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.18" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.19" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.20" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.21" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.22" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.23" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.24" type="Port" resizing="NONE"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.25" type="Port" resizing="NONE"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.26" type="Port" resizing="NONE"/>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.27">
+      <sourceTargetCouple sourceNode="//@diagrams.0/@parts.27" targetNode="//@diagrams.0/@parts.27"/>
+      <sourceTargetCouple sourceNode="//@diagrams.0/@parts.28" targetNode="//@diagrams.0/@parts.28"/>
+    </parts>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.28">
+      <sourceTargetCouple sourceNode="//@diagrams.0/@parts.28" targetNode="//@diagrams.0/@parts.27"/>
+    </parts>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.38"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.39"/>
+  </diagrams>
+  <diagrams id="org.topcased.modeler.aadl.aadlpackagediagram" name="AADLPackageDiagram" package="aadlpackagediagram" prefix="AADLPack">
+    <palette name="AADLPackageDiagramPalette">
+      <paletteCategories name="Types">
+        <items name="System" part="//@diagrams.1/@parts.0"/>
+        <items name="Data" part="//@diagrams.1/@parts.1"/>
+        <items name="Thread" part="//@diagrams.1/@parts.2"/>
+        <items name="ThreadGroup" part="//@diagrams.1/@parts.3"/>
+        <items name="Process" part="//@diagrams.1/@parts.4"/>
+        <items name="Memory" part="//@diagrams.1/@parts.5"/>
+        <items name="Processor" part="//@diagrams.1/@parts.6"/>
+        <items name="Bus" part="//@diagrams.1/@parts.7"/>
+        <items name="Device" part="//@diagrams.1/@parts.8"/>
+      </paletteCategories>
+      <paletteCategories name="Implementations">
+        <items name="System" part="//@diagrams.1/@parts.9"/>
+        <items name="Data" part="//@diagrams.1/@parts.10"/>
+        <items name="Thread" part="//@diagrams.1/@parts.11"/>
+        <items name="ThreadGroup" part="//@diagrams.1/@parts.12"/>
+        <items name="Process" part="//@diagrams.1/@parts.13"/>
+        <items name="Memory" part="//@diagrams.1/@parts.14"/>
+        <items name="Processor" part="//@diagrams.1/@parts.15"/>
+        <items name="Bus" part="//@diagrams.1/@parts.16"/>
+        <items name="Device" part="//@diagrams.1/@parts.17"/>
+      </paletteCategories>
+      <paletteCategories name="Ports">
+        <items name="Data Port" part="//@diagrams.1/@parts.18"/>
+        <items name="Event Port" part="//@diagrams.1/@parts.19"/>
+        <items name="EventData Port" part="//@diagrams.1/@parts.20"/>
+      </paletteCategories>
+      <paletteCategories name="Links">
+        <items name="Extends" part="//@diagrams.1/@parts.21"/>
+        <items name="Implements" part="//@diagrams.1/@parts.22"/>
+      </paletteCategories>
+    </palette>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.6" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.7" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.8" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.9" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.10" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.11" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.12" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.13" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.14" type="ComponentTypeFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.15" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.16" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.17" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.18" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.19" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.20" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.21" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.22" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.23" type="ComponentImplFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.24" type="Port" resizing="NONE"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.25" type="Port" resizing="NONE"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.26" type="Port" resizing="NONE"/>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.27">
+      <sourceTargetCouple sourceNode="//@diagrams.1/@parts.23" targetNode="//@diagrams.1/@parts.23"/>
+      <sourceTargetCouple sourceNode="//@diagrams.1/@parts.24" targetNode="//@diagrams.1/@parts.24"/>
+    </parts>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.28">
+      <sourceTargetCouple sourceNode="//@diagrams.1/@parts.24" targetNode="//@diagrams.1/@parts.23"/>
+    </parts>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.38"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.39"/>
+  </diagrams>
+  <diagrams id="org.topcased.modeler.aadl.instancediagram" name="InstanceDiagram" package="instancediagram" prefix="Instance">
+    <palette name="InstanceDiagramPalette">
+      <paletteCategories name="Instances">
+        <items name="System" part="//@diagrams.2/@parts.0"/>
+        <items name="Data" part="//@diagrams.2/@parts.1"/>
+        <items name="Process" part="//@diagrams.2/@parts.2"/>
+        <items name="Memory" part="//@diagrams.2/@parts.3"/>
+        <items name="Processor" part="//@diagrams.2/@parts.4"/>
+        <items name="Bus" part="//@diagrams.2/@parts.5"/>
+        <items name="Device" part="//@diagrams.2/@parts.6"/>
+      </paletteCategories>
+    </palette>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.29" type="InstanceFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.30" type="InstanceFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.33" type="InstanceFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.34" type="InstanceFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.35" type="InstanceFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.36" type="InstanceFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.37" type="InstanceFigure"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.41" type="State"/>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.42" targetDecoration="ARROW">
+      <sourceTargetCouple containerType="DIAGRAM" sourceNode="//@diagrams.2/@parts.7" targetNode="//@diagrams.2/@parts.7">
+        <containerObject href="aadl.genmodel#//core/Modes"/>
+        <containerRef xsi:type="ecore:EReference" href="core.ecore#//Modes/modeTransition"/>
+        <refSourceToEdge xsi:type="ecore:EReference" href="core.ecore#//Mode/outgoingModeTransition"/>
+        <refEdgeToSource xsi:type="ecore:EReference" href="core.ecore#//ModeTransition/srcMode"/>
+        <refTargetToEdge xsi:type="ecore:EReference" href="core.ecore#//Mode/incomingModeTransition"/>
+        <refEdgeToTarget xsi:type="ecore:EReference" href="core.ecore#//ModeTransition/dstMode"/>
+      </sourceTargetCouple>
+      <edgeObjects type="Middle" id="portType"/>
+    </parts>
+  </diagrams>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//core/AadlSpec"/>
+    <diagrams diagram="//@diagrams.0"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//core/AadlPackage"/>
+    <diagrams diagram="//@diagrams.1"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//property/PropertyAssociation"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//property/PropertySet"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//property/PropertyDefinition"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//property/PropertyConstant"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/SystemType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/DataType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ThreadType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ThreadGroupType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ProcessType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/MemoryType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ProcessorType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/BusType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/DeviceType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/SystemImpl"/>
+    <diagrams diagram="//@diagrams.2"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/DataImpl"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ThreadImpl"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ThreadGroupImpl"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ProcessImpl"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/MemoryImpl"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ProcessorImpl"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/BusImpl"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/DeviceImpl"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//feature/DataPort"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//feature/EventPort"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//feature/EventDataPort"/>
+  </objects>
+  <objects xsi:type="configurator:SimpleObjectConfiguration" name="ComponentClassifierExtends"/>
+  <objects xsi:type="configurator:SimpleObjectConfiguration" name="ComponentClassifierImplements"/>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/SystemSubcomponent"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/DataSubcomponent"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ThreadSubcomponent"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ThreadGroupSubcomponent"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ProcessSubcomponent"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/MemorySubcomponent"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ProcessorSubcomponent"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/BusSubcomponent"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/DeviceSubcomponent"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//core/ComponentType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//core/ComponentImpl"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//core/Subcomponent"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//core/Mode"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//core/ModeTransition"/>
+  </objects>
+</configurator:EditorConfiguration>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="org.topcased.doc.uml.interchange"
+   name="UML 2.0 Diagram Interchange Specification"
+   version="0.11.0.qualifier"
+   provider-name="Topcased">
+   <requires>
+      <import plugin="org.eclipse.help"/>
+   </requires>
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            primary="true"
+            file="main.xml"/>
+   </extension>
+
+</plugin>

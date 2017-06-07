@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.eclipsemonkey.dom">
+      <dom
+            class="org.topcased.scripting.notation.DOMFactory"
+            resource="org.topcased.scripting.notation.NotationDOM"
+            variableName="notation">
+      </dom>
+   </extension>
+
+</plugin>

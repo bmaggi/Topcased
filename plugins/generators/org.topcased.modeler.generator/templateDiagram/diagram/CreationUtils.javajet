@@ -1,0 +1,295 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="CreationUtils"
+	 version="$Id: CreationUtils.javajet,v 1.16 2009/01/14 18:04:01 tlandre Exp $" %>
+<%	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>;
+
+import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IFileEditorInput;
+import org.eclipse.ui.preferences.ScopedPreferenceStore;
+import org.eclipse.core.resources.ProjectScope;
+import org.eclipse.core.resources.IProject;
+import org.osgi.service.prefs.BackingStoreException;
+import org.osgi.service.prefs.Preferences;
+import org.topcased.modeler.di.model.DiagramInterchangeFactory;
+import org.topcased.modeler.di.model.EdgeObjectOffset;
+import org.topcased.modeler.di.model.EdgeObjectUV;
+import org.topcased.modeler.di.model.GraphEdge;
+import org.topcased.modeler.di.model.GraphElement;
+import org.topcased.modeler.editor.AbstractCreationUtils;
+import org.topcased.modeler.evaluator.EvaluatorException;
+import org.topcased.modeler.evaluator.extension.EvaluatorsManager;
+import org.topcased.modeler.graphconf.DiagramGraphConf;
+import <%=diagramConfiguration.getBasePackage()%>.<%=diagramConfiguration.getPluginPrefix()%>Plugin;
+import <%=diagramConfiguration.getEditorConfigurator().getProjectName()%>.<%=diagramConfiguration.getEditorConfigurator().getPrefix()%>Plugin;
+
+<%	for (Iterator itGenPackages = diagramConfiguration.getGenModel().getAllGenPackagesWithClassifiers().iterator(); itGenPackages.hasNext();) {
+		GenPackage genPack = (GenPackage) itGenPackages.next();%> 
+import <%=genPack.getUtilitiesPackageName()%>.<%=genPack.getSwitchClassName()%>;
+<%	}%>
+	
+/**
+ * This utility class allows to create a GraphElement associated with a Model Object
+ *
+ * @generated
+ */
+public class <%=diagramConfiguration.getPrefix()%>CreationUtils extends AbstractCreationUtils
+{
+
+    /**
+	 * Constructor
+	 *
+	 * @param diagramConf the Diagram Graphical Configuration
+	 * @generated
+	 */
+    public <%=diagramConfiguration.getPrefix()%>CreationUtils(DiagramGraphConf diagramConf)
+    {
+        super(diagramConf);
+    }
+    
+    
+<%	for (Iterator itGenPackages = diagramConfiguration.getGenModel().getAllGenPackagesWithClassifiers().iterator(); itGenPackages.hasNext();)	{
+		GenPackage genPack = (GenPackage) itGenPackages.next();%>       
+    /**
+     * @generated
+     */
+    private class Graphic<%=genPack.getPrefix()%>Switch extends <%=genPack.getSwitchClassName()%>
+    {
+    	/**
+    	 * The presentation of the graphical element
+    	 *
+    	 * @generated
+    	 */
+        private String presentation;
+        
+        /**
+         * Constructor
+         *
+         * @param presentation the presentation of the graphical element
+         * @generated
+         */
+        public Graphic<%=genPack.getPrefix()%>Switch(String presentation)
+        {
+            this.presentation = presentation;
+        }
+
+<%		for (Iterator iter = diagramConfiguration.getUniqueModelObjectConfListFromPalette(true, true).iterator() ; iter.hasNext(); ) {
+    		ModelObjectConfiguration currentObjConf = (ModelObjectConfiguration) iter.next();
+    		if (genPack.getNSURI().equals(currentObjConf.getGenClass().getGenPackage().getNSURI())) {%>
+        /**
+         * @see <%=genPack.getUtilitiesPackageName()%>.<%=genPack.getSwitchClassName()%>#case<%=currentObjConf.getName()%>(<%=currentObjConf.getGenClass().getQualifiedInterfaceName()%>)
+         * @generated
+         */
+        public Object case<%=currentObjConf.getName()%>(<%=currentObjConf.getGenClass().getQualifiedInterfaceName()%> object) {
+<%				for (Iterator itCategories = diagramConfiguration.getPalette().getPaletteCategories().iterator(); itCategories.hasNext();) { 
+            		PaletteCategory paletteCategory = (PaletteCategory) itCategories.next();
+                    for(Iterator itItems = paletteCategory.getItems().iterator(); itItems.hasNext();) {
+                    	PaletteItem palItem = (PaletteItem) itItems.next();
+                    	PartConfiguration partConf = palItem.getPart();
+                    	if (partConf.getObject() instanceof ModelObjectConfiguration) {
+                	    	ModelObjectConfiguration objConf = (ModelObjectConfiguration) partConf.getObject();
+                	    	if (currentObjConf.equals(objConf)) {
+        						String checkConstraints = "";
+                        		for (Iterator itConstraints = partConf.getConstraint().iterator(); itConstraints.hasNext(); ) {
+                        			Constraint constraint = (Constraint) itConstraints.next();
+                					checkConstraints = checkConstraints.concat("EvaluatorsManager.getInstance().evaluate(object, \"" + constraint.getRule() + "\", \"" + constraint.getLanguage() + "\")");
+                					if (itConstraints.hasNext()) {
+                						checkConstraints = checkConstraints.concat(" && ");
+                					}
+                				}
+                				if (checkConstraints.length() > 0) {%>
+            try
+            {
+            	if ("<%=partConf.getPresentation()%>".equals(presentation) && <%=checkConstraints%>)
+            	{
+            		return createGraphElement<%=partConf.getPrefix()%>(object, presentation);
+            	}
+            }
+            catch (EvaluatorException ee)
+            {
+                <%=diagramConfiguration.getPrefix()%>Plugin.log(ee);
+            }
+<%								}
+								else {%>
+        	if ("<%=partConf.getPresentation()%>".equals(presentation))
+        	{
+        		return createGraphElement<%=partConf.getPrefix()%>(object, presentation);
+        	}
+<%								}
+							}
+    					}
+    				}
+    			}%>
+            return null;
+        } 
+<%			}
+		}%>
+        /**
+         * @see <%=genPack.getUtilitiesPackageName()%>.<%=genPack.getSwitchClassName()%>#defaultCase(org.eclipse.emf.ecore.EObject)
+         * @generated
+         */
+        public Object defaultCase(EObject object) {
+            return null;
+        }
+    }
+<%	}%>
+
+	/**
+	 * @see org.topcased.modeler.editor.ICreationUtils#createGraphElement(org.eclipse.emf.ecore.EObject, java.lang.String)
+	 * @generated
+	 */
+	public GraphElement createGraphElement(EObject obj, String presentation)
+    {
+    	Object graphElt = null;
+    	
+<%	for (Iterator itGenPackages = diagramConfiguration.getGenModel().getAllGenPackagesWithClassifiers().iterator(); itGenPackages.hasNext();)
+	{
+		GenPackage genPack = (GenPackage) itGenPackages.next();%>
+		if("<%=genPack.getNSURI()%>".equals(obj.eClass().getEPackage().getNsURI()))
+		{
+			graphElt = new Graphic<%=genPack.getPrefix()%>Switch(presentation).doSwitch(obj);
+		}
+<%	}%>
+
+		return (GraphElement) graphElt;
+	}
+
+<%
+for (Iterator i = diagramConfiguration.getPalette().getPaletteCategories().iterator(); i.hasNext();)
+{ 
+	PaletteCategory paletteCategory = (PaletteCategory) i.next();
+
+    for(Iterator j = paletteCategory.getItems().iterator(); j.hasNext();)
+    {
+        	PaletteItem palItem = (PaletteItem) j.next(); 
+        	PartConfiguration partConf = palItem.getPart();
+        	if (partConf.getObject() instanceof ModelObjectConfiguration)
+        	{
+    	    	ModelObjectConfiguration objConf = (ModelObjectConfiguration) partConf.getObject();
+%>
+    /**
+     * @param element the model element
+     * @param presentation the presentation of the graphical element
+     * @return the complete GraphElement
+     * @generated
+     */
+    protected GraphElement createGraphElement<%=partConf.getPrefix()%>(<%=objConf.getGenClass().getQualifiedInterfaceName()%> element, String presentation)
+    {
+<%			if (partConf instanceof NodePartConfiguration) {
+    			if (LayoutType.CLASS_LAYOUT_LITERAL.equals(((NodePartConfiguration) partConf).getLayout())
+       			|| LayoutType.TOOLBAR_LAYOUT_LITERAL.equals(((NodePartConfiguration) partConf).getLayout())) {%>
+       	// TODO this snippet of code should be customized if it is not well generated
+        GraphNode nodeParent = createGraphNode(element, presentation);
+		<%			for (Iterator k = ((NodePartConfiguration) partConf).getChildElements().iterator(); k.hasNext();) {
+						NodePartConfiguration childNode = (NodePartConfiguration) k.next();
+						if (childNode.getObject() instanceof ModelObjectConfiguration) {
+							GenClass childGenClass = ((ModelObjectConfiguration) childNode.getObject()).getGenClass();
+		%>
+        GraphNode <%=childGenClass.getName().toLowerCase()%> = createGraphNode(element, <%=childGenClass.getGenPackage().getPrefix()%>Package.<%=((NodePartConfiguration) partConf).getFeatureID(childGenClass)%>, presentation);
+        <%=childGenClass.getName().toLowerCase()%>.setContainer(nodeParent);
+		<%				}
+					}%>
+        return nodeParent;
+<%				} else {%>
+        return createGraphNode(element, presentation);
+<%				}
+			}
+			else if (partConf instanceof EdgePartConfiguration) {
+%>
+		GraphEdge graphEdge = createGraphEdge(element, presentation);
+<%
+				for (Iterator i2 = diagramConfiguration.getParts().iterator(); i2.hasNext();)
+				{
+					PartConfiguration partConf2 = (PartConfiguration) i2.next();
+					String name = partConf2.getPrefix();
+					if (partConf2 instanceof EdgePartConfiguration && partConf2.getObject().equals(objConf))
+					{
+						for (Iterator i3 = ((EdgePartConfiguration) partConf2).getEdgeObjects().iterator(); i3.hasNext();)
+						{
+							EdgeObject edgeObject = (EdgeObject) i3.next();
+							String edgeObjectName = edgeObject.getId();
+							if (edgeObject.getType().equals(EdgeObjectType.MIDDLE_LITERAL))
+							{
+%>
+		EdgeObjectOffset <%=edgeObjectName.toLowerCase()%>EdgeObjectOffset = DiagramInterchangeFactory.eINSTANCE.createEdgeObjectOffset();
+        <%=edgeObjectName.toLowerCase()%>EdgeObjectOffset.setId(<%=diagramConfiguration.getPrefix()%>EdgeObjectConstants.<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_ID);
+        <%=edgeObjectName.toLowerCase()%>EdgeObjectOffset.setOffset(new Dimension(0, 0));
+        <%=edgeObjectName.toLowerCase()%>EdgeObjectOffset.setVisible(getPreferenceStore().getBoolean(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=name.toUpperCase()%>_<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_DEFAULT_VISIBILITY));
+        graphEdge.getContained().add(<%=edgeObjectName.toLowerCase()%>EdgeObjectOffset);
+<%
+							} else {
+%>
+		EdgeObjectUV <%=edgeObjectName.toLowerCase()%>EdgeObjectUV = DiagramInterchangeFactory.eINSTANCE.createEdgeObjectUV();
+        <%=edgeObjectName.toLowerCase()%>EdgeObjectUV.setId(<%=diagramConfiguration.getPrefix()%>EdgeObjectConstants.<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_ID);
+        <%=edgeObjectName.toLowerCase()%>EdgeObjectUV.setUDistance(0);
+        <%=edgeObjectName.toLowerCase()%>EdgeObjectUV.setVDistance(0);
+        <%=edgeObjectName.toLowerCase()%>EdgeObjectUV.setVisible(getPreferenceStore().getBoolean(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=name.toUpperCase()%>_<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_DEFAULT_VISIBILITY));
+        graphEdge.getContained().add(<%=edgeObjectName.toLowerCase()%>EdgeObjectUV);
+<%
+							}
+						}
+					}
+				}
+%>
+        	return graphEdge;
+<%
+			}
+			else {
+%>
+		// TODO : specify in the configurator the ToolType
+        	return null;
+<%
+			}
+%>        	
+    }
+
+<%
+		}
+	}
+}
+%>
+
+    /**
+     * Create the ModelObject with its initial children
+     * 
+     * @param obj the model object
+     * @return the model object with its children
+     * @generated
+     */
+    public EObject createModelObject(EObject obj)
+    {
+        return obj;
+	}       
+
+    /**
+	 * Get the preference store associated with the current editor.
+     * 
+     * @return IPreferenceStore
+     * @generated
+	 */
+    private IPreferenceStore getPreferenceStore()
+    {   	
+    	IEditorInput editorInput = <%=diagramConfiguration.getPluginPrefix()%>Plugin.getActivePage().getActiveEditor().getEditorInput();
+    	if (editorInput instanceof IFileEditorInput) 
+    	{
+    		IProject project = ((IFileEditorInput) editorInput).getFile().getProject();
+        	Preferences root = Platform.getPreferencesService().getRootNode();
+        	try {
+    			if (root.node(ProjectScope.SCOPE).node(project.getName()).nodeExists(<%=diagramConfiguration.getPluginPrefix()%>Plugin.getId()))
+    			{
+    				return new ScopedPreferenceStore(new ProjectScope(project), <%=diagramConfiguration.getPluginPrefix()%>Plugin.getId());
+    			}
+    		} catch (BackingStoreException e) {
+    			e.printStackTrace();
+    		}
+    	}
+    	return <%=diagramConfiguration.getPluginPrefix()%>Plugin.getDefault().getPreferenceStore();
+    }
+}

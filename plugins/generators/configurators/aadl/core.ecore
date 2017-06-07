@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="core"
+    nsURI="http:///AADL/core" nsPrefix="core">
+  <eClassifiers xsi:type="ecore:EClass" name="AadlSpec" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contents" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="namespace" value="aadlSpec"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aadlPackage" upperBound="-1"
+        eType="#//AadlPackage" volatile="true" transient="true" derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="systemType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//SystemType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//DataType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threadType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//ThreadType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threadGroupType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//ThreadGroupType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//ProcessType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subprogramType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//SubprogramType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processorType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//ProcessorType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="memoryType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//MemoryType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//BusType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deviceType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//DeviceType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="systemImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//SystemImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//DataImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threadImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//ThreadImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threadGroupImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//ThreadGroupImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//ProcessImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subprogramImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//SubprogramImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processorImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//ProcessorImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="memoryImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//MemoryImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//BusImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deviceImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//DeviceImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portGroupType" upperBound="-1"
+        eType="ecore:EClass feature.ecore#//PortGroupType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertySet" upperBound="-1"
+        eType="ecore:EClass property.ecore#//PropertySet" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annexLibrary" upperBound="-1"
+        eType="#//AnnexLibrary" volatile="true" transient="true" derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlSpec#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AadlPackage" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aadlPublic" eType="#//AadlPublic"
+        containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aadlPrivate" eType="#//AadlPrivate"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AadlPrivate" eSuperTypes="#//AadlPackageSection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AadlPublic" eSuperTypes="#//AadlPackageSection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AadlPackageSection" abstract="true"
+      eSuperTypes="#//PropertyHolder">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contents" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="namespace" value="aadlPackageSection"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="systemType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//SystemType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//DataType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threadType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//ThreadType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threadGroupType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//ThreadGroupType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//ProcessType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subprogramType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//SubprogramType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processorType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//ProcessorType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="memoryType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//MemoryType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//BusType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deviceType" upperBound="-1"
+        eType="ecore:EClass component.ecore#//DeviceType" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="systemImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//SystemImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//DataImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threadImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//ThreadImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threadGroupImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//ThreadGroupImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//ProcessImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subprogramImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//SubprogramImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processorImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//ProcessorImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="memoryImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//MemoryImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//BusImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deviceImpl" upperBound="-1"
+        eType="ecore:EClass component.ecore#//DeviceImpl" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portGroupType" upperBound="-1"
+        eType="ecore:EClass feature.ecore#//PortGroupType" volatile="true" transient="true"
+        derived="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annexLibrary" upperBound="-1"
+        eType="#//AnnexLibrary" volatile="true" transient="true" derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="aadlPackageSection#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentClassifier" abstract="true"
+      eSuperTypes="#//Classifier">
+    <eAnnotations source="http:///aadl/OSATE">
+      <details key="isProxy" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentType" abstract="true" eSuperTypes="#//ComponentClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowSpecs" eType="ecore:EClass flow.ecore#//FlowSpecs"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Feature" abstract="true" eSuperTypes="#//PropertyHolder">
+    <eAnnotations source="http:///aadl/OSATE">
+      <details key="isProxy" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Features" abstract="true" eSuperTypes="#//AObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentImpl" abstract="true" eSuperTypes="#//ComponentClassifier connection.ecore#//FeatureContext">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connections" eType="ecore:EClass connection.ecore#//Connections"
+        containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modes" eType="#//Modes"
+        containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refinesType" eType="#//RefinesType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flows" eType="ecore:EClass flow.ecore#//Flows"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RefinesType" eSuperTypes="#//AObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contents" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="namespace" value="refinesType"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busAccess" upperBound="-1"
+        eType="ecore:EClass feature.ecore#//BusAccess" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="refinesType#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serverSubprogram" upperBound="-1"
+        eType="ecore:EClass feature.ecore#//ServerSubprogram" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="refinesType#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventDataPort" upperBound="-1"
+        eType="ecore:EClass feature.ecore#//EventDataPort" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="refinesType#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataAccess" upperBound="-1"
+        eType="ecore:EClass feature.ecore#//DataAccess" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="refinesType#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portGroup" upperBound="-1"
+        eType="ecore:EClass feature.ecore#//PortGroup" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="refinesType#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+        eType="ecore:EClass feature.ecore#//Parameter" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="refinesType#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventPort" upperBound="-1"
+        eType="ecore:EClass feature.ecore#//EventPort" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="refinesType#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataPort" upperBound="-1"
+        eType="ecore:EClass feature.ecore#//DataPort" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="refinesType#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subprogram" upperBound="-1"
+        eType="ecore:EClass feature.ecore#//Subprogram" volatile="true" transient="true"
+        derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="refinesType#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Subcomponents" abstract="true" eSuperTypes="#//AObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Subcomponent" abstract="true" eSuperTypes="#//ModeMember connection.ecore#//FeatureContext property.ecore#//ReferenceElement">
+    <eAnnotations source="http:///aadl/OSATE">
+      <details key="isProxy" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Connection" abstract="true" eSuperTypes="#//ModeMember property.ecore#//ReferenceElement">
+    <eAnnotations source="http:///aadl/OSATE">
+      <details key="isProxy" value="true"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="srcContext" lowerBound="1"
+        eType="ecore:EClass connection.ecore#//FeatureContext"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dstContext" lowerBound="1"
+        eType="ecore:EClass connection.ecore#//FeatureContext"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inModeTransitions" upperBound="-1"
+        eType="#//ModeTransition" eOpposite="#//ModeTransition/members"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Modes" eSuperTypes="#//AObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mode" upperBound="-1" eType="#//Mode"
+        containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modeTransition" upperBound="-1"
+        eType="#//ModeTransition" containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mode" eSuperTypes="#//PropertyHolder">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
+        eType="#//ModeMember" transient="true" resolveProxies="false" eOpposite="#//ModeMember/inModes"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingModeTransition"
+        upperBound="-1" eType="#//ModeTransition" transient="true" resolveProxies="false"
+        eOpposite="#//ModeTransition/srcMode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingModeTransition"
+        upperBound="-1" eType="#//ModeTransition" transient="true" resolveProxies="false"
+        eOpposite="#//ModeTransition/dstMode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//Mode"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//ModeState"
+        defaultValueLiteral="NORMAL"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModeTransition" eSuperTypes="#//AObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="srcMode" lowerBound="1"
+        eType="#//Mode" resolveProxies="false" eOpposite="#//Mode/outgoingModeTransition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dstMode" lowerBound="1"
+        eType="#//Mode" resolveProxies="false" eOpposite="#//Mode/incomingModeTransition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggerEventPort" unique="false"
+        upperBound="-1" eType="ecore:EClass feature.ecore#//EventPort" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
+        eType="#//Connection" transient="true" eOpposite="#//Connection/inModeTransitions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggerEventPortContext"
+        unique="false" upperBound="-1" eType="ecore:EClass connection.ecore#//FeatureContext"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ModeState">
+    <eLiterals name="NORMAL"/>
+    <eLiterals name="INITIAL" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnexLibrary" abstract="true" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http:///aadl/OSATE">
+      <details key="isProxy" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefaultAnnexLibrary" eSuperTypes="#//AnnexLibrary">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnexSubclause" abstract="true" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http:///aadl/OSATE">
+      <details key="isProxy" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefaultAnnexSubclause" eSuperTypes="#//AnnexSubclause">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AObject" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="#//AObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyHolder" abstract="true" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http:///aadl/OSATE">
+      <details key="isProxy" value="true"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" eType="ecore:EClass property.ecore#//Properties"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModeMember" abstract="true" eSuperTypes="#//PropertyHolder">
+    <eAnnotations source="http:///aadl/OSATE">
+      <details key="isProxy" value="true"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inModes" upperBound="-1"
+        eType="#//Mode" resolveProxies="false" eOpposite="#//Mode/members"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="noMode" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Classifier" abstract="true" eSuperTypes="#//PropertyHolder">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annexSubclause" upperBound="-1"
+        eType="#//AnnexSubclause" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,84 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.editorconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="DiagramsPage"
+	 version="$Id$" %>
+<%EditorConfiguration editorConfiguration = (EditorConfiguration) argument;%>
+<%=editorConfiguration.getJavaCopyrightText()%>
+package <%=editorConfiguration.getProjectName()%>.wizards;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
+import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
+import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.topcased.modeler.wizards.DiagramsPage;
+
+/**
+ * @generated
+ */
+public class <%=editorConfiguration.getPrefix()%>DiagramsPage extends DiagramsPage
+{
+    /**
+     * @param pageName
+     * @param selection
+     * @generated
+     */
+    public <%=editorConfiguration.getPrefix()%>DiagramsPage(String pageName, IStructuredSelection selection)
+    {
+        super(pageName, selection,  true);
+    }
+
+    /**
+     * @see org.topcased.modeler.wizards.DiagramsPage#getEditorID()
+     * @generated
+     */
+    public String getEditorID()
+    {
+        return "<%=editorConfiguration.getProjectName()%>.editor.<%=editorConfiguration.getPrefix()%>Editor";
+    }
+
+    /**
+     * @see org.topcased.modeler.wizards.DiagramsPage#getFileExtension()
+     * @generated
+     */
+    public String getFileExtension()
+    {
+        return "<%=editorConfiguration.getExtension()%>";
+    }
+
+    /**
+     * @see org.topcased.modeler.wizards.DiagramsPage#getAdapterFactory()
+     * @generated
+     */
+    public ComposedAdapterFactory getAdapterFactory()
+    {
+		List factories = new ArrayList();
+<%Iterator iteratorPackages = editorConfiguration.getGenModel().getAllGenPackagesWithClassifiers().iterator();
+while(iteratorPackages.hasNext())
+{
+	GenPackage genPack = (GenPackage) iteratorPackages.next();
+%>
+		factories.add(new <%=genPack.getQualifiedItemProviderAdapterFactoryClassName()%>());
+<%}%>
+		factories.add(new ResourceItemProviderAdapterFactory());
+		factories.add(new ReflectiveItemProviderAdapterFactory());
+		
+		return new ComposedAdapterFactory(factories);
+    }
+
+    /**
+     * @see org.topcased.modeler.wizards.DiagramsPage#getDefaultTemplateId()
+     * @return String
+     * @generated
+     */
+    public String getDefaultTemplateId()
+    {
+		// TODO return the corresponding ID of the default template
+        return "";
+        
+    }
+
+}

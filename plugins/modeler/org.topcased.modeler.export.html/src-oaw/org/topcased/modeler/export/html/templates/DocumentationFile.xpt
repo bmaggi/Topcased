@@ -1,0 +1,26 @@
+«IMPORT model»
+«EXTENSION org::topcased::modeler::export::html::templates::ImageExtensions»
+
+«DEFINE file FOR GraphElement»
+«FILE this.getDocumentationPage()»
+<html>
+
+<body>
+    
+	<div id="diagram">
+        <h1>Documentation</h1>
+    </div>
+	
+	<p><i>Documentation for current «this.getModelElementType()» : </i>
+	
+	</p>
+	<p>
+    «this.getDocumentation()»
+</p>
+
+</div>
+</body>
+</html>
+«ENDFILE»
+
+«ENDDEFINE»

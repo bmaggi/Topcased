@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: org.topcased.scripting.topcased;singleton:=true
+Bundle-Version: 4.3.1.qualifier
+Bundle-Vendor: %Bundle-Vendor
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.topcased.scripting;bundle-version="4.3.1",
+ org.topcased.modeler;visibility:=reexport,
+ org.topcased.core
+Bundle-Localization: plugin
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.topcased.scripting.topcased.Activator
+Export-Package: org.topcased.scripting.topcased.getter

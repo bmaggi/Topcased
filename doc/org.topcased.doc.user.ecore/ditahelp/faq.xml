@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic xml:lang="en-us" id="topic1742">
+	<title>FAQ</title>
+	<titlealts>
+		<searchtitle>ECORE TOOLS - FAQ</searchtitle>
+	</titlealts>
+	
+	<prolog>
+		<metadata>
+			<othermeta content="Jacques LESCOT" name="author" />
+			<othermeta content="ecore,topcased,toolkit,graphical,editor,documentation,modeling,metamodel,faq" name="keywords" />
+		</metadata>
+	</prolog>
+	
+	<body id="container">
+		<p>Here is the FAQ page of the Ecore Tools.</p>
+		<ul>
+			<li outputclass="questionfaq">How to create a Two-way EReference between two EClasses ?</li>
+			<li outputclass="answerfaq">
+				<ol>
+					<li>First, you have to create the first EReference between the 'Source' EClass and the 'Target' EClass.</li>
+					<li>Then, create the second EReference between the 'Target' EClass and the 'Source' EClass.</li>
+					<li>Finally update the "EOpposite" attribute of one of the two EReference in the Properties View. The other reference is automatically updated and the graphic refreshed to hide the arrow decorations of the two EReferences.</li>
+				</ol>
+			</li>
+			<li outputclass="questionfaq">What is the best way to completely remove an Inheritance link ?</li>
+			<li outputclass="answerfaq">Use the dedicated action available in the editor. Select the InheritanceLink, then "Right Click &gt; Delete Inheritance Link" : this will remove graphically the connection and it will unset the ESuperType reference in the source EClass of the model.</li>
+			<li outputclass="questionfaq">What are the recommendations for the 'name' attributes of Ecore model objects ?</li>
+			<li outputclass="answerfaq">
+				<ul>
+					<li>The fist character of an <b>EClass</b> should always be an uppercase letter.</li>
+					<li>The name of an <b>EPackage</b> should always be defined with lowercase letters.</li>
+					<li>The name of an <b>EReference</b> should always be defined with lowercase letters.</li>
+					<li>The name of an <b>EAttribute</b> should always be defined with lowercase letters.</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</topic>

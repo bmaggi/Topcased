@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramconfigurator:DiagramConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagramconfigurator="http://www.topcased.org/diagramconfigurator/1.0" id="org.topcased.modeler.aadl.aadlspecdiagram" name="AADLSpecDiagram" package="aadlspecdiagram" prefix="AADLSpec" editorId="org.topcased.modeler.aadl">
+  <palette name="AADLSpecDiagramPalette">
+    <paletteCategories name="AADLSpec">
+      <items name="Package" part="//@parts.0"/>
+      <items name="PackageSection" part="//@parts.1"/>
+      <items name="Property Set" part="//@parts.2"/>
+      <items name="Property Definition" part="//@parts.3"/>
+      <items name="Property Constant" part="//@parts.4"/>
+    </paletteCategories>
+    <paletteCategories name="Types">
+      <items name="System" part="//@parts.5"/>
+      <items name="Data" part="//@parts.6"/>
+      <items name="Thread" part="//@parts.7"/>
+      <items name="ThreadGroup" part="//@parts.8"/>
+      <items name="Process" part="//@parts.9"/>
+      <items name="Memory" part="//@parts.10"/>
+      <items name="Processor" part="//@parts.11"/>
+      <items name="Bus" part="//@parts.12"/>
+      <items name="Device" part="//@parts.13"/>
+      <items name="Subprogram" part="//@parts.14"/>
+      <items name="PortGroup" part="//@parts.15"/>
+    </paletteCategories>
+    <paletteCategories name="Implementations">
+      <items name="System" part="//@parts.16"/>
+      <items name="Data" part="//@parts.17"/>
+      <items name="Thread" part="//@parts.18"/>
+      <items name="ThreadGroup" part="//@parts.19"/>
+      <items name="Process" part="//@parts.20"/>
+      <items name="Memory" part="//@parts.21"/>
+      <items name="Processor" part="//@parts.22"/>
+      <items name="Bus" part="//@parts.23"/>
+      <items name="Device" part="//@parts.24"/>
+    </paletteCategories>
+    <paletteCategories name="Ports">
+      <items name="Data Port" part="//@parts.26"/>
+      <items name="Event Port" part="//@parts.27"/>
+      <items name="EventData Port" part="//@parts.28"/>
+      <items name="Subprogram" part="//@parts.29"/>
+      <items name="ServerSubprogram" part="//@parts.30"/>
+    </paletteCategories>
+    <paletteCategories name="Links">
+      <items name="Extends" part="//@parts.31"/>
+      <items name="Implements" part="//@parts.32"/>
+    </paletteCategories>
+  </palette>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.1" defaultForegroundColor="139,69,19" defaultFont="Sans-regular-10" lineWidth="2" type="Class" childElements="//@parts.1" defaultBackgroundColor="244,164,96" resizing="WIDTH" defaultWidth="120" defaultHeight="-1" minimumWidth="100" minimumHeight="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.2" defaultForegroundColor="139,69,19" defaultFont="Sans-regular-10" type="Label" defaultBackgroundColor="244,164,96" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.3" defaultFont="Sans-regular-10" type="Class" childElements="//@parts.3 //@parts.4" defaultBackgroundColor="200,230,255" resizing="WIDTH" defaultWidth="100" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.4" defaultFont="Sans-regular-10" type="Label" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.5" defaultFont="Sans-regular-10" type="Label" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.6" defaultFont="Sans-regular-10" type="ComponentTypeFigure" superType="//@parts.33" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.7" defaultFont="Sans-regular-10" type="ComponentTypeFigure" superType="//@parts.33" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.8" defaultFont="Sans-regular-10" type="ComponentTypeFigure" superType="//@parts.33" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.9" defaultFont="Sans-regular-10" type="ComponentTypeFigure" superType="//@parts.33" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.10" defaultFont="Sans-regular-10" type="ComponentTypeFigure" superType="//@parts.33" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.11" defaultFont="Sans-regular-10" type="ComponentTypeFigure" superType="//@parts.33" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.12" defaultFont="Sans-regular-10" type="ComponentTypeFigure" superType="//@parts.33" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.13" defaultFont="Sans-regular-10" type="ComponentTypeFigure" superType="//@parts.33" container="true" defaultWidth="100" defaultHeight="40" minimumWidth="60" minimumHeight="30" maximumHeight="100"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.14" defaultFont="Sans-regular-10" type="ComponentTypeFigure" superType="//@parts.33" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.15" defaultFont="Sans-regular-10" type="ComponentTypeFigure" superType="//@parts.33" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.16" defaultFont="Sans-regular-10" type="Class" childElements="//@parts.26 //@parts.27 //@parts.28" defaultBackgroundColor="245,245,245" resizing="WIDTH" container="true" defaultWidth="150" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.17" defaultFont="Sans-regular-10" type="ComponentImplFigure" superType="//@parts.34" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.18" defaultFont="Sans-regular-10" type="ComponentImplFigure" superType="//@parts.34" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.19" defaultFont="Sans-regular-10" type="ComponentImplFigure" superType="//@parts.34" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.20" defaultFont="Sans-regular-10" type="ComponentImplFigure" superType="//@parts.34" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.21" defaultFont="Sans-regular-10" type="ComponentImplFigure" superType="//@parts.34" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.22" defaultFont="Sans-regular-10" type="ComponentImplFigure" superType="//@parts.34" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.23" defaultFont="Sans-regular-10" type="ComponentImplFigure" superType="//@parts.34" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.24" defaultFont="Sans-regular-10" type="ComponentImplFigure" superType="//@parts.34" container="true" defaultWidth="100" defaultHeight="40" minimumWidth="60" minimumHeight="30" maximumHeight="100"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.25" defaultFont="Sans-regular-10" type="ComponentImplFigure" superType="//@parts.34" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.26" defaultFont="Sans-regular-10" type="ComponentImplFigure" superType="//@parts.34" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="60" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.27" type="Port" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.28" type="Port" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.29" type="Port" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.30" type="Port" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.31" type="Port" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.32">
+    <sourceTargetCouple sourceNode="//@parts.33" targetNode="//@parts.33"/>
+    <sourceTargetCouple sourceNode="//@parts.34" targetNode="//@parts.34"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.33">
+    <sourceTargetCouple sourceNode="//@parts.34" targetNode="//@parts.33"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.34" defaultWidth="0" defaultHeight="0" minimumWidth="0" minimumHeight="0" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.35" defaultWidth="0" defaultHeight="0" minimumWidth="0" minimumHeight="0" maximumWidth="0" maximumHeight="0"/>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//core/AadlSpec"/>
+    <diagrams diagram="/"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//core/AadlPackage"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//core/AadlPackageSection"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//property/PropertySet"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//property/PropertyDefinition"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//property/PropertyConstant"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/SystemType"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/DataType"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ThreadType"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ThreadGroupType"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ProcessType"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/MemoryType"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ProcessorType"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/BusType"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/DeviceType"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/SubprogramType"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//feature/PortGroupType"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/SystemImpl"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/DataImpl"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ThreadImpl"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ThreadGroupImpl"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ProcessImpl"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/MemoryImpl"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ProcessorImpl"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/BusImpl"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/DeviceImpl"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/SubprogramImpl"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//feature/DataPort"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//feature/EventPort"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//feature/EventDataPort"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//feature/Subprogram"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//feature/ServerSubprogram"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" name="ComponentClassifierExtends"/>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" name="ComponentClassifierImplements"/>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//core/ComponentType"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//core/ComponentImpl"/>
+  </objects>
+  <genModel href="aadl.genmodel#/"/>
+  <templateRootObject href="aadl.genmodel#//core/AadlSpec"/>
+</diagramconfigurator:DiagramConfiguration>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This file is part of the DITA Open Toolkit project hosted on 
+     Sourceforge.net. See the accompanying license.txt file for 
+     applicable licenses.-->
+<!-- (c) Copyright IBM Corp. 2004, 2005 All Rights Reserved. -->
+
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+ 
+<map id="doc-user-ecore" title="ECORE User Doc" anchorref="/org.topcased.doc.user/toc.xml#main-anchor">
+    <anchor id="main-anchor"/>
+    <topicref navtitle="Ecore Tools" href="index.xml" linking="none">
+	    <topicref navtitle="Description" href="description.xml" linking="none"/>
+	    <topicref navtitle="Documentation" href="documentation.xml" linking="none"/>
+	    <topicref navtitle="FAQ" href="faq.xml" linking="none"/>
+	</topicref>
+</map>

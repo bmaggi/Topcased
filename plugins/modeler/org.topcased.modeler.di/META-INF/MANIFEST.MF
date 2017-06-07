@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.topcased.modeler.di; singleton:=true
+Bundle-Version: 3.0.1.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: org.topcased.modeler.di.model.internal.DIPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.topcased.modeler.di.model,
+ org.topcased.modeler.di.model.internal;x-friends:="org.topcased.modeler.diagrams",
+ org.topcased.modeler.di.model.internal.impl;x-internal:=true,
+ org.topcased.modeler.di.model.internal.presentation;x-internal:=true,
+ org.topcased.modeler.di.model.provider,
+ org.topcased.modeler.di.model.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.emf.edit.ui;visibility:=reexport,
+ org.eclipse.ui.ide;visibility:=reexport,
+ org.eclipse.draw2d;visibility:=reexport,
+ org.eclipse.gmf.runtime.notation;visibility:=reexport,
+ org.eclipse.emf.ecore.edit
+Bundle-ActivationPolicy: lazy

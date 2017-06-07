@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.4 2006/12/19 12:47:43 jako Exp $
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://www.topcased.org/OutlineConfigurator/1.0" 
+       class = "org.topcased.outline.configurator.provider.OutlineConfiguratorItemProviderAdapterFactory"
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+  
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+       uri = "http://www.topcased.org/OutlineConfigurator/1.0"
+       class = "org.topcased.outline.configurator.OutlineConfiguratorPackage"
+       genModel = "model/OutlineConfiguration.genmodel" /> 
+    <package
+       uri = "http://org.topcased.outline.configurator"
+       class = "org.topcased.outline.configurator.OutlineConfiguratorPackage"/> 
+  </extension>
+
+	<extension point = "org.eclipse.ui.newWizards">
+		<category
+			id = "org.topcased.configurators.Wizard.category.ID"
+			name="Topcased Configurators"
+			parentCategory="org.topcased.facilities.newWizards"/>
+		<wizard
+			id = "org.topcased.outline.configurator.presentation.OutlineConfiguratorModelWizardID"
+			name = "%_UI_OutlineConfiguratorModelWizard_label"
+			class = "org.topcased.outline.configurator.internal.presentation.OutlineConfiguratorModelWizard"
+			category = "org.topcased.facilities.newWizards/org.topcased.configurators.Wizard.category.ID"
+			icon = "icons/full/obj16/OutlineConfiguratorModelFile.gif">
+			<description>%_UI_OutlineConfiguratorModelWizard_description</description>
+			<selection class = "org.eclipse.core.resources.IResource" />
+		</wizard>
+	</extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "org.topcased.outline.configurator.presentation.OutlineConfiguratorEditorID"
+        name = "%_UI_OutlineConfiguratorEditor_label"
+        icon = "icons/full/obj16/OutlineConfiguratorModelFile.gif"
+        extensions = "outlineconfigurator"
+        class = "org.topcased.outline.configurator.internal.presentation.OutlineConfiguratorEditor" 
+        contributorClass="org.topcased.outline.configurator.internal.presentation.OutlineConfiguratorActionBarContributor" >
+    </editor>
+  </extension>    
+</plugin>

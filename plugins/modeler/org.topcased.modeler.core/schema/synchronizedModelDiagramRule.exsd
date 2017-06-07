@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.topcased.modeler" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="org.topcased.modeler" id="synchronizedModelDiagramRule" name="Synchronized Model Diagram Rule"/>
+      </appinfo>
+      <documentation>
+         This extension point is used to specify the rules for checking whether a graphical part has the right parent according to the model. Specific rules can be added for an EditPart type and an Ecore type to override the generic rules or complete them. The default behavior is only to check if the graphical part&apos;s container represents the model&apos;s container object.
+With this extension point, you can specify for a given EditPart type and its subtypes, how to get the graphical container object, how to get the model container object, or what the test should be, if only the model object implements the specified interface.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="synchronizedModelDiagramRule" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="synchronizedModelDiagramRule">
+      <annotation>
+         <documentation>
+            Specifies a new object to specify the parent container test for a given Ecore type and its subtypes.
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="description" minOccurs="0" maxOccurs="1"/>
+         </sequence>
+         <attribute name="synchronizationRule" type="string" use="required">
+            <annotation>
+               <documentation>
+                  This class provides the required functions to test whether an EObject representation has the right parent for this specific type.
+The class should be a subclass of org.topcased.modeler.extensions.SynchronizedModelDiagramRule. It may use calls to its superclass methods or define a brand new behavior.
+You may consult the type hierarchy of org.topcased.modeler.extensions.SynchronizedModelDiagramRule in your workspace to see which existing class would be best to extend.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn="org.topcased.modeler.extensions.SynchronizedModelDiagramRule:"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="graphicType" type="string" use="required">
+            <annotation>
+               <documentation>
+                  EditParts with this type in their type hierarchy (if no other rule applies on a lower supertype) will use the specific synchronization rule for testing if the graphical parent is the right one.
+
+The EditPart must implement org.eclipse.gef.GraphicalEditPart. It must not be an interface for inheritance issues.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.eclipse.gef.GraphicalEditPart"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="modelInterface" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The rule will apply only to EObjects with this type in their type hierarchy.
+
+The type must be an interface extending org.eclipse.emf.ecore.EObject.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn="org.eclipse.emf.ecore.EObject:"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="description" type="string">
+      <annotation>
+         <documentation>
+            A description of the kind of test performed and how graphical and model parents are obtained.
+         </documentation>
+      </annotation>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         Topcased version 2.1
+
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         The basic behavior for BaseEditPart representing an EObject checks that an object&apos;s edit part is in a container that represents its parent container in the model.  This example shows you how this test is performed in the Topcased modeler :
+&lt;pre&gt;
+   &lt;extension
+         point=&quot;org.topcased.modeler.synchronizedModelDiagramRule&quot;&gt;
+      &lt;synchronizedModelDiagramRule
+            graphicType=&quot;org.topcased.modeler.edit.BaseEditPart&quot;
+            modelInterface=&quot;org.eclipse.emf.ecore.EObject&quot;
+            synchronizationRule=&quot;org.topcased.modeler.extensions.SynchronizedModelDiagramRule&quot;&gt;
+         &lt;description&gt;
+            The basic behavior for BaseEditPart representing an EObject checks that an object&apos;s edit part is in a container that represents its parent container in the model.
+         &lt;/description&gt;
+      &lt;/synchronizedModelDiagramRule&gt;
+   &lt;/extension&gt;
+&lt;/pre&gt;
+
+Other examples can be found in the &quot;Supplied Implementation category.
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         A synchronization rule must extend the class &lt;samp&gt;org.topcased.modeler.extensions.SynchronizedModelDiagramRule&lt;/samp&gt;.
+
+The type of EditPart for which the rule is chosen, submitted in &quot;graphicType&quot;, must implement the class &lt;samp&gt;org.eclipse.gef.GraphicalEditPart&lt;/samp&gt; and must not be an interface.
+An EditPart which extends the submitted EditPart type will inherit the rule, if no other rule applies on a more specified EditPart type in the type hierarchy.
+
+The type of model object for which this rule applies, submitted in &quot;modelInterface&quot;, must inherit the interface &lt;samp&gt;org.eclipse.emf.ecore.EObject&lt;/samp&gt; and must be an interface.
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         In the org.topcased.modeler plugin, the following extension provides a basic behavior to check that the container parents are the sames in the model and in the diagram.
+&lt;pre&gt;
+   &lt;extension
+         point=&quot;org.topcased.modeler.synchronizedModelDiagramRule&quot;&gt;
+      &lt;synchronizedModelDiagramRule
+            graphicType=&quot;org.topcased.modeler.edit.BaseEditPart&quot;
+            modelInterface=&quot;org.eclipse.emf.ecore.EObject&quot;
+            synchronizationRule=&quot;org.topcased.modeler.extensions.SynchronizedModelDiagramRule&quot;&gt;
+         &lt;description&gt;
+            The basic behavior for BaseEditPart representing an EObject checks that an object&apos;s edit part is in a container that represents its parent container in the model.
+         &lt;/description&gt;
+      &lt;/synchronizedModelDiagramRule&gt;
+   &lt;/extension&gt;
+&lt;/pre&gt;
+
+In the org.topcased.modeler.uml plugin, the first following extension provides a way of getting the elements&apos; names. The second disables the behavior when the information is already displayed by another way. Other extensions exist in that plugin, based on the second one, applying the same behavior on other EditParts.
+&lt;pre&gt;
+ &lt;extension
+       point=&quot;org.topcased.modeler.synchronizedModelDiagramRule&quot;&gt;
+    &lt;synchronizedModelDiagramRule
+          graphicType=&quot;org.topcased.modeler.uml.alldiagram.edit.ElementEditPart&quot;
+          modelInterface=&quot;org.eclipse.uml2.uml.NamedElement&quot;
+          synchronizationRule=&quot;org.topcased.modeler.uml.parentrule.NamedElementSynchronizedModelDiagramRule&quot;&gt;
+       &lt;description&gt;
+          This rule provides a better way of getting the name for NamedElement objects represented by an ElementEditPart.
+       &lt;/description&gt;
+    &lt;/synchronizedModelDiagramRule&gt;
+    &lt;synchronizedModelDiagramRule
+          graphicType=&quot;org.topcased.modeler.uml.classdiagram.edit.ClassEditPart&quot;
+          modelInterface=&quot;org.eclipse.uml2.uml.Class&quot;
+          synchronizationRule=&quot;org.topcased.modeler.uml.parentrule.PartWithHeaderLabelSuffixParentRule&quot;&gt;
+       &lt;description&gt;
+          Some EditParts already display a label suffix indicating from which package an element is imported. For these EditParts, this rule ensures that no redundant decorator appears if a &amp;quot;From package&amp;quot; information is already provided.
+       &lt;/description&gt;
+    &lt;/synchronizedModelDiagramRule&gt;
+   &lt;/extension&gt;
+&lt;/pre&gt;
+
+In the org.topcased.modeler.uml.activitydiagram plugin, the following extension provides a completelly different way of getting the parent element, graphically and according to the model. As there may also be several parents, the way of getting the parent names is also redefined.
+&lt;pre&gt;
+ &lt;extension
+       point=&quot;org.topcased.modeler.synchronizedModelDiagramRule&quot;&gt;
+    &lt;synchronizedModelDiagramRule
+          graphicType=&quot;org.topcased.modeler.uml.activitydiagram.edit.CallBehaviorActionEditPart&quot;
+          modelInterface=&quot;org.eclipse.uml2.uml.CallBehaviorAction&quot;
+          synchronizationRule=&quot;org.topcased.modeler.uml.activitydiagram.internal.parentrule.CallBehaviorActionParentRule&quot;&gt;
+       &lt;description&gt;
+          This rule specifies how the ActivityPartition parent of a CallBehaviorAction is determined.
+The model parent is pointed by the &quot;InPartition&quot; relation.
+The graphic parent is the ActivityPartitionEditPart whose representation area contains the representation area of the CallBehaviorActionEditPart.
+       &lt;/description&gt;
+    &lt;/synchronizedModelDiagramRule&gt;
+ &lt;/extension&gt;
+&lt;/pre&gt;
+
+In the org.topcased.modeler.sysml plugin, the following extension provides a new way of determining the graphical parent. Other extensions in this plugin allow to disable the behavior when the information is already displayed by another way.
+&lt;pre&gt;
+  &lt;extension
+        point=&quot;org.topcased.modeler.synchronizedModelDiagramRule&quot;&gt;
+     &lt;synchronizedModelDiagramRule
+           graphicType=&quot;org.topcased.modeler.sysml.multidiagram.edit.ClassEditPart&quot;
+           modelInterface=&quot;org.eclipse.uml2.uml.Class&quot;
+           synchronizationRule=&quot;org.topcased.modeler.sysml.parentrule.ClassWithContainmentLinkParentRule&quot;&gt;
+        &lt;description&gt;
+           If a ClassEditPart is source of a ContainmentLink relation, this rule makes the targeted EditPart&apos;s element the graphical parent of the element.
+This rule works in particular for Block, Requirement, TestCase and Viewpoint elements, which EditParts extend ClassEditPart and which implement the org.eclipse.uml2.uml.Class interface.
+        &lt;/description&gt;
+     &lt;/synchronizedModelDiagramRule&gt;
+  &lt;/extension&gt;
+&lt;/pre&gt;
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="copyright"/>
+      </appinfo>
+      <documentation>
+         Copyright (c) 2008 Atos Origin.
+All rights reserved. This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+      </documentation>
+   </annotation>
+
+</schema>

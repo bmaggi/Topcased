@@ -1,0 +1,134 @@
+/* GENERAL RULES */
+
+body {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+img {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+ol {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+ul {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+li {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+
+table {
+  border:0px;
+}
+
+
+/* THE CONTENTS */
+
+#container {
+	MIN-HEIGHT: 100%; padding-left: 10px; padding-top: 10px; padding-right: 10px;
+}
+
+#container LI {
+	margin-left: 20px; padding-left: 5px;
+}
+
+
+#container IMG {
+	display: block; margin-top: 10px; margin-bottom: 10px; border: groove thin black;
+}
+
+#container IMG.icon {
+	display: inline; margin-top: 0px; margin-bottom: 0px; border-style: none;
+}
+
+
+/* THE FAQ RULES */
+.questionfaq {
+	margin-left: 15px; padding-left: 5px; padding-bottom: 5px;
+}
+
+.answerfaq {
+	list-style-type: none; padding-left: 30px; padding-bottom: 15px;
+}
+
+
+/* NEW & NOTEWORTHY */
+.noteworthytable {
+	border-collapse: collapse;
+}
+
+.noteworthygroup {
+	vertical-align: top; padding-top: 20px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px;
+}
+
+.noteworthytitle {
+	width: 120px; text-align: right; vertical-align: top; border-top: solid thin black; padding: 10px;
+}
+
+.noteworthydescription {
+	vertical-align: top; border-top: solid thin black; padding: 10px;
+}
+
+#screenshot IMG {
+	display: inline; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px; margin-top: 0px; margin-bottom: 0px; border-width: 0;
+}
+
+
+
+
+
+
+
+/* DITA */
+.familylinks, .reltasks{
+  display:none;
+}
+
+.ullinks, .relinfo{
+  display:none;
+  background:#dfd;
+  position:absolute;
+  left:200px;
+  top:80px;
+}
+
+.relinfo{
+  left:700px;
+}
+
+.ullinks LI {
+  display:inline;
+  float:left;
+  margin-right:2em;
+}
+
+.ulchildlink {
+  margin-top: 0em !important;
+}
+
+#topnav {
+  /*border:solid black 1px;*/
+  /*padding:0.4em;*/
+  padding:0.6em;
+  background:#ddf;
+  float:right;
+  margin:20px;
+}
+
+/* hide some elements ("Related information" text, a useless <br />... */
+#topnav strong, #topnav br {
+  display:none;
+}
+
+#topnav div {
+  margin-bottom:0em;
+}
+
+#topnav strong {
+  font-size:1.2em;
+  font-style:italic;
+  color:#444;
+}
+
+.topictitle1 {
+  display:none;
+}

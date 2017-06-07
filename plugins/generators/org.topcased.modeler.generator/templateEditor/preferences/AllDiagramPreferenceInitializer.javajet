@@ -1,0 +1,43 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.editorconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="AllDiagramPreferenceInitializer"
+	 version="$Id: AllDiagramPreferenceInitializer.javajet,v 1.1 2008/08/20 18:26:50 tlandre Exp $" %>
+	 
+<%EditorConfiguration editorConfiguration = (EditorConfiguration) argument;%>
+<%=editorConfiguration.getJavaCopyrightText()%>
+package <%=editorConfiguration.getProjectName()%>.preferences;
+
+import org.eclipse.core.runtime.Preferences;
+import org.eclipse.jface.resource.StringConverter;
+import org.topcased.modeler.preferences.AbstractTopcasedPreferenceInitializer;
+import <%=editorConfiguration.getProjectName()%>.<%=editorConfiguration.getPrefix()%>Plugin;
+import <%=editorConfiguration.getProjectName()%>.editor.<%=editorConfiguration.getPrefix()%>Editor;
+
+
+/**
+ * Initialize preferences to all <%=editorConfiguration.getPrefix()%> diagrams.
+ * @generated
+ */
+public class AllDiagramPreferenceInitializer extends AbstractTopcasedPreferenceInitializer
+{
+    
+    /**
+     * @see org.topcased.modeler.preferences.AbstractTopcasedPreferenceInitializer#getPreferences()
+     * @generated
+     */
+    @Override
+    protected Preferences getPreferences()
+    {
+        return <%=editorConfiguration.getPrefix()%>Plugin.getDefault().getPluginPreferences();
+    }
+    
+    /**
+     * @see org.topcased.modeler.preferences.AbstractTopcasedPreferenceInitializer#getEditorId()
+     * @generated
+     */
+    protected String getEditorId()
+    {
+        return <%=editorConfiguration.getPrefix()%>Editor.EDITOR_ID;
+    }
+}

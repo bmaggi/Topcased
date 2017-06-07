@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="topic" name="DC.Type" />
+<meta name="DC.Title" content="Generate an Outline Menu" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="topic5684" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/visual.css" type="text/css" rel="stylesheet" />
+<title>MODELING FRAMEWORK - Tutorial : Generate an Outline Menu</title>
+</head>
+<body id="topic5684"><a name="topic5684"><!-- --></a>
+
+
+	<h1 class="topictitle1">Generate an Outline Menu</h1>
+
+	
+	
+	<div id="container"><a name="container"><!-- --></a>
+		<p class="h2">1. Introduction</p>
+
+		<p>The document is a user manual that explains the outline generation process : how from an existing meta-model we can generate and customize functionalities for the Topcased graphical editor outline.</p>
+
+
+		<div class="p">The process takes a few steps :
+			<br /><ul>
+				<li>creation of the outline configurator</li>
+
+				<li>generation of the outline customize items</li>
+
+			</ul>
+
+		</div>
+
+		<p>These steps are required to generate customize functions for the Topcased Ecore editor.</p>
+
+		
+		<p class="h2">2. Configuring the outline</p>
+
+		<p>
+			Let us configure a more useful outline to use in the Ecore editor outline. The first step is to create an outline configurator model. The outline configurator model describes
+			which functionality we want to generate to add to the editor outline. To create a new outline configurator model, "<strong>Right Click &gt; New &gt; Other...</strong>"
+			<img src="images/generateOutlineMenu/newOther.jpg" alt="newOther" />
+			and then "<strong>Topcased &gt; Topcased Configurators &gt; OutlineConfigurator Model</strong>".
+			<img src="images/generateEditor/selectWizard.jpg" alt="selectWizard" />
+			The root element must be an "<strong>Outline Configuration</strong>".
+			<img src="images/generateOutlineMenu/outlineWizard2.jpg" alt="outlineWizard2" />
+			When you have finished the wizard, the editor is opened. The outline configurator model only contains the root element "Outline Configuration".
+			<img src="images/generateOutlineMenu/outlineEditor.jpg" alt="outlineEditor" />
+			Then you have to reference the <strong><var class="varname">XXX</var>.genmodel</strong> file. Indeed, the objects we will create will depends on the model objects of the edited meta-model.
+			So, right click on the editor and select "<strong>Load Resource...</strong>" and specify the desired *.genmodel file.
+			<img src="images/generateOutlineMenu/load.jpg" alt="load" />
+			At this point, we have complete the necessary steps to configure the outline configurator. We advise you to follow the following steps in the right order.
+		</p>
+
+		
+		<p class="h3">2.1. The CreateChildMenuConfiguration</p>
+
+		<p>
+			Define the 'Create child' menu that will be generated for the outline and which will be added to the existing outline by extension. Click on the root element
+			(OutlineConfiguration) so you may select "<strong>New Child &gt; Create Child Menu Configuration</strong>".
+		</p>
+
+		<img src="images/generateOutlineMenu/newChild.jpg" alt="newChild" />
+		<p>Using the properties view fill out the necessary fields:</p>
+
+		<br /><ul>
+			<li><strong>ClassName</strong> : the name of the Java class representing the generated 'Create child' menu. (ex : EcoreCreateChildMenu)</li>
+
+		</ul>
+
+		<p>NB: Open the properties view by selecting the entry "Show Properties" which appears in the context menu.</p>
+
+		
+		<p class="h3">2.2. The Menu</p>
+
+		<p>Add a menu (using the context menu) to the main "Create child" menu. A menu can also contains menus, menu groups and create child actions.</p>
+
+		<div class="p">Using the properties view fill out the necessary fields :
+			<br /><ul>
+				<li><strong>Id</strong> : the unique id of the menu</li>
+
+				<li><strong>Name</strong> : the displayed name of the menu (the label).</li>
+
+			</ul>
+
+		</div>
+
+		<img src="images/generateOutlineMenu/menuSample.jpg" alt="menuSample" />
+		
+		<p class="h3">2.3. The Menu Group</p>
+
+		<p>Add a menu group to a menu. This is a reserved place in a menu where menus, and create child actions can be added.</p>
+
+		<div class="p">Using the properties view fill out the necessary fields :
+			<br /><ul>
+				<li><strong>Id</strong> : the unique id of the menu group.</li>
+
+			</ul>
+
+		</div>
+
+
+		<p class="h3">2.4. The Create Child Action</p>
+
+		<p>Add a create child action to either a menu or a menu group. A create child action is an action to create a new child in the outline navigator.</p>
+
+		<div class="p">Using the properties view fill out the necessary fields:
+			<br /><ul>
+				<li><strong>Class</strong> : the class representing the type of Child to create</li>
+
+				<li><strong>Type</strong>	: exact or hierarchical
+					<br /><ul>
+						<li>exact : will add an action to create a child of the exact given type.</li>
+
+						<li>hierarchical : will add an action for each element which is a subclass of the given type</li>
+
+					</ul>
+
+				</li>
+
+			</ul>
+
+		</div>
+
+		
+		<div class="p"><var class="varname">Example :</var>
+			<br /><ol>
+				<li>Create Child action in the Package Menu: class = EPackage; type = exact</li>
+
+				<li>Create Child action in the Class Menu: class = EClass; type = exact </li>
+
+			</ol>
+
+		</div>
+
+		
+		<p class="h2">3. Generate the Outline</p>
+
+		<p>
+			Now that the outline configuration is performed, we can generate the outline elements by right clicking on the outline configurator file and select "<strong>Topcased &gt; Generation &gt; Outline</strong>".
+		</p>
+
+		<img src="images/generateOutlineMenu/generateOutlineAction.jpg" alt="generateOutlineAction" />
+		<p>You can now customize the outline using the modeler extension point <span class="metaSource">org.topcased.modeler.outline</span>.</p>
+
+		
+		<p class="h2">4. Customizing the Outline</p>
+
+		
+		<p class="h3">4.1 Customize</p>
+
+		<p>
+			Open the plugin.xml file generated with the menu project. Click on the <strong>extension</strong> tab placed at the bottom of the editor view.
+			<img src="images/generateOutlineMenu/customizingMenu.jpg" alt="customizing menu" />
+			Now we have to use the extension point <span class="metaSource">org.topcased.modeler.outline</span>. On the extensions editor,
+			click on the add button and select the desired extension point. You can use the extension point filter to optimize your extension point research.
+			<img src="images/generateOutlineMenu/extensionPoint.jpg" alt="Extension Point Research" />
+			Once the extension point is added, create a child menu using the context.
+			<img src="images/generateOutlineMenu/createChildMenu.jpg" alt="Create Child Menu" />
+			Fill out all the fields. It is recommended to change the default name into a friendly user name. In the editor field, you have to put exactly the same ID declared by the
+			editor featuring this menu.
+		</p>
+
+		
+		<p class="h3">4.2 Display</p>
+
+		<p>
+			To display our customized menu you have to select it. To do that, click on the arrow facing to the buttom in the outline view. Select "<strong>Create child menu &gt; 'your customised menu'</strong>"
+			<img src="images/generateOutlineMenu/displayMenu.jpg" alt="Display menu" />
+			And that is it!! Everytime a customize menu is selected, you will notice that all menu entries are grouped by categories just as it is explained above.
+		</p>
+
+		
+		
+		
+		<p class="h4">By Thomas FRIOL, Alfredo SERRANO, Anyware Technologies</p>
+
+		<p class="h4">Updated Sept, 13 2006</p>
+
+		
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.modeler.editorconfigurator.* org.topcased.modeler.editorconfigurator.util.*"
+	 class="ManifestMF"
+	 version="$Id: MANIFEST.MFjet,v 1.2 2006/05/02 14:04:34 jako Exp $" %>
+<%EditorConfiguration editorConfiguration = (EditorConfiguration) argument;%>
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: <%=editorConfiguration.getPrefix()%>Service Plug-in
+Bundle-SymbolicName: <%=editorConfiguration.getProjectName()%>service; singleton:=true
+Bundle-Version: <%=editorConfiguration.getPluginVersion()%>
+Bundle-Activator: <%=editorConfiguration.getProjectName()%>service.<%=editorConfiguration.getPrefix()%>ServicePlugin
+Bundle-Vendor: Topcased
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ <%=editorConfiguration.getProjectName()%>,
+ org.topcased.bus.core,
+ org.topcased.modeler
+Eclipse-LazyStart: true

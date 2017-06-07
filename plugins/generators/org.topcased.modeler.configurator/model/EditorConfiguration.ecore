@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="configurator"
+    nsURI="http://www.topcased.org/configurator/1.0" nsPrefix="configurator">
+  <eAnnotations source="http://www.topcased.org/uuid">
+    <details key="uuid" value="11319820411770"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="EditorConfiguration">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="11319820411832"/>
+      </eAnnotations>
+      <details key="documentation" value="This is the root model object."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="11319820411811"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="11319820411834"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="11319820411855"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="11319820411856"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="extension" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="11319820411867"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="extensionDiagram" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="11319820411878"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genModel" lowerBound="1"
+        eType="ecore:EClass ../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenModel">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="11319820411889"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="diagrams" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//DiagramConfiguration" containment="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204118910"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objects" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//ObjectConfiguration" containment="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204119011"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pluginVersion" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramConfiguration">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204119113"/>
+      </eAnnotations>
+      <details key="documentation" value="A DiagramConfiguration contains informations used to generate a Diagram"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="113198204119012"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204119215"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204119316"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="package" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204119317"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204119418"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="palette" lowerBound="1"
+        eType="#//PaletteConfiguration" containment="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204119519"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parts" lowerBound="1" upperBound="-1"
+        eType="#//PartConfiguration" containment="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204119620"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layout" eType="#//LayoutType"
+        defaultValueLiteral="XYLayout">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204120321"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectConfiguration" abstract="true">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="113198204120422"/>
+    </eAnnotations>
+    <eOperations name="getName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramReference">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204120524"/>
+      </eAnnotations>
+      <details key="documentation" value="A DiagramReference is linked with a DiagramConfiguration"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="113198204120423"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="diagram" lowerBound="1"
+        eType="#//DiagramConfiguration">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204120626"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204120627"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="-1">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204120728"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PaletteConfiguration">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204120930"/>
+      </eAnnotations>
+      <details key="documentation" value="This object groups all the PaletteCategories"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="113198204120829"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204120932"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paletteCategories" lowerBound="1"
+        upperBound="-1" eType="#//PaletteCategory" containment="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204121033"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PaletteCategory">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204121235"/>
+      </eAnnotations>
+      <details key="documentation" value="A PaletteCategory contains all the PaletteItem that will be displayed"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="113198204121134"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204121237"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" lowerBound="1" upperBound="-1"
+        eType="#//PaletteItem" containment="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204121338"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PartConfiguration" abstract="true">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204121440"/>
+      </eAnnotations>
+      <details key="documentation" value="A PartConfiguration will be associated with an EditPart at the generation process."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="113198204121439"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="object" lowerBound="1"
+        eType="#//ObjectConfiguration">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204121542"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultForegroundColor"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204121643"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="foregroundColorChangeable"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204121744"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontChangeable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204121945"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodePartConfiguration" eSuperTypes="#//PartConfiguration">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204122147"/>
+      </eAnnotations>
+      <details key="documentation" value="A PartConfiguration will be associated with a NodeEditPart at the generation process."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="113198204122046"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="Figure">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204122149"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childElements" upperBound="-1"
+        eType="#//NodePartConfiguration">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204122250"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//NodePartConfiguration">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204122351"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultBackgroundColor"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204122554"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundColorChangeable"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204122655"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resizing" eType="#//ResizableType"
+        defaultValueLiteral="ALL">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204122756"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="container" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204122857"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layout" eType="#//LayoutType"
+        defaultValueLiteral="XYLayout">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204122958"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="directEditable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204123059"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimumWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimumHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgePartConfiguration" eSuperTypes="#//PartConfiguration">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204123161"/>
+      </eAnnotations>
+      <details key="documentation" value="A PartConfiguration will be associated with an EdgeEditPart at the generation process."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="113198204123160"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceTargetCouple" lowerBound="1"
+        upperBound="-1" eType="#//SourceTargetCouple" containment="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204123263"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edgeObjects" upperBound="-1"
+        eType="#//EdgeObject" containment="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204123364"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceDecoration" eType="#//DecorationType"
+        defaultValueLiteral="NONE">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204123465"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetDecoration" eType="#//DecorationType"
+        defaultValueLiteral="NONE">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204123466"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultRouter" eType="#//RouterType"
+        defaultValueLiteral="ObliqueRouter">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204123567"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="directEditable" eType="#//EdgeObject"
+        defaultValueLiteral="">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204123668"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeObject">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="113198204123769"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//EdgeObjectType">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204123770"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eStructuralFeature" eType="ecore:EClass ../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204123871"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PaletteItem">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204123973"/>
+      </eAnnotations>
+      <details key="documentation" value="A PaletteItem is necessary associated with an ObjectConfiguration. It will represent an item in a Palette of a given Diagram"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="113198204123972"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204124075"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="part" lowerBound="1" eType="#//PartConfiguration">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204124277"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceTargetCouple">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204124379"/>
+      </eAnnotations>
+      <details key="documentation" value="It describes the different Policies to set for an EdgeEditPart"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="113198204124278"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="containerType" eType="#//EdgeContainerType">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204124481"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoRef" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204124482"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reversible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204124583"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerObject" eType="ecore:EClass ../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenClass">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204124684"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceNode" lowerBound="1"
+        eType="#//NodePartConfiguration">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204124785"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetNode" lowerBound="1"
+        eType="#//NodePartConfiguration">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204124786"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerRef" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204124887"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refSourceToEdge" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204124988"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refEdgeToSource" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204125089"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refTargetToEdge" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204125090"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refEdgeToTarget" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204125191"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refSourceToTarget" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204125292"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refTargetToSource" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204128693"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelObjectConfiguration" eSuperTypes="#//ObjectConfiguration">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204128795"/>
+      </eAnnotations>
+      <details key="documentation" value="A ModelObjectConfiguration is associated with a model object through the genClass reference. It is eventually linked to several DiagramReference."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="113198204128694"/>
+    </eAnnotations>
+    <eOperations name="getName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genClass" lowerBound="1"
+        eType="ecore:EClass ../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenClass">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204128897"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="diagrams" ordered="false"
+        upperBound="-1" eType="#//DiagramReference" containment="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="113198204128898"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleObjectConfiguration" eSuperTypes="#//ObjectConfiguration">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041290100"/>
+      </eAnnotations>
+      <details key="documentation" value="A SimpleObjectConfiguration is not linked with a model object. It has an attribute name that gives the string that will be used to reference the graphical object."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="113198204128999"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041291102"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EdgeContainerType">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041293104"/>
+      </eAnnotations>
+      <details key="documentation" value="The different ways where to add the Edge to the model"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1131982041292103"/>
+    </eAnnotations>
+    <eLiterals name="NONE">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1131982041294107"/>
+        </eAnnotations>
+        <details key="documentation" value="The Edge has no model association"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041293106"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SOURCE" value="1">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1131982041295110"/>
+        </eAnnotations>
+        <details key="documentation" value="The Source Node is the container of the Edge"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041294109"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SOURCE_CONTAINER" value="2">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1131982041296113"/>
+        </eAnnotations>
+        <details key="documentation" value="The Source Container Node is the container of the Edge"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041296112"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="DIAGRAM" value="3">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1131982041297116"/>
+        </eAnnotations>
+        <details key="documentation" value="The Model object associated with the current Diagram is the container of the Edge"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041297115"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="TARGET" value="4">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1131982041299119"/>
+        </eAnnotations>
+        <details key="documentation" value="The Target Node is the container of the Edge"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041298118"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="TARGET_CONTAINER" value="5">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1131982041300122"/>
+        </eAnnotations>
+        <details key="documentation" value="The Target Container Node is the container of the Edge"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041299121"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ResizableType">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041304130"/>
+      </eAnnotations>
+      <details key="documentation" value="The type of the Resizable EditPolicy"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1131982041303129"/>
+    </eAnnotations>
+    <eLiterals name="NONE">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041304132"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="WIDTH" value="1">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041305133"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="HEIGHT" value="2">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041305134"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ALL" value="3">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041306135"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LayoutType">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041307137"/>
+      </eAnnotations>
+      <details key="documentation" value="The type of Layout that it will be used to display children DiagramElement"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1131982041307136"/>
+    </eAnnotations>
+    <eLiterals name="XYLayout">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041308139"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ClassLayout" value="1">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041309140"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ToolbarLayout" value="2">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041309141"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="PortLayout" value="3">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041314142"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MultiPortLayout" value="4">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041315143"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DecorationType">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041317145"/>
+      </eAnnotations>
+      <details key="documentation" value="Define the type of decoration that are available for a connection EndPoint."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1131982041316144"/>
+    </eAnnotations>
+    <eLiterals name="NONE">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041317147"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ARROW" value="1">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041318148"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="TRIANGLE" value="2">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041319149"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="DIAMOND" value="3">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041320150"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RouterType">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041321152"/>
+      </eAnnotations>
+      <details key="documentation" value="The type of Layout that it will be used to display children DiagramElement"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1131982041320151"/>
+    </eAnnotations>
+    <eLiterals name="ObliqueRouter">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041322154"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="RectilinearRouter" value="1">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041323155"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="TreeRouter" value="2">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041323156"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EdgeObjectType">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041325158"/>
+      </eAnnotations>
+      <details key="documentation" value="The position that should be used to place the EdgeObject associated with the Edge"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1131982041324157"/>
+    </eAnnotations>
+    <eLiterals name="Source">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041325160"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Middle" value="1">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041326161"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Target" value="2">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1131982041327162"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+</ecore:EPackage>

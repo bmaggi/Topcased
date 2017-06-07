@@ -1,0 +1,94 @@
+<%@ jet
+	 package="org.topcased.properties.generator.templates"
+	 imports="org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.properties.configurator.* "
+	 class="DoubleSection"
+	 version="$Id: DoubleSectionClass.javajet,v 1.1 2006/10/30 17:10:50 jako Exp $" %>
+
+<%
+	AbstractSection aSection = (AbstractSection)argument;
+	TabbedView tabbedView = aSection.getTab().getCategory().getParent();
+	
+	GenFeature feature = null;
+	GenPackage gPackage = null;
+	
+	String thePackage = tabbedView.getProjectName();
+	String basePackage = tabbedView.getBasePackage();
+    if (basePackage != null && !basePackage.equals(""))
+    {
+        thePackage = basePackage;
+    }
+    
+	if (aSection instanceof SingleFeatureSection)
+	{
+		SingleFeatureSection section = (SingleFeatureSection)aSection;
+		feature = section.getFeature();
+		gPackage = feature.getGenPackage();
+	}
+	else
+	{
+		//MultipleFeatureSection section = (MultipleFeatureSection)aSection;
+	}
+	%>
+
+package <%=thePackage%>.sections;
+
+import org.eclipse.emf.ecore.*;
+import org.topcased.tabbedproperties.sections.AbstractDoublePropertySection;
+import <%=gPackage.getQualifiedPackageInterfaceName()%>;
+
+/**
+ * A section display a text field to edit/see String features
+ *
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ *
+ * @author <!-- User name here -->
+ * @generated
+ */
+public class <%=aSection.getClassName()%> extends AbstractDoublePropertySection
+{
+    /**
+	 * @see org.topcased.tabbedproperties.sections.AbstractTabbedPropertySection#getLabelText()
+     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+	 */
+    protected String getLabelText()
+    {
+        return "<%=feature.getCapName()%>:";
+    }
+
+    /**
+	 * @see org.topcased.tabbedproperties.sections.AbstractTabbedPropertySection#getLabelText()
+     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+	 */
+    protected EStructuralFeature getFeature()
+    {
+        return <%=gPackage.getPackageInterfaceName()%>.eINSTANCE.get<%=feature.getGenClass().getInterfaceName()%>_<%=feature.getCapName()%>();
+    }
+    
+    /**
+     * @see org.topcased.tabbedproperties.sections.AbstractIntegerPropertySection#getFeatureInteger()
+     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+	 */
+    protected Double getFeatureDouble()
+    {
+        Object d  = getEObject().eGet(getFeature());
+        if (d ==  null)
+        {
+            return new Double(0);
+        }
+        
+		return (Double) d;
+    }
+}

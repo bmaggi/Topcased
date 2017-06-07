@@ -1,0 +1,54 @@
+<%@ jet
+	 package="org.topcased.properties.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.properties.configurator.*  org.topcased.properties.configurator.util.GeneratorUtils"
+	 class="AdvancedPropertySection"
+	 version="$Id: AdvancedPropertySection.javajet,v 1.1 2006/10/30 17:10:50 jako Exp $" %>
+<%
+  AdvancedSection aSection = (AdvancedSection)argument;
+  TabbedView tabbedView = aSection.getTab().getCategory().getParent();
+  String thePackage = tabbedView.getProjectName();
+  String basePackage = tabbedView.getBasePackage();
+  if (basePackage != null && !basePackage.equals(""))
+  {
+  	thePackage = basePackage;
+  }
+  GenModel model = tabbedView.getGenModel();
+  List packages = model.getGenPackages();
+  String prefix = model.getModelName();
+  if(!packages.isEmpty())
+  {
+     GenPackage p = (GenPackage)packages.get(0);
+     prefix = p.getPrefix();
+  }
+ %>
+package <%=thePackage%>.sections.advanced;
+
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.views.properties.tabbed.AdvancedPropertySection;
+import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
+
+/**
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ *
+ * @generated
+ */
+public class <%=GeneratorUtils.capName(prefix)%>AdvancedPropertySection extends AdvancedPropertySection
+{
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @see org.eclipse.ui.views.properties.tabbed.ISection#createControls(org.eclipse.swt.widgets.Composite,
+     *      org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage)
+     * @generated
+     */
+    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage)
+    {
+        super.createControls(parent, tabbedPropertySheetPage);
+        <%=prefix%>PropertySheetPage propertySheetPage = (<%=prefix%>PropertySheetPage) tabbedPropertySheetPage;
+        page.setPropertySourceProvider(new AdapterFactoryContentProvider(
+                propertySheetPage.getAdapterFactory()));
+    }
+}

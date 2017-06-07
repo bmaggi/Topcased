@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.topcased.iterators.feature"
+      label="Topcased Iterators"
+      version="1.0.0.qualifier">
+
+   <description url="http://www.example.com/description">
+      API that allows to easily generate iterators in order to iterate other anything. It can be used more specifically to iterate other model objects. 
+
+The generated iterators can also be configured at runtime, by creating &quot;iterator&quot; models.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="org.topcased.iterators"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.iterators.configurations"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.iterators.configurations.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.iterators.configurations.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramconfigurator:DiagramConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagramconfigurator="http://www.topcased.org/diagramconfigurator/0.10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_mnoyQCzCEd2yQMdu7rJ_6A" name="Profile Diagram" package="profilediagram" prefix="Profile" organizeImports="false" copyrightText="Copyright (c) 2006 AIRBUS FRANCE. All rights reserved. This program and the&#xA;accompanying materials are made available under the terms of the Eclipse&#xA;Public License v1.0 which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html" samePluginAsEditor="true">
+  <palette xmi:id="_mnoyQSzCEd2yQMdu7rJ_6A" name="ProfileDiagramPalette">
+    <paletteCategories xmi:id="_mnoyQizCEd2yQMdu7rJ_6A" name="Objects">
+      <items xmi:id="_mnoyQyzCEd2yQMdu7rJ_6A" name="Stereotype" part="_mnyjQCzCEd2yQMdu7rJ_6A"/>
+      <items xmi:id="_mnoyRCzCEd2yQMdu7rJ_6A" name="Property" part="_mnyjQSzCEd2yQMdu7rJ_6A"/>
+      <items xmi:id="_dyXBsDx7Ed2BDfvlWeVVJA" name="Metaclass" part="_7g4K8Dx5Ed2BDfvlWeVVJA"/>
+    </paletteCategories>
+    <paletteCategories xmi:id="_1Cy-0CzDEd2yQMdu7rJ_6A" name="Connections">
+      <items xmi:id="_2WZUsCzDEd2yQMdu7rJ_6A" name="Dependency" part="_qPzLwCzCEd2yQMdu7rJ_6A"/>
+      <items xmi:id="_fyqFgDx7Ed2BDfvlWeVVJA" name="Extension" part="_9KOuYDx5Ed2BDfvlWeVVJA"/>
+    </paletteCategories>
+  </palette>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_mnyjQCzCEd2yQMdu7rJ_6A" object="_moFeMSzCEd2yQMdu7rJ_6A" defaultFont="Sans-bold-10" type="Class" childElements="_mnyjQSzCEd2yQMdu7rJ_6A" superType="_NsDpACzDEd2yQMdu7rJ_6A" defaultBackgroundColor="229,229,229" resizing="WIDTH" container="true" layout="ClassLayout" defaultWidth="120" defaultHeight="-1" minimumWidth="40" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_mnyjQSzCEd2yQMdu7rJ_6A" object="_moFeMizCEd2yQMdu7rJ_6A" type="Label" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_NsDpACzDEd2yQMdu7rJ_6A" object="_K10bsCzDEd2yQMdu7rJ_6A" type="Graphic With Bottom Label"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_qPzLwCzCEd2yQMdu7rJ_6A" object="_oEB3wCzCEd2yQMdu7rJ_6A" lineStyle="DASHDOTDOT" targetDecoration="ARROW">
+    <sourceTargetCouple xmi:id="_q1O-oCzDEd2yQMdu7rJ_6A" containerType="DIAGRAM" sourceNode="_NsDpACzDEd2yQMdu7rJ_6A" targetNode="_NsDpACzDEd2yQMdu7rJ_6A">
+      <containerObject href="UML.genmodel#//uml/Profile"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Package/packagedElement"/>
+      <refEdgeToSource xsi:type="ecore:EReference" href="UML.ecore#//Dependency/client"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//Dependency/supplier"/>
+    </sourceTargetCouple>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_7g4K8Dx5Ed2BDfvlWeVVJA" object="_2tUVUDx5Ed2BDfvlWeVVJA" type="State" resizing="WIDTH" directEditable="false" defaultHeight="-1" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_9KOuYDx5Ed2BDfvlWeVVJA" object="_49tqoDx5Ed2BDfvlWeVVJA" targetDecoration="TRIANGLE">
+    <sourceTargetCouple xmi:id="_1M8SQDx6Ed2BDfvlWeVVJA" containerType="DIAGRAM" sourceNode="_mnyjQCzCEd2yQMdu7rJ_6A" targetNode="_7g4K8Dx5Ed2BDfvlWeVVJA">
+      <containerObject href="UML.genmodel#//uml/Profile"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Package/packagedElement"/>
+    </sourceTargetCouple>
+    <edgeObjects xmi:id="_2eTMcDx6Ed2BDfvlWeVVJA" id="requiredField"/>
+  </parts>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_mnyjQizCEd2yQMdu7rJ_6A">
+    <genClass href="UML.genmodel#//uml/Profile"/>
+    <diagrams xmi:id="_moFeMCzCEd2yQMdu7rJ_6A" diagram="_mnoyQCzCEd2yQMdu7rJ_6A"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_moFeMSzCEd2yQMdu7rJ_6A">
+    <genClass href="UML.genmodel#//uml/Stereotype"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_moFeMizCEd2yQMdu7rJ_6A">
+    <genClass href="UML.genmodel#//uml/Property"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_oEB3wCzCEd2yQMdu7rJ_6A">
+    <genClass href="UML.genmodel#//uml/Dependency"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_K10bsCzDEd2yQMdu7rJ_6A">
+    <genClass href="UML.genmodel#//uml/NamedElement"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_2tUVUDx5Ed2BDfvlWeVVJA">
+    <genClass href="UML.genmodel#//uml/ElementImport"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_49tqoDx5Ed2BDfvlWeVVJA">
+    <genClass href="UML.genmodel#//uml/Extension"/>
+  </objects>
+  <genModel href="UML.genmodel#/"/>
+  <templateRootObject href="UML.genmodel#//uml/Profile"/>
+  <editorConfigurator href="UML.editorconfigurator#_67CpENCrEdu099f1-uS16A"/>
+</diagramconfigurator:DiagramConfiguration>

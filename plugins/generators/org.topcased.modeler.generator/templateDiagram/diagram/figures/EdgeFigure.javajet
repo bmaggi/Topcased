@@ -1,0 +1,138 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="EdgeFigure"
+	 version="$Id: EdgeFigure.javajet,v 1.8 2007/07/18 07:47:25 jako Exp $" %>
+<%	EdgePartConfiguration edgePartConfiguration = (EdgePartConfiguration) argument;
+	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) edgePartConfiguration.eContainer();
+	ObjectConfiguration objectConfiguration = edgePartConfiguration.getObject();
+	String partPrefix = edgePartConfiguration.getPrefix();%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>.figures;
+
+import org.eclipse.draw2d.ConnectionEndpointLocator;
+import org.eclipse.draw2d.PolylineConnection;
+import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.Locator;
+import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.gef.handles.HandleBounds;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
+import org.topcased.modeler.edit.locators.EdgeObjectOffsetLocator;
+import org.topcased.modeler.figures.EdgeObjectEditableLabel;
+import org.topcased.modeler.figures.EdgeObjectLabel;
+import org.topcased.modeler.figures.EdgeObjectOffsetLabel;
+import org.topcased.modeler.figures.IGraphEdgeFigure;
+import org.topcased.modeler.figures.IEdgeObjectFigure;
+import org.topcased.modeler.figures.IEdgeObjectOffsetFigure;
+
+/**
+ * @generated
+ */
+public class <%=partPrefix%>Figure extends PolylineConnectionEx<%if (edgePartConfiguration.getEdgeObjects() != null && edgePartConfiguration.getEdgeObjects().size() > 0) {%> implements IGraphEdgeFigure, HandleBounds<%}%>
+{
+<%	if (edgePartConfiguration.getLineStyle().getValue() == LineStyle.CUSTOM) {%>
+    /**
+	 * @generated
+     */
+	private static final int LINE_ON = 8;
+
+    /**
+	 * @generated
+     */
+    private static final int LINE_OFF = 7;
+<%	}%>
+
+<%	for (Iterator iter = edgePartConfiguration.getEdgeObjects().iterator(); iter.hasNext();) {
+		EdgeObject edgeObject = (EdgeObject) iter.next();
+		String edgeObjectName = edgeObject.getId();%>
+    /**
+	 * @generated
+     */
+    private IEdgeObjectFigure <%=edgeObjectName%>EdgeObject;
+    
+    /**
+	 * @generated
+     */
+    private Locator <%=edgeObjectName%>Locator;
+<%	}%>
+
+    /**
+     * The constructor
+     *
+	 * @generated
+     */
+    public <%=partPrefix%>Figure()
+    {
+        super();
+<%	for (Iterator iter = edgePartConfiguration.getEdgeObjects().iterator(); iter.hasNext();) {
+    	EdgeObject edgeObject = (EdgeObject) iter.next();
+    	String edgeObjectName = edgeObject.getId();
+    	if (edgeObject.getType().equals(EdgeObjectType.MIDDLE_LITERAL)) {%>
+    	
+        <%=edgeObjectName%>EdgeObject = new EdgeObjectOffsetEditableLabel(this);
+        <%=edgeObjectName%>Locator = new EdgeObjectOffsetLocator((IEdgeObjectOffsetFigure) <%=edgeObjectName%>EdgeObject);
+        add(<%=edgeObjectName%>EdgeObject, <%=edgeObjectName%>Locator);
+        <%		} else if (edgeObject.getType().equals(EdgeObjectType.SOURCE_LITERAL)) {%>
+        
+        <%=edgeObjectName%>EdgeObject = new EdgeObjectEditableLabel(this);
+        <%=edgeObjectName%>Locator = new ConnectionEndpointLocator(this, false);
+        add(<%=edgeObjectName%>EdgeObject, <%=edgeObjectName%>Locator);
+        <%		} else {%>
+        
+        <%=edgeObjectName%>EdgeObject = new EdgeObjectEditableLabel(this);
+        <%=edgeObjectName%>Locator = new ConnectionEndpointLocator(this, true);
+        add(<%=edgeObjectName%>EdgeObject, <%=edgeObjectName%>Locator);
+<%		}
+	}%>
+		setLineStyle(SWT.LINE_<%=edgePartConfiguration.getLineStyle().getName()%>);
+<%	if (edgePartConfiguration.getLineStyle().getValue() == LineStyle.CUSTOM) {%>
+        setLineDash(new int[] {LINE_ON, LINE_OFF});
+<%	}%>
+    }
+
+<%	for (Iterator iter = edgePartConfiguration.getEdgeObjects().iterator(); iter.hasNext();) {
+    	EdgeObject edgeObject = (EdgeObject) iter.next();
+    	String edgeObjectName = edgeObject.getId();
+    	String capEdgeObjectName = edgeObjectName;
+    	if (capEdgeObjectName.length() != 0) {
+    		capEdgeObjectName = capEdgeObjectName.substring(0,1).toUpperCase() + capEdgeObjectName.substring(1);%>
+    /**
+	 * @return the object figure
+	 * @generated
+     */
+    public IEdgeObjectFigure get<%=capEdgeObjectName%>EdgeObjectFigure()
+    {
+        return <%=edgeObjectName%>EdgeObject;
+    }
+<%		}
+	}%>
+
+<%	if (edgePartConfiguration.getEdgeObjects() != null && edgePartConfiguration.getEdgeObjects().size() > 0) {%>
+    /**
+	 * @see org.topcased.modeler.figures.IGraphEdgeFigure#getLocator(org.topcased.modeler.figures.IEdgeObjectFigure)
+	 * @generated
+     */
+    public Locator getLocator(IEdgeObjectFigure edgeObjectfigure)
+    {
+<%		for (Iterator iter = edgePartConfiguration.getEdgeObjects().iterator(); iter.hasNext();) {
+        	EdgeObject edgeObject = (EdgeObject) iter.next();
+        	String edgeObjectName = edgeObject.getId();%>
+    	if (edgeObjectfigure == <%=edgeObjectName%>EdgeObject)
+        {
+            return <%=edgeObjectName%>Locator;
+        }
+<%		}%>
+
+        return null;
+    }
+    
+    /**
+	 * @see org.eclipse.gef.handles.HandleBounds#getHandleBounds()
+	 * @generated
+     */
+    public Rectangle getHandleBounds()
+    {
+        return getPoints().getBounds();
+    }
+<%	}%>    
+}

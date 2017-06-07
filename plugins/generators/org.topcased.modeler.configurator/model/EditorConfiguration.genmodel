@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.topcased.modeler.configurator/src"
+    editDirectory="/org.topcased.modeler.configurator/src" editorDirectory="/org.topcased.modeler.configurator/src"
+    modelPluginID="org.topcased.modeler.configurator" modelName="EditorConfiguration"
+    modelPluginClass="org.topcased.modeler.configurator.ConfiguratorPlugin" editPluginClass=""
+    editorPluginClass="" nonNLSMarkers="true" testsDirectory="" testSuiteClass=""
+    importerID="org.eclipse.emf.importer.ecore" usedGenPackages="../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel#//genmodel ../../../plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>EditorConfiguration.ecore</foreignModel>
+  <genPackages prefix="Configurator" basePackage="org.topcased.modeler" disposableProviderFactory="true"
+      generateExampleClass="false" ecorePackage="EditorConfiguration.ecore#/">
+    <genEnums ecoreEnum="EditorConfiguration.ecore#//EdgeContainerType">
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//EdgeContainerType/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//EdgeContainerType/SOURCE"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//EdgeContainerType/SOURCE_CONTAINER"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//EdgeContainerType/DIAGRAM"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//EdgeContainerType/TARGET"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//EdgeContainerType/TARGET_CONTAINER"/>
+    </genEnums>
+    <genEnums ecoreEnum="EditorConfiguration.ecore#//ResizableType">
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//ResizableType/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//ResizableType/WIDTH"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//ResizableType/HEIGHT"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//ResizableType/ALL"/>
+    </genEnums>
+    <genEnums ecoreEnum="EditorConfiguration.ecore#//LayoutType">
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//LayoutType/XYLayout"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//LayoutType/ClassLayout"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//LayoutType/ToolbarLayout"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//LayoutType/PortLayout"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//LayoutType/MultiPortLayout"/>
+    </genEnums>
+    <genEnums ecoreEnum="EditorConfiguration.ecore#//DecorationType">
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//DecorationType/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//DecorationType/ARROW"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//DecorationType/TRIANGLE"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//DecorationType/DIAMOND"/>
+    </genEnums>
+    <genEnums ecoreEnum="EditorConfiguration.ecore#//RouterType">
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//RouterType/ObliqueRouter"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//RouterType/RectilinearRouter"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//RouterType/TreeRouter"/>
+    </genEnums>
+    <genEnums ecoreEnum="EditorConfiguration.ecore#//EdgeObjectType">
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//EdgeObjectType/Source"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//EdgeObjectType/Middle"/>
+      <genEnumLiterals ecoreEnumLiteral="EditorConfiguration.ecore#//EdgeObjectType/Target"/>
+    </genEnums>
+    <genClasses ecoreClass="EditorConfiguration.ecore#//EditorConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//EditorConfiguration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//EditorConfiguration/projectName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//EditorConfiguration/prefix"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//EditorConfiguration/extension"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//EditorConfiguration/extensionDiagram"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference EditorConfiguration.ecore#//EditorConfiguration/genModel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EditorConfiguration.ecore#//EditorConfiguration/diagrams"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EditorConfiguration.ecore#//EditorConfiguration/objects"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//EditorConfiguration/pluginVersion"/>
+    </genClasses>
+    <genClasses ecoreClass="EditorConfiguration.ecore#//DiagramConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//DiagramConfiguration/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//DiagramConfiguration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//DiagramConfiguration/package"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//DiagramConfiguration/prefix"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EditorConfiguration.ecore#//DiagramConfiguration/palette"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EditorConfiguration.ecore#//DiagramConfiguration/parts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//DiagramConfiguration/layout"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="EditorConfiguration.ecore#//ObjectConfiguration">
+      <genOperations ecoreOperation="EditorConfiguration.ecore#//ObjectConfiguration/getName"/>
+    </genClasses>
+    <genClasses ecoreClass="EditorConfiguration.ecore#//DiagramReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference EditorConfiguration.ecore#//DiagramReference/diagram"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//DiagramReference/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//DiagramReference/upperBound"/>
+    </genClasses>
+    <genClasses ecoreClass="EditorConfiguration.ecore#//PaletteConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//PaletteConfiguration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EditorConfiguration.ecore#//PaletteConfiguration/paletteCategories"/>
+    </genClasses>
+    <genClasses ecoreClass="EditorConfiguration.ecore#//PaletteCategory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//PaletteCategory/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EditorConfiguration.ecore#//PaletteCategory/items"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="EditorConfiguration.ecore#//PartConfiguration">
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EReference EditorConfiguration.ecore#//PartConfiguration/object"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" propertyDescription="Specify the default foreground color as a String &quot;RRR,GGG,BBB&quot;"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//PartConfiguration/defaultForegroundColor"/>
+      <genFeatures createChild="false" propertyCategory="Policies" propertyDescription="Specify if the foreground Color of the figure is changeable"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//PartConfiguration/foregroundColorChangeable"/>
+      <genFeatures createChild="false" propertyCategory="Policies" propertyDescription="Specify if the font of the text is changeable"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//PartConfiguration/fontChangeable"/>
+    </genClasses>
+    <genClasses ecoreClass="EditorConfiguration.ecore#//NodePartConfiguration">
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" propertyDescription="Specify a Figure that will be extended"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//NodePartConfiguration/type"/>
+      <genFeatures createChild="false" propertyCategory="Model" propertyDescription="Indicates which nodes may be contained by this node"
+          ecoreFeature="ecore:EReference EditorConfiguration.ecore#//NodePartConfiguration/childElements"/>
+      <genFeatures createChild="false" propertyCategory="Model" propertyDescription="Specify if the EditPart extends another EditPart"
+          ecoreFeature="ecore:EReference EditorConfiguration.ecore#//NodePartConfiguration/superType"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" propertyDescription="Specify the default background color as a String &quot;RRR,GGG,BBB&quot;"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//NodePartConfiguration/defaultBackgroundColor"/>
+      <genFeatures createChild="false" propertyCategory="Policies" propertyDescription="Specify if the background Color of the node is changeable"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//NodePartConfiguration/backgroundColorChangeable"/>
+      <genFeatures createChild="false" propertyCategory="Policies" propertyDescription="Specify the type of policy that is applicable for this element"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//NodePartConfiguration/resizing"/>
+      <genFeatures createChild="false" propertyCategory="Policies" propertyDescription="Specify if the node should act as a container (if it should contain other nodes)"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//NodePartConfiguration/container"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" propertyDescription="Specify the type layout for displaying child nodes"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//NodePartConfiguration/layout"/>
+      <genFeatures createChild="false" propertyCategory="Policies" propertyDescription="Specify if the node has a Label that is DirectEditable"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//NodePartConfiguration/directEditable"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" propertyDescription="Set the default width of the Node (-1 if automatic size)"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//NodePartConfiguration/defaultWidth"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" propertyDescription="Set the default height of the Node (-1 if automatic size)"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//NodePartConfiguration/defaultHeight"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" propertyDescription="Set the minimum width of the Node (-1 if automatic size)"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//NodePartConfiguration/minimumWidth"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" propertyDescription="Set the minimum height of the Node (-1 if automatic size)"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//NodePartConfiguration/minimumHeight"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" propertyDescription="Set the maximum width of the Node (-1 if automatic size)"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//NodePartConfiguration/maximumWidth"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" propertyDescription="Set the maximum height of the Node (-1 if automatic size)"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//NodePartConfiguration/maximumHeight"/>
+    </genClasses>
+    <genClasses ecoreClass="EditorConfiguration.ecore#//EdgePartConfiguration">
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          ecoreFeature="ecore:EReference EditorConfiguration.ecore#//EdgePartConfiguration/sourceTargetCouple"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Graphic Properties"
+          ecoreFeature="ecore:EReference EditorConfiguration.ecore#//EdgePartConfiguration/edgeObjects"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//EdgePartConfiguration/sourceDecoration"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//EdgePartConfiguration/targetDecoration"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" propertyDescription="Specify the type of Router that should be used for this type of connection"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//EdgePartConfiguration/defaultRouter"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" propertyDescription="Specify which EdgeObject is DirectEditable"
+          ecoreFeature="ecore:EReference EditorConfiguration.ecore#//EdgePartConfiguration/directEditable"/>
+    </genClasses>
+    <genClasses ecoreClass="EditorConfiguration.ecore#//EdgeObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//EdgeObject/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference EditorConfiguration.ecore#//EdgeObject/eStructuralFeature"/>
+      <genFeatures createChild="false" propertyDescription="If an eStructuralFeature is specified, the id will be the name of the eStructuralFeature"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//EdgeObject/id"/>
+    </genClasses>
+    <genClasses ecoreClass="EditorConfiguration.ecore#//PaletteItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//PaletteItem/name"/>
+      <genFeatures notify="false" createChild="false" propertyDescription="" ecoreFeature="ecore:EReference EditorConfiguration.ecore#//PaletteItem/part"/>
+    </genClasses>
+    <genClasses ecoreClass="EditorConfiguration.ecore#//SourceTargetCouple">
+      <genFeatures createChild="false" propertyCategory="Model" propertyDescription="Specify which Object should be the container for the Edge model object"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//SourceTargetCouple/containerType"/>
+      <genFeatures createChild="false" propertyCategory="Model" propertyDescription="Indicate if the source Node may be the target Node"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//SourceTargetCouple/autoRef"/>
+      <genFeatures createChild="false" propertyCategory="Model" propertyDescription="Indicate if the Source may be the Target and the Target be the Source"
+          ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//SourceTargetCouple/reversible"/>
+      <genFeatures createChild="false" propertyCategory="Model" propertyDescription="Specify the model object associated with the container"
+          ecoreFeature="ecore:EReference EditorConfiguration.ecore#//SourceTargetCouple/containerObject"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Connection" propertyDescription="Specify the NodePart that can be the source of the connection"
+          ecoreFeature="ecore:EReference EditorConfiguration.ecore#//SourceTargetCouple/sourceNode"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Connection" propertyDescription="Specify the NodePart that can be the target of the connection"
+          ecoreFeature="ecore:EReference EditorConfiguration.ecore#//SourceTargetCouple/targetNode"/>
+      <genFeatures createChild="false" propertyCategory="Model" propertyDescription="Specify the EStructuralFeature of the containerObject"
+          ecoreFeature="ecore:EReference EditorConfiguration.ecore#//SourceTargetCouple/containerRef"/>
+      <genFeatures createChild="false" propertyCategory="Model Update" propertyDescription="Specify the EStructuralFeature of the source Node that reference the Edge"
+          ecoreFeature="ecore:EReference EditorConfiguration.ecore#//SourceTargetCouple/refSourceToEdge"/>
+      <genFeatures createChild="false" propertyCategory="Model Update" propertyDescription="Specify the EStructuralFeature of the Edge that reference the source Node"
+          ecoreFeature="ecore:EReference EditorConfiguration.ecore#//SourceTargetCouple/refEdgeToSource"/>
+      <genFeatures createChild="false" propertyCategory="Model Update" propertyDescription="Specify the EStructuralFeature of the target Node that reference the Edge"
+          ecoreFeature="ecore:EReference EditorConfiguration.ecore#//SourceTargetCouple/refTargetToEdge"/>
+      <genFeatures createChild="false" propertyCategory="Model Update" propertyDescription="Specify the EStructuralFeature of the Edge that reference the target Node"
+          ecoreFeature="ecore:EReference EditorConfiguration.ecore#//SourceTargetCouple/refEdgeToTarget"/>
+      <genFeatures createChild="false" propertyCategory="Model Update" propertyDescription="Specify the EStructuralFeature of the source Node that reference the target Node"
+          ecoreFeature="ecore:EReference EditorConfiguration.ecore#//SourceTargetCouple/refSourceToTarget"/>
+      <genFeatures createChild="false" propertyCategory="Model Update" propertyDescription="Specify the EStructuralFeature of the target Node that reference the source Node"
+          ecoreFeature="ecore:EReference EditorConfiguration.ecore#//SourceTargetCouple/refTargetToSource"/>
+    </genClasses>
+    <genClasses ecoreClass="EditorConfiguration.ecore#//ModelObjectConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference EditorConfiguration.ecore#//ModelObjectConfiguration/genClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EditorConfiguration.ecore#//ModelObjectConfiguration/diagrams"/>
+      <genOperations ecoreOperation="EditorConfiguration.ecore#//ModelObjectConfiguration/getName"/>
+    </genClasses>
+    <genClasses ecoreClass="EditorConfiguration.ecore#//SimpleObjectConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EditorConfiguration.ecore#//SimpleObjectConfiguration/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

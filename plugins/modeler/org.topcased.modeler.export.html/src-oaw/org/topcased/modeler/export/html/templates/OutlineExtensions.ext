@@ -1,0 +1,15 @@
+import model;
+import ecore;
+	
+Set[EObject] getElements(Diagrams diagrams):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getElements(org.topcased.modeler.diagrams.model.Diagrams);
+	
+Set[Diagram] getRelatedDiagrams(Object element):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getDiagrams(org.eclipse.emf.ecore.EObject);
+	
+String getName(Object element):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getName(org.eclipse.emf.ecore.EObject);
+	
+List[EObject] getChildrenSemanticElements(Object element):
+	JAVA org.topcased.modeler.export.html.GenerationManager.getChildrenSemanticElements(org.eclipse.emf.ecore.EObject);
+	

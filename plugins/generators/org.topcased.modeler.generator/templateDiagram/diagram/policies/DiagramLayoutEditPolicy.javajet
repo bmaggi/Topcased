@@ -1,0 +1,59 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="DiagramLayoutEditPolicy"
+	 version="$Id: DiagramLayoutEditPolicy.javajet,v 1.4 2006/10/26 15:06:23 jako Exp $" %>
+<%	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>.policies;
+
+import org.topcased.modeler.di.model.GraphNode;
+import org.topcased.modeler.edit.policies.ModelerLayoutEditPolicy;
+import org.topcased.modeler.utils.Utils;
+
+/**
+ * @generated
+ */
+public class <%=diagramConfiguration.getPrefix()%>DiagramLayoutEditPolicy extends ModelerLayoutEditPolicy
+{
+	/**
+	 * Default contructor.
+	 *
+     * @generated
+	 */
+	public <%=diagramConfiguration.getPrefix()%>DiagramLayoutEditPolicy() {
+		super();
+	}
+    
+<%
+if (LayoutType.PORT_LAYOUT_LITERAL.equals(diagramConfiguration.getLayout())) {
+%>    
+	/**
+     * @see org.topcased.modeler.edit.policies.ModelerLayoutEditPolicy#isAttachedToBorder(org.topcased.modeler.di.model.GraphNode)
+	 * @generated
+     */
+    protected boolean isAttachedToBorder(GraphNode node)
+    {
+<%
+	for (Iterator iter = diagramConfiguration.getParts().iterator(); iter.hasNext();) {
+		PartConfiguration partConf = (PartConfiguration) iter.next();
+		if (partConf instanceof NodePartConfiguration && "Port".equals(((NodePartConfiguration) partConf).getType())) {
+			if (partConf.getObject() instanceof ModelObjectConfiguration) {
+				ModelObjectConfiguration modelObjConf = (ModelObjectConfiguration) partConf.getObject();
+				
+%>
+		if (Utils.getElement(node) instanceof <%=modelObjConf.getGenClass().getName()%>)
+		{
+			return true;
+		}
+<%
+			}
+		}
+	}
+%>    
+        return super.isAttachedToBorder(node);
+    }
+<%
+}
+%>
+}

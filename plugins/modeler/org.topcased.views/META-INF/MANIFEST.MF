@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: org.topcased.views;singleton:=true
+Bundle-Version: 1.1.0.qualifier
+Bundle-Activator: org.topcased.views.internal.Activator
+Bundle-Vendor: %Bundle-Vendor
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.edit,
+ org.eclipse.emf.edit.ui,
+ org.eclipse.emf,
+ org.topcased.modeler
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Bundle-Localization: plugin

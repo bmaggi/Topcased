@@ -1,0 +1,8 @@
+MainModel : http://www.topcased.org/Diagrams/1.0
+
+context di::GraphEdge
+	inv graphedge_is_resolved: 
+		semanticModel.oclIsTypeOf(di::EMFSemanticModelBridge) implies not semanticModel.oclAsType(di::EMFSemanticModelBridge).element.oclIsUndefined() and 
+			not semanticModel.oclAsType(di::EMFSemanticModelBridge).element.eIsProxy()
+--@error GraphEdge <%self%> is unresolved
+	

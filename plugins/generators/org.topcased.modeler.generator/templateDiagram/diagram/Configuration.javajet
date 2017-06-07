@@ -1,0 +1,180 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="Configuration"
+	 version="$Id: Configuration.javajet,v 1.9 2006/12/20 17:08:26 jako Exp $" %>
+<%	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>;
+
+import java.net.URL;
+
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.gef.EditPartFactory;
+import org.topcased.modeler.editor.IConfiguration;
+import org.topcased.modeler.editor.ICreationUtils;
+import org.topcased.modeler.editor.IPaletteManager;
+import org.topcased.modeler.graphconf.DiagramGraphConf;
+import org.topcased.modeler.graphconf.exceptions.MissingGraphConfFileException;
+
+import <%=diagramConfiguration.getProjectName()%>.<%=diagramConfiguration.getPluginPrefix()%>Plugin;
+import <%=diagramConfiguration.getBasePackage()%>.EditPart2ModelAdapterFactory;
+import <%=diagramConfiguration.getBasePackage()%>.edit.*;
+
+
+/**
+ * A diagram configuration : manages Palette, EditPartFactory for this diagram.
+ *
+ * @generated
+ */
+public class <%=diagramConfiguration.getPrefix()%>Configuration implements IConfiguration
+{
+	/**
+	 * @generated
+	 */
+	private <%=diagramConfiguration.getPrefix()%>PaletteManager paletteManager;
+	
+	/**
+	 * @generated
+	 */
+	private <%=diagramConfiguration.getPrefix()%>EditPartFactory editPartFactory;
+
+	/**
+	 * @generated
+	 */
+	private <%=diagramConfiguration.getPrefix()%>CreationUtils creationUtils;
+	
+    /**
+     * The DiagramGraphConf that contains graphical informations on the configuration
+     * @generated
+     */
+    private DiagramGraphConf diagramGraphConf;
+	
+
+    /**
+     * Constructor. Initialize Adapter factories.
+     *
+     * @generated
+     */
+    public <%=diagramConfiguration.getPrefix()%>Configuration()
+    {
+        registerAdapters();
+    }
+
+    /**
+     * Registers the Adapter Factories for all the EditParts
+     *
+     * @generated
+     */
+    private void registerAdapters()
+    {
+    <%
+            for (Iterator i = diagramConfiguration.getParts().iterator(); i.hasNext();)
+            {
+                PartConfiguration partConf = (PartConfiguration) i.next();
+
+                 if (partConf.getObject() instanceof ModelObjectConfiguration)
+                 {
+                     ModelObjectConfiguration modelConf = (ModelObjectConfiguration) partConf.getObject();
+                     %>
+        Platform.getAdapterManager().registerAdapters(new EditPart2ModelAdapterFactory(<%=partConf.getPrefix()%>EditPart.class, <%=modelConf.getGenClass().getQualifiedInterfaceName()%>.class),
+                <%=partConf.getPrefix()%>EditPart.class);
+                   <%
+                  }
+            }
+      %>
+    }
+    
+    /**
+	 * @see org.topcased.modeler.editor.IConfiguration#getId()
+	 * @generated
+	 */
+	public String getId()
+	{
+		return new String("<%=diagramConfiguration.getBasePackage()%>");
+	}
+
+	/**
+	 * @see org.topcased.modeler.editor.IConfiguration#getName()
+	 * @generated
+	 */
+	public String getName()
+	{
+		return new String("<%=diagramConfiguration.getName()%>");
+	}
+
+	/**
+	 * @see org.topcased.modeler.editor.IConfiguration#getEditPartFactory()
+	 * @generated
+	 */
+	public EditPartFactory getEditPartFactory()
+	{
+		if (editPartFactory == null)
+		{
+			editPartFactory = new <%=diagramConfiguration.getPrefix()%>EditPartFactory();
+		}
+
+		return editPartFactory;
+	}
+
+	/**
+	 * @see org.topcased.modeler.editor.IConfiguration#getPaletteManager()
+	 * @generated
+	 */
+	public IPaletteManager getPaletteManager()
+	{
+		if (paletteManager == null)
+		{
+			paletteManager = new <%=diagramConfiguration.getPrefix()%>PaletteManager(getCreationUtils());
+		}
+
+		return paletteManager;
+	}
+
+    /**
+     * @see org.topcased.modeler.editor.IConfiguration#getCreationUtils()
+     * @generated
+     */
+    public ICreationUtils getCreationUtils()
+    {
+		if (creationUtils == null)
+		{
+			creationUtils = new <%=diagramConfiguration.getPrefix()%>CreationUtils(getDiagramGraphConf());
+		}
+
+        return creationUtils;
+    }
+    
+    /**
+     * @see org.topcased.modeler.editor.IConfiguration#getDiagramGraphConf()
+     * @generated
+     */
+    public DiagramGraphConf getDiagramGraphConf()
+    {
+        if (diagramGraphConf == null)
+        {
+        	URL url = <%=diagramConfiguration.getPluginPrefix()%>Plugin.getDefault().getBundle().getResource("<%=diagramConfiguration.getGraphConfIPath()%>");
+        	if (url != null)
+			{
+                URI fileURI = URI.createURI(url.toString());
+                ResourceSet resourceSet = new ResourceSetImpl();
+                Resource resource = resourceSet.getResource(fileURI, true);
+                if (resource != null && resource.getContents().get(0) instanceof DiagramGraphConf)
+                {
+                    diagramGraphConf = (DiagramGraphConf) resource.getContents().get(0);
+                }
+            }
+			else
+			{
+				new MissingGraphConfFileException("The *.diagramgraphconf file can not be retrieved. Check if the path is correct in the Configuration class of your diagram.");
+			}
+        }
+
+        return diagramGraphConf;
+    }
+    
+}

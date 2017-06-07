@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="connection"
+    nsURI="http:///AADL/connection" nsPrefix="connection">
+  <eClassifiers xsi:type="ecore:EClass" name="Connections" eSuperTypes="core.ecore#//AObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contents" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="namespace" value="connections"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventConnection" upperBound="-1"
+        eType="#//EventConnection" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="connections#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataConnection" upperBound="-1"
+        eType="#//DataConnection" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="connections#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventDataConnection" upperBound="-1"
+        eType="#//EventDataConnection" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="connections#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portGroupConnection" upperBound="-1"
+        eType="#//PortGroupConnection" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="connections#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataAccessConnection" upperBound="-1"
+        eType="#//DataAccessConnection" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="connections#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterConnection" upperBound="-1"
+        eType="#//ParameterConnection" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="connections#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busAccessConnection" upperBound="-1"
+        eType="#//BusAccessConnection" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="connections#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConnectionTiming">
+    <eLiterals name="Immediate"/>
+    <eLiterals name="Delayed" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataConnection" eSuperTypes="core.ecore#//Connection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//DataConnection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="ecore:EClass feature.ecore#//DataPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dst" lowerBound="1" eType="ecore:EClass feature.ecore#//DataPort"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timing" eType="#//ConnectionTiming"
+        defaultValueLiteral="Immediate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventConnection" eSuperTypes="core.ecore#//Connection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dst" lowerBound="1" eType="ecore:EClass feature.ecore#//EventPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="ecore:EClass feature.ecore#//EventPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//EventConnection"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventDataConnection" eSuperTypes="core.ecore#//Connection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dst" lowerBound="1" eType="ecore:EClass feature.ecore#//EventDataPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="ecore:EClass feature.ecore#//EventDataPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//EventDataConnection"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortGroupConnection" eSuperTypes="core.ecore#//Connection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="ecore:EClass feature.ecore#//PortGroup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dst" lowerBound="1" eType="ecore:EClass feature.ecore#//PortGroup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//PortGroupConnection"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureContext" abstract="true" eSuperTypes="core.ecore#//PropertyHolder">
+    <eAnnotations source="http:///aadl/OSATE">
+      <details key="isProxy" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataAccessConnection" eSuperTypes="core.ecore#//Connection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//DataAccessConnection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="#//DataAccessEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dst" lowerBound="1" eType="#//DataAccessEnd"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterEnd" abstract="true" eSuperTypes="core.ecore#//PropertyHolder">
+    <eAnnotations source="http:///aadl/OSATE">
+      <details key="isProxy" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterConnection" eSuperTypes="core.ecore#//Connection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//ParameterConnection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="#//ParameterEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dst" lowerBound="1" eType="#//ParameterEnd"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusAccessConnection" eSuperTypes="core.ecore#//Connection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//BusAccessConnection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="#//BusAccessEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dst" lowerBound="1" eType="#//BusAccessEnd"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataAccessEnd" abstract="true" eSuperTypes="core.ecore#//PropertyHolder">
+    <eAnnotations source="http:///aadl/OSATE">
+      <details key="isProxy" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusAccessEnd" abstract="true" eSuperTypes="core.ecore#//PropertyHolder">
+    <eAnnotations source="http:///aadl/OSATE">
+      <details key="isProxy" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,204 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="PaletteManager"
+	 version="$Id: PaletteManager.javajet,v 1.12 2008/04/18 14:09:29 jako Exp $" %>
+<%	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;
+	String diagPrefix = diagramConfiguration.getPrefix().toLowerCase();%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.gef.palette.PaletteDrawer;
+import org.eclipse.gef.requests.CreationFactory;
+import org.topcased.modeler.editor.GraphElementCreationFactory;
+import org.topcased.modeler.editor.ICreationUtils;
+import org.topcased.modeler.editor.palette.ModelerConnectionCreationToolEntry;
+import org.topcased.modeler.editor.palette.ModelerCreationToolEntry;
+import org.topcased.modeler.editor.palette.ModelerPaletteManager;
+
+<%	for (Iterator itGenPackages = diagramConfiguration.getGenModel().getAllGenPackagesWithClassifiers().iterator(); itGenPackages.hasNext();)
+	{
+		GenPackage genPack = (GenPackage) itGenPackages.next();%>
+import <%=genPack.getQualifiedPackageInterfaceName()%>;
+<%	}%>
+
+import <%=diagramConfiguration.getBasePackage()%>.<%=diagramConfiguration.getPrefix()%>ImageRegistry;
+import <%=diagramConfiguration.getBasePackage()%>.<%=diagramConfiguration.getPrefix()%>SimpleObjectConstants;
+
+
+/**
+ * Generated Palette Manager
+ *
+ * @generated
+ */
+public class <%=diagramConfiguration.getPrefix()%>PaletteManager extends ModelerPaletteManager
+{
+	// declare all the palette categories of the diagram
+<%
+for (Iterator i = diagramConfiguration.getPalette().getPaletteCategories().iterator(); i.hasNext();) { 
+	PaletteCategory paletteCategory = (PaletteCategory) i.next();
+%>
+	/**
+	 * @generated
+	 */
+	private PaletteDrawer <%=paletteCategory.getName().toLowerCase()%>Drawer;
+<%
+}
+%>
+
+	/**
+	 * @generated
+	 */
+    private ICreationUtils creationUtils;
+    
+	/**
+     * The Constructor
+     *
+     * @param utils the creation utils for the tools of the palette 
+     * @generated
+     */
+    public <%=diagramConfiguration.getPrefix()%>PaletteManager(ICreationUtils utils)
+    {
+	    super();
+        this.creationUtils = utils;
+    }
+
+	/**
+	 * Creates the main categories of the palette
+	 *
+	 * @generated
+	 */
+	protected void createCategories()
+	{
+<%
+for (Iterator i = diagramConfiguration.getPalette().getPaletteCategories().iterator(); i.hasNext();) { 
+	PaletteCategory paletteCategory = (PaletteCategory) i.next();
+%>
+		create<%=paletteCategory.getName()%>Drawer();
+<%
+}
+%>
+	}
+	
+	/**
+	 * Updates the main categories of the palette
+	 *
+	 * @generated
+	 */
+	protected void updateCategories()
+	{
+		// deletion of the existing categories and creation of the updated categories
+<%
+for (Iterator j = diagramConfiguration.getPalette().getPaletteCategories().iterator(); j.hasNext();) { 
+	PaletteCategory paletteCategory = (PaletteCategory) j.next();
+%>
+
+		getRoot().remove(<%=paletteCategory.getName().toLowerCase()%>Drawer);
+		create<%=paletteCategory.getName()%>Drawer();
+<%
+}
+%>
+	}
+
+
+<%
+for (Iterator i = diagramConfiguration.getPalette().getPaletteCategories().iterator(); i.hasNext();) { 
+	PaletteCategory paletteCategory = (PaletteCategory) i.next();
+	String paletteCategoryName = paletteCategory.getName();
+%>
+
+	/**
+	 * Creates the Palette container containing all the Palette entries for each figure.
+	 *
+	 * @generated
+	 */
+	private void create<%=paletteCategoryName%>Drawer()
+	{
+		<%=paletteCategoryName.toLowerCase()%>Drawer = new PaletteDrawer("<%=paletteCategoryName%>", null);
+		List<PaletteEntry> entries = new ArrayList<PaletteEntry>();
+
+        CreationFactory factory;
+
+<%
+	for(Iterator i2 = paletteCategory.getItems().iterator(); i2.hasNext();) { 
+		PaletteItem palItem = (PaletteItem) i2.next();
+		String palItemName = palItem.getName();
+		PartConfiguration partConf = palItem.getPart();
+		if (partConf.getObject() instanceof ModelObjectConfiguration)
+		{
+			ModelObjectConfiguration objConf = (ModelObjectConfiguration) partConf.getObject();
+			String codeToInsert = palItem.getCodeCustom("initModelObject");
+			if (partConf instanceof NodePartConfiguration) 
+			{
+%>
+
+        factory = new GraphElementCreationFactory(creationUtils, <%=objConf.getGenClass().getGenPackage().getPackageInterfaceName()%>.eINSTANCE.get<%=objConf.getName()%>(), "<%=partConf.getPresentation()%>")<%if (codeToInsert == null) {%>;<%} else {%>
+        {
+            public EObject getNewModelObject()
+            {
+                <%=objConf.getName()%> element = (<%=objConf.getName()%>) super.getNewModelObject();
+                <%=codeToInsert%>
+                return element;
+            }
+        };
+<%				}%>
+		entries.add(new ModelerCreationToolEntry("<%=palItemName%>", "<%=palItemName%>", factory, <%=diagramConfiguration.getPrefix()%>ImageRegistry.getImageDescriptor("<%=partConf.getPrefix().toUpperCase()%>"), <%=diagramConfiguration.getPrefix()%>ImageRegistry.getImageDescriptor("<%=partConf.getPrefix().toUpperCase()%>_LARGE")));
+<%
+			}
+			else if (palItem.getPart() instanceof EdgePartConfiguration) 
+			{
+				EdgePartConfiguration edgePartConf = (EdgePartConfiguration) palItem.getPart();
+%>
+
+        factory = new GraphElementCreationFactory(creationUtils, <%=objConf.getGenClass().getGenPackage().getPackageInterfaceName()%>.eINSTANCE.get<%=objConf.getName()%>(), "<%=partConf.getPresentation()%>")<%if (codeToInsert == null) {%>;<%} else {%>
+        {
+            public EObject getNewModelObject()
+            {
+                <%=objConf.getName()%> element = (<%=objConf.getName()%>) super.getNewModelObject();
+                <%=codeToInsert%>
+                return element;
+            }
+        };
+<%				}%>
+		entries.add(new ModelerConnectionCreationToolEntry("<%=palItemName%>", "<%=palItemName%>", factory, <%=diagramConfiguration.getPrefix()%>ImageRegistry.getImageDescriptor("<%=partConf.getPrefix().toUpperCase()%>"), <%=diagramConfiguration.getPrefix()%>ImageRegistry.getImageDescriptor("<%=partConf.getPrefix().toUpperCase()%>_LARGE")));
+<%
+			}
+		}
+		else if (palItem.getPart().getObject() instanceof SimpleObjectConfiguration)
+		{
+			// the PaletteItem is not associated with a model object
+			SimpleObjectConfiguration objConf = (SimpleObjectConfiguration) palItem.getPart().getObject();
+			if (palItem.getPart() instanceof NodePartConfiguration) 
+			{
+				NodePartConfiguration nodePartConf = (NodePartConfiguration) palItem.getPart();
+%>
+
+        factory = new GraphElementCreationFactory(creationUtils, <%=diagramConfiguration.getPrefix()%>SimpleObjectConstants.SIMPLE_OBJECT_<%=objConf.getName().toUpperCase()%>, "<%=partConf.getPresentation()%>", true);
+		entries.add(new ModelerCreationToolEntry("<%=palItemName%>", "<%=palItemName%>", factory, <%=diagramConfiguration.getPrefix()%>ImageRegistry.getImageDescriptor("<%=partConf.getPrefix().toUpperCase()%>"), <%=diagramConfiguration.getPrefix()%>ImageRegistry.getImageDescriptor("<%=partConf.getPrefix().toUpperCase()%>_LARGE")));
+<%
+			}
+			else if (palItem.getPart() instanceof EdgePartConfiguration) 
+			{
+				EdgePartConfiguration edgePartConf = (EdgePartConfiguration) palItem.getPart();
+%>
+
+        factory = new GraphElementCreationFactory(creationUtils, <%=diagramConfiguration.getPrefix()%>SimpleObjectConstants.SIMPLE_OBJECT_<%=objConf.getName().toUpperCase()%>, "<%=partConf.getPresentation()%>", false);
+        entries.add(new ModelerConnectionCreationToolEntry("<%=palItemName%>", "<%=palItemName%>", factory, <%=diagramConfiguration.getPrefix()%>ImageRegistry.getImageDescriptor("<%=partConf.getPrefix().toUpperCase()%>"), <%=diagramConfiguration.getPrefix()%>ImageRegistry.getImageDescriptor("<%=partConf.getPrefix().toUpperCase()%>_LARGE")));
+<%
+			}
+		}
+	}
+	
+%>
+ 
+		<%=paletteCategoryName.toLowerCase()%>Drawer.addAll(entries);
+		getRoot().add(<%=paletteCategoryName.toLowerCase()%>Drawer);
+	}
+<%
+}
+%>
+
+}

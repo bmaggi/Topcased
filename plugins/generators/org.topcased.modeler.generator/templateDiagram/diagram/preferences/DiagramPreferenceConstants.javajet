@@ -1,0 +1,93 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="DiagramPreferenceConstants"
+	 version="$Id: DiagramPreferenceConstants.javajet,v 1.1 2008/04/15 17:52:59 jako Exp $" %>
+<%	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>.preferences;
+
+/**
+ * A set of constant that are used in the diagram graphical preferences
+ * 
+ * @generated
+ */
+public interface <%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants
+{
+<%
+for (Iterator iter = diagramConfiguration.getParts().iterator(); iter.hasNext(); )
+{
+	PartConfiguration partConf = (PartConfiguration) iter.next();
+	String name = partConf.getPrefix();
+	if (!partConf.isAbstract())
+	{
+		if (partConf instanceof NodePartConfiguration)
+		{
+%>
+    /**
+     * The key used to install a <i><%=name%> Default Background Color</i> Preference.
+     * @generated
+     */     
+   String <%=name.toUpperCase()%>_DEFAULT_BACKGROUND_COLOR= "<%=name%> Default Background Color";
+    
+    /**
+    * The key used to install a <i><%=name%> Default Foreground Color</i> Preference.
+    * @generated
+    */
+   String <%=name.toUpperCase()%>_DEFAULT_FOREGROUND_COLOR= "<%=name%> Default Foreground Color";
+    
+    /**
+    * The key used to install a <i><%=name%> Default Font</i> Preference.
+    * @generated
+    */
+    String <%=name.toUpperCase()%>_DEFAULT_FONT= "<%=name%> Default Font";
+
+<%
+		}
+		else if (partConf instanceof EdgePartConfiguration && partConf.getObject() != null)
+		{
+%>
+    /**
+	 * The key used to install a <i><%=name%> Edge Default Font</i> Preference.
+	 * @generated
+	 */
+    String <%=name.toUpperCase()%>_EDGE_DEFAULT_FONT = "<%=name%> Edge Default Font";
+    
+    /**
+    * The key used to install a <i><%=name%> Edge Default Foreground Color</i> Preference.
+    * @generated
+    */
+    String <%=name.toUpperCase()%>_EDGE_DEFAULT_FOREGROUND_COLOR = "<%=name%> Edge Default Foreground Color";
+
+    /**
+    * The key used to install a <i><%=name%> Edge Default Router</i> Preference.
+    * @generated
+    */
+	String <%=name.toUpperCase()%>_EDGE_DEFAULT_ROUTER = "<%=name%> Edge Default Router";
+
+
+<% 	
+		for (Iterator iter2 = ((EdgePartConfiguration) partConf).getEdgeObjects().iterator(); iter2.hasNext();)
+		{
+			EdgeObject edgeObject = (EdgeObject) iter2.next();
+			String edgeObjectName = edgeObject.getId();
+
+%>
+	/**
+	 * The key used to install a <i><%=name%> <%=edgeObjectName%> Edge Object Default Visibility</i> Preference.
+	 * @generated
+	 */
+     String <%=name.toUpperCase()%>_<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_DEFAULT_VISIBILITY = "<%=name%> <%=edgeObjectName%> Edge Object Default Visibility";
+<%					
+			}				
+%>
+				
+<%
+		}
+	}
+}
+%>
+
+}
+
+    

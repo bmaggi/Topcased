@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=""
+    modelDirectory="/org.topcased.modeler.editorconfigurator/src" editDirectory="/org.topcased.modeler.editorconfigurator/src"
+    editorDirectory="/org.topcased.modeler.editorconfigurator/src" modelPluginID="org.topcased.modeler.editorconfigurator"
+    templateDirectory="" redirection="" modelName="Editorconfigurator" modelPluginClass="org.topcased.modeler.editorconfigurator.EditorConfiguratorPlugin"
+    editPluginClass="" editorPluginClass="" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    usedGenPackages="../../../plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel#//genmodel">
+  <foreignModel>editorconfigurator.ecore</foreignModel>
+  <genPackages prefix="Editorconfigurator" basePackage="org.topcased.modeler" disposableProviderFactory="true"
+      generateExampleClass="false" ecorePackage="editorconfigurator.ecore#/">
+    <genClasses ecoreClass="editorconfigurator.ecore#//EditorConfiguration">
+      <genFeatures createChild="false" propertyCategory="All" ecoreFeature="ecore:EAttribute editorconfigurator.ecore#//EditorConfiguration/name"/>
+      <genFeatures createChild="false" propertyCategory="All" ecoreFeature="ecore:EAttribute editorconfigurator.ecore#//EditorConfiguration/projectName"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EReference editorconfigurator.ecore#//EditorConfiguration/genModel"/>
+      <genFeatures createChild="false" propertyCategory="All" ecoreFeature="ecore:EAttribute editorconfigurator.ecore#//EditorConfiguration/pluginVersion"/>
+      <genFeatures createChild="false" propertyCategory="All" ecoreFeature="ecore:EAttribute editorconfigurator.ecore#//EditorConfiguration/provider"/>
+      <genFeatures createChild="false" propertyCategory="Templates &amp; Merge" ecoreFeature="ecore:EAttribute editorconfigurator.ecore#//EditorConfiguration/forceOverwrite"/>
+      <genFeatures createChild="false" propertyCategory="Templates &amp; Merge" ecoreFeature="ecore:EAttribute editorconfigurator.ecore#//EditorConfiguration/organizeImports"/>
+      <genFeatures createChild="false" propertyCategory="Templates &amp; Merge" propertyMultiLine="true"
+          ecoreFeature="ecore:EAttribute editorconfigurator.ecore#//EditorConfiguration/copyrightText"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

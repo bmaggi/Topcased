@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ttm"
+    nsURI="http://org.topcased.traceability.model" nsPrefix="ttm">
+  <eClassifiers xsi:type="ecore:EClass" name="Document" eSuperTypes="#//HierarchicalElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="analyzerID" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastModifiedDate" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Long"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filename" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coversItself" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="project" lowerBound="1"
+        eType="#//Project" eOpposite="#//Project/documents"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coverPoints" upperBound="-1"
+        eType="#//CoverPoint" containment="true" eOpposite="#//CoverPoint/coveredDocument"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingCoverPoints" upperBound="-1"
+        eType="#//CoverPoint" eOpposite="#//CoverPoint/connectedDocuments"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conversionMethodID" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="analyzerArguments" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="globalCoverageRatio" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Float"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Section" eSuperTypes="#//HierarchicalElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HierarchicalElement" abstract="true"
+      eSuperTypes="#//IdentifiedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingNavigationLinks"
+        upperBound="-1" eType="#//NavigationLink" eOpposite="#//NavigationLink/to"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="navigationLinks" upperBound="-1"
+        eType="#//NavigationLink" containment="true" eOpposite="#//NavigationLink/from"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coverLinks" upperBound="-1"
+        eType="#//CoverLink" containment="true" eOpposite="#//CoverLink/from"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//HierarchicalElement" containment="true" eOpposite="#//HierarchicalElement/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//HierarchicalElement"
+        eOpposite="#//HierarchicalElement/children"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdentifiedElement" abstract="true" eSuperTypes="#//AttributeOwner">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ident" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shortDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="texts" upperBound="-1"
+        eType="#//Text" containment="true" eOpposite="#//Text/parent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+        eType="#//IdentifiedElement" eOpposite="#//IdentifiedElement/texts"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+        eType="#//AttributeOwner" eOpposite="#//AttributeOwner/attributes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Requirement" eSuperTypes="#//HierarchicalElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingCoverLinks" upperBound="-1"
+        eType="#//CoverLink" eOpposite="#//CoverLink/to"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subCoveringRequirementsRatio"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Float"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CoverLink" eSuperTypes="#//AbstractLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//HierarchicalElement"
+        eOpposite="#//HierarchicalElement/coverLinks"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//Requirement"
+        eOpposite="#//Requirement/incomingCoverLinks"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NavigationLink" eSuperTypes="#//AbstractLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//HierarchicalElement"
+        eOpposite="#//HierarchicalElement/incomingNavigationLinks"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//HierarchicalElement"
+        eOpposite="#//HierarchicalElement/navigationLinks"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractLink" abstract="true" eSuperTypes="#//AttributeOwner">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unresolved" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="referencedID" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Project" eSuperTypes="#//IdentifiedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filename" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="documents" upperBound="-1"
+        eType="#//Document" containment="true" eOpposite="#//Document/project"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
+        eType="#//Rule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coverageResults" upperBound="-1"
+        eType="#//CoverageResult" containment="true" eOpposite="#//CoverageResult/project"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anyDocumentCovered" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activatedRules" upperBound="-1"
+        eType="#//RuleInstance" containment="true" eOpposite="#//RuleInstance/element"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuleInstance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" lowerBound="1"
+        eType="#//Element" eOpposite="#//Element/activatedRules"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseRule" lowerBound="1"
+        eType="#//Rule" eOpposite="#//Rule/ruleInstances"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayMessage" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeOwner" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//Attribute" containment="true" eOpposite="#//Attribute/parent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruleInstances" upperBound="-1"
+        eType="#//RuleInstance" eOpposite="#//RuleInstance/baseRule"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CoverageResult">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coverage" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Float"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="project" lowerBound="1"
+        eType="#//Project" eOpposite="#//Project/coverageResults"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fromDocument" eType="#//Document"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toDocument" lowerBound="1"
+        eType="#//Document"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fromCoverPoint" eType="#//CoverPoint"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CoverPoint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="andCover" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coveredDocument" lowerBound="1"
+        eType="#//Document" eOpposite="#//Document/coverPoints"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectedDocuments" upperBound="-1"
+        eType="#//Document" eOpposite="#//Document/incomingCoverPoints"/>
+  </eClassifiers>
+</ecore:EPackage>

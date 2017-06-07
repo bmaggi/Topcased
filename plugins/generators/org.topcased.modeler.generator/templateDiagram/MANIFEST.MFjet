@@ -1,0 +1,25 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.modeler.diagramconfigurator.* org.topcased.modeler.editorconfigurator.* org.topcased.modeler.diagramconfigurator.util.*"
+	 class="ManifestMF"
+	 version="$Id: MANIFEST.MFjet,v 1.4 2008/08/21 13:06:16 tlandre Exp $" %>
+<%DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: <%=diagramConfiguration.getName()%>
+Bundle-SymbolicName: <%=diagramConfiguration.getProjectName()%>; singleton:=true
+Bundle-Version: <%=diagramConfiguration.getPluginVersion()%>
+Bundle-Activator: <%=diagramConfiguration.getBasePackage()%>.<%=diagramConfiguration.getPrefix()%>Plugin
+Bundle-Vendor: <%=diagramConfiguration.getProvider()%>
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore.edit,
+<%	for (Iterator j = DiagramConfiguratorHelper.getRequiredPlugins(diagramConfiguration).iterator(); j.hasNext();) { 
+		String pluginID = (String) j.next();
+		if (!"org.eclipse.core.runtime".equals(pluginID)) {%>
+ <%=pluginID%>,
+<%		}
+	}%>
+ org.topcased.modeler,
+ <%=diagramConfiguration.getEditorConfigurator().getProjectName()%>
+Eclipse-LazyStart: true

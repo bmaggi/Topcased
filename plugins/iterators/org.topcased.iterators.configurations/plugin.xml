@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.1 2013/01/18 11:03:49 omelois Exp $
+-->
+
+<plugin>
+   <extension-point id="registeredConfiguration" name="Registered Configuration" schema="schema/registeredConfiguration.exsd"/>
+   <extension-point id="javaQuery" name="Java Query" schema="schema/javaQuery.exsd"/>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.topcased.org/1.0.0/iterator/"
+            class="org.topcased.iterators.configurations.iterator.IteratorPackage"
+            genModel="metamodel/iterator.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            class="org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl"
+            type="iterator">
+      </parser>
+   </extension>
+
+</plugin>

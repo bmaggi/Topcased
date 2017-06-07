@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="family"
+    nsURI="http:///family.ecore" nsPrefix="family">
+  <eClassifiers xsi:type="ecore:EClass" name="Family" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="men" upperBound="-1" eType="#//Man"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="women" upperBound="-1"
+        eType="#//Woman" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="families" upperBound="-1"
+        eType="#//Family" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Person" abstract="true" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="birthDay" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="birthMonth" eType="#//Month"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="birthYear" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="birthCity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="father" eType="#//Man"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mother" eType="#//Woman"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//Person"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Man" eSuperTypes="#//Person">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wife" eType="#//Woman"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Woman" eSuperTypes="#//Person">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="husband" eType="#//Man"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Month">
+    <eLiterals name="January"/>
+    <eLiterals name="February" value="1"/>
+    <eLiterals name="March" value="2"/>
+    <eLiterals name="April" value="3"/>
+    <eLiterals name="May" value="4"/>
+    <eLiterals name="June" value="5"/>
+    <eLiterals name="July" value="6"/>
+    <eLiterals name="August" value="7"/>
+    <eLiterals name="September" value="8"/>
+    <eLiterals name="October" value="9"/>
+    <eLiterals name="November" value="10"/>
+    <eLiterals name="December" value="11"/>
+  </eClassifiers>
+</ecore:EPackage>

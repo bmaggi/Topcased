@@ -1,0 +1,204 @@
+<%@ jet 
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="NodeEditPart"
+	 version="$Id: NodeEditPart.javajet,v 1.10 2008/04/18 14:09:29 jako Exp $" %>
+<%	NodePartConfiguration nodePartConfiguration = (NodePartConfiguration) argument;
+	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) nodePartConfiguration.eContainer();
+	ObjectConfiguration objectConfiguration = nodePartConfiguration.getObject();
+	String partPrefix = nodePartConfiguration.getPrefix();%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>.edit;
+
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.FontData;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.jface.resource.JFaceResources;
+
+import org.topcased.modeler.editor.ModelerGraphicalViewer;
+
+import org.topcased.modeler.utils.Utils;
+
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
+
+import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.commands.Command;
+
+import org.topcased.draw2d.figures.LabelledPortFigure;
+import org.topcased.modeler.ModelerEditPolicyConstants;
+import org.topcased.modeler.di.model.GraphNode;
+import org.topcased.modeler.edit.EMFGraphNodeEditPart;
+import org.topcased.modeler.edit.policies.LabelDirectEditPolicy;
+import org.topcased.modeler.edit.policies.RestoreEditPolicy;
+import org.topcased.modeler.edit.policies.ResizableEditPolicy;
+import org.topcased.modeler.edit.policies.NonResizableEditPolicy;
+
+import org.topcased.modeler.requests.RestoreConnectionsRequest;
+import <%=diagramConfiguration.getBasePackage()%>.<%=diagramConfiguration.getPrefix()%>EditPolicyConstants;
+import <%=diagramConfiguration.getBasePackage()%>.commands.*;
+import <%=diagramConfiguration.getBasePackage()%>.policies.*;
+import <%=diagramConfiguration.getBasePackage()%>.figures.<%=partPrefix%>Figure;
+
+/**
+ * The <%=partPrefix%> object controller
+ *
+ * @generated
+ */
+<%	if (nodePartConfiguration.isAttachedToBorder()) {%>
+public class <%=partPrefix%>EditPart extends org.topcased.modeler.edit.PortEditPart
+<%	} else if (nodePartConfiguration.getSuperType() != null && nodePartConfiguration.getSuperType().getObject() instanceof ObjectConfiguration) {%>
+public class <%=partPrefix%>EditPart extends <%=nodePartConfiguration.getSuperType().getObject().getName()%>EditPart
+<%	} else if ("Port".equals(nodePartConfiguration.getType())) {%>
+public class <%=partPrefix%>EditPart extends org.topcased.modeler.edit.PortEditPart
+<%	} else {%>
+public class <%=partPrefix%>EditPart extends EMFGraphNodeEditPart
+<%	}%>
+{    
+	/**
+	 * Constructor
+	 *
+	 * @param obj the graph node
+	 * @generated
+	 */
+	public <%=partPrefix%>EditPart(GraphNode obj)
+	{
+		super(obj);
+	}
+
+	/**
+	 * Creates edit policies and associates these with roles
+	 *
+	 * @generated
+	 */
+	protected void createEditPolicies()
+	{
+		super.createEditPolicies();
+		
+        <%  List connectionList = new ArrayList();
+            for (Iterator iterator = diagramConfiguration.getParts().iterator() ; iterator.hasNext(); )
+            {
+            	PartConfiguration part = (PartConfiguration) iterator.next();
+            	if (part instanceof EdgePartConfiguration)
+            	{
+            		for (Iterator coupleIterator = ((EdgePartConfiguration) part).getSourceTargetCouple().iterator() ; coupleIterator.hasNext() ;)
+            		{
+            			SourceTargetCouple couple = (SourceTargetCouple) coupleIterator.next();
+            			
+            			if (couple.getSourceNode().equals(nodePartConfiguration) || couple.getTargetNode().equals(nodePartConfiguration))
+            			{
+        					if (!connectionList.contains(part.getObject().getName()))
+        					{
+        						connectionList.add(part.getObject().getName());
+        					}
+            			}
+            		}
+            	}
+            }
+            for (Iterator iter = connectionList.iterator() ; iter.hasNext(); )
+            {
+            	String partObjectName = (String) iter.next();%>
+		installEditPolicy(<%=diagramConfiguration.getPrefix()%>EditPolicyConstants.<%=partObjectName.toUpperCase()%>_EDITPOLICY, new <%=partObjectName%>EdgeCreationEditPolicy());
+		<%	}
+			if (objectConfiguration instanceof ModelObjectConfiguration) {%>
+		installEditPolicy(ModelerEditPolicyConstants.RESTORE_EDITPOLICY, new RestoreEditPolicy()
+        {
+            protected Command getRestoreConnectionsCommand(RestoreConnectionsRequest request)
+            {
+                return new <%=partPrefix%>RestoreConnectionCommand(getHost());
+            }
+        });
+		<%	}
+    		switch (nodePartConfiguration.getResizing().getValue()) {
+    			case ResizableType.WIDTH:%>
+        ResizableEditPolicy resizableEditPolicy = new ResizableEditPolicy();
+        resizableEditPolicy.setResizeDirections(PositionConstants.EAST_WEST);
+		installEditPolicy(ModelerEditPolicyConstants.RESIZABLE_EDITPOLICY, resizableEditPolicy);
+		<%			break;
+            	case ResizableType.HEIGHT:%>
+        ResizableEditPolicy resizableEditPolicy = new ResizableEditPolicy();
+        resizableEditPolicy.setResizeDirections(PositionConstants.NORTH_SOUTH);
+		installEditPolicy(ModelerEditPolicyConstants.RESIZABLE_EDITPOLICY, resizableEditPolicy);
+		<%      	break;
+            	case ResizableType.ALL:%>
+		installEditPolicy(ModelerEditPolicyConstants.RESIZABLE_EDITPOLICY, new ResizableEditPolicy());
+		<%      	break;
+			}
+			if (!nodePartConfiguration.isBackgroundColorChangeable()) {%>
+        installEditPolicy(ModelerEditPolicyConstants.CHANGE_BACKGROUND_COLOR_EDITPOLICY, null);
+        <%	}
+			if (!nodePartConfiguration.isForegroundColorChangeable()) {%>
+        installEditPolicy(ModelerEditPolicyConstants.CHANGE_FOREGROUND_COLOR_EDITPOLICY, null);
+        <%	}
+        	if (nodePartConfiguration.isContainer()) {%>
+        installEditPolicy(EditPolicy.LAYOUT_ROLE, new <%=partPrefix%>LayoutEditPolicy());
+        <%	}
+        	if (nodePartConfiguration.isDirectEditable()) {%>
+        installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
+        <%	}%>
+	}
+
+	/**
+	 * @see org.eclipse.gef.editparts.AbstractGraphicalEditPart#createFigure()
+	 * @generated
+	 */
+	protected IFigure createFigure()
+	{
+	<%	if ("Port".equals(nodePartConfiguration.getType()) && nodePartConfiguration.isDirectEditable()) {%>
+		return new LabelledPortFigure(new <%=partPrefix%>Figure());
+	<%	} else {%>
+        return new <%=partPrefix%>Figure();
+    <%	}%>
+	}
+	
+	
+	<% if(!nodePartConfiguration.isAbstract())
+	   {
+	%>
+	/**
+     * @see org.topcased.modeler.edit.GraphNodeEditPart#getPreferenceDefaultBackgroundColor()
+     * @generated
+     */
+    protected Color getPreferenceDefaultBackgroundColor() 
+    {
+    	String backgroundColor = getPreferenceStore().getString(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_DEFAULT_BACKGROUND_COLOR);
+    	if(backgroundColor.length()!=0)
+    	{
+    		return Utils.getColor(backgroundColor);    
+    	}
+    	return null;
+    }
+    
+    /**
+     * @see org.topcased.modeler.edit.GraphNodeEditPart#getPreferenceDefaultForegroundColor()
+     * @generated
+     */
+    protected Color getPreferenceDefaultForegroundColor() 
+    {
+    	String foregroundColor = getPreferenceStore().getString(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_DEFAULT_FOREGROUND_COLOR);
+    	if(foregroundColor.length()!=0)
+    	{
+    		return Utils.getColor(foregroundColor);
+    	}
+    	return null;
+    }
+    
+    /**
+     * @see org.topcased.modeler.edit.GraphNodeEditPart#getPreferenceDefaultFont()
+     * @generated
+     */
+    protected Font getPreferenceDefaultFont()
+    {
+    	String preferenceFont = getPreferenceStore().getString(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_DEFAULT_FONT);
+    	if(preferenceFont.length()!=0)
+    	{
+    		return Utils.getFont(new FontData(preferenceFont));
+    	}
+    	return null;
+
+    }
+	<% 
+		} 
+	%>
+}

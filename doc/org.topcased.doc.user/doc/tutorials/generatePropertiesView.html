@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="topic" name="DC.Type" />
+<meta name="DC.Title" content="Generate a Properties View" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="topic12724" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/visual.css" type="text/css" rel="stylesheet" />
+<title>MODELING FRAMEWORK - Tutorial : Generate a Properties View</title>
+</head>
+<body id="topic12724"><a name="topic12724"><!-- --></a>
+
+
+	<h1 class="topictitle1">Generate a Properties View</h1>
+
+	
+	
+	<div id="container"><a name="container"><!-- --></a>
+		<p class="h2">Introduction</p>
+
+		<p>
+			The Eclipse workbench provides a properties view which is used to view (and/or edit) properties of a selected item. The workbench provides extensions to define a custom user
+			interface for the properties view. This custom view is a tabbed properties view which allows you to create any user interface for your properties.
+		</p>
+
+		<p>In this article, you will learn how to generate a tabbed properties view according to the objects and features of a EMF model. To follow this tutorial, you can use any EMF
+			model.
+			
+		</p>
+
+		
+		<p class="h2">Required Plug-ins</p>
+
+		<p>Since we are going to generate a tabbed properties view from an EMF model, it is required to generate the model implementation plug-in, as well as the edit plug-in and then
+			the editor plug-in. You can find further information about EMF generation the following <a href="http://www.eclipse.org/articles/Article-Using%20EMF/using-emf.html" target="_blank">tutorial</a>.
+		</p>
+
+		<div class="p">The three generated plug-ins can be combined into two plug-ins, or even just one plug-in. In particular, the following combinations are supported :
+			<br /><ul>
+				<li>Model and edit + editor</li>
+
+				<li>Edit and editor + model</li>
+
+				<li>Model, edit, and editor</li>
+
+			</ul>
+
+		</div>
+
+		<p>The + symbol means the plug-ins are generated separately. Thus with a Model and edit + editor combination we will have two plug-ins generated, one featuring the model and the edit and the second one featuring an editor.</p>
+
+		<p>In this tutorial we will use the <strong>Model and edit + editor</strong> combination. When particular takedowns are required for other combination it will be specified.</p>
+
+
+		<p class="h2">The Configuration Model</p>
+
+		<p>
+			By using the properties configuration editor you will be able to create a model which specifies the way your view will be displayed. When you open the Tabbed Properties Configurator file in the editor, information is sorted as a tree.
+			From the chosen root node you will define : one or several tabs grouped by categories; inside each tab you will apply different kind of sections.
+		</p>
+
+		<img src="images/generatePropertiesView/tpv.gif" alt="tpv" />
+		
+		<p class="h2">Configuring the Tabbed Properties View</p>
+
+		<p>Once the model plug-in are created, we can proceed to configure our tabbed properties view by creating our configurator.</p>
+
+		<p>Select "<strong>New &gt; Other...</strong>" from either the File menu of the workbench or the context menu of the Navigator (Package Explorer) view.</p>
+
+		<img src="images/generatePropertiesView/newOther.jpg" alt="newOther" />
+		<p>The New Wizard will be displayed. Select "<strong>Topcased</strong>" folder and choose the "<strong>Topcased Configurators</strong>".</p>
+
+		<img src="images/generatePropertiesView/wizard.jpg" alt="wizard" />
+		<p>Click on "<strong>Next &gt;</strong>". In the next page select the destination project and the name of your configuration file. Be sure the file has *.propertiesconfigurator extension.</p>
+
+		<img src="images/generatePropertiesView/wizard2.jpg" alt="wizard2" />
+		<p>Next we will define the root object. Use the combo box with the <strong>Model Object</strong> label to set the input. All meta-model classes are listed inside. Choose the Tabbed View entry to build a complete model. Leave the default value in the XML encoding field.</p>
+
+		<img src="images/generatePropertiesView/wizard3.jpg" alt="wizard3" />
+		<p>Once you finished the wizard, the file you have just created will appear in the eclipse editor. If you expand the tree you will find the input you have selected before. In our case the Tabbed View element.</p>
+
+		<p>Each meta-model element can either create children or siblings excepting the input element which has only descendants and the tree leafs which define siblings. You also need to edit some required properties in each element using the properties view.</p>
+
+		<img src="images/generatePropertiesView/editor.jpg" alt="editor" />
+		<p>To begin the configuration, edit the properties of the input element. The GenModel field is a reference to your EMF model. Select the menu "<strong>Load Resource</strong>" from the context menu to load it. Browse in the workspace the *.genmodel which is going to feature your tabbed properties view.</p>
+
+		<img src="images/generatePropertiesView/load.jpg" alt="load" />
+		<p>
+			Once your EMF model loaded, select it using the button "..." of the GenModel property. Fill out the other properties. The <strong>project name</strong> property, the <strong>id</strong> property and the name property are necessary to generate a tabbed properties view plug-in.
+			If you decide to name your project as the Model implementation plug-in, the generator will create some new packages inside the plug-in, otherwise it will create a new plug-in project. In this tutorial we will work with separated plug-ins, but you can work with one combine plug-in if you desired.
+		</p>
+
+		<img src="images/generatePropertiesView/fill.jpg" alt="fill" />
+		<p>
+			Next step consist in defining at least one category to group tabs. Right click on the input element and select "<strong>New Child &gt; Category</strong>". Give a name to your categories using the default properties view.
+			Create some categories to your configurator file. Now you can start adding tabs to your categories. Use the context menu again to create a new Tab inside a selected category.
+			The order your categories are created have a signification. It means that every tab created in the top most category will be displayed at the top most levels followed by the tabs from the second category and so on.
+		</p>
+
+		<img src="images/generatePropertiesView/tab.jpg" alt="tab" />
+		<p>
+			Click on the created tab in the editor and edit its features. Give your tabs the label to be displayed. The afterTab property sort tabs inside a category. First tab might have this value null, the following tabs should specify its preceding tab.
+			Use the button "..." of the afterTab property so that you will notice a list of defined tabs. You can indent your tabs selectiong the indet check-box.
+		</p>
+
+		<img src="images/generatePropertiesView/tab2.jpg" alt="tab2" />
+		<p>You can create as much tabs as desired. If you want to create a tab in other categories, right click on another one and add tabs there.</p>
+
+		<p>
+			Then, you have to specify some custom sections where your properties will be edited/viewed. Tabs will feature sections in order to edit/view properties. Create new sections displaying the context menu from the considered tab.
+			You have three kind of sections as explained before. <strong>ATTENTION</strong>: at the moment, tabbed properties view generator manage single feature sections and advanced sections. Any multi-section section created will not be generated.
+		</p>
+
+		<img src="images/generatePropertiesView/tab3.jpg" alt="tab3" />
+		<p>
+			Once again, fill out the section properties. The Feature property will let you specify which Structural Feature from your EMF model is going to be edit/view in this section. As well as tabs, sections have labels to display next to edit fields.
+			Write the label tha suits well with the property you want to edit. In the <strong>feature</strong> field there is a button "..." to help user to select the model feature to edit. Since sections are not aware of each other, you use the after section
+			property to set their order of appearance. Keep on doing this until you have all the single sections you need.
+		</p>
+
+		<img src="images/generatePropertiesView/section.jpg" alt="section" />
+		<p>When we have complex applications with multiple properties, we may not want to provide custom tabs and sections for all the properties available for a selection. Clients can display the "original" table format properties view.</p>
+
+		<img src="images/generatePropertiesView/prop.jpg" alt="prop" />
+		<p>
+			Select a tab and create an Advanced section. It is adviced to create a new tab labeled Advanced. Default properties table is huge and may not fit correctly inside a tab with several sections. This section has the input property where user can
+			specify which EMF model element will feature this view. Use the button "Select..." to display the selection dialog. You can swap element from the left side of the dialog box. Elements in the right side are objects to feature the advanced view.
+		</p>
+
+		<img src="images/generatePropertiesView/advanced.jpg" alt="advanced" />
+		<p>
+			Do not forget to save your work! It is already done. In the context menu launch the tabbed view generation selection "<strong>Generate &gt; Properties View</strong>". All required packages and classes will be created in the project you specified.
+			Once it is done, there are few things to do manually to make it work. In the next paragraph you will know how to this.
+		</p>
+
+		
+		<p class="h2">Manual Takedowns</p>
+
+		<p>
+			If sections classes have been generated inside the model plug-in, you will notice a pluginToMerge.xml file and a MANIFESTtoMerge.MF file. Both files contains the necessary information to add.
+			At the moment there is no automatic merger, so we have to do it manually. Copy the three extension points of the pluginToMerge file into the plugin.xml file. Then add the dependencies declared at the MANIFESTtoMerge.MF to the MANIFEST.MF.
+		</p>
+
+		<div class="p">We have already mentioned that the generated plug-ins can be combined. The example provided in this tutorial has the following combination :
+			<br /><ul>
+				<li>Model, edit + editor + sections </li>
+
+			</ul>
+
+		</div>
+
+		<p>I advice you to do your generation this way. It is proper an easier to maintain, especially when you have to regenerate one module.</p>
+
+		
+		<p class="h2">Updating the workbench part.</p>
+
+		<p>
+			A workbench part that provides a tabbed property view needs to implement the : <span class="SourceText">ITabbedPropertySheetPageContributor</span> interface.
+			The plug-in which holds the workbench part must have a dependency entry to <strong>org.eclipse.ui.views.properties.tabbed</strong>.
+			Implementing this interface imply to implement the method <span class="SourceText">getContributor()</span>, which returns the contributor identifier for your part. Open the plugin.xml file of the generated section plug-in.
+			Go to the "Extension" section and expand the <strong>propertyContributor</strong>. Copy the value from the contributionId field and paste it as below :
+		</p>
+
+		<p class="sourceCode">    <span class="keyWord">public</span> String getContributorId() {</p>
+
+		<p class="sourceCode">        <span class="keyWord">return</span> <em>the value copied from the plugin.xml</em>;</p>
+
+		<p class="sourceCode">    }</p>
+
+
+		<p>
+			We also need to tell the workbench to use the tabbed property view. Each workbench part can define its own custom property sheet page by providing an adaptable for <span class="SourceText">IPropertySheetPage</span>.
+			The workbench will call your view's <span class="SourceText">getAdapter()</span>method and ask for an <span class="SourceText">IPropertySheetPage</span>. It is at this point that we tell Eclipse to use our tabbed property sheet page.
+		</p>
+
+
+		<p class="sourceCode">    <span class="keyWord">public</span>Object getAdapter(Class key) {</p>
+
+		<p class="sourceCode">        ...</p>
+
+		<p class="sourceCode">        <span class="keyWord">if</span> (key.equals(IPropertySheetPage.<span class="keyWord">class</span>)) {</p>
+
+		<p class="sourceCode">            <span class="keyWord">return</span> getPropertySheetPage();</p>
+
+		<p class="sourceCode">        }</p>
+
+		<p class="sourceCode">        ...</p>
+
+		<p class="sourceCode">    }</p>
+
+		
+		<p>The method getPropertySheetPage() implementation should be :</p>
+
+		
+		<p class="sourceCode">    <span class="keyWord">public</span> TabbedPropertySheetPage getPropertySheetPage() {</p>
+
+		<p class="sourceCode">        <span class="keyWord">if</span> (<span class="objectField">propertySheetPage</span> == <span class="keyWord">null</span> || <span class="objectField">propertySheetPage</span>.getControl() == <span class="keyWord">null</span>){</p>
+
+		<p class="sourceCode">            <span class="objectField">propertySheetPage</span> = <span class="keyWord">new</span> <em>&lt;Prefix&gt;</em>PropertySheetPage(<span class="keyWord">this</span>);</p>
+
+		<p class="sourceCode">        }</p>
+
+		<p class="sourceCode">        <span class="keyWord">return</span> <span class="objectField">propertySheetPage</span>;</p>
+
+		<p class="sourceCode">    }</p>
+
+		
+		<p>Of course you have to change the class field propertySheetPage type into <span class="SourceText">TabbedPropertySheetPage</span>.</p>
+
+		<p>
+			The class <em>&lt;Prefix&gt;</em><span class="SourceText">PropertySheetPage</span> has been generated in the advanced package of the sections plug-in.
+			In combinations where the editor's plug-in has been generated separately, just open the MANIFEST.MF and add a dependency to the sections plug-in. If you have chosen the Model, edit, and editor + sections combination, we have to do a
+			supplementary modification. Indeed, if we do not want to find a cyclic dependency, the PropertySheetPage must be moved into the Model, edit, and editor's plug-in and add the following dependencies :
+		</p>
+
+		<p class="metaSource">org.eclipse.ui.views.properties.tabbed,</p>
+
+		<p class="metaSource">org.topcased.tabbedproperties</p>
+
+		
+		<p>And that is it!! In this article, you have learned how to generate a tabbed properties view according to the objects and features of a EMF model.</p>
+
+		
+	</div>
+
+
+</body>
+</html>

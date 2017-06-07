@@ -1,0 +1,33 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="EditPolicyConstants"
+	 version="$Id: EditPolicyConstants.javajet,v 1.5 2006/10/26 15:06:23 jako Exp $" %>
+<%	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>;
+
+/**
+ * A collection of Roles. Each identifier is used to key the EditPolicy.
+ *
+ * @generated
+ */
+public interface <%=diagramConfiguration.getPrefix()%>EditPolicyConstants
+{
+
+<%
+for (Iterator iter = diagramConfiguration.getParts().iterator(); iter.hasNext(); )
+{
+	PartConfiguration partConf = (PartConfiguration) iter.next();
+	String name = partConf.getPrefix();
+%>
+    /**
+     * The key used to install an <i><%=name%></i> EditPolicy.
+     * @generated
+     */
+    String <%=name.toUpperCase()%>_EDITPOLICY = "<%=name%> EditPolicy";
+    
+<%
+}
+%>
+}

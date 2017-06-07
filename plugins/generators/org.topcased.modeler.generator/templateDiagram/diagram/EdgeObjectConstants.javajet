@@ -1,0 +1,48 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="EdgeObjectConstants"
+	 version="$Id: EdgeObjectConstants.javajet,v 1.5 2006/10/26 15:06:23 jako Exp $" %>
+<%	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>;
+
+/**
+ * An interface defining EdgeObject Constants.<br>
+ * 
+ * @generated
+ */
+public interface <%=diagramConfiguration.getPrefix()%>EdgeObjectConstants
+{
+<%
+	List edgeObjectNameList = new ArrayList();
+	for (Iterator i = diagramConfiguration.getParts().iterator(); i.hasNext();)
+	{
+		PartConfiguration partConf = (PartConfiguration) i.next();
+		if (partConf instanceof EdgePartConfiguration)
+		{
+			for (Iterator i2 = ((EdgePartConfiguration) partConf).getEdgeObjects().iterator(); i2.hasNext();)
+			{
+				EdgeObject edgeObject = (EdgeObject) i2.next();
+				String edgeObjectName = edgeObject.getId();
+				if (!edgeObjectNameList.contains(edgeObjectName))
+				{
+					edgeObjectNameList.add(edgeObjectName);
+				}
+			}
+		}
+	}
+	for (Iterator i = edgeObjectNameList.iterator(); i.hasNext();)
+	{
+		String currentEdgeObjectName = (String) i.next();
+%>
+    /**
+	 * Public constant defining the <%=currentEdgeObjectName%> EdgeObject id.
+	 * 
+	 * @generated
+	 */
+    String <%=currentEdgeObjectName.toUpperCase()%>_EDGE_OBJECT_ID = "<%=currentEdgeObjectName%>EdgeObject";
+<%
+	}
+%>
+}

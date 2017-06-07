@@ -1,0 +1,28 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="EditPart2ModelAdapterFactory"
+	 version="$Id: EditPart2ModelAdapterFactory.javajet,v 1.1 2006/11/15 08:57:16 jako Exp $" %>
+<%	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>;
+
+/**
+ * @generated
+ */
+public class EditPart2ModelAdapterFactory extends org.topcased.modeler.editor.EditPart2ModelAdapterFactory
+{
+
+    /**
+     * Constructor
+     *
+     * @param adaptableClass
+     * @param adapterType
+     * @generated
+     */
+    public EditPart2ModelAdapterFactory(Class adaptableClass, Class adapterType)
+    {
+        super(adaptableClass, adapterType);
+    }
+
+}

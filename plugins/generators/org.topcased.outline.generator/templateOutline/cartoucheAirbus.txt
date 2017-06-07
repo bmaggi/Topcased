@@ -1,0 +1,9 @@
+/*******************************************************************************
+ * 
+ * Copyright AIRBUS FRANCE, 2005. All rights reserved.
+ * 
+ * This document and all information contained herein is the sole property of
+ * AIRBUS FRANCE. No intellectual property rights are granted by the delivery of
+ * this document or the disclosure of its content.
+ * 
+ ******************************************************************************/

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Topcased Developer documentation
+Bundle-SymbolicName: org.topcased.doc.sdk;singleton:=true
+Bundle-Version: 2.5.0.qualifier
+Bundle-Vendor: Topcased
+Require-Bundle: org.eclipse.ui.cheatsheets,
+ org.eclipse.ui,
+ org.eclipse.help

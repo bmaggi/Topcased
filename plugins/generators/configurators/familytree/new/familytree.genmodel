@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2006 Anyware Technologies."
+    modelDirectory="/org.topcased.familytree/src" editDirectory="/org.topcased.familytree/src"
+    editorDirectory="/org.topcased.familytree/src" modelPluginID="org.topcased.familytree"
+    modelName="Familytree" modelPluginClass="org.topcased.familytree.FamilyTreePlugin"
+    editPluginClass="" editorPluginClass="" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore">
+  <foreignModel>familytree.ecore</foreignModel>
+  <genPackages prefix="Familytree" basePackage="org.topcased" resource="XML" disposableProviderFactory="true"
+      generateExampleClass="false" ecorePackage="familytree.ecore#/">
+    <genClasses ecoreClass="familytree.ecore#//FamilyTree">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference familytree.ecore#//FamilyTree/persons"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference familytree.ecore#//FamilyTree/weddings"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute familytree.ecore#//FamilyTree/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="familytree.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute familytree.ecore#//Person/firstName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute familytree.ecore#//Person/lastName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute familytree.ecore#//Person/birthYear"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute familytree.ecore#//Person/deathYear"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference familytree.ecore#//Person/children"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference familytree.ecore#//Person/parents"/>
+    </genClasses>
+    <genClasses ecoreClass="familytree.ecore#//Man">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference familytree.ecore#//Man/wife"/>
+    </genClasses>
+    <genClasses ecoreClass="familytree.ecore#//Woman">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference familytree.ecore#//Woman/husband"/>
+    </genClasses>
+    <genClasses ecoreClass="familytree.ecore#//Wedding">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference familytree.ecore#//Wedding/wife"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference familytree.ecore#//Wedding/husband"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

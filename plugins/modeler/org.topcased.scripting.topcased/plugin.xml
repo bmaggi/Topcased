@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.topcased.scripting.getSelection">
+      <getter
+            class="org.topcased.scripting.topcased.getter.GetSelectionFromDiagram"
+            name="FromTopcasedDiagram"
+            priority="HIGH">
+      </getter>
+      <getter
+            class="org.topcased.scripting.topcased.getter.GetSelectionFromEMFGraphNode"
+            name="FromTopcasedEMFGraphNode"
+            priority="HIGH">
+      </getter>
+   </extension>
+   <extension
+         point="org.topcased.scripting.scriptProjectNature">
+      <projectNature
+            editorName="Topcased"
+            natureId="org.topcased.core.topcasednature">
+      </projectNature>
+   </extension>
+
+</plugin>

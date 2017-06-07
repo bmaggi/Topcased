@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.topcased.modeler" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.topcased.modeler" id="outline" name="Outline"/>
+      </appInfo>
+      <documentation>
+         This extension allows the developer of a Topcased editor to configure the editor outline behavior.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="createChildMenu" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="sorter" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="metamodelFilter" minOccurs="0" maxOccurs="1"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="createChildMenu">
+      <annotation>
+         <appInfo>
+            <meta.element labelAttribute="name"/>
+         </appInfo>
+         <documentation>
+            This element represents a menu manager that the end user would be able to choose in a Topcased editor outline as the &apos;Create child&apos; menu.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  This is the unique id of this &apos;Create child&apos; menu configuration.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  This is the display name of this &apos;Create child&apos; menu configuration.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  This is the class that represents a &apos;Create child&apos; menu manager. It should extend org.eclipse.jface.action.MenuManager and be an implementation of org.topcased.modeler.editor.outline.IMixedCreateChildMenu (though org.topcased.modeler.editor.outline.ICreateChildMenu is also supported for compatibility).
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn="org.eclipse.jface.action.MenuManager"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="editorId" type="string">
+            <annotation>
+               <documentation>
+                  This is the id of the Topcased editor in which this &apos;Create child&apos; menu manager can be used by the end user. If no id, this menu manager will be available in all the existing Topcased editors.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="filter">
+      <annotation>
+         <appInfo>
+            <meta.element labelAttribute="name"/>
+         </appInfo>
+         <documentation>
+            This element represents a filter that the end user would be able to activate or deactivate in a Topcased editor outline.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  This is the unique id of this outline filter.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  This is the display name of this outline filter.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  This is the class that represents a an outline filter. It must be an implementation of org.eclipse.jface.viewers.ViewerFilter class.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn="org.eclipse.jface.viewers.ViewerFilter"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="editorId" type="string">
+            <annotation>
+               <documentation>
+                  This is the id of the Topcased editor in which this outline filter can be used by the end user. If no id, this filter will be available in all the existing Topcased editors.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="sorter">
+      <annotation>
+         <appInfo>
+            <meta.element labelAttribute="name" icon="icon"/>
+         </appInfo>
+         <documentation>
+            This element represents a sorter that the end user would be able to activate or deactivate in a Topcased editor outline.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  This is the unique id of this outline sorter.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  This is the display name of this outline sorter.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  This is the class that represents a an outline sorter. It must be an implementation of org.eclipse.jface.viewers.ViewerSorter class.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn="org.eclipse.jface.viewers.ViewerSorter"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="icon" type="string">
+            <annotation>
+               <documentation>
+                  This is the icon to use to display this sorter in the outline tool bar.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="resource"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="editorId" type="string">
+            <annotation>
+               <documentation>
+                  This is the id of the Topcased editor in which this outline sorter can be used by the end user. If no id, this sorter will be available in all the existing Topcased editors.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="metamodelFilter">
+      <annotation>
+         <documentation>
+            This element represents a metamodel filter. With it, the end user will be able to create its own filters based on the editor metamodel
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  This is the unique id of this outline metamodel filter.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="editorId" type="string" use="required">
+            <annotation>
+               <documentation>
+                  This is the id of the Topcased editor in which this outline filter can be used by the end user. If no id, this filter will be available in all the existing Topcased editors.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  This is the class that represents a an outline metamodel filter. It must extend the class rg.topcased.modeler.editor.outline.filters.GenericMetamodelFilter and override the methods getMetamodelElements()  and getClass().
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn="org.topcased.modeler.editor.outline.filters.GenericMetamodelFilter:"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         0.6.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         None
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiInfo"/>
+      </appInfo>
+      <documentation>
+         None
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         None
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Copyright (c) 2005, 2006 AIRBUS FRANCE and others.
+All rights reserved. This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+      </documentation>
+   </annotation>
+
+</schema>

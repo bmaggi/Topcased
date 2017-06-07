@@ -1,0 +1,12 @@
+<%@ jet
+	package="org.topcased.modeler.generator.templates"
+	imports="java.util.* org.topcased.modeler.editorconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	class="BuildProperties"
+	version="$Id: build.propertiesjet,v 1.3 2006/05/02 14:04:34 jako Exp $" %>
+<%EditorConfiguration editorConfiguration = (EditorConfiguration) argument;%>
+bin.includes =	plugin.xml,\
+				.,\
+				icons/,\
+				META-INF/
+source.. = src/
+output.. = bin/

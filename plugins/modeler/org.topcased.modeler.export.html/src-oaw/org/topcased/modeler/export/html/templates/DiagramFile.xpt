@@ -1,0 +1,43 @@
+«IMPORT model»
+«IMPORT ecore»
+«EXTENSION org::topcased::modeler::export::html::templates::ImageExtensions»
+
+«DEFINE file FOR Diagram»
+«FILE this.getHMTLName()»
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>«this.getDiagramName()»</title>
+	<script language="JavaScript" type="text/javascript" src="../script/docframe.js"></script>
+</head>
+
+<body>
+	<div id="diagram">
+		<h2>Diagram «this.name»</h2>
+		<p>
+			&nbsp&nbsp<a href="«this.getParentDiagramPage()»" target="showframe"><img src="../icons/go-up.png" style="border-style: none" title="Open parent diagram"/></a>
+			&nbsp&nbsp<a href="«this.getRootDiagramPage()»" target="showframe"><img src="../icons/go-root.png" style="border-style: none" title="Open root diagram"/></a>
+		</p>
+		<map name="diagramMap">
+			«EXPAND specificArea FOR this-»
+			<area shape="rect" coords="«this.getCoordinates()»" onmouseover="changeDoc('«this.getDiagramDocumentationURL()»', event)" />
+		</map>
+		<img src="images/«this.getImageName()»" class="diagramImage" usemap="#diagramMap" border="0"/>
+	</div>
+</body>
+</html>
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE specificArea FOR GraphElement-»
+	«FOREACH contained.typeSelect(GraphElement).sortListByCoordinates() AS content-»
+		«REM»Add areas for contents before.«ENDREM»
+		«EXPAND specificArea FOR content-»
+		«IF content.getCoordinates() != ""-»
+			<area shape="rect" coords="«content.getCoordinates()»" onmouseover="changeDoc('«content.getDocumentationURL()»', event)"«IF content.hasDiagrams()-» href="«content.getDiagram()»"«ENDIF-»/>
+   	 	«ENDIF-»
+	«ENDFOREACH-»
+«ENDDEFINE»
+
+«DEFINE specificArea FOR DiagramElement-»
+«ENDDEFINE»

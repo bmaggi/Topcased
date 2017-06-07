@@ -1,0 +1,21 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.modeler.diagramconfigurator.*"
+	 class="ImagesProperties"
+	 version="$Id: images.propertiesjet,v 1.3 2006/07/24 07:01:16 david Exp $" %>
+
+<%
+DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;
+
+for (Iterator iterator = diagramConfiguration.getParts().iterator(); iterator.hasNext(); )
+{
+	PartConfiguration partConf = (PartConfiguration) iterator.next();
+	String name = partConf.getPrefix();
+	
+%>
+<%=name.toUpperCase()%>=icons/<%=name%>.gif
+<%=name.toUpperCase()%>_LARGE=icons/<%=name%>_24.gif
+
+<%
+}
+%>

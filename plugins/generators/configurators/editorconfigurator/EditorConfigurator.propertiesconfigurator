@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertiesconfigurator:TabbedView xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:propertiesconfigurator="http://www.topcased.org/PropertiesViewConfiguration/1.0" projectName="org.topcased.modeler.editorconfigurator" id="org.topcased.modeler.editorconfigurator.properties" name="Editor configurator tabbed properties view" basePackage="org.topcased.modeler.editorconfigurator.internal.properties">
+  <categories name="Editor Configurator Tabbed Properties">
+    <tabs label="All">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Name">
+        <feature href="editorconfigurator.genmodel#//editorconfigurator/EditorConfiguration/name"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.0" label="Project Name">
+        <feature href="editorconfigurator.genmodel#//editorconfigurator/EditorConfiguration/projectName"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.1" label="GenModel">
+        <feature href="editorconfigurator.genmodel#//editorconfigurator/EditorConfiguration/genModel"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.2" label="Plugin Version">
+        <feature href="editorconfigurator.genmodel#//editorconfigurator/EditorConfiguration/pluginVersion"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.3" label="Provider">
+        <feature href="editorconfigurator.genmodel#//editorconfigurator/EditorConfiguration/provider"/>
+      </sections>
+    </tabs>
+    <tabs label="Template &amp; Merge" afterTab="//@categories.0/@tabs.0">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.4" label="Force Overwrite">
+        <feature href="editorconfigurator.genmodel#//editorconfigurator/EditorConfiguration/forceOverwrite"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.1/@sections.0" label="Organize Imports">
+        <feature href="editorconfigurator.genmodel#//editorconfigurator/EditorConfiguration/organizeImports"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.1/@sections.1" label="CopyrightText" multiline="true">
+        <feature href="editorconfigurator.genmodel#//editorconfigurator/EditorConfiguration/copyrightText"/>
+      </sections>
+    </tabs>
+    <tabs label="Advanced" afterTab="//@categories.0/@tabs.1">
+      <sections xsi:type="propertiesconfigurator:AdvancedSection" label="Advanced Section">
+        <input href="editorconfigurator.genmodel#//editorconfigurator/EditorConfiguration"/>
+      </sections>
+    </tabs>
+  </categories>
+  <genModel href="editorconfigurator.genmodel#/"/>
+</propertiesconfigurator:TabbedView>

@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" activeDiagram="//@diagrams.0">
+  <model href="PropertiesViewConfiguration.ecore#/"/>
+  <diagrams position="0,0" size="100,100" name="PropertiesViewConfiguration" viewport="46,589">
+    <property key="pageFormatName" value="A3"/>
+    <property key="diagramWidth" value="1188"/>
+    <property key="diagramHeight" value="1680"/>
+    <property key="pageMarginName" value="Small Margin"/>
+    <property key="diagramTopMargin" value="20"/>
+    <property key="diagramBottomMargin" value="20"/>
+    <property key="diagramLeftMargin" value="20"/>
+    <property key="diagramRightMargin" value="20"/>
+    <property key="orientation" value="portrait"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="org.topcased.modeler.ecore.ediagram">
+      <element href="PropertiesViewConfiguration.ecore#/"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" position="216,31" size="260,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.2 //@diagrams.0/@contained.6 //@diagrams.0/@contained.13"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//TabbedView"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="PropertiesViewConfiguration.ecore#//TabbedView"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="PropertiesViewConfiguration.ecore#//TabbedView/id"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="PropertiesViewConfiguration.ecore#//TabbedView/projectName"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="PropertiesViewConfiguration.ecore#//TabbedView/name"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="PropertiesViewConfiguration.ecore#//TabbedView/basePackage"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="PropertiesViewConfiguration.ecore#//TabbedView"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="PropertiesViewConfiguration.ecore#//TabbedView/getProjectNameUnspaced"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="PropertiesViewConfiguration.ecore#//TabbedView/getIdUnspaced"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="PropertiesViewConfiguration.ecore#//TabbedView/replaceSpaces"/>
+          </semanticModel>
+        </contained>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="228,284" size="236,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.2 //@diagrams.0/@contained.6 //@diagrams.0/@contained.15 //@diagrams.0/@contained.16"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//Category"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="PropertiesViewConfiguration.ecore#//Category"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="PropertiesViewConfiguration.ecore#//Category/name"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="PropertiesViewConfiguration.ecore#//Category"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.0/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//TabbedView/categories"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="8" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="8" vDistance="-6"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="522,848" size="134,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.11 //@diagrams.0/@contained.19"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//AdvancedSection"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="PropertiesViewConfiguration.ecore#//AdvancedSection"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="PropertiesViewConfiguration.ecore#//AdvancedSection"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="279,848" size="169,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.9 //@diagrams.0/@contained.20"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//MultipleFeatureSection"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="PropertiesViewConfiguration.ecore#//MultipleFeatureSection"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="PropertiesViewConfiguration.ecore#//MultipleFeatureSection"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="516,939" size="-1,-1">
+      <property key="backgroundColor" value="144,238,144"/>
+      <anchorage graphEdge="//@diagrams.0/@contained.11"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="GenModel.ecore#//GenClass"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="GenModel.ecore#//GenClass"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="GenModel.ecore#//GenClass"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.1/@anchorage.0 //@diagrams.0/@contained.0/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//Category/parent"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="8" vDistance="14"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="6" vDistance="-10"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="32,842" size="168,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.10 //@diagrams.0/@contained.21"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//SingleFeatureSection"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="PropertiesViewConfiguration.ecore#//SingleFeatureSection"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="PropertiesViewConfiguration.ecore#//SingleFeatureSection/multiline"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="PropertiesViewConfiguration.ecore#//SingleFeatureSection"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="174,939" size="150,-1">
+      <property key="backgroundColor" value="144,238,144"/>
+      <anchorage graphEdge="//@diagrams.0/@contained.9 //@diagrams.0/@contained.10"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="GenModel.ecore#//GenFeature"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="GenModel.ecore#//GenFeature"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="GenModel.ecore#//GenFeature"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.4/@anchorage.0 //@diagrams.0/@contained.8/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//MultipleFeatureSection/features"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="16" vDistance="5"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="44" vDistance="-1"/>
+      <waypoints>[0, 100, 114, 0]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.7/@anchorage.0 //@diagrams.0/@contained.8/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//SingleFeatureSection/feature"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="11" vDistance="5"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="23" vDistance="-8"/>
+      <waypoints>[0, 100, -133, 0]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.3/@anchorage.0 //@diagrams.0/@contained.5/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//AdvancedSection/input"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="18" vDistance="7"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="18" vDistance="-9"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="627,81" size="-1,-1">
+      <property key="backgroundColor" value="144,238,144"/>
+      <anchorage graphEdge="//@diagrams.0/@contained.13"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="GenModel.ecore#//GenModel"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="GenModel.ecore#//GenModel"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="GenModel.ecore#//GenModel"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.0/@anchorage.0 //@diagrams.0/@contained.12/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//TabbedView/genModel"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="16" vDistance="8"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="31" vDistance="-5"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="264,440" size="164,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.15 //@diagrams.0/@contained.16 //@diagrams.0/@contained.17 //@diagrams.0/@contained.22 //@diagrams.0/@contained.23"/>
+      <anchorage graphEdge="//@diagrams.0/@contained.17"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//Tab"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="PropertiesViewConfiguration.ecore#//Tab"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="PropertiesViewConfiguration.ecore#//Tab/id"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="PropertiesViewConfiguration.ecore#//Tab/label"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="PropertiesViewConfiguration.ecore#//Tab/indented"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="PropertiesViewConfiguration.ecore#//Tab"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.14/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//Tab/category"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.1/@anchorage.0 //@diagrams.0/@contained.14/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//Category/tabs"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.14/@anchorage.0 //@diagrams.0/@contained.14/@anchorage.1">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//Tab/afterTab"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="13" vDistance="8"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="34" vDistance="13"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="247,644" size="198,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.19 //@diagrams.0/@contained.20 //@diagrams.0/@contained.21 //@diagrams.0/@contained.22 //@diagrams.0/@contained.23 //@diagrams.0/@contained.24"/>
+      <anchorage graphEdge="//@diagrams.0/@contained.24"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//AbstractSection"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="PropertiesViewConfiguration.ecore#//AbstractSection"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="PropertiesViewConfiguration.ecore#//AbstractSection/id"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="PropertiesViewConfiguration.ecore#//AbstractSection/label"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="PropertiesViewConfiguration.ecore#//AbstractSection"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="PropertiesViewConfiguration.ecore#//AbstractSection/getClassName"/>
+          </semanticModel>
+        </contained>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.3/@anchorage.0 //@diagrams.0/@contained.18/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+      <waypoints>[0, -64, 243, 119]</waypoints>
+      <waypoints>[-243, -64, 0, 119]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.4/@anchorage.0 //@diagrams.0/@contained.18/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+      <waypoints>[0, -64, 17, 119]</waypoints>
+      <waypoints>[-17, -64, 0, 119]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.7/@anchorage.0 //@diagrams.0/@contained.18/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+      <waypoints>[0, -64, -230, 119]</waypoints>
+      <waypoints>[230, -64, 0, 119]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.18/@anchorage.0 //@diagrams.0/@contained.14/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//AbstractSection/tab"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="15" vDistance="-5"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="35" vDistance="-11"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.14/@anchorage.0 //@diagrams.0/@contained.18/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//Tab/sections"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="9" vDistance="7"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="9" vDistance="-6"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.18/@anchorage.0 //@diagrams.0/@contained.18/@anchorage.1">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="PropertiesViewConfiguration.ecore#//AbstractSection/afterSection"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="6" vDistance="12"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="26" vDistance="12"/>
+    </contained>
+  </diagrams>
+</diagrams:Diagrams>

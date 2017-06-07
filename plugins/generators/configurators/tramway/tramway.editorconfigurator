@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editorconfigurator:EditorConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:editorconfigurator="http://www.topcased.org/editorconfigurator/0.10" xmi:id="_7mXmoOOGEdutbJivASmdLA" name="tramEditConf" projectName="org.topcased.traceability.confEditor">
+  <genModel href="ttm.genmodel#/"/>
+</editorconfigurator:EditorConfiguration>

@@ -1,0 +1,138 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.editorconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="Edit"
+	 version="$Id: Edit.javajet,v 1.5 2006/05/02 14:04:34 jako Exp $" %>
+<%@ include file="cartoucheAirbus.txt"%>
+
+<%EditorConfiguration editorConfiguration = (EditorConfiguration) argument;%>
+package <%=editorConfiguration.getProjectName()%>servicereadonly.services;
+
+
+import java.util.Map;
+
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.ide.IDE;
+import org.topcased.bus.core.CorePlugin;
+import org.topcased.bus.core.IService;
+import org.topcased.modeler.ModelerPlugin;
+import <%=editorConfiguration.getProjectName()%>servicereadonly.<%=editorConfiguration.getPrefix()%>ServicePlugin;
+import <%=editorConfiguration.getProjectName()%>servicereadonly.editor.<%=editorConfiguration.getPrefix()%>ServiceEditor;
+
+/**
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ * 
+ * <br>creation : 17 mars 2005
+ * @author <a href="mailto:jacques.lescot@anyware-tech.com">Jacques LESCOT</a>
+ * @generated
+ */
+public class <%=editorConfiguration.getPrefix()%>Edit implements IService
+{
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * 
+     * @see org.topcased.bus.core.IService#serviceRun(java.util.Map)
+	 * @generated
+     */
+    public Object serviceRun(Map parameters)
+    {
+        // check if the Map is not null
+        if (parameters==null){
+            CorePlugin.log(this.getClass(), "Parameters list is null. It must have exactly one parameter", IStatus.ERROR);
+            return null;            
+        }
+
+        // get the "XMIFile" parameter and open the file     
+        if (parameters.containsKey("XMIFile")){
+			if (parameters.get("XMIFile") instanceof String) {
+				openFile((String) parameters.get("XMIFile"), <%=editorConfiguration.getPrefix()%>ServiceEditor.getId());
+			}
+            else{
+                CorePlugin.log(this.getClass(), "The 'XMIFile' parameter must be a String", IStatus.ERROR);
+            }
+        }
+        else{
+            CorePlugin.log(this.getClass(), "The 'XMIFile' parameter is missing", IStatus.ERROR);
+        }
+        return null;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * 
+     * @see org.topcased.bus.core.IService#serviceRun(java.lang.Object[])
+     * @generated
+     */
+    public Object serviceRun(Object[] parameters)
+    {
+        if (parameters == null || parameters.length != 1)
+        {
+            int nbParam = (parameters == null) ? 0 : parameters.length;
+            CorePlugin.log("Exactly one parameter is required. Currently there is " + nbParam + " parameter(s).",
+                    IStatus.ERROR);
+            return null;
+        }
+        if (parameters[0] instanceof String)
+        {
+            openFile(parameters[0].toString(), <%=editorConfiguration.getPrefix()%>ServiceEditor.getId());
+        }
+        else
+        {
+            CorePlugin.log("The given parameter is not a string. A string is required.", IStatus.ERROR);
+        }
+        return null;
+    }
+    
+    /**
+     * Common method that open a file (given by the path) with the editor
+     * associated with the given Id.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * 
+     * @param path the path of the file to open
+     * @param editorId the unique identifier od the editor to use.
+     * @return <code>true</code> if the operation succeed, <code>false</code> neither
+     * @generated
+     */
+    protected boolean openFile(String path, String editorId)
+    {
+        IFile modelFile = null;
+        IPath pathFile = new Path(path);
+
+        IResource res = ModelerPlugin.getWorkspace().getRoot().findMember(pathFile);
+        if (res != null && res instanceof IFile)
+        {
+            modelFile = (IFile) res;
+        }
+        
+        if (modelFile == null)
+        {
+            CorePlugin.log(this.getClass(), "Error : invalid file !", IStatus.ERROR);
+            return false;
+        }
+
+        // Open the model
+        try
+        {
+            IDE.openEditor(<%=editorConfiguration.getPrefix()%>ServicePlugin.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage(),
+                    modelFile, editorId, true);
+            return true;
+        }
+        catch (PartInitException pie)
+        {
+            CorePlugin.log(pie);
+        }
+
+        return false;
+    }
+
+}

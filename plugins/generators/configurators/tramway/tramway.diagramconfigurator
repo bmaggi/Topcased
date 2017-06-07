@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramconfigurator:DiagramConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagramconfigurator="http://www.topcased.org/diagramconfigurator/0.10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_O-RE4OOGEdutbJivASmdLA" projectName="org.topcased.traceability.hmi.modeler" name="traceability" package="org.topcased.traceability.hmi.modeler" prefix="TW">
+  <palette xmi:id="_O-RE4eOGEdutbJivASmdLA" name="p1">
+    <paletteCategories xmi:id="_O-RE4uOGEdutbJivASmdLA" name="Objects">
+      <items xmi:id="_O-aO0OOGEdutbJivASmdLA" name="Document" part="_O-aO0-OGEdutbJivASmdLA"/>
+      <items xmi:id="_O-aO0uOGEdutbJivASmdLA" name="Covers" part="_O-aO1eOGEdutbJivASmdLA"/>
+      <items xmi:id="_tKaBcOOIEdutbJivASmdLA" name="Or Cover Point" part="_KI-fAOOIEdutbJivASmdLA">
+        <eAnnotations xmi:id="_WTmMUOOJEdutbJivASmdLA" source="codeCustom">
+          <details xmi:id="_WTmMUeOJEdutbJivASmdLA" key="initModelObject" value="element.setAndCover(false);"/>
+        </eAnnotations>
+      </items>
+      <items xmi:id="_Yw8_kOOJEdutbJivASmdLA" name="And Cover Point" part="_oONNMOOIEdutbJivASmdLA">
+        <eAnnotations xmi:id="_Yw8_keOJEdutbJivASmdLA" source="codeCustom">
+          <details xmi:id="_Yw8_kuOJEdutbJivASmdLA" key="initModelObject" value="element.setAndCover(true);"/>
+        </eAnnotations>
+      </items>
+    </paletteCategories>
+  </palette>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_O-aO0-OGEdutbJivASmdLA" object="_O-j_0OOGEdutbJivASmdLA" type="Container" childElements="_KI-fAOOIEdutbJivASmdLA _oONNMOOIEdutbJivASmdLA" defaultBackgroundColor="244,242,193" container="true" layout="PortLayout" defaultWidth="80" defaultHeight="100"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_O-aO1eOGEdutbJivASmdLA" object="_O_dXsOOGEdutbJivASmdLA" defaultForegroundColor="128,128,192" lineWidth="2" targetDecoration="ARROW">
+    <sourceTargetCouple xmi:id="_O-aO1uOGEdutbJivASmdLA" sourceNode="_O-aO0-OGEdutbJivASmdLA" targetNode="_P4MRUOOYEduer4dPy4npEg">
+      <refTargetToSource xsi:type="ecore:EReference" href="ttm.ecore#//CoverPoint/connectedDocuments"/>
+    </sourceTargetCouple>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_KI-fAOOIEdutbJivASmdLA" object="_O_TmsOOGEdutbJivASmdLA" prefix="OrCoverPoint" type="Port" superType="_P4MRUOOYEduer4dPy4npEg" defaultBackgroundColor="244,242,193" defaultForegroundColor="149,149,255" resizing="NONE" directEditable="false" defaultWidth="25" defaultHeight="25" attachedToBorder="true">
+    <constraint xmi:id="_K3LBwOOIEdutbJivASmdLA" language="ocl" rule="self.andCover=false"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_oONNMOOIEdutbJivASmdLA" object="_O_TmsOOGEdutbJivASmdLA" prefix="AndCoverPoint" type="Port" superType="_P4MRUOOYEduer4dPy4npEg" defaultBackgroundColor="223,223,255" resizing="NONE" directEditable="false" defaultWidth="25" defaultHeight="25" minimumWidth="25" minimumHeight="25" attachedToBorder="true">
+    <constraint xmi:id="_oONNMeOIEdutbJivASmdLA" language="ocl" rule="self.andCover=true"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_P4MRUOOYEduer4dPy4npEg" object="_O_TmsOOGEdutbJivASmdLA" type="Port" defaultBackgroundColor="255,128,0" resizing="NONE" directEditable="false" defaultWidth="25" defaultHeight="25" minimumWidth="25" minimumHeight="25" maximumWidth="25" maximumHeight="25" attachedToBorder="true"/>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_O-j_0OOGEdutbJivASmdLA">
+    <genClass href="ttm.genmodel#//ttm/Document"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_O_TmsOOGEdutbJivASmdLA">
+    <genClass href="ttm.genmodel#//ttm/CoverPoint"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" xmi:id="_O_dXsOOGEdutbJivASmdLA" name="Covers"/>
+  <genModel href="ttm.genmodel#/"/>
+  <templateRootObject href="ttm.genmodel#//ttm/Project"/>
+  <editorConfigurator href="tramway.editorconfigurator#_7mXmoOOGEdutbJivASmdLA"/>
+</diagramconfigurator:DiagramConfiguration>

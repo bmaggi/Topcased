@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Regexviewer Plug-in
+Bundle-SymbolicName: org.topcased.regexviewer;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.topcased.regexviewer.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.forms
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.topcased.regexviewer,
+ org.topcased.regexviewer.views
+Bundle-Vendor: Topcased

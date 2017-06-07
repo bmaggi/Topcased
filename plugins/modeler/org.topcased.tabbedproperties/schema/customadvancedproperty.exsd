@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.topcased.tabbedproperties" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.topcased.tabbedproperties" id="customadvancedproperty" name="Custom Behavior for advanced property"/>
+      </appInfo>
+      <documentation>
+         Extension point that enables to define a custom behavior for a specified element and a specified property
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="Component"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="Component">
+      <complexType>
+         <attribute name="featureId" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="editorProvider" type="string" use="required">
+            <annotation>
+               <documentation>
+                  provides the property editor
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.topcased.tabbedproperties.providers.IPropertyEditorProvider"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="eclassId" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.eclipse.emf.ecore.EClass"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         3.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         &lt;extension point=&quot;org.topcased.tabbedproperties.customadvancedproperty&quot;&gt;
+ &lt;Component
+  eclassId=&quot;org.eclipse.emf.ecore.EAnnotation&quot;
+  editorProvider=&quot;org.topcased.modeler.abstract_ui.providers.PropertyEditorProvider&quot;
+  featureId=&quot;references&quot;&gt;
+ &lt;/Component&gt;
+&lt;/extension&gt;
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiinfo"/>
+      </appInfo>
+      <documentation>
+         Need to implement IPropertyEditorProvider interface.
+To implement the PropertyEditorProvider please take care of returning null if you don&apos;t match with the input value to enable the default topcased process running.
+      </documentation>
+   </annotation>
+
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Copyright (c) 2009 Atos Origin.
+
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+hich accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+      </documentation>
+   </annotation>
+
+</schema>

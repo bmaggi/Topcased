@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.16 2006/11/06 14:11:06 jako Exp $
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://www.topcased.org/configurator/1.0" 
+       class = "org.topcased.modeler.configurator.provider.ConfiguratorItemProviderAdapterFactory"
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+  
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+       uri = "http://www.topcased.org/configurator/1.0"
+       class = "org.topcased.modeler.configurator.ConfiguratorPackage"
+       genModel = "model/EditorConfiguration.genmodel" /> 
+    <package
+       uri = "http://org.topcased.modeler.configurator"
+       class = "org.topcased.modeler.configurator.ConfiguratorPackage"/> 
+  </extension>
+
+  <extension-point id="figureDeclaration" name="figureDeclaration" schema="schema/figureDeclaration.exsd"/>
+
+  <!--extension
+    point = "org.eclipse.ui.newWizards">
+    <category
+      id = "org.eclipse.emf.ecore.Wizard.category.ID"
+      name="%_UI_Wizard_category">
+    </category>
+    <wizard
+      id = "org.topcased.modeler.configurator.presentation.ConfiguratorModelWizardID"
+      name = "%_UI_ConfiguratorModelWizard_label"
+      class = "org.topcased.modeler.configurator.presentation.ConfiguratorModelWizard"
+      category = "org.eclipse.emf.ecore.Wizard.category.ID"
+      icon = "icons/full/obj16/ConfiguratorModelFile.gif">
+      <description>%_UI_ConfiguratorModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension-->
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "org.topcased.modeler.configurator.presentation.ConfiguratorEditorID"
+        name = "%_UI_ConfiguratorEditor_label"
+        icon = "icons/full/obj16/ConfiguratorModelFile.gif"
+        extensions = "configurator"
+        class = "org.topcased.modeler.configurator.presentation.ConfiguratorEditor" 
+        contributorClass="org.topcased.modeler.configurator.presentation.ConfiguratorActionBarContributor" >
+    </editor>
+  </extension>    
+
+  <extension
+        point="org.topcased.modeler.configurator.figureDeclaration">
+     <figureDeclaration
+           class="org.eclipse.draw2d.Figure"
+           name="Figure"/>
+  </extension>
+  
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+         adaptable="true"
+         id="org.topcased.modeler.configurator.ExportContribution"
+         nameFilter="*.configurator"
+         objectClass="org.eclipse.core.resources.IFile">
+         <action
+            class="org.topcased.modeler.configurator.export.ExportAction"
+            enablesFor="1"
+            icon="icons/convert.gif"
+            id="org.topcased.modeler.configurator.export.ExportAction"
+            label="Export to new Configurator files (0.8.0 to 0.10.0)"
+            menubarPath="org.topcased.facilities.menu.topcased/org.topcased.facilities.menu.generation/topcasedGroup"/>
+      </objectContribution>
+   </extension>
+   
+</plugin>

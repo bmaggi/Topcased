@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.topcased.modeler.diagrams.model:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.topcased.modeler.di.model="http://org.topcased.modeler.di.model" xmlns:org.topcased.modeler.diagrams.model="http://org.topcased.modeler.diagrams.model">
+  <model href="OutlineConfiguration.ecore#/"/>
+  <diagrams position="0,0" size="100,100" name="OutlineConfiguration" viewport="0,0">
+    <property key="org.topcased.modeler.di.typeName" value="Ecore Diagram"/>
+    <property key="pageFormatName" value="A4"/>
+    <property key="diagramWidth" value="840"/>
+    <property key="diagramHeight" value="1188"/>
+    <property key="pageMarginName" value="Small Margin"/>
+    <property key="diagramTopMargin" value="20"/>
+    <property key="diagramBottomMargin" value="20"/>
+    <property key="diagramLeftMargin" value="20"/>
+    <property key="diagramRightMargin" value="20"/>
+    <property key="orientation" value="portrait"/>
+    <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge" presentation="org.topcased.modeler.ecore.ediagram">
+      <element href="OutlineConfiguration.ecore#/"/>
+    </semanticModel>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="169,120" size="195,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.6 //@diagrams.0/@contained.14"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="OutlineConfiguration.ecore#//OutlineConfiguration"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="OutlineConfiguration.ecore#//OutlineConfiguration/%http:%2F%2Fwww.topcased.org%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="OutlineConfiguration.ecore#//OutlineConfiguration/name"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="OutlineConfiguration.ecore#//OutlineConfiguration/projectName"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="127,22" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="OutlineConfiguration.ecore#//OutlineConfiguration/package"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="138,69" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="OutlineConfiguration.ecore#//OutlineConfiguration/pluginClassName"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="158,305" size="217,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.6 //@diagrams.0/@contained.8"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="OutlineConfiguration.ecore#//CreateChildMenuConfiguration"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="OutlineConfiguration.ecore#//CreateChildMenuConfiguration/%http:%2F%2Fwww.topcased.org%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="119,30" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="OutlineConfiguration.ecore#//CreateChildMenuConfiguration/className"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="316,587" size="165,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.7 //@diagrams.0/@contained.16"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="OutlineConfiguration.ecore#//CreateChildAction"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-60,-336" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="OutlineConfiguration.ecore#//CreateChildAction/type"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="106,728" size="121,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.10"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="OutlineConfiguration.ecore#//Menu"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="OutlineConfiguration.ecore#//Menu/name"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="217,480" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.7 //@diagrams.0/@contained.8 //@diagrams.0/@contained.11 //@diagrams.0/@contained.12"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="OutlineConfiguration.ecore#//MenuItem"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="118,587" size="97,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.10 //@diagrams.0/@contained.11 //@diagrams.0/@contained.12"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="OutlineConfiguration.ecore#//MenuGroup"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="OutlineConfiguration.ecore#//MenuGroup/id"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.0/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="OutlineConfiguration.ecore#//OutlineConfiguration/createChild"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.2/@anchorage.0 //@diagrams.0/@contained.4/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.1/@anchorage.0 //@diagrams.0/@contained.4/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="OutlineConfiguration.ecore#//CreateChildMenuConfiguration/items"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="15" vDistance="-11"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="15" vDistance="11"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="16,23" size="150,-1">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="OutlineConfiguration.ecore#//ChildActionType"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="12,-819" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="OutlineConfiguration.ecore#//ChildActionType/Hierachical"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="28,-725" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="OutlineConfiguration.ecore#//ChildActionType/Exact"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.3/@anchorage.0 //@diagrams.0/@contained.5/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.5/@anchorage.0 //@diagrams.0/@contained.4/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.5/@anchorage.0 //@diagrams.0/@contained.4/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="OutlineConfiguration.ecore#//MenuGroup/items"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="22" vDistance="-6"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="8"/>
+      <waypoints>[-49, 0, -150, 113]</waypoints>
+      <waypoints>[-84, 0, -185, 113]</waypoints>
+      <waypoints>[-84, -113, -185, 0]</waypoints>
+      <waypoints>[50, -113, -51, 0]</waypoints>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="480,26" size="264,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.14"/>
+      <anchorage/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="GenModel.ecore#//GenPackage"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="GenModel.ecore#//GenPackage/prefix"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="GenModel.ecore#//GenPackage/basePackage"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="GenModel.ecore#//GenPackage/resource"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="GenModel.ecore#//GenPackage/disposableProviderFactory"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="159,159" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="GenModel.ecore#//GenPackage/adapterFactory"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="199,199" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="GenModel.ecore#//GenPackage/loadInitialization"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="239,239" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="GenModel.ecore#//GenPackage/interfacePackageSuffix"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="279,279" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="GenModel.ecore#//GenPackage/classPackageSuffix"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="319,319" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="GenModel.ecore#//GenPackage/utilityPackageSuffix"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="359,359" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="GenModel.ecore#//GenPackage/providerPackageSuffix"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="399,399" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="GenModel.ecore#//GenPackage/presentationPackageSuffix"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="439,439" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="GenModel.ecore#//GenPackage/testsPackageSuffix"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="479,479" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="GenModel.ecore#//GenPackage/generateExampleClass"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.0/@anchorage.0 //@diagrams.0/@contained.13/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="OutlineConfiguration.ecore#//OutlineConfiguration/genPackage"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="13" vDistance="-13"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="5" vDistance="10"/>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="301,710" size="195,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.16"/>
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="GenModel.ecore#//GenClass"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="-1,-1" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="GenModel.ecore#//GenClass/provider"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="org.topcased.modeler.di.model:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+          <element href="GenModel.ecore#//GenClass/image"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="org.topcased.modeler.di.model:GraphEdge" anchor="//@diagrams.0/@contained.2/@anchorage.0 //@diagrams.0/@contained.15/@anchorage.0">
+      <semanticModel xsi:type="org.topcased.modeler.di.model:EMFSemanticModelBridge">
+        <element href="OutlineConfiguration.ecore#//CreateChildAction/class"/>
+      </semanticModel>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="org.topcased.modeler.di.model:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+  </diagrams>
+</org.topcased.modeler.diagrams.model:Diagrams>

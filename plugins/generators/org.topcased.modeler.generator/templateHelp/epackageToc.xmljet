@@ -1,0 +1,12 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports=""
+	 class="PluginXML"
+	 version="$Id: epackageToc.xmljet,v 1.1 2005/06/28 06:06:08 matg Exp $" %>
+<%String epackage = (String) argument;%>
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="<%=epackage.toUpperCase()%> Metamodel Documentation" topic="html/main.html">
+	<link toc="toc.xml" />
+</toc>

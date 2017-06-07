@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.19 2008/03/25 18:42:45 jako Exp $
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://www.topcased.org/diagramconfigurator/0.10" 
+       class = "org.topcased.modeler.diagramconfigurator.provider.DiagramconfiguratorItemProviderAdapterFactory"
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+  
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+       uri = "http://www.topcased.org/diagramconfigurator/0.10"
+       class = "org.topcased.modeler.diagramconfigurator.DiagramconfiguratorPackage"
+       genModel = "model/diagramconfigurator.genmodel" /> 
+    <package
+       uri = "http://www.topcased.org/diagramconfigurator/1.0"
+       class = "org.topcased.modeler.diagramconfigurator.DiagramconfiguratorPackage"
+       genModel = "model/diagramconfigurator.genmodel" /> 
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+    <parser
+       type="diagramconfigurator"
+       class="org.topcased.modeler.diagramconfigurator.util.DiagramconfiguratorResourceFactoryImpl" />
+  </extension>
+
+  <extension-point id="figureDeclarations" name="Figure Declarations" schema="schema/figureDeclarations.exsd"/>
+
+	<extension point = "org.eclipse.ui.newWizards">
+		<category
+			id = "org.topcased.configurators.Wizard.category.ID"
+			name="Topcased Configurators"
+			parentCategory="org.topcased.facilities.newWizards"/>
+		<wizard
+			id = "org.topcased.modeler.diagramconfigurator.presentation.DiagramconfiguratorModelWizardID"
+			name = "%_UI_DiagramconfiguratorModelWizard_label"
+			class = "org.topcased.modeler.diagramconfigurator.internal.presentation.DiagramconfiguratorModelWizard"
+			category = "org.topcased.facilities.newWizards/org.topcased.configurators.Wizard.category.ID"
+			icon = "icons/full/obj16/DiagramconfiguratorModelFile.gif">
+			<description>%_UI_DiagramconfiguratorModelWizard_description</description>
+			<selection class = "org.eclipse.core.resources.IResource" />
+		</wizard>
+	</extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "org.topcased.modeler.diagramconfigurator.internal.presentation.DiagramconfiguratorEditorID"
+        name = "%_UI_DiagramconfiguratorEditor_label"
+        icon = "icons/full/obj16/DiagramconfiguratorModelFile.gif"
+        extensions = "diagramconfigurator"
+        class = "org.topcased.modeler.diagramconfigurator.internal.presentation.DiagramconfiguratorEditor" 
+        contributorClass="org.topcased.modeler.diagramconfigurator.internal.presentation.DiagramconfiguratorActionBarContributor" >
+    </editor>
+  </extension>  
+  
+	<extension point="org.topcased.modeler.diagramconfigurator.figureDeclarations">
+	
+		<figureDeclaration
+			class="org.eclipse.draw2d.Figure"
+			name="Figure">
+			<description>
+				The Basic Figure. Does not provide any graphical representation by default. The methods paintFigure() and paintBorder() should be overriden to materialize the figure. Note that the Shape figure should be used whether it is possible.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.eclipse.draw2d.Shape"
+			name="Shape">
+			<description>
+				A Shape is just a graphic element. It extends the Figure by providing more control on the graphics properties : line width, line style, ... As it is an abstract class, its methods outlineShape() and fillShape() should be implemented.
+			</description>
+		</figureDeclaration>
+
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.PortFigure"
+			name="Port">
+			<description>
+				A Figure used to draw a Port. This should be only used for Figures that are contained by a BorderAttachedLayout. This is a simple implementation of the IPortFigure, the port is just a rectangle shape and its graphical representation does not depends of the border it is attached to.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.OrientedPortFigure"
+			name="OrientedPort">
+			<description>
+				A Figure used to draw an oriented Port. The figure shape depends on the border it is attached to : it is an arrow that is oriented into the container Figure.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.LabelledPortFigure"
+			name="LabelledPort">
+			<description>
+				A Figure used to draw an Port figure with a Label associated. Depending on the border the figure is attached to, the layout of the PortFigure and the LabelFigure changes.
+			</description>
+		</figureDeclaration>
+     
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.ClassFigure"
+			name="Class">
+			<description>
+				A Figure that will represent a Class. The header is an EditableLabel, the contentPane is a vertical ToolbarLayout.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.ContainerFigure"
+			name="Container">
+			<description>
+				A Class that provide a container Figure implementation. A figure that display child figures in a XYLayout.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.EditableLabelFigure"
+			name="Label">
+			<description>
+				This Figure is used only to render a Label that implement the ILabel interace to provide directEdit in the diagram.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.StateFigure"
+			name="State">
+			<description>
+				This figure is deprecated from the 0.10.0 version of Topcased. You should use the BorderedLabel instead.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.CommentFigure"
+			name="Comment">
+			<description>
+				The figure to display a Comment. A Figure with a bent corner and an embedded TextFlow within a FlowPage that contains text.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.PackageFigure"
+			name="Package">
+			<description>
+				A Figure that will represent a Package. The header is an EditableLabel aligned to the left, the contentPane is an XYLayout.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.ManFigure"
+			name="Man">
+			<description>
+				Draw a Figure that looks a Man with a head, a body, two arms and two legs !
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.WomanFigure"
+			name="Woman">
+			<description>
+				Draw a Figure that looks a Woman with a head, a body, two arms, two legs and a dress !
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.GraphicWithBottomLabelFigure"
+			name="Graphic With Bottom Label">
+			<description>
+				The figure to display a Figure (by default, a cross is drawn) with a Label at the Bottom. This figure is @deprecated : you should use the GraphicWithLabelFigure figure instead.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.ComputerFigure"
+			name="Computer">
+			<description>
+				Draw a Figure that looks a Computer.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.CloudFigure"
+			name="Cloud">
+			<description>
+				Draw a Figure that looks a Cloud.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.BorderedLabel"
+			name="BorderedLabel">
+			<description>
+				Draw a Rectangle and add a centered Label in the Rectangle shape. The Figure extends the ILabel interface so that the "direct Edit" functionality is enabled.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.eclipse.draw2d.RectangleFigure"
+			name="RectangleFigure">
+			<description>
+				Draw a Rectangle
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.eclipse.draw2d.RoundedRectangle"
+			name="RoundedRectangle">
+			<description>
+				Draw a Rectangle with rounded corners.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.eclipse.draw2d.Ellipse"
+			name="Ellipse">
+			<description>
+				Draw an Ellipse in the bounds of the Figure.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.ContainerWithInnerLabel"
+			name="Container With Inner Label">
+			<description>
+				This figure creates a container with a background figure (a rectangle figure by default) and a label in this figure. The position of the label can be defined (TOP, LEFT, BOTTOM, RIGHT or CENTER) and the background figure customized overriding the createBackgroungFigure() method.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.GraphicWithLabelFigure"
+			name="Graphic With Label Figure">
+			<description>
+				This figure creates a bodyFigure (a rectangle figure by default) and a label associated with the body figure. The position of the label can be defined (TOP, LEFT, BOTTOM or RIGHT) and the body figure customized overriding the createBodyFigure() method.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.topcased.draw2d.figures.ImageWithLabelFigure"
+			name="Image With Label Figure">
+			<description>
+				This figure creates a Figure composed of an Image and a Label associated with this picture. The position of the Label can be defined (TOP, LEFT, BOTTOM or RIGHT) and you need to specify the appropriate path to the Image in the generated Figure implementation.
+			</description>
+		</figureDeclaration>
+		<figureDeclaration
+			class="org.eclipse.draw2d.ImageFigure"
+			name="ImageFigure">
+			<description>
+				Just a reference to the ImageFigure Draw2D class used to associated just a Figure with the Figure.
+			</description>
+		</figureDeclaration>     
+  </extension>
+  
+  <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+         adaptable="true"
+         id="org.topcased.modeler.diagramconfigurator.ExportContribution"
+         nameFilter="*.diagramconfigurator"
+         objectClass="org.eclipse.core.resources.IFile">
+         <action
+            class="org.topcased.modeler.diagramconfigurator.internal.export.ExportAction"
+            enablesFor="1"
+            icon="icons/convert.gif"
+            id="org.topcased.modeler.diagramconfigurator.export.ExportAction"
+            label="Export to new format (0.9.x to 0.10.x)"
+            menubarPath="org.topcased.facilities.menu.topcased/org.topcased.facilities.menu.generation/topcasedGroup"/>
+      </objectContribution>
+   </extension>
+
+
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+		<propertyContributor contributorId = "org.topcased.modeler.diagramconfigurator.properties.contributorID"
+			labelProvider="org.topcased.modeler.diagramconfigurator.internal.properties.providers.SectionsLabelProvider">
+		<propertyCategory category = "DiagramConfigurator"/>
+		<propertyCategory category = "ModelObjectConfiguration"/>
+		<propertyCategory category = "SimpleObjectConfiguration"/>
+		<propertyCategory category = "PalletteConfiguration"/>
+		<propertyCategory category = "PalletteCategory"/>
+		<propertyCategory category = "PaletteItem"/>
+		<propertyCategory category = "DiagramReference"/>
+		<propertyCategory category = "PartConfiguration"/>
+		<propertyCategory category = "NodePartConfiguration"/>
+		<propertyCategory category = "Constraint"/>
+		<propertyCategory category = "EdgePartConfiguration"/>
+		<propertyCategory category = "EdgeObject"/>
+		<propertyCategory category = "SourceTargetCouple"/>
+		<propertyCategory category = "AdvancedCategory"/>
+		</propertyContributor>
+	</extension>
+	
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+		<propertyTabs contributorId="org.topcased.modeler.diagramconfigurator.properties.contributorID">
+			<propertyTab
+				category="DiagramConfigurator"
+				id="org.topcased.modeler.diagramconfigurator.properties.all"
+				label="All"/>
+			<propertyTab
+				category="DiagramConfigurator"
+				id="org.topcased.modeler.diagramconfigurator.properties.model"
+				label="Model"
+				afterTab="org.topcased.modeler.diagramconfigurator.properties.all"/>
+			<propertyTab
+				category="DiagramConfigurator"
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				label="Graphic"
+				afterTab="org.topcased.modeler.diagramconfigurator.properties.model"/>
+			<propertyTab
+				category="DiagramConfigurator"
+				id="org.topcased.modeler.diagramconfigurator.properties.templatemerge"
+				label="Template &amp; Merge"
+				afterTab="org.topcased.modeler.diagramconfigurator.properties.graphic"/>
+			<propertyTab
+				category="ModelObjectConfiguration"
+				id="org.topcased.modeler.diagramconfigurator.properties.model"
+				label="Model"/>
+			<propertyTab
+				category="SimpleObjectConfiguration"
+				id="org.topcased.modeler.diagramconfigurator.properties.all"
+				label="All"/>
+			<propertyTab
+				category="PalletteConfiguration"
+				id="org.topcased.modeler.diagramconfigurator.properties.all"
+				label="All"/>
+			<propertyTab
+				category="PalletteCategory"
+				id="org.topcased.modeler.diagramconfigurator.properties.all"
+				label="All"/>
+			<propertyTab
+				category="PaletteItem"
+				id="org.topcased.modeler.diagramconfigurator.properties.all"
+				label="All"/>
+			<propertyTab
+				category="DiagramReference"
+				id="org.topcased.modeler.diagramconfigurator.properties.all"
+				label="All"/>
+			<propertyTab
+				category="PartConfiguration"
+				id="org.topcased.modeler.diagramconfigurator.properties.model"
+				label="Model"/>
+			<propertyTab
+				category="PartConfiguration"
+				id="org.topcased.modeler.diagramconfigurator.properties.policies"
+				label="Policies"
+				afterTab="org.topcased.modeler.diagramconfigurator.properties.model"/>
+			<propertyTab
+				category="PartConfiguration"
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				label="Graphic"
+				afterTab="org.topcased.modeler.diagramconfigurator.properties.policies"/>
+			<propertyTab
+				category="PartConfiguration"
+				id="org.topcased.modeler.diagramconfigurator.properties.templatemerge"
+				label="Template &amp; Merge"
+				afterTab="org.topcased.modeler.diagramconfigurator.properties.graphic"/>
+			<propertyTab
+				category="NodePartConfiguration"
+				id="org.topcased.modeler.diagramconfigurator.properties.model"
+				label="Model"/>
+			<propertyTab
+				category="NodePartConfiguration"
+				id="org.topcased.modeler.diagramconfigurator.properties.policies"
+				label="Policies"
+				afterTab="org.topcased.modeler.diagramconfigurator.properties.model"/>
+			<propertyTab
+				category="NodePartConfiguration"
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				label="Graphic"
+				afterTab="org.topcased.modeler.diagramconfigurator.properties.policies"/>
+			<propertyTab
+				category="Constraint"
+				id="org.topcased.modeler.diagramconfigurator.properties.model"
+				label="Model"/>
+			<propertyTab
+				category="EdgePartConfiguration"
+				id="org.topcased.modeler.diagramconfigurator.properties.policies"
+				label="Policies"/>
+			<propertyTab
+				category="EdgePartConfiguration"
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				label="Graphic"
+				afterTab="org.topcased.modeler.diagramconfigurator.properties.policies"/>
+			<propertyTab
+				category="EdgeObject"
+				id="org.topcased.modeler.diagramconfigurator.properties.model"
+				label="Model"/>
+			<propertyTab
+				category="SourceTargetCouple"
+				id="org.topcased.modeler.diagramconfigurator.properties.model"
+				label="Model"/>
+			<propertyTab
+				category="AdvancedCategory"
+				id="org.topcased.modeler.diagramconfigurator.properties.advanced"
+				label="Advanced"/>    
+		</propertyTabs>
+	</extension>
+
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+		<propertySections contributorId="org.topcased.modeler.diagramconfigurator.properties.contributorID">
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.all.name"
+				tab="org.topcased.modeler.diagramconfigurator.properties.all"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationNameSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.all.projectname"
+				tab="org.topcased.modeler.diagramconfigurator.properties.all"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.all.name"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationProjectNameSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.all.package"
+				tab="org.topcased.modeler.diagramconfigurator.properties.all"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.all.projectname"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationPackageSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.all.prefix"
+				tab="org.topcased.modeler.diagramconfigurator.properties.all"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.all.package"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationPrefixSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.all.pluginversion"
+				tab="org.topcased.modeler.diagramconfigurator.properties.all"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.all.prefix"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationPluginVersionSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.all.provider"
+				tab="org.topcased.modeler.diagramconfigurator.properties.all"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.all.pluginversion"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationProviderSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.genmodel"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationGenModelSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.editorconfigurator"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.genmodel"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationEditorConfiguratorSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.templaterootobject"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.editorconfigurator"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationTemplateRootObjectSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.layout"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationLayoutSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.defaultbackgroundcolor"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.graphic.layout"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationDefaultBackgroundColorSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.defaultforegroundcolor"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.graphic.defaultbackgroundcolor"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationDefaultForegroundColorSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.templatemerge.samepluginaseditor"
+				tab="org.topcased.modeler.diagramconfigurator.properties.templatemerge"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationSamePluginAsEditorSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.templatemerge.forceoverwrite"
+				tab="org.topcased.modeler.diagramconfigurator.properties.templatemerge"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.templatemerge.samepluginaseditor"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationForceOverwriteSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.templatemerge.overwritegraphconf"
+				tab="org.topcased.modeler.diagramconfigurator.properties.templatemerge"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.templatemerge.forceoverwrite"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationOverwriteGraphConfSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.templatemerge.organizeimports"
+				tab="org.topcased.modeler.diagramconfigurator.properties.templatemerge"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.templatemerge.overwritegraphconf"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationOrganizeImportsSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.templatemerge.copyrighttext"
+				tab="org.topcased.modeler.diagramconfigurator.properties.templatemerge"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.templatemerge.organizeimports"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramConfigurationCopyrightTextSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.genclass"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.ModelObjectConfigurationGenClassSection">
+				<input type="org.topcased.modeler.diagramconfigurator.ModelObjectConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.all.name"
+				tab="org.topcased.modeler.diagramconfigurator.properties.all"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.SimpleObjectConfigurationNameSection">
+				<input type="org.topcased.modeler.diagramconfigurator.SimpleObjectConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.all.name"
+				tab="org.topcased.modeler.diagramconfigurator.properties.all"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.PaletteConfigurationNameSection">
+				<input type="org.topcased.modeler.diagramconfigurator.PaletteConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.all.name"
+				tab="org.topcased.modeler.diagramconfigurator.properties.all"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.PaletteCategoryNameSection">
+				<input type="org.topcased.modeler.diagramconfigurator.PaletteCategory"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.all.name"
+				tab="org.topcased.modeler.diagramconfigurator.properties.all"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.PaletteItemNameSection">
+				<input type="org.topcased.modeler.diagramconfigurator.PaletteItem"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.all.part"
+				tab="org.topcased.modeler.diagramconfigurator.properties.all"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.all.name"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.PaletteItemPartSection">
+				<input type="org.topcased.modeler.diagramconfigurator.PaletteItem"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.all.diagram"
+				tab="org.topcased.modeler.diagramconfigurator.properties.all"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramReferenceDiagramSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramReference"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.all.lowerbound"
+				tab="org.topcased.modeler.diagramconfigurator.properties.all"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.all.diagram"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramReferenceLowerBoundSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramReference"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.all.upperbound"
+				tab="org.topcased.modeler.diagramconfigurator.properties.all"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.all.lowerbound"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.DiagramReferenceUpperBoundSection">
+				<input type="org.topcased.modeler.diagramconfigurator.DiagramReference"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.object"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.PartConfigurationObjectSection">
+				<input type="org.topcased.modeler.diagramconfigurator.PartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.policies.foregroundcolorchangeable"
+				tab="org.topcased.modeler.diagramconfigurator.properties.policies"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.PartConfigurationForegroundColorChangeableSection">
+				<input type="org.topcased.modeler.diagramconfigurator.PartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.policies.fontchangeable"
+				tab="org.topcased.modeler.diagramconfigurator.properties.policies"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.policies.foregroundcolorchangeable"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.PartConfigurationFontChangeableSection">
+				<input type="org.topcased.modeler.diagramconfigurator.PartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.defaultforegroundcolor"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.PartConfigurationDefaultForegroundColorSection">
+				<input type="org.topcased.modeler.diagramconfigurator.PartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.defaultfont"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.graphic.defaultforegroundcolor"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.PartConfigurationDefaultFontSection">
+				<input type="org.topcased.modeler.diagramconfigurator.PartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.linewidth"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.graphic.defaultfont"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.PartConfigurationLineWidthSection">
+				<input type="org.topcased.modeler.diagramconfigurator.PartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.linestyle"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.graphic.linewidth"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.PartConfigurationLineStyleSection">
+				<input type="org.topcased.modeler.diagramconfigurator.PartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.presentation"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.graphic.linestyle"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.PartConfigurationPresentationSection">
+				<input type="org.topcased.modeler.diagramconfigurator.PartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.templatemerge.prefix"
+				tab="org.topcased.modeler.diagramconfigurator.properties.templatemerge"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.PartConfigurationPrefixSection">
+				<input type="org.topcased.modeler.diagramconfigurator.PartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.supertype"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.object"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.NodePartConfigurationSuperTypeSection">
+				<input type="org.topcased.modeler.diagramconfigurator.NodePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.childelements"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.supertype"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.NodePartConfigurationChildElementsSection">
+				<input type="org.topcased.modeler.diagramconfigurator.NodePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.policies.container"
+				tab="org.topcased.modeler.diagramconfigurator.properties.policies"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.NodePartConfigurationContainerSection">
+				<input type="org.topcased.modeler.diagramconfigurator.NodePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.policies.directeditable"
+				tab="org.topcased.modeler.diagramconfigurator.properties.policies"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.policies.container"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.NodePartConfigurationDirectEditableSection">
+				<input type="org.topcased.modeler.diagramconfigurator.NodePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.policies.attachedtoborder"
+				tab="org.topcased.modeler.diagramconfigurator.properties.policies"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.policies.directeditable"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.NodePartConfigurationAttachedToBorderSection">
+				<input type="org.topcased.modeler.diagramconfigurator.NodePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.policies.backgroundcolorchangeable"
+				tab="org.topcased.modeler.diagramconfigurator.properties.policies"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.policies.attachedtoborder"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.NodePartConfigurationBackgroundColorChangeableSection">
+				<input type="org.topcased.modeler.diagramconfigurator.NodePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.policies.resizing"
+				tab="org.topcased.modeler.diagramconfigurator.properties.policies"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.policies.backgroundcolorchangeable"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.NodePartConfigurationResizingSection">
+				<input type="org.topcased.modeler.diagramconfigurator.NodePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.type"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.NodePartConfigurationTypeSection">
+				<input type="org.topcased.modeler.diagramconfigurator.NodePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.layout"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.graphic.type"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.NodePartConfigurationLayoutSection">
+				<input type="org.topcased.modeler.diagramconfigurator.NodePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.defaultbackgroundcolor"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.graphic.defaultforegroundcolor"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.NodePartConfigurationDefaultBackgroundColorSection">
+				<input type="org.topcased.modeler.diagramconfigurator.NodePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.defaultwidth"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.graphic.defaultfont"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.NodePartConfigurationDefaultWidthSection">
+				<input type="org.topcased.modeler.diagramconfigurator.NodePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.defaultheight"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.graphic.defaultwidth"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.NodePartConfigurationDefaultHeightSection">
+				<input type="org.topcased.modeler.diagramconfigurator.NodePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.minimumwidth"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.graphic.defaultheight"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.NodePartConfigurationMinimumWidthSection">
+				<input type="org.topcased.modeler.diagramconfigurator.NodePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.minimumheight"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.graphic.minimumwidth"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.NodePartConfigurationMinimumHeightSection">
+				<input type="org.topcased.modeler.diagramconfigurator.NodePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.maximumwidth"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.graphic.minimumheight"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.NodePartConfigurationMaximumWidthSection">
+				<input type="org.topcased.modeler.diagramconfigurator.NodePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.maximumheight"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.graphic.maximumwidth"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.NodePartConfigurationMaximumHeightSection">
+				<input type="org.topcased.modeler.diagramconfigurator.NodePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.language"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.ConstraintLanguageSection">
+				<input type="org.topcased.modeler.diagramconfigurator.Constraint"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.rule"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.language"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.ConstraintRuleSection">
+				<input type="org.topcased.modeler.diagramconfigurator.Constraint"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.policies.directeditable"
+				tab="org.topcased.modeler.diagramconfigurator.properties.policies"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.EdgePartConfigurationDirectEditableSection">
+				<input type="org.topcased.modeler.diagramconfigurator.EdgePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.defaultrouter"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.EdgePartConfigurationDefaultRouterSection">
+				<input type="org.topcased.modeler.diagramconfigurator.EdgePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.sourcedecoration"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.graphic.defaultfont"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.EdgePartConfigurationSourceDecorationSection">
+				<input type="org.topcased.modeler.diagramconfigurator.EdgePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.graphic.targetdecoration"
+				tab="org.topcased.modeler.diagramconfigurator.properties.graphic"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.graphic.sourcedecoration"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.EdgePartConfigurationTargetDecorationSection">
+				<input type="org.topcased.modeler.diagramconfigurator.EdgePartConfiguration"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.estructuralfeature"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.EdgeObjectEStructuralFeatureSection">
+				<input type="org.topcased.modeler.diagramconfigurator.EdgeObject"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.id"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.estructuralfeature"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.EdgeObjectIdSection">
+				<input type="org.topcased.modeler.diagramconfigurator.EdgeObject"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.type"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.id"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.EdgeObjectTypeSection">
+				<input type="org.topcased.modeler.diagramconfigurator.EdgeObject"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.sourcenode"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.SourceTargetCoupleSourceNodeSection">
+				<input type="org.topcased.modeler.diagramconfigurator.SourceTargetCouple"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.targetnode"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.sourcenode"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.SourceTargetCoupleTargetNodeSection">
+				<input type="org.topcased.modeler.diagramconfigurator.SourceTargetCouple"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.containertype"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.targetnode"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.SourceTargetCoupleContainerTypeSection">
+				<input type="org.topcased.modeler.diagramconfigurator.SourceTargetCouple"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.containerobject"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.containertype"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.SourceTargetCoupleContainerObjectSection">
+				<input type="org.topcased.modeler.diagramconfigurator.SourceTargetCouple"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.containerref"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.containerobject"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.SourceTargetCoupleContainerRefSection">
+				<input type="org.topcased.modeler.diagramconfigurator.SourceTargetCouple"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.autoref"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.containerref"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.SourceTargetCoupleAutoRefSection">
+				<input type="org.topcased.modeler.diagramconfigurator.SourceTargetCouple"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.reversible"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.autoref"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.SourceTargetCoupleReversibleSection">
+				<input type="org.topcased.modeler.diagramconfigurator.SourceTargetCouple"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.edgetosource"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.reversible"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.SourceTargetCoupleRefEdgeToSourceSection">
+				<input type="org.topcased.modeler.diagramconfigurator.SourceTargetCouple"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.edgetotarget"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.edgetosource"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.SourceTargetCoupleRefEdgeToTargetSection">
+				<input type="org.topcased.modeler.diagramconfigurator.SourceTargetCouple"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.sourcetoedge"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.edgetotarget"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.SourceTargetCoupleRefSourceToEdgeSection">
+				<input type="org.topcased.modeler.diagramconfigurator.SourceTargetCouple"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.targettoedge"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.sourcetoedge"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.SourceTargetCoupleRefTargetToEdgeSection">
+				<input type="org.topcased.modeler.diagramconfigurator.SourceTargetCouple"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.sourcetotarget"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.targettoedge"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.SourceTargetCoupleRefSourceToTargetSection">
+				<input type="org.topcased.modeler.diagramconfigurator.SourceTargetCouple"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.model.targettosource"
+				tab="org.topcased.modeler.diagramconfigurator.properties.model"
+				afterSection="org.topcased.modeler.diagramconfigurator.properties.model.sourcetotarget"
+				class="org.topcased.modeler.diagramconfigurator.internal.properties.sections.SourceTargetCoupleRefTargetToSourceSection">
+				<input type="org.topcased.modeler.diagramconfigurator.SourceTargetCouple"/>
+			</propertySection>
+			<propertySection
+				id="org.topcased.modeler.diagramconfigurator.properties.advanced.advancedsection"
+				tab="org.topcased.modeler.diagramconfigurator.properties.advanced"
+				class="org.topcased.tabbedproperties.sections.AdvancedPropertySection">
+				<input type="org.eclipse.emf.ecore.EObject"/>  
+			</propertySection> 
+		</propertySections>
+	</extension>
+	
+		 <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="org.topcased.modeler.diagramconfigurator.wizards.EdgeContribution"
+            objectClass="org.topcased.modeler.diagramconfigurator.EdgePartConfiguration">
+         <action
+               class="org.topcased.modeler.diagramconfigurator.internal.wizards.SourceTargetCoupleAction"
+               id="org.topcased.modeler.diagramconfigurator.wizards.SourceTargetCoupleAction"
+               label="New Source Target Couple"
+               menubarPath="new"/>
+      </objectContribution>
+   </extension>
+
+</plugin>

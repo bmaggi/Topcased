@@ -1,0 +1,32 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="SimpleObjectConstants"
+	 version="$Id: SimpleObjectConstants.javajet,v 1.4 2006/10/26 15:06:23 jako Exp $" %>
+<%	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>;
+
+/**
+ * A Set of properties that are used for the graphical objects that are not
+ * associated with a model object. Each name is used as the typeInfo attribute
+ * in the DI file.
+ * 
+ * @generated
+ */
+public interface <%=diagramConfiguration.getPrefix()%>SimpleObjectConstants
+{
+<%	for (Iterator iter = diagramConfiguration.getObjects().iterator(); iter.hasNext(); )
+	{
+		ObjectConfiguration objConf = (ObjectConfiguration) iter.next();
+		if (objConf instanceof SimpleObjectConfiguration)
+		{
+			String objectName = ((SimpleObjectConfiguration) objConf).getName();%>
+    /**
+     * The name that identify the <i><%=objectName%></i> SimpleObject.
+     * @generated
+     */
+    String SIMPLE_OBJECT_<%=objectName.toUpperCase()%> = "<%=objectName%>";
+<%		}
+	}%>
+}

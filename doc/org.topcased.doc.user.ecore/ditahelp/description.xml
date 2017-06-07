@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topcasedmmecoredescription" xml:lang="en-us">
+	<title>Description</title>
+	<titlealts>
+		<searchtitle>ECORE TOOLS - Description</searchtitle>
+	</titlealts>
+	
+	<body id="container">
+		<table outputclass="noteworthytable" rowheader="norowheader">
+			<tgroup cols="2">
+				<tbody>
+					<row>
+						<entry outputclass="noteworthygroup">
+							Ecore Diagram
+						</entry>
+					</row>
+					<row>
+						<entry outputclass="noteworthytitle">
+							Registered Packages in the Outline
+						</entry>
+						<entry outputclass="noteworthydescription">
+							The outline display an additional node
+							called &quot;Registered Packages&quot;. It
+							references all the available Ecore packages
+							that are available in the current Eclipse
+							configuration.
+							<image href="images/registeredPackages.jpg"
+								alt="registeredPackages" />
+						</entry>
+					</row>
+					<row>
+						<entry outputclass="noteworthytitle">
+							Creation of an EReference and its opposite
+						</entry>
+						<entry outputclass="noteworthydescription">
+								Here are the required steps to create a
+								Two-way Reference :
+							<ol>
+								<li>
+									First, you have to create the first
+									EReference between the 'Source'
+									EClass and the 'Target' EClass.
+								</li>
+								<li>
+									Then, create the second EReference
+									between the 'Target' EClass and the
+									'Source' EClass.
+								</li>
+								<li>
+									Finally update the
+									&quot;EOpposite&quot; attribute of
+									one of the two EReference in the
+									Properties View. The other reference
+									is automatically updated and the
+									graphic refreshed to hide the arrow
+									decorations of the two EReferences.
+								</li>
+							</ol>
+						</entry>
+					</row>
+					<row>
+						<entry outputclass="noteworthytitle">
+							GenModel documentation view
+						</entry>
+						<entry outputclass="noteworthydescription">
+							<b>&lt;&lt; New in 0.9.0 &gt;&gt;</b>
+							<p>
+								A customized documentation view has been
+								added. It is mainly used to edit
+								documentation information that are then
+								used by the genModel file generated with
+								EMF capabilities.
+							</p>
+							<image
+								href="images/genModelDocumentationTab.jpg"
+								alt="genModelDocumentationTab" />
+						</entry>
+					</row>
+					<row>
+						<entry outputclass="noteworthytitle">
+							Dedicated tab for ExtendedMetadata
+						</entry>
+						<entry outputclass="noteworthydescription">
+							<b>&lt;&lt; New in 0.9.0 &gt;&gt;</b>
+							<p>
+								The Tabbed Properties View has been
+								customized to provide a tab where
+								ExtendedMetadata informations can be
+								modified.
+							</p>
+							<image href="images/extendedMetaDataTab.jpg"
+								alt="extendedMetaDataTab" />
+						</entry>
+					</row>
+				</tbody>
+			</tgroup>
+		</table>
+	</body>
+</topic>

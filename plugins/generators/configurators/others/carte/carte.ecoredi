@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" activeDiagram="//@diagrams.0">
+  <model href="carte.ecore#/"/>
+  <diagrams position="0,0" size="100,100" name="carteDiagram" viewport="40,0">
+    <property key="pageFormatName" value="A4"/>
+    <property key="diagramWidth" value="840"/>
+    <property key="diagramHeight" value="1188"/>
+    <property key="pageMarginName" value="Small Margin"/>
+    <property key="diagramTopMargin" value="20"/>
+    <property key="diagramBottomMargin" value="20"/>
+    <property key="diagramLeftMargin" value="20"/>
+    <property key="diagramRightMargin" value="20"/>
+    <property key="orientation" value="portrait"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="org.topcased.modeler.ecore.ediagram">
+      <element href="carte.ecore#/"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" position="63,202" size="150,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.5 //@diagrams.0/@contained.23"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//Menu"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Menu"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="carte.ecore#//Menu/prixTotal"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Menu"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="329,202" size="150,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.4 //@diagrams.0/@contained.5 //@diagrams.0/@contained.8 //@diagrams.0/@contained.9 //@diagrams.0/@contained.12 //@diagrams.0/@contained.13 //@diagrams.0/@contained.18 //@diagrams.0/@contained.19 //@diagrams.0/@contained.20 //@diagrams.0/@contained.21"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//Plat"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Plat"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="carte.ecore#//Plat/prix"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Plat"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="574,186" size="154,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.22"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//Vin"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Vin"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="carte.ecore#//Vin/appellation"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="carte.ecore#//Vin/quantite"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Vin"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="329,41" size="150,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.4 //@diagrams.0/@contained.22 //@diagrams.0/@contained.23"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//Carte"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Carte"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Carte"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.3/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//Carte/plats"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.0/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//Menu/plats"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="26" vDistance="-5"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="22" vDistance="5"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="20,371" size="134,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.8"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//entree/Salade"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//entree/Salade"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//entree/Salade"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="94,443" size="134,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.9"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//entree/Quiche"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//entree/Quiche"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//entree/Quiche"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.6/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.7/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="582,458" size="140,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.12"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//dessert/Tarte"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//dessert/Tarte"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//dessert/Tarte"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="658,358" size="140,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.13"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//dessert/Glace"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//dessert/Glace"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//dessert/Glace"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.10/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.11/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="249,529" size="141,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.18"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//platprincipal/poisson/Truite"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//platprincipal/poisson/Truite"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//platprincipal/poisson/Truite"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="326,612" size="141,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.19"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//platprincipal/poisson/Sole"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//platprincipal/poisson/Sole"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//platprincipal/poisson/Sole"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="488,612" size="134,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.20"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//platprincipal/viande/Saucisse"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//platprincipal/viande/Saucisse"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//platprincipal/viande/Saucisse"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="404,524" size="146,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.21"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//platprincipal/viande/Steak"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//platprincipal/viande/Steak"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="carte.ecore#//platprincipal/viande/Steak/cuisson"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//platprincipal/viande/Steak"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.14/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.15/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.16/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.17/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.3/@anchorage.0 //@diagrams.0/@contained.2/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//Carte/vins"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+      <waypoints>[247, 0, 0, -160]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.3/@anchorage.0 //@diagrams.0/@contained.0/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//Carte/menus"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+      <waypoints>[-266, 0, 0, -167]</waypoints>
+    </contained>
+  </diagrams>
+  <diagrams position="0,0" size="100,100" name="unnamed" viewport="0,0">
+    <property key="pageFormatName" value="A4"/>
+    <property key="diagramWidth" value="840"/>
+    <property key="diagramHeight" value="1188"/>
+    <property key="pageMarginName" value="Small Margin"/>
+    <property key="diagramTopMargin" value="20"/>
+    <property key="diagramBottomMargin" value="20"/>
+    <property key="diagramLeftMargin" value="20"/>
+    <property key="diagramRightMargin" value="20"/>
+    <property key="orientation" value="portrait"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="org.topcased.modeler.ecore.ediagram">
+      <element href="carte.ecore#//Entree"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" position="101,237" size="150,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.3"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//Entree/Salade"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Entree/Salade"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Entree/Salade"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="363,236" size="150,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.4"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//Entree/Quiche"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Entree/Quiche"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Entree/Quiche"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="240,60" size="123,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.3 //@diagrams.1/@contained.4"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//Plat"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Plat"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="carte.ecore#//Plat/prix"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Plat"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.0/@anchorage.0 //@diagrams.1/@contained.2/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.1/@anchorage.0 //@diagrams.1/@contained.2/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+  </diagrams>
+  <diagrams position="0,0" size="100,100" name="unnamed" viewport="0,0">
+    <property key="pageFormatName" value="A4"/>
+    <property key="diagramWidth" value="840"/>
+    <property key="diagramHeight" value="1188"/>
+    <property key="pageMarginName" value="Small Margin"/>
+    <property key="diagramTopMargin" value="20"/>
+    <property key="diagramBottomMargin" value="20"/>
+    <property key="diagramLeftMargin" value="20"/>
+    <property key="diagramRightMargin" value="20"/>
+    <property key="orientation" value="portrait"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="org.topcased.modeler.ecore.ediagram">
+      <element href="carte.ecore#//PlatPrincipal"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" position="125,65" size="150,100">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//PlatPrincipal/Poisson"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="453,70" size="150,100">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//PlatPrincipal/Viande"/>
+      </semanticModel>
+    </contained>
+  </diagrams>
+  <diagrams position="0,0" size="100,100" name="unnamed" viewport="0,0">
+    <property key="pageFormatName" value="A4"/>
+    <property key="diagramWidth" value="840"/>
+    <property key="diagramHeight" value="1188"/>
+    <property key="pageMarginName" value="Small Margin"/>
+    <property key="diagramTopMargin" value="20"/>
+    <property key="diagramBottomMargin" value="20"/>
+    <property key="diagramLeftMargin" value="20"/>
+    <property key="diagramRightMargin" value="20"/>
+    <property key="orientation" value="portrait"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="org.topcased.modeler.ecore.ediagram">
+      <element href="carte.ecore#//PlatPrincipal/Poisson"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" position="89,216" size="150,-1">
+      <anchorage graphEdge="//@diagrams.3/@contained.3"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//PlatPrincipal/Poisson/Truite"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//PlatPrincipal/Poisson/Truite"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//PlatPrincipal/Poisson/Truite"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="359,219" size="150,-1">
+      <anchorage graphEdge="//@diagrams.3/@contained.4"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//PlatPrincipal/Poisson/Sole"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//PlatPrincipal/Poisson/Sole"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//PlatPrincipal/Poisson/Sole"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="253,58" size="123,-1">
+      <anchorage graphEdge="//@diagrams.3/@contained.3 //@diagrams.3/@contained.4"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//Plat"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Plat"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="carte.ecore#//Plat/prix"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Plat"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.3/@contained.0/@anchorage.0 //@diagrams.3/@contained.2/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.3/@contained.1/@anchorage.0 //@diagrams.3/@contained.2/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+  </diagrams>
+  <diagrams position="0,0" size="100,100" name="unnamed" viewport="0,0">
+    <property key="pageFormatName" value="A4"/>
+    <property key="diagramWidth" value="840"/>
+    <property key="diagramHeight" value="1188"/>
+    <property key="pageMarginName" value="Small Margin"/>
+    <property key="diagramTopMargin" value="20"/>
+    <property key="diagramBottomMargin" value="20"/>
+    <property key="diagramLeftMargin" value="20"/>
+    <property key="diagramRightMargin" value="20"/>
+    <property key="orientation" value="portrait"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="org.topcased.modeler.ecore.ediagram">
+      <element href="carte.ecore#//Dessert"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" position="137,191" size="150,-1">
+      <anchorage graphEdge="//@diagrams.4/@contained.3"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//Dessert/Tarte"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Dessert/Tarte"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Dessert/Tarte"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="412,191" size="150,-1">
+      <anchorage graphEdge="//@diagrams.4/@contained.4"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//Dessert/Glace"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Dessert/Glace"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Dessert/Glace"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="284,47" size="123,-1">
+      <anchorage graphEdge="//@diagrams.4/@contained.3 //@diagrams.4/@contained.4"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//Plat"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Plat"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="carte.ecore#//Plat/prix"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Plat"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.4/@contained.0/@anchorage.0 //@diagrams.4/@contained.2/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.4/@contained.1/@anchorage.0 //@diagrams.4/@contained.2/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+  </diagrams>
+  <diagrams position="0,0" size="100,100" name="unnamed" viewport="0,64">
+    <property key="pageFormatName" value="A4"/>
+    <property key="diagramWidth" value="840"/>
+    <property key="diagramHeight" value="1188"/>
+    <property key="pageMarginName" value="Small Margin"/>
+    <property key="diagramTopMargin" value="20"/>
+    <property key="diagramBottomMargin" value="20"/>
+    <property key="diagramLeftMargin" value="20"/>
+    <property key="diagramRightMargin" value="20"/>
+    <property key="orientation" value="portrait"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="org.topcased.modeler.ecore.ediagram">
+      <element href="carte.ecore#//PlatPrincipal/Viande"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" position="128,213" size="150,-1">
+      <anchorage graphEdge="//@diagrams.5/@contained.3"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//PlatPrincipal/Viande/Saucisse"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//PlatPrincipal/Viande/Saucisse"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//PlatPrincipal/Viande/Saucisse"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="404,213" size="150,-1">
+      <anchorage graphEdge="//@diagrams.5/@contained.4"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//PlatPrincipal/Viande/Steak"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//PlatPrincipal/Viande/Steak"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="carte.ecore#//PlatPrincipal/Viande/Steak/cuisson"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//PlatPrincipal/Viande/Steak"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="275,67" size="123,-1">
+      <anchorage graphEdge="//@diagrams.5/@contained.3 //@diagrams.5/@contained.4"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//Plat"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Plat"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="carte.ecore#//Plat/prix"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//Plat"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.5/@contained.0/@anchorage.0 //@diagrams.5/@contained.2/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.5/@contained.1/@anchorage.0 //@diagrams.5/@contained.2/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="403,344" size="150,-1">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="carte.ecore#//PlatPrincipal/Viande/Cuisson"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="7"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="carte.ecore#//PlatPrincipal/Viande/Cuisson"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="carte.ecore#//PlatPrincipal/Viande/Cuisson/A Point"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="carte.ecore#//PlatPrincipal/Viande/Cuisson/Saignant"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="carte.ecore#//PlatPrincipal/Viande/Cuisson/Bleu"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="0,0">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="carte.ecore#//PlatPrincipal/Viande/Cuisson/Bien Cuit"/>
+          </semanticModel>
+        </contained>
+      </contained>
+    </contained>
+  </diagrams>
+</diagrams:Diagrams>

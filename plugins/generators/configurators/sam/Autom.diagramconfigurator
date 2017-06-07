@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramconfigurator:DiagramConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagramconfigurator="http://www.topcased.org/diagramconfigurator/0.10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_hUBnsEEHEd2VkuO7qkWxIQ" projectName="org.topcased.modeler.sam" name="Automaton Diagram" package="automatondiagram" prefix="Autom" layout="PortLayout" forceOverwrite="true" copyrightText="Copyright (c) 2006 AIRBUS FRANCE. All rights reserved. This program and the&#xA;accompanying materials are made available under the terms of the Eclipse&#xA;Public License v1.0 which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html" samePluginAsEditor="true">
+  <palette xmi:id="_hUBnsUEHEd2VkuO7qkWxIQ" name="AutomatonDiagramPalette">
+    <paletteCategories xmi:id="_hUBnskEHEd2VkuO7qkWxIQ" name="Objects">
+      <items xmi:id="_hUBns0EHEd2VkuO7qkWxIQ" name="State" part="_hUCOyEEHEd2VkuO7qkWxIQ"/>
+      <items xmi:id="_hUBntEEHEd2VkuO7qkWxIQ" name="Initial State" part="_hUCOyUEHEd2VkuO7qkWxIQ"/>
+      <items xmi:id="_hUCOwEEHEd2VkuO7qkWxIQ" name="Macro State" part="_hUC10EEHEd2VkuO7qkWxIQ"/>
+      <items xmi:id="_hUCOwUEHEd2VkuO7qkWxIQ" name="I/O Set" part="_hUC10UEHEd2VkuO7qkWxIQ"/>
+      <items xmi:id="_hUCOwkEHEd2VkuO7qkWxIQ" name="Input Control" part="_hUC10kEHEd2VkuO7qkWxIQ"/>
+      <items xmi:id="_hUCOw0EHEd2VkuO7qkWxIQ" name="Output Control" part="_hUC100EHEd2VkuO7qkWxIQ"/>
+      <items xmi:id="_hUCOxEEHEd2VkuO7qkWxIQ" name="Input Data" part="_hUC11EEHEd2VkuO7qkWxIQ"/>
+      <items xmi:id="_hUCOxUEHEd2VkuO7qkWxIQ" name="Output Data" part="_hUC11UEHEd2VkuO7qkWxIQ"/>
+      <items xmi:id="_pluYIEEHEd2VkuO7qkWxIQ" name="Input Message" part="_hUC11EEHEd2VkuO7qkWxIQ"/>
+      <items xmi:id="_pluYIUEHEd2VkuO7qkWxIQ" name="Output Message" part="_hUC11UEHEd2VkuO7qkWxIQ"/>
+    </paletteCategories>
+    <paletteCategories xmi:id="_hUCOxkEHEd2VkuO7qkWxIQ" name="Connections">
+      <items xmi:id="_hUCOx0EHEd2VkuO7qkWxIQ" name="Transition" part="_hUDc4EEHEd2VkuO7qkWxIQ"/>
+    </paletteCategories>
+  </palette>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_hUCOyEEHEd2VkuO7qkWxIQ" object="_hUED-UEHEd2VkuO7qkWxIQ" defaultFont="Sans-regular-10" type="BorderedLabel" defaultBackgroundColor="245,245,245" defaultWidth="60" defaultHeight="60" minimumWidth="50" minimumHeight="50" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_hUCOyUEHEd2VkuO7qkWxIQ" object="_hUED-kEHEd2VkuO7qkWxIQ" defaultFont="Sans-regular-10" type="BorderedLabel" superType="_hUCOyEEHEd2VkuO7qkWxIQ" defaultBackgroundColor="220,220,220" defaultWidth="60" defaultHeight="60" minimumWidth="50" minimumHeight="50" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_hUC10EEHEd2VkuO7qkWxIQ" object="_hUED-0EHEd2VkuO7qkWxIQ" defaultFont="Sans-regular-10" type="Container With Inner Label" childElements="_hUCOyEEHEd2VkuO7qkWxIQ _hUCOyUEHEd2VkuO7qkWxIQ _hUC10EEHEd2VkuO7qkWxIQ" defaultBackgroundColor="255,255,200" container="true" defaultWidth="200" defaultHeight="150" minimumWidth="50" minimumHeight="50" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_hUC10UEHEd2VkuO7qkWxIQ" object="_hUED9EEHEd2VkuO7qkWxIQ" defaultFont="Sans-regular-10" childElements="_hUC10kEHEd2VkuO7qkWxIQ _hUC100EHEd2VkuO7qkWxIQ _hUC11EEHEd2VkuO7qkWxIQ _hUC11UEHEd2VkuO7qkWxIQ _zcqBAEEHEd2VkuO7qkWxIQ _1Dp0AEEHEd2VkuO7qkWxIQ" resizing="NONE" container="true" layout="MultiPortLayout" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1" attachedToBorder="true"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_hUC10kEHEd2VkuO7qkWxIQ" object="_hUED90EHEd2VkuO7qkWxIQ" defaultForegroundColor="20,100,20" defaultFont="Sans-regular-10" type="LabelledPort" superType="_hUED8EEHEd2VkuO7qkWxIQ" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1" attachedToBorder="true"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_hUC100EHEd2VkuO7qkWxIQ" object="_hUED-EEHEd2VkuO7qkWxIQ" defaultForegroundColor="20,100,20" defaultFont="Sans-regular-10" type="LabelledPort" superType="_hUED8EEHEd2VkuO7qkWxIQ" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1" attachedToBorder="true"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_hUC11EEHEd2VkuO7qkWxIQ" object="_hUED9UEHEd2VkuO7qkWxIQ" defaultForegroundColor="30,20,180" defaultFont="Sans-regular-10" type="LabelledPort" superType="_hUDc5EEHEd2VkuO7qkWxIQ" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1" attachedToBorder="true"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_hUC11UEHEd2VkuO7qkWxIQ" object="_hUED9kEHEd2VkuO7qkWxIQ" defaultForegroundColor="30,20,180" defaultFont="Sans-regular-10" type="LabelledPort" superType="_hUDc5EEHEd2VkuO7qkWxIQ" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1" attachedToBorder="true"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_hUDc4EEHEd2VkuO7qkWxIQ" object="_hUErAEEHEd2VkuO7qkWxIQ" defaultForegroundColor="0,0,255" defaultFont="Sans-regular-10" targetDecoration="ARROW" defaultRouter="RectilinearRouter">
+    <sourceTargetCouple xmi:id="_hUDc4UEHEd2VkuO7qkWxIQ" containerType="DIAGRAM" autoRef="true" sourceNode="_hUCOyEEHEd2VkuO7qkWxIQ" targetNode="_hUCOyEEHEd2VkuO7qkWxIQ">
+      <containerObject href="SAM.genmodel#//sam/Automaton"/>
+      <containerRef xsi:type="ecore:EReference" href="SAM.ecore#//Automaton/listTransitions"/>
+      <refSourceToEdge xsi:type="ecore:EReference" href="SAM.ecore#//AbstractState/outlink"/>
+      <refEdgeToSource xsi:type="ecore:EReference" href="SAM.ecore#//Transition/source"/>
+      <refTargetToEdge xsi:type="ecore:EReference" href="SAM.ecore#//State/inlink"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="SAM.ecore#//Transition/dest"/>
+    </sourceTargetCouple>
+    <edgeObjects xmi:id="_hUDc4kEHEd2VkuO7qkWxIQ" id="condition" type="Middle">
+      <eStructuralFeature xsi:type="ecore:EAttribute" href="SAM.ecore#//Transition/condition"/>
+    </edgeObjects>
+    <edgeObjects xmi:id="_hUDc40EHEd2VkuO7qkWxIQ" id="priority">
+      <eStructuralFeature xsi:type="ecore:EAttribute" href="SAM.ecore#//Transition/priority"/>
+    </edgeObjects>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_hUDc5EEHEd2VkuO7qkWxIQ" object="_hUErAUEHEd2VkuO7qkWxIQ" defaultFont="Sans-regular-10" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_hUED8EEHEd2VkuO7qkWxIQ" object="_hUErAkEHEd2VkuO7qkWxIQ" defaultFont="Sans-regular-10" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_zcqBAEEHEd2VkuO7qkWxIQ" object="_trKjgEEHEd2VkuO7qkWxIQ"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_1Dp0AEEHEd2VkuO7qkWxIQ" object="_u121AEEHEd2VkuO7qkWxIQ"/>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_hUED8kEHEd2VkuO7qkWxIQ">
+    <genClass href="SAM.genmodel#//sam/Automaton"/>
+    <diagrams xmi:id="_hUED80EHEd2VkuO7qkWxIQ" diagram="_hUBnsEEHEd2VkuO7qkWxIQ"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_hUED9EEHEd2VkuO7qkWxIQ">
+    <genClass href="SAM.genmodel#//sam/MultiPort"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_hUED9UEHEd2VkuO7qkWxIQ">
+    <genClass href="SAM.genmodel#//sam/InDataPort"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_hUED9kEHEd2VkuO7qkWxIQ">
+    <genClass href="SAM.genmodel#//sam/OutDataPort"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_hUED90EHEd2VkuO7qkWxIQ">
+    <genClass href="SAM.genmodel#//sam/InControlPort"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_hUED-EEHEd2VkuO7qkWxIQ">
+    <genClass href="SAM.genmodel#//sam/OutControlPort"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_hUED-UEHEd2VkuO7qkWxIQ">
+    <genClass href="SAM.genmodel#//sam/State"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_hUED-kEHEd2VkuO7qkWxIQ">
+    <genClass href="SAM.genmodel#//sam/InitialState"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_hUED-0EHEd2VkuO7qkWxIQ">
+    <genClass href="SAM.genmodel#//sam/MacroState"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_hUErAEEHEd2VkuO7qkWxIQ">
+    <genClass href="SAM.genmodel#//sam/Transition"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_hUErAUEHEd2VkuO7qkWxIQ">
+    <genClass href="SAM.genmodel#//sam/DataPort"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_hUErAkEHEd2VkuO7qkWxIQ">
+    <genClass href="SAM.genmodel#//sam/ControlPort"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_trKjgEEHEd2VkuO7qkWxIQ">
+    <genClass href="SAM.genmodel#//sam/InMessagePort"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_u121AEEHEd2VkuO7qkWxIQ">
+    <genClass href="SAM.genmodel#//sam/OutMessagePort"/>
+  </objects>
+  <genModel href="SAM.genmodel#/"/>
+  <templateRootObject href="SAM.genmodel#//sam/Automaton"/>
+  <editorConfigurator href="SAM.editorconfigurator#_Kj7esDNLEd2P8KZcTavEgA"/>
+</diagramconfigurator:DiagramConfiguration>

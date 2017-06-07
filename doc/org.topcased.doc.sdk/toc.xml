@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Topcased Developer Guide">
+	<anchor id="reference-before" />
+	<topic label="Reference">
+	
+		<anchor id="reference-api-before" />
+		<topic label="API Reference">
+			<topic label="Common Plugins" href="reference/api/common/index.html"/>
+			<topic label="Generators" href="reference/api/generators/index.html"/>
+			<topic label="Graphical Modelers" href="reference/api/modelers/index.html"/>
+			<topic label="SAM" href="reference/api/sam/index.html"/>
+			<topic label="UML" href="reference/api/uml/index.html"/>
+			<topic label="SysML" href="reference/api/sysml/index.html"/>
+			<topic label="Validation Framework" href="reference/api/validation/index.html"/>
+			<topic label="Bus" href="reference/api/bus/index.html"/>
+			<topic label="OCL Tools" href="reference/api/ocl/index.html"/>
+			<topic label="Administration Tools" href="reference/api/admin/index.html"/>
+		</topic>
+		<anchor id="reference-api-after" />
+		
+		<anchor id="reference-ext-pt-before" />
+		<topic label="Extension Points Reference" href="reference/extension-points/index.html">
+		</topic>
+		<anchor id="reference-ext-pt-after" />
+
+	</topic>	
+	<anchor id="reference-after" />
+
+	<topic href="doc/index.html" label="Specifications" topic="#">
+		<anchor id="spec-anchor"/>
+	</topic>
+	<anchor id="spec-after"/>
+	
+</toc>

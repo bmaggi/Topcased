@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertiesconfigurator:TabbedView xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:propertiesconfigurator="http://www.topcased.org/PropertiesViewConfiguration/1.0" projectName="org.topcased.modeler.diagramconfigurator" id="org.topcased.modeler.diagramconfigurator.properties" name="Diagram Configurator Tabbed Properties View" basePackage="org.topcased.modeler.diagramconfigurator.properties">
+  <categories name="DiagramConfigurator">
+    <tabs label="All">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Name">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/name"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.0" label="Project Name">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/projectName"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.1" label="Package">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/package"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.2" label="Prefix">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/prefix"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.3" label="Plugin Version">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/pluginVersion"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.0/@sections.4" label="Provider">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/provider"/>
+      </sections>
+    </tabs>
+    <tabs label="Model" afterTab="//@categories.0/@tabs.0">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="GenModel">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/genModel"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.1/@sections.0" label="Editor Configurator">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/editorConfigurator"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.1/@sections.1" label="Template Root Object">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/templateRootObject"/>
+      </sections>
+    </tabs>
+    <tabs label="Graphic" afterTab="//@categories.0/@tabs.1">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Layout">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/layout"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.2/@sections.0" label="Default Background Color">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/defaultBackgroundColor"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.2/@sections.1" label="Default Foreground Color">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/defaultForegroundColor"/>
+      </sections>
+    </tabs>
+    <tabs label="Template &amp; Merge" afterTab="//@categories.0/@tabs.2">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Same Plugin As Editor">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/samePluginAsEditor"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.3/@sections.0" label="Force Overwrite">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/forceOverwrite"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.3/@sections.1" label="Overwrite GraphConf">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/overwriteGraphConf"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.3/@sections.2" label="Organize Imports">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/organizeImports"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.0/@tabs.3/@sections.3" label="Copyright Text" multiline="true">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramConfiguration/copyrightText"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="ModelObjectConfiguration">
+    <tabs label="Model">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="GenClass">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/ModelObjectConfiguration/genClass"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="SimpleObjectConfiguration">
+    <tabs label="All">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Name">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/SimpleObjectConfiguration/name"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="PalletteConfiguration">
+    <tabs label="All">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Name">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/PaletteConfiguration/name"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="PalletteCategory">
+    <tabs label="All">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Name">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/PaletteCategory/name"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="PaletteItem">
+    <tabs label="All">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Name">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/PaletteItem/name"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.5/@tabs.0/@sections.0" label="Part">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/PaletteItem/part"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="DiagramReference">
+    <tabs label="All">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Diagram">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramReference/diagram"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.6/@tabs.0/@sections.0" label="Lower Bound">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramReference/lowerBound"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.6/@tabs.0/@sections.1" label="Upper Bound">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/DiagramReference/upperBound"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="PartConfiguration">
+    <tabs label="Model">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Object">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/PartConfiguration/object"/>
+      </sections>
+    </tabs>
+    <tabs label="Policies" afterTab="//@categories.7/@tabs.0">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Foreground Color Changeable">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/PartConfiguration/foregroundColorChangeable"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.7/@tabs.1/@sections.0" label="Font Changeable">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/PartConfiguration/fontChangeable"/>
+      </sections>
+    </tabs>
+    <tabs label="Graphic" afterTab="//@categories.7/@tabs.1">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Default Foreground Color">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/PartConfiguration/defaultForegroundColor"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.7/@tabs.2/@sections.0" label="Default Font">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/PartConfiguration/defaultFont"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.7/@tabs.2/@sections.1" label="Line Width">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/PartConfiguration/lineWidth"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.7/@tabs.2/@sections.2" label="Line Style">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/PartConfiguration/lineStyle"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.7/@tabs.2/@sections.3" label="Presentation">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/PartConfiguration/presentation"/>
+      </sections>
+    </tabs>
+    <tabs label="Template &amp; Merge" afterTab="//@categories.7/@tabs.2">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Prefix">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/PartConfiguration/prefix"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="NodePartConfiguration">
+    <tabs label="Model">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.7/@tabs.0/@sections.0" label="Super Type">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/NodePartConfiguration/superType"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.8/@tabs.0/@sections.0" label="Child Elements">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/NodePartConfiguration/childElements"/>
+      </sections>
+    </tabs>
+    <tabs label="Policies" afterTab="//@categories.8/@tabs.0">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Container">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/NodePartConfiguration/container"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.8/@tabs.1/@sections.0" label="Direct Editable">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/NodePartConfiguration/directEditable"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.8/@tabs.1/@sections.1" label="Attached To Border">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/NodePartConfiguration/attachedToBorder"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.8/@tabs.1/@sections.2" label="Background Color Changeable">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/NodePartConfiguration/backgroundColorChangeable"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.8/@tabs.1/@sections.3" label="Resizing">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/NodePartConfiguration/resizing"/>
+      </sections>
+    </tabs>
+    <tabs label="Graphic" afterTab="//@categories.8/@tabs.1">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Type">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/NodePartConfiguration/type"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.8/@tabs.2/@sections.0" label="Layout">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/NodePartConfiguration/layout"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.7/@tabs.2/@sections.0" label="Default Background Color">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/NodePartConfiguration/defaultBackgroundColor"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.7/@tabs.2/@sections.1" label="Default Width">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/NodePartConfiguration/defaultWidth"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.8/@tabs.2/@sections.3" label="Default Height">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/NodePartConfiguration/defaultHeight"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.8/@tabs.2/@sections.4" label="Minimum Width">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/NodePartConfiguration/minimumWidth"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.8/@tabs.2/@sections.5" label="Minimum Height">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/NodePartConfiguration/minimumHeight"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.8/@tabs.2/@sections.6" label="Maximum Width">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/NodePartConfiguration/maximumWidth"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.8/@tabs.2/@sections.7" label="Maximum Height">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/NodePartConfiguration/maximumHeight"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="Constraint">
+    <tabs label="Model">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Language">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/Constraint/language"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.9/@tabs.0/@sections.0" label="Rule">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/Constraint/rule"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="EdgePartConfiguration">
+    <tabs label="Policies">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Direct Editable">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/EdgePartConfiguration/directEditable"/>
+      </sections>
+    </tabs>
+    <tabs label="Graphic" afterTab="//@categories.10/@tabs.0">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Default Router">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/EdgePartConfiguration/defaultRouter"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.7/@tabs.2/@sections.1" label="Source Decoration">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/EdgePartConfiguration/sourceDecoration"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.10/@tabs.1/@sections.1" label="Target Decoration">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/EdgePartConfiguration/targetDecoration"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="EdgeObject">
+    <tabs label="Model">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="EStructuralFeature">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/EdgeObject/eStructuralFeature"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.11/@tabs.0/@sections.0" label="Id">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/EdgeObject/id"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.11/@tabs.0/@sections.1" label="Type">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/EdgeObject/type"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="SourceTargetCouple">
+    <tabs label="Model">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Source Node">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/SourceTargetCouple/sourceNode"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.12/@tabs.0/@sections.0" label="Target Node">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/SourceTargetCouple/targetNode"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.12/@tabs.0/@sections.1" label="Container Type">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/SourceTargetCouple/containerType"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.12/@tabs.0/@sections.2" label="Container Object">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/SourceTargetCouple/containerObject"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.12/@tabs.0/@sections.3" label="Container Ref">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/SourceTargetCouple/containerRef"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.12/@tabs.0/@sections.4" label="Autoref">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/SourceTargetCouple/autoRef"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.12/@tabs.0/@sections.5" label="Reversible">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/SourceTargetCouple/reversible"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.12/@tabs.0/@sections.6" label="Edge To Source">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/SourceTargetCouple/refEdgeToSource"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.12/@tabs.0/@sections.7" label="Edge To Target">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/SourceTargetCouple/refEdgeToTarget"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.12/@tabs.0/@sections.8" label="Source To Edge">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/SourceTargetCouple/refSourceToEdge"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.12/@tabs.0/@sections.9" label="Target To Edge">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/SourceTargetCouple/refTargetToEdge"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.12/@tabs.0/@sections.10" label="Source To Target">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/SourceTargetCouple/refSourceToTarget"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.12/@tabs.0/@sections.11" label="Target To Source">
+        <feature href="diagramconfigurator.genmodel#//diagramconfigurator/SourceTargetCouple/refTargetToSource"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="AdvancedCategory">
+    <tabs label="Advanced">
+      <sections xsi:type="propertiesconfigurator:AdvancedSection" label="Advanced Section">
+        <input href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore/EObject"/>
+      </sections>
+    </tabs>
+  </categories>
+  <genModel href="diagramconfigurator.genmodel#/"/>
+</propertiesconfigurator:TabbedView>

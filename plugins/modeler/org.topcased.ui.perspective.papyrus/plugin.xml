@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="org.topcased.ui.perspective.papyrus.internal.PapyrusModelerPerspective"
+            icon="icons/topcased-icon16.gif"
+            id="org.topcased.ui.perspective.papyrus.PapyrusModelerPerspective"
+            name="UML/SysML">
+      </perspective>
+   </extension>
+   <extension
+         point="org.topcased.ui.perspectiveConfiguration">
+      <configuration
+            perspectiveID="org.topcased.ui.perspective.papyrus.PapyrusModelerPerspective">
+          <actionSet
+                actionSetID="fr.tm.elibel.smartqvt.modulesmanager.getregisteredmodules.actionSet">
+          </actionSet>
+         <command
+               commandID="org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar">
+         </command>
+         <actionSet
+               actionSetID="org.eclipse.debug.ui.launchActionSet">
+         </actionSet>
+         <command
+               commandID="org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar">
+         </command>
+         <actionSet
+               actionSetID="org.eclipse.ui.externaltools.ExternalToolsSet">
+         </actionSet>
+         <actionSet
+               actionSetID="org.eclipse.wb.core.ui.actionset">
+         </actionSet>
+         <actionSet
+               actionSetID="fr.tm.elibel.smartqvt.launch.ui.actionSets.QvtActionSet">
+         </actionSet>
+      </configuration>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="intro/TOPCASED_Intro.xml">
+      </configExtension>
+   </extension>
+
+</plugin>

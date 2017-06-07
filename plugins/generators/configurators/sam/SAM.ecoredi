@@ -1,0 +1,1230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0">
+  <model href="SAM.ecore#/"/>
+  <diagrams position="0,0" size="100,100" name="Hierarchy" viewport="0,0">
+    <property key="pageFormatName" value="A3"/>
+    <property key="diagramWidth" value="1188"/>
+    <property key="diagramHeight" value="1680"/>
+    <property key="pageMarginName" value="Small Margin"/>
+    <property key="diagramTopMargin" value="20"/>
+    <property key="diagramBottomMargin" value="20"/>
+    <property key="diagramLeftMargin" value="20"/>
+    <property key="diagramRightMargin" value="20"/>
+    <property key="orientation" value="landscape"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="org.topcased.modeler.ecore.ediagram">
+      <element href="SAM.ecore#/"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" position="476,23" size="212,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.2"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement/getEAnnotation"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="515,134" size="133,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.2 //@diagrams.0/@contained.4 //@diagrams.0/@contained.13 //@diagrams.0/@contained.50"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//IdentifiedItem"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//IdentifiedItem/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//IdentifiedItem/comment"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//IdentifiedItem/requirements"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.1/@anchorage.0 //@diagrams.0/@contained.0/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+      <waypoints>[0, -35, -1, 92]</waypoints>
+      <waypoints>[0, -63, -1, 64]</waypoints>
+      <waypoints>[0, -63, -1, 64]</waypoints>
+      <waypoints>[0, -95, -1, 32]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="532,274" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.4 //@diagrams.0/@contained.6 //@diagrams.0/@contained.8 //@diagrams.0/@contained.15 //@diagrams.0/@contained.20 //@diagrams.0/@contained.28 //@diagrams.0/@contained.60"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//NamedItem"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//NamedItem/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//NamedItem/name"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.3/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+      <waypoints>[0, -26, 1, 105]</waypoints>
+      <waypoints>[0, -65, 1, 66]</waypoints>
+      <waypoints>[0, -65, 1, 66]</waypoints>
+      <waypoints>[0, -97, 1, 34]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="484,402" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.6"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//MultiPort"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.5/@anchorage.0 //@diagrams.0/@contained.3/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="250,402" size="125,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.8 //@diagrams.0/@contained.11 //@diagrams.0/@contained.56"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//ModelContent"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//ModelContent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.7/@anchorage.0 //@diagrams.0/@contained.3/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="24,402" size="100,-1">
+      <anchorage/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Model"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Model/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="338,532" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.11"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//System"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//System/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.10/@anchorage.0 //@diagrams.0/@contained.7/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+      <waypoints>[-16, -21, 60, 109]</waypoints>
+      <waypoints>[-16, -68, 60, 62]</waypoints>
+      <waypoints>[-75, -68, 1, 62]</waypoints>
+      <waypoints>[-75, -110, 1, 20]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1392,295" size="141,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.13 //@diagrams.0/@contained.17 //@diagrams.0/@contained.26"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//SynchronisationGate"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//SynchronisationGate/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.12/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+      <waypoints>[-36, -21, 344, 97]</waypoints>
+      <waypoints>[-36, -51, 344, 67]</waypoints>
+      <waypoints>[-379, -51, 1, 67]</waypoints>
+      <waypoints>[-379, -84, 1, 34]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="622,402" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.15 //@diagrams.0/@contained.22 //@diagrams.0/@contained.24"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Flow"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Flow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.14/@anchorage.0 //@diagrams.0/@contained.3/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1330,395" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.17"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Decomposition"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Decomposition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.16/@anchorage.0 //@diagrams.0/@contained.12/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+      <waypoints>[16, -21, -66, 79]</waypoints>
+      <waypoints>[16, -48, -66, 52]</waypoints>
+      <waypoints>[85, -48, 3, 52]</waypoints>
+      <waypoints>[85, -80, 3, 20]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="53,23" size="150,-1">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//DataType"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//DataType/Integer"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//DataType/Real"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//DataType/Float"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//DataType/Double"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="159,159" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//DataType/Boolean"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="768,402" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.20"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//DataStore"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//DataStore/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.19/@anchorage.0 //@diagrams.0/@contained.3/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="721,532" size="105,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.22"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//DataFlow"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//DataFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//DataFlow/type"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.21/@anchorage.0 //@diagrams.0/@contained.14/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="532,537" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.24"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//ControlFlow"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//ControlFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.23/@anchorage.0 //@diagrams.0/@contained.14/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1522,395" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.26"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Composition"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Composition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.25/@anchorage.0 //@diagrams.0/@contained.12/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+      <waypoints>[16, -21, 126, 79]</waypoints>
+      <waypoints>[16, -48, 126, 52]</waypoints>
+      <waypoints>[-107, -48, 3, 52]</waypoints>
+      <waypoints>[-107, -80, 3, 20]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="904,636" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.28 //@diagrams.0/@contained.30 //@diagrams.0/@contained.36 //@diagrams.0/@contained.44 //@diagrams.0/@contained.48"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Port"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Port/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.27/@anchorage.0 //@diagrams.0/@contained.3/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="785,742" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.30 //@diagrams.0/@contained.32 //@diagrams.0/@contained.34"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//OutputPort"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//OutputPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.29/@anchorage.0 //@diagrams.0/@contained.27/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1076,898" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.32 //@diagrams.0/@contained.42"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//OutDataPort"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//OutDataPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.31/@anchorage.0 //@diagrams.0/@contained.29/@anchorage.0">
+      <property key="foregroundColor" value="0,255,0"/>
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+      <waypoints>[0, -21, 291, 135]</waypoints>
+      <waypoints>[0, -94, 291, 62]</waypoints>
+      <waypoints>[-291, -94, 0, 62]</waypoints>
+      <waypoints>[-291, -136, 0, 20]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1429,898" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.34 //@diagrams.0/@contained.46"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//OutControlPort"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//OutControlPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.33/@anchorage.0 //@diagrams.0/@contained.29/@anchorage.0">
+      <property key="foregroundColor" value="0,255,0"/>
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+      <waypoints>[-13, -21, 631, 135]</waypoints>
+      <waypoints>[-13, -94, 631, 62]</waypoints>
+      <waypoints>[-644, -94, 0, 62]</waypoints>
+      <waypoints>[-644, -136, 0, 20]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="647,742" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.36 //@diagrams.0/@contained.38 //@diagrams.0/@contained.40"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//InputPort"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//InputPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.35/@anchorage.0 //@diagrams.0/@contained.27/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="948,898" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.38 //@diagrams.0/@contained.43"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//InDataPort"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//InDataPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.37/@anchorage.0 //@diagrams.0/@contained.35/@anchorage.0">
+      <property key="foregroundColor" value="255,0,0"/>
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+      <waypoints>[-12, -21, 289, 135]</waypoints>
+      <waypoints>[-12, -72, 289, 84]</waypoints>
+      <waypoints>[-301, -72, 0, 84]</waypoints>
+      <waypoints>[-301, -136, 0, 20]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1296,898" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.40 //@diagrams.0/@contained.47"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//InControlPort"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//InControlPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.39/@anchorage.0 //@diagrams.0/@contained.35/@anchorage.0">
+      <property key="foregroundColor" value="255,0,0"/>
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+      <waypoints>[-6, -21, 643, 135]</waypoints>
+      <waypoints>[-6, -72, 643, 84]</waypoints>
+      <waypoints>[-649, -72, 0, 84]</waypoints>
+      <waypoints>[-649, -136, 0, 20]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1063,742" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.42 //@diagrams.0/@contained.43 //@diagrams.0/@contained.44"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//DataPort"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//DataPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.31/@anchorage.0 //@diagrams.0/@contained.41/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+      <waypoints>[15, -21, 28, 135]</waypoints>
+      <waypoints>[15, -104, 28, 52]</waypoints>
+      <waypoints>[-13, -104, 0, 52]</waypoints>
+      <waypoints>[-13, -136, 0, 20]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.37/@anchorage.0 //@diagrams.0/@contained.41/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+      <waypoints>[17, -21, -98, 135]</waypoints>
+      <waypoints>[17, -104, -98, 52]</waypoints>
+      <waypoints>[115, -104, 0, 52]</waypoints>
+      <waypoints>[115, -136, 0, 20]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.41/@anchorage.0 //@diagrams.0/@contained.27/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1340,742" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.46 //@diagrams.0/@contained.47 //@diagrams.0/@contained.48"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//ControlPort"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//ControlPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.33/@anchorage.0 //@diagrams.0/@contained.45/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.39/@anchorage.0 //@diagrams.0/@contained.45/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+      <waypoints>[9, -21, -35, 135]</waypoints>
+      <waypoints>[9, -104, -35, 52]</waypoints>
+      <waypoints>[44, -104, 0, 52]</waypoints>
+      <waypoints>[44, -136, 0, 20]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.45/@anchorage.0 //@diagrams.0/@contained.27/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="219,256" size="144,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.50"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Transition"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Transition/condition"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Transition/emission"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Transition/priority"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.49/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+      <waypoints>[0, -44, -290, 87]</waypoints>
+      <waypoints>[0, -64, -290, 67]</waypoints>
+      <waypoints>[291, -64, 1, 67]</waypoints>
+      <waypoints>[291, -97, 1, 34]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1053,505" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.54 //@diagrams.0/@contained.58"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//State"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1241,511" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.59"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//MacroState"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//MacroState/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1053,591" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.54"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//InitialState"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.53/@anchorage.0 //@diagrams.0/@contained.51/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="169,532" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.56"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Automaton"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Automaton/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.55/@anchorage.0 //@diagrams.0/@contained.7/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+      <waypoints>[-8, -21, -101, 109]</waypoints>
+      <waypoints>[-8, -68, -101, 62]</waypoints>
+      <waypoints>[94, -68, 1, 62]</waypoints>
+      <waypoints>[94, -110, 1, 20]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1112,402" size="100,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.58 //@diagrams.0/@contained.59 //@diagrams.0/@contained.60"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//AbstractState"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//AbstractState/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.51/@anchorage.0 //@diagrams.0/@contained.57/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.52/@anchorage.0 //@diagrams.0/@contained.57/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.57/@anchorage.0 //@diagrams.0/@contained.3/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" typeInfo="Inheritance EditPolicy"/>
+      <waypoints>[0, -21, 584, 53]</waypoints>
+      <waypoints>[0, -17, 584, 57]</waypoints>
+      <waypoints>[-584, -17, 0, 57]</waypoints>
+      <waypoints>[-584, -49, 0, 25]</waypoints>
+    </contained>
+  </diagrams>
+  <diagrams position="0,0" size="100,100" name="References" viewport="0,0">
+    <property key="org.topcased.modeler.di.typeName" value="Ecore Diagram"/>
+    <property key="pageFormatName" value="A3"/>
+    <property key="diagramWidth" value="1188"/>
+    <property key="diagramHeight" value="1680"/>
+    <property key="pageMarginName" value="Small Margin"/>
+    <property key="diagramTopMargin" value="20"/>
+    <property key="diagramBottomMargin" value="20"/>
+    <property key="diagramLeftMargin" value="20"/>
+    <property key="diagramRightMargin" value="20"/>
+    <property key="orientation" value="landscape"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="org.topcased.modeler.ecore.ediagram">
+      <element href="SAM.ecore#/"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" position="1007,464" size="100,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.19 //@diagrams.1/@contained.20 //@diagrams.1/@contained.21 //@diagrams.1/@contained.24 //@diagrams.1/@contained.25 //@diagrams.1/@contained.29"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//AbstractState"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//AbstractState/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//AbstractState/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1007,264" size="100,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.20 //@diagrams.1/@contained.22 //@diagrams.1/@contained.23 //@diagrams.1/@contained.24 //@diagrams.1/@contained.28 //@diagrams.1/@contained.37"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Automaton"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Automaton/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Automaton/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="840,464" size="100,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.19 //@diagrams.1/@contained.25"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//MacroState"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//MacroState/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//MacroState/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1207,264" size="100,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.26 //@diagrams.1/@contained.27"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//State"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//State/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1185,441" size="144,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.21 //@diagrams.1/@contained.22 //@diagrams.1/@contained.26 //@diagrams.1/@contained.27 //@diagrams.1/@contained.28 //@diagrams.1/@contained.29"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Transition"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Transition/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Transition/condition"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="119,119" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Transition/emission"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="159,159" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Transition/priority"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="355,64" size="100,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.39 //@diagrams.1/@contained.40"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//ControlPort"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//ControlPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//ControlPort/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="807,64" size="100,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.41 //@diagrams.1/@contained.42"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//DataPort"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//DataPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//DataPort/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="32,364" size="100,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.30 //@diagrams.1/@contained.31 //@diagrams.1/@contained.44 //@diagrams.1/@contained.49"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//InDataPort"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//InDataPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//InDataPort/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="296,201" size="100,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.32 //@diagrams.1/@contained.33 //@diagrams.1/@contained.45 //@diagrams.1/@contained.48"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//OutDataPort"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//OutDataPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//OutDataPort/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1007,164" size="100,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.23 //@diagrams.1/@contained.34 //@diagrams.1/@contained.35 //@diagrams.1/@contained.36 //@diagrams.1/@contained.37 //@diagrams.1/@contained.38 //@diagrams.1/@contained.50 //@diagrams.1/@contained.59"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Port"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Port/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Port/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="32,64" size="100,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.39 //@diagrams.1/@contained.40"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//ControlFlow"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//ControlFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//ControlFlow/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="488,59" size="105,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.41 //@diagrams.1/@contained.42"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//DataFlow"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//DataFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//DataFlow/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="79,79" size="100,100">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//DataFlow/type"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="522,201" size="100,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.31 //@diagrams.1/@contained.33 //@diagrams.1/@contained.43 //@diagrams.1/@contained.44 //@diagrams.1/@contained.45 //@diagrams.1/@contained.51"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//DataStore"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//DataStore/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//DataStore/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="1401,364" size="100,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.35 //@diagrams.1/@contained.36 //@diagrams.1/@contained.46 //@diagrams.1/@contained.53"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Flow"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Flow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Flow/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="285,364" size="122,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.30 //@diagrams.1/@contained.32 //@diagrams.1/@contained.47 //@diagrams.1/@contained.48 //@diagrams.1/@contained.49 //@diagrams.1/@contained.52"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//SynchronisationGate"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//SynchronisationGate/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//SynchronisationGate/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="522,364" size="100,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.34 //@diagrams.1/@contained.43 //@diagrams.1/@contained.46 //@diagrams.1/@contained.47 //@diagrams.1/@contained.50 //@diagrams.1/@contained.51 //@diagrams.1/@contained.52 //@diagrams.1/@contained.53 //@diagrams.1/@contained.54 //@diagrams.1/@contained.57"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//System"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//System/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//System/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="696,464" size="100,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.55 //@diagrams.1/@contained.56"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Model"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Model/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//Model/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="696,364" size="100,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.54 //@diagrams.1/@contained.55 //@diagrams.1/@contained.56 //@diagrams.1/@contained.57 //@diagrams.1/@contained.58 //@diagrams.1/@contained.60"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//ModelContent"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//ModelContent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" position="39,39">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//ModelContent/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="807,264" size="100,-1">
+      <anchorage graphEdge="//@diagrams.1/@contained.38 //@diagrams.1/@contained.58 //@diagrams.1/@contained.59 //@diagrams.1/@contained.60"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//MultiPort"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" position="-1,-1">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge">
+          <element href="SAM.ecore#//MultiPort/%http:%2F%2Fwww.topcased.org%2Fuuid%"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.0/@anchorage.0 //@diagrams.1/@contained.2/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//AbstractState/parentState"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="45" vDistance="-3"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="10" vDistance="-19"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.0/@anchorage.0 //@diagrams.1/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//AbstractState/parentAutomaton"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="3" vDistance="-8"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="19" vDistance="-9"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.0/@anchorage.0 //@diagrams.1/@contained.4/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//AbstractState/outlink"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="4" vDistance="-4"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="3" vDistance="-20"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.1/@anchorage.0 //@diagrams.1/@contained.4/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Automaton/listTransitions"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="4" vDistance="-18"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="21" vDistance="-15"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.1/@anchorage.0 //@diagrams.1/@contained.9/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Automaton/listPorts"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="3" vDistance="5"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="5"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.1/@anchorage.0 //@diagrams.1/@contained.0/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Automaton/listStates"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="7" vDistance="8"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="25" vDistance="9"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.2/@anchorage.0 //@diagrams.1/@contained.0/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//MacroState/composition"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="43" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="7" vDistance="23"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.3/@anchorage.0 //@diagrams.1/@contained.4/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//State/inlink"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="26" vDistance="5"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="5" vDistance="7"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.4/@anchorage.0 //@diagrams.1/@contained.3/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Transition/dest"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="6" vDistance="7"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="25" vDistance="9"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.4/@anchorage.0 //@diagrams.1/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Transition/parentAutomaton"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="6" vDistance="18"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="6" vDistance="28"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.4/@anchorage.0 //@diagrams.1/@contained.0/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Transition/source"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="4" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="3" vDistance="20"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.7/@anchorage.0 //@diagrams.1/@contained.14/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//InDataPort/parentSync"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="13" vDistance="-5"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="10" vDistance="-22"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.7/@anchorage.0 //@diagrams.1/@contained.12/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//InDataPort/parentDataStore"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="19" vDistance="-4"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="19" vDistance="5"/>
+      <waypoints>[0, -21, -490, 142]</waypoints>
+      <waypoints>[0, -250, -490, -87]</waypoints>
+      <waypoints>[490, -250, 0, -87]</waypoints>
+      <waypoints>[490, -184, 0, -21]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.8/@anchorage.0 //@diagrams.1/@contained.14/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//OutDataPort/parentSync"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="4" vDistance="9"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="22" vDistance="7"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.8/@anchorage.0 //@diagrams.1/@contained.12/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//OutDataPort/parentDataStore"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="12" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="3" vDistance="-25"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.9/@anchorage.0 //@diagrams.1/@contained.15/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Port/parentSystem"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="36" vDistance="11"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+      <waypoints>[-51, 0, 434, -200]</waypoints>
+      <waypoints>[-323, 0, 162, -200]</waypoints>
+      <waypoints>[-469, 179, 16, -21]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.9/@anchorage.0 //@diagrams.1/@contained.13/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Port/outlink"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="4" vDistance="-19"/>
+      <waypoints>[50, 10, -344, -190]</waypoints>
+      <waypoints>[329, 65, -65, -135]</waypoints>
+      <waypoints>[384, 179, -10, -21]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.9/@anchorage.0 //@diagrams.1/@contained.13/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Port/inlink"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="35" vDistance="11"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="14" vDistance="12"/>
+      <waypoints>[50, 0, -344, -200]</waypoints>
+      <waypoints>[394, 0, 0, -200]</waypoints>
+      <waypoints>[394, 179, 0, -21]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.9/@anchorage.0 //@diagrams.1/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Port/parentAutomaton"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="18" vDistance="-9"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="1" vDistance="-9"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.9/@anchorage.0 //@diagrams.1/@contained.18/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Port/parentMultiPort"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="9" vDistance="-8"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="26" vDistance="-27"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.10/@anchorage.0 //@diagrams.1/@contained.5/@anchorage.0">
+      <property key="router" value="Rectilinear"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//ControlFlow/source"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="21" vDistance="-5"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="35" vDistance="-4"/>
+      <waypoints>[50, 14, -273, 14]</waypoints>
+      <waypoints>[272, 14, -51, 14]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.10/@anchorage.0 //@diagrams.1/@contained.5/@anchorage.0">
+      <property key="router" value="Rectilinear"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//ControlFlow/dest"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="7" vDistance="-9"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="37" vDistance="-9"/>
+      <waypoints>[50, -12, -273, -12]</waypoints>
+      <waypoints>[272, -12, -51, -12]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.11/@anchorage.0 //@diagrams.1/@contained.6/@anchorage.0">
+      <property key="router" value="Rectilinear"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//DataFlow/source"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="8" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="24" vDistance="-6"/>
+      <waypoints>[50, -13, -269, -13]</waypoints>
+      <waypoints>[268, -13, -51, -13]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.11/@anchorage.0 //@diagrams.1/@contained.6/@anchorage.0">
+      <property key="router" value="Rectilinear"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//DataFlow/dest"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="7" vDistance="-5"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="33" vDistance="-5"/>
+      <waypoints>[50, 14, -269, 14]</waypoints>
+      <waypoints>[268, 14, -51, 14]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.12/@anchorage.0 //@diagrams.1/@contained.15/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//DataStore/parentSystem"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="7" vDistance="-14"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="26" vDistance="-12"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.12/@anchorage.0 //@diagrams.1/@contained.7/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//DataStore/in"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="2" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="1" vDistance="9"/>
+      <waypoints>[0, -21, 490, -184]</waypoints>
+      <waypoints>[0, -87, 490, -250]</waypoints>
+      <waypoints>[-490, -87, 0, -250]</waypoints>
+      <waypoints>[-490, 142, 0, -21]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.12/@anchorage.0 //@diagrams.1/@contained.8/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//DataStore/out"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="6" vDistance="5"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="5" vDistance="22"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.13/@anchorage.0 //@diagrams.1/@contained.15/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Flow/parentSystem"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="6" vDistance="-12"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="24" vDistance="-10"/>
+      <waypoints>[0, 20, 879, 20]</waypoints>
+      <waypoints>[0, 194, 879, 194]</waypoints>
+      <waypoints>[-879, 194, 0, 194]</waypoints>
+      <waypoints>[-879, 20, 0, 20]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.14/@anchorage.0 //@diagrams.1/@contained.15/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//SynchronisationGate/parentSystem"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="17" vDistance="-2"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="2" vDistance="-20"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.14/@anchorage.0 //@diagrams.1/@contained.8/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//SynchronisationGate/out"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="5" vDistance="-7"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="25" vDistance="-8"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.14/@anchorage.0 //@diagrams.1/@contained.7/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//SynchronisationGate/in"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="5" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="7" vDistance="22"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.15/@anchorage.0 //@diagrams.1/@contained.9/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//System/listPorts"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="12" vDistance="-8"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="44" vDistance="-9"/>
+      <waypoints>[16, -21, -469, 179]</waypoints>
+      <waypoints>[162, -200, -323, 0]</waypoints>
+      <waypoints>[434, -200, -51, 0]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.15/@anchorage.0 //@diagrams.1/@contained.12/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//System/listStores"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="3" vDistance="5"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="22" vDistance="5"/>
+      <waypoints>[0, -21, 0, 142]</waypoints>
+      <waypoints>[0, -48, 0, 115]</waypoints>
+      <waypoints>[0, -143, 0, 20]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.15/@anchorage.0 //@diagrams.1/@contained.14/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//System/listSynchronisation"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="3" vDistance="3"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" vDistance="21"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.15/@anchorage.0 //@diagrams.1/@contained.13/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//System/listFlows"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="9" vDistance="-9"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="9" vDistance="9"/>
+      <waypoints>[0, 20, -879, 20]</waypoints>
+      <waypoints>[0, 194, -879, 194]</waypoints>
+      <waypoints>[879, 194, 0, 194]</waypoints>
+      <waypoints>[879, 20, 0, 20]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.15/@anchorage.0 //@diagrams.1/@contained.17/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//System/listElements"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="-1" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" vDistance="-19"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.16/@anchorage.0 //@diagrams.1/@contained.17/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//Model/modelContent"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="3" vDistance="-5"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="3" vDistance="5"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.17/@anchorage.0 //@diagrams.1/@contained.16/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//ModelContent/parentModel"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="4" vDistance="-11"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="3" vDistance="7"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.17/@anchorage.0 //@diagrams.1/@contained.15/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//ModelContent/parentSystem"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="4" vDistance="8"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="2" vDistance="26"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.17/@anchorage.0 //@diagrams.1/@contained.18/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//ModelContent/listMultiPort"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="2" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="1" vDistance="-24"/>
+      <waypoints>[0, -21, -111, 79]</waypoints>
+      <waypoints>[0, -100, -111, 0]</waypoints>
+      <waypoints>[60, -100, -51, 0]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.18/@anchorage.0 //@diagrams.1/@contained.9/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//MultiPort/listPort"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="-5" vDistance="-31"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="-5" vDistance="-57"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.1/@contained.18/@anchorage.0 //@diagrams.1/@contained.17/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge">
+        <element href="SAM.ecore#//MultiPort/parent"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="24" vDistance="9"/>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="4" vDistance="10"/>
+      <waypoints>[-51, 0, 60, -100]</waypoints>
+      <waypoints>[-111, 0, 0, -100]</waypoints>
+      <waypoints>[-111, 79, 0, -21]</waypoints>
+    </contained>
+  </diagrams>
+</diagrams:Diagrams>

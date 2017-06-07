@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.topcased.modeler.diagramconfigurator/src"
+    editDirectory="/org.topcased.modeler.diagramconfigurator/src" editorDirectory="/org.topcased.modeler.diagramconfigurator/src"
+    modelPluginID="org.topcased.modeler.diagramconfigurator" forceOverwrite="true"
+    modelName="Diagramconfigurator" modelPluginClass="org.topcased.modeler.diagramconfigurator.internal.DiagramConfiguratorPlugin"
+    editPluginClass="" editorPluginClass="" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.topcased.modeler.editorconfigurator/model/editorconfigurator.genmodel#//editorconfigurator platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel#//genmodel">
+  <foreignModel>diagramconfigurator.ecore</foreignModel>
+  <genPackages prefix="Diagramconfigurator" basePackage="org.topcased.modeler" resource="XMI"
+      disposableProviderFactory="true" classPackageSuffix="internal.impl" presentationPackageSuffix="internal.presentation"
+      generateExampleClass="false" ecorePackage="diagramconfigurator.ecore#/">
+    <genEnums ecoreEnum="diagramconfigurator.ecore#//EdgeContainerType">
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//EdgeContainerType/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//EdgeContainerType/SOURCE"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//EdgeContainerType/SOURCE_CONTAINER"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//EdgeContainerType/DIAGRAM"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//EdgeContainerType/TARGET"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//EdgeContainerType/TARGET_CONTAINER"/>
+    </genEnums>
+    <genEnums ecoreEnum="diagramconfigurator.ecore#//ResizableType">
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//ResizableType/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//ResizableType/WIDTH"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//ResizableType/HEIGHT"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//ResizableType/ALL"/>
+    </genEnums>
+    <genEnums ecoreEnum="diagramconfigurator.ecore#//LayoutType">
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//LayoutType/XYLayout"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//LayoutType/ClassLayout"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//LayoutType/ToolbarLayout"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//LayoutType/PortLayout"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//LayoutType/MultiPortLayout"/>
+    </genEnums>
+    <genEnums ecoreEnum="diagramconfigurator.ecore#//DecorationType">
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//DecorationType/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//DecorationType/ARROW"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//DecorationType/TRIANGLE"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//DecorationType/DIAMOND"/>
+    </genEnums>
+    <genEnums ecoreEnum="diagramconfigurator.ecore#//RouterType">
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//RouterType/ObliqueRouter"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//RouterType/RectilinearRouter"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//RouterType/TreeRouter"/>
+    </genEnums>
+    <genEnums ecoreEnum="diagramconfigurator.ecore#//EdgeObjectType">
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//EdgeObjectType/Source"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//EdgeObjectType/Middle"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//EdgeObjectType/Target"/>
+    </genEnums>
+    <genEnums ecoreEnum="diagramconfigurator.ecore#//LineStyle">
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//LineStyle/SOLID"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//LineStyle/DASH"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//LineStyle/DOT"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//LineStyle/DASHDOT"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//LineStyle/DASHDOTDOT"/>
+      <genEnumLiterals ecoreEnumLiteral="diagramconfigurator.ecore#//LineStyle/CUSTOM"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="diagramconfigurator.ecore#//Color"/>
+    <genDataTypes ecoreDataType="diagramconfigurator.ecore#//Font"/>
+    <genClasses ecoreClass="diagramconfigurator.ecore#//DiagramConfiguration">
+      <genFeatures createChild="false" propertyCategory="All" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramConfiguration/projectName"/>
+      <genFeatures createChild="false" propertyCategory="All" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramConfiguration/name"/>
+      <genFeatures createChild="false" propertyCategory="All" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramConfiguration/package"/>
+      <genFeatures createChild="false" propertyCategory="All" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramConfiguration/prefix"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="All"
+          ecoreFeature="ecore:EReference diagramconfigurator.ecore#//DiagramConfiguration/palette"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="All"
+          ecoreFeature="ecore:EReference diagramconfigurator.ecore#//DiagramConfiguration/parts"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" propertyDescription=""
+          ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramConfiguration/layout"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          ecoreFeature="ecore:EReference diagramconfigurator.ecore#//DiagramConfiguration/objects"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//DiagramConfiguration/genModel"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramConfiguration/defaultBackgroundColor"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramConfiguration/defaultForegroundColor"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramConfiguration/defaultFont"/>
+      <genFeatures createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference diagramconfigurator.ecore#//DiagramConfiguration/templateRootObject"/>
+      <genFeatures createChild="false" propertyCategory="Templates &amp; Merge" propertyDescription="Indicate whether the non-Java files should be overwritten."
+          ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramConfiguration/forceOverwrite"/>
+      <genFeatures createChild="false" propertyCategory="Templates &amp; Merge" propertyDescription="Specify whether the diagram.graphconf should be overwritten."
+          ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramConfiguration/overwriteGraphConf"/>
+      <genFeatures createChild="false" propertyCategory="Templates &amp; Merge" propertyDescription=""
+          ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramConfiguration/organizeImports"/>
+      <genFeatures createChild="false" propertyCategory="Model" propertyDescription="Reference the EditorConfigurator model that the current Diagram configuration should depends on."
+          propertySortChoices="true" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//DiagramConfiguration/editorConfigurator"/>
+      <genFeatures createChild="false" propertyCategory="Templates &amp; Merge" propertyDescription="Specify the CopyrightText that will be added at the beginning of the generated files."
+          propertyMultiLine="true" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramConfiguration/copyrightText"/>
+      <genFeatures createChild="false" propertyCategory="All" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramConfiguration/pluginVersion"/>
+      <genFeatures createChild="false" propertyCategory="All" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramConfiguration/provider"/>
+      <genFeatures createChild="false" propertyCategory="Templates &amp; Merge" propertyDescription="Indicate whether the diagram plugin should be generated in the same plugin as the one associated with the editor."
+          ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramConfiguration/samePluginAsEditor"/>
+      <genOperations ecoreOperation="diagramconfigurator.ecore#//DiagramConfiguration/getBasePackage"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="diagramconfigurator.ecore#//ObjectConfiguration">
+      <genOperations ecoreOperation="diagramconfigurator.ecore#//ObjectConfiguration/getName"/>
+    </genClasses>
+    <genClasses ecoreClass="diagramconfigurator.ecore#//DiagramReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//DiagramReference/diagram"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramReference/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//DiagramReference/upperBound"/>
+    </genClasses>
+    <genClasses ecoreClass="diagramconfigurator.ecore#//PaletteConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//PaletteConfiguration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//PaletteConfiguration/paletteCategories"/>
+    </genClasses>
+    <genClasses ecoreClass="diagramconfigurator.ecore#//PaletteCategory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//PaletteCategory/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//PaletteCategory/items"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="diagramconfigurator.ecore#//PartConfiguration"
+        labelFeature="#//diagramconfigurator/PartConfiguration/prefix">
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//PartConfiguration/object"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//PartConfiguration/presentation"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//PartConfiguration/defaultForegroundColor"/>
+      <genFeatures createChild="false" propertyCategory="Policies" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//PartConfiguration/foregroundColorChangeable"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//PartConfiguration/defaultFont"/>
+      <genFeatures createChild="false" propertyCategory="Policies" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//PartConfiguration/fontChangeable"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//PartConfiguration/lineWidth"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//PartConfiguration/lineStyle"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          ecoreFeature="ecore:EReference diagramconfigurator.ecore#//PartConfiguration/constraint"/>
+      <genFeatures createChild="false" propertyCategory="Templates &amp; Merge" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//PartConfiguration/prefix"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//PartConfiguration/actions"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//PartConfiguration/iconInPart"/>
+    </genClasses>
+    <genClasses ecoreClass="diagramconfigurator.ecore#//NodePartConfiguration" labelFeature="#//diagramconfigurator/PartConfiguration/prefix">
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//NodePartConfiguration/type"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//NodePartConfiguration/childElements"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//NodePartConfiguration/superType"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//NodePartConfiguration/defaultBackgroundColor"/>
+      <genFeatures createChild="false" propertyCategory="Policies" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//NodePartConfiguration/backgroundColorChangeable"/>
+      <genFeatures createChild="false" propertyCategory="Policies" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//NodePartConfiguration/resizing"/>
+      <genFeatures createChild="false" propertyCategory="Policies" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//NodePartConfiguration/container"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//NodePartConfiguration/layout"/>
+      <genFeatures createChild="false" propertyCategory="Policies" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//NodePartConfiguration/directEditable"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//NodePartConfiguration/defaultWidth"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//NodePartConfiguration/defaultHeight"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//NodePartConfiguration/minimumWidth"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//NodePartConfiguration/minimumHeight"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//NodePartConfiguration/maximumWidth"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//NodePartConfiguration/maximumHeight"/>
+      <genFeatures createChild="false" propertyCategory="Policies" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//NodePartConfiguration/attachedToBorder"/>
+    </genClasses>
+    <genClasses ecoreClass="diagramconfigurator.ecore#//EdgePartConfiguration" labelFeature="#//diagramconfigurator/PartConfiguration/prefix">
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          ecoreFeature="ecore:EReference diagramconfigurator.ecore#//EdgePartConfiguration/sourceTargetCouple"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          ecoreFeature="ecore:EReference diagramconfigurator.ecore#//EdgePartConfiguration/edgeObjects"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//EdgePartConfiguration/sourceDecoration"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//EdgePartConfiguration/targetDecoration"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Properties" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//EdgePartConfiguration/defaultRouter"/>
+      <genFeatures createChild="false" propertyCategory="Policies" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//EdgePartConfiguration/directEditable"/>
+    </genClasses>
+    <genClasses ecoreClass="diagramconfigurator.ecore#//EdgeObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//EdgeObject/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//EdgeObject/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//EdgeObject/eStructuralFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="diagramconfigurator.ecore#//PaletteItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//PaletteItem/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//PaletteItem/part"/>
+    </genClasses>
+    <genClasses ecoreClass="diagramconfigurator.ecore#//SourceTargetCouple">
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//SourceTargetCouple/containerType"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//SourceTargetCouple/autoRef"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//SourceTargetCouple/reversible"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//SourceTargetCouple/containerObject"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Connection" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//SourceTargetCouple/sourceNode"/>
+      <genFeatures createChild="false" propertyCategory="Graphic Connection" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//SourceTargetCouple/targetNode"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//SourceTargetCouple/containerRef"/>
+      <genFeatures createChild="false" propertyCategory="Model Update" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//SourceTargetCouple/refSourceToEdge"/>
+      <genFeatures createChild="false" propertyCategory="Model Update" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//SourceTargetCouple/refEdgeToSource"/>
+      <genFeatures createChild="false" propertyCategory="Model Update" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//SourceTargetCouple/refTargetToEdge"/>
+      <genFeatures createChild="false" propertyCategory="Model Update" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//SourceTargetCouple/refEdgeToTarget"/>
+      <genFeatures createChild="false" propertyCategory="Model Update" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//SourceTargetCouple/refSourceToTarget"/>
+      <genFeatures createChild="false" propertyCategory="Model Update" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//SourceTargetCouple/refTargetToSource"/>
+    </genClasses>
+    <genClasses ecoreClass="diagramconfigurator.ecore#//ModelObjectConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//ModelObjectConfiguration/genClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diagramconfigurator.ecore#//ModelObjectConfiguration/diagrams"/>
+      <genOperations ecoreOperation="diagramconfigurator.ecore#//ModelObjectConfiguration/getName"/>
+    </genClasses>
+    <genClasses ecoreClass="diagramconfigurator.ecore#//SimpleObjectConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//SimpleObjectConfiguration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="diagramconfigurator.ecore#//Constraint" labelFeature="#//diagramconfigurator/Constraint/rule">
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//Constraint/language"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//Constraint/rule"/>
+    </genClasses>
+    <genClasses ecoreClass="diagramconfigurator.ecore#//PartAction" labelFeature="#//diagramconfigurator/PartAction/label">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//PartAction/prefix"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//PartAction/menuBarGroup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//PartAction/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagramconfigurator.ecore#//PartAction/icon"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

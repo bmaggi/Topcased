@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.topcased.generator.feature"
+      label="%featureName"
+      version="1.0.0.qualifier"
+      provider-name="%providerName">
+
+   <description url="%license">
+      %description
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.emf.codegen.ecore"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.jdt.launching"/>
+      <import plugin="org.eclipse.jdt.ui"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.apache.batik.pdf"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.emf.codegen.ecore.ui"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.topcased.tabbedproperties"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.eclipse.emf.ecore.edit"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.draw2d"/>
+      <import plugin="org.topcased.facilities"/>
+      <import plugin="org.topcased.draw2d"/>
+      <import plugin="org.eclipse.ui.views.properties.tabbed"/>
+   </requires>
+
+   <plugin
+         id="org.topcased.generator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.modeler.generator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.outline.generator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.properties.generator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.properties.configurator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.modeler.configurator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.modeler.diagramconfigurator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.modeler.editorconfigurator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.outline.configurator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.fop"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+</feature>

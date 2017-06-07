@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta name="copyright" content="(C) Copyright 2005" />
+		<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+		<meta content="topic" name="DC.Type" />
+		<meta name="DC.Title" content="Description" />
+		<meta content="XHTML" name="DC.Format" />
+		<meta content="topcasedmmdescription" name="DC.Identifier" />
+		<meta content="en-us" name="DC.Language" />
+		<link href="css/visual.css" type="text/css" rel="stylesheet" />
+		<title>MODELING FRAMEWORK - Description</title>
+	</head>
+
+	<body id="topcasedmmdescription">
+		<h1 class="topictitle1">Description</h1>
+		<div id="container">
+			<p>On this page you will find the main functionalities of the Modeling Framework.</p>
+			<p><strong>Graphical Editor Configuration :</strong>
+				<ul>
+					<li><a href="tutorials/generateEditor.html#mfgeneditor__title2.1">How to create an editor configuration</a></li>
+					<li><a href="tutorials/generateEditor.html#mfgeneditor__title2.2">How to create a diagram configuration</a></li>
+					<li><a href="tutorials/generatePropertiesView.html">How to create a Properties view configuration</a></li>
+					<li><a href="tutorials/generateOutlineMenu.html">How to create an outline configuration</a></li>
+				</ul>
+			</p>	
+			<p><strong>Graphical Editor Generation :</strong>
+				<ul>
+					<li><a href="tutorials/generateEditor.html#mfgeneditor__title3">How to generate the graphical editor associated with the configurator models</a></li>
+				</ul>
+			</p>
+			
+			<div class="tablenoborder">
+				<table summary="" cellspacing="0" cellpadding="4" class="noteworthytable" frame="border" border="0" rules="all">
+					<tbody>
+						<tr>
+							<td colspan="2" class="noteworthygroup" valign="top">Models edition</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Model and Diagram files storage</td>
+							<td class="noteworthydescription" valign="top">
+								The creation of a new diagram in Topcased result in the creation of two files. The first file has the *.<em>model</em> extension contains informations about the model,
+								whereas the second file with the *.<em>model<strong>di</strong></em> extension contains graphical information about diagrams (position, size, colors,...).
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Activation of the "Topcased Modeling" Perspective</td>
+							<td class="noteworthydescription" valign="top">
+								Modeling with Topcased is easier by selecting the "Topcased Modeling" perspective : a perspective is a particular configuration of Eclipse environment that
+								consists of customized views, shortcuts and popup menus. To activate the "Topcased Modeling perspective", select "Window -&gt; Open Perspective -&gt; Other .."
+								<img src="images/openPerspective.jpg" alt="openPerspective" />
+								and select the "Topcased Modeling" perspective :
+								<img src="images/selectPerspective.jpg" alt="selectPerspective" />
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Creation of a Topcased Project</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 1.0.0M2 &gt;&gt;</strong>
+								<p>
+									A new project creation wizard is available. This will create a simple Project with a dedicated nature : the generated project only contains a single "Models" folder
+									that should be usually used to contains the model files related with the project. The project structure will evolve in the future depending on the user needs and feedbacks.
+									<img src="images/createTopcasedProject.jpg" alt="createTopcasedProject" />
+								</p>
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">The Topcased Navigator</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 1.0.0M2 &gt;&gt;</strong>
+								<p>
+									The Topcased Navigator may be used in place of the default Navigator in the Topcased Perspective.
+									<img src="images/navigator/topcasedNavigator.jpg" alt="topcasedNavigator" />
+									The view has been improved with a few filters on the Resources to show or hide in the navigator. By default, only  the Topcased projects (with a Topcased nature) are visible :
+									<img src="images/navigator/availableFilters.jpg" alt="availableFilters" />
+									Content filters are also available. They are used to show or hide the contents of a given Resource in the navigator. Thus you can explore the contents of a model file or show
+									all the diagrams that are available for a given model.
+									<img src="images/navigator/contentFilters.jpg" alt="contentFilters" />
+									Note that if you can directly open a Diagram in the graphical editor by double clicking on it.
+									<img src="images/navigator/navigatorWithContents.jpg" alt="navigatorWithContents" />
+								</p>
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Creation of a new Diagram</td>
+							<td class="noteworthydescription" valign="top">
+								Each graphical editor is associated with a wizard whose goal is to simplify user tasks. The creation is so achieved in a few steps. To start the wizard, select the project
+								where you want to create your model, "Right Click &gt; New &gt; Other..." and then select the corresponding kind of diagram : "Topcased &gt; Topcased Diagrams &gt;
+								<em>XXX</em>Diagram"
+								<p>
+									<em><strong>Remark</strong> : if you have successfully switched to the "Topcased modeling" perspective, there is a shortcut directly accessible from the popup menu.</em>
+								</p>
+								<img src="images/newDiagramWizard.jpg" alt="newDiagramWizard" />
+								Once you have selected the expected diagram, the wizard is opened :
+								<img src="images/diagramWizard.jpg" alt="diagramWizard" />
+								You will have to fill the following informations :
+								<br /><ul>
+									<li>The radio button " <strong>Create a new Model</strong> " should be selected by default, otherwise select it.
+										<br /><ul>
+											<li>
+												The field "<strong>Directory</strong>" is the container folder for your diagram. The value is automatically filled if you have started the wizard by
+												right-clicking on a project or a directory. You can change it by clicking on the "<strong>...</strong>" button.
+											</li>
+											<li>The field "<strong>Model name</strong>" is the name for your model and diagram files that will be created.</li>
+											<li>
+												The drop-down list "<strong>Template</strong>" helps you to select a Template. Templates are defined by the plugin, they provide a basis for your
+												model and whether a model is associated with many diagrams, the plugin must provide a template for each diagram.
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<p>
+									When you have correctly filled all the informations, click on the "Finish" button to open the editor with your empty diagram.
+								</p>
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Creation of a new Diagram from an existing model</td>
+							<td class="noteworthydescription" valign="top">
+								Each graphical editor is associated with a wizard whose goal is to simplify user tasks. The creation is so achieved in a few steps. To start the wizard, select the model
+								file that should be associated with the diagram you want to create, "Right Click &gt; New &gt; Other ..." and then select the corresponding kind of diagram depending
+								on the model file you have choosen : "Topcased &gt; Topcased Diagrams &gt; <em>XXX</em>Diagram".
+								<p>
+									Once you have selected the expected diagram, the wizard is opened :
+								</p>
+								<img src="images/existingModelWizard.jpg" alt="existingModelWizard" />
+								You will have to fill the following informations :
+								<br /><ul>
+									<li>The radio button "<strong>Create from an existing Model</strong>" should be selected by default, otherwise select it.
+										<br /><ul>
+											<li>
+												The field "<strong>Model</strong>" reference the existing model to use with your diagram. The value is automatically filled if you have started the
+												wizard by right-clicking on a valid model file. You can change it by clicking on the "<strong>...</strong>" button.
+												<img src="images/modelSelection.jpg" alt="modelSelection" />
+											</li>
+											<li>Then you have to "<strong>Select</strong>" in the list the model object that should be associated with your main diagram.</li>
+											<li>
+												The drop-down list "<strong>Template</strong>" helps you to select a Template. The available list of Templates are filtered depending on the type of
+												model object you have previously selected in the list.
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<p>
+									When you have correctly filled all the informations, click on the "Finish" button to open the editor : as you can see the editor is empty. However, if you look at the "Outline" and more precisely
+									the area that contains the model, you will discover that all the model object are present : so you have just to drag and drop the objects into appropriate diagrams and continue modeling.
+								</p>
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Export formats
+								<p><img class="icon" src="images/export.gif" alt="exportIcon" /></p>
+							</td>
+							<td class="noteworthydescription" valign="top">
+								Different exporting formats are available. The active diagram can be exported as an image to your file sytem. On the editor, "<strong>Right Click &gt; Export to file</strong>" and then in the popup window, select
+								the destination folder and the format among BMP and JPG.
+								<img src="images/exportAction.jpg" alt="exportAction" />
+								<strong>&lt;&lt; New in 0.10.0 &gt;&gt;</strong>
+								Three new formats are available : SVG, PNG and GIF.
+								<img src="images/exportFormats.jpg" alt="exportFormats" />
+							</td>
+						</tr>
+
+						<tr>
+							<td class="noteworthytitle" valign="top">Rename a Model
+								<p><img class="icon" src="images/rename.gif" alt="icon"/></p>
+							</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; Update in 2.0.0 &gt;&gt;</strong>
+								<p>The rename of a model uses the standard refactoring mecanism of Eclipse and extends it to add its specific tasks.</p> 
+								<img src="images/renameModelFile1.jpg" alt="renameFile" />
+								<p>
+								This specific tasks are to rename a diagram/model file(s), and modifiy all the files that are referencing them.
+								A new dialog lets the user choose the refactoring range : by default, the renaming of the file only
+								update the files in the same project, but the workspace may be included in the references search (the process will be longer in this case).
+								</p>
+								<img src="images/renameModelFile2.jpg" alt="Dialog for specif task" />
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Use qualified name in the selection dialog</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 2.0.0 &gt;&gt;</strong>
+								<p>When you need to reference a domain element in your model, you often select it through the custom chooseDialog availaible from the Properties View.</p>
+								<img src="images/defaultlabelprovider.png" alt="Default Label Provider"/>
+								<p>However the proposed list could lead up to confusion sometimes. An option (available only in some significant cases) can be used to show qualified name instead.</p>
+								<img src="images/advancedlabelprovider.png" alt="Advanced Label Provider" />
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Copy/Cut/Paste in the editor
+								<p>
+									<img class="icon" src="images/copy_edit.gif" alt="copy"/>
+									<img class="icon" src="images/cut_edit.gif" alt="cut"/>
+									<img class="icon" src="images/paste_edit.gif" alt="paste"/>
+								</p>
+							</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 2.1.0 &gt;&gt;</strong>
+								<p>
+									You can Copy/Cut/Paste elements between two distincts diagrams. The Copy/Cut is done on the underlying domain element, but not on the graphical one.
+									Copy/Cut is available when only one element is selected in the diagram and that this element is associated with a domain element.
+									In fact, all the sub-hierarchy (element itself and all its children) of the selected element is copied into a "Clipboard". This "Clipboard" is shared between all the Topcased editors. 
+								</p>
+								<img src="images/CopyCutPaste.png" alt="CopyCutPaste"/>
+								<p>
+									When you Paste an element from the "Clipboard" contents, a dialog may (or not) be prompted : that depends whether the "copied" set of elements could be independantly extracted ot not.
+								</p>
+								<img src="images/PasteDialog.png" alt="PasteDialog" />
+								<p>
+									When the dialog appeas, it means that some references to "external" elements are present : by default, all those references will be removed in the newly created elements.
+									This is mainly to avoid unwanted dependencies to be automatically added.
+									In the case of Copy/Paste action is done within the same diagram, references should be kept : just unselect all.
+								</p>
+								<p>
+									After the Paste action is performed, new domain elements are created and the diagram is automatically populated using default Importer mechanism (available when using DND between the outline and the diagram).
+									It means that graphical properties (font, colors, size, ...) are not kept between the two copies.
+								</p>
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Duplicating part of a model
+								<p>
+									<img class="icon" src="images/duplicateSubtree.png" alt="Duplicate subtree"/>
+								</p>
+							</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 2.1.0 &gt;&gt;</strong>
+								<p>
+								  A new action "Duplicate subtree" is available in the outline, to make a deep copy of part of a model, including the associated diagrams.
+								</p>
+								<img src="images/duplicateSubtree-before.png" alt="Duplicate subtree action"/>
+								<p>
+									The copy is placed alongside the original element (the containing model must not be read-only). In addition, when applied on UML models the relevant stereotypes are also copied, and the name of the root element is changed to "Copy of OLDNAME" to distinguish it from the original. 
+								</p>
+								<img src="images/duplicateSubtree-after.png" alt="Result of a the 'Duplicate subtree' action an a UML model"/>
+							</td>
+						</tr>
+						
+						<tr>
+						  <td class="noteworthytitle" valign="top">Scripting support</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 2.1.0 &gt;&gt;</strong>
+								<p>
+								  There is now support to write user scripts to automate some tasks in Topcased (only if
+                                  you have installed the Experimental features). The scripts are written in the JavaScript
+                                  language and placed directly in the workspace: there is no need to deploy a new plugin
+                                  or even to restart Eclipse.
+                                </p>
+
+								<p>
+                                  The scripts have access to the current editor's selection, and can navigate in models,
+                                  create/modify existing elements and save the results. They can also interact with the
+                                  user to ask him for parameters and display results.
+                                </p>
+
+								<p>
+                                  Sample scripts are available for SAM, SysML and UML. To get them, do "File > New >
+                                  Other", and in the new "Topcased > Topcased Scripting" category, select one of the
+                                  examples projects (for example "Example UML Scripts"). This creates a new Topcased
+                                  project in the workspace, with example scripts pre-installed. The scripts can be invoked
+                                  from Eclipse's top-level "Scripts" menu, in the "Topcased" sub-menu.
+                                </p>
+
+								<p>
+                                  More details about this feature, including how to use scripts, how to write your own and
+                                  how to extends the features they have access to can be found in
+                                  <a href="scripting.html">a separate documentation</a>.
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="2" class="noteworthygroup" valign="top">Team Work Management</td>
+						</tr>
+
+						<tr>
+							<td class="noteworthytitle" valign="top">Control/Uncontrol</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 0.11.0 &gt;&gt;</strong>
+								<p>	These actions are mainly used to split/merge a model into several models. This functionality is mainly used to share a same model between different users. You can "<strong>Control</strong>" (or split) a model from the Outline View. Select the element you want to extract in a new file, "Right Click &gt; Control" :
+									<img src="images/controlAction.jpg" alt="controlAction" />
+									Then, you have to choose a file where the subModel should be stored (Do not forget to indicate the corresponding file extension) :
+									<img src="images/selectControlledFileDialog.jpg" alt="selectControlledFileDialog&quot;" />
+									At this point, when you save the model, the new controlled file should appear in the Package Explorer view. An associated diagrams file is also created : it will contains all the diagrams contained in the hierarchy of the controlled element, or none. You can then edit that diagrams, all changes are made in that file (the original file only keep a reference to that controlled file).
+								</p>
+								<p>	Later, you can choose to "<strong>Uncontrol</strong>" (or merge) these two models. In the original model file, select the controlled element (it should be decorated with a special icon in the Outline View), and then "Right Click &gt; Uncontrol" :
+									<img src="images/uncontrolAction.jpg" alt="uncontrolAction&quot;" />
+									A dialog opens to ask if you want to delete the controlled files or keep them. If you decide to keep them, they will not have been modified by the Uncontrol action. Otherwise they are removed from the disk. At the end of the action, the contents of the controlled files (model and diagrams) should be merged into that model.
+								</p>
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Export/Import</td>
+							<td class="noteworthydescription" valign="top">
+							  <strong>&lt;&lt; New in 2.0.0 &gt;&gt;</strong>
+							  <p>These new actions extend the Control/Uncontrol actions to enable collaboration: controlling a
+							  sub-model allows to physically split it across multiple files, but the controlled model still
+							  depends on its parent. The new &quot;<b>Export</b>&quot; action creates an autonomous version of the
+							  sub-model, which can be sent to another user (e.g. a sub-contractor). He can then view and edit it
+							  without access to the whole original model. The &quot;Import&quot; action can later be used to
+							  integrate changes made by the user back into the original model.</p>
+							  
+							  <p><strong>WARNING</strong>: When exporting part of an UML model, if elements of the sub-model to export
+                              have stereotypes applied to them, the corresponding Profiles <strong>must</strong> be applied directly on
+                              the package being exported. It is not enough for the profile to be applied on a parent
+                              element which will not be part of the exported model. If the profile is initially only
+                              applied to such a parent element, you must manually apply it also in the package to
+                              export before executing the export operation.</p>
+							  
+							  <p>Once a model has been controlled, a new action &quot;<b>Export</b>&quot; is available: from the
+							  Outline View, select the controlled element you want to export and &quot;Right Click &gt;
+							  Export&quot;:</p>
+							  <img src="images/exportModelAction.jpg" alt="Export Action" />
+							  <p>A wizard opens. The first page allows you to select the name of the sub-model (without a file
+							  extension), and the target directory where it will be saved:</p>
+							  <img src="images/exportWizardPage1.jpg" alt="First page of the export wizard: target name and location selection" />
+							  <p>In order to make the exported sub-model autonomous (i.e. usable without the complete original
+							  model), the export action includes copies of all its dependencies into a new, companion model named
+							  the <b>cache</b>. The second page of the export wizard shows you a preview of what will be included
+							  in this cache, and gives you some control over it:</p>
+							  <img src="images/exportWizardPage2.jpg" alt="Second page of the export wizard: cache preview" />
+							  <p>There are three categories of elements in the cache:</p>
+							  <ul>
+							    <li><b>Strict dependencies</b> include the minimum elements which are required for the exported
+							    model to load without errors. Its content is automatically computed and can not be changed. You
+							    may discover here that your model has unwanted dependencies you had not realized. You can cancel
+							    the export action to fix this.</li>
+							    <li><b>Semantic dependencies</b> include elements which are not required to load the exported
+							    model but without which its meaning may be altered. The content of this category will depend on
+							    the meta-model (e.g. UML, SAM, SysML, etc.). For example, for UML models it will include profile
+							    and stereotype applications. The content of this category is automatically computed and can not be
+							    changed.</li>
+							    <li>Finally, the <b>user elements</b> category, which is initialy empty, allows you to manually
+							    add elements from the parent model into the cache. This is useful if you know the user of the
+							    exported model will need access to elements it does not yet depend on to do his work (for example
+							    a library he will have to use). You can modify the contents of this category using the <b>Add</b>
+							    and <b>Remove</b> buttons on the right.</li>
+							  </ul>
+							  <p>Once you are satisfied with the contents of the cache, you can click <b>Finish</b> to actually
+							  perform the export operation, and then save the model.</p>
+							  <p>The export process will not modify the original models (including the controlled sub-model), but
+							  will create 5 new files:</p>
+							  <img src="images/exportNewFiles.jpg" alt="The files created by the export process." />
+							  <p>In the example above, we exported the <b>Feature</b> package (which was initially controlled)
+							  from the <b>ParentModel</b> UML model. The new files created are:</p>
+							  <ul>
+							    <li><b>Feature.part.uml</b> and <b>Feature.part.umldi</b>: the exported versions of the
+							    <b>Feature</b> sub-model and its diagrams.</li>
+							    <li><b>Feature.cache.uml</b> and <b>Feature.cache.umldi</b>: copies of the elements and diagrams
+							    required by the exported model.</li>
+							    <li><b>Feature.properties</b>: this new file stores meta-information about the exported status of
+							    the <b>Feature.uml</b> model. It should be kept with the original model and put in configuration
+							    with it.</li>
+							  </ul>
+							  <p>The <b>*.part.*</b> and <b>*.cache.*</b> files are self-contained: they reference each other, but
+							  are not connected to the original models in any way. They can be sent together to another user, who
+							  will be able to open the model and modify it. They can be safely removed from the parent model's
+							  workspace. Two important things to note:</p>
+							  <ul>
+							    <li><b>The cache should be considered read-only and never modified by the user.</b></li>
+							    <li><b>After it has been exported, the controlled sub-model should also be considered read-only
+							    until is is re-imported.</b></li>
+							  </ul>
+							  <p>Once the exported version of a sub-model has been modified, it is possible to re-integrate these
+							  changes into the main model using the &quot;<b>Import</b>&quot; action. It is available on
+							  controlled sub-models which are marked as exported (through their associated .properties file). The
+							  action opens a wizard:</p>
+							  <img src="images/importWizardPage1.jpg" alt="First page of the import wizard: select the model to import" />
+							  <p>The first wizard page, shown above, allows you to select the sub-model to import (the
+							  <b>Feature.part.uml</b> file in our example). The next two pages of the wizard allow to preview and
+							  configure the import process: because the main model and the exported model may have changed since
+							  the export, cross references between them may need to be tweaked so they can be re-integrated
+							  together. The first of these pages treats references from the main model to the controlled model,
+							  which must be updated to point to the new sub-model being imported. The second page treats
+							  references from the model being imported to its cache, which must be updated to point back to the
+							  new version of the parent model.</p>
+							  <img src="images/importWizardPage2.jpg" alt="Second page of the import wizard: cross-model references configuration" />
+							  <p>Both pages are organized in the same way:</p>
+							  <ul>
+							    <li>The top part shows the current external element being referenced, and the new version it will
+							    be updated to point to. When the element in question has not been deleted since the export, the
+							    import action should be able to retreive it and no action is necessary. If the replacement can not
+							    be found automatically, the element will be shown in red, and a default replacement automatically
+							    chosen. You can choose another replacement by clicking in the <b>Replacement</b> column and
+							    selecting one of the proposed candidates.</li>
+							    <li>The bottom part of the wizard shows how the element currently selected in the top part is used
+							    in the model, to assist you in selecting the right candidate. In the example above, we can see
+							    that the <b>Feature</b> package (selected in the top part) is used by the <b>ParentModel</b>
+							    package as one of its owned elements.</li>
+							  </ul>
+							  <p>Once you are satisfied with the import configuration, you can click <b>Finish</b> to complete the
+							  process. The controlled model will be replaced by the version from the <b>*.part.*</b> files, and
+							  the connections between the main model and this new sub-model updated according to the configuration
+							  specified in the wizard.</p>
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Concurrent access</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 2.0.0 &gt;&gt;</strong>
+								<p>By default, you can't open a single resource (with write access) by two diagram editors to avoid problems of synchronization between editors.</p>
+								<p>The second editor will open but with an error message indicating the problem.</p>
+								<img src="images/concurrentAcces.jpg" alt="Editor with sample message" />
+								<p><br/>
+								You can still disable this behavior (which is discouraged). This requires manually create a file named "allowConcurrentAcces" in the .metadata of the workspace
+								in the folder "/workspacePath/.metadata/.plugins/org.topcased.modeler"
+								</p>
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Model Archive
+								<p>
+									<img class="icon" src="images/createRAS.png"/>
+									<img class="icon" src="images/extractRAS.png"/>
+									<img class="icon" src="images/addToRAS.png"/>
+									<img class="icon" src="images/extractFromRAS.png"/>
+								</p>
+								<p><img class="icon" src="images/link_ovr.gif"/></p>
+							</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 2.1.0 &gt;&gt;</strong>
+								<p>
+									It is possible to manage domain model and its diagram into a single archive model. A set of actions are available to manage archive models : depending on the current selection, actions are visible or not.
+									Here is a quick overview of the available actions, that can be reached from the contextual menu ("right click > Model Archive") :
+									<img src="images/modelArchiveMenu.png" alt="modelArchiveMenu"/>
+									<p>
+										<img class="icon" src="images/createRAS.png"/>&nbsp;&nbsp;<strong>Create <i>xxx</i> Archive</strong> : create an archive (JAR) from a set of files<br/>
+										<img class="icon" src="images/createRAS.png"/>&nbsp;&nbsp;<strong>Create <i>xxx</i> Archive (uncompressed)</strong> : create an uncompressed archive (TAR) from a set of files
+										<ul>
+											<li>You should select at least two files, the domain model and its associated diagrams file (must have same name).</li>
+											<li>The type of archive you can create depends on extension of the selected files : currently archive models are only implemented for SAM, SysML and UML models.</li>
+											<li>Creating an archive model will remove original resources, create an archive file and create necessary linked resources. A resource is linked when its location is different than the default location calculated by the platform : it is also decorated with a particular icon <img class="icon" src="images/link_ovr.gif"/>.</li>
+											<li>Archive file extension is computed from the domain model one, suffixed with '<strong>z</strong>' for a compressed archive or '<strong>r</strong>' for an uncompressed one.</li>
+										</ul>
+									</p>
+									<p>
+										<img class="icon" src="images/extractRAS.png"/>&nbsp;&nbsp;<strong>Restore From <i>xxx</i> Archive</strong> : extract the files contained within an archive (JAR) and remove this archive model<br/>
+										<img class="icon" src="images/extractRAS.png"/>&nbsp;&nbsp;<strong>Restore From <i>xxx</i> Archive (uncompressed)</strong> : extract the files contained within an uncompressed archive (TAR) and remove this archive model
+										<ul>
+											<li>You can restore files contained within a given archive model.</li>
+											<li>Restore consists of removing linked resources (pointing to the files contained by the archive model), recreating those files and removing the archive file.</li>
+										</ul>
+									</p>
+									<p><img class="icon" src="images/addToRAS.png"/>&nbsp;&nbsp;<strong>Add To Archive ...</strong>
+										<ul>
+											<li>You should select one or more Resource in the workspace. All these Resources should be contained within the same container.</li>
+											<li>A dialog lets you choose among the possible archive models : you can only add them to an archive present in the same container corresponding to the initial selection.</li>
+										</ul>
+									</p>
+									<p><img class="icon" src="images/extractFromRAS.png"/>&nbsp;&nbsp;<strong>Extract From Archive</strong>
+										<ul>
+											<li>You should select one or more <strong>linked</strong> resources in the workspace. All these resources should be contained within the same archive model.</li>
+											<li>It is not possible to extract any of the two 'main files' : by 'main file', we mean the domain model and the diagrams file initially associated with the archive model (using same name).</li>
+										</ul>
+									</p>
+								</p>
+							</td>
+						</tr>
+	
+	
+						<tr>
+							<td colspan="2" class="noteworthygroup" valign="top">Graphical Properties</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Direct Edit
+								<p><img class="icon" src="images/rename.gif" /></p>
+							</td>
+							<td class="noteworthydescription" valign="top">
+								When a label is associated with a graphical element, in general you can directly edit it from the editing Window.
+								<img src="images/directEdit.jpg" alt="directEdit" />
+								Note that you can use the shortcut "<strong>F2</strong>" when an element is selected to enter in the direct Edit mode.
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Resize element</td>
+							<td class="noteworthydescription" valign="top">
+								Depending on the element configuration, an element may be resizable or not. When it is resizable it can be restricted so that only the width, the heigth or both dimensions could be resized. To resize an element,
+								select it first and depending on the small squares that are drawn around the selection bounds, you can try to extend its initial size.
+								<img src="images/resizeElement.jpg" alt="resizeElement&quot;" />
+								Note that when you resize an element that contains children elements attached to its border, these children elements remain in place so that rectilinear connections did not change. Here is an example to illustate this :<br/>
+								<img src="images/beforeResize.png" alt="beforeResize" style="display:inline"/>&nbsp;&nbsp;&nbsp;<img src="images/afterResize.png" alt="afterResize" style="display:inline"/>
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Grid Support <p><img class="icon" src="images/grid.gif" /></p></td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 0.10.0 &gt;&gt;</strong>
+								<p>When activated, graphical elements are automatically aligned on the grid when they are created, moved or resized. When snapping a rectangle, the edges of the rectangle will snap along gridlines.</p>
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Snap to Geometry support <p><img class="icon" src="images/snapToGeometry.gif" /></p>
+							</td>
+							<td class="noteworthydescription" valign="top">
+								When activated, graphical elements can be snapped to existing elements. When snapping a rectangle, the edges of the rectangle will snap to edges of other rectangles corresponding to the existing elements.
+								Similarly, the centers and middles of rectangles will snap to each other.
+								<img src="images/snapToGeometryExample.jpg" alt="snapToGeometryExample" />
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Alignment for graphical elements
+								<p>
+									<img class="icon" src="images/alignleft.gif" />
+									<img class="icon" src="images/aligncenter.gif" />
+									<img class="icon" src="images/alignright.gif" />
+									<br/>
+									<img class="icon" src="images/aligntop.gif" />
+									<img class="icon" src="images/alignmid.gif" />
+									<img class="icon" src="images/alignbottom.gif" />
+									<br/>
+									<img class="icon" src="images/matchwidth.gif" />
+									<img class="icon" src="images/matchheight.gif" />
+								</p>
+	
+							</td>
+	
+							<td class="noteworthydescription" valign="top">
+								Alignment can be performed whenever two or more graphical elements are selected. They can be aligned between them or resized to match the size of the primary selection.
+								<br /><ul>
+									<li><strong>Horizontal Alignment</strong> : there are three types of horizontal alignments (left, center, right).</li>
+									<li><strong>Vertical Alignment</strong> : there are three types of horizontal alignments (top, middle, bottom).</li>
+									<li><strong>Match width or height</strong> : the elements may be resized to match the width or the height of the primary selection.</li>
+								</ul>
+								<p><em><strong>Note</strong> : The primary selection is indicated by black selection handles, non-primary selection is indicated by white handles with a black outline.</em></p>
+								<img src="images/primarySelection.jpg" alt="primarySelection" />
+							</td>
+						</tr>
+	
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">AutoResize <p><img class="icon" src="images/autoresize.gif" /></p>
+							</td>
+							<td class="noteworthydescription" valign="top">
+								Graphical elements can be resized automatically to fit their minimal size. This is used in particular during the Drag'n'Drop of an object from the Outline.
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Show/Hide connection Labels</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 1.0.0M2 &gt;&gt;</strong>
+								<p>
+									You can choose to show or hide the Labels associated with a Connection. In the "Graphics" tab of the Properties View, when a Connection is selected, there is two lists that
+									show you the Labels that are linked with the connection : the Left list contains the labels that are displayed in the diagram, and the left list, those which are hidden.
+									<img src="images/showHideEdgeObjects.jpg" alt="showHideEdgeObjects" />
+								</p>
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Autowrap long names</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 2.0.0 &gt;&gt;</strong>
+								<p>
+									In some cases, it is more readable when a long label is displayed on several lines. This beahvior has been applied on graphical elements for which it makes sense.
+									<img src="images/autowrap.png" alt="autowrap" />
+								</p>
+							</td>
+						</tr>
+	
+	
+						<tr>
+							<td colspan="2" class="noteworthygroup" valign="top">Diagram navigation</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Initialization of diagram contents</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 0.10.0 &gt;&gt;</strong>
+								<p>
+									When a diagram is about to be created, it can be initialized with the existing model objects. This feature is available from the creation wizard (when you create a new diagram from an existing
+									model file) and during the model edition, when you create a diagram into an existing model object that could be associated with a diagram.
+									<img src="images/initializeDiagram.jpg" alt="initializeDiagram" />
+								</p>
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Navigation to the parent or last active diagram
+								<p>
+									<img class="icon" src="images/goPrevious.gif" />
+									<img class="icon" src="images/goNext.gif" />
+									<img class="icon" src="images/goUp.gif" />
+								</p>
+							</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>Using the toolbar menu actions :</strong> you can navigate to the previous diagram or the next diagram. You can also navigate to the parent diagram : the parent diagram is a
+								diagram that is associated with the first model object in the parent hierarchy of the current diagram.
+								<p><strong>From the Editing Window :</strong> double click on a graphical element that is decorated with the icon <img class="icon" src="images/diagramAvailable.gif" /> to display the associated diagram.</p>
+								<p><strong>From the Outline :</strong> double click on a diagram in the outline to show its content.</p>
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Diagram creation</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>From the Editing Window :</strong> double click on a graphical element. If the element can be associated with a diagram, this will create a new one. When more than one diagram can be associated with the element,
+								a popup appears and you can choose the type of diagram to create.
+								<p><strong>From the Outline :</strong> select a valid model object, "Right Click &gt; Add Diagram &gt; <em>XXX</em> Diagram".</p>
+							</td>
+						</tr>
+	
+	
+						<tr>
+							<td colspan="2" class="noteworthygroup" valign="top">Connections</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Connection creation</td>
+							<td class="noteworthydescription" valign="top">
+								Creation of a "connection" (a.k.a. link, flow) requires that the user click twice, once on the source, and again on the target. This allows the user to scroll the diagram between clicks.
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Routers</td>
+							<td class="noteworthydescription" valign="top">Three routers are available :
+								<br /><ul>
+									<li>The <strong>RectilinearRouter</strong> routes the Connection so that the lines are always vertical or horizontal.</li>
+									<li>The <strong>ObliqueRouter</strong> routes the Connection with a straight line.</li>
+									<li>The <strong>ForestRouter</strong> is mainly used to represent hierarchy connections such as the inheritance concept.</li>
+								</ul>
+								<img src="images/routers.jpg" alt="routers" />
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Move labels</td>
+							<td class="noteworthydescription" valign="top">
+								The labels that are associated with a connection are completely movable. Thus you can arrange them to get a more readable diagram and avoid labels to be displayed above a connection.
+								<img src="images/moveConnectionLabel.jpg" alt="moveConnectionLabel" />
+							</td>
+						</tr>
+	
+	
+						<tr>
+							<td colspan="2" class="noteworthygroup" valign="top">Model validation</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Display validation errors</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 0.9.0 &gt;&gt;</strong>
+								<p>The validation errors are displayed in the diagrams.
+									<img src="images/displayValidationErrors.jpg" alt="displayValidationErrors" />
+								</p>
+							</td>
+						</tr>
+	
+	
+						<tr>
+							<td colspan="2" class="noteworthygroup" valign="top">Documentation View</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Documentation View</td>
+							<td class="noteworthydescription" valign="top">
+								You can add additional informations on a graphical element in the Documentation View. Select the element in the diagram, and then in the Documentation View, choose the <strong>Comments</strong> tab. Then, you can type a multiLine text.
+								<img src="images/commentTabInDocumentationView.jpg" alt="commentTabInDocumentationView" />
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Link external resources</td>
+							<td class="noteworthydescription" valign="top">
+								You can link Resources with a graphical element. Select the element in the diagram, and then in the Documentation View, choose the <strong>Resources</strong> tab. When you add a new Resource, a dialog appear :
+								<img src="images/resourceTypeSelectionDialog.jpg" alt="resourceTypeSelectionDialog" />
+								You have to choose the Resource type you want to link with your element, and then an appropriate selection Dialog is shown. When you have choosen a Resource you can then directly open it with the default editor by
+								double clicking on it in the Documentation View. For example here is an example where you can link another diagram :
+								<img src="images/resourceTabInDocumentationView.jpg" alt="resourceTabInDocumentationView" />
+							</td>
+						</tr>
+
+						<tr>
+							<td class="noteworthytitle" valign="top">Rich Text Edition <p><img class="icon" src="images/htmlEditor.gif" /></p></td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 2.1.0 &gt;&gt;</strong>
+								<p>
+									You have the possibility to choose between two modes while editing your documentation :
+									<ul>
+										<li><strong>Plain Text</strong> : use a plain text editor (similar to the old one).</li>
+										<li><strong>Rich Text</strong> : a WYSIWYG editor using HTML format</li>
+									</ul> 
+								</p>
+								<p>
+									You can switch between the two editors using the "Use HTML Editor" button.<br/>
+									In "Plain Text" mode, you can directly edit the documentation contents in the view whereas in "Rich Text" mode, you can only do it in a dialog.
+								</p>
+								<img src="images/richTextEdition.png" alt="richTextEdition" />
+								<p>
+									If you click on the "Edit" button, the dialog is prompted : you can change the documentation contents and change text properties using the toolbar associated with a the rich text editor. Documentation contents is only saved when "OK" is pressed.
+								</p>
+								<img src="images/richTextDialog.png" alt="richTextDialog" />
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Rich Text hyperlinks<p><img class="icon" src="images/richtext/addHyperLinkIcon.png" /></p></td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 2.6.0 &gt;&gt;</strong>
+								<p>
+									You have the possibility to add hyperlinks to an existing Diagram or any element from your semantic model while editing your documentation through the rich text editor.
+								</p>
+								<ul>
+									<li>
+										First, select the text on which the hyperlink should be associated. Then click on the corresponding icon in the toolbar in order to link a Diagram or any EMF element :
+										<img src="images/richtext/addHyperLinkStep1.png" alt="addHyperLinkStep1" />
+									</li>
+									<li>
+										In the dialog window, select the corresponding element. You can navigate through all the elements from your semantic model and the existing diagrams. Use the "filter" mechanism to find your element faster by filtering the tree. Validate then with "OK" button.
+										<img src="images/richtext/addHyperLinkStep2.png" alt="addHyperLinkStep2" />
+									</li>
+									<li>
+										The Documentation View will then show all hyperlinks with a different style. You can then click on any hyperlink to activate a Diagram if this is related to a Diagram or show the element representation in a Diagram if it is possible.
+										<img src="images/richtext/addHyperLinkStep3.png" alt="addHyperLinkStep3" />
+									</li>
+								</ul>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="noteworthytitle" valign="top">Text color and highlight
+								<p>
+									<img class="icon" src="images/richtext/foregroundColorIcon.gif" />
+									<img class="icon" src="images/richtext/backgroundColorIcon.gif" />
+								</p>
+							</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; New in 2.6.0 &gt;&gt;</strong>
+								<p>
+									You have the possibility to change the text color or to highlight some text when editing your documentation through the rich text editor.
+									First, select the text you want to modify, then click on the corresponding icon in the toolbar to change either the text foreground or background color. A dialog window will then let you select the corresponding color, just click on "OK" to validate and see your changes applied immediately.
+									<img src="images/richtext/changeTextColors.png" alt="changeTextColors" />
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="noteworthytitle" valign="top">Carriage Return behavior</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; Fixed in 2.6.0 &gt;&gt;</strong>
+								<p>
+									In previous versions, there were some troubles when editing multiline text in the rich text editor. Now we have fixed these issues, and the following picture explain the current behavior : 
+									<img src="images/richtext/carriageReturnBehavior.png" alt="carriageReturnBehavior"/>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="noteworthytitle" valign="top">Edit table structure
+								<p>
+									<img class="icon" src="images/richtext/addTableIcon.gif" />
+									<br/><br/>
+									<img class="icon" src="images/richtext/insertTableColIcon.png" />
+									<img class="icon" src="images/richtext/deleteTableColIcon.png" />
+									<img class="icon" src="images/richtext/insertTableRowIcon.png" />
+									<img class="icon" src="images/richtext/deleteTableRowIcon.png" />
+								</p>
+							</td>
+							<td class="noteworthydescription" valign="top">
+								<strong>&lt;&lt; Added in 2.7.0 and 3.1.0 &gt;&gt;</strong>
+								<p>
+									Due to some specificities on the underlying Browser which is used to render your documentation in the rich text editor, there are different way to modify the
+									structure of a table that has been presviously created. It mainly depends on your operating system and the Browser you are using by default :
+								</p>
+								
+								<ul>
+									<li>
+										<strong>On Linux/Solaris platform + Mozilla browser</strong>
+										<p>
+											On GTK and Motif platforms, an instance of a "Mozilla browser" is created to render styled text. As Mozilla browsers have a build-in XULRunner,
+											tables have special controls to insert/remove a row/column. These controls appear when a cell gain focus : you can then either create a new
+											row/column just before or after the one containing the selected cell, or remove the row/column related to the selected cell.
+											<img src="images/richtext/modifyTableOnLinux.png" alt="modifyTableOnLinux"/>
+										</p>
+									</li>
+									<li>
+										<strong>On Windows platform + IE browser</strong>
+										<p>
+											On WIN32 platforms, an instance of an "Internet Explorer browser" is created to render styled text. Tables are simpler and do not have any built in
+											handles to perform insert/remove a row/column. However, it is possible to change the table structure through actions from the toolbar.
+											<ol>
+												<li style="color:green">First, select the table you want to modify : passing near a border of the table will change your mouse cursor</li>
+												<li style="color:blue">Then, click to select the table, selection handles should appear</li>
+												<li style="color:red">Finally, select the action to perform from the toolbar depending on what you want to perform : <img class="icon" src="images/richtext/insertTableColIcon.png" /> <img class="icon" src="images/richtext/deleteTableColIcon.png" /> <img class="icon" src="images/richtext/insertTableRowIcon.png" /> <img class="icon" src="images/richtext/deleteTableRowIcon.png" /></li>
+											</ol> 
+											<img src="images/richtext/modifyTableOnWindows.png" alt="modifyTableOnWindows"/>
+											In all case, you will have to specify the index where the row/column will be inserted/removed. You can do that in the dialog window :
+											you must specify a positive integer value, but if the position index does not match with the size of the table, the default row/column
+											to be inserted/removed is the last one.
+										</p>
+									</li>
+								</ul>
+							</td>
+						</tr>
+	
+	
+						<tr>
+							<td colspan="2" class="noteworthygroup" valign="top">Outline View</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Display mode
+								<p>
+									<img class="icon" src="images/tree.gif" />
+									<img class="icon" src="images/overview.gif" />
+									<img class="icon" src="images/all.gif" />
+								</p>
+							</td>
+							<td class="noteworthydescription" valign="top">
+								You can change the display mode of the outline :
+								<br /><ul>
+									<li><strong>Only the Tree View</strong> : display only a hierarchical view of the model objects</li>
+									<li><strong>Only the Overview</strong> : display only an overview of the current diagram</li>
+									<li><strong>Both views</strong> : display both view separated</li>
+								</ul>
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Filters
+								<p><img class="icon" src="images/filters.gif" /></p>
+							</td>
+							<td class="noteworthydescription" valign="top">
+								You can filter elements that are displayed in the tree view of the outline. Select the "<strong>Filters...</strong>" action from the 'Menu' icon at the top right of this view.
+								<img src="images/outlineFiltersDialog.jpg" alt="outlineFiltersDialog" />
+								Three filters are defined :
+								<br /><ul>
+									<li><strong>Diagram</strong> : diagrams are hidden</li>
+									<li><strong>Only diagrams</strong> : only diagrams with their container model object are shown</li>
+									<li><strong>Additional Resources</strong> : Additional resources are hidden</li>
+								</ul>
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Object sorting
+								<p><img class="icon" src="images/alphabetic_sorter.gif"/></p>
+							</td>
+							<td class="noteworthydescription" valign="top">
+								You can sort the model objects that are at the same hierarchical level. By default they are ordered following their creation date, but you can arrange them in alphabetical order.
+							</td>
+						</tr>
+	
+	
+						<tr>
+							<td colspan="2" class="noteworthygroup" valign="top">Palette tools</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Marquee tools</td>
+							<td class="noteworthydescription" valign="top">
+								There are three different tools dedicated to the selection of the elements in the diagram :
+								<br /><ul>
+									<li><strong>Marquee</strong> : select the nodes (not recursive, only the first parent node) that are contained in the area.</li>
+									<li><strong>Full Marquee</strong> : select all the nodes (even the children node of a selected object).</li>
+									<li><strong>Connection Marquee</strong> : select only the connections that are contained (fully or not) in the area.</li>
+								</ul>
+								<img src="images/marqueeTools.jpg" alt="marqueeTools" />
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Palette presentation
+								<p><img class="icon" src="images/palette.gif" /></p>
+							</td>
+							<td class="noteworthydescription" valign="top">
+								The Palette can be displayed with several presentations :
+								<br /><ul>
+									<li>display small or big icons</li>
+									<li>show only text, only icons or both text and icons</li>
+									<li>the tools are arranged as a list or in columns</li>
+								</ul>
+								<img src="images/palettePresentation.jpg" alt="palettePresentation" />
+							</td>
+						</tr>
+	
+	
+						<tr>
+							<td colspan="2" class="noteworthygroup" valign="top">Model Refactoring</td>
+						</tr>
+						
+						<tr>
+							<td class="noteworthytitle" valign="top">Reconnecting Links</td>
+							<td class="noteworthydescription" valign="top">
+								User is allowed to reconnect links. All necessary model changes will be performed on the back stage.
+								All that one have to do is to select the link on the diagram, and grab one extremity to reconnect.
+								Drag the link end and drop it on the new target.
+								While dragging the link end over an incorrect target, the mouse cursor will display a cross  
+								<img class="icon" src="images/cursor_x.png" />. This means the link will return to its initial state before
+								dragging the link.
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Placing existing object in other containers</td>
+							<td class="noteworthydescription" valign="top">
+								It is also possible to change an exisiting element of container. A container can be a Package in 
+								a Class Diagram, a Region un a StateMachine Diagram, etc.
+								User is able select a graph node and with a simple Drag and Drop, 
+								try to place it over different containers. When the target object cannot host the  selection, the 
+								mouse cursor will display a cross <img class="icon" src="images/cursor_x.png" />. On the other hand, when 
+								changement is allowed, the cursor will remain normal. Note that diagrams will perfom changements when
+								the mouse cursor is over the new container. This means user does not need to drag the whole figure
+								inside the new container to change its parent.
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Changing properties of Graph Node</td>
+							<td class="noteworthydescription" valign="top">
+								Some elemens such as Classes in a Class diagram may have lists of properties or operations.
+								It is also available to change (one by one or several at a time) these properties.
+								You have to select the concerned objects and drag and drop them into the new node. As well as the
+								actions explained above, the mouse cursor will display a cross <img class="icon" src="images/cursor_x.png" />
+								when the you are dragging over a wrong place.
+							</td>
+						</tr>
+	
+						<tr>
+							<td class="noteworthytitle" valign="top">Note</td>
+							<td class="noteworthydescription" valign="top">
+								This changes can be done graphically. Dragging and Dropping object from the Outline will be neither executed or modified.
+							</td>
+						</tr>
+						
+						<tr>
+							<td colspan="2" class="noteworthygroup" valign="top">Tasks View</td>
+						</tr>
+						<tr>
+							<td class="noteworthytitle" valign="top">Todo Note in Topcased modeler</td>
+							<td class="noteworthydescription" valign="top">
+								Users can add on a Topcased modeler a Todo Note that will add an entry in the Tasks View. You have to create a note on the diagram and start its content by the keyword "Todo" (non case-sensitive).
+								<img src="images/todo_note_on_topcased_diagram.png" alt="todo_note_on_topcased_diagram" />
+							</td>
+						</tr>
+						<tr>
+							<td class="noteworthytitle" valign="top">Todo Note in Tasks view</td>
+							<td class="noteworthydescription" valign="top">
+								Creating a note on a Topcased diagram starting by the keyword "Todo" add an entry in the Tasks View.
+								<img src="images/todo_note_on_tasks_view.png" alt="todo_note_on_tasks_view" />
+								Note that if the user double-click on the task, it opens the linked topcased diagram (if closed) and places focus on the note that created this task entry.
+							</td>
+						</tr>
+						<tr>
+							<td class="noteworthytitle" valign="top">Todo Note Activation</td>
+							<td class="noteworthydescription" valign="top">
+								Creating a Topcased project will automatically activate todo note behaviour. However, this behaviour need to be activated for a project older than todo note implementation in Topcased.<br />
+								In that case, right-click on the Topcased project, select Topcased / Other / Todo Note Activation.
+								<img src="images/todo_note_activation.png" alt="todo_note_activation" />
+							</td>
+						</tr>						
+
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

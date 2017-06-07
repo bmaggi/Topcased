@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.topcased.flattenedaadl/src"
+    modelPluginID="org.topcased.flattenedaadl" modelName="Fattenedaadl" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0">
+  <foreignModel>flattenedaadl.ecore</foreignModel>
+  <genPackages prefix="Flattenedaadl" basePackage="org.topcased" resource="XML" disposableProviderFactory="true"
+      loadInitialization="true" ecorePackage="flattenedaadl.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="flattenedaadl.ecore#//ConnectionTiming">
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ConnectionTiming/Immediate"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ConnectionTiming/Delayed"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="flattenedaadl.ecore#//ModeState">
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ModeState/NORMAL"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ModeState/INITIAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="flattenedaadl.ecore#//PortDirection">
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PortDirection/IN"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PortDirection/OUT"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PortDirection/INOUT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="flattenedaadl.ecore#//AccessDirection">
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//AccessDirection/provided"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//AccessDirection/required"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="flattenedaadl.ecore#//FeatureCategory">
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//FeatureCategory/data"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//FeatureCategory/event"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//FeatureCategory/parameter"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//FeatureCategory/subprogram"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//FeatureCategory/eventdata"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//FeatureCategory/busaccess"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//FeatureCategory/dataaccess"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//FeatureCategory/portgroup"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//FeatureCategory/serversubprogram"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="flattenedaadl.ecore#//PropertyOwnerCategory">
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/data"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/subprogram"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/thread"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/thread_group"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/process"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/memory"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/processor"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/bus"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/device"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/system"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/mode"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/port_group"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/port"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/event_port"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/data_port"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/event_data_port"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/server_subprogram"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/connections"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/port_group_connections"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/port_connections"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/event_port_connections"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/data_port_connections"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/event_data_port_connections"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/access_connections"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/flow"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/parameter"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//PropertyOwnerCategory/parameter_connections"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="flattenedaadl.ecore#//ComponentCategory">
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ComponentCategory/DATA"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ComponentCategory/SUBPROGRAM"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ComponentCategory/THREAD"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ComponentCategory/THREAD_GROUP"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ComponentCategory/PROCESS"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ComponentCategory/MEMORY"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ComponentCategory/PROCESSOR"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ComponentCategory/BUS"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ComponentCategory/DEVICE"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ComponentCategory/SYSTEM"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="flattenedaadl.ecore#//ReferableElementCategory">
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ReferableElementCategory/DATA"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ReferableElementCategory/SUBPROGRAM"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ReferableElementCategory/THREAD"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ReferableElementCategory/THREAD_GROUP"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ReferableElementCategory/PROCESS"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ReferableElementCategory/MEMORY"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ReferableElementCategory/PROCESSOR"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ReferableElementCategory/BUS"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ReferableElementCategory/DEVICE"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ReferableElementCategory/SYSTEM"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ReferableElementCategory/CONNECTIONS"/>
+      <genEnumLiterals ecoreEnumLiteral="flattenedaadl.ecore#//ReferableElementCategory/SERVER_SUBPROGRAM"/>
+    </genEnums>
+    <genClasses ecoreClass="flattenedaadl.ecore#//SystemType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemType/implementations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DataType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataType/implementations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ThreadType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadType/implementations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ThreadGroupType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadGroupType/implementations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadGroupType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadGroupType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ProcessType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessType/implementations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//SubprogramType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SubprogramType/implementations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SubprogramType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SubprogramType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ProcessorType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessorType/implementations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessorType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessorType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//MemoryType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//MemoryType/implementations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//MemoryType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//MemoryType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//BusType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BusType/implementations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BusType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BusType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DeviceType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DeviceType/implementations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DeviceType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DeviceType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//SystemImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemImpl/subcomponents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemImpl/compType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemImpl/extend"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DataImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataImpl/subcomponents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataImpl/compType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataImpl/extend"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ThreadImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadImpl/subcomponents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadImpl/compType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadImpl/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadImpl/callSequences"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ThreadGroupImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadGroupImpl/subcomponents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadGroupImpl/compType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadGroupImpl/extend"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ProcessImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessImpl/subcomponents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessImpl/compType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessImpl/extend"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//SubprogramImpl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SubprogramImpl/compType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SubprogramImpl/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SubprogramImpl/subcomponents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SubprogramImpl/callSequences"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ProcessorImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessorImpl/subcomponents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessorImpl/compType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessorImpl/extend"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//MemoryImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//MemoryImpl/subcomponents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//MemoryImpl/compType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//MemoryImpl/extend"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//BusImpl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BusImpl/compType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BusImpl/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BusImpl/subcomponents"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DeviceImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DeviceImpl/subcomponents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DeviceImpl/compType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DeviceImpl/extend"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//SystemSubcomponent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemSubcomponent/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DataSubcomponent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataSubcomponent/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ThreadSubcomponent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadSubcomponent/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ThreadGroupSubcomponent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadGroupSubcomponent/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadGroupSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ProcessSubcomponent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessSubcomponent/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//SubprogramSubcomponent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SubprogramSubcomponent/dataSubprogram"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SubprogramSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ProcessorSubcomponent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessorSubcomponent/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessorSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//MemorySubcomponent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//MemorySubcomponent/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//MemorySubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//BusSubcomponent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BusSubcomponent/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BusSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DeviceSubcomponent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DeviceSubcomponent/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DeviceSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//SystemSubcomponents">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemSubcomponents/systemSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemSubcomponents/dataSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemSubcomponents/processSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemSubcomponents/processorSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemSubcomponents/memorySubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemSubcomponents/busSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemSubcomponents/deviceSubcomponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//SystemSubcomponents/subcomponents"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DataSubcomponents">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataSubcomponents/dataSubcomponent"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ThreadSubcomponents">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadSubcomponents/dataSubcomponent"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ThreadGroupSubcomponents">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadGroupSubcomponents/dataSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadGroupSubcomponents/threadSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ThreadGroupSubcomponents/threadGroupSubcomponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//ThreadGroupSubcomponents/subcomponents"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ProcessSubcomponents">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessSubcomponents/dataSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessSubcomponents/threadSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessSubcomponents/threadGroupSubcomponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//ProcessSubcomponents/subcomponents"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ProcessorSubcomponents">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessorSubcomponents/memorySubcomponent"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//MemorySubcomponents">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//MemorySubcomponents/memorySubcomponent"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DeviceSubcomponents">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DeviceSubcomponents/threadSubcomponent"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DataClassifier"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//BusClassifier"/>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//SubprogramSubcomponents"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//CallSequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//CallSequence/call"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//SubprogramClassifier"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//CallSequences">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//CallSequences/callSequence"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//SystemClassifier"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ThreadClassifier"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ThreadGroupClassifier"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ProcessClassifier"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ProcessorClassifier"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//MemoryClassifier"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DeviceClassifier"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//BusSubcomponents"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//Connections">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//Connections/contents"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Connections/eventConnection"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Connections/dataConnection"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Connections/eventDataConnection"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Connections/portGroupConnection"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Connections/dataAccessConnection"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Connections/parameterConnection"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Connections/busAccessConnection"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DataConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataConnection/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataConnection/src"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataConnection/dst"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//DataConnection/timing"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//EventConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//EventConnection/dst"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//EventConnection/src"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//EventConnection/refines"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//EventDataConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//EventDataConnection/dst"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//EventDataConnection/src"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//EventDataConnection/refines"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//PortGroupConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PortGroupConnection/src"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PortGroupConnection/dst"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PortGroupConnection/refines"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//FeatureContext"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DataAccessConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataAccessConnection/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataAccessConnection/src"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataAccessConnection/dst"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//ParameterEnd"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ParameterConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ParameterConnection/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ParameterConnection/src"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ParameterConnection/dst"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//BusAccessConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BusAccessConnection/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BusAccessConnection/src"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BusAccessConnection/dst"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//DataAccessEnd"/>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//BusAccessEnd"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//AadlSpec">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//AadlSpec/contents"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/aadlPackage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/systemType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/dataType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/threadType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/threadGroupType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/processType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/subprogramType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/processorType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/memoryType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/busType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/deviceType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/systemImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/dataImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/threadImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/threadGroupImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/processImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/subprogramImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/processorImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/memoryImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/busImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/deviceImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/portGroupType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/propertySet"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlSpec/annexLibrary"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//AadlPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackage/aadlPublic"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackage/aadlPrivate"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//AadlPrivate"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//AadlPublic"/>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//AadlPackageSection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//AadlPackageSection/contents"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/systemType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/dataType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/threadType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/threadGroupType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/processType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/subprogramType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/processorType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/memoryType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/busType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/deviceType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/systemImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/dataImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/threadImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/threadGroupImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/processImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/subprogramImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/processorImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/memoryImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/busImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/deviceImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/portGroupType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AadlPackageSection/annexLibrary"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//ComponentClassifier"/>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//ComponentType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ComponentType/flowSpecs"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//Feature"/>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//Features"/>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//ComponentImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ComponentImpl/connections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ComponentImpl/modes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ComponentImpl/refinesType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ComponentImpl/flows"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//RefinesType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//RefinesType/contents"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//RefinesType/busAccess"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//RefinesType/serverSubprogram"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//RefinesType/eventDataPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//RefinesType/dataAccess"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//RefinesType/portGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//RefinesType/parameter"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//RefinesType/eventPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//RefinesType/dataPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//RefinesType/subprogram"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//Subcomponents"/>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//Subcomponent"/>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//Connection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Connection/srcContext"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Connection/dstContext"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Connection/inModeTransitions"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//Modes">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Modes/mode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Modes/modeTransition"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//Mode">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Mode/members"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Mode/outgoingModeTransition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Mode/incomingModeTransition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Mode/refines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//Mode/state"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ModeTransition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ModeTransition/srcMode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ModeTransition/dstMode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ModeTransition/triggerEventPort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ModeTransition/members"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ModeTransition/triggerEventPortContext"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//AnnexLibrary"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DefaultAnnexLibrary">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//DefaultAnnexLibrary/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//AnnexSubclause"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DefaultAnnexSubclause">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//DefaultAnnexSubclause/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//AObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//AObject/comment"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//PropertyHolder">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PropertyHolder/properties"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//ModeMember">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ModeMember/inModes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//ModeMember/noMode"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//Classifier">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Classifier/annexSubclause"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//Subprogram">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Subprogram/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Subprogram/subprogramClassifier"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ServerSubprogram">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ServerSubprogram/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ServerSubprogram/subprogramClassifier"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ServerSubprogram/subprogram"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DataAccess">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataAccess/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataAccess/dataClassifier"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//BusAccess">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BusAccess/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BusAccess/busClassifier"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//Port/direction"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DataPort">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataPort/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataPort/dataClassifier"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//EventPort">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//EventPort/refines"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//EventDataPort">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//EventDataPort/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//EventDataPort/dataClassifier"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//Parameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Parameter/refines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//Parameter/direction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Parameter/dataClassifier"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//PortGroupType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PortGroupType/extend"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PortGroupType/inverseOf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PortGroupType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//PortGroup">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PortGroup/portGroupType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PortGroup/refines"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DataFeatures">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//DataFeatures/features"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataFeatures/subprogram"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DataFeatures/dataAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//SubprogramFeatures">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//SubprogramFeatures/features"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SubprogramFeatures/portGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SubprogramFeatures/eventPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SubprogramFeatures/eventDataPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SubprogramFeatures/dataAccess"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SubprogramFeatures/parameter"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//SoftwareFeatures">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//SoftwareFeatures/features"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SoftwareFeatures/serverSubprogram"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SoftwareFeatures/portGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SoftwareFeatures/dataPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SoftwareFeatures/eventPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SoftwareFeatures/eventDataPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SoftwareFeatures/dataAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ThreadFeatures"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ThreadGroupFeatures"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ProcessFeatures"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ProcessorFeatures">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//ProcessorFeatures/features"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessorFeatures/serverSubprogram"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessorFeatures/portGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessorFeatures/dataPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessorFeatures/eventPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessorFeatures/eventDataPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ProcessorFeatures/busAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//MemoryFeatures">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//MemoryFeatures/busAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//BusFeatures">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BusFeatures/busAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//DeviceFeatures">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//DeviceFeatures/features"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DeviceFeatures/serverSubprogram"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DeviceFeatures/portGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DeviceFeatures/dataPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DeviceFeatures/eventPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DeviceFeatures/eventDataPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//DeviceFeatures/busAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//SystemFeatures">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemFeatures/busAccess"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//ComponentAccess">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//ComponentAccess/direction"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//PortGroupFeatures">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//PortGroupFeatures/features"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PortGroupFeatures/portGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PortGroupFeatures/eventDataPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PortGroupFeatures/dataPort"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PortGroupFeatures/eventPort"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//AbstractPort"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//FlowSpec">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowSpec/refines"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//Flows">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//Flows/contents"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Flows/endToEndFlow"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Flows/flowSourceImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Flows/flowSinkImpl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Flows/flowPathImpl"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//FlowImpl"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//FlowSpecs">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//FlowSpecs/contents"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowSpecs/flowSinkSpec"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowSpecs/flowSourceSpec"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowSpecs/flowPathSpec"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//EndToEndFlow"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//FlowPoint"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//FlowSourceSpec">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowSourceSpec/dst"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowSourceSpec/dstContext"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//FlowSinkSpec">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowSinkSpec/src"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowSinkSpec/srcContext"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//FlowPathSpec">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowPathSpec/src"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowPathSpec/dst"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowPathSpec/srcContext"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowPathSpec/dstContext"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//FlowSourceImpl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowSourceImpl/implement"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//FlowSinkImpl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowSinkImpl/implement"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//FlowPathImpl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowPathImpl/implement"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//FlowElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowElement/flowSpec"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowElement/connection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowElement/flowContext"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//FlowSequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowSequence/flowElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowSequence/refines"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//FeatureInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FeatureInstance/feature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FeatureInstance/srcPortConnection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FeatureInstance/dstPortConnection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FeatureInstance/srcModeTransitionConnection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FeatureInstance/featureInstance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//FeatureInstance/category"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FeatureInstance/dstAccessConnection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FeatureInstance/srcFlowSpec"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FeatureInstance/dstFlowSpec"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//ConnectionInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ConnectionInstance/connection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ConnectionInstance/inSystemOperationMode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ConnectionInstance/connectionContext"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ConnectionInstance/inModeTransitions"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ComponentInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ComponentInstance/featureInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ComponentInstance/componentInstance"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ComponentInstance/subcomponent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ComponentInstance/srcAccessConnection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ComponentInstance/modeInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ComponentInstance/modeTransitionInstance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//ComponentInstance/category"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ComponentInstance/inModes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ComponentInstance/flowSpecInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ComponentInstance/endToEndFlowInstance"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//SystemInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemInstance/systemImpl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemInstance/connectionInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemInstance/systemOperationMode"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//InstanceObject"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//PortConnectionInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PortConnectionInstance/src"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PortConnectionInstance/dst"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//PortConnectionInstance/timing"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//AccessConnectionInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AccessConnectionInstance/src"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//AccessConnectionInstance/dst"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ModeTransitionConnectionInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ModeTransitionConnectionInstance/src"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ModeTransitionConnectionInstance/dst"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ModeInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ModeInstance/srcModeTransition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ModeInstance/dstModeTransition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ModeInstance/mode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//ModeInstance/state"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ModeTransitionInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ModeTransitionInstance/dstModeTransitionConnection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ModeTransitionInstance/src"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ModeTransitionInstance/dst"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ModeTransitionInstance/modeTransition"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//InstanceReferenceValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//InstanceReferenceValue/referencedInstanceObject"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//SystemInstanceConfiguration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemInstanceConfiguration/containedPropertyAssociation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemInstanceConfiguration/systemOperationMode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemInstanceConfiguration/systemInstance"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//SystemOperationMode">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//SystemOperationMode/currentMode"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//FlowSpecInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowSpecInstance/flowSpec"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowSpecInstance/src"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//FlowSpecInstance/dst"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//EndToEndFlowInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//EndToEndFlowInstance/endToEndFlow"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//EndToEndFlowInstance/flowElementInstance"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//EndToEndFlowInstance/inModes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//EndToEndFlowInstance/inSystemOperationMode"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//FlowElementInstance"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//Properties">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//Properties/propertyAssociation"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//PropertyAssociation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PropertyAssociation/propertyDefinition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PropertyAssociation/propertyValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PropertyAssociation/inBinding"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//PropertyAssociation/constant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//PropertyAssociation/access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//PropertyAssociation/append"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PropertyAssociation/appliesTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//PropertyAssociation/derived"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//PropertyDefinition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PropertyDefinition/propertyTypeReference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PropertyDefinition/propertyType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PropertyDefinition/defaultpropertyValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PropertyDefinition/appliesToClassifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//PropertyDefinition/access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//PropertyDefinition/inherit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//PropertyDefinition/list"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//PropertyDefinition/appliesto"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//PropertyDefinition/hasEmptyList"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//PropertySet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//PropertySet/contents"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PropertySet/propertyDefinition"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PropertySet/propertyConstant"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PropertySet/propertyType"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//Aadlboolean"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//Aadlstring"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//Aadlinteger"/>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//NumberType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//NumberType/propertyTypeReference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//NumberType/propertyType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//NumberType/lower"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//NumberType/upper"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//PropertyType"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//RangeType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//RangeType/propertyType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//RangeType/propertyTypeReference"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ClassifierType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//ClassifierType/category"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ReferenceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//ReferenceType/category"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//EnumType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//EnumType/enumLiteral"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//UnitsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//UnitsType/unitLiteral"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//EnumLiteral"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//UnitLiteral">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//UnitLiteral/baseunit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//UnitLiteral/factor"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//PropertyValue"/>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//BooleanValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//BooleanValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//RangeValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//RangeValue/minimum"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//RangeValue/maximum"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//RangeValue/delta"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//BooleanAND">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BooleanAND/booleanValue"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//BooleanOR">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BooleanOR/booleanValue"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//BooleanNOT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//BooleanNOT/booleanValue"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//TRUE"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//FALSE"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//StringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//StringValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//NumberValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//NumberValue/unitLiteral"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//NumberValue/valueString"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//IntegerValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//IntegerValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//IntegerValue/base"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//RealValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//RealValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//IntegerRangeValue"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//RealRangeValue"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//EnumValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//EnumValue/enumLiteral"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ClassifierValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ClassifierValue/componentClassifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//ClassifierValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//PropertyReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PropertyReference/referencedProperty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//PropertyReference/referenceSign"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//Aadlreal"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//PropertyConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flattenedaadl.ecore#//PropertyConstant/list"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PropertyConstant/propertyTypeReference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PropertyConstant/propertyType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//PropertyConstant/constantValue"/>
+    </genClasses>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ReferencedProperty"/>
+    <genClasses ecoreClass="flattenedaadl.ecore#//ReferenceValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flattenedaadl.ecore#//ReferenceValue/referenceElement"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//ReferenceElement"/>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//TrueFalseValue"/>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//PropertyConstantType"/>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//BooleanOrPropertyReference"/>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//PropertyValueHolder"/>
+    <genClasses image="false" ecoreClass="flattenedaadl.ecore#//NumberOrPropertyReference"/>
+  </genPackages>
+</genmodel:GenModel>

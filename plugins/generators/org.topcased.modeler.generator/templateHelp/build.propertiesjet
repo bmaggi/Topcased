@@ -1,0 +1,14 @@
+<%@ jet
+	package="org.topcased.modeler.generator.templates"
+	imports=""
+	class="BuildProperties"
+	version="$Id: build.propertiesjet,v 1.1 2005/06/28 06:06:08 matg Exp $" %>
+<%String epackage = (String) argument;%>
+
+<%String jarFile = "org.topcased.metamodel.help." + epackage + ".jar";%>
+bin.includes =	plugin.xml,\
+				<%=jarFile%>,\
+				templates,\
+				icons/
+source.<%=jarFile%> = src/
+output.<%=jarFile%> = bin/

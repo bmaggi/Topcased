@@ -1,0 +1,31 @@
+<%@ jet
+	 package="org.topcased.outline.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.outline.configurator.*"
+	 class="PluginXML"
+	 version="$Id: plugin.xmljet,v 1.2 2006/12/14 11:47:13 jako Exp $" %>
+<%OutlineConfiguration configuration = (OutlineConfiguration) argument;%>
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="<%=configuration.getProjectName()%>"
+   name="<%=configuration.getName()%>"
+   version="1.0"
+   provider-name="Topcased"
+   class="<%=configuration.getProjectName()%>.<%=configuration.getPluginClassName()%>">
+
+   <runtime>
+      <library name="<%=configuration.getProjectName()%>.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+
+   <requires>
+   	  <import plugin="org.eclipse.core.resources"/>
+   	  <import plugin="org.eclipse.core.runtime"/>
+   	  <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.emf.ecore.edit"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.topcased.modeler"/>
+      <import plugin="<%= configuration.getGenPackage().getQualifiedPackageName() %>"/>
+   </requires>   
+</plugin>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="topic" name="DC.Type" />
+<meta name="DC.Title" content="Convert 0.9 To 0.10" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="topic3421" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/visual.css" type="text/css" rel="stylesheet" />
+<title>MODELING FRAMEWORK - Convert configurator 0.9 to 0.10</title>
+</head>
+<body id="topic3421"><a name="topic3421"><!-- --></a>
+
+
+	<h1 class="topictitle1">Convert 0.9 To 0.10</h1>
+
+	
+	<div id="container"><a name="container"><!-- --></a>
+		<p>1. The EditorConfigurator file</p>
+
+		<p>There is no significant changes from the last version. You can open the file with the EMF tree structure editor. You will notice that a few properties have been added :</p>
+
+		<br /><ul>
+			<li><strong>Provider</strong> : the provider name ("Topcased" by default) that should be used in the generated plugin.xml file.</li>
+
+			<li><strong>CopyrightText</strong> : you can now define the copyright that should be included in the generated files.</li>
+
+		</ul>
+
+		<p>2. The DiagramConfigurator file</p>
+
+		<p>There were a few changes that need to run manually an export action once, otherwise the file could not be open with the EMF tree structure editor.
+			Select the *.diagramconfigurator file that should be converted, then "<strong>Right Click &gt; Topcased &gt; Generation &gt; Export to new format (0.9.x to 0.10.x)</strong>" :
+			<img src="images/generateEditor/export9to10Action.jpg" alt="export9to10Action" />
+		</p>
+
+		<p>Then, a dialog is prompted so that you can edit a few properties that have been added in the 0.10.x version :
+			<img src="images/generateEditor/newFeaturesDialog.jpg" alt="newFeaturesDialog" />
+		</p>
+
+		<p>The old file should be overwritten with the new one (same name and same extension). Here is a detailed listing of the new properties that have been added in the 0.10.x version
+			of the diagram configuration :
+		</p>
+
+		<p>2.1. DiagramConfiguration</p>
+
+		<br /><ul>
+			<li><strong>Project Name</strong> : replaces the old "id" property, so this change is implicit for you. "ProjectName" was already used in the EditorConfigurator file.</li>
+
+			<li><strong>Editor Configurator</strong> : replaces the old "editorId" property that was a String value. Now this is a Reference to the EditorConfigurator file that is used.</li>
+
+			<li><strong>Provider</strong> : the provider name ("Topcased" by default) that should be used in the generated plugin.xml file.</li>
+
+			<li><strong>Copyright Text</strong> : you can now define the copyright that should be included in the generated files.</li>
+
+			<li><strong>Same Plugin As Editor</strong> : specify whether the diagram plugin should be generated in the same plugin as the editor plugin (you will then have to merge manually java files when needed).</li>
+
+		</ul>
+
+		<p>2.2. PartConfiguration</p>
+
+		<br /><ul>
+			<li><strong>Constraint</strong> : this enables you to add Constraint on the model object that is to be created. It is very useful for example when you have a model object "A",
+				and depending on its property "p", its graphical representation and its behavior is not the same.
+			</li>
+
+			<li><strong>Prefix</strong> : this is the prefix that is used to create the generated classes. Previously, generated classes were prefixed with the name of the model object that they
+				represents, but there were a limitation : you could not generate more than one graphical element that was linked with the same model object. Now, this is possible thanks
+				to this prefix, that is initialized with the model object name.
+			</li>
+
+		</ul>
+
+		<p>2.3. NodePartConfiguration</p>
+
+		<br /><ul>
+			<li><strong>AttachedToBorder</strong> : indicate whether the graphical representation of that element should be attached to the nearest border of its container. Previously it was
+				dependant on the figure that was used ("Port" mainly). Now, this is the property that is in charge of this behavior.
+			</li>
+
+		</ul>
+
+		<p>
+			By Jacques LESCOT, Anyware Technologies
+			Sept, 11 2006
+		</p>
+
+	</div>
+
+
+</body>
+</html>

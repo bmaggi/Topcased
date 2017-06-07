@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta name="copyright" content="(C) Copyright 2005" />
+		<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+		<meta content="topic" name="DC.Type" />
+		<meta name="DC.Title" content="FAQ" />
+		<meta content="XHTML" name="DC.Format" />
+		<meta content="topcasedmmfaq" name="DC.Identifier" />
+		<meta content="en-us" name="DC.Language" />
+		<link href="css/visual.css" type="text/css" rel="stylesheet" />
+		<title>MODELING FRAMEWORK - FAQ</title>
+	</head>
+
+	<body id="topcasedmmfaq"><a name="topcasedmmfaq"><!-- --></a>
+	
+		<h1 class="topictitle1">FAQ</h1>
+		
+		<div id="container"><a name="container"><!-- --></a>
+			<p>Here is the FAQ page of the Modeling Framework.</p>
+			<ul>
+				<li class="questionfaq">My model is corrupted. How can I retrieve my last valid model ?</li>
+				<li class="answerfaq">Using Eclipse Local History mechanism, you can easily retrieving a previous version of your model in case the model is corrupted on saving.
+					Take care to restore both the domain model and the diagrams one.
+					<div class="imagecenter"><img src="images/restorefromlocalhistory.png" alt="restorefromlocalhistory"/></div>
+				</li>
+
+				<li class="questionfaq">Organisation of the files needed to edit a diagram.</li>
+				<li class="answerfaq">When you create a new diagram with Topcased, there are two files that are created :
+					<br /><ul>
+						<li>the <strong>model file</strong> (with *.<em>model</em> extension) that contains informations that are only relative to the model (the model object, its properties and references to other model objects mainly) according to the metamodel.</li>
+						<li>the <strong>diagram file</strong> (with *.<em>model<strong>di</strong></em> extension) that contains only graphical informations (position, size, color, ...) about elements that are displayed in the diagram.</li>
+					</ul>
+					The link between these two files is implicitly made in the diagram file. Indeed, each graphical element is eventually linked with an object of the model.
+				</li>
+	
+				<li class="questionfaq">Difference between "Delete From Diagram" and "Delete From Model".</li>
+				<li class="answerfaq">
+					<br /><ul>
+						<li>The <strong>Delete From Diagram</strong> action is used to delete a graphical representation only. The model is not changed.</li>
+						<li>The <strong>Delete From Model</strong> action is used to remove the model object associated with the graphical representation and all its graphical occurences in the available diagrams.</li>
+					</ul>
+					<br /><div class="imagecenter"><img src="images/deleteActions.jpg" alt="deleteActions" /></div><br />
+				</li>
+	
+				<li class="questionfaq">How to print my diagram in a single page ?</li>
+				<li class="answerfaq">
+					<br /><ul>
+						<li><strong>Define your own "printableA4" format</strong> : in the Preferences, create a new format using the following values. Note that depending on your printer type you might need to specify smaller values.
+							<br /><div class="imagecenter"><img src="images/createPrintableA4Format.png" alt="createPrintableA4Format" /></div><br />
+						</li>
+						<li><strong>Apply this format to your diagram</strong> : select first the diagram, and then in the Properties View, you can change the format in the Graphics tab.
+							<br /><div class="imagecenter"><img src="images/selectDiagramFormat.png" alt="selectDiagramFormat" /></div><br />
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

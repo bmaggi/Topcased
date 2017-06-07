@@ -1,0 +1,11 @@
+<%@ jet
+	package="org.topcased.properties.generator.templates"
+	class="BuildProperties"
+	version="$Id: build.propertiesjet,v 1.1 2006/10/30 17:10:50 jako Exp $" %>
+
+bin.includes =	plugin.xml,\
+				.,\
+				icons/,\
+				META-INF/
+source.. = src/
+output.. = bin/

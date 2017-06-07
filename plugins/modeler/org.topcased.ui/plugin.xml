@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension-point id="perspectiveConfiguration" name="perspectiveConfiguration" schema="schema/perspectiveConfiguration.exsd"/>
+
+<!--
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution
+			id="org.topcased.ui.refactoring.actions.RenameModelFileContribution"
+			objectClass="org.eclipse.core.resources.IFile">
+			<action
+				id="org.topcased.ui.refactoring.actions.RenameModelFileAction"
+				label="Rename Model"
+				class="org.topcased.ui.refactoring.actions.RenameModelFileAction"
+				enablesFor="1"
+				icon="icons/rename.gif">
+				<selection class="org.eclipse.core.resources.IFile"/>
+			</action>
+		</objectContribution>
+	</extension>
+-->
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="org.topcased.modeler.TodoNoteAction"
+            objectClass="org.eclipse.core.resources.IResource">
+         <action
+               class="org.topcased.builder.TaskTagActivationAction"
+               enablesFor="1"
+               icon="icons/topcased-icon16.gif"
+               id="org.topcased.modeler.actions.tasktag.action"
+               label="Activate Tasks tags"
+               menubarPath="org.topcased.facilities.menu.topcased/topcasedGroup">
+            <enablement>
+               <objectClass
+                     name="org.eclipse.core.resources.IProject">
+               </objectClass>
+            </enablement>
+         </action>
+      </objectContribution>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ltk.core.refactoring.renameParticipants">
+      <renameParticipant
+            class="org.topcased.ui.refactoring.ModelRenameParticipant"
+            id="org.topcased.ui.refactoring.ModelRenameParticipant"
+            name="Rename Model">
+         <enablement>
+            <test
+                  forcePluginActivation="true"
+                  property="org.topcased.ui.resourcePropertyTester.isTopcasedFile">
+            </test>
+         </enablement>
+        
+      </renameParticipant>
+   </extension>   
+	<extension point="org.eclipse.ui.views">
+		<view
+			id="org.topcased.ui.navigator.view"
+			name="Topcased Navigator"
+			class="org.eclipse.ui.navigator.CommonNavigator"
+			category="org.topcased.facilities.views"
+			allowMultiple="false"
+			icon="icons/topcased-icon16.gif"/>
+	</extension>
+
+	<!-- Provide an adapter for the Topcased Navigator so that Tabbed Properties View could be poopulated -->
+	<extension point="org.eclipse.core.runtime.adapters">
+		<factory
+			adaptableType="org.eclipse.ui.navigator.CommonNavigator"
+			class="org.topcased.ui.internal.navigator.resources.workbench.TabbedPropertySheetAdapterFactory">
+			<adapter type="org.eclipse.ui.views.properties.IPropertySheetPage"/>
+		</factory>
+	</extension>
+
+	<!-- Provide necessary Tabs and sections in the Properties View so that informations could be populated when an element is selected from the Topcased navigator -->
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+		<propertyContributor
+			contributorId="org.topcased.ui.navigator.view"
+			labelProvider="org.topcased.ui.internal.navigator.resources.workbench.TabbedPropertySheetTitleProvider">
+			<propertyCategory category="general"/>
+			<propertyCategory category="core"/>
+			<propertyCategory category="appearance"/>
+			<propertyCategory category="advanced"/>
+		</propertyContributor>
+	</extension>
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+		<propertyTabs contributorId="org.topcased.ui.navigator.view">
+			<propertyTab
+				label="Advanced"
+				category="advanced"
+				id="CommonNavigator.tab.Advanced"/>
+		</propertyTabs>
+	</extension>
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+		<propertySections contributorId="org.topcased.ui.navigator.view">
+			<propertySection
+				class="org.eclipse.ui.views.properties.tabbed.AdvancedPropertySection"
+				id="CommonNavigator.section.Advanced"
+				tab="CommonNavigator.tab.Advanced">
+				<input type="java.lang.Object"/>
+			</propertySection>
+		</propertySections>
+	</extension>
+
+
+	<extension point="org.eclipse.ui.navigator.viewer">
+		<viewer viewerId="org.topcased.ui.navigator.view"/>
+		<viewerContentBinding viewerId="org.topcased.ui.navigator.view">
+			<includes>
+				<contentExtension pattern="org.eclipse.ui.navigator.resourceContent"/>
+				<contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/>
+				<contentExtension pattern="org.eclipse.ui.navigator.resources.linkHelper"/>
+				<contentExtension pattern="org.topcased.ui.navigator.filters.*"/>
+			</includes>
+		</viewerContentBinding>
+		<viewerActionBinding viewerId="org.topcased.ui.navigator.view">
+			<includes>
+				<actionExtension pattern="org.eclipse.ui.navigator.resources.*"/>
+				<actionExtension pattern="org.eclipse.ui.newWizards.*"/>
+			</includes>
+		</viewerActionBinding>
+	</extension>
+   
+	<extension point="org.eclipse.ui.navigator.navigatorContent">
+	
+		<!-- A filter used to show only the projects with a Topcased Nature -->
+		<commonFilter
+			id="org.topcased.ui.navigator.filters.hideNonTopcasedProjects"
+			name="Non-Topcased projects"
+			activeByDefault="true"
+			description="Hide non-Topcased projects">
+			<filterExpression>
+				<adapt type="org.eclipse.core.resources.IProject">
+					<not>
+						<test property="org.eclipse.core.resources.projectNature" value="org.topcased.core.topcasednature"/>
+					</not>
+				</adapt>
+			</filterExpression>
+		</commonFilter>
+		
+		<!-- A Filter used to hide the diagram files -->
+		<commonFilter
+			id="org.topcased.ui.navigator.filters.hideDiagramFiles"
+			name="Hide diagram files"
+			activeByDefault="false"
+			description="Hide diagram files. These are the files where the extension ends with &apos;di&apos;.">
+			<filterExpression>
+				<adapt type="org.eclipse.core.resources.IFile">
+					<test property="org.eclipse.core.resources.extension" value="*di"/>
+				</adapt>
+			</filterExpression>
+		</commonFilter>
+
+		<!-- A Filter used to hide linked files -->
+		<commonFilter
+			id="org.topcased.ui.navigator.filters.hideLinkedFiles"
+			class="org.topcased.ui.navigator.filters.LinkedFileFilter"
+			activeByDefault="false"
+			description="Hide linked files. These are the files which are linked to another physical file in the underlying file system."
+			name="Hide linked files"/>
+		
+	</extension>
+
+	<!-- Bind the Diagrams content extension to the viewer -->
+	<extension point="org.eclipse.ui.navigator.viewer">
+		<viewerContentBinding viewerId="org.topcased.ui.navigator.view">
+			<includes>
+				<contentExtension pattern="org.topcased.ui.navigator.diagramsContent"/>
+			</includes>
+		</viewerContentBinding>
+	</extension>
+
+	<!-- Declare a content extension that renders the contents of a Diagrams file -->
+	<extension point="org.eclipse.ui.navigator.navigatorContent">
+		<navigatorContent
+			id="org.topcased.ui.navigator.diagramsContent" 
+			name="Diagrams File Contents"
+			contentProvider="org.topcased.ui.navigator.TopcasedDiagramAdapterFactoryContentProvider"
+			labelProvider="org.topcased.ui.navigator.TopcasedDiagramAdapterFactoryLabelProvider" 
+			activeByDefault="true"
+			icon="icons/Diagram.gif"
+			priority="normal">
+			<triggerPoints>
+				<or>
+					<and>
+						<instanceof value="org.eclipse.core.resources.IResource"/>
+						<test forcePluginActivation="true" property="org.eclipse.core.resources.extension" value="*di"/>
+					</and>
+					<instanceof value="org.topcased.modeler.di.model.Diagram"/>
+				</or>
+			</triggerPoints>
+			<possibleChildren>
+				<instanceof value="org.topcased.modeler.di.model.Diagram"/>
+			</possibleChildren>
+			<actionProvider
+				id="org.topcased.ui.navigator.actions.DiagramActionProvider"
+				class="org.topcased.ui.navigator.actions.DiagramActionProvider"/>
+		</navigatorContent>
+	</extension>
+
+
+	<!-- Add a new wizard used to create a Topcased Project -->
+	<extension point="org.eclipse.ui.newWizards">
+		<wizard
+			id="org.topcased.ui.navigator.wizards.TopcasedProjectWizardID"
+			name="Topcased Project"
+			class="org.topcased.ui.navigator.wizards.NewTopcasedProjectWizard"
+			category="org.topcased.facilities.newWizards"
+			finalPerspective="org.topcased.modeler.perspective"
+			icon="icons/topcased-icon16.gif"
+			preferredPerspectives="org.topcased.modeler.perspective"
+			project="true">
+			<description>Create Topcased Project</description>
+		</wizard>
+	</extension>
+ <extension
+       point="org.eclipse.core.expressions.propertyTesters">
+    <propertyTester
+          class="org.topcased.ui.navigator.TopcasedFilePropertyTester"
+          id="org.topcased.ui.resourcePropertyTester"
+          namespace="org.topcased.ui.resourcePropertyTester"
+          properties="isTopcasedFile,isTopcasedDiFile"
+          type="org.eclipse.core.resources.IResource">
+    </propertyTester>
+ </extension>
+ <extension
+       point="org.eclipse.ui.startup">
+    <startup
+          class="org.topcased.ui.perspective.configuration.PerspectiveConfigurator">
+    </startup>
+ </extension>
+
+</plugin>

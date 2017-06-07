@@ -1,0 +1,64 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.modeler.editorconfigurator.*"
+	 class="PluginXML"
+	 version="$Id: plugin.xmljet,v 1.27 2008/08/21 13:06:15 tlandre Exp $" %>
+<%EditorConfiguration editorConfiguration = (EditorConfiguration) argument;%>
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            class="<%=editorConfiguration.getProjectName()%>.editor.<%=editorConfiguration.getPrefix()%>Editor"
+            icon="icons/<%=editorConfiguration.getPrefix()%>.gif"
+            default="true"
+            name="<%=editorConfiguration.getName()%>"
+            id="<%=editorConfiguration.getProjectName()%>.editor.<%=editorConfiguration.getPrefix()%>Editor"
+            contributorClass="<%=editorConfiguration.getProjectName()%>.actions.<%=editorConfiguration.getPrefix()%>EditorActionBarContributor"
+            extensions="<%=editorConfiguration.getExtensionDiagram()%>">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.newWizards">
+      <wizard
+            icon="icons/<%=editorConfiguration.getPrefix()%>.gif"
+            class="<%=editorConfiguration.getProjectName()%>.wizards.New<%=editorConfiguration.getPrefix()%>Diagrams"
+            category="org.topcased.facilities.newWizards/org.topcased.modeler.newdiagram"
+            name="<%=editorConfiguration.getPrefix()%> Diagram"
+            id="<%=editorConfiguration.getProjectName()%>.wizards.New<%=editorConfiguration.getPrefix()%>Diagrams">
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+   
+   <extension point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension targetID="org.topcased.modeler.perspective">
+         <newWizardShortcut id="<%=editorConfiguration.getProjectName()%>.wizards.New<%=editorConfiguration.getPrefix()%>Diagrams"/>
+      </perspectiveExtension>
+   </extension>
+   
+   <extension point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.topcased.modeler.preferences.ModelerPreferencePage"
+            class="<%= editorConfiguration.getProjectName() %>.preferences.<%= editorConfiguration.getPrefix() %>PreferencePage"
+            id="<%= editorConfiguration.getProjectName() %>.preferences.<%= editorConfiguration.getPrefix() %>PreferencePage"
+            name="<%= editorConfiguration.getPrefix() %>"/>
+   </extension>
+   
+	<extension point="org.eclipse.ui.propertyPages">
+		<page
+			id="<%= editorConfiguration.getProjectName() %>.preferences.property.<%= editorConfiguration.getPrefix() %>PreferencePage"
+			class="<%= editorConfiguration.getProjectName() %>.preferences.<%= editorConfiguration.getPrefix() %>PreferencePage"
+			category="org.topcased.modeler.preferences.property.ModelerPreferencePage"
+			name="<%= editorConfiguration.getPrefix() %>">
+			<enabledWhen>
+				<adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+		</page>
+	</extension>
+   
+   	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="<%= editorConfiguration.getProjectName() %>.preferences.AllDiagramPreferenceInitializer"/>
+	</extension>
+	
+</plugin>

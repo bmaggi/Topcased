@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramconfigurator:DiagramConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagramconfigurator="http://www.topcased.org/diagramconfigurator/1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" id="org.topcased.modeler.aadl.instancediagram" name="InstanceDiagram" package="instancediagram" prefix="Instance" editorId="org.topcased.modeler.aadl">
+  <palette name="InstanceDiagramPalette">
+    <paletteCategories name="Instances">
+      <items name="System" part="//@parts.0"/>
+      <items name="Data" part="//@parts.1"/>
+      <items name="Process" part="//@parts.2"/>
+      <items name="Memory" part="//@parts.3"/>
+      <items name="Processor" part="//@parts.4"/>
+      <items name="Bus" part="//@parts.5"/>
+      <items name="Device" part="//@parts.6"/>
+    </paletteCategories>
+  </palette>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.0" defaultFont="Sans-regular-10" type="InstanceFigure" container="true" defaultWidth="200" defaultHeight="100" minimumWidth="50" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.1" defaultFont="Sans-regular-10" type="InstanceFigure" container="true" defaultWidth="200" defaultHeight="100" minimumWidth="50" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.2" defaultFont="Sans-regular-10" type="InstanceFigure" container="true" defaultWidth="200" defaultHeight="100" minimumWidth="50" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.3" defaultFont="Sans-regular-10" type="InstanceFigure" container="true" defaultWidth="200" defaultHeight="100" minimumWidth="50" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.4" defaultFont="Sans-regular-10" type="InstanceFigure" container="true" defaultWidth="200" defaultHeight="100" minimumWidth="50" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.5" defaultFont="Sans-regular-10" type="InstanceFigure" container="true" defaultWidth="200" defaultHeight="100" minimumWidth="60" minimumHeight="40" maximumHeight="100"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.6" defaultFont="Sans-regular-10" type="InstanceFigure" container="true" defaultWidth="200" defaultHeight="100" minimumWidth="50" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.7" defaultFont="Sans-regular-10" type="State" defaultWidth="100" defaultHeight="60" minimumWidth="60" minimumHeight="40"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.8" defaultFont="Sans-regular-10" targetDecoration="ARROW">
+    <sourceTargetCouple containerType="DIAGRAM" sourceNode="//@parts.7" targetNode="//@parts.7">
+      <containerObject href="aadl.genmodel#//core/Modes"/>
+      <containerRef xsi:type="ecore:EReference" href="core.ecore#//Modes/modeTransition"/>
+      <refSourceToEdge xsi:type="ecore:EReference" href="core.ecore#//Mode/outgoingModeTransition"/>
+      <refEdgeToSource xsi:type="ecore:EReference" href="core.ecore#//ModeTransition/srcMode"/>
+      <refTargetToEdge xsi:type="ecore:EReference" href="core.ecore#//Mode/incomingModeTransition"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="core.ecore#//ModeTransition/dstMode"/>
+    </sourceTargetCouple>
+    <edgeObjects id="portType" type="Middle"/>
+  </parts>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/SystemSubcomponent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/DataSubcomponent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ProcessSubcomponent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/MemorySubcomponent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/ProcessorSubcomponent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/BusSubcomponent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//component/DeviceSubcomponent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//core/Mode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="aadl.genmodel#//core/ModeTransition"/>
+  </objects>
+  <genModel href="aadl.genmodel#/"/>
+  <templateRootObject href="aadl.genmodel#//core/Subcomponent"/>
+</diagramconfigurator:DiagramConfiguration>

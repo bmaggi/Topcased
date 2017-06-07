@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramconfigurator:DiagramConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagramconfigurator="http://www.topcased.org/diagramconfigurator/0.10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_vg0BcNCrEdu099f1-uS16A" projectName="org.topcased.modeler.uml.activitydiagram" name="Activity Diagram" package="activitydiagram" prefix="Activity" layout="PortLayout" copyrightText="Copyright (c) 2006 AIRBUS FRANCE. All rights reserved. This program and the&#xA;accompanying materials are made available under the terms of the Eclipse&#xA;Public License v1.0 which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html">
+  <palette xmi:id="_vg1PkNCrEdu099f1-uS16A" name="ActivityDiagramPalette">
+    <paletteCategories xmi:id="_vg2dsNCrEdu099f1-uS16A" name="Common">
+      <items xmi:id="_vg3r0NCrEdu099f1-uS16A" name="Activity Partition" part="_vhFHNNCrEdu099f1-uS16A"/>
+    </paletteCategories>
+    <paletteCategories xmi:id="_vg3r0dCrEdu099f1-uS16A" name="Control">
+      <items xmi:id="_vg4S4NCrEdu099f1-uS16A" name="Initial Node" part="_vhDSANCrEdu099f1-uS16A"/>
+      <items xmi:id="_vg4S4dCrEdu099f1-uS16A" name="Decision Node" part="_vhD5ENCrEdu099f1-uS16A"/>
+      <items xmi:id="_vg4S4tCrEdu099f1-uS16A" name="Merge Node" part="_vhD5EdCrEdu099f1-uS16A"/>
+      <items xmi:id="_vg4S49CrEdu099f1-uS16A" name="Fork Node" part="_vhD5EtCrEdu099f1-uS16A"/>
+      <items xmi:id="_vg4S5NCrEdu099f1-uS16A" name="Join Node" part="_vhEgINCrEdu099f1-uS16A"/>
+      <items xmi:id="_vg4S5dCrEdu099f1-uS16A" name="Activity Final" part="_vhEgIdCrEdu099f1-uS16A"/>
+      <items xmi:id="_vg4S5tCrEdu099f1-uS16A" name="Flow Final" part="_vhEgItCrEdu099f1-uS16A"/>
+    </paletteCategories>
+    <paletteCategories xmi:id="_vg4S59CrEdu099f1-uS16A" name="Actions">
+      <items xmi:id="_vg4S6NCrEdu099f1-uS16A" name="Expansion Region" part="_vhvOgNCrEdu099f1-uS16A"/>
+      <items xmi:id="_vg4S6dCrEdu099f1-uS16A" name="Call Behavior" part="_vhuncNCrEdu099f1-uS16A"/>
+      <items xmi:id="_vg4S6tCrEdu099f1-uS16A" name="Call Operation" part="_vhuncdCrEdu099f1-uS16A"/>
+      <items xmi:id="_vg458NCrEdu099f1-uS16A" name="Send Signal" part="_vhunctCrEdu099f1-uS16A"/>
+      <items xmi:id="_vg458dCrEdu099f1-uS16A" name="Accept Event" part="_vhunc9CrEdu099f1-uS16A"/>
+      <items xmi:id="_vg458tCrEdu099f1-uS16A" name="Action" part="_vhuAYNCrEdu099f1-uS16A"/>
+    </paletteCategories>
+    <paletteCategories xmi:id="_vg4589CrEdu099f1-uS16A" name="Object">
+      <items xmi:id="_vg459NCrEdu099f1-uS16A" name="Activity Parameter" part="_vhFHMdCrEdu099f1-uS16A">
+        <eAnnotations xmi:id="_vg459dCrEdu099f1-uS16A" source="codeCustom">
+          <details xmi:id="_vg459tCrEdu099f1-uS16A" key="initModelObject" value="                LiteralUnlimitedNatural upperBound = UMLFactory.eINSTANCE.createLiteralUnlimitedNatural();&#xA;                upperBound.setValue(-1);&#xA;                element.setUpperBound(upperBound);"/>
+        </eAnnotations>
+      </items>
+      <items xmi:id="_vg4599CrEdu099f1-uS16A" name="Central Buffer" part="_vhEgI9CrEdu099f1-uS16A">
+        <eAnnotations xmi:id="_vg45-NCrEdu099f1-uS16A" source="codeCustom">
+          <details xmi:id="_vg5hANCrEdu099f1-uS16A" key="initModelObject" value="                LiteralUnlimitedNatural upperBound = UMLFactory.eINSTANCE.createLiteralUnlimitedNatural();&#xA;                upperBound.setValue(-1);&#xA;                element.setUpperBound(upperBound);"/>
+        </eAnnotations>
+      </items>
+      <items xmi:id="_vg5hAdCrEdu099f1-uS16A" name="DataStore" part="_vhFHMNCrEdu099f1-uS16A">
+        <eAnnotations xmi:id="_vg5hAtCrEdu099f1-uS16A" source="codeCustom">
+          <details xmi:id="_vg5hA9CrEdu099f1-uS16A" key="initModelObject" value="                LiteralUnlimitedNatural upperBound = UMLFactory.eINSTANCE.createLiteralUnlimitedNatural();&#xA;                upperBound.setValue(-1);&#xA;                element.setUpperBound(upperBound);"/>
+        </eAnnotations>
+      </items>
+      <items xmi:id="_vg5hBNCrEdu099f1-uS16A" name="Expansion" part="_vhFHMtCrEdu099f1-uS16A">
+        <eAnnotations xmi:id="_vg5hBdCrEdu099f1-uS16A" source="codeCustom">
+          <details xmi:id="_vg5hBtCrEdu099f1-uS16A" key="initModelObject" value="                LiteralUnlimitedNatural upperBound = UMLFactory.eINSTANCE.createLiteralUnlimitedNatural();&#xA;                upperBound.setValue(-1);&#xA;                element.setUpperBound(upperBound);"/>
+        </eAnnotations>
+      </items>
+      <items xmi:id="_vg5hB9CrEdu099f1-uS16A" name="Input Pin" part="_vhxDsNCrEdu099f1-uS16A">
+        <eAnnotations xmi:id="_vg5hCNCrEdu099f1-uS16A" source="codeCustom">
+          <details xmi:id="_vg6IENCrEdu099f1-uS16A" key="initModelObject" value="                LiteralUnlimitedNatural upperBound = UMLFactory.eINSTANCE.createLiteralUnlimitedNatural();&#xA;                upperBound.setValue(-1);&#xA;                element.setUpperBound(upperBound);"/>
+        </eAnnotations>
+      </items>
+      <items xmi:id="_vg6IEdCrEdu099f1-uS16A" name="Output Pin" part="_vhxDsdCrEdu099f1-uS16A">
+        <eAnnotations xmi:id="_vg6IEtCrEdu099f1-uS16A" source="codeCustom">
+          <details xmi:id="_vg6IE9CrEdu099f1-uS16A" key="initModelObject" value="                LiteralUnlimitedNatural upperBound = UMLFactory.eINSTANCE.createLiteralUnlimitedNatural();&#xA;                upperBound.setValue(-1);&#xA;                element.setUpperBound(upperBound);"/>
+        </eAnnotations>
+      </items>
+    </paletteCategories>
+    <paletteCategories xmi:id="_vg6vINCrEdu099f1-uS16A" name="Connections">
+      <items xmi:id="_vg6vIdCrEdu099f1-uS16A" name="Control Flow" part="_vhrkIdCrEdu099f1-uS16A">
+        <eAnnotations xmi:id="_vg6vItCrEdu099f1-uS16A" source="codeCustom">
+          <details xmi:id="_vg6vI9CrEdu099f1-uS16A" key="initModelObject" value="                LiteralBoolean guard = UMLFactory.eINSTANCE.createLiteralBoolean();&#xA;                LiteralInteger weight = UMLFactory.eINSTANCE.createLiteralInteger();&#xA;                guard.setValue(true);&#xA;                weight.setValue(1);&#xA;                element.setGuard(guard);&#xA;                element.setWeight(weight);"/>
+        </eAnnotations>
+      </items>
+      <items xmi:id="_vg6vJNCrEdu099f1-uS16A" name="Object Flow" part="_vhsLMtCrEdu099f1-uS16A">
+        <eAnnotations xmi:id="_vg6vJdCrEdu099f1-uS16A" source="codeCustom">
+          <details xmi:id="_vg6vJtCrEdu099f1-uS16A" key="initModelObject" value="                LiteralBoolean guard = UMLFactory.eINSTANCE.createLiteralBoolean();&#xA;                LiteralInteger weight = UMLFactory.eINSTANCE.createLiteralInteger();&#xA;                guard.setValue(true);&#xA;                weight.setValue(1);&#xA;                element.setGuard(guard);&#xA;                element.setWeight(weight);"/>
+        </eAnnotations>
+      </items>
+      <items xmi:id="_vg6vJ9CrEdu099f1-uS16A" name="Exception Handler" part="_vhG8YNCrEdu099f1-uS16A"/>
+    </paletteCategories>
+    <paletteCategories xmi:id="_vg6vKNCrEdu099f1-uS16A" name="Comment">
+      <items xmi:id="_vg6vKdCrEdu099f1-uS16A" name="Comment" part="_vhsyQtCrEdu099f1-uS16A"/>
+      <items xmi:id="_vg6vKtCrEdu099f1-uS16A" name="Comment Link" part="_vhsyQ9CrEdu099f1-uS16A"/>
+    </paletteCategories>
+  </palette>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhCD4NCrEdu099f1-uS16A" object="_vhzf8dCrEdu099f1-uS16A" directEditable="false" defaultWidth="0" defaultHeight="0" minimumWidth="0" minimumHeight="0" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhCD4dCrEdu099f1-uS16A" object="_vhzf8tCrEdu099f1-uS16A" superType="_vhCD4NCrEdu099f1-uS16A" directEditable="false" defaultWidth="0" defaultHeight="0" minimumWidth="0" minimumHeight="0" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhCD4tCrEdu099f1-uS16A" object="_vh0HANCrEdu099f1-uS16A" superType="_vhCD4dCrEdu099f1-uS16A" directEditable="false" defaultWidth="0" defaultHeight="0" minimumWidth="0" minimumHeight="0" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhCq8NCrEdu099f1-uS16A" object="_vh0HAdCrEdu099f1-uS16A" superType="_vhCD4dCrEdu099f1-uS16A" directEditable="false" defaultWidth="0" defaultHeight="0" minimumWidth="0" minimumHeight="0" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhDSANCrEdu099f1-uS16A" object="_vh0HAtCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Ellipse" superType="_vhCD4tCrEdu099f1-uS16A" defaultBackgroundColor="0,0,0" directEditable="false" defaultWidth="30" defaultHeight="30" maximumWidth="50" maximumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhD5ENCrEdu099f1-uS16A" object="_vh0HA9CrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Shape" superType="_vhCD4tCrEdu099f1-uS16A" directEditable="false" defaultWidth="30" minimumHeight="30" maximumWidth="100" maximumHeight="100"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhD5EdCrEdu099f1-uS16A" object="_vh0HBNCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Shape" superType="_vhCD4tCrEdu099f1-uS16A" directEditable="false" defaultWidth="30" minimumHeight="30" maximumWidth="100" maximumHeight="100"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhD5EtCrEdu099f1-uS16A" object="_vh0HBdCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="RectangleFigure" superType="_vhCD4tCrEdu099f1-uS16A" defaultBackgroundColor="0,0,0" resizing="HEIGHT" directEditable="false" defaultWidth="10" minimumWidth="10" minimumHeight="30" maximumWidth="10" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhEgINCrEdu099f1-uS16A" object="_vh0HBtCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="RectangleFigure" superType="_vhCD4tCrEdu099f1-uS16A" defaultBackgroundColor="0,0,0" resizing="HEIGHT" directEditable="false" defaultWidth="10" minimumWidth="10" minimumHeight="30" maximumWidth="10" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhEgIdCrEdu099f1-uS16A" object="_vh0uENCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Ellipse" superType="_vhCD4tCrEdu099f1-uS16A" defaultBackgroundColor="0,0,0" directEditable="false" defaultWidth="40" defaultHeight="40" minimumWidth="30" minimumHeight="30" maximumWidth="100" maximumHeight="100"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhEgItCrEdu099f1-uS16A" object="_vh0uEdCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Ellipse" superType="_vhCD4tCrEdu099f1-uS16A" directEditable="false" defaultWidth="40" defaultHeight="40" minimumWidth="30" minimumHeight="30" maximumWidth="100" maximumHeight="100"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhEgI9CrEdu099f1-uS16A" object="_vh0uEtCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="BorderedLabel" superType="_vhCq8NCrEdu099f1-uS16A" defaultWidth="150" minimumWidth="40" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhFHMNCrEdu099f1-uS16A" object="_vh0uE9CrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="BorderedLabel" superType="_vhEgI9CrEdu099f1-uS16A" defaultWidth="150" minimumWidth="40" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhFHMdCrEdu099f1-uS16A" object="_vh0uFNCrEdu099f1-uS16A" type="Port" superType="_vhCq8NCrEdu099f1-uS16A" defaultWidth="100" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhFHMtCrEdu099f1-uS16A" object="_vh0uFdCrEdu099f1-uS16A" type="Port" superType="_vhCq8NCrEdu099f1-uS16A" resizing="NONE" directEditable="false" defaultWidth="40" defaultHeight="20" minimumWidth="40" maximumWidth="40" maximumHeight="20"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhFHNNCrEdu099f1-uS16A" object="_vh1VINCrEdu099f1-uS16A" type="Container" superType="_vhCD4NCrEdu099f1-uS16A" container="true" defaultWidth="100" defaultHeight="80" minimumWidth="50" minimumHeight="30" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhFHM9CrEdu099f1-uS16A" object="_vh0uFtCrEdu099f1-uS16A" superType="_vhCD4dCrEdu099f1-uS16A" directEditable="false" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_vhG8YNCrEdu099f1-uS16A" object="_vh1VIdCrEdu099f1-uS16A" defaultFont="Sans-regular-10" targetDecoration="ARROW">
+    <sourceTargetCouple xmi:id="_vhJYoNCrEdu099f1-uS16A" containerType="SOURCE" sourceNode="_vhFHM9CrEdu099f1-uS16A" targetNode="_vhCq8NCrEdu099f1-uS16A">
+      <containerObject href="UML.genmodel#//uml/ExecutableNode"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//ExecutableNode/handler"/>
+      <refEdgeToSource xsi:type="ecore:EReference" href="UML.ecore#//ExceptionHandler/protectedNode"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//ExceptionHandler/exceptionInput"/>
+    </sourceTargetCouple>
+    <edgeObjects xmi:id="_vhq9ENCrEdu099f1-uS16A" id="exceptionType" type="Target"/>
+    <edgeObjects xmi:id="_vhrkINCrEdu099f1-uS16A" id="stereotype" type="Middle"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_vhrkIdCrEdu099f1-uS16A" object="_vh1VItCrEdu099f1-uS16A" defaultFont="Sans-regular-10" targetDecoration="ARROW">
+    <sourceTargetCouple xmi:id="_vhrkItCrEdu099f1-uS16A" containerType="DIAGRAM" sourceNode="_vhCD4dCrEdu099f1-uS16A" targetNode="_vhCD4dCrEdu099f1-uS16A">
+      <containerObject href="UML.genmodel#//uml/Activity"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Activity/edge"/>
+      <refSourceToEdge xsi:type="ecore:EReference" href="UML.ecore#//ActivityNode/outgoing"/>
+      <refEdgeToSource xsi:type="ecore:EReference" href="UML.ecore#//ActivityEdge/source"/>
+      <refTargetToEdge xsi:type="ecore:EReference" href="UML.ecore#//ActivityNode/incoming"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//ActivityEdge/target"/>
+    </sourceTargetCouple>
+    <edgeObjects xmi:id="_vhrkI9CrEdu099f1-uS16A" id="stereotype" type="Middle"/>
+    <edgeObjects xmi:id="_vhsLMNCrEdu099f1-uS16A" id="guard"/>
+    <edgeObjects xmi:id="_vhsLMdCrEdu099f1-uS16A" id="name" type="Target"/>
+    <edgeObjects xmi:id="_zaRmUNCrEdu099f1-uS16A" id="weight"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_vhsLMtCrEdu099f1-uS16A" object="_vh1VI9CrEdu099f1-uS16A" defaultForegroundColor="0,0,255" defaultFont="Sans-regular-10" targetDecoration="ARROW">
+    <sourceTargetCouple xmi:id="_vhsLM9CrEdu099f1-uS16A" containerType="DIAGRAM" sourceNode="_vhCD4dCrEdu099f1-uS16A" targetNode="_vhCD4dCrEdu099f1-uS16A">
+      <containerObject href="UML.genmodel#//uml/Activity"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Activity/edge"/>
+      <refSourceToEdge xsi:type="ecore:EReference" href="UML.ecore#//ActivityNode/outgoing"/>
+      <refEdgeToSource xsi:type="ecore:EReference" href="UML.ecore#//ActivityEdge/source"/>
+      <refTargetToEdge xsi:type="ecore:EReference" href="UML.ecore#//ActivityNode/incoming"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//ActivityEdge/target"/>
+    </sourceTargetCouple>
+    <edgeObjects xmi:id="_vhsLNNCrEdu099f1-uS16A" id="stereotype" type="Middle"/>
+    <edgeObjects xmi:id="_vhsyQNCrEdu099f1-uS16A" id="guard"/>
+    <edgeObjects xmi:id="_vhsyQdCrEdu099f1-uS16A" id="name" type="Target"/>
+    <edgeObjects xmi:id="_UqooMNC2Edu099f1-uS16A" id="weight"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_vhsyQ9CrEdu099f1-uS16A" object="_vh18MNCrEdu099f1-uS16A" defaultForegroundColor="255,195,0" defaultFont="Sans-regular-10" lineStyle="CUSTOM">
+    <sourceTargetCouple xmi:id="_vhsyRNCrEdu099f1-uS16A" sourceNode="_vhsyQtCrEdu099f1-uS16A" targetNode="_vhCD4NCrEdu099f1-uS16A">
+      <refSourceToTarget xsi:type="ecore:EReference" href="UML.ecore#//Comment/annotatedElement"/>
+    </sourceTargetCouple>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhvOgNCrEdu099f1-uS16A" object="_viDXlNCrEdu099f1-uS16A" type="Container" childElements="_vhFHMtCrEdu099f1-uS16A" superType="_vhuAYNCrEdu099f1-uS16A" container="true" layout="PortLayout" directEditable="false" defaultWidth="200" defaultHeight="100" minimumWidth="50" minimumHeight="30" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhxDsNCrEdu099f1-uS16A" object="_viFMwtCrEdu099f1-uS16A" fontChangeable="false" type="Port" superType="_vhCq8NCrEdu099f1-uS16A" resizing="NONE" directEditable="false" defaultWidth="20" defaultHeight="20" maximumWidth="20" maximumHeight="20" attachedToBorder="true"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhxDsdCrEdu099f1-uS16A" object="_viFMw9CrEdu099f1-uS16A" fontChangeable="false" type="Port" superType="_vhCq8NCrEdu099f1-uS16A" resizing="NONE" directEditable="false" defaultWidth="20" defaultHeight="20" maximumWidth="20" maximumHeight="20" attachedToBorder="true"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhsyQtCrEdu099f1-uS16A" object="_vh1VJNCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Comment" superType="_vhCD4NCrEdu099f1-uS16A" defaultBackgroundColor="255,195,0" defaultWidth="150" defaultHeight="25" minimumWidth="50" minimumHeight="25" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhuAYNCrEdu099f1-uS16A" object="_vh2jQNCrEdu099f1-uS16A" type="BorderedLabel" childElements="_vhxDsNCrEdu099f1-uS16A _vhxDsdCrEdu099f1-uS16A" superType="_vhFHM9CrEdu099f1-uS16A" container="true" layout="PortLayout" defaultWidth="150" defaultHeight="60" minimumWidth="40" minimumHeight="25" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhunc9CrEdu099f1-uS16A" object="_vh2jQdCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="BorderedLabel" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" minimumWidth="40" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_Lj3jkCNPEd6hQYCSylGLPA" object="_viDXkNCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_sl1jECQoEd6weKfvns-Xig" object="_viFMwNCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_CcRQcCNQEd6hQYCSylGLPA" object="_vh2jQtCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_Lvkn0CNQEd6hQYCSylGLPA" object="_vh2jRtCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhuncNCrEdu099f1-uS16A" object="_vh2jR9CrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="BorderedLabel" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhuncdCrEdu099f1-uS16A" object="_vh3KUNCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="BorderedLabel" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" minimumWidth="40" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_C7j0gCNQEd6hQYCSylGLPA" object="_vh2jQ9CrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_KjymoCNPEd6hQYCSylGLPA" object="_vh4_gNCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_sK7VUCNPEd6hQYCSylGLPA" object="_viElsdCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_Ndd-8CNOEd6hQYCSylGLPA" object="_vh3KVNCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_PsqaYCNOEd6hQYCSylGLPA" object="_vh3KVdCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_DVVmcCNQEd6hQYCSylGLPA" object="_vh2jRNCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_Qcps4CNOEd6hQYCSylGLPA" object="_vh3KVtCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_LRnggCNQEd6hQYCSylGLPA" object="_vh2jRdCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vhunctCrEdu099f1-uS16A" object="_vh3KUtCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="BorderedLabel" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" minimumWidth="40" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_MwdvACNOEd6hQYCSylGLPA" object="_vh3KUdCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_sluQYCNOEd6hQYCSylGLPA" object="_vh3xaNCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_Q9lPsCNOEd6hQYCSylGLPA" object="_vh3KV9CrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_Mg9d8CNPEd6hQYCSylGLPA" object="_viD-otCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_M_z9ICNPEd6hQYCSylGLPA" object="_viD-o9CrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_risQoCNPEd6hQYCSylGLPA" object="_viElsNCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_Roo-4CNOEd6hQYCSylGLPA" object="_vh3KWNCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_XfV3UCKwEd6K677OeHkPcA" object="_vh3xZNCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_pfF2oCNOEd6hQYCSylGLPA" object="_vh3xYdCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_qDJl8CNOEd6hQYCSylGLPA" object="_vh3xYtCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_qkFv0CNOEd6hQYCSylGLPA" object="_vh3xY9CrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_rx1TQCQoEd6weKfvns-Xig" object="_vh3KU9CrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_sNGS8CQoEd6weKfvns-Xig" object="_vh3xYNCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_tw2KQCNPEd6hQYCSylGLPA" object="_viElstCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_LDO7sCNPEd6hQYCSylGLPA" object="_vh5mkNCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_rFUNkCNOEd6hQYCSylGLPA" object="_vh3xZdCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_rncDMCNOEd6hQYCSylGLPA" object="_vh3xZtCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_sGldUCNOEd6hQYCSylGLPA" object="_vh3xZ9CrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_MC3MsCNPEd6hQYCSylGLPA" object="_viDXkdCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vHRxsCNPEd6hQYCSylGLPA" object="_viFMwdCrEdu099f1-uS16A" defaultFont="Sans-regular-10" type="Class" superType="_vhuAYNCrEdu099f1-uS16A" defaultWidth="150" defaultHeight="75" minimumWidth="40" minimumHeight="75" maximumWidth="0" maximumHeight="0"/>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vhyR0NCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/Activity"/>
+    <diagrams xmi:id="_vhzf8NCrEdu099f1-uS16A" diagram="_vg0BcNCrEdu099f1-uS16A"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vhzf8dCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/Element"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vhzf8tCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ActivityNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh0HANCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ControlNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh0HAdCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ObjectNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh0HAtCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/InitialNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh0HA9CrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/DecisionNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh0HBNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/MergeNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh0HBdCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ForkNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh0HBtCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/JoinNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh0uENCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ActivityFinalNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh0uEdCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/FlowFinalNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh0uEtCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/CentralBufferNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh0uE9CrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/DataStoreNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh0uFNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ActivityParameterNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh0uFdCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ExpansionNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh0uFtCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ExecutableNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh1VINCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ActivityPartition"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh1VIdCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ExceptionHandler"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh1VItCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ControlFlow"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh1VI9CrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ObjectFlow"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh1VJNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/Comment"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" xmi:id="_vh18MNCrEdu099f1-uS16A" name="CommentLink"/>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh2jQNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/Action"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh2jQdCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/AcceptEventAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh2jQtCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/AcceptCallAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh2jQ9CrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ClearAssociationAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh2jRNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/CreateObjectAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh2jRdCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/DestroyObjectAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh2jRtCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/BroadcastSignalAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh2jR9CrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/CallBehaviorAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3KUNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/CallOperationAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3KUdCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/SendObjectAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3KUtCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/SendSignalAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3KU9CrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ReadLinkAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3KVNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/CreateLinkAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3KVdCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/CreateLinkObjectAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3KVtCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/DestroyLinkAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3KV9CrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/OpaqueAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3KWNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/RaiseExceptionAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3xYNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ReadExtentAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3xYdCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ReadIsClassifiedObjectAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3xYtCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ReadLinkObjectEndAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3xY9CrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ReadLinkObjectEndQualifierAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3xZNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ReadSelfAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3xZdCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ReclassifyObjectAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3xZtCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ReduceAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3xZ9CrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ReplyAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh3xaNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/StartClassifierBehaviorAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh4_gNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ClearStructuralFeatureAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vh5mkNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ReadStructuralFeatureAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_viDXkNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/AddStructuralFeatureValueAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_viDXkdCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/RemoveStructuralFeatureValueAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_viDXktCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/StructuredActivityNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_viDXk9CrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ConditionalNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_viDXlNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ExpansionRegion"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_viD-oNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/LoopNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_viD-odCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/SequenceNode"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_viD-otCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/TestIdentityAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_viD-o9CrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/UnmarshallAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_viElsNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ValueSpecificationAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_viElsdCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ClearVariableAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_viElstCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/ReadVariableAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_viFMwNCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/AddVariableValueAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_viFMwdCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/RemoveVariableValueAction"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_viFMwtCrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/InputPin"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_viFMw9CrEdu099f1-uS16A">
+    <genClass href="UML.genmodel#//uml/OutputPin"/>
+  </objects>
+  <genModel href="UML.genmodel#/"/>
+  <templateRootObject href="UML.genmodel#//uml/Activity"/>
+  <editorConfigurator href="UML.editorconfigurator#_67CpENCrEdu099f1-uS16A"/>
+</diagramconfigurator:DiagramConfiguration>

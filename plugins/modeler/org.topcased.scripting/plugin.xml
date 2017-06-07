@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension-point id="getSelection" name="Editor Selection Getter" schema="schema/getSelection.exsd"/>
+   <extension-point id="scriptProjectNature" name="Script Project Nature" schema="schema/scriptProjectNature.exsd"/>
+   <extension
+         point="org.eclipse.eclipsemonkey.dom">
+      <dom
+            class="org.topcased.scripting.input.DOMFactory"
+            resource="org.topcased.scripting.input.InputDOM"
+            variableName="input">
+      </dom>
+      <dom
+            class="org.topcased.scripting.output.DOMFactory"
+            resource="org.topcased.scripting.output.OutputDOM"
+            variableName="output">
+      </dom>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.topcased.scripting.newWizards"
+            name="Topcased Scripting"
+            parentCategory="org.topcased.facilities.newWizards">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.ui.console.consoleFactories">
+      <consoleFactory
+            class="org.topcased.scripting.ScriptConsoleFactory"
+            icon="icons/script.gif"
+            label="Topcased Scripts Console">
+      </consoleFactory>
+   </extension>
+
+</plugin>

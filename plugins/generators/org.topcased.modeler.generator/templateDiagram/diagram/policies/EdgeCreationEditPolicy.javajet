@@ -1,0 +1,261 @@
+<%@ jet 
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="EdgeCreationEditPolicy"
+	 version="$Id: EdgeCreationEditPolicy.javajet,v 1.9 2006/12/20 17:08:26 jako Exp $" %>
+<%	EdgePartConfiguration edgePartConfiguration = (EdgePartConfiguration) argument;
+	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) edgePartConfiguration.eContainer();
+	ObjectConfiguration objectConfiguration = edgePartConfiguration.getObject();
+	String partPrefix = edgePartConfiguration.getPrefix();%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>.policies;
+
+import org.eclipse.gef.EditDomain;
+import org.eclipse.gef.commands.Command;
+
+import org.eclipse.emf.ecore.EObject;
+
+import org.topcased.modeler.di.model.GraphEdge;
+import org.topcased.modeler.di.model.GraphElement;
+import org.topcased.modeler.di.model.SimpleSemanticModelElement;
+import org.topcased.modeler.utils.Utils;
+import org.topcased.modeler.utils.SourceTargetData;
+import org.topcased.modeler.edit.policies.AbstractEdgeCreationEditPolicy;
+import org.topcased.modeler.commands.CreateTypedEdgeCommand;
+
+import <%=diagramConfiguration.getBasePackage()%>.<%=diagramConfiguration.getPrefix()%>SimpleObjectConstants;
+import <%=diagramConfiguration.getBasePackage()%>.commands.<%=partPrefix%>EdgeCreationCommand;
+
+<%
+if (objectConfiguration instanceof ModelObjectConfiguration)
+{
+	String metamodelPackage = ((ModelObjectConfiguration) objectConfiguration).getGenClass().getGenPackage().getBasePackage() + "." + ((ModelObjectConfiguration) objectConfiguration).getGenClass().getGenPackage().getEcorePackage().getName(); 
+%>
+import <%=metamodelPackage%>.<%=objectConfiguration.getName()%>;
+<%
+}
+%>
+
+/**
+ * <%=partPrefix%> edge creation
+ *
+ * @generated
+ */
+public class <%=partPrefix%>EdgeCreationEditPolicy extends AbstractEdgeCreationEditPolicy
+{
+	/**
+	 * @see org.topcased.modeler.edit.policies.AbstractEdgeCreationEditPolicy#createCommand(org.eclipse.gef.EditDomain, org.topcased.modeler.di.model.GraphEdge, org.topcased.modeler.di.model.GraphElement)
+	 * @generated
+	 */
+	protected CreateTypedEdgeCommand createCommand(EditDomain domain, GraphEdge edge, GraphElement source) {
+		return new <%=partPrefix%>EdgeCreationCommand(domain, edge, source);
+	}
+    
+    /**
+	 * @see org.topcased.modeler.edit.policies.AbstractEdgeCreationEditPolicy#checkEdge(org.topcased.modeler.di.model.GraphEdge)
+	 * @generated
+	 */
+    protected boolean checkEdge(GraphEdge edge) {
+<%
+if (objectConfiguration instanceof ModelObjectConfiguration) {
+%>
+		return Utils.getElement(edge) instanceof <%=objectConfiguration.getName()%>;
+<%
+}
+else {
+%>
+        if (edge.getSemanticModel() instanceof SimpleSemanticModelElement)
+        {
+            return <%=diagramConfiguration.getPrefix()%>SimpleObjectConstants.SIMPLE_OBJECT_<%=objectConfiguration.getName().toUpperCase()%>.equals(((SimpleSemanticModelElement) edge.getSemanticModel()).getTypeInfo());
+        }
+        return false;
+<%
+}
+%>
+    }
+    
+    /**
+	 * @see org.topcased.modeler.edit.policies.AbstractEdgeCreationEditPolicy#checkSource(org.topcased.modeler.di.model.GraphElement)
+	 * @generated
+	 */
+    protected boolean checkSource(GraphElement source) {
+    	EObject object = Utils.getElement(source);
+<%
+    	for (Iterator iterator = edgePartConfiguration.getSourceTargetCouple().iterator() ; iterator.hasNext() ; ) {
+    		SourceTargetCouple couple = (SourceTargetCouple) iterator.next();
+    		if (couple.getSourceNode().getObject() instanceof ModelObjectConfiguration && couple.getTargetNode().getObject() instanceof ModelObjectConfiguration)
+    		{
+        		String sourceCompleteName = ((ModelObjectConfiguration) couple.getSourceNode().getObject()).getGenClass().getGenPackage().getBasePackage() + "." + ((ModelObjectConfiguration) couple.getSourceNode().getObject()).getGenClass().getGenPackage().getEcorePackage().getName() + "." + ((ModelObjectConfiguration) couple.getSourceNode().getObject()).getGenClass().getName();
+        		String targetCompleteName = ((ModelObjectConfiguration) couple.getTargetNode().getObject()).getGenClass().getGenPackage().getBasePackage() + "." + ((ModelObjectConfiguration) couple.getTargetNode().getObject()).getGenClass().getGenPackage().getEcorePackage().getName() + "." + ((ModelObjectConfiguration) couple.getTargetNode().getObject()).getGenClass().getName();
+%>    		
+    	if (object instanceof <%=sourceCompleteName%>) {
+    		return true;
+    	}
+<%
+				if (couple.isReversible() && !targetCompleteName.equals(sourceCompleteName)) {
+%>
+		if (object instanceof <%=targetCompleteName%>) {
+    		return true;
+    	}		
+<%
+				}
+			}
+    	}
+%>
+		return false;
+    }
+    
+    /**
+	 * @see org.topcased.modeler.edit.policies.AbstractEdgeCreationEditPolicy#checkTargetForSource(org.topcased.modeler.di.model.GraphElement, org.topcased.modeler.di.model.GraphElement)
+	 * @generated
+	 */
+    protected boolean checkTargetForSource(GraphElement source, GraphElement target) {
+    		EObject sourceObject = Utils.getElement(source);
+    		EObject targetObject = Utils.getElement(target);
+<%
+    	for (Iterator iterator = edgePartConfiguration.getSourceTargetCouple().iterator() ; iterator.hasNext() ; ) {
+    		SourceTargetCouple couple = (SourceTargetCouple) iterator.next();
+    		if (couple.getSourceNode().getObject() instanceof ModelObjectConfiguration && couple.getTargetNode().getObject() instanceof ModelObjectConfiguration)
+    		{
+        		String sourceCompleteName = ((ModelObjectConfiguration) couple.getSourceNode().getObject()).getGenClass().getGenPackage().getBasePackage() + "." + ((ModelObjectConfiguration) couple.getSourceNode().getObject()).getGenClass().getGenPackage().getEcorePackage().getName() + "." + ((ModelObjectConfiguration) couple.getSourceNode().getObject()).getGenClass().getName();
+        		String targetCompleteName = ((ModelObjectConfiguration) couple.getTargetNode().getObject()).getGenClass().getGenPackage().getBasePackage() + "." + ((ModelObjectConfiguration) couple.getTargetNode().getObject()).getGenClass().getGenPackage().getEcorePackage().getName() + "." + ((ModelObjectConfiguration) couple.getTargetNode().getObject()).getGenClass().getName();
+%>    		
+
+		if (sourceObject instanceof <%=sourceCompleteName%> && targetObject instanceof <%=targetCompleteName%>) {
+<%
+				if (!couple.isAutoRef()) {
+%>
+			if (!sourceObject.equals(targetObject)) {
+				return true;
+			}
+<%
+				}
+				else {
+%>    		
+			return true;
+<%
+				}
+%>			
+		}
+<%
+				if (couple.isReversible()) {
+%>
+		if (sourceObject instanceof <%=targetCompleteName%> && targetObject instanceof <%=sourceCompleteName%>) {
+<%
+	   				if (!couple.isAutoRef()) {
+%>
+			if (!sourceObject.equals(targetObject)) {
+				return true;
+			}
+<%
+					}
+					else {
+%>    		
+			return true;
+<%
+					}
+%>		
+		}
+<%
+				}
+			}
+		}
+%>
+		return false;
+    }
+    
+    /**
+	 * @see org.topcased.modeler.edit.policies.AbstractEdgeCreationEditPolicy#checkCommand(org.eclipse.gef.commands.Command)
+	 * @generated
+	 */
+    protected boolean checkCommand(Command command) {
+    		return command instanceof <%=partPrefix%>EdgeCreationCommand;
+    }
+    
+    /**
+	 * @see org.topcased.modeler.edit.policies.AbstractEdgeCreationEditPolicy#getSourceTargetData(org.topcased.modeler.di.model.GraphElement, org.topcased.modeler.di.model.GraphElement)
+	 * @generated
+	 */
+    protected SourceTargetData getSourceTargetData(GraphElement source, GraphElement target) {
+        EObject sourceObject = Utils.getElement(source);
+        EObject targetObject = Utils.getElement(target);
+        
+<%    
+    	for (Iterator iterator = edgePartConfiguration.getSourceTargetCouple().iterator() ; iterator.hasNext() ; ) {
+    		SourceTargetCouple couple = (SourceTargetCouple) iterator.next();
+    		if (couple.getSourceNode().getObject() instanceof ModelObjectConfiguration && couple.getTargetNode().getObject() instanceof ModelObjectConfiguration)
+    		{
+        		String sourceCompleteName = ((ModelObjectConfiguration) couple.getSourceNode().getObject()).getGenClass().getGenPackage().getBasePackage() + "." + ((ModelObjectConfiguration) couple.getSourceNode().getObject()).getGenClass().getGenPackage().getEcorePackage().getName() + "." + ((ModelObjectConfiguration) couple.getSourceNode().getObject()).getGenClass().getName();
+        		String targetCompleteName = ((ModelObjectConfiguration) couple.getTargetNode().getObject()).getGenClass().getGenPackage().getBasePackage() + "." + ((ModelObjectConfiguration) couple.getTargetNode().getObject()).getGenClass().getGenPackage().getEcorePackage().getName() + "." + ((ModelObjectConfiguration) couple.getTargetNode().getObject()).getGenClass().getName();
+    		
+        		String containerObject = null;
+        		if (couple.getContainerObject() != null) {
+    	    		 containerObject = "\"" + couple.getContainerObject().getGenPackage().getBasePackage() + "." + couple.getContainerObject().getGenPackage().getEcorePackage().getName() + "." + couple.getContainerObject().getName() + "\"";
+        	    	}
+            		String containerRef = null;
+        		if (couple.getContainerRef() != null) {
+        			containerRef = "\"" + couple.getContainerRef().getName() + "\"";		
+        		}
+            		String refEdgeToSource = null;
+        		if (couple.getRefEdgeToSource() != null) {
+        			refEdgeToSource = "\"" + couple.getRefEdgeToSource().getName() + "\"";		
+        		}
+            		String refEdgeToTarget = null;
+        		if (couple.getRefEdgeToTarget() != null) {
+        			refEdgeToTarget = "\"" + couple.getRefEdgeToTarget().getName() + "\"";		
+        		}
+            		String refSourceToEdge = null;
+        		if (couple.getRefSourceToEdge() != null) {
+        			refSourceToEdge = "\"" + couple.getRefSourceToEdge().getName() + "\"";		
+        		}
+            		String refSourceToTarget = null;
+        		if (couple.getRefSourceToTarget() != null) {
+        			refSourceToTarget = "\"" + couple.getRefSourceToTarget().getName() + "\"";		
+        		}
+            		String refTargetToEdge = null;
+        		if (couple.getRefTargetToEdge() != null) {
+        			refTargetToEdge = "\"" + couple.getRefTargetToEdge().getName() + "\"";		
+        		}
+            		String refTargetToSource = null;
+        		if (couple.getRefTargetToSource() != null) {
+        			refTargetToSource = "\"" + couple.getRefTargetToSource().getName() + "\"";		
+        		}
+        		
+        		String containerType = "SourceTargetData.NONE";
+        		switch (couple.getContainerType().getValue())
+        		{
+        			case 1:
+        				containerType = "SourceTargetData.SOURCE";
+						break;
+        			case 2:
+        				containerType = "SourceTargetData.SOURCE_CONTAINER";
+						break;
+        			case 3:
+        				containerType = "SourceTargetData.DIAGRAM";
+						break;
+        			case 4:
+        				containerType = "SourceTargetData.TARGET";
+						break;
+        			case 5:
+        				containerType = "SourceTargetData.TARGET_CONTAINER";
+						break;
+				}
+%>        
+		if (sourceObject instanceof <%=sourceCompleteName%> && targetObject instanceof <%=targetCompleteName%>) {
+			return new SourceTargetData(<%=couple.isReversible()%>, <%=couple.isAutoRef()%>, <%=containerType%>, <%=containerObject%>, <%=containerRef%>, <%=refEdgeToSource%>, <%=refEdgeToTarget%>, <%=refSourceToEdge%>, <%=refSourceToTarget%>, <%=refTargetToEdge%>, <%=refTargetToSource%>);
+		}  
+<%
+			if (couple.isReversible()) {
+%>
+		if (sourceObject instanceof <%=targetCompleteName%> && targetObject instanceof <%=sourceCompleteName%>) {
+			return new SourceTargetData(<%=couple.isReversible()%>, <%=couple.isAutoRef()%>, <%=containerType%>, <%=containerObject%>, <%=containerRef%>, <%=refEdgeToTarget%>, <%=refEdgeToSource%>, <%=refTargetToEdge%>, <%=refTargetToSource%>, <%=refSourceToEdge%>, <%=refSourceToTarget%>);
+		}  	
+<%
+			}
+		}
+	}
+%>		
+        return null;
+    }
+
+}

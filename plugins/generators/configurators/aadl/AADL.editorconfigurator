@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editorconfigurator:EditorConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:editorconfigurator="http://www.topcased.org/editorconfigurator/1.0" name="AADL Editor" projectName="org.topcased.modeler.aadl" pluginVersion="0.9.0">
+  <genModel href="aadl.genmodel#/"/>
+</editorconfigurator:EditorConfiguration>

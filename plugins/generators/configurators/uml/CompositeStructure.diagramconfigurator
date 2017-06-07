@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagramconfigurator:DiagramConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagramconfigurator="http://www.topcased.org/diagramconfigurator/0.10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" projectName="org.topcased.modeler.uml.test.compositestructuresdiagram" name="Composite Structures Diagram" package="compositeStructuresDiagram" prefix="CompositeStructures" layout="PortLayout" forceOverwrite="true" copyrightText="Copyright (c) 2006 AIRBUS FRANCE. All rights reserved. This program and the&#xA;accompanying materials are made available under the terms of the Eclipse&#xA;Public License v1.0 which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html">
+  <palette name="CompositeStructuresDiagramPalette">
+    <paletteCategories name="Objects">
+      <items name="Part" part="//@parts.7">
+        <eAnnotations source="codeCustom">
+          <details key="initModelObject" value="// UML Constraint : Property.aggregation must be COMPOSITE for a Part&#xA;element.setAggregation(AggregationKind.COMPOSITE_LITERAL);"/>
+        </eAnnotations>
+      </items>
+      <items name="Interface" part="//@parts.8"/>
+      <items name="Port" part="//@parts.6">
+        <eAnnotations source="codeCustom">
+          <details key="initModelObject" value="// UML Constraint : Port.aggregation must be composite&#xA;element.setAggregation(AggregationKind.COMPOSITE_LITERAL);"/>
+        </eAnnotations>
+      </items>
+      <items name="Collaboration Use" part="//@parts.10"/>
+      <items name="Role" part="//@parts.7">
+        <eAnnotations source="codeCustom">
+          <details key="initmodelObject" value="// UML Constraint : Property.aggregation must be NONE for a Role&#xA;element.setAggregation(AggregationKind.NONE_LITERAL);"/>
+        </eAnnotations>
+      </items>
+    </paletteCategories>
+    <paletteCategories name="Connections">
+      <items name="Connector" part="//@parts.0">
+        <eAnnotations source="codeCustom">
+          <details key="initModelObject" value="&#x9;&#x9;&#x9;&#x9;ConnectorEnd sourceEnd = UMLFactory.eINSTANCE.createConnectorEnd();&#xA;&#x9;&#x9;&#x9;&#x9;sourceEnd.setLower(1);&#xA;&#x9;&#x9;&#x9;&#x9;sourceEnd.setUpper(1);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;ConnectorEnd targetEnd = UMLFactory.eINSTANCE.createConnectorEnd();&#xA;&#x9;&#x9;&#x9;&#x9;targetEnd.setLower(1);&#xA;&#x9;&#x9;&#x9;&#x9;targetEnd.setUpper(1);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;// Sets connection kind&#xA;&#x9;&#x9;&#x9;&#x9;element.setKind(ConnectorKind.DELEGATION_LITERAL);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;// Adds ConnectorEnds objects&#xA;&#x9;&#x9;&#x9;&#x9;element.getEnds().add(sourceEnd);&#xA;&#x9;&#x9;&#x9;&#x9;element.getEnds().add(targetEnd);"/>
+        </eAnnotations>
+      </items>
+      <items name="InterfaceRealization" part="//@parts.2"/>
+      <items name="Usage" part="//@parts.3"/>
+      <items name="Dependency" part="//@parts.4"/>
+    </paletteCategories>
+    <paletteCategories name="Comment">
+      <items name="Comment" part="//@parts.5"/>
+      <items name="CommentLink" part="//@parts.1"/>
+    </paletteCategories>
+  </palette>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.6" defaultFont="Sans-regular-10">
+    <sourceTargetCouple containerType="SOURCE_CONTAINER" sourceNode="//@parts.7" targetNode="//@parts.7">
+      <containerObject href="UML.genmodel#//uml/Class"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//StructuredClassifier/ownedConnector"/>
+    </sourceTargetCouple>
+    <edgeObjects id="srcCount"/>
+    <edgeObjects id="targetCount" type="Target"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.0" defaultForegroundColor="255,195,0" defaultFont="Sans-regular-10" lineStyle="CUSTOM">
+    <sourceTargetCouple sourceNode="//@parts.5" targetNode="//@parts.9">
+      <refSourceToTarget xsi:type="ecore:EReference" href="UML.ecore#//Comment/annotatedElement"/>
+    </sourceTargetCouple>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.8">
+    <sourceTargetCouple containerType="TARGET_CONTAINER" sourceNode="//@parts.8" targetNode="//@parts.6">
+      <containerObject href="UML.genmodel#//uml/Class"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//BehavioredClassifier/interfaceRealization"/>
+      <refEdgeToSource xsi:type="ecore:EReference" href="UML.ecore#//InterfaceRealization/contract"/>
+    </sourceTargetCouple>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.9">
+    <sourceTargetCouple containerType="DIAGRAM" sourceNode="//@parts.6" targetNode="//@parts.8">
+      <containerObject href="UML.genmodel#//uml/Package"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Package/packagedElement"/>
+      <refEdgeToSource xsi:type="ecore:EReference" href="UML.ecore#//Dependency/client"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//Dependency/supplier"/>
+    </sourceTargetCouple>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.10">
+    <sourceTargetCouple containerType="SOURCE" sourceNode="//@parts.10" targetNode="//@parts.7">
+      <containerObject href="UML.genmodel#//uml/CollaborationUse"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//CollaborationUse/roleBinding"/>
+      <refEdgeToSource xsi:type="ecore:EReference" href="UML.ecore#//Dependency/client"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//Dependency/supplier"/>
+    </sourceTargetCouple>
+    <edgeObjects id="targetName" type="Target"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.4" type="Comment" defaultBackgroundColor="255,195,0" defaultWidth="150" defaultHeight="25" minimumWidth="50" minimumHeight="25" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.3" defaultFont="Sans-regular-10" type="Port" superType="//@parts.7" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1" attachedToBorder="true"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.7" defaultFont="Sans-bold-10" childElements="//@parts.6" superType="//@parts.9" defaultBackgroundColor="255,192,203" container="true" defaultWidth="120" defaultHeight="45" minimumWidth="120" minimumHeight="45" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.2" type="Graphic With Label Figure" superType="//@parts.9" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.1" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.5" lineStyle="DASH" type="Ellipse" superType="//@parts.9" defaultBackgroundColor="251,251,237" defaultWidth="250" defaultHeight="70" minimumWidth="250" minimumHeight="70" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.12" childElements="//@parts.10 //@parts.7"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.13" defaultFont="Sans-bold-10" childElements="//@parts.7 //@parts.10" superType="//@parts.9" defaultBackgroundColor="200,230,255" defaultWidth="300" defaultHeight="100" minimumWidth="300" minimumHeight="100" maximumWidth="0" maximumHeight="0" attachedToBorder="true"/>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" name="CommentLink"/>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Element"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Interface"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Port"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Comment"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/CollaborationUse"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Connector"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Property"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/InterfaceRealization"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Usage"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Dependency"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/StructuredClassifier"/>
+    <diagrams diagram="/" lowerBound="1" upperBound="1"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Collaboration"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Class"/>
+  </objects>
+  <genModel href="UML.genmodel#/"/>
+  <templateRootObject href="UML.genmodel#//uml/Class"/>
+  <editorConfigurator href="UML.editorconfigurator#/"/>
+</diagramconfigurator:DiagramConfiguration>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<outlineconfigurator:OutlineConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:outlineconfigurator="http://www.topcased.org/OutlineConfigurator/1.0" name="UML Outline" projectName="org.topcased.modeler.uml.menu" package="org.topcased.modeler.uml.menu" pluginClassName="OutlinePlugin">
+  <createChild>
+    <items xsi:type="outlineconfigurator:Menu" id="classifier" name="Classifier">
+      <items xsi:type="outlineconfigurator:CreateChildAction" type="Hierachical">
+        <class href="UML.genmodel#//uml/Classifier"/>
+      </items>
+    </items>
+    <items xsi:type="outlineconfigurator:Menu" id="constraint" name="Constraint">
+      <items xsi:type="outlineconfigurator:CreateChildAction" type="Hierachical">
+        <class href="UML.genmodel#//uml/Constraint"/>
+      </items>
+    </items>
+    <items xsi:type="outlineconfigurator:Menu" id="trigger" name="Trigger">
+      <items xsi:type="outlineconfigurator:CreateChildAction" type="Hierachical">
+        <class href="UML.genmodel#//uml/Trigger"/>
+      </items>
+    </items>
+    <items xsi:type="outlineconfigurator:Menu" id="behavior" name="Behavior">
+      <items xsi:type="outlineconfigurator:CreateChildAction" type="Hierachical">
+        <class href="UML.genmodel#//uml/BehavioralFeature"/>
+      </items>
+    </items>
+    <items xsi:type="outlineconfigurator:Menu" id="dependency" name="Dependency">
+      <items xsi:type="outlineconfigurator:CreateChildAction" type="Hierachical">
+        <class href="UML.genmodel#//uml/Dependency"/>
+      </items>
+    </items>
+    <items xsi:type="outlineconfigurator:Menu" id="value" name="Value">
+      <items xsi:type="outlineconfigurator:CreateChildAction" type="Hierachical">
+        <class href="UML.genmodel#//uml/ValueSpecification"/>
+      </items>
+    </items>
+    <items xsi:type="outlineconfigurator:Menu" id="packageable" name="Packageable">
+      <items xsi:type="outlineconfigurator:CreateChildAction" type="Hierachical">
+        <class href="UML.genmodel#//uml/Package"/>
+      </items>
+    </items>
+    <items xsi:type="outlineconfigurator:Menu" id="all" name="All">
+      <items xsi:type="outlineconfigurator:CreateChildAction" type="Hierachical">
+        <class href="UML.genmodel#//uml/Element"/>
+      </items>
+    </items>
+  </createChild>
+  <genPackage href="UML.genmodel#//uml"/>
+</outlineconfigurator:OutlineConfiguration>

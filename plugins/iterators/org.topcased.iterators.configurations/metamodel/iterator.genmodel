@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.topcased.iterators.configurations/src-gen"
+    editDirectory="/org.topcased.iterators.configurations.edit/src-gen" editorDirectory="/org.topcased.iterators.configurations.editor/src-gen"
+    modelPluginID="org.topcased.iterators.configurations" modelName="Iterator" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" testsPluginID="org.topcased.iterators.configurations.tests">
+  <foreignModel>iterator.ecore</foreignModel>
+  <genPackages prefix="Iterator" basePackage="org.topcased.iterators.configurations"
+      disposableProviderFactory="true" generateExampleClass="false" childCreationExtenders="true"
+      ecorePackage="iterator.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="iterator.ecore#//ALGORITHM_KIND">
+      <genEnumLiterals ecoreEnumLiteral="iterator.ecore#//ALGORITHM_KIND/DEPTH_WISE"/>
+      <genEnumLiterals ecoreEnumLiteral="iterator.ecore#//ALGORITHM_KIND/WIDTH_WISE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="iterator.ecore#//REPRESENTATION_KIND">
+      <genEnumLiterals ecoreEnumLiteral="iterator.ecore#//REPRESENTATION_KIND/STATE_WISE"/>
+      <genEnumLiterals ecoreEnumLiteral="iterator.ecore#//REPRESENTATION_KIND/TRANSITION_WISE"/>
+    </genEnums>
+    <genClasses ecoreClass="iterator.ecore#//EPickerSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iterator.ecore#//EPickerSet/pickers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iterator.ecore#//EPickerSet/subsets"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iterator.ecore#//EPickerSet/description"/>
+      <genOperations ecoreOperation="iterator.ecore#//EPickerSet/EOperation0"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="iterator.ecore#//Query"/>
+    <genClasses ecoreClass="iterator.ecore#//OCLQuery">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iterator.ecore#//OCLQuery/body"/>
+    </genClasses>
+    <genClasses ecoreClass="iterator.ecore#//JavaQuery">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iterator.ecore#//JavaQuery/javaid"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="iterator.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iterator.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="iterator.ecore#//EPicker">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iterator.ecore#//EPicker/registeredQueries"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iterator.ecore#//EPicker/description"/>
+    </genClasses>
+    <genClasses ecoreClass="iterator.ecore#//OperationSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iterator.ecore#//OperationSet/operations"/>
+    </genClasses>
+    <genClasses ecoreClass="iterator.ecore#//OCLOperation" labelFeature="#//iterator/OCLOperation/def">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iterator.ecore#//OCLOperation/context"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute iterator.ecore#//OCLOperation/def"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iterator.ecore#//OCLOperation/metamodelPrefix"/>
+    </genClasses>
+    <genClasses ecoreClass="iterator.ecore#//Iterator">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iterator.ecore#//Iterator/pickers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iterator.ecore#//Iterator/representation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iterator.ecore#//Iterator/algorithm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iterator.ecore#//Iterator/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iterator.ecore#//Iterator/operationImports"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iterator.ecore#//Iterator/checkRedundancy"/>
+    </genClasses>
+    <genClasses ecoreClass="iterator.ecore#//ConfigurationModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iterator.ecore#//ConfigurationModel/iterators"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iterator.ecore#//ConfigurationModel/operationSets"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iterator.ecore#//ConfigurationModel/pickerSets"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

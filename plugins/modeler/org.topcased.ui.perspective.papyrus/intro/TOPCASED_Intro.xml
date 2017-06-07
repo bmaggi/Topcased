@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+  	<extensionContent id="topcasedintro-introExtension" style="css/Intro.css" name="TOPCASED Intro Extension" path="overview/@">
+		<group style-id="content-group" id="topcasedintro-introLink-group">
+
+       		<link label="TOPCASED Modeling Tools for UML/SysML" url="http://org.eclipse.ui.intro/runAction?pluginId=org.topcased.ui.perspective.papyrus&amp;class=org.topcased.ui.perspective.papyrus.utils.SwitchPerspectivePapyrus" id="topcasedintro-introLink" style-id="content-link">
+          		<text>Start using TOPCASED Modeling Tools for UML/SysML</text>
+       		</link>
+       		
+       	</group>
+  	</extensionContent>
+
+</introContent>

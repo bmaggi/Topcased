@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramconfigurator:DiagramConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagramconfigurator="http://www.topcased.org/diagramconfigurator/0.10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_vW0wIK6lEd6Te4OKp1JtJg" projectName="org.topcased.modeler.uml" name="Class Diagram" package="classdiagram" prefix="Class" copyrightText="Copyright (c) 2006 AIRBUS FRANCE. All rights reserved. This program and the&#xA;accompanying materials are made available under the terms of the Eclipse&#xA;Public License v1.0 which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html" pluginVersion="0.11.0.qualifier" samePluginAsEditor="true">
+  <palette xmi:id="_vW0wIa6lEd6Te4OKp1JtJg" name="ClassDiagramPalette">
+    <paletteCategories xmi:id="_vW0wIq6lEd6Te4OKp1JtJg" name="Objects">
+      <items xmi:id="_vW0wI66lEd6Te4OKp1JtJg" name="Package" part="_vW0wQq6lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_vW0wJK6lEd6Te4OKp1JtJg" name="Class" part="_vW0wQ66lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_vW0wJa6lEd6Te4OKp1JtJg" name="DataType" part="_vW0wRa6lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_vW0wJq6lEd6Te4OKp1JtJg" name="Interface" part="_vW0wRK6lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_vW0wJ66lEd6Te4OKp1JtJg" name="Operation" part="_vW0wRq6lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_vW0wKK6lEd6Te4OKp1JtJg" name="Property" part="_vW0wR66lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_vW0wKa6lEd6Te4OKp1JtJg" name="InstanceSpecification" part="_vW0wSK6lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_vW0wKq6lEd6Te4OKp1JtJg" name="Slot" part="_vW0wXK6lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_vW0wK66lEd6Te4OKp1JtJg" name="Enumeration" part="_vW0wXa6lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_vW0wLK6lEd6Te4OKp1JtJg" name="Enumeration Literal" part="_vW0wXq6lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_vW0wLa6lEd6Te4OKp1JtJg" name="Primitive Type" part="_vW0wX66lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_jWH90LMYEd6Km6VSE4r6Ew" name="Signal" part="_vW0wX67lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_nNB98LMYEd6Km6VSE4r6Ew" name="Reception" part="_0OTb4LMYEd6Km6VSE4r6Ew"/>
+    </paletteCategories>
+    <paletteCategories xmi:id="_vW0wLq6lEd6Te4OKp1JtJg" name="Connections">
+      <items xmi:id="_vW0wL66lEd6Te4OKp1JtJg" name="Association" part="_vW0wTK6lEd6Te4OKp1JtJg">
+        <eAnnotations xmi:id="_vW0wMK6lEd6Te4OKp1JtJg" source="codeCustom">
+          <details xmi:id="_vW0wMa6lEd6Te4OKp1JtJg" key="initModelObject" value="                Property property1 = UMLFactory.eINSTANCE.createProperty();&#xA;                property1.setName(&quot;source&quot;);&#xA;                property1.setLower(1);&#xA;                property1.setUpper(1);&#xA;&#xA;                Property property2 = UMLFactory.eINSTANCE.createProperty();&#xA;                property2.setName(&quot;target&quot;);&#xA;                property2.setLower(1);&#xA;                property2.setUpper(1);&#xA;&#xA;                element.getOwnedEnds().add(property1);&#xA;                element.getOwnedEnds().add(property2);"/>
+        </eAnnotations>
+      </items>
+      <items xmi:id="_vW0wMq6lEd6Te4OKp1JtJg" name="AssociationClass" part="_vW0wZq6lEd6Te4OKp1JtJg">
+        <eAnnotations xmi:id="_vW0wM66lEd6Te4OKp1JtJg" source="codeCustom">
+          <details xmi:id="_vW0wNK6lEd6Te4OKp1JtJg" key="initModelObject" value="                Property property1 = UMLFactory.eINSTANCE.createProperty();&#xA;                property1.setName(&quot;source&quot;);&#xA;                property1.setLower(1);&#xA;                property1.setUpper(1);&#xA;&#xA;                Property property2 = UMLFactory.eINSTANCE.createProperty();&#xA;                property2.setName(&quot;target&quot;);&#xA;                property2.setLower(1);&#xA;                property2.setUpper(1);&#xA;&#xA;                element.getOwnedEnds().add(property1);&#xA;                element.getOwnedEnds().add(property2);"/>
+        </eAnnotations>
+      </items>
+      <items xmi:id="_vW0wNa6lEd6Te4OKp1JtJg" name="Generalization" part="_vW0wU66lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_vW0wNq6lEd6Te4OKp1JtJg" name="InterfaceRealization" part="_vW0wVq6lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_vW0wN66lEd6Te4OKp1JtJg" name="Dependency" part="_vW0wSa6lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_vW0wOK6lEd6Te4OKp1JtJg" name="Package Import" part="_vW0wYK6lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_vW0wOa6lEd6Te4OKp1JtJg" name="Package Merge" part="_vW0wY66lEd6Te4OKp1JtJg"/>
+    </paletteCategories>
+    <paletteCategories xmi:id="_vW0wOq6lEd6Te4OKp1JtJg" name="Comment">
+      <items xmi:id="_vW0wO66lEd6Te4OKp1JtJg" name="Comment" part="_vW0wWa6lEd6Te4OKp1JtJg"/>
+      <items xmi:id="_vW0wPK6lEd6Te4OKp1JtJg" name="Comment link" part="_vW0wWq6lEd6Te4OKp1JtJg"/>
+    </paletteCategories>
+  </palette>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wPa6lEd6Te4OKp1JtJg" object="_vW0wb66lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" directEditable="false" defaultWidth="0" defaultHeight="0" minimumWidth="0" minimumHeight="0" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wPq6lEd6Te4OKp1JtJg" object="_vW0wcK6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" superType="_vW0wPa6lEd6Te4OKp1JtJg" directEditable="false" defaultWidth="0" defaultHeight="0" minimumWidth="0" minimumHeight="0" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wP66lEd6Te4OKp1JtJg" object="_vW0wca6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" superType="_vW0wPq6lEd6Te4OKp1JtJg" directEditable="false" defaultWidth="0" defaultHeight="0" minimumWidth="0" minimumHeight="0" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wQK6lEd6Te4OKp1JtJg" object="_vW0wcq6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" superType="_vW0wP66lEd6Te4OKp1JtJg" directEditable="false" defaultWidth="0" defaultHeight="0" minimumWidth="0" minimumHeight="0" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wQa6lEd6Te4OKp1JtJg" object="_vW0wc66lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" superType="_vW0wQK6lEd6Te4OKp1JtJg" directEditable="false" defaultWidth="0" defaultHeight="0" minimumWidth="0" minimumHeight="0" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wQq6lEd6Te4OKp1JtJg" object="_vW0wba6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" type="Package" superType="_vW0wPq6lEd6Te4OKp1JtJg" defaultBackgroundColor="244,164,96" defaultWidth="100" defaultHeight="80" minimumWidth="50" minimumHeight="50" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wQ66lEd6Te4OKp1JtJg" object="_vW0wdK6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" type="Class" superType="_vW0wQa6lEd6Te4OKp1JtJg" defaultBackgroundColor="200,230,255" resizing="WIDTH" layout="ClassLayout" defaultWidth="100" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wRK6lEd6Te4OKp1JtJg" object="_vW0weq6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" type="Class" superType="_vW0wQK6lEd6Te4OKp1JtJg" defaultBackgroundColor="255,200,255" resizing="WIDTH" layout="ClassLayout" defaultWidth="100" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wRa6lEd6Te4OKp1JtJg" object="_vW0wd66lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" type="Class" superType="_vW0wQK6lEd6Te4OKp1JtJg" defaultBackgroundColor="200,230,255" resizing="WIDTH" layout="ClassLayout" defaultWidth="100" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wRq6lEd6Te4OKp1JtJg" object="_vW0weK6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" type="Label" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wR66lEd6Te4OKp1JtJg" object="_vW0wea6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" type="Label" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wSK6lEd6Te4OKp1JtJg" object="_vW0wfK6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" type="Class" superType="_vW0wPq6lEd6Te4OKp1JtJg" defaultBackgroundColor="255,180,180" layout="ClassLayout" defaultWidth="100" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_vW0wSa6lEd6Te4OKp1JtJg" object="_vW0we66lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" lineStyle="DASHDOTDOT" targetDecoration="ARROW">
+    <sourceTargetCouple xmi:id="_vW0wSq6lEd6Te4OKp1JtJg" containerType="DIAGRAM" sourceNode="_vW0wPq6lEd6Te4OKp1JtJg" targetNode="_vW0wPq6lEd6Te4OKp1JtJg">
+      <containerObject href="UML.genmodel#//uml/Package"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Package/packagedElement"/>
+      <refEdgeToSource xsi:type="ecore:EReference" href="UML.ecore#//Dependency/client"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//Dependency/supplier"/>
+    </sourceTargetCouple>
+    <edgeObjects xmi:id="_vW0wS66lEd6Te4OKp1JtJg" id="stereotype" type="Middle"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_vW0wTK6lEd6Te4OKp1JtJg" object="_vW0wda6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10">
+    <sourceTargetCouple xmi:id="_vW0wTa6lEd6Te4OKp1JtJg" containerType="DIAGRAM" autoRef="true" sourceNode="_vW0wP66lEd6Te4OKp1JtJg" targetNode="_vW0wP66lEd6Te4OKp1JtJg">
+      <containerObject href="UML.genmodel#//uml/Package"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Package/packagedElement"/>
+    </sourceTargetCouple>
+    <edgeObjects xmi:id="_vW0wTq6lEd6Te4OKp1JtJg" id="srcName"/>
+    <edgeObjects xmi:id="_vW0wT66lEd6Te4OKp1JtJg" id="srcCount"/>
+    <edgeObjects xmi:id="_vW0wUK6lEd6Te4OKp1JtJg" id="targetName" type="Target"/>
+    <edgeObjects xmi:id="_vW0wUa6lEd6Te4OKp1JtJg" id="targetCount" type="Target"/>
+    <edgeObjects xmi:id="_vW0wUq6lEd6Te4OKp1JtJg" id="middleName" type="Middle"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_vW0wU66lEd6Te4OKp1JtJg" object="_vW0wdq6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" targetDecoration="TRIANGLE" defaultRouter="TreeRouter">
+    <sourceTargetCouple xmi:id="_vW0wVK6lEd6Te4OKp1JtJg" containerType="SOURCE" sourceNode="_vW0wQK6lEd6Te4OKp1JtJg" targetNode="_vW0wQK6lEd6Te4OKp1JtJg">
+      <containerObject href="UML.genmodel#//uml/Classifier"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Classifier/generalization"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//Generalization/general"/>
+    </sourceTargetCouple>
+    <edgeObjects xmi:id="_vW0wVa6lEd6Te4OKp1JtJg" id="stereotype" type="Middle"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_vW0wVq6lEd6Te4OKp1JtJg" object="_vW0wfa6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" lineStyle="DASHDOTDOT" targetDecoration="TRIANGLE">
+    <sourceTargetCouple xmi:id="_vW0wV66lEd6Te4OKp1JtJg" containerType="SOURCE" sourceNode="_vW0wQa6lEd6Te4OKp1JtJg" targetNode="_vW0wRK6lEd6Te4OKp1JtJg">
+      <containerObject href="UML.genmodel#//uml/BehavioredClassifier"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//BehavioredClassifier/interfaceRealization"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//InterfaceRealization/contract"/>
+    </sourceTargetCouple>
+    <edgeObjects xmi:id="_vW0wWK6lEd6Te4OKp1JtJg" id="stereotype" type="Middle"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wWa6lEd6Te4OKp1JtJg" object="_vW0wfq6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" type="Comment" superType="_vW0wPa6lEd6Te4OKp1JtJg" defaultBackgroundColor="255,195,0" defaultWidth="150" defaultHeight="25" minimumWidth="50" minimumHeight="25" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_vW0wWq6lEd6Te4OKp1JtJg" object="_vW0wf66lEd6Te4OKp1JtJg" defaultForegroundColor="255,195,0" defaultFont="Sans-regular-10" lineStyle="CUSTOM">
+    <sourceTargetCouple xmi:id="_vW0wW66lEd6Te4OKp1JtJg" sourceNode="_vW0wWa6lEd6Te4OKp1JtJg" targetNode="_vW0wPa6lEd6Te4OKp1JtJg">
+      <refSourceToTarget xsi:type="ecore:EReference" href="UML.ecore#//Comment/annotatedElement"/>
+    </sourceTargetCouple>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wXK6lEd6Te4OKp1JtJg" object="_vW0wgK6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" type="Label" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wXa6lEd6Te4OKp1JtJg" object="_vW0wga6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" type="Class" childElements="_vW0wXq6lEd6Te4OKp1JtJg" superType="_vW0wRa6lEd6Te4OKp1JtJg" defaultBackgroundColor="229,229,229" resizing="WIDTH" container="true" layout="ClassLayout" defaultWidth="100" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wXq6lEd6Te4OKp1JtJg" object="_vW0wgq6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" type="Label" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wX66lEd6Te4OKp1JtJg" object="_vW0wg66lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" type="Class" childElements="_vW0wR66lEd6Te4OKp1JtJg _vW0wRq6lEd6Te4OKp1JtJg" superType="_vW0wRa6lEd6Te4OKp1JtJg" defaultBackgroundColor="200,230,255" resizing="WIDTH" container="true" layout="ClassLayout" defaultWidth="100" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_vW0wYK6lEd6Te4OKp1JtJg" object="_vW0whK6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" lineStyle="CUSTOM" targetDecoration="ARROW">
+    <sourceTargetCouple xmi:id="_vW0wYa6lEd6Te4OKp1JtJg" containerType="SOURCE" sourceNode="_vW0wQq6lEd6Te4OKp1JtJg" targetNode="_vW0wQq6lEd6Te4OKp1JtJg">
+      <containerObject href="UML.genmodel#//uml/Package"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Namespace/packageImport"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//PackageImport/importedPackage"/>
+    </sourceTargetCouple>
+    <edgeObjects xmi:id="_vW0wYq6lEd6Te4OKp1JtJg" id="visibility" type="Middle"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_vW0wY66lEd6Te4OKp1JtJg" object="_vW0wha6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" lineStyle="CUSTOM" targetDecoration="ARROW">
+    <sourceTargetCouple xmi:id="_vW0wZK6lEd6Te4OKp1JtJg" containerType="SOURCE" sourceNode="_vW0wQq6lEd6Te4OKp1JtJg" targetNode="_vW0wQq6lEd6Te4OKp1JtJg">
+      <containerObject href="UML.genmodel#//uml/Package"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Package/packageMerge"/>
+      <refEdgeToSource xsi:type="ecore:EReference" href="UML.ecore#//PackageMerge/receivingPackage"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//PackageMerge/mergedPackage"/>
+    </sourceTargetCouple>
+    <edgeObjects xmi:id="_vW0wZa6lEd6Te4OKp1JtJg" id="merge" type="Middle"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_vW0wZq6lEd6Te4OKp1JtJg" object="_vW0whq6lEd6Te4OKp1JtJg" defaultForegroundColor="160,32,240">
+    <sourceTargetCouple xmi:id="_vW0wZ66lEd6Te4OKp1JtJg" containerType="DIAGRAM" autoRef="true" sourceNode="_vW0wP66lEd6Te4OKp1JtJg" targetNode="_vW0wP66lEd6Te4OKp1JtJg">
+      <containerObject href="UML.genmodel#//uml/Package"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Package/packagedElement"/>
+    </sourceTargetCouple>
+    <edgeObjects xmi:id="_vW0waK6lEd6Te4OKp1JtJg" id="srcName"/>
+    <edgeObjects xmi:id="_vW0waa6lEd6Te4OKp1JtJg" id="srcCount"/>
+    <edgeObjects xmi:id="_vW0waq6lEd6Te4OKp1JtJg" id="targetName" type="Target"/>
+    <edgeObjects xmi:id="_vW0wa66lEd6Te4OKp1JtJg" id="targetCount" type="Target"/>
+    <edgeObjects xmi:id="_vW0wbK6lEd6Te4OKp1JtJg" id="middleName" type="Middle"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_vW0wX67lEd6Te4OKp1JtJg" object="_vW0whb6lEd6Te4OKp1JtJg" defaultFont="Sans-regular-10" type="Class" superType="_vW0wQK6lEd6Te4OKp1JtJg" defaultBackgroundColor="198,234,199" resizing="WIDTH" layout="ClassLayout" defaultWidth="100" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_0OTb4LMYEd6Km6VSE4r6Ew" object="_27dlsLMYEd6Km6VSE4r6Ew" defaultFont="Sans-regular-10" type="Class" superType="_vW0wQa6lEd6Te4OKp1JtJg" defaultBackgroundColor="198,234,199" resizing="WIDTH" defaultWidth="100" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_b6oRQLNHEd6TeoLZwHkcOA" object="_Q5UVYLNGEd6TeoLZwHkcOA" type="Class" defaultBackgroundColor="198,234,199" resizing="WIDTH" layout="ClassLayout" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_c_oKcLNHEd6TeoLZwHkcOA" object="_gEna4LNGEd6TeoLZwHkcOA" type="Class" defaultBackgroundColor="198,234,199" resizing="WIDTH" layout="ClassLayout" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_dZZ8YLNHEd6TeoLZwHkcOA" object="_glsusLNGEd6TeoLZwHkcOA" type="Class" defaultBackgroundColor="198,234,199" resizing="WIDTH" layout="ClassLayout" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_dzoaQLNHEd6TeoLZwHkcOA" object="_hD8w8LNGEd6TeoLZwHkcOA" type="Class" defaultBackgroundColor="198,234,199" resizing="WIDTH" layout="ClassLayout" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_e-SPgLNHEd6TeoLZwHkcOA" object="_jQKw4LNGEd6TeoLZwHkcOA" type="Class" defaultBackgroundColor="198,234,199" resizing="WIDTH" layout="ClassLayout" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_e-SPgbNHEd6TeoLZwHkcOA" object="_i1MsILNGEd6TeoLZwHkcOA" type="Class" defaultBackgroundColor="198,234,199" resizing="WIDTH" layout="ClassLayout" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_e-SPgrNHEd6TeoLZwHkcOA" object="_hfgrkLNGEd6TeoLZwHkcOA" type="Class" defaultBackgroundColor="198,234,199" resizing="WIDTH" layout="ClassLayout" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_e-SPg7NHEd6TeoLZwHkcOA" object="_h9BG8LNGEd6TeoLZwHkcOA" type="Class" defaultBackgroundColor="198,234,199" resizing="WIDTH" layout="ClassLayout" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_fyvLQLNHEd6TeoLZwHkcOA" object="_icdcALNGEd6TeoLZwHkcOA" type="Class" defaultBackgroundColor="198,234,199" resizing="WIDTH" layout="ClassLayout" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_fyvLQbNHEd6TeoLZwHkcOA" object="_1KN7oLNGEd6TeoLZwHkcOA" type="Class" defaultBackgroundColor="198,234,199" resizing="WIDTH" layout="ClassLayout" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_fyvLQrNHEd6TeoLZwHkcOA" object="_3W4ngLNGEd6TeoLZwHkcOA" type="Class" defaultBackgroundColor="198,234,199" resizing="WIDTH" layout="ClassLayout" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_fyvLQ7NHEd6TeoLZwHkcOA" object="_2gytALNGEd6TeoLZwHkcOA" type="Class" defaultBackgroundColor="198,234,199" resizing="WIDTH" layout="ClassLayout" minimumWidth="50" minimumHeight="-1" maximumWidth="0" maximumHeight="-1"/>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wba6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/Package"/>
+    <diagrams xmi:id="_vW0wbq6lEd6Te4OKp1JtJg" diagram="_vW0wIK6lEd6Te4OKp1JtJg"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wb66lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/Element"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wcK6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/NamedElement"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wca6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/Type"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wcq6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/Classifier"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wc66lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/BehavioredClassifier"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wdK6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/Class"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wda6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/Association"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wdq6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/Generalization"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wd66lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/DataType"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0weK6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/Operation"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wea6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/Property"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0weq6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/Interface"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0we66lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/Dependency"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wfK6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/InstanceSpecification"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wfa6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/InterfaceRealization"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wfq6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/Comment"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" xmi:id="_vW0wf66lEd6Te4OKp1JtJg" name="CommentLink"/>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wgK6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/Slot"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wga6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/Enumeration"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wgq6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/EnumerationLiteral"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wg66lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/PrimitiveType"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0whK6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/PackageImport"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0wha6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/PackageMerge"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0whq6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/AssociationClass"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_vW0whb6lEd6Te4OKp1JtJg">
+    <genClass href="UML.genmodel#//uml/Signal"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_27dlsLMYEd6Km6VSE4r6Ew">
+    <genClass href="UML.genmodel#//uml/Reception"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_Q5UVYLNGEd6TeoLZwHkcOA">
+    <genClass href="UML.genmodel#//uml/ExecutionEvent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_gEna4LNGEd6TeoLZwHkcOA">
+    <genClass href="UML.genmodel#//uml/CreationEvent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_glsusLNGEd6TeoLZwHkcOA">
+    <genClass href="UML.genmodel#//uml/DestructionEvent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_hD8w8LNGEd6TeoLZwHkcOA">
+    <genClass href="UML.genmodel#//uml/SendOperationEvent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_jQKw4LNGEd6TeoLZwHkcOA">
+    <genClass href="UML.genmodel#//uml/SendSignalEvent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_i1MsILNGEd6TeoLZwHkcOA">
+    <genClass href="UML.genmodel#//uml/ReceiveOperationEvent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_hfgrkLNGEd6TeoLZwHkcOA">
+    <genClass href="UML.genmodel#//uml/ReceiveSignalEvent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_h9BG8LNGEd6TeoLZwHkcOA">
+    <genClass href="UML.genmodel#//uml/CallEvent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_icdcALNGEd6TeoLZwHkcOA">
+    <genClass href="UML.genmodel#//uml/AnyReceiveEvent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_1KN7oLNGEd6TeoLZwHkcOA">
+    <genClass href="UML.genmodel#//uml/ChangeEvent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_3W4ngLNGEd6TeoLZwHkcOA">
+    <genClass href="UML.genmodel#//uml/SignalEvent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_2gytALNGEd6TeoLZwHkcOA">
+    <genClass href="UML.genmodel#//uml/TimeEvent"/>
+  </objects>
+  <genModel href="UML.genmodel#/"/>
+  <templateRootObject href="UML.genmodel#//uml/Package"/>
+  <editorConfigurator href="UML.editorconfigurator#_67CpENCrEdu099f1-uS16A"/>
+</diagramconfigurator:DiagramConfiguration>

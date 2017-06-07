@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic673" xml:lang="en-us">
+	<title>Home</title>
+	<titlealts>
+		<navtitle>Ecore Tools</navtitle>
+		<searchtitle>ECORE TOOLS - Home</searchtitle>
+	</titlealts>
+
+  <prolog>
+    <metadata>
+      <othermeta content="Jacques LESCOT" name="author"/>
+      <othermeta content="ecore,topcased,toolkit,graphical,editor,documentation,modeling,metamodel" name="keywords"/>
+    </metadata>
+  </prolog>
+
+  <body id="container">
+  
+	  	<p>Ecore is the metamodel used by EMF to define other metamodels. The Ecore graphical editor is a part of the TOPCASED-MF (for Modeling Framework) subproject.</p>
+
+	    <p>
+	    	If you are interested in <b>developing and contributing</b> enhancements or new capabilities for the Ecore editor, please go to the <xref format="html" href="http://gforge.enseeiht.fr/projects/topcased-mf/" scope="external">
+	    	developers area </xref> , you will find all necessary informations. Any contribution is welcome !
+	    </p>
+	
+	    <p>If you find a <b>bug</b> , or if you are thinking to an <b>improvement</b> of the toolset, please fill a <xref format="html" href="http://gforge.enseeiht.fr/tracker/?group_id=7" scope="external">bug/feature request report</xref>.</p>
+
+		<section id="screenshot">
+			<imagemap>
+				<image align="center" href="images/screenshots/thumbnails/familyTreeMetamodel_thumb.jpg" placement="break">
+					<alt>familyTreeMetamodel_thumb</alt>
+				</image>
+				<area>
+					<shape>default</shape>
+					<coords></coords>
+					<xref href="images/screenshots/familyTreeMetamodel.jpg" format="jpg"></xref>
+				</area>
+			</imagemap>
+		</section>
+  </body>
+</topic>

@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.topcased.modeler.diagrams; singleton:=true
+Bundle-Version: 2.5.1.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: org.topcased.modeler.diagrams.model.internal.DiagramsPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.topcased.modeler.diagrams.model,
+ org.topcased.modeler.diagrams.model.internal,
+ org.topcased.modeler.diagrams.model.internal.impl,
+ org.topcased.modeler.diagrams.model.internal.presentation,
+ org.topcased.modeler.diagrams.model.provider,
+ org.topcased.modeler.diagrams.model.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources;visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.topcased.modeler.di;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport,
+ org.eclipse.emf.edit.ui;visibility:=reexport,
+ org.eclipse.ui.ide;visibility:=reexport
+Bundle-ActivationPolicy: lazy

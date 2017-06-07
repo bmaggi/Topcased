@@ -1,0 +1,192 @@
+@import url(layout.css);
+
+/* GENERAL RULES */
+
+BODY {
+	font-family: arial,sans-serif;	font-size: small; font-weight: normal; font-style: normal;
+}
+
+.h1 {
+	font-size: 175%; color: #336; font-weight: bold;
+}
+.h2 {
+	font-size: 150%; color: #000; font-weight: bold;
+}
+.h3 {
+	font-size: 125%; color: #336; font-weight: bold;
+}
+.h4 {
+	font-size: 100%; color: #000; font-weight: bold;
+}
+.h5 {
+	font-size:  75%; color: #336; font-weight: bold;
+}
+
+A {
+	font-weight: bold; text-decoration: none
+}
+A:link {
+	color: #636
+}
+A:visited {
+	color: #336
+}
+A:hover {
+	color: #636; text-decoration: underline
+}
+A:active {
+	color: #636; text-decoration: underline
+}
+
+
+/* HEADER RULES */
+
+#header {
+	background-position: top; background-image: url("/images/banner.jpg"); background-repeat: repeat-x;
+}
+
+#titlenav {
+	font-weight: bold; font-size: 1.5em;
+}
+
+
+/* THE TOP NAVIGATION MENU */
+
+#topnav A {
+	FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/topnav_tabbg.gif); COLOR: #333; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+#topnav A:link {
+	FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/topnav_tabbg.gif); COLOR: #333; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+#topnav A:visited {
+	FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/topnav_tabbg.gif); COLOR: #333; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+#topnav A:active {
+	FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/topnav_tabbg.gif); COLOR: #333; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+
+#topnav A:hover {
+	COLOR: #000
+}
+#topnav A:active {
+	COLOR: #000
+}
+
+#topnavsep {
+	BACKGROUND-COLOR: #1874B3
+}
+
+
+/* THE LEFT NAVIGATION MENU */
+
+#leftcol {
+	color: #fff;
+}
+
+#leftnav LI {
+	BORDER-LEFT-COLOR: #6AAEDD; BORDER-BOTTOM-COLOR: #6AAEDD; BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: #6AAEDD; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; BORDER-RIGHT-COLOR: #6AAEDD; BORDER-BOTTOM-STYLE: solid
+}
+#leftnav A {
+	BACKGROUND-POSITION: 3% 50%; FONT-WEIGHT: normal; BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/leftnav_bullet.gif); COLOR: #fff; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #1874b3; TEXT-DECORATION: none
+}
+#leftnav A:link {
+	BACKGROUND-POSITION: 3% 50%; FONT-WEIGHT: normal; BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/leftnav_bullet.gif); COLOR: #fff; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #1874b3; TEXT-DECORATION: none
+}
+#leftnav A:visited {
+	BACKGROUND-POSITION: 3% 50%; FONT-WEIGHT: normal; BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/leftnav_bullet.gif); COLOR: #fff; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #1874b3; TEXT-DECORATION: none
+}
+#leftnav A:hover {
+	BACKGROUND-POSITION: 3% 50%; FONT-WEIGHT: normal; BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/leftnav_bullet.gif); COLOR: #fff; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #1874b3; TEXT-DECORATION: none
+}
+#leftnav A:active {
+	BACKGROUND-POSITION: 3% 50%; FONT-WEIGHT: normal; BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/leftnav_bullet.gif); COLOR: #fff; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #1874b3; TEXT-DECORATION: none
+}
+#leftnav A:hover {
+	BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/leftnav_bullet_hover.gif); COLOR: #292556; BACKGROUND-COLOR: #6AAEDD
+}
+#leftnav A:active {
+	BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/leftnav_bullet_hover.gif); COLOR: #292556; BACKGROUND-COLOR: #6AAEDD
+}
+
+/*#leftnav A.nolink {
+	BACKGROUND-POSITION: 3% 50%; BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/leftnav_bullet.gif); COLOR: #999999; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #595791; TEXT-DECORATION: none
+}
+#leftnav A.nolink:link {
+	BACKGROUND-POSITION: 3% 50%; BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/leftnav_bullet.gif); COLOR: #999999; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #595791; TEXT-DECORATION: none
+}
+#leftnav A.nolink:visited {
+	BACKGROUND-POSITION: 3% 50%; BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/leftnav_bullet.gif); COLOR: #999999; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #595791; TEXT-DECORATION: none
+}
+#leftnav A.nolink:hover {
+	BACKGROUND-POSITION: 3% 50%; BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/leftnav_bullet.gif); COLOR: #999999; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #595791; TEXT-DECORATION: none
+}
+#leftnav A.nolink:active {
+	BACKGROUND-POSITION: 3% 50%; BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/leftnav_bullet.gif); COLOR: #999999; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #595791; TEXT-DECORATION: none
+}*/
+
+/*#leftnav LI.separator {
+	BORDER-LEFT-COLOR: #7a79a7; BORDER-BOTTOM-COLOR: #7a79a7; BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: #7a79a7; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; BACKGROUND-COLOR: #7a79a7; BORDER-RIGHT-COLOR: #7a79a7; BORDER-BOTTOM-STYLE: solid
+}
+#leftnav A.separator {
+	BACKGROUND-IMAGE: none; COLOR: #fff; BACKGROUND-COLOR: #7a79a7; TEXT-DECORATION: none
+}
+#leftnav A.separator:link {
+	BACKGROUND-IMAGE: none; COLOR: #fff; BACKGROUND-COLOR: #7a79a7; TEXT-DECORATION: none
+}
+#leftnav A.separator:visited {
+	BACKGROUND-IMAGE: none; COLOR: #fff; BACKGROUND-COLOR: #7a79a7; TEXT-DECORATION: none
+}
+#leftnav A.separator:hover {
+	BACKGROUND-IMAGE: none; COLOR: #fff; BACKGROUND-COLOR: #7a79a7; TEXT-DECORATION: none
+}
+#leftnav A.separator:active {
+	BACKGROUND-IMAGE: none; COLOR: #fff; BACKGROUND-COLOR: #7a79a7; TEXT-DECORATION: none
+}*/
+
+#leftnavfade {
+	background-image: url("images/leftnav_fade.jpg"); background-repeat: repeat-x; background-color: transparent;
+}
+
+
+/* THE FAQ RULES */
+
+.questionfaq {
+	font-weight: bold;
+}
+
+
+/* NEW & NOTEWORTHY */
+
+.noteworthygroup {
+	font-weight: bold; color: #636; font-size: 125%;
+}
+
+.noteworthytitle {
+	font-weight: bold;
+}
+
+/* SOME TEXT STYLES */
+
+.warning {
+	text-align: center; color:#FF0000; font-weight:bold;
+}
+
+.metaSource { 
+	font-family:Monospace; font-size:10pt; color:#0000FF;
+}
+
+.sourceCode { 
+	font-family:'Nimbus Mono L'; font-size:10pt; margin-left:0cm; margin-right:0cm; text-align:left ! important; text-indent:0cm;
+}
+
+.SourceText { 
+	font-family:'Nimbus Mono L';
+}
+
+.keyWord { 
+	color:#7f0055; font-weight:bold;
+}
+
+.objectField {
+	color:#0000c0;
+}

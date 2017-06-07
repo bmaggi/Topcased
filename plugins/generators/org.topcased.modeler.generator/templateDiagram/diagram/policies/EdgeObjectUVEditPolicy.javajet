@@ -1,0 +1,59 @@
+<%@ jet 
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="EdgeObjectUVEditPolicy"
+	 version="$Id: EdgeObjectUVEditPolicy.javajet,v 1.5 2006/10/26 15:06:23 jako Exp $" %>
+<%	EdgePartConfiguration edgePartConfiguration = (EdgePartConfiguration) argument;
+	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) edgePartConfiguration.eContainer();
+	String partPrefix = edgePartConfiguration.getPrefix();%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>.policies;
+
+import org.topcased.modeler.edit.policies.EdgeObjectUVEditPolicy;
+import org.topcased.modeler.figures.IEdgeObjectFigure;
+import <%=diagramConfiguration.getBasePackage()%>.figures.<%=partPrefix%>Figure;
+
+/**
+ * An edit policy to select and move the name and the cardinality label relative to the EReference connection.
+ *
+ * @generated
+ */
+public class <%=partPrefix%>EdgeObjectUVEditPolicy extends EdgeObjectUVEditPolicy
+{
+    /**
+     * @see org.topcased.modeler.edit.policies.EdgeObjectUVEditPolicy#isEnd(org.topcased.modeler.figures.IEdgeObjectFigure)
+	 * @generated
+     */
+    protected boolean isEnd(IEdgeObjectFigure figure)
+    {        
+    		<%=partPrefix%>Figure <%=partPrefix.toLowerCase()%>Figure = (<%=partPrefix%>Figure) getHostFigure();
+
+    		<% 	for (Iterator iter = edgePartConfiguration.getEdgeObjects().iterator(); iter.hasNext(); )
+    			{
+    				EdgeObject edgeObject = (EdgeObject) iter.next();
+    				String capEdgeObjectName = edgeObject.getId();
+	    			if (capEdgeObjectName.length() != 0)
+      					capEdgeObjectName = capEdgeObjectName.substring(0,1).toUpperCase() + capEdgeObjectName.substring(1);
+    				if (edgeObject.getType().equals(EdgeObjectType.SOURCE_LITERAL))
+    				{
+    		%>
+        if (figure == <%=partPrefix.toLowerCase()%>Figure.get<%=capEdgeObjectName%>EdgeObjectFigure())
+        {
+            return false;
+        }
+        <%
+        			} else if (edgeObject.getType().equals(EdgeObjectType.TARGET_LITERAL))
+        			{
+        	%>
+        if (figure == <%=partPrefix.toLowerCase()%>Figure.get<%=capEdgeObjectName%>EdgeObjectFigure())
+        {
+            return true;
+        }
+    		<%
+    				}
+			}
+        	%>
+        	return true;
+    }
+
+}

@@ -1,0 +1,54 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="DiagramEditPart"
+	 version="$Id: DiagramEditPart.javajet,v 1.3 2006/10/26 15:06:23 jako Exp $" %>
+<%DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>.edit;
+
+import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.XYLayout;
+import org.eclipse.gef.EditPolicy;
+import org.topcased.modeler.di.model.Diagram;
+import org.topcased.modeler.edit.DiagramEditPart;
+import <%=diagramConfiguration.getBasePackage()%>.policies.<%=diagramConfiguration.getPrefix()%>DiagramLayoutEditPolicy;
+import <%=diagramConfiguration.getBasePackage()%>.figures.<%=diagramConfiguration.getPrefix()%>DiagramFigure;
+
+/**
+ * @generated
+ */
+public class <%=diagramConfiguration.getPrefix()%>DiagramEditPart extends DiagramEditPart
+{
+
+    /**
+     * The Constructor
+     *
+     * @param model the root model element
+     * @generated
+     */
+    public <%=diagramConfiguration.getPrefix()%>DiagramEditPart(Diagram model)
+    {
+        super(model);
+    }
+    
+    /**
+     * @see org.topcased.modeler.edit.DiagramEditPart#getLayoutEditPolicy()
+     * @generated
+     */
+    protected EditPolicy getLayoutEditPolicy()
+    {
+        return new <%=diagramConfiguration.getPrefix()%>DiagramLayoutEditPolicy();
+    }
+    
+    /**
+     * @see org.topcased.modeler.edit.DiagramEditPart#createBodyFigure()
+     * @generated
+     */
+    protected IFigure createBodyFigure()
+    {
+        return new <%=diagramConfiguration.getPrefix()%>DiagramFigure();
+    }
+}

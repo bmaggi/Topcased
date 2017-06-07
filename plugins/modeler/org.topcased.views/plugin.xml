@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.7"?>
+<plugin>
+	<extension point="org.eclipse.ui.views">
+		<view
+        category="org.topcased.facilities.views"
+        class="org.topcased.views.ReferencesView"
+        icon="icons/eref_nav.gif"
+        id="org.topcased.views.ReferencesView"
+        name="%org.topcased.views.reference.view.title"/>
+	</extension>
+
+<!-- TODO use the menu extension point and verify that it works in EMF, GMF and Papyrus editors -->
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution
+			id="org.topcased.views.ReferencesAnalysis"
+			adaptable="true"
+			objectClass="org.eclipse.emf.ecore.EModelElement">
+			<action
+				id="org.topcased.views.actions.ShowReferencesAction"
+				class="org.topcased.views.actions.ShowReferencesAction"
+				enablesFor="1"
+				icon="icons/eref_nav.gif"
+				label="%menu.show.references"/>
+		</objectContribution>
+	</extension>
+
+</plugin>

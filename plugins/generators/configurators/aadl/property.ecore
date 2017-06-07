@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="property"
+    nsURI="http:///AADL/property" nsPrefix="property">
+  <eClassifiers xsi:type="ecore:EClass" name="Properties" eSuperTypes="core.ecore#//AObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyAssociation" upperBound="-1"
+        eType="#//PropertyAssociation" containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyAssociation" eSuperTypes="core.ecore#//ModeMember #//PropertyValueHolder">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyDefinition" lowerBound="1"
+        eType="#//PropertyDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyValue" upperBound="-1"
+        eType="#//PropertyValue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inBinding" upperBound="-1"
+        eType="ecore:EClass core.ecore#//ComponentClassifier"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constant" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="access" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="append" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appliesTo" upperBound="-1"
+        eType="ecore:EClass core.ecore#//PropertyHolder"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="derived" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyDefinition" eSuperTypes="core.ecore#//NamedElement #//ReferencedProperty #//PropertyValueHolder">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyTypeReference"
+        eType="#//PropertyType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyType" eType="#//PropertyType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultpropertyValue" upperBound="-1"
+        eType="#//PropertyValue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appliesToClassifier" upperBound="-1"
+        eType="#//ClassifierValue" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="access" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inherit" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="list" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="appliesto" lowerBound="1"
+        upperBound="27" eType="#//PropertyOwnerCategory"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasEmptyList" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertySet" eSuperTypes="core.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contents" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="namespace" value="propertySet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyDefinition" upperBound="-1"
+        eType="#//PropertyDefinition" volatile="true" transient="true" derived="true"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="propertySet#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyConstant" upperBound="-1"
+        eType="#//PropertyConstant" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="propertySet#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyType" upperBound="-1"
+        eType="#//PropertyType" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="propertySet#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Aadlboolean" eSuperTypes="#//PropertyConstantType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Aadlstring" eSuperTypes="#//PropertyConstantType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Aadlinteger" eSuperTypes="#//NumberType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberType" abstract="true" eSuperTypes="#//PropertyConstantType">
+    <eAnnotations source="http:///aadl/OSATE">
+      <details key="isProxy" value="true"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyTypeReference"
+        eType="#//UnitsType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyType" eType="#//UnitsType"
+        containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lower" eType="#//NumberOrPropertyReference"
+        containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="upper" eType="#//NumberOrPropertyReference"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyType" abstract="true" eSuperTypes="core.ecore#//NamedElement">
+    <eAnnotations source="http:///aadl/OSATE">
+      <details key="isProxy" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RangeType" eSuperTypes="#//PropertyConstantType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyType" eType="#//NumberType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyTypeReference"
+        eType="#//NumberType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassifierType" eSuperTypes="#//PropertyType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" lowerBound="1"
+        upperBound="10" eType="#//ComponentCategory" defaultValueLiteral="DATA"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceType" eSuperTypes="#//PropertyType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" lowerBound="1"
+        upperBound="11" eType="#//ReferableElementCategory" defaultValueLiteral="DATA"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumType" eSuperTypes="#//PropertyConstantType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumLiteral" lowerBound="1"
+        upperBound="-1" eType="#//EnumLiteral" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnitsType" eSuperTypes="#//PropertyType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unitLiteral" lowerBound="1"
+        upperBound="-1" eType="#//UnitLiteral" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PropertyOwnerCategory">
+    <eLiterals name="DATA"/>
+    <eLiterals name="SUBPROGRAM" value="1"/>
+    <eLiterals name="THREAD" value="2"/>
+    <eLiterals name="THREAD_GROUP" value="3"/>
+    <eLiterals name="PROCESS" value="4"/>
+    <eLiterals name="MEMORY" value="5"/>
+    <eLiterals name="PROCESSOR" value="6"/>
+    <eLiterals name="BUS" value="7"/>
+    <eLiterals name="DEVICE" value="8"/>
+    <eLiterals name="SYSTEM" value="9"/>
+    <eLiterals name="MODE" value="10"/>
+    <eLiterals name="PORT_GROUP" value="11"/>
+    <eLiterals name="PORT" value="12"/>
+    <eLiterals name="EVENT_PORT" value="13"/>
+    <eLiterals name="DATA_PORT" value="14"/>
+    <eLiterals name="EVENT_DATA_PORT" value="15"/>
+    <eLiterals name="SERVER_SUBPROGRAM" value="16"/>
+    <eLiterals name="CONNECTIONS" value="17"/>
+    <eLiterals name="PORT_GROUP_CONNECTIONS" value="18"/>
+    <eLiterals name="PORT_CONNECTIONS" value="19"/>
+    <eLiterals name="EVENT_PORT_CONNECTIONS" value="20"/>
+    <eLiterals name="DATA_PORT_CONNECTIONS" value="21"/>
+    <eLiterals name="EVENT_DATA_PORT_CONNECTIONS" value="22"/>
+    <eLiterals name="ACCESS_CONNECTIONS" value="23"/>
+    <eLiterals name="FLOW" value="24"/>
+    <eLiterals name="PARAMETER" value="25"/>
+    <eLiterals name="PARAMETER_CONNECTIONS" value="26"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumLiteral" eSuperTypes="core.ecore#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnitLiteral" eSuperTypes="core.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseunit" eType="#//UnitLiteral"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="factor" eType="#//NumberValue"
+        defaultValueLiteral="" containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyValue" abstract="true" eSuperTypes="core.ecore#//AObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanValue" abstract="true" eSuperTypes="#//BooleanOrPropertyReference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RangeValue" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="minimum" lowerBound="1"
+        eType="#//NumberOrPropertyReference" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="maximum" lowerBound="1"
+        eType="#//NumberOrPropertyReference" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delta" eType="#//NumberOrPropertyReference"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ComponentCategory">
+    <eLiterals name="DATA"/>
+    <eLiterals name="SUBPROGRAM" value="1"/>
+    <eLiterals name="THREAD" value="2"/>
+    <eLiterals name="THREAD_GROUP" value="3"/>
+    <eLiterals name="PROCESS" value="4"/>
+    <eLiterals name="MEMORY" value="5"/>
+    <eLiterals name="PROCESSOR" value="6"/>
+    <eLiterals name="BUS" value="7"/>
+    <eLiterals name="DEVICE" value="8"/>
+    <eLiterals name="SYSTEM" value="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ReferableElementCategory">
+    <eLiterals name="DATA"/>
+    <eLiterals name="SUBPROGRAM" value="1"/>
+    <eLiterals name="THREAD" value="2"/>
+    <eLiterals name="THREAD_GROUP" value="3"/>
+    <eLiterals name="PROCESS" value="4"/>
+    <eLiterals name="MEMORY" value="5"/>
+    <eLiterals name="PROCESSOR" value="6"/>
+    <eLiterals name="BUS" value="7"/>
+    <eLiterals name="DEVICE" value="8"/>
+    <eLiterals name="SYSTEM" value="9"/>
+    <eLiterals name="CONNECTIONS" value="10"/>
+    <eLiterals name="SERVER_SUBPROGRAM" value="11"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanAND" eSuperTypes="#//BooleanValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="booleanValue" lowerBound="2"
+        upperBound="2" eType="#//BooleanOrPropertyReference" containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanOR" eSuperTypes="#//BooleanValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="booleanValue" lowerBound="2"
+        upperBound="2" eType="#//BooleanOrPropertyReference" containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanNOT" eSuperTypes="#//BooleanValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="booleanValue" lowerBound="1"
+        eType="#//BooleanOrPropertyReference" containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TRUE" eSuperTypes="#//TrueFalseValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FALSE" eSuperTypes="#//TrueFalseValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringValue" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberValue" eSuperTypes="#//PropertyValue #//NumberOrPropertyReference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unitLiteral" eType="#//UnitLiteral"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueString" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerValue" eSuperTypes="#//NumberValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="base" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RealValue" eSuperTypes="#//NumberValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerRangeValue" eSuperTypes="#//RangeValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RealRangeValue" eSuperTypes="#//RangeValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumValue" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumLiteral" lowerBound="1"
+        eType="#//EnumLiteral"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassifierValue" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentClassifier" eType="ecore:EClass core.ecore#//ComponentClassifier"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//ComponentCategory"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyReference" eSuperTypes="#//BooleanOrPropertyReference #//NumberOrPropertyReference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedProperty" lowerBound="1"
+        eType="#//ReferencedProperty"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="referenceSign" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Aadlreal" eSuperTypes="#//NumberType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyConstant" eSuperTypes="core.ecore#//NamedElement #//ReferencedProperty #//PropertyValueHolder">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="list" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyTypeReference"
+        eType="#//PropertyConstantType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyType" eType="#//PropertyConstantType"
+        containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constantValue" upperBound="-1"
+        eType="#//PropertyValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferencedProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceValue" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceElement" lowerBound="1"
+        upperBound="-1" eType="#//ReferenceElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceElement" abstract="true">
+    <eAnnotations source="http:///aadl/OSATE">
+      <details key="isProxy" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TrueFalseValue" abstract="true" eSuperTypes="#//BooleanValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyConstantType" abstract="true"
+      eSuperTypes="#//PropertyType">
+    <eAnnotations source="http:///aadl/OSATE">
+      <details key="isProxy" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanOrPropertyReference" abstract="true"
+      eSuperTypes="#//PropertyValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyValueHolder" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberOrPropertyReference" abstract="true"
+      eSuperTypes="#//PropertyValue"/>
+</ecore:EPackage>

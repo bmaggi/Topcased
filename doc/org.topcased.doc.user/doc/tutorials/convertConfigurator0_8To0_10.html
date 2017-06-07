@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="topic" name="DC.Type" />
+<meta name="DC.Title" content="Convert 0.8 To 0.10" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="topic6807" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/visual.css" type="text/css" rel="stylesheet" />
+<title>MODELING FRAMEWORK - Convert configurator 0.8 to 0.10</title>
+</head>
+<body id="topic6807"><a name="topic6807"><!-- --></a>
+
+
+	<h1 class="topictitle1">Convert 0.8 To 0.10</h1>
+
+	
+	<div id="container"><a name="container"><!-- --></a>
+		<p>1. Introduction</p>
+
+		<p>
+			This document aims to help Topcased users that were using the configuration mechanism to generate graphical editors with the 0.8.0 release. The configuration of an editor
+			now consists in describing several configuration files :
+		</p>
+
+		<br /><ul>
+			<li>an <strong>editor configuration</strong> file that will describe the editor plugin</li>
+
+			<li>a <strong>diagram configuration</strong> file for each diagram</li>
+
+		</ul>
+
+		<p>2. Convert the old configurator file</p>
+
+		<p>
+			An action is available and allow to convert your old configurator file to necessary files for the new configuration and generation process. Select the old
+			configurator file <strong>Right Click &gt; Topcased &gt; Generation &gt; Export to new Configurator files</strong>. This will generate a set of new files at the same location
+			of the old configurator file.
+			<br /><img src="images/generateEditor/exportAction.jpg" alt="exportAction" /><br />
+			<strong>Remarks :</strong>
+		</p>
+
+		<br /><ul>
+			<li>the new diagramconfigurator files are more complete now. Indeed, new properties have been added (but they are not all managed in the graphical editor yet).</li>
+
+			<li>the property "Template Root Object" should be filled to validate the diagramconfigurator file. It consists in defining the model object that will be the root object
+				of the template file. Thus, first template files are now generated.
+			</li>
+
+		</ul>
+
+		<p>3. Generate the new graphical editor</p>
+
+		<p>3.1 Generate the new Editor plugin</p>
+
+		<p>
+			The editor configurator file is quite simple. It contains only one model object, an EditorConfiguration with a few properties :
+		</p>
+
+		<br /><ul>
+			<li><strong>Provider</strong> : the provider name ("Topcased" by default) that should be used in the generated plugin.xml file.</li>
+
+			<li><strong>CopyrightText</strong> : you can now define the copyright that should be included in the generated files.</li>
+
+			<li><strong>Force Overwrite</strong> : specify whether the non java files that are generated (plugin.xml, MANIFEST.MF, ...) should be overwritten or not.</li>
+
+			<li><strong>Organize Imports</strong>	: specify whether at the end of the generation process, an "Organize Imports" should be automatically done on the generated classes.</li>
+
+		</ul>
+
+		<p>3.2 Generate the new Diagram plugin(s)</p>
+
+		<p>
+			The diagram configurator file is more complete. Indeed, it is used to configure all graphical objects used in the diagram, the associated model objects and the Palette of the
+			diagram. The main differences with the old configuration are the properties of the root object of the model, the DiagramConfiguration :
+		</p>
+
+		<br /><ul>
+			<li><strong>Project Name</strong> : replaces the old "id" property, so this change is implicit for you. "ProjectName" was already used in the EditorConfigurator file.</li>
+
+			<li><strong>Provider</strong> : the provider name ("Topcased" by default) that should be used in the generated plugin.xml file.</li>
+
+			<li />
+
+			<li><strong>Editor Configurator</strong> : replaces the old "editorId" property that was a String value. Now this is a Reference to the EditorConfigurator file that is used.</li>
+
+			<li><strong>Template Root Object</strong> : describe the model object that should be root model object when a new Diagram is created. This is the model object that you choose
+				when you create a new model with the EMF generated editor. This object will be used to create the template files.
+			</li>
+
+			<li />
+
+			<li><strong>Copyright Text</strong> : the copyright that should be included in all the generated files.</li>
+
+			<li><strong>Force Overwrite</strong> : specify whether the non java files that are generated (plugin.xml, MANIFEST.MF, ...) should be overwritten or not.</li>
+
+			<li><strong>Organize Imports</strong> : specify whether at the end of the generation process, an organize imports should be automatically done on the generated classes.</li>
+
+			<li><strong>Overwrite Graph Conf</strong> : specify whether the diagram.graphconf file that is generated should be overwritten or not.</li>
+
+			<li><strong>Same Plugin As Editor</strong> : specify whether the diagram plugin should be generated in the same plugin as the editor plugin (you will then have to merge manually
+				java files when needed).
+			</li>
+
+		</ul>
+
+		<p>
+			For each generated diagram, we generate also a file called diagram.graphconf : this file contains all graphical properties and the graphical behavior of the elements that
+			are represented in this diagram.
+		</p>
+
+		<p>4. Customize the generated files</p>
+
+		<p>Here is an overview of all the significant API modifications that may caused some problems in your generated code in the case when you have customized it.</p>
+
+		<br /><ul>
+			<li><strong>XXXCreationUtils</strong> : now, it supports the "presentation" field that will be included in the DI file (the default value is "default").</li>
+
+			<li><strong>XXXPaletteManager</strong> : graphical properties were previously passed to the associated tool. The corresponding constructor is now deprecated. No graphical information
+				are passed now, they will be retrieved from the diagram.graphconf file.
+			</li>
+
+			<li><strong>XXXEditPolicyConstants</strong> : previously the constants were used to set the "typeInfo" property of the DI file for a Graphical Element that was not associated with
+				a model object (i.e. SimpleObjectConfiguration in the configurator file). Now the constants are retrieved from the new XXXSimpleObjectConstants interface.
+			</li>
+
+			<li><strong>XXXNodeEditPart</strong> : some methods should not be overriden by default. Default properties should be retrieved from the diagram.graphconf file. These methods should be
+				removed whether they were not customized.
+				<br /><ul>
+					<li>getDefaultBackgroundColor();</li>
+
+					<li>getDefaultForegroundColor();</li>
+
+					<li>getDefaultFont();</li>
+
+					<li>getDefaultWidth();</li>
+
+					<li>getDefaultHeight();</li>
+
+					<li>getMinimumWidth();</li>
+
+					<li>getMinimumHeight();</li>
+
+					<li>getMaximumWidth();</li>
+
+					<li>getMaximumHeight();</li>
+
+				</ul>
+
+			</li>
+
+			<li><strong>XXXEdgeEditPart</strong> : some methods should not be overriden by default. Default properties should be retrieved from the diagram.graphconf file. These methods should be
+				removed when they were not customized.
+				<br /><ul>
+					<li>getDefaultForegroundColor();</li>
+
+					<li>getDefaultFont();</li>
+
+					<li>getDefaultRouter();</li>
+
+				</ul>
+
+			</li>
+
+		</ul>
+
+		<p>
+			By Jacques LESCOT, Anyware Technologies
+			May, 15 2006
+		</p>
+
+	</div>
+
+
+</body>
+</html>

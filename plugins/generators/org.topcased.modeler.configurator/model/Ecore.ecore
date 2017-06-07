@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_Pmq1cNzxEdmy4tcprkLg0g"
+    name="ecore" nsURI="http://www.eclipse.org/emf/2002/Ecore" nsPrefix="ecore">
+  <eAnnotations source="http://www.topcased.org/uuid">
+    <details key="uuid" value="11210890000580"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_Pmq1cdzxEdmy4tcprkLg0g" name="EAttribute"
+      eSuperTypes="#_Pm0mddzxEdmy4tcprkLg0g">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="11210890000583"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pmq1ctzxEdmy4tcprkLg0g"
+        name="iD" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="11210890000586"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmrcgNzxEdmy4tcprkLg0g"
+        name="eAttributeType" lowerBound="1" eType="#_PmvG5NzxEdmy4tcprkLg0g" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="11210890000589"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_PmrcgdzxEdmy4tcprkLg0g" name="EAnnotation"
+      eSuperTypes="#_Pmw8E9zxEdmy4tcprkLg0g">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="112108900005812"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_PmrcgtzxEdmy4tcprkLg0g"
+        name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900005815"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pmrcg9zxEdmy4tcprkLg0g"
+        name="details" upperBound="-1" eType="#_Pm77M9zxEdmy4tcprkLg0g" containment="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900005818"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmrchNzxEdmy4tcprkLg0g"
+        name="eModelElement" eType="#_Pmw8E9zxEdmy4tcprkLg0g" transient="true" eOpposite="#_PmxjINzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900005821"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmrchdzxEdmy4tcprkLg0g"
+        name="contents" upperBound="-1" eType="#_PmxjI9zxEdmy4tcprkLg0g" containment="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900005824"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmsDkNzxEdmy4tcprkLg0g"
+        name="references" upperBound="-1" eType="#_PmxjI9zxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900005827"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_PmsDkdzxEdmy4tcprkLg0g" name="EClass"
+      eSuperTypes="#_Pmuf09zxEdmy4tcprkLg0g">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="112108900005830"/>
+    </eAnnotations>
+    <eOperations xmi:id="_PmsDktzxEdmy4tcprkLg0g" name="isSuperTypeOf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900005833"/>
+      </eAnnotations>
+      <eParameters xmi:id="_PmsDk9zxEdmy4tcprkLg0g" name="someClass" eType="#_PmsDkdzxEdmy4tcprkLg0g">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="112108900005836"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations xmi:id="_PmsDlNzxEdmy4tcprkLg0g" name="getEStructuralFeature" eType="#_Pm0mddzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900005839"/>
+      </eAnnotations>
+      <eParameters xmi:id="_PmsDldzxEdmy4tcprkLg0g" name="featureID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="112108900005842"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations xmi:id="_PmsDltzxEdmy4tcprkLg0g" name="getEStructuralFeature" eType="#_Pm0mddzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900005845"/>
+      </eAnnotations>
+      <eParameters xmi:id="_PmsDl9zxEdmy4tcprkLg0g" name="featureName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="112108900005848"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_PmsDmNzxEdmy4tcprkLg0g"
+        name="abstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900005851"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_PmsqoNzxEdmy4tcprkLg0g"
+        name="interface" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900005854"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmsqodzxEdmy4tcprkLg0g"
+        name="eSuperTypes" upperBound="-1" eType="#_PmsDkdzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900005857"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmsqotzxEdmy4tcprkLg0g"
+        name="eOperations" upperBound="-1" eType="#_PmyxRtzxEdmy4tcprkLg0g" containment="true"
+        eOpposite="#_PmyxR9zxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900005860"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pmsqo9zxEdmy4tcprkLg0g"
+        name="eAllAttributes" upperBound="-1" eType="#_Pmq1cdzxEdmy4tcprkLg0g" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900005863"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmsqpNzxEdmy4tcprkLg0g"
+        name="eAllReferences" upperBound="-1" eType="#_Pmz_ZdzxEdmy4tcprkLg0g" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900005866"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmsqpdzxEdmy4tcprkLg0g"
+        name="eReferences" upperBound="-1" eType="#_Pmz_ZdzxEdmy4tcprkLg0g" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900005869"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmtRsNzxEdmy4tcprkLg0g"
+        name="eAttributes" upperBound="-1" eType="#_Pmq1cdzxEdmy4tcprkLg0g" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900005872"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmtRsdzxEdmy4tcprkLg0g"
+        name="eAllContainments" upperBound="-1" eType="#_Pmz_ZdzxEdmy4tcprkLg0g" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900006075"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pmt4wNzxEdmy4tcprkLg0g"
+        name="eAllOperations" upperBound="-1" eType="#_PmyxRtzxEdmy4tcprkLg0g" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900006078"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pmt4wdzxEdmy4tcprkLg0g"
+        name="eAllStructuralFeatures" upperBound="-1" eType="#_Pm0mddzxEdmy4tcprkLg0g"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900006081"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pmuf0NzxEdmy4tcprkLg0g"
+        name="eAllSuperTypes" upperBound="-1" eType="#_PmsDkdzxEdmy4tcprkLg0g" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900006084"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pmuf0dzxEdmy4tcprkLg0g"
+        name="eIDAttribute" eType="#_Pmq1cdzxEdmy4tcprkLg0g" changeable="false" volatile="true"
+        transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900006087"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pmuf0tzxEdmy4tcprkLg0g"
+        name="eStructuralFeatures" upperBound="-1" eType="#_Pm0mddzxEdmy4tcprkLg0g"
+        containment="true" eOpposite="#_Pm10kNzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900006090"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_Pmuf09zxEdmy4tcprkLg0g" name="EClassifier"
+      abstract="true" eSuperTypes="#_PmxjIdzxEdmy4tcprkLg0g">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="112108900006093"/>
+    </eAnnotations>
+    <eOperations xmi:id="_Pmuf1NzxEdmy4tcprkLg0g" name="isInstance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="112108900006096"/>
+      </eAnnotations>
+      <eParameters xmi:id="_Pmuf1dzxEdmy4tcprkLg0g" name="object" eType="#_Pm6tFdzxEdmy4tcprkLg0g">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="112108900006099"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations xmi:id="_Pmuf1tzxEdmy4tcprkLg0g" name="getClassifierID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000060102"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_PmvG4NzxEdmy4tcprkLg0g"
+        name="instanceClassName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000060105"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_PmvG4dzxEdmy4tcprkLg0g"
+        name="instanceClass" eType="#_Pm6tFNzxEdmy4tcprkLg0g" changeable="false" volatile="true"
+        transient="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000061108"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_PmvG4tzxEdmy4tcprkLg0g"
+        name="defaultValue" eType="#_Pm6tFdzxEdmy4tcprkLg0g" changeable="false" volatile="true"
+        transient="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000061111"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmvG49zxEdmy4tcprkLg0g"
+        name="ePackage" eType="#_PmzYUtzxEdmy4tcprkLg0g" changeable="false" transient="true"
+        eOpposite="#_Pmz_YNzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000061114"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_PmvG5NzxEdmy4tcprkLg0g" name="EDataType"
+      eSuperTypes="#_Pmuf09zxEdmy4tcprkLg0g">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000061117"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_PmvG5dzxEdmy4tcprkLg0g"
+        name="serializable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000061120"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_PmvG5tzxEdmy4tcprkLg0g" name="EEnum"
+      eSuperTypes="#_PmvG5NzxEdmy4tcprkLg0g">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000061123"/>
+    </eAnnotations>
+    <eOperations xmi:id="_Pmvt8NzxEdmy4tcprkLg0g" name="getEEnumLiteral" eType="#_Pmvt9dzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000061126"/>
+      </eAnnotations>
+      <eParameters xmi:id="_Pmvt8dzxEdmy4tcprkLg0g" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1121089000061129"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations xmi:id="_Pmvt8tzxEdmy4tcprkLg0g" name="getEEnumLiteral" eType="#_Pmvt9dzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000061132"/>
+      </eAnnotations>
+      <eParameters xmi:id="_Pmvt89zxEdmy4tcprkLg0g" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1121089000061135"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pmvt9NzxEdmy4tcprkLg0g"
+        name="eLiterals" upperBound="-1" eType="#_Pmvt9dzxEdmy4tcprkLg0g" containment="true"
+        eOpposite="#_PmwVAdzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000061138"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_Pmvt9dzxEdmy4tcprkLg0g" name="EEnumLiteral"
+      eSuperTypes="#_PmxjIdzxEdmy4tcprkLg0g">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000061141"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pmvt9tzxEdmy4tcprkLg0g"
+        name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000061144"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_PmwVANzxEdmy4tcprkLg0g"
+        name="instance" eType="#_Pm6GB9zxEdmy4tcprkLg0g" transient="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000061147"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmwVAdzxEdmy4tcprkLg0g"
+        name="eEnum" eType="#_PmvG5tzxEdmy4tcprkLg0g" changeable="false" transient="true"
+        eOpposite="#_Pmvt9NzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000061150"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_PmwVAtzxEdmy4tcprkLg0g" name="EFactory"
+      eSuperTypes="#_Pmw8E9zxEdmy4tcprkLg0g">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000061153"/>
+    </eAnnotations>
+    <eOperations xmi:id="_PmwVA9zxEdmy4tcprkLg0g" name="create" eType="#_PmxjI9zxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000061156"/>
+      </eAnnotations>
+      <eParameters xmi:id="_PmwVBNzxEdmy4tcprkLg0g" name="eClass" eType="#_PmsDkdzxEdmy4tcprkLg0g">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1121089000061159"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations xmi:id="_PmwVBdzxEdmy4tcprkLg0g" name="createFromString" eType="#_Pm6tFdzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000061162"/>
+      </eAnnotations>
+      <eParameters xmi:id="_PmwVBtzxEdmy4tcprkLg0g" name="eDataType" eType="#_PmvG5NzxEdmy4tcprkLg0g">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1121089000061165"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters xmi:id="_PmwVB9zxEdmy4tcprkLg0g" name="literalValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1121089000061168"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations xmi:id="_PmwVCNzxEdmy4tcprkLg0g" name="convertToString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000061171"/>
+      </eAnnotations>
+      <eParameters xmi:id="_Pmw8ENzxEdmy4tcprkLg0g" name="eDataType" eType="#_PmvG5NzxEdmy4tcprkLg0g">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1121089000061174"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters xmi:id="_Pmw8EdzxEdmy4tcprkLg0g" name="instanceValue" eType="#_Pm6tFdzxEdmy4tcprkLg0g">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1121089000061177"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pmw8EtzxEdmy4tcprkLg0g"
+        name="ePackage" lowerBound="1" eType="#_PmzYUtzxEdmy4tcprkLg0g" transient="true"
+        resolveProxies="false" eOpposite="#_PmzYV9zxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000061180"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_Pmw8E9zxEdmy4tcprkLg0g" name="EModelElement"
+      abstract="true" eSuperTypes="#_PmxjI9zxEdmy4tcprkLg0g">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000061183"/>
+    </eAnnotations>
+    <eOperations xmi:id="_Pmw8FNzxEdmy4tcprkLg0g" name="getEAnnotation" eType="#_PmrcgdzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000061186"/>
+      </eAnnotations>
+      <eParameters xmi:id="_Pmw8FdzxEdmy4tcprkLg0g" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1121089000061189"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmxjINzxEdmy4tcprkLg0g"
+        name="eAnnotations" upperBound="-1" eType="#_PmrcgdzxEdmy4tcprkLg0g" containment="true"
+        eOpposite="#_PmrchNzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000061192"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_PmxjIdzxEdmy4tcprkLg0g" name="ENamedElement"
+      abstract="true" eSuperTypes="#_Pmw8E9zxEdmy4tcprkLg0g">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000062195"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_PmxjItzxEdmy4tcprkLg0g"
+        name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000062198"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_PmxjI9zxEdmy4tcprkLg0g" name="EObject">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000062201"/>
+    </eAnnotations>
+    <eOperations xmi:id="_PmxjJNzxEdmy4tcprkLg0g" name="eClass" eType="#_PmsDkdzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000062204"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations xmi:id="_PmxjJdzxEdmy4tcprkLg0g" name="eIsProxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000062207"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations xmi:id="_PmxjJtzxEdmy4tcprkLg0g" name="eResource" eType="#_Pm6tGdzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000062210"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations xmi:id="_PmxjJ9zxEdmy4tcprkLg0g" name="eContainer" eType="#_PmxjI9zxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000062213"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations xmi:id="_PmxjKNzxEdmy4tcprkLg0g" name="eContainingFeature" eType="#_Pm0mddzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000062216"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations xmi:id="_PmyKMNzxEdmy4tcprkLg0g" name="eContainmentFeature" eType="#_Pmz_ZdzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000062219"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations xmi:id="_PmyKMdzxEdmy4tcprkLg0g" name="eContents" eType="#_Pm6GBtzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000062222"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations xmi:id="_PmyKMtzxEdmy4tcprkLg0g" name="eAllContents" eType="#_Pm9wYtzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000062225"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations xmi:id="_PmyKM9zxEdmy4tcprkLg0g" name="eCrossReferences" eType="#_Pm6GBtzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000062228"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations xmi:id="_PmyKNNzxEdmy4tcprkLg0g" name="eGet" eType="#_Pm6tFdzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000062231"/>
+      </eAnnotations>
+      <eParameters xmi:id="_PmyKNdzxEdmy4tcprkLg0g" name="feature" eType="#_Pm0mddzxEdmy4tcprkLg0g">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1121089000062234"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations xmi:id="_PmyKNtzxEdmy4tcprkLg0g" name="eGet" eType="#_Pm6tFdzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000062237"/>
+      </eAnnotations>
+      <eParameters xmi:id="_PmyKN9zxEdmy4tcprkLg0g" name="feature" eType="#_Pm0mddzxEdmy4tcprkLg0g">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1121089000062240"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters xmi:id="_PmyKONzxEdmy4tcprkLg0g" name="resolve" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1121089000062243"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations xmi:id="_PmyKOdzxEdmy4tcprkLg0g" name="eSet">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000062246"/>
+      </eAnnotations>
+      <eParameters xmi:id="_PmyxQNzxEdmy4tcprkLg0g" name="feature" eType="#_Pm0mddzxEdmy4tcprkLg0g">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1121089000063249"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters xmi:id="_PmyxQdzxEdmy4tcprkLg0g" name="newValue" eType="#_Pm6tFdzxEdmy4tcprkLg0g">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1121089000063252"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations xmi:id="_PmyxQtzxEdmy4tcprkLg0g" name="eIsSet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063255"/>
+      </eAnnotations>
+      <eParameters xmi:id="_PmyxQ9zxEdmy4tcprkLg0g" name="feature" eType="#_Pm0mddzxEdmy4tcprkLg0g">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1121089000063258"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations xmi:id="_PmyxRNzxEdmy4tcprkLg0g" name="eUnset">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063261"/>
+      </eAnnotations>
+      <eParameters xmi:id="_PmyxRdzxEdmy4tcprkLg0g" name="feature" eType="#_Pm0mddzxEdmy4tcprkLg0g">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1121089000063264"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_PmyxRtzxEdmy4tcprkLg0g" name="EOperation"
+      eSuperTypes="#_Pm10kdzxEdmy4tcprkLg0g">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000063267"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmyxR9zxEdmy4tcprkLg0g"
+        name="eContainingClass" eType="#_PmsDkdzxEdmy4tcprkLg0g" changeable="false"
+        transient="true" eOpposite="#_PmsqotzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063270"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmzYUNzxEdmy4tcprkLg0g"
+        name="eParameters" upperBound="-1" eType="#_Pmz_Y9zxEdmy4tcprkLg0g" containment="true"
+        eOpposite="#_Pmz_ZNzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063273"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmzYUdzxEdmy4tcprkLg0g"
+        name="eExceptions" upperBound="-1" eType="#_Pmuf09zxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063276"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_PmzYUtzxEdmy4tcprkLg0g" name="EPackage"
+      eSuperTypes="#_PmxjIdzxEdmy4tcprkLg0g">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000063279"/>
+    </eAnnotations>
+    <eOperations xmi:id="_PmzYU9zxEdmy4tcprkLg0g" name="getEClassifier" eType="#_Pmuf09zxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063282"/>
+      </eAnnotations>
+      <eParameters xmi:id="_PmzYVNzxEdmy4tcprkLg0g" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.topcased.org/uuid">
+          <details key="uuid" value="1121089000063285"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_PmzYVdzxEdmy4tcprkLg0g"
+        name="nsURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063288"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_PmzYVtzxEdmy4tcprkLg0g"
+        name="nsPrefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063291"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_PmzYV9zxEdmy4tcprkLg0g"
+        name="eFactoryInstance" lowerBound="1" eType="#_PmwVAtzxEdmy4tcprkLg0g" transient="true"
+        resolveProxies="false" eOpposite="#_Pmw8EtzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063294"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pmz_YNzxEdmy4tcprkLg0g"
+        name="eClassifiers" upperBound="-1" eType="#_Pmuf09zxEdmy4tcprkLg0g" containment="true"
+        eOpposite="#_PmvG49zxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063297"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pmz_YdzxEdmy4tcprkLg0g"
+        name="eSubpackages" upperBound="-1" eType="#_PmzYUtzxEdmy4tcprkLg0g" containment="true"
+        eOpposite="#_Pmz_YtzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063300"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pmz_YtzxEdmy4tcprkLg0g"
+        name="eSuperPackage" eType="#_PmzYUtzxEdmy4tcprkLg0g" changeable="false" transient="true"
+        eOpposite="#_Pmz_YdzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063303"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_Pmz_Y9zxEdmy4tcprkLg0g" name="EParameter"
+      eSuperTypes="#_Pm10kdzxEdmy4tcprkLg0g">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000063306"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pmz_ZNzxEdmy4tcprkLg0g"
+        name="eOperation" eType="#_PmyxRtzxEdmy4tcprkLg0g" changeable="false" transient="true"
+        eOpposite="#_PmzYUNzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063309"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_Pmz_ZdzxEdmy4tcprkLg0g" name="EReference"
+      eSuperTypes="#_Pm0mddzxEdmy4tcprkLg0g">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000063312"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm0mcNzxEdmy4tcprkLg0g"
+        name="containment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063315"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm0mcdzxEdmy4tcprkLg0g"
+        name="container" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        changeable="false" volatile="true" transient="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063318"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm0mctzxEdmy4tcprkLg0g"
+        name="resolveProxies" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063321"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pm0mc9zxEdmy4tcprkLg0g"
+        name="eOpposite" eType="#_Pmz_ZdzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063324"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pm0mdNzxEdmy4tcprkLg0g"
+        name="eReferenceType" lowerBound="1" eType="#_PmsDkdzxEdmy4tcprkLg0g" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063327"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_Pm0mddzxEdmy4tcprkLg0g" name="EStructuralFeature"
+      abstract="true" eSuperTypes="#_Pm10kdzxEdmy4tcprkLg0g">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000063330"/>
+    </eAnnotations>
+    <eOperations xmi:id="_Pm0mdtzxEdmy4tcprkLg0g" name="getFeatureID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063333"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations xmi:id="_Pm0md9zxEdmy4tcprkLg0g" name="getContainerClass" eType="#_Pm6tFNzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063336"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm1NgNzxEdmy4tcprkLg0g"
+        name="changeable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000063339"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm1NgdzxEdmy4tcprkLg0g"
+        name="volatile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000064342"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm1NgtzxEdmy4tcprkLg0g"
+        name="transient" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000064345"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm1Ng9zxEdmy4tcprkLg0g"
+        name="defaultValueLiteral" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000064348"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm1NhNzxEdmy4tcprkLg0g"
+        name="defaultValue" eType="#_Pm6tFdzxEdmy4tcprkLg0g" changeable="false" volatile="true"
+        transient="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000064351"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm1NhdzxEdmy4tcprkLg0g"
+        name="unsettable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000064354"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm1NhtzxEdmy4tcprkLg0g"
+        name="derived" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000064357"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pm10kNzxEdmy4tcprkLg0g"
+        name="eContainingClass" eType="#_PmsDkdzxEdmy4tcprkLg0g" changeable="false"
+        transient="true" eOpposite="#_Pmuf0tzxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000064360"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_Pm10kdzxEdmy4tcprkLg0g" name="ETypedElement"
+      abstract="true" eSuperTypes="#_PmxjIdzxEdmy4tcprkLg0g">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064363"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm10ktzxEdmy4tcprkLg0g"
+        name="ordered" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000064366"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm10k9zxEdmy4tcprkLg0g"
+        name="unique" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000064369"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm10lNzxEdmy4tcprkLg0g"
+        name="lowerBound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000064372"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm10ldzxEdmy4tcprkLg0g"
+        name="upperBound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000064375"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm434NzxEdmy4tcprkLg0g"
+        name="many" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        changeable="false" volatile="true" transient="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000064378"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm5e8NzxEdmy4tcprkLg0g"
+        name="required" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        changeable="false" volatile="true" transient="true">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000064381"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_Pm5e8dzxEdmy4tcprkLg0g"
+        name="eType" eType="#_Pmuf09zxEdmy4tcprkLg0g">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000064384"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm5e8tzxEdmy4tcprkLg0g" name="EBigDecimal"
+      instanceClassName="java.math.BigDecimal">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064387"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm5e89zxEdmy4tcprkLg0g" name="EBigInteger"
+      instanceClassName="java.math.BigInteger">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064390"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm5e9NzxEdmy4tcprkLg0g" name="EBoolean"
+      instanceClassName="boolean">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064393"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm5e9dzxEdmy4tcprkLg0g" name="EBooleanObject"
+      instanceClassName="java.lang.Boolean">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064396"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm5e9tzxEdmy4tcprkLg0g" name="EByte"
+      instanceClassName="byte">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064399"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm5e99zxEdmy4tcprkLg0g" name="EByteArray"
+      instanceClassName="byte[]">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064402"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm5e-NzxEdmy4tcprkLg0g" name="EByteObject"
+      instanceClassName="java.lang.Byte">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064405"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6GANzxEdmy4tcprkLg0g" name="EChar"
+      instanceClassName="char">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064408"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6GAdzxEdmy4tcprkLg0g" name="ECharacterObject"
+      instanceClassName="java.lang.Character">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064411"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6GAtzxEdmy4tcprkLg0g" name="EDate"
+      instanceClassName="java.util.Date">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064414"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6GA9zxEdmy4tcprkLg0g" name="EDiagnosticChain"
+      instanceClassName="org.eclipse.emf.common.util.DiagnosticChain" serializable="false">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064417"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6GBNzxEdmy4tcprkLg0g" name="EDouble"
+      instanceClassName="double">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064420"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6GBdzxEdmy4tcprkLg0g" name="EDoubleObject"
+      instanceClassName="java.lang.Double">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064423"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6GBtzxEdmy4tcprkLg0g" name="EEList"
+      instanceClassName="org.eclipse.emf.common.util.EList" serializable="false">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064426"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6GB9zxEdmy4tcprkLg0g" name="EEnumerator"
+      instanceClassName="org.eclipse.emf.common.util.Enumerator" serializable="false">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064429"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6GCNzxEdmy4tcprkLg0g" name="EFeatureMap"
+      instanceClassName="org.eclipse.emf.ecore.util.FeatureMap" serializable="false">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064432"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6GCdzxEdmy4tcprkLg0g" name="EFeatureMapEntry"
+      instanceClassName="org.eclipse.emf.ecore.util.FeatureMap$Entry">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000064435"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6tENzxEdmy4tcprkLg0g" name="EFloat"
+      instanceClassName="float">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000065438"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6tEdzxEdmy4tcprkLg0g" name="EFloatObject"
+      instanceClassName="java.lang.Float">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000065441"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6tEtzxEdmy4tcprkLg0g" name="EInt"
+      instanceClassName="int">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000065444"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6tE9zxEdmy4tcprkLg0g" name="EIntegerObject"
+      instanceClassName="java.lang.Integer">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000065447"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6tFNzxEdmy4tcprkLg0g" name="EJavaClass"
+      instanceClassName="java.lang.Class">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000065450"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6tFdzxEdmy4tcprkLg0g" name="EJavaObject"
+      instanceClassName="java.lang.Object" serializable="false">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000065453"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6tFtzxEdmy4tcprkLg0g" name="ELong"
+      instanceClassName="long">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000065456"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6tF9zxEdmy4tcprkLg0g" name="ELongObject"
+      instanceClassName="java.lang.Long">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000065459"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6tGNzxEdmy4tcprkLg0g" name="EMap"
+      instanceClassName="java.util.Map" serializable="false">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000065462"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm6tGdzxEdmy4tcprkLg0g" name="EResource"
+      instanceClassName="org.eclipse.emf.ecore.resource.Resource" serializable="false">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000065465"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm7UINzxEdmy4tcprkLg0g" name="EResourceSet"
+      instanceClassName="org.eclipse.emf.ecore.resource.ResourceSet" serializable="false">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000065468"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm77MNzxEdmy4tcprkLg0g" name="EShort"
+      instanceClassName="short">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000065471"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm77MdzxEdmy4tcprkLg0g" name="EShortObject"
+      instanceClassName="java.lang.Short">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000065474"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm77MtzxEdmy4tcprkLg0g" name="EString"
+      instanceClassName="java.lang.String">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000065477"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_Pm77M9zxEdmy4tcprkLg0g" name="EStringToStringMapEntry"
+      instanceClassName="java.util.Map$Entry">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000065480"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm9wYNzxEdmy4tcprkLg0g"
+        name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000065483"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_Pm9wYdzxEdmy4tcprkLg0g"
+        name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/uuid">
+        <details key="uuid" value="1121089000065486"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" xmi:id="_Pm9wYtzxEdmy4tcprkLg0g" name="ETreeIterator"
+      instanceClassName="org.eclipse.emf.common.util.TreeIterator" serializable="false">
+    <eAnnotations source="http://www.topcased.org/uuid">
+      <details key="uuid" value="1121089000065489"/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.1 2009/03/19 13:40:50 clecamus Exp $
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.topcased.org/ocl/1.0/OCLDi"
+            class="org.topcased.modeler.ocl.ocldi.OcldiPackage"
+            genModel="model/OCLDi.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="ocldi"
+            class="org.topcased.modeler.ocl.ocldi.util.OcldiResourceFactoryImpl"/>
+   </extension>
+   <extension
+         point="org.eclipse.ocl.environments">
+      <environmentFactory
+            class="org.topcased.modeler.ocl.ocldi.OcldiEnvironmentFactory">
+         <package
+               nsURI="http://www.topcased.org/DI/1.0">
+         </package>
+         <package
+               nsURI="http://www.topcased.org/ocl/1.0/OCLDi">
+         </package>
+      </environmentFactory>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="http://www.eclipse.org/ocldi/stdlib/1.1"
+            target="platform:/plugin/org.topcased.modeler.ocl.di/model/oclstdlib.ecore">
+      </mapping>
+   </extension>
+
+</plugin>

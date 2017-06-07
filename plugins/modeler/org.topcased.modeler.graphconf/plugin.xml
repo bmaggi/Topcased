@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.4 2008/06/04 19:02:43 sgabel Exp $
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://www.topcased.org/1.0/graphconf" 
+       class = "org.topcased.modeler.graphconf.provider.GraphconfItemProviderAdapterFactory"
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+  
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+       uri = "http://www.topcased.org/1.0/graphconf"
+       class = "org.topcased.modeler.graphconf.GraphconfPackage"
+       genModel = "model/graphconf.genmodel" /> 
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+    <parser
+       type="graphconf"
+       class="org.topcased.modeler.graphconf.util.GraphconfResourceFactoryImpl" />
+  </extension>
+
+
+  <extension
+    point = "org.eclipse.ui.newWizards">
+     <category
+           id="org.topcased.facilities.newModels"
+           name="Topcased Models"
+           parentCategory="org.topcased.facilities.newWizards">
+     </category>
+    <wizard
+      id = "org.topcased.modeler.graphconf.presentation.GraphconfModelWizardID"
+      name = "%_UI_GraphconfModelWizard_label"
+      class = "org.topcased.modeler.graphconf.internal.presentation.GraphconfModelWizard"
+      category = "org.topcased.facilities.newWizards/org.topcased.facilities.newModels"
+      icon = "icons/full/obj16/GraphconfModelFile.gif">
+      <description>%_UI_GraphconfModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "org.topcased.modeler.graphconf.presentation.GraphconfEditorID"
+        name = "%_UI_GraphconfEditor_label"
+        icon = "icons/full/obj16/GraphconfModelFile.gif"
+        extensions = "graphconf"
+        class = "org.topcased.modeler.graphconf.internal.presentation.GraphconfEditor" 
+        contributorClass="org.topcased.modeler.graphconf.internal.presentation.GraphconfActionBarContributor" >
+    </editor>
+  </extension>    
+</plugin>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.topcased.scripting_feature"
+      label="Topcased Scripting (incubation)"
+      version="4.0.1.qualifier"
+      provider-name="Topcased">
+
+   <description url="http://www.topcased.org">
+      This feature brings Javascript/Jython scripting capability to Topcased.
+   </description>
+
+   <copyright>
+      Topcased:
+Copyright (c) 2008-2010 Topcased partners
+PythonMonkey: 
+Copyright (c) 2007 José.R.Fonseca
+Copyright (c) 2005, 2006 Eclipse Foundation
+Copyright (c) 2005-2006 Aptana, Inc.
+Jython: 
+Copyright (c) 2007 Python Software Foundation
+   </copyright>
+
+   <license url="license_agreement.html">
+      All rights reserved. Topcased programs and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html.
+
+PythonMonkey is provided under the terms of Eclipse Public License
+1.0 (http://www.eclipse.org/legal/epl-v10.html).
+
+Jython is provided under the terms of Python Software foundation
+Licence version 2 (http://www.jython.org/license.html).
+   </license>
+
+   <url>
+      <update label="Topcased" url="http://topcased-mm.gforge.enseeiht.fr/release/update-site3.5/site.xml"/>
+   </url>
+
+   <requires>
+      <import plugin="org.topcased.sam"/>
+      <import plugin="org.topcased.modeler.sam"/>
+      <import plugin="org.topcased.modeler"/>
+      <import plugin="org.topcased.sysml"/>
+      <import plugin="org.topcased.modeler.sysml"/>
+      <import plugin="org.eclipse.uml2.uml.editor"/>
+      <import feature="org.topcased.scripting.core.feature"/>
+      <import plugin="org.topcased.scripting"/>
+      <import plugin="org.topcased.modeler.di"/>
+   </requires>
+
+   <plugin
+         id="org.topcased.scripting.sam"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.scripting.sysml"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.scripting.uml"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.scripting.di"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

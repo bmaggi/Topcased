@@ -1,0 +1,169 @@
+<%@ jet
+	 package="org.topcased.properties.generator.templates"
+	 imports="org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.properties.configurator.* "
+	 class="PluginActivator"
+	 version="$Id: Plugin.javajet,v 1.1 2006/10/30 17:10:50 jako Exp $" %>
+<%TabbedView tabbedView = (TabbedView) argument;
+  String thePackage = tabbedView.getProjectName();
+  String basePackage = tabbedView.getBasePackage();
+  if (basePackage != null && !basePackage.equals(""))
+  {
+  	thePackage = basePackage;
+  }
+  GenModel model = tabbedView.getGenModel();
+%>
+package <%=thePackage%>;
+
+import java.lang.reflect.InvocationTargetException;
+
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.osgi.framework.BundleContext;
+
+/**
+ * The main plugin class to be used in the desktop.
+ *
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ *
+ * @generated
+ */
+public class <%=model.getModelPluginClassName() %>Sections extends AbstractUIPlugin
+{
+	/**
+     * The plug-in ID
+     * @generated
+     */
+	public static final String PLUGIN_ID = "<%=tabbedView.getIdUnspaced()%>";
+	
+	/**
+     * The shared instance
+     * @generated
+     */
+	private static <%=model.getModelPluginClassName() %>Sections plugin;
+	
+	/**
+	 * The constructor.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+
+	 * @generated
+	 */
+	public <%=model.getModelPluginClassName() %>Sections() 
+	{
+		super();
+		plugin = this;
+	}
+
+	/**
+	 * This method is called upon plug-in activation
+
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+
+	 * @param context
+	 * @throws Exception
+	 * @generated
+	 */
+	public void start(BundleContext context) throws Exception {
+		super.start(context);
+	}
+
+	/**
+	 * This method is called when the plug-in is stopped
+
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+
+	 * @param context
+	 * @throws Exception
+	 * @generated
+	 */
+	public void stop(BundleContext context) throws Exception {
+		super.stop(context);
+		plugin = null;
+	}
+
+	/**
+	 * Returns the shared instance.
+
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+
+	 * @return the singleton
+	 * @generated
+	 */
+	public static <%=model.getModelPluginClassName() %>Sections getDefault() {
+		return plugin;
+	}
+
+	/**
+     * @return the Plugin Id
+
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+
+	 * @generated
+	 */
+	public static String getId()
+	{
+		return getDefault().getBundle().getSymbolicName();
+	}
+
+	/**
+     * Log a message with given level into the Eclipse log file
+
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+
+     * @param message the message to log
+     * @param level the message priority
+	 * @generated
+     */
+	public static void log(String message, int level)
+	{
+		IStatus status = null;
+		status = new Status(level, getId(), IStatus.OK, message, null);
+		log(status);
+	}
+
+	/**
+	 * Log an exception into the Eclipse log file
+
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+
+	 * @param e the exception to log
+	 * @generated
+	 */
+	public static void log(Throwable e)
+	{
+		if (e instanceof InvocationTargetException)
+			e = ((InvocationTargetException) e).getTargetException();
+
+		IStatus status = null;
+		if (e instanceof CoreException)
+			status = ((CoreException) e).getStatus();
+		else
+			status = new Status(IStatus.ERROR, getId(), IStatus.OK, "Error", e);
+
+		log(status);
+	}
+
+	/**
+	 * Log an IStatus
+
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+
+	 * @param status
+	 * @generated
+	 */
+	public static void log(IStatus status)
+	{
+		ResourcesPlugin.getPlugin().getLog().log(status);
+	}
+}

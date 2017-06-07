@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.topcased.modeler">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.topcased.modeler" id="diagrams" name="Diagrams"/>
+      </appInfo>
+      <documentation>
+         You can easily extends an existing Topcased graphical editor by providing a new or a custom diagram.
+This extension point is used to extend the available diagrams that can be associated with a model object.
+All the diagrams added to this extension point are now available each time a valid model object is selected (from the outline or directly from the editing window).
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <complexType>
+         <sequence>
+            <element ref="diagram" minOccurs="0" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="diagram">
+      <annotation>
+         <documentation>
+            Add a new diagram that will be available depending on the selected model object.
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="enableFor" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The id of the diagram.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The name of the diagram. This is the text that will be displayed in the contextual menu.
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="configuration" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The IConfiguration to associate with the Diagram. It must be a subclass of &lt;samp&gt;org.topcased.modeler.editor.IConfiguration&lt;/samp&gt;.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.topcased.modeler.editor.IConfiguration"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="icon" type="string">
+            <annotation>
+               <documentation>
+                  The icon representing the diagram. It will be used in the model navigator and in menus.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="resource"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="editorID" type="string">
+            <annotation>
+               <documentation>
+                  Specify the editorID that should be able to manage this type of diagram. When omitted, only the enableFor condition is checked.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="enableFor">
+      <annotation>
+         <documentation>
+            Define which are the valid container for a such diagram type
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The EObject on which it is possible to create this Diagram. It must be a subclass of &lt;samp&gt;org.eclipse.emf.ecore.EObject&lt;/samp&gt;.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn="org.eclipse.emf.ecore.EObject"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="creationCommand" type="string">
+            <annotation>
+               <documentation>
+                  A custom command that could be used to perform the diagram creation. This command is optionnal and should be used only when the diagram is not created directly under the model object of the enableFor element. It must be a subclass of &lt;samp&gt;org.eclipse.gef.commands.Command&lt;/samp&gt; and implements the &lt;samp&gt;org.topcased.modeler.extensions.ICreationDiagram&lt;/samp&gt; interface.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn="org.eclipse.gef.commands.Command:org.topcased.modeler.extensions.ICreationDiagram"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         0.8.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         This example shows how to define the Diagram that can be associated with an EPackage model object in the graphical Ecore editor :
+&lt;pre&gt;
+ &lt;extension point=&quot;org.topcased.modeler.diagrams&quot;&gt;
+  &lt;diagram configuration=&quot;org.topcased.modeler.ecore.ediagram.EcoreConfiguration&quot;
+     id=&quot;org.topcased.modeler.ecore.ediagram&quot;
+     name=&quot;Ecore Diagram&quot;&gt;
+   &lt;enableFor class=&quot;org.eclipse.emf.ecore.EPackage&quot;/&gt;
+  &lt;/diagram&gt;
+ &lt;/extension&gt;
+&lt;/pre&gt;
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiInfo"/>
+      </appInfo>
+      <documentation>
+         The configuration must implements the interface &lt;samp&gt;org.topcased.modeler.editor.IConfiguration&lt;/samp&gt;.
+The class of the &quot;enableFor&quot; must implements the interface &lt;samp&gt;org.eclipse.emf.ecore.EObject&lt;/samp&gt;.
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         None
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Copyright (c) 2005, 2006 AIRBUS FRANCE and others.
+All rights reserved. This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+      </documentation>
+   </annotation>
+
+</schema>

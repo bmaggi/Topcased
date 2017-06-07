@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/0.11" activeDiagram="//@diagrams.0">
+  <model href="ruleset.ecore#/"/>
+  <diagrams position="0,0" size="100,100" name="ruleset" viewport="0,102">
+    <property key="pageFormatName" value="A4"/>
+    <property key="diagramWidth" value="840"/>
+    <property key="diagramHeight" value="1188"/>
+    <property key="pageMarginName" value="Small Margin"/>
+    <property key="diagramTopMargin" value="20"/>
+    <property key="diagramBottomMargin" value="20"/>
+    <property key="diagramLeftMargin" value="20"/>
+    <property key="diagramRightMargin" value="20"/>
+    <property key="orientation" value="portrait"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="org.topcased.modeler.ecore.ediagram">
+      <element href="ruleset.ecore#/"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" position="117,156" size="150,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.2 //@diagrams.0/@contained.4"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="ruleset.ecore#//RuleSet"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="ruleset.ecore#//RuleSet"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="ruleset.ecore#//RuleSet"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="118,317" size="150,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.2 //@diagrams.0/@contained.6"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="ruleset.ecore#//Rule"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="ruleset.ecore#//Rule"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="ruleset.ecore#//Rule/message"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="ruleset.ecore#//Rule/ruleContent"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="ruleset.ecore#//Rule/level"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="ruleset.ecore#//Rule/ruleType"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="ruleset.ecore#//Rule"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.0/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="ruleset.ecore#//RuleSet/rules"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="392,150" size="154,-1">
+      <property key="backgroundColor" value="128,255,128"/>
+      <anchorage graphEdge="//@diagrams.0/@contained.4"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="../ecore/Ecore.ecore#//EPackage"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="../ecore/Ecore.ecore#//EPackage"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="../ecore/Ecore.ecore#//EPackage"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.0/@anchorage.0 //@diagrams.0/@contained.3/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="ruleset.ecore#//RuleSet/metaModel"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="423,340" size="184,-1">
+      <property key="backgroundColor" value="128,255,128"/>
+      <anchorage graphEdge="//@diagrams.0/@contained.6"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="../ecore/Ecore.ecore#//EClass"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="../ecore/Ecore.ecore#//EClass"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="../ecore/Ecore.ecore#//EClass"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.1/@anchorage.0 //@diagrams.0/@contained.5/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="ruleset.ecore#//Rule/context"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="7,6" size="150,-1">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="ruleset.ecore#//LevelType"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="7"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="ruleset.ecore#//LevelType"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="ruleset.ecore#//LevelType/INFO"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="ruleset.ecore#//LevelType/WARNING"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="ruleset.ecore#//LevelType/ERROR"/>
+          </semanticModel>
+        </contained>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="185,7" size="150,-1">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="ruleset.ecore#//RuleType"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="7"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="ruleset.ecore#//RuleType"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="ruleset.ecore#//RuleType/OCL"/>
+          </semanticModel>
+        </contained>
+      </contained>
+    </contained>
+  </diagrams>
+</diagrams:Diagrams>

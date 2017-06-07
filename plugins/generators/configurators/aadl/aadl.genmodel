@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright 2004 by Carnegie Mellon University, all rights reserved"
+    modelDirectory="/edu.cmu.sei.aadl.model/src" editDirectory="/edu.cmu.sei.aadl.model.edit/src"
+    editorDirectory="/edu.cmu.sei.aadl.model.editor/src" modelPluginID="edu.cmu.sei.aadl.model"
+    templateDirectory="/JET/templates" runtimeJar="true" dynamicTemplates="true" modelName="Aadl"
+    editPluginClass="edu.cmu.sei.aadl.model.core.provider.AadlEditPlugin" editorPluginClass="edu.cmu.sei.aadl.model.core.presentation.AadlEditorPlugin">
+  <foreignModel>../../edu.cmu.sei.aadl.ecoremodel/ecoremodel/component.ecore</foreignModel>
+  <foreignModel>../../edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore</foreignModel>
+  <foreignModel>../../edu.cmu.sei.aadl.ecoremodel/ecoremodel/core.ecore</foreignModel>
+  <foreignModel>../../edu.cmu.sei.aadl.ecoremodel/ecoremodel/feature.ecore</foreignModel>
+  <foreignModel>../../edu.cmu.sei.aadl.ecoremodel/ecoremodel/flow.ecore</foreignModel>
+  <foreignModel>../../edu.cmu.sei.aadl.ecoremodel/ecoremodel/instance.ecore</foreignModel>
+  <foreignModel>../../edu.cmu.sei.aadl.ecoremodel/ecoremodel/property.ecore</foreignModel>
+  <genPackages prefix="Connection" basePackage="edu.cmu.sei.aadl.model" ecorePackage="connection.ecore#/">
+    <genEnums ecoreEnum="connection.ecore#//ConnectionTiming">
+      <genEnumLiterals ecoreEnumLiteral="connection.ecore#//ConnectionTiming/Immediate"/>
+      <genEnumLiterals ecoreEnumLiteral="connection.ecore#//ConnectionTiming/Delayed"/>
+    </genEnums>
+    <genClasses ecoreClass="connection.ecore#//Connections">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute connection.ecore#//Connections/contents"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference connection.ecore#//Connections/eventConnection"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference connection.ecore#//Connections/dataConnection"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference connection.ecore#//Connections/eventDataConnection"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference connection.ecore#//Connections/portGroupConnection"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference connection.ecore#//Connections/dataAccessConnection"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference connection.ecore#//Connections/parameterConnection"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference connection.ecore#//Connections/busAccessConnection"/>
+    </genClasses>
+    <genClasses ecoreClass="connection.ecore#//DataConnection">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//DataConnection/refines"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//DataConnection/src"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//DataConnection/dst"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute connection.ecore#//DataConnection/timing"/>
+    </genClasses>
+    <genClasses ecoreClass="connection.ecore#//EventConnection">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//EventConnection/dst"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//EventConnection/src"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//EventConnection/refines"/>
+    </genClasses>
+    <genClasses ecoreClass="connection.ecore#//EventDataConnection">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//EventDataConnection/dst"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//EventDataConnection/src"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//EventDataConnection/refines"/>
+    </genClasses>
+    <genClasses ecoreClass="connection.ecore#//PortGroupConnection">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//PortGroupConnection/src"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//PortGroupConnection/dst"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//PortGroupConnection/refines"/>
+    </genClasses>
+    <genClasses ecoreClass="connection.ecore#//FeatureContext"/>
+    <genClasses ecoreClass="connection.ecore#//DataAccessConnection">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//DataAccessConnection/refines"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//DataAccessConnection/src"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//DataAccessConnection/dst"/>
+    </genClasses>
+    <genClasses ecoreClass="connection.ecore#//ParameterEnd"/>
+    <genClasses ecoreClass="connection.ecore#//ParameterConnection">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//ParameterConnection/refines"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//ParameterConnection/src"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//ParameterConnection/dst"/>
+    </genClasses>
+    <genClasses ecoreClass="connection.ecore#//BusAccessConnection">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//BusAccessConnection/refines"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//BusAccessConnection/src"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference connection.ecore#//BusAccessConnection/dst"/>
+    </genClasses>
+    <genClasses ecoreClass="connection.ecore#//DataAccessEnd"/>
+    <genClasses ecoreClass="connection.ecore#//BusAccessEnd"/>
+  </genPackages>
+  <genPackages prefix="Property" basePackage="edu.cmu.sei.aadl.model" ecorePackage="property.ecore#/">
+    <genEnums ecoreEnum="property.ecore#//PropertyOwnerCategory">
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/DATA"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/SUBPROGRAM"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/THREAD"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/THREAD_GROUP"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/PROCESS"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/MEMORY"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/PROCESSOR"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/BUS"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/DEVICE"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/SYSTEM"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/MODE"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/PORT_GROUP"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/PORT"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/EVENT_PORT"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/DATA_PORT"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/EVENT_DATA_PORT"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/SERVER_SUBPROGRAM"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/CONNECTIONS"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/PORT_GROUP_CONNECTIONS"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/PORT_CONNECTIONS"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/EVENT_PORT_CONNECTIONS"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/DATA_PORT_CONNECTIONS"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/EVENT_DATA_PORT_CONNECTIONS"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/ACCESS_CONNECTIONS"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/FLOW"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/PARAMETER"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//PropertyOwnerCategory/PARAMETER_CONNECTIONS"/>
+    </genEnums>
+    <genEnums ecoreEnum="property.ecore#//ComponentCategory">
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ComponentCategory/DATA"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ComponentCategory/SUBPROGRAM"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ComponentCategory/THREAD"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ComponentCategory/THREAD_GROUP"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ComponentCategory/PROCESS"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ComponentCategory/MEMORY"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ComponentCategory/PROCESSOR"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ComponentCategory/BUS"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ComponentCategory/DEVICE"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ComponentCategory/SYSTEM"/>
+    </genEnums>
+    <genEnums ecoreEnum="property.ecore#//ReferableElementCategory">
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ReferableElementCategory/DATA"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ReferableElementCategory/SUBPROGRAM"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ReferableElementCategory/THREAD"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ReferableElementCategory/THREAD_GROUP"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ReferableElementCategory/PROCESS"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ReferableElementCategory/MEMORY"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ReferableElementCategory/PROCESSOR"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ReferableElementCategory/BUS"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ReferableElementCategory/DEVICE"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ReferableElementCategory/SYSTEM"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ReferableElementCategory/CONNECTIONS"/>
+      <genEnumLiterals ecoreEnumLiteral="property.ecore#//ReferableElementCategory/SERVER_SUBPROGRAM"/>
+    </genEnums>
+    <genClasses ecoreClass="property.ecore#//Properties">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//Properties/propertyAssociation"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//PropertyAssociation">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference property.ecore#//PropertyAssociation/propertyDefinition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//PropertyAssociation/propertyValue"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference property.ecore#//PropertyAssociation/inBinding"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//PropertyAssociation/constant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//PropertyAssociation/access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//PropertyAssociation/append"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference property.ecore#//PropertyAssociation/appliesTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//PropertyAssociation/derived"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//PropertyDefinition">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference property.ecore#//PropertyDefinition/propertyTypeReference"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference property.ecore#//PropertyDefinition/propertyType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//PropertyDefinition/defaultpropertyValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//PropertyDefinition/appliesToClassifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//PropertyDefinition/access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//PropertyDefinition/inherit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//PropertyDefinition/list"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//PropertyDefinition/appliesto"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//PropertyDefinition/hasEmptyList"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//PropertySet">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//PropertySet/contents"/>
+      <genFeatures property="None" createChild="true" ecoreFeature="ecore:EReference property.ecore#//PropertySet/propertyDefinition"/>
+      <genFeatures property="None" createChild="true" ecoreFeature="ecore:EReference property.ecore#//PropertySet/propertyConstant"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//PropertySet/propertyType"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//Aadlboolean"/>
+    <genClasses ecoreClass="property.ecore#//Aadlstring"/>
+    <genClasses ecoreClass="property.ecore#//Aadlinteger"/>
+    <genClasses ecoreClass="property.ecore#//NumberType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference property.ecore#//NumberType/propertyTypeReference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//NumberType/propertyType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//NumberType/lower"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//NumberType/upper"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//PropertyType"/>
+    <genClasses ecoreClass="property.ecore#//RangeType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//RangeType/propertyType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference property.ecore#//RangeType/propertyTypeReference"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//ClassifierType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//ClassifierType/category"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//ReferenceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//ReferenceType/category"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//EnumType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//EnumType/enumLiteral"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//UnitsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//UnitsType/unitLiteral"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//EnumLiteral"/>
+    <genClasses ecoreClass="property.ecore#//UnitLiteral">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference property.ecore#//UnitLiteral/baseunit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//UnitLiteral/factor"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//PropertyValue"/>
+    <genClasses ecoreClass="property.ecore#//BooleanValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//BooleanValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//RangeValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//RangeValue/minimum"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//RangeValue/maximum"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//RangeValue/delta"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//BooleanAND">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//BooleanAND/booleanValue"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//BooleanOR">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//BooleanOR/booleanValue"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//BooleanNOT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//BooleanNOT/booleanValue"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//TRUE"/>
+    <genClasses ecoreClass="property.ecore#//FALSE"/>
+    <genClasses ecoreClass="property.ecore#//StringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//StringValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//NumberValue">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference property.ecore#//NumberValue/unitLiteral"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//NumberValue/valueString"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//IntegerValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//IntegerValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//IntegerValue/base"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//RealValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//RealValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//IntegerRangeValue"/>
+    <genClasses ecoreClass="property.ecore#//RealRangeValue"/>
+    <genClasses ecoreClass="property.ecore#//EnumValue">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference property.ecore#//EnumValue/enumLiteral"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//ClassifierValue">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference property.ecore#//ClassifierValue/componentClassifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//ClassifierValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//PropertyReference">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference property.ecore#//PropertyReference/referencedProperty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//PropertyReference/referenceSign"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//Aadlreal"/>
+    <genClasses ecoreClass="property.ecore#//PropertyConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute property.ecore#//PropertyConstant/list"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference property.ecore#//PropertyConstant/propertyTypeReference"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference property.ecore#//PropertyConstant/propertyType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference property.ecore#//PropertyConstant/constantValue"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//ReferencedProperty"/>
+    <genClasses ecoreClass="property.ecore#//ReferenceValue">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference property.ecore#//ReferenceValue/referenceElement"/>
+    </genClasses>
+    <genClasses ecoreClass="property.ecore#//ReferenceElement"/>
+    <genClasses ecoreClass="property.ecore#//TrueFalseValue"/>
+    <genClasses ecoreClass="property.ecore#//PropertyConstantType"/>
+    <genClasses ecoreClass="property.ecore#//BooleanOrPropertyReference"/>
+    <genClasses ecoreClass="property.ecore#//PropertyValueHolder"/>
+    <genClasses ecoreClass="property.ecore#//NumberOrPropertyReference"/>
+  </genPackages>
+  <genPackages prefix="Feature" basePackage="edu.cmu.sei.aadl.model" ecorePackage="feature.ecore#/">
+    <genEnums ecoreEnum="feature.ecore#//PortDirection">
+      <genEnumLiterals ecoreEnumLiteral="feature.ecore#//PortDirection/in"/>
+      <genEnumLiterals ecoreEnumLiteral="feature.ecore#//PortDirection/out"/>
+      <genEnumLiterals ecoreEnumLiteral="feature.ecore#//PortDirection/inout"/>
+    </genEnums>
+    <genEnums ecoreEnum="feature.ecore#//AccessDirection">
+      <genEnumLiterals ecoreEnumLiteral="feature.ecore#//AccessDirection/provided"/>
+      <genEnumLiterals ecoreEnumLiteral="feature.ecore#//AccessDirection/required"/>
+    </genEnums>
+    <genClasses ecoreClass="feature.ecore#//Subprogram">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//Subprogram/refines"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//Subprogram/subprogramClassifier"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//ServerSubprogram">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//ServerSubprogram/refines"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//ServerSubprogram/subprogramClassifier"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//ServerSubprogram/subprogram"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//DataAccess">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//DataAccess/refines"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//DataAccess/dataClassifier"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//BusAccess">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//BusAccess/refines"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//BusAccess/busClassifier"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute feature.ecore#//Port/direction"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//DataPort">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//DataPort/refines"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//DataPort/dataClassifier"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//EventPort">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//EventPort/refines"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//EventDataPort">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//EventDataPort/refines"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//EventDataPort/dataClassifier"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//Parameter">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//Parameter/refines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute feature.ecore#//Parameter/direction"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//Parameter/dataClassifier"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//PortGroupType">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//PortGroupType/extend"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//PortGroupType/inverseOf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//PortGroupType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//PortGroup">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//PortGroup/portGroupType"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference feature.ecore#//PortGroup/refines"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//DataFeatures">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute feature.ecore#//DataFeatures/features"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//DataFeatures/subprogram"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//DataFeatures/dataAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//SubprogramFeatures">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute feature.ecore#//SubprogramFeatures/features"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//SubprogramFeatures/portGroup"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//SubprogramFeatures/eventPort"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//SubprogramFeatures/eventDataPort"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//SubprogramFeatures/dataAccess"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//SubprogramFeatures/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//SoftwareFeatures">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute feature.ecore#//SoftwareFeatures/features"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//SoftwareFeatures/serverSubprogram"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//SoftwareFeatures/portGroup"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//SoftwareFeatures/dataPort"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//SoftwareFeatures/eventPort"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//SoftwareFeatures/eventDataPort"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//SoftwareFeatures/dataAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//ThreadFeatures"/>
+    <genClasses ecoreClass="feature.ecore#//ThreadGroupFeatures"/>
+    <genClasses ecoreClass="feature.ecore#//ProcessFeatures"/>
+    <genClasses ecoreClass="feature.ecore#//ProcessorFeatures">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute feature.ecore#//ProcessorFeatures/features"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//ProcessorFeatures/serverSubprogram"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//ProcessorFeatures/portGroup"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//ProcessorFeatures/dataPort"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//ProcessorFeatures/eventPort"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//ProcessorFeatures/eventDataPort"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//ProcessorFeatures/busAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//MemoryFeatures">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//MemoryFeatures/busAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//BusFeatures">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//BusFeatures/busAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//DeviceFeatures">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute feature.ecore#//DeviceFeatures/features"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//DeviceFeatures/serverSubprogram"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//DeviceFeatures/portGroup"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//DeviceFeatures/dataPort"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//DeviceFeatures/eventPort"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//DeviceFeatures/eventDataPort"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//DeviceFeatures/busAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//SystemFeatures">
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//SystemFeatures/busAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//ComponentAccess">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute feature.ecore#//ComponentAccess/direction"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//PortGroupFeatures">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute feature.ecore#//PortGroupFeatures/features"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//PortGroupFeatures/portGroup"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//PortGroupFeatures/eventDataPort"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//PortGroupFeatures/dataPort"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference feature.ecore#//PortGroupFeatures/eventPort"/>
+    </genClasses>
+    <genClasses ecoreClass="feature.ecore#//AbstractPort"/>
+  </genPackages>
+  <genPackages prefix="Flow" basePackage="edu.cmu.sei.aadl.model" ecorePackage="flow.ecore#/">
+    <genClasses ecoreClass="flow.ecore#//FlowSpec">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference flow.ecore#//FlowSpec/refines"/>
+    </genClasses>
+    <genClasses ecoreClass="flow.ecore#//Flows">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute flow.ecore#//Flows/contents"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference flow.ecore#//Flows/endToEndFlow"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference flow.ecore#//Flows/flowSourceImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference flow.ecore#//Flows/flowSinkImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference flow.ecore#//Flows/flowPathImpl"/>
+    </genClasses>
+    <genClasses ecoreClass="flow.ecore#//FlowImpl"/>
+    <genClasses ecoreClass="flow.ecore#//FlowSpecs">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute flow.ecore#//FlowSpecs/contents"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference flow.ecore#//FlowSpecs/flowSinkSpec"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference flow.ecore#//FlowSpecs/flowSourceSpec"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference flow.ecore#//FlowSpecs/flowPathSpec"/>
+    </genClasses>
+    <genClasses ecoreClass="flow.ecore#//EndToEndFlow"/>
+    <genClasses ecoreClass="flow.ecore#//FlowPoint"/>
+    <genClasses ecoreClass="flow.ecore#//FlowSourceSpec">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference flow.ecore#//FlowSourceSpec/dst"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference flow.ecore#//FlowSourceSpec/dstContext"/>
+    </genClasses>
+    <genClasses ecoreClass="flow.ecore#//FlowSinkSpec">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference flow.ecore#//FlowSinkSpec/src"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference flow.ecore#//FlowSinkSpec/srcContext"/>
+    </genClasses>
+    <genClasses ecoreClass="flow.ecore#//FlowPathSpec">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference flow.ecore#//FlowPathSpec/src"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference flow.ecore#//FlowPathSpec/dst"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference flow.ecore#//FlowPathSpec/srcContext"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference flow.ecore#//FlowPathSpec/dstContext"/>
+    </genClasses>
+    <genClasses ecoreClass="flow.ecore#//FlowSourceImpl">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference flow.ecore#//FlowSourceImpl/implement"/>
+    </genClasses>
+    <genClasses ecoreClass="flow.ecore#//FlowSinkImpl">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference flow.ecore#//FlowSinkImpl/implement"/>
+    </genClasses>
+    <genClasses ecoreClass="flow.ecore#//FlowPathImpl">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference flow.ecore#//FlowPathImpl/implement"/>
+    </genClasses>
+    <genClasses ecoreClass="flow.ecore#//FlowElement">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference flow.ecore#//FlowElement/flowSpec"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference flow.ecore#//FlowElement/connection"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference flow.ecore#//FlowElement/flowContext"/>
+    </genClasses>
+    <genClasses ecoreClass="flow.ecore#//FlowSequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference flow.ecore#//FlowSequence/flowElement"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference flow.ecore#//FlowSequence/refines"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Component" basePackage="edu.cmu.sei.aadl.model" ecorePackage="component.ecore#/">
+    <genClasses ecoreClass="component.ecore#//SystemType">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//SystemType/implementations"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//SystemType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//SystemType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//DataType">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//DataType/implementations"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//DataType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//DataType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ThreadType">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ThreadType/implementations"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ThreadType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ThreadType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ThreadGroupType">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ThreadGroupType/implementations"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ThreadGroupType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ThreadGroupType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ProcessType">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ProcessType/implementations"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ProcessType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ProcessType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//SubprogramType">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//SubprogramType/implementations"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//SubprogramType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//SubprogramType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ProcessorType">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ProcessorType/implementations"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ProcessorType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ProcessorType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//MemoryType">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//MemoryType/implementations"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//MemoryType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//MemoryType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//BusType">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//BusType/implementations"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//BusType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//BusType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//DeviceType">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//DeviceType/implementations"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//DeviceType/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//DeviceType/features"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//SystemImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//SystemImpl/subcomponents"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//SystemImpl/compType"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//SystemImpl/extend"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//DataImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//DataImpl/subcomponents"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//DataImpl/compType"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//DataImpl/extend"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ThreadImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ThreadImpl/subcomponents"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ThreadImpl/compType"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ThreadImpl/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ThreadImpl/callSequences"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ThreadGroupImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ThreadGroupImpl/subcomponents"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ThreadGroupImpl/compType"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ThreadGroupImpl/extend"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ProcessImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ProcessImpl/subcomponents"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ProcessImpl/compType"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ProcessImpl/extend"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//SubprogramImpl">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//SubprogramImpl/compType"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//SubprogramImpl/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//SubprogramImpl/subcomponents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//SubprogramImpl/callSequences"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ProcessorImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ProcessorImpl/subcomponents"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ProcessorImpl/compType"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ProcessorImpl/extend"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//MemoryImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//MemoryImpl/subcomponents"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//MemoryImpl/compType"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//MemoryImpl/extend"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//BusImpl">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//BusImpl/compType"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//BusImpl/extend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//BusImpl/subcomponents"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//DeviceImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//DeviceImpl/subcomponents"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//DeviceImpl/compType"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//DeviceImpl/extend"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//SystemSubcomponent">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//SystemSubcomponent/refines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference component.ecore#//SystemSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//DataSubcomponent">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//DataSubcomponent/refines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference component.ecore#//DataSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ThreadSubcomponent">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ThreadSubcomponent/refines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference component.ecore#//ThreadSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ThreadGroupSubcomponent">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ThreadGroupSubcomponent/refines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference component.ecore#//ThreadGroupSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ProcessSubcomponent">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ProcessSubcomponent/refines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference component.ecore#//ProcessSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//SubprogramSubcomponent">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//SubprogramSubcomponent/dataSubprogram"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference component.ecore#//SubprogramSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ProcessorSubcomponent">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//ProcessorSubcomponent/refines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference component.ecore#//ProcessorSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//MemorySubcomponent">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//MemorySubcomponent/refines"/>
+      <genFeatures createChild="false" propertyCategory="" ecoreFeature="ecore:EReference component.ecore#//MemorySubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//BusSubcomponent">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//BusSubcomponent/refines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference component.ecore#//BusSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//DeviceSubcomponent">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference component.ecore#//DeviceSubcomponent/refines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference component.ecore#//DeviceSubcomponent/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//SystemSubcomponents">
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference component.ecore#//SystemSubcomponents/systemSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference component.ecore#//SystemSubcomponents/dataSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference component.ecore#//SystemSubcomponents/processSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference component.ecore#//SystemSubcomponents/processorSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference component.ecore#//SystemSubcomponents/memorySubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference component.ecore#//SystemSubcomponents/busSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference component.ecore#//SystemSubcomponents/deviceSubcomponent"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//SystemSubcomponents/subcomponents"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//DataSubcomponents">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//DataSubcomponents/dataSubcomponent"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ThreadSubcomponents">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ThreadSubcomponents/dataSubcomponent"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ThreadGroupSubcomponents">
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ThreadGroupSubcomponents/dataSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ThreadGroupSubcomponents/threadSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ThreadGroupSubcomponents/threadGroupSubcomponent"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//ThreadGroupSubcomponents/subcomponents"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ProcessSubcomponents">
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ProcessSubcomponents/dataSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ProcessSubcomponents/threadSubcomponent"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ProcessSubcomponents/threadGroupSubcomponent"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//ProcessSubcomponents/subcomponents"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ProcessorSubcomponents">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ProcessorSubcomponents/memorySubcomponent"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//MemorySubcomponents">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//MemorySubcomponents/memorySubcomponent"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//DeviceSubcomponents">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//DeviceSubcomponents/threadSubcomponent"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//DataClassifier"/>
+    <genClasses ecoreClass="component.ecore#//BusClassifier"/>
+    <genClasses ecoreClass="component.ecore#//SubprogramSubcomponents"/>
+    <genClasses ecoreClass="component.ecore#//CallSequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//CallSequence/call"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//SubprogramClassifier"/>
+    <genClasses ecoreClass="component.ecore#//CallSequences">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//CallSequences/callSequence"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//SystemClassifier"/>
+    <genClasses ecoreClass="component.ecore#//ThreadClassifier"/>
+    <genClasses ecoreClass="component.ecore#//ThreadGroupClassifier"/>
+    <genClasses ecoreClass="component.ecore#//ProcessClassifier"/>
+    <genClasses ecoreClass="component.ecore#//ProcessorClassifier"/>
+    <genClasses ecoreClass="component.ecore#//MemoryClassifier"/>
+    <genClasses ecoreClass="component.ecore#//DeviceClassifier"/>
+    <genClasses ecoreClass="component.ecore#//BusSubcomponents"/>
+  </genPackages>
+  <genPackages prefix="Core" basePackage="edu.cmu.sei.aadl.model" ecorePackage="core.ecore#/">
+    <genEnums ecoreEnum="core.ecore#//ModeState">
+      <genEnumLiterals ecoreEnumLiteral="core.ecore#//ModeState/NORMAL"/>
+      <genEnumLiterals ecoreEnumLiteral="core.ecore#//ModeState/INITIAL"/>
+    </genEnums>
+    <genClasses ecoreClass="core.ecore#//AadlSpec">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//AadlSpec/contents"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/aadlPackage"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/systemType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/dataType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/threadType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/threadGroupType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/processType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/subprogramType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/processorType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/memoryType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/busType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/deviceType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/systemImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/dataImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/threadImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/threadGroupImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/processImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/subprogramImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/processorImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/memoryImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/busImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/deviceImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/portGroupType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/propertySet"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlSpec/annexLibrary"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//AadlPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackage/aadlPublic"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackage/aadlPrivate"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//AadlPrivate"/>
+    <genClasses ecoreClass="core.ecore#//AadlPublic"/>
+    <genClasses ecoreClass="core.ecore#//AadlPackageSection">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//AadlPackageSection/contents"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/systemType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/dataType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/threadType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/threadGroupType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/processType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/subprogramType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/processorType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/memoryType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/busType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/deviceType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/systemImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/dataImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/threadImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/threadGroupImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/processImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/subprogramImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/processorImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/memoryImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/busImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/deviceImpl"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/portGroupType"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//AadlPackageSection/annexLibrary"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//ComponentClassifier"/>
+    <genClasses ecoreClass="core.ecore#//ComponentType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//ComponentType/flowSpecs"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//Feature"/>
+    <genClasses ecoreClass="core.ecore#//Features"/>
+    <genClasses ecoreClass="core.ecore#//ComponentImpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//ComponentImpl/connections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//ComponentImpl/modes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//ComponentImpl/refinesType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//ComponentImpl/flows"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//RefinesType">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//RefinesType/contents"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//RefinesType/busAccess"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//RefinesType/serverSubprogram"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//RefinesType/eventDataPort"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//RefinesType/dataAccess"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//RefinesType/portGroup"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//RefinesType/parameter"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//RefinesType/eventPort"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//RefinesType/dataPort"/>
+      <genFeatures property="None" notify="false" createChild="true" ecoreFeature="ecore:EReference core.ecore#//RefinesType/subprogram"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//Subcomponents"/>
+    <genClasses ecoreClass="core.ecore#//Subcomponent"/>
+    <genClasses ecoreClass="core.ecore#//Connection">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//Connection/srcContext"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//Connection/dstContext"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//Connection/inModeTransitions"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//Modes">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//Modes/mode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//Modes/modeTransition"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//Mode">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//Mode/members"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//Mode/outgoingModeTransition"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//Mode/incomingModeTransition"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//Mode/refines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//Mode/state"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//ModeTransition">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ModeTransition/srcMode"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ModeTransition/dstMode"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ModeTransition/triggerEventPort"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ModeTransition/members"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ModeTransition/triggerEventPortContext"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//AnnexLibrary"/>
+    <genClasses ecoreClass="core.ecore#//DefaultAnnexLibrary">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//DefaultAnnexLibrary/value"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//AnnexSubclause"/>
+    <genClasses ecoreClass="core.ecore#//DefaultAnnexSubclause">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//DefaultAnnexSubclause/value"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//AObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//AObject/comment"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//PropertyHolder">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//PropertyHolder/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//ModeMember">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ModeMember/inModes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//ModeMember/noMode"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//Classifier">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//Classifier/annexSubclause"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Instance" basePackage="edu.cmu.sei.aadl.model" ecorePackage="instance.ecore#/">
+    <genEnums ecoreEnum="instance.ecore#//FeatureCategory">
+      <genEnumLiterals ecoreEnumLiteral="instance.ecore#//FeatureCategory/data"/>
+      <genEnumLiterals ecoreEnumLiteral="instance.ecore#//FeatureCategory/event"/>
+      <genEnumLiterals ecoreEnumLiteral="instance.ecore#//FeatureCategory/parameter"/>
+      <genEnumLiterals ecoreEnumLiteral="instance.ecore#//FeatureCategory/subprogram"/>
+      <genEnumLiterals ecoreEnumLiteral="instance.ecore#//FeatureCategory/eventdata"/>
+      <genEnumLiterals ecoreEnumLiteral="instance.ecore#//FeatureCategory/busaccess"/>
+      <genEnumLiterals ecoreEnumLiteral="instance.ecore#//FeatureCategory/dataaccess"/>
+      <genEnumLiterals ecoreEnumLiteral="instance.ecore#//FeatureCategory/portgroup"/>
+      <genEnumLiterals ecoreEnumLiteral="instance.ecore#//FeatureCategory/serversubprogram"/>
+    </genEnums>
+    <genClasses ecoreClass="instance.ecore#//FeatureInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//FeatureInstance/feature"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//FeatureInstance/srcPortConnection"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//FeatureInstance/dstPortConnection"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//FeatureInstance/srcModeTransitionConnection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference instance.ecore#//FeatureInstance/featureInstance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute instance.ecore#//FeatureInstance/category"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//FeatureInstance/dstAccessConnection"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//FeatureInstance/srcFlowSpec"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//FeatureInstance/dstFlowSpec"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//ConnectionInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//ConnectionInstance/connection"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//ConnectionInstance/inSystemOperationMode"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//ConnectionInstance/connectionContext"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//ConnectionInstance/inModeTransitions"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//ComponentInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference instance.ecore#//ComponentInstance/featureInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference instance.ecore#//ComponentInstance/componentInstance"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//ComponentInstance/subcomponent"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//ComponentInstance/srcAccessConnection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference instance.ecore#//ComponentInstance/modeInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference instance.ecore#//ComponentInstance/modeTransitionInstance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute instance.ecore#//ComponentInstance/category"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//ComponentInstance/inModes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference instance.ecore#//ComponentInstance/flowSpecInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference instance.ecore#//ComponentInstance/endToEndFlowInstance"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//SystemInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//SystemInstance/systemImpl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference instance.ecore#//SystemInstance/connectionInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference instance.ecore#//SystemInstance/systemOperationMode"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//InstanceObject"/>
+    <genClasses ecoreClass="instance.ecore#//PortConnectionInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//PortConnectionInstance/src"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//PortConnectionInstance/dst"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute instance.ecore#//PortConnectionInstance/timing"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//AccessConnectionInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//AccessConnectionInstance/src"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//AccessConnectionInstance/dst"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//ModeTransitionConnectionInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//ModeTransitionConnectionInstance/src"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//ModeTransitionConnectionInstance/dst"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//ModeInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//ModeInstance/srcModeTransition"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//ModeInstance/dstModeTransition"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//ModeInstance/mode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute instance.ecore#//ModeInstance/state"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//ModeTransitionInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//ModeTransitionInstance/dstModeTransitionConnection"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//ModeTransitionInstance/src"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//ModeTransitionInstance/dst"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//ModeTransitionInstance/modeTransition"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//InstanceReferenceValue">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//InstanceReferenceValue/referencedInstanceObject"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//SystemInstanceConfiguration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference instance.ecore#//SystemInstanceConfiguration/containedPropertyAssociation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference instance.ecore#//SystemInstanceConfiguration/systemOperationMode"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//SystemInstanceConfiguration/systemInstance"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//SystemOperationMode">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//SystemOperationMode/currentMode"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//FlowSpecInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//FlowSpecInstance/flowSpec"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//FlowSpecInstance/src"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//FlowSpecInstance/dst"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//EndToEndFlowInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//EndToEndFlowInstance/endToEndFlow"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//EndToEndFlowInstance/flowElementInstance"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//EndToEndFlowInstance/inModes"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference instance.ecore#//EndToEndFlowInstance/inSystemOperationMode"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//FlowElementInstance"/>
+  </genPackages>
+</genmodel:GenModel>

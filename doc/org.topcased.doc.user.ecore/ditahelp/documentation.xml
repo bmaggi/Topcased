@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic6058" xml:lang="en-us">
+	<title>Documentation</title>
+	<titlealts>
+		<searchtitle>ECORE TOOLS - Documentation</searchtitle>
+	</titlealts>
+
+	<body id="container">
+		<p>
+			This tutorial present a basic overview of the capabilities of the Ecore graphical editor through a simple example. We are going to explain in details the different steps necessary to define a metamodel.
+			The example consists of defining the metamodel of a FamilyTree : it could be used then to modelize a Family.
+		</p>
+
+		<p>
+			<b>Prerequisites</b>: we assume that you have minimum knowledge of the <xref format="html" href="http://www.eclipse.org/emf" scope="external">EMF project</xref> and of the terminology that is used with the Ecore metamodel.
+		</p>
+
+		<p outputclass="h3">1. Creation of the Diagram file</p>
+
+		<p>
+			First, you have to create a new Ecore diagram. Use the creation wizard ("
+			<menucascade>
+				<uicontrol>Right Click</uicontrol>
+				<uicontrol>New</uicontrol>
+				<uicontrol>Ecore Diagram</uicontrol>
+			</menucascade>
+			") and name your file "<b>familytree</b>".
+		</p>
+
+		<image href="images/newFamilyTreeDiagram.jpg">
+			<alt>newFamilyTreeDiagram</alt>
+		</image>
+
+		<p>
+			Then an empty diagram is created : the model is composed of a single EPackage model object called "<b>familytree</b>" too. By default the EPackage properties are set, but we advise you to fill them with the following values :
+		</p>
+
+		<image href="images/rootEPackageProperties.jpg">
+			<alt>rootEPackageProperties</alt>
+		</image>
+
+		<ul>
+			<li>Name : <b>familytree</b></li>
+			<li>NsPrefix : <b>familytree</b> that is the prefix that will be used in the FamilyTree models serialized in XML.</li>
+			<li>NsURI : <b>http://www.topcased.org/familytree/1.0</b> that represents a unique identifier for the namespace to use for the FamilyTree models.</li>
+		</ul>
+
+		<p outputclass="h3">2. Create the EClass model objects and their properties</p>
+
+		<p>
+			To create an EClass, select the corresponding tool in the Palette to activate it, and click on the editing window at the specified location. You will have to do this to create the five EClass that compose our metamodel :
+		</p>
+
+		<p outputclass="h4">2.1. FamilyTree</p>
+
+		<ol>
+			<li>This represent the root model object of a FamilyTree model. We will define only one feature to identify the family name of the familytree.</li>
+			<li>Create an EAttribute inside the FamilyTree EClass and set the following properties :
+				<ul>
+					<li>name : <b>name</b></li>
+					<li>EType : <b>EString</b></li>
+				</ul>
+			</li>
+		</ol>
+
+		<p outputclass="h4">2.2. Person</p>
+
+		<p>
+			This is an <i><b>abstract</b></i> EClass. This is mainly used to aggregate the Man or Woman that composed our FamilyTree, and group their common properties.
+		</p>
+
+		<image href="images/personIsAbstract.jpg">
+			<alt>personIsAbstract</alt>
+		</image>
+
+		<ol>
+			<li>Then, we will define a few features that will be used later during the edition of a such familytree model.</li>
+			<li>Create an EAttribute and set the following properties :
+				<ul>
+					<li>name : <b>firstName</b></li>
+					<li>EType : <b>EString</b></li>
+				</ul>
+			</li>
+
+			<li>Create an EAttribute and set the following properties :
+				<ul>
+					<li>name : <b>lastName</b></li>
+					<li>EType : <b>EString</b></li>
+				</ul>
+			</li>
+
+			<li>Create an EAttribute and set the following properties :
+				<ul>
+					<li>name : <b>birthYear</b></li>
+					<li>EType : <b>EInt</b></li>
+				</ul>
+			</li>
+
+			<li>Create an EAttribute and set the following properties :
+				<ul>
+					<li>name : <b>deathYear</b></li>
+					<li>EType : <b>EInt</b></li>
+				</ul>
+			</li>
+		</ol>
+
+		<image href="images/personAttributes.jpg">
+			<alt>personAttributes</alt>
+		</image>
+
+		<p outputclass="h4">2.3. Wedding</p>
+
+		<p>
+			An object that will represent a matrimony between a man and a woman.
+		</p>
+
+		<p outputclass="h4">2.4. Man</p>
+
+		<p>
+			An object that will represent an man of the familytree.
+		</p>
+
+		<p outputclass="h4">2.5. Woman</p>
+
+		<p>
+			An object that will represent an woman of the familytree.
+		</p>
+
+		<p outputclass="h3">3. Creation of the Connections</p>
+
+		<p outputclass="h4">3.1. The containment EReferences</p>
+
+		<p>
+			In our model, we have two containment EReferences to create. Use the "EReference" connection tool in the Palette to create a simple EReference.
+		</p>
+
+		<image href="images/containmentReferences.jpg">
+			<alt>containmentReferences</alt>
+		</image>
+
+		<ol>
+			<li>Create an EReference between the FamilyTree and the Person and set the following properties :
+				<ul>
+					<li>name : <b>persons</b></li>
+					<li>lowerBound : <b>1</b></li>
+					<li>upperBound : <b>-1</b>. The '-1' value is used for the upper bound to indicate an 'unbounded' value.</li>
+					<li>containment : <b>true</b>
+						<image href="images/containmentProperty.jpg">
+							<alt>containmentProperty</alt>
+						</image>
+					</li>
+				</ul>
+			</li>
+
+			<li>Create an EReference between the FamilyTree and the Wedding and set the following properties :
+				<ul>
+					<li>name : <b>weddings</b></li>
+					<li>upperBound : <b>-1</b></li>
+					<li>containment : <b>true</b>
+						<image href="images/boundsEReference.jpg">
+							<alt>boundsEReference</alt>
+						</image>
+					</li>
+				</ul>
+			</li>
+		</ol>
+
+		<p outputclass="h4">3.2. The Inheritace link</p>
+
+		<p>
+			Let's define an Inheritance link between the Man and Woman model objects with the super EClass Person. Use the "Inheritance" connection tool in the Palette to create those Inheritance links. The '<b>ESuperType</b>' property
+			of the source model object is automatically updated.
+		</p>
+
+		<image href="images/inheritanceLinks.jpg">
+			<alt>inheritanceLinks</alt>
+		</image>
+
+		<p outputclass="h4">3.3. The other references</p>
+
+		<p>
+			Let's now define the four remaining EReferences.
+		</p>
+
+		<image href="images/otherEReferences.jpg">
+			<alt>otherEReferences</alt>
+		</image>
+
+		<p>A wedding is celebrated between a woman and a man.
+			<ol>
+				<li>Create an EReference between the Wedding and the Woman and set the following properties :
+					<ul>
+						<li>name : <b>wife</b></li>
+						<li>lowerBound : <b>1</b></li>
+					</ul>
+				</li>
+				<li>Create an EReference between the Wedding and the Man and set the following properties :
+					<ul>
+						<li>name : <b>husband</b></li>
+						<li>lowerBound : <b>1</b></li>
+					</ul>
+				</li>
+			</ol>
+		</p>
+
+		<p>In a familytree, we have to define relationships between the children and their parents. In our metamodel, we choose to modelize that through a connection between a Person and a Wedding. So we have to create a two-way EReference :
+			<ol>
+				<li>Create an EReference between the Wedding and the Person and set the following properties :
+					<ul>
+						<li>name : <b>children</b></li>
+						<li>upperBound : <b>-1</b></li>
+					</ul>
+				</li>
+				<li>Create an EReference between the Person and the Wedding and set the following properties :
+					<ul>
+						<li>name : <b>parents</b></li>
+						<li>EOpposite : reference the '<b>children</b>' EReference previously created.
+							<image href="images/eOppositeReference.jpg">
+								<alt>eOppositeReference</alt>
+							</image>
+						</li>
+					</ul>
+				</li>
+			</ol>
+		</p>
+
+		<p>Here is an overview of the metamodel we have modelized :
+			<image href="images/familyTreeOverview.jpg">
+				<alt>familyTreeOverview</alt>
+			</image>
+		</p>
+
+		<p outputclass="h3">Summary</p>
+
+		<p>
+			As you have seen, using the Ecore graphical editor is quite intuitive (on condition that you are enough familiar with the Ecore metamodel) and much more effective than the default tree structure editor provided by EMF. This tutorial
+			is not complete yet, as we have not see in detail the creation of EAnnotations, EDataTypes, EEnum and EOperations... but you will probably guess how it works, and the tutorial is probably going to evolve with the Ecore graphical editor ...
+		</p>
+
+		<p>________________________________________</p>
+
+		<p outputclass="h4">By Jacques LESCOT, Anyware Technologies.</p>
+		<p outputclass="h4">August, 29 2006</p>
+	</body>
+</topic>

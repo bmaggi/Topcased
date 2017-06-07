@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.topcased.scripting.papyrus.feature"
+      label="%featureName"
+      version="4.3.1.qualifier"
+      provider-name="%providerName">
+
+   <description url="%license">
+      %description
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.gmf.runtime.notation"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
+      <import plugin="org.topcased.scripting" version="4.3.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.ui.perspectiveconfiguration"/>
+      <import feature="org.topcased.scripting.core.feature" version="4.3.1" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.topcased.scripting.notation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.topcased.scripting.papyrus"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

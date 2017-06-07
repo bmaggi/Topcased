@@ -1,0 +1,120 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.modeler.diagramconfigurator.* org.topcased.modeler.editorconfigurator.*"
+	 class="PluginXML"
+	 version="$Id: plugin.xmljet,v 1.8 2008/08/21 13:06:16 tlandre Exp $" %>
+<%DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.topcased.modeler.templates">
+      <template
+            di="templates/<%=diagramConfiguration.getPackage()%>/%name%.<%=diagramConfiguration.getExtensionDiagram()%>"
+            model="templates/<%=diagramConfiguration.getPackage()%>/%name%.<%=diagramConfiguration.getExtension()%>"
+            name="<%=diagramConfiguration.getName()%>"
+            id="<%=diagramConfiguration.getProjectName()%>.templates.<%=diagramConfiguration.getPackage()%>"
+            editorId="<%=diagramConfiguration.getEditorConfigurator().getEditorId()%>"/>
+   </extension>
+   
+   <extension point="org.topcased.modeler.diagrams">
+      <diagram
+            configuration="<%=diagramConfiguration.getBasePackage()%>.<%=diagramConfiguration.getPrefix()%>Configuration"
+            id="<%=diagramConfiguration.getBasePackage()%>"
+            name="<%=diagramConfiguration.getName()%>">
+<%		for (Iterator j = diagramConfiguration.getObjects().iterator(); j.hasNext();) { 
+    		ObjectConfiguration objConf = (ObjectConfiguration) j.next();
+    		if (objConf instanceof ModelObjectConfiguration) {
+    			for (Iterator k = ((ModelObjectConfiguration) objConf).getDiagrams().iterator(); k.hasNext(); ) {
+    				DiagramReference diagRef = (DiagramReference) k.next();
+    				if (diagramConfiguration.equals(diagRef.getDiagram())) {
+    					String objInterfaceName = ((ModelObjectConfiguration) objConf).getGenClass().getQualifiedInterfaceName();%>
+         <enableFor class="<%=objInterfaceName%>"/>
+<%					}
+				}
+			}
+		}%>
+      </diagram>
+	</extension>
+	
+<%	List partActionList = diagramConfiguration.getPartActions();
+	if (!partActionList.isEmpty()) {%>	
+	<extension point="org.eclipse.ui.popupMenus">
+<%		for (Iterator itPartAction = partActionList.iterator(); itPartAction.hasNext();) {
+			PartAction partAction = (PartAction) itPartAction.next();
+			PartConfiguration partConfiguration = (PartConfiguration) partAction.eContainer();%> 
+		<viewerContribution id="<%=diagramConfiguration.getBasePackage()%>.viewerContribution<%=partAction.getPrefix()%>Action" targetID="org.topcased.modeler">
+    		<action class="<%=diagramConfiguration.getBasePackage()%>.actions.<%=partAction.getPrefix()%>Action" 
+    		enablesFor="1" <%if(partAction.getIcon()!=null && partAction.getIcon()!="") {%>icon="icons/<%=partAction.getIcon()%>"<%}%> id="<%=diagramConfiguration.getBasePackage()%>.<%=partAction.getPrefix()%>Action" 
+    		label="<%=partAction.getLabel()%>" menubarPath="<%=partAction.getMenuBarGroup()%>">
+      		</action>
+    		<visibility>
+        		<objectClass name="<%=diagramConfiguration.getBasePackage()%>.edit.<%=partConfiguration.getPrefix()%>EditPart"/>
+    		</visibility>
+		</viewerContribution>
+<%		}%>
+	</extension>
+<%	}%>
+	
+	<extension
+       point="org.topcased.modeler.topcasedPreferenceInitializer">
+    <preferenceInitializer
+          class="<%=diagramConfiguration.getBasePackage()%>.preferences.<%=diagramConfiguration.getPrefix()%>DiagramTopcasedPreferenceInitializer"
+          editorId="<%=diagramConfiguration.getEditorConfigurator().getEditorId()%>"
+          id="<%=diagramConfiguration.getBasePackage()%>.preferences.<%=diagramConfiguration.getPrefix()%>TopcasedPreferenceInitializer">
+    </preferenceInitializer>
+ </extension>
+
+	<extension point="org.eclipse.ui.preferencePages">
+		<page
+			id="<%=diagramConfiguration.getBasePackage()%>.preferences.<%=diagramConfiguration.getPrefix()%>DiagramPreferencePage"
+			category="<%=diagramConfiguration.getEditorConfigurator().getProjectName()%>.preferences.<%= diagramConfiguration.getEditorConfigurator().getPrefix() %>PreferencePage"
+			class="<%=diagramConfiguration.getBasePackage()%>.preferences.<%=diagramConfiguration.getPrefix()%>DiagramPreferencePage"
+			name="<%=diagramConfiguration.getPrefix()%>Diagram"/>
+    <%for (Iterator iter = diagramConfiguration.getParts().iterator(); iter.hasNext(); )
+		{
+			PartConfiguration partConf = (PartConfiguration) iter.next();	
+			if(!partConf.isAbstract())	
+			{%>
+		<page
+			id="<%=diagramConfiguration.getBasePackage()%>.preferences.<%=partConf.getPrefix()%>PreferencePage"
+			category="<%=diagramConfiguration.getBasePackage()%>.preferences.<%=diagramConfiguration.getPrefix()%>DiagramPreferencePage"
+			class="<%=diagramConfiguration.getBasePackage()%>.preferences.<%=partConf.getPrefix()%>PreferencePage"
+			name="<%=partConf.getPrefix()%>"/>
+    <%
+    		}
+         }
+    %>
+	</extension>
+
+	<extension point="org.eclipse.ui.propertyPages">
+		<page
+			id="<%=diagramConfiguration.getBasePackage()%>.preferences.property.<%=diagramConfiguration.getPrefix()%>DiagramPreferencePage"
+			category="<%=diagramConfiguration.getEditorConfigurator().getProjectName()%>.preferences.property.<%= diagramConfiguration.getEditorConfigurator().getPrefix() %>PreferencePage"
+			class="<%=diagramConfiguration.getBasePackage()%>.preferences.<%=diagramConfiguration.getPrefix()%>DiagramPreferencePage"
+			name="<%=diagramConfiguration.getPrefix()%>Diagram">       
+			<enabledWhen>
+				<adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+		</page>
+		<%for (Iterator iter = diagramConfiguration.getParts().iterator(); iter.hasNext(); )
+		{
+			PartConfiguration partConf = (PartConfiguration) iter.next();
+			if(!partConf.isAbstract())	
+			{%>
+		<page
+			id="<%=diagramConfiguration.getBasePackage()%>.preferences.property.<%=partConf.getPrefix()%>PreferencePage"
+			category="<%=diagramConfiguration.getBasePackage()%>.preferences.property.<%=diagramConfiguration.getPrefix()%>DiagramPreferencePage"
+			class="<%=diagramConfiguration.getBasePackage()%>.preferences.<%=partConf.getPrefix()%>PreferencePage"
+			name="<%=partConf.getPrefix()%>">
+			<enabledWhen>
+				<adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+		</page>
+    	<%
+    		}
+         }
+    	%>
+	</extension>
+
+</plugin>

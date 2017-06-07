@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.topcased.family/src"
+    editDirectory="/org.topcased.family/src" editorDirectory="/org.topcased.family/src"
+    modelPluginID="org.topcased.family" runtimeJar="true" modelName="Family" testsDirectory=""
+    testSuiteClass="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0">
+  <foreignModel>family.ecore</foreignModel>
+  <genPackages prefix="Family" basePackage="org.topcased" disposableProviderFactory="true"
+      generateExampleClass="false" ecorePackage="family.ecore#/">
+    <genEnums ecoreEnum="family.ecore#//Month">
+      <genEnumLiterals ecoreEnumLiteral="family.ecore#//Month/January"/>
+      <genEnumLiterals ecoreEnumLiteral="family.ecore#//Month/February"/>
+      <genEnumLiterals ecoreEnumLiteral="family.ecore#//Month/March"/>
+      <genEnumLiterals ecoreEnumLiteral="family.ecore#//Month/April"/>
+      <genEnumLiterals ecoreEnumLiteral="family.ecore#//Month/May"/>
+      <genEnumLiterals ecoreEnumLiteral="family.ecore#//Month/June"/>
+      <genEnumLiterals ecoreEnumLiteral="family.ecore#//Month/July"/>
+      <genEnumLiterals ecoreEnumLiteral="family.ecore#//Month/August"/>
+      <genEnumLiterals ecoreEnumLiteral="family.ecore#//Month/September"/>
+      <genEnumLiterals ecoreEnumLiteral="family.ecore#//Month/October"/>
+      <genEnumLiterals ecoreEnumLiteral="family.ecore#//Month/November"/>
+      <genEnumLiterals ecoreEnumLiteral="family.ecore#//Month/December"/>
+    </genEnums>
+    <genClasses ecoreClass="family.ecore#//Family">
+      <genFeatures createChild="false" propertyCategory="General" propertyDescription="A name that identify the family"
+          ecoreFeature="ecore:EAttribute family.ecore#//Family/name"/>
+      <genFeatures property="Readonly" children="true" createChild="true" propertyCategory="Persons"
+          propertyDescription="The men that composed this family" ecoreFeature="ecore:EReference family.ecore#//Family/men"/>
+      <genFeatures property="Readonly" children="true" createChild="true" propertyCategory="Persons"
+          propertyDescription="The women that composed this family" ecoreFeature="ecore:EReference family.ecore#//Family/women"/>
+      <genFeatures property="Readonly" children="true" createChild="true" propertyCategory="Families"
+          ecoreFeature="ecore:EReference family.ecore#//Family/families"/>
+    </genClasses>
+    <genClasses ecoreClass="family.ecore#//Person">
+      <genFeatures createChild="false" propertyCategory="General Informations" ecoreFeature="ecore:EAttribute family.ecore#//Person/firstName"/>
+      <genFeatures createChild="false" propertyCategory="General Informations" ecoreFeature="ecore:EAttribute family.ecore#//Person/lastName"/>
+      <genFeatures createChild="false" propertyCategory="Birth" ecoreFeature="ecore:EAttribute family.ecore#//Person/birthDay"/>
+      <genFeatures createChild="false" propertyCategory="Birth" ecoreFeature="ecore:EAttribute family.ecore#//Person/birthMonth"/>
+      <genFeatures createChild="false" propertyCategory="Birth" ecoreFeature="ecore:EAttribute family.ecore#//Person/birthYear"/>
+      <genFeatures createChild="false" propertyCategory="Birth" ecoreFeature="ecore:EAttribute family.ecore#//Person/birthCity"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Parents" propertyDescription="The father of this person"
+          ecoreFeature="ecore:EReference family.ecore#//Person/father"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Parents" propertyDescription="The mother of this person"
+          ecoreFeature="ecore:EReference family.ecore#//Person/mother"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference family.ecore#//Person/children"/>
+    </genClasses>
+    <genClasses ecoreClass="family.ecore#//Man">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference family.ecore#//Man/wife"/>
+    </genClasses>
+    <genClasses ecoreClass="family.ecore#//Woman">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference family.ecore#//Woman/husband"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

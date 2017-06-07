@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.topcased.modeler" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="org.topcased.modeler" id="topcasedPreferenceInitializer" name="TopcasedPreferenceInitializer"/>
+      </appinfo>
+      <documentation>
+         This extension point is used to declare the preference initializer of a Topcased diagram.
+
+It permits to initialize the diagram preferences in the editor preference store.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="preferenceInitializer" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="preferenceInitializer">
+      <complexType>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  &quot;id&quot; of the preferenceInitializer. It must be unique
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="editorId" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The id of the editor in which the diagram belong.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  A class that implements the interface &quot;org.topcased.modeler.preferences.ITopcasedPreferenceInitializer&quot;
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.topcased.modeler.preferences.ITopcasedPreferenceInitializer"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         Topcased version 2.1
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         Declare a preference initializer for the class diagram of the UML Editor
+&lt;pre&gt;
+ &lt;extension point=&quot;org.topcased.modeler.topcasedPreferenceInitializer&quot;&gt;
+          &lt;preferenceInitializer
+               class=&quot;org.topcased.modeler.uml.classdiagram.preferences.ClassDiagramTopcasedPreferenceInitializer&quot;
+               editorId=&quot;org.topcased.modeler.uml.editor.UMLEditor&quot;
+               id=&quot;org.topcased.modeler.uml.classdiagram.preferenceInitializer&quot;&gt;
+         &lt;/preferenceInitializer&gt;
+      &lt;/extension&gt;   
+&lt;/pre&gt;
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         The class  must implements the interface &lt;samp&gt;org.topcased.modeler.preferences.ITopcasedPreferenceInitializer&lt;/samp&gt;.
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         none
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="copyright"/>
+      </appinfo>
+      <documentation>
+         Copyright (c) 2008 Atos Origin.
+All rights reserved. This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+      </documentation>
+   </annotation>
+
+</schema>

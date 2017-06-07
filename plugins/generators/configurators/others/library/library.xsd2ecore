@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="library.xsd#/"
+    outputs="library.ecore#/" topToBottom="true">
+  <nested inputs="bundleentry://173/cache/www.w3.org/2001/XMLSchema.xsd#//string;XSDSimpleTypeDefinition=7"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  <nested inputs="bundleentry://173/cache/www.w3.org/2001/XMLSchema.xsd#//int;XSDSimpleTypeDefinition=42"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+  <nested inputs="library.xsd#//BookCategory;XSDSimpleTypeDefinition" outputs="library.ecore#//BookCategory">
+    <nested inputs="library.xsd#//BookCategory;XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="library.ecore#//BookCategory/Mystery"/>
+    <nested inputs="library.xsd#//BookCategory;XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="library.ecore#//BookCategory/ScienceFiction"/>
+    <nested inputs="library.xsd#//BookCategory;XSDSimpleTypeDefinition/XSDEnumerationFacet=2"
+        outputs="library.ecore#//BookCategory/Biography"/>
+  </nested>
+  <nested inputs="bundleentry://173/cache/www.w3.org/2001/XMLSchema.xsd#//anyURI;XSDSimpleTypeDefinition=23"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+  <nested inputs="library.xsd#//Writer;XSDComplexTypeDefinition=1" outputs="library.ecore#//Writer">
+    <nested inputs="library.xsd#//Writer;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="library.ecore#//Writer/name"/>
+    <nested inputs="library.xsd#//Writer;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="library.ecore#//Writer/books"/>
+  </nested>
+  <nested inputs="library.xsd#//Book;XSDComplexTypeDefinition" outputs="library.ecore#//Book">
+    <nested inputs="library.xsd#//Book;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="library.ecore#//Book/title"/>
+    <nested inputs="library.xsd#//Book;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="library.ecore#//Book/pages"/>
+    <nested inputs="library.xsd#//Book;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="library.ecore#//Book/category"/>
+    <nested inputs="library.xsd#//Book;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="library.ecore#//Book/author"/>
+  </nested>
+  <nested inputs="library.xsd#//Library;XSDComplexTypeDefinition=2" outputs="library.ecore#//Library">
+    <nested inputs="library.xsd#//Library;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="library.ecore#//Library/name"/>
+    <nested inputs="library.xsd#//Library;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="library.ecore#//Library/writers"/>
+    <nested inputs="library.xsd#//Library;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="library.ecore#//Library/books"/>
+  </nested>
+</xsd2ecore:XSD2EcoreMappingRoot>

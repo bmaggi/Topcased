@@ -1,0 +1,90 @@
+<%@ jet
+	 package="org.topcased.properties.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.properties.configurator.* org.topcased.properties.configurator.util.GeneratorUtils"
+	 class="PluginXML"
+	 version="$Id: plugin.xmljet,v 1.1 2006/10/30 17:10:50 jako Exp $" %>
+<%TabbedView tabbedView = (TabbedView) argument;
+  String thePackage = tabbedView.getProjectName();
+  String basePackage = tabbedView.getBasePackage();
+  if (basePackage != null && !basePackage.equals(""))
+  {
+  	thePackage = basePackage;
+  }
+%>
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+		<propertyContributor contributorId = "<%=tabbedView.getId()%>.contributorID"
+			labelProvider="<%=thePackage + ".providers.SectionsLabelProvider"%>">
+<%	for (Iterator i = tabbedView.getCategories().iterator(); i.hasNext();) {
+		Category category = (Category) i.next();%>
+		<propertyCategory category = "<%=GeneratorUtils.replaceSpecialCharacters(category.getName())%>"/>
+<%	}%>
+		</propertyContributor>
+	</extension>
+	
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+		<propertyTabs contributorId="<%=tabbedView.getId()%>.contributorID">
+<%	List tabs = new ArrayList();
+	for (Iterator i = tabbedView.getCategories().iterator(); i.hasNext();) {
+		Category category = (Category) i.next();
+		for (Iterator j =  category.getTabs().iterator(); j.hasNext();) {
+			Tab tab = (Tab) j.next();
+			tabs.add(tab);%>
+			<propertyTab
+				category="<%=GeneratorUtils.replaceSpecialCharacters(category.getName())%>"
+				id="<%=tab.getId()%>"
+				label="<%=GeneratorUtils.replaceSpecialCharacters(tab.getLabel())%>"
+<%			if (tab.getAfterTab() != null) {%>
+				afterTab="<%=tab.getAfterTab().getId()%>"
+<%			}
+			if (tab.isIndented()) {%>
+				indented="true"
+<%			}%>/>
+<%		}
+	}%>    
+		</propertyTabs>
+	</extension>
+
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+		<propertySections contributorId="<%=tabbedView.getId()%>.contributorID">
+<%	for (Iterator i = tabs.iterator(); i.hasNext();) {
+		Tab tab = (Tab) i.next();
+		for (Iterator j =  tab.getSections().iterator(); j.hasNext();) {
+			AbstractSection section = (AbstractSection) j.next();%>
+			<propertySection
+				id="<%=section.getId()%>"
+				tab="<%=tab.getId()%>"
+<%			if (section.getAfterSection() != null) {%>
+				afterSection="<%=section.getAfterSection().getId()%>"
+<%			}
+			if (section instanceof SingleFeatureSection) {
+				SingleFeatureSection sect = (SingleFeatureSection) section;%>
+				class="<%=thePackage + ".sections." + GeneratorUtils.capName(section.getClassName())%>">
+				<input type="<%=sect.getFeature().getGenClass().getQualifiedInterfaceName()%>"/>
+<%			}
+			else if (section instanceof MultipleFeatureSection) {
+				MultipleFeatureSection sect = (MultipleFeatureSection) section;
+				for (Iterator k = sect.getFeatures().iterator(); k.hasNext();) {
+					GenFeature feature = (GenFeature) k.next();%>
+				<input type="<%=feature.getGenClass().getQualifiedInterfaceName()%>"/>
+<%				}
+			}
+			else {%>
+				class="org.topcased.tabbedproperties.sections.AdvancedPropertySection">
+<%				AdvancedSection advanced = (AdvancedSection) section;
+           		List inputs = advanced.getInput();
+           		for (Iterator k = inputs.iterator(); k.hasNext();) {
+           			GenClass eClass = (GenClass) k.next();%>
+				<input type="<%=eClass.getQualifiedInterfaceName()%>"/>  
+<%				}
+			}%>
+			</propertySection>
+<%		}
+	}%> 
+		</propertySections>
+	</extension>
+	
+</plugin>

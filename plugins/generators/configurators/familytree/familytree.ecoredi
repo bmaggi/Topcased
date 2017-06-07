@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" activeDiagram="//@diagrams.0">
+  <model href="familytree.ecore#/"/>
+  <diagrams position="0,0" size="100,100" name="familytree" viewport="0,0">
+    <property key="pageFormatName" value="A5"/>
+    <property key="diagramWidth" value="592"/>
+    <property key="diagramHeight" value="840"/>
+    <property key="pageMarginName" value="Small Margin"/>
+    <property key="diagramTopMargin" value="20"/>
+    <property key="diagramBottomMargin" value="20"/>
+    <property key="diagramLeftMargin" value="20"/>
+    <property key="diagramRightMargin" value="20"/>
+    <property key="orientation" value="landscape"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="org.topcased.modeler.ecore.ediagram">
+      <element href="familytree.ecore#/"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" position="334,36" size="150,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.7 //@diagrams.0/@contained.8"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="familytree.ecore#//FamilyTree"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="familytree.ecore#//FamilyTree"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="familytree.ecore#//FamilyTree/name"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="familytree.ecore#//FamilyTree"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="185,142" size="157,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.5 //@diagrams.0/@contained.6 //@diagrams.0/@contained.7 //@diagrams.0/@contained.11 //@diagrams.0/@contained.12"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="familytree.ecore#//Person"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="familytree.ecore#//Person"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="familytree.ecore#//Person/firstName"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="familytree.ecore#//Person/lastName"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="familytree.ecore#//Person/birthYear"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+            <element href="familytree.ecore#//Person/deathYear"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="familytree.ecore#//Person"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="36,317" size="150,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.5 //@diagrams.0/@contained.10"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="familytree.ecore#//Man"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="familytree.ecore#//Man"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="familytree.ecore#//Man"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="334,317" size="150,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.6 //@diagrams.0/@contained.9"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="familytree.ecore#//Woman"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="familytree.ecore#//Woman"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="familytree.ecore#//Woman"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" position="483,176" size="150,-1">
+      <anchorage graphEdge="//@diagrams.0/@contained.8 //@diagrams.0/@contained.9 //@diagrams.0/@contained.10 //@diagrams.0/@contained.11 //@diagrams.0/@contained.12"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="familytree.ecore#//Wedding"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="19"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="familytree.ecore#//Wedding"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode">
+        <property key="eStructuralFeatureID" value="9"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+          <element href="familytree.ecore#//Wedding"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.2/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.3/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" presentation="default" typeInfo="Inheritance"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.0/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="familytree.ecore#//FamilyTree/persons"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <waypoints>[-146, 0, 0, -134]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.0/@anchorage.0 //@diagrams.0/@contained.4/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="familytree.ecore#//FamilyTree/weddings"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="20" vDistance="20"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="20" vDistance="-20"/>
+      <waypoints>[149, 0, 0, -134]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.4/@anchorage.0 //@diagrams.0/@contained.3/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="familytree.ecore#//Wedding/wife"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="18" vDistance="8"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="27" vDistance="-7"/>
+      <waypoints>[0, 141, 149, 0]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.4/@anchorage.0 //@diagrams.0/@contained.2/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="familytree.ecore#//Wedding/husband"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="17" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="17" vDistance="-8"/>
+      <waypoints>[115, 0, 562, -141]</waypoints>
+      <waypoints>[115, 206, 562, 65]</waypoints>
+      <waypoints>[-447, 206, 0, 65]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.1/@anchorage.0 //@diagrams.0/@contained.4/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="familytree.ecore#//Person/parents"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="3" vDistance="4"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="18" vDistance="-8"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" anchor="//@diagrams.0/@contained.4/@anchorage.0 //@diagrams.0/@contained.1/@anchorage.0">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="default">
+        <element href="familytree.ecore#//Wedding/children"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" id="nameLabel" uDistance="8" vDistance="4"/>
+      <contained xsi:type="di:EdgeObjectUV" id="cardinalityLabel" uDistance="19" vDistance="-7"/>
+    </contained>
+  </diagrams>
+</diagrams:Diagrams>

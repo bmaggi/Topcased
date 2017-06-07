@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="UML 2.0 Diagram Interchange Specification">
+	<topic label="Terms, Conditions and Notices" href="web/intro/conditions.HTML"/>
+	<topic label="Scope" href="web/intro/scope.HTML"/>
+	<topic label="Conformance" href="web/intro/scope.HTML"/>
+	<topic label="Normative references" href="web/intro/normative.HTML"/>
+	<topic label="Terms and definitions" href="web/intro/normative.HTML"/>
+	<topic label="Symbols" href="web/intro/normative.HTML"/>
+	<topic label="Additional information" href="web/intro/additional.HTML">
+		<topic label="Statement of Proof of Concept" href="web/intro/additional.HTML"/>
+		<topic label="Design Rationale" href="web/intro/design.HTML"/>
+		<topic label="Acknowledgements" href="web/intro/acknowledgements.HTML"/>
+	</topic>
+	<topic label="Architectural Overview" href="web/archi/archi_overview.HTML">
+		<topic label="XMI[DI] DTD Creation Overview" href="web/archi/archi_overview.HTML"/>
+		<topic label="SVG Graphic Creation Overview" href="web/archi/svg_creation_overview.HTML"/>
+	</topic>
+	
+	<topic label="Metamodel Extension" href="web/metamodel/extension.HTML">
+		<topic label="Extended Graph Model" href="web/metamodel/graph_model.HTML"/>
+		<topic label="Nesting" href="web/metamodel/nesting.HTML"/>
+		<topic label="Leaves" href="web/metamodel/leaves.HTML"/>
+		<topic label="Diagram" href="web/metamodel/diagram.HTML">
+			<topic label="The Namespace of a Diagram" href="web/metamodel/namespace.HTML"/>
+			<topic label="Showing a cut-out of a Diagram in another Diagram" href="web/metamodel/namespace.HTML"/>
+			<topic label="Visibility of Diagram Elements" href="web/metamodel/namespace.HTML"/>
+		</topic>
+		<topic label="Properties" href="web/metamodel/properties.HTML"/>
+		<topic label="Coordinate system" href="web/metamodel/position.HTML"/>
+		<topic label="Position" href="web/metamodel/position.HTML"/>
+		<topic label="Size" href="web/metamodel/size.HTML"/>		
+		<topic label="Rendering order" href="web/metamodel/size.HTML"/>
+		<topic label="Semantic model" href="web/metamodel/semantic.HTML"/>
+		<topic label="Pre-defined presentations of elements" href="web/metamodel/semantic.HTML"/>
+		<topic label="Additional semantic information" href="web/metamodel/additional.HTML"/>
+		<topic label="Representing the different diagram types of UML" href="web/metamodel/representing.HTML">		
+			<topic label="Components with ports and interfaces" href="web/metamodel/components.HTML"/>
+		</topic>
+	</topic>
+
+	<topic label="Derivation of Presentational Views" href="web/views/views.HTML">
+		<topic label="General transformation concept" href="web/views/views.HTML"/>
+		<topic label="Extensions to the Style Sheets" href="web/views/sheets.HTML"/>
+		<topic label="Transformation to Other Notations" href="web/views/sheets.HTML"/>
+	</topic>	
+	<topic label="Representation in SVG Packaging Meta-Information into SVG Diagrams" href="web/representation/svg_diagrams.HTML">
+		<topic label="SVG" href="web/representation/svg_diagrams.HTML"/>
+	</topic>
+	<topic label="Appendix" href="web/appendix/assignement.HTML">
+		<topic label="Assignement of Diagram Elements" href="web/appendix/assignement.HTML"/>
+		<topic label="Excerpt from an XMI[DI] Example" href="web/appendix/excerpt.HTML">
+			<topic label="B1 Full Example" href="web/appendix/excerpt.HTML"/>
+		</topic>
+	</topic>
+</toc>

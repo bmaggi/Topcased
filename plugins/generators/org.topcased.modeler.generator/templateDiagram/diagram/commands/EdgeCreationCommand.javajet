@@ -1,0 +1,65 @@
+<%@ jet 
+	 package="org.topcased.modeler.generator.templates"
+	 imports=" org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="EdgeCreationCommand"
+	 version="$Id: EdgeCreationCommand.javajet,v 1.4 2006/10/26 15:06:23 jako Exp $" %>
+<%	EdgePartConfiguration edgePartConfiguration = (EdgePartConfiguration) argument;
+	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) edgePartConfiguration.eContainer();
+	ObjectConfiguration objectConfiguration = edgePartConfiguration.getObject();
+	String partPrefix = edgePartConfiguration.getPrefix();%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>.commands;
+
+import org.eclipse.gef.EditDomain;
+
+import org.topcased.modeler.di.model.GraphEdge;
+import org.topcased.modeler.di.model.GraphElement;
+import org.topcased.modeler.commands.CreateTypedEdgeCommand;
+
+
+/**
+ * <%=partPrefix%> edge creation command
+ *
+ * @generated
+ */
+public class <%=partPrefix%>EdgeCreationCommand extends CreateTypedEdgeCommand {
+
+	/**
+	 * @param domain the edit domain
+     * @param newObj the graph edge of the new connection
+     * @param src the graph element of the source
+	 * @generated
+	 */
+	public <%=partPrefix%>EdgeCreationCommand(EditDomain domain, GraphEdge newObj, GraphElement src) {
+        this(domain, newObj, src, true);
+    }
+
+	/**
+	 * @param domain the edit domain
+     * @param newObj the graph edge of the new connection
+     * @param src the graph element of the source
+     * @param needModelUpdate set it to true if the model need to be updated
+	 * @generated
+	 */
+	public <%=partPrefix%>EdgeCreationCommand(EditDomain domain, GraphEdge newObj, GraphElement src, boolean needModelUpdate) {
+        super(domain, newObj, src, needModelUpdate);
+    }
+
+
+	/**
+	 * @generated
+	 */
+	protected void redoModel() {
+		//TODO add specific code if super method is not sufficient
+		super.redoModel();
+	}
+    
+    /**
+	 * @generated
+	 */
+    protected void undoModel() {
+		//TODO add specific code if super method is not sufficient
+   		super.undoModel();
+    }
+
+}

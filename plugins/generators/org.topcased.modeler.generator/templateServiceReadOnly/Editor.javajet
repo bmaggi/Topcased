@@ -1,0 +1,112 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.editorconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="Editor"
+	 version="$Id: Editor.javajet,v 1.2 2006/05/02 14:04:34 jako Exp $" %>
+<%@ include file="cartoucheAirbus.txt"%>
+
+<%EditorConfiguration editorConfiguration = (EditorConfiguration) argument;%>
+package <%=editorConfiguration.getProjectName()%>servicereadonly.editor;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IFileEditorInput;
+import org.topcased.bus.core.IService;
+import org.topcased.bus.core.Service;
+import org.topcased.bus.core.ServicesManager;
+import org.topcased.modeler.ModelerPlugin;
+import <%=editorConfiguration.getProjectName()%>.editor.<%=editorConfiguration.getPrefix()%>Editor;
+import <%=editorConfiguration.getProjectName()%>servicereadonly.<%=editorConfiguration.getPrefix()%>ServicePlugin;
+import org.topcased.modeler.diagrams.model.Diagrams;
+import org.topcased.modeler.editor.MixedEditDomain;
+
+/**
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ * <br>
+ * creation : 17 mars 2005
+ * @author <a href="mailto:jacques.lescot@anyware-tech.com">Jacques LESCOT</a>
+ * @generated
+ */
+public class <%=editorConfiguration.getPrefix()%>ServiceEditor extends <%=editorConfiguration.getPrefix()%>Editor
+{
+    /**
+     * This is the Read Only service, so the file can not be saved
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * 
+     * @see org.eclipse.ui.ISaveablePart#doSave(org.eclipse.core.runtime.IProgressMonitor)
+     * @generated
+     */
+    public void doSave(IProgressMonitor monitor)
+    {
+		ModelerPlugin.displayDialog("Read only", "The file can not be saved. You have opened it with the Read Only Service", IStatus.INFO);
+    }
+    
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * 
+     * @see org.eclipse.ui.part.EditorPart#setInput(org.eclipse.ui.IEditorInput)
+     * @generated
+     */
+    protected void setInput(IEditorInput input)
+    {
+        IFile file = ((IFileEditorInput) input).getFile();
+        IPath ipath = file.getFullPath();
+
+        Map services = ServicesManager.getInstance().getAllServices();
+        Map services2 = ServicesManager.getInstance().getServicesPerInput("String",services);
+        
+        Service s = null;
+        Map services3 = ServicesManager.getInstance().getServicesPerType("Read",services2);
+        for (Iterator it = services3.keySet().iterator() ; it.hasNext() ; ) {
+            String key = (String)it.next();
+            s = (Service)services3.get(key);
+        }
+        
+        IService is = ServicesManager.getInstance().getService(s.getId());
+        Map param = new HashMap();
+        param.put("XMIFile", ipath.toOSString());
+        EObject modelInput = (EObject) is.serviceRun(param);
+        
+        MixedEditDomain mixedEditDomain = new MixedEditDomain(this, modelInput.eResource().getResourceSet());
+        mixedEditDomain.setAdapterFactory(createAdapterFactory());
+        setEditDomain(mixedEditDomain);
+        
+        if (modelInput instanceof Diagrams)
+        {
+            setDiagrams((Diagrams) modelInput);
+
+            setPartName(file.getName());
+            setContentDescription(file.getFullPath().toString());
+            doSetInput(input);
+        }
+        else
+        {
+            <%=editorConfiguration.getPrefix()%>ServicePlugin.log("The input model is not a diagrams model.", IStatus.ERROR);
+        }
+        
+    }
+    
+    /**
+     * Returns the Editor Id (used by the minibus)
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * 
+     * @return the String that identifies the Editor
+     * @generated
+     */
+    public static String getId()
+    {
+        return new String("<%=editorConfiguration.getProjectName()%>servicereadonly.editor.<%=editorConfiguration.getPrefix()%>ServiceEditor");
+    }
+}

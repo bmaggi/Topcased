@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramconfigurator:DiagramConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagramconfigurator="http://www.topcased.org/diagramconfigurator/1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" projectName="org.topcased.modeler.library" name="Diagram" package="libdiagram" prefix="LibDiagram" copyrightText="Copyright (c) 2006 Anyware Technologies. All rights reserved. This program&#xA;and the accompanying materials are made available under the terms of the&#xA;Eclipse Public License v1.0 which accompanies this distribution, and is&#xA;available at http://www.eclipse.org/legal/epl-v10.html" pluginVersion="0.7.0" samePluginAsEditor="true">
+  <palette name="LibraryPalette">
+    <paletteCategories name="Objects">
+      <items name="Writer" part="//@parts.0"/>
+      <items name="Book" part="//@parts.1"/>
+    </paletteCategories>
+    <paletteCategories name="Relations">
+      <items name="Author" part="//@parts.2"/>
+    </paletteCategories>
+  </palette>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.1" defaultForegroundColor="255,0,0" foregroundColorChangeable="false" type="Man" defaultWidth="40" defaultHeight="60" minimumWidth="40" minimumHeight="60" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.0" defaultForegroundColor="0,255,0" foregroundColorChangeable="false" type="BorderedLabel" minimumWidth="50" minimumHeight="50" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.2">
+    <sourceTargetCouple sourceNode="//@parts.0" targetNode="//@parts.1">
+      <refSourceToTarget xsi:type="ecore:EReference" href="library.ecore#//Writer/books"/>
+    </sourceTargetCouple>
+  </parts>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="library.genmodel#//library/Book"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="library.genmodel#//library/Writer"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" name="Author"/>
+  <genModel href="library.genmodel#/"/>
+  <templateRootObject href="library.genmodel#//library/Library"/>
+  <editorConfigurator href="Lib.editorconfigurator#/"/>
+</diagramconfigurator:DiagramConfiguration>

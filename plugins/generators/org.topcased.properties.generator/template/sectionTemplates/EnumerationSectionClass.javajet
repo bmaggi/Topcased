@@ -1,0 +1,151 @@
+<%@ jet
+	 package="org.topcased.properties.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.properties.configurator.* "
+	 class="ComboSection"
+	 version="$Id: EnumerationSectionClass.javajet,v 1.1 2006/10/30 17:10:50 jako Exp $" %>
+<%
+	AbstractSection aSection = (AbstractSection)argument;
+	TabbedView tabbedView = aSection.getTab().getCategory().getParent();
+	
+	GenFeature feature = null;
+	GenPackage gPackage = null;
+	
+	String thePackage = tabbedView.getProjectName();
+	String basePackage = tabbedView.getBasePackage();
+    if (basePackage != null && !basePackage.equals(""))
+    {
+        thePackage = basePackage;
+    }
+    
+	String interfaceName = "";
+	String qualifiedInterfaceName = "";
+	String featureTypeName = "";
+	if (aSection instanceof SingleFeatureSection)
+	{
+		SingleFeatureSection section = (SingleFeatureSection)aSection;
+		feature = section.getFeature();
+		gPackage = feature.getGenPackage();
+		
+		interfaceName = feature.getGenClass().getInterfaceName();
+		qualifiedInterfaceName = feature.getGenClass().getQualifiedInterfaceName();
+		featureTypeName = feature.getEcoreFeature().getEType().getName();
+	}
+	else
+	{
+		MultipleFeatureSection section = (MultipleFeatureSection)aSection;
+	}
+%>
+package <%=thePackage%>.sections;
+
+import java.util.List;
+
+import org.eclipse.emf.ecore.*;
+import org.topcased.tabbedproperties.sections.AbstractEnumerationPropertySection;
+
+import <%=gPackage.getQualifiedPackageName()%>.<%=featureTypeName%>;
+import <%=qualifiedInterfaceName%>;
+import <%=gPackage.getQualifiedPackageInterfaceName()%>;
+
+/**
+ * A section which displays the multi features.<br>
+ * The section features a table with two buttons letting the user to<br>
+ * add or remove items from the selected object.
+ *
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ *
+ * @generated
+ */
+public class <%=aSection.getClassName()%> extends AbstractEnumerationPropertySection
+{
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+	 * @see org.topcased.tabbedproperties.sections.AbstractTabbedPropertySection#getLabelText()
+     * @generated
+	 */
+    protected String getLabelText()
+    {
+        return "<%=feature.getCapName()%>:";
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+	 * @see org.topcased.tabbedproperties.sections.AbstractTabbedPropertySection#getFeature()
+     * @generated
+	 */
+    protected EStructuralFeature getFeature()
+    {
+        return <%=gPackage.getPackageInterfaceName()%>.eINSTANCE.get<%=interfaceName%>_<%=feature.getCapName()%>();
+    }
+    
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+	 * @see org.topcased.tabbedproperties.sections.AbstractEnumerationPropertySection#getEnumerationFeatureValues()
+     * @generated
+	 */
+    protected String[] getEnumerationFeatureValues()
+    {
+        List values = <%=featureTypeName%>.VALUES;
+        String[] vals = new String[values.size()];
+        for (int i = 0; i < values.size(); i++)
+        {
+            <%=featureTypeName%> enumType = (<%=featureTypeName%>) values.get(i);
+            vals[i] = enumType.getName();
+        }
+        return vals;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @see org.topcased.tabbedproperties.sections.AbstractEnumerationPropertySection#getFeaturesAsText()
+     * @generated
+	 */
+    protected String getFeatureAsText()
+    {
+        return ((<%=interfaceName%>) getEObject()).<%=feature.getGetAccessor()%>().getName();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @see org.topcased.tabbedproperties.sections.AbstractEnumerationPropertySection#getFeatureValue()
+     * @generated
+	 */
+    protected Object getFeatureValue(int index)
+    {
+        return <%=featureTypeName%>.get(index);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+	 * @see org.topcased.tabbedproperties.sections.AbstractEnumerationPropertySection#getOldFeatureValue()
+     * @generated
+	 */
+	protected Object getOldFeatureValue() 
+	{
+		return ((<%=interfaceName%>) getEObject()).<%=feature.getGetAccessor()%>();
+	}
+	
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @see org.topcased.tabbedproperties.sections.AbstractEnumerationPropertySection#isEqual()
+     * @generated
+	 */
+    protected boolean isEqual(int index)
+    {
+        return false;
+    }
+}

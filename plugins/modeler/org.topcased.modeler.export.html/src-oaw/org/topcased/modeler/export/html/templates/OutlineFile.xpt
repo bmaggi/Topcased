@@ -1,0 +1,45 @@
+«IMPORT model»
+«IMPORT ecore»
+«EXTENSION org::topcased::modeler::export::html::templates::OutlineExtensions»
+«EXTENSION org::topcased::modeler::export::html::templates::ImageExtensions»
+
+«DEFINE file FOR Object»
+«FILE "outline.htm"»
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Outline</title>
+		<script language="JavaScript" type="text/javascript" src="script/docframe.js"></script>
+		<script language="JavaScript" type="text/javascript" src="script/simpletreemenu.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/simpletree.css"/>
+	</head>
+	<body>
+		<h2>Diagrams Explorer</h2>
+		
+		<a href="javascript:ddtreemenu.flatten('treemenu', 'expand')">Expand All</a> | <a href="javascript:ddtreemenu.flatten('treemenu', 'contact')">Collapse All</a>
+		
+		<ul id="treemenu" class="treeview" style="margin-left:0px; padding-left:0px;">
+			«EXPAND buildTree FOR this-»
+		</ul>
+		
+		<script type="text/javascript">
+			ddtreemenu.createTree("treemenu", true, 5)
+			ddtreemenu.flatten('treemenu', 'expand')
+		</script>
+	</body>
+</html>
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE buildTree FOR Object»
+	<li>«this.getName()»
+		<ul>
+			«FOREACH this.getChildrenSemanticElements() AS element-»
+				«EXPAND buildTree FOR element-»
+			«ENDFOREACH»
+			«FOREACH this.getRelatedDiagrams() AS diagram-»
+				<li><a href ="content/«diagram.getHMTLName()»" target ="showframe" onmouseover="changeDoc('content/«diagram.getDiagramDocumentationURL()»', event)"><strong>«diagram.name»</strong></a></li>
+			«ENDFOREACH-»
+		</ul>
+	</li>
+«ENDDEFINE»

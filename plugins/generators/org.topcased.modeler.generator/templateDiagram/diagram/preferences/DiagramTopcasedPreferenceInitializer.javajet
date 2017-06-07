@@ -1,0 +1,87 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="DiagramTopcasedPreferenceInitializer"
+	 version="$Id: DiagramTopcasedPreferenceInitializer.javajet,v 1.1 2008/08/20 18:26:51 tlandre Exp $" %>
+<%	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>.preferences;
+
+import java.util.HashMap;
+
+import org.eclipse.jface.resource.StringConverter;
+import org.topcased.modeler.preferences.ITopcasedPreferenceInitializer;
+
+/**
+ * Initialize the preferences of <%=diagramConfiguration.getPrefix()%> diagram
+ * 
+ * @generated
+ */
+public class <%=diagramConfiguration.getPrefix()%>DiagramTopcasedPreferenceInitializer implements ITopcasedPreferenceInitializer
+{
+  
+    /** 
+     * @see org.topcased.modeler.preferences.ITopcasedPreferenceInitializer#getDefaultPreference()
+     *	@generated
+     */
+    public HashMap<String, String> getDefaultPreference()
+    {
+   			 HashMap<String, String> default<%=diagramConfiguration.getPrefix()%>Preference = new HashMap<String, String>();
+<%
+for (Iterator iter = diagramConfiguration.getParts().iterator(); iter.hasNext(); )
+{
+	PartConfiguration partConf = (PartConfiguration) iter.next();
+	if (!partConf.isAbstract())
+	{
+		String name = partConf.getPrefix();
+		if (partConf instanceof NodePartConfiguration)
+		{
+			NodePartConfiguration nodePartConf = (NodePartConfiguration) partConf;
+%>
+    // Initialize the default value of the <%=name.toUpperCase()%>_DEFAULT_BACKGROUND_COLOR property 
+ 	default<%=diagramConfiguration.getPrefix()%>Preference.put(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=name.toUpperCase()%>_DEFAULT_BACKGROUND_COLOR, "<%=nodePartConf.getDefaultBackgroundColorStringValue()%>"); 
+    
+    // Initialize the default value of the <%=name.toUpperCase()%>_DEFAULT_FOREGROUND_COLOR property
+    default<%=diagramConfiguration.getPrefix()%>Preference.put(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=name.toUpperCase()%>_DEFAULT_FOREGROUND_COLOR, "<%=nodePartConf.getDefaultForegroundColorStringValue()%>"); 
+    
+    // Initialize the default value of the <%=name.toUpperCase()%>_DEFAULT_FONT property
+    default<%=diagramConfiguration.getPrefix()%>Preference.put(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=name.toUpperCase()%>_DEFAULT_FONT, StringConverter.asFontData("<%=nodePartConf.getDefaultFontStringValue()%>").toString());
+
+<%
+		}
+		else if (partConf instanceof EdgePartConfiguration && partConf.getObject() != null)
+		{
+			EdgePartConfiguration edgePartConf = (EdgePartConfiguration) partConf;
+%>
+	// Initialize the default value of the <%=name.toUpperCase()%>_EDGE_DEFAULT_FONT property
+    default<%=diagramConfiguration.getPrefix()%>Preference.put(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=name.toUpperCase()%>_EDGE_DEFAULT_FONT, StringConverter.asFontData("<%=edgePartConf.getDefaultFontStringValue()%>").toString());
+
+	// Initialize the default value of the <%=name.toUpperCase()%>_EDGE_DEFAULT_FOREGROUND_COLOR property
+    default<%=diagramConfiguration.getPrefix()%>Preference.put(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=name.toUpperCase()%>_EDGE_DEFAULT_FOREGROUND_COLOR,  "<%=edgePartConf.getDefaultForegroundColorStringValue()%>"); 
+
+	// Initialize the default value of the <%=name.toUpperCase()%>_EDGE_DEFAULT_ROUTER property
+	default<%=diagramConfiguration.getPrefix()%>Preference.put(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=name.toUpperCase()%>_EDGE_DEFAULT_ROUTER,  "<%=edgePartConf.getDefaultRouter().getLiteral()%>"); 
+
+<% 	
+			for (Iterator iter2 = ((EdgePartConfiguration) partConf).getEdgeObjects().iterator(); iter2.hasNext();)
+			{
+				EdgeObject edgeObject = (EdgeObject) iter2.next();
+				String edgeObjectName = edgeObject.getId();
+
+%>
+	// Initialize the default value of the <%=name.toUpperCase()%>_<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_DEFAULT_VISIBILITY property
+    default<%=diagramConfiguration.getPrefix()%>Preference.put(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=name.toUpperCase()%>_<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_DEFAULT_VISIBILITY, "true");
+<%					
+			}				
+%>
+
+<%
+		}
+	}
+}
+%>
+		return default<%=diagramConfiguration.getPrefix()%>Preference;
+	}
+}
+
+    

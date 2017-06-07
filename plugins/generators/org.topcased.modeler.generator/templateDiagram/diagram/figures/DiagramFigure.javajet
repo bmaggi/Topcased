@@ -1,0 +1,58 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="DiagramFigure"
+	 version="$Id: DiagramFigure.javajet,v 1.4 2006/10/26 15:06:23 jako Exp $" %>
+<%	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>.figures;
+
+import org.eclipse.draw2d.Figure;
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.LineBorder;
+import org.eclipse.draw2d.ToolbarLayout;
+import org.topcased.draw2d.layout.BorderAttachedLayout;
+
+import org.topcased.modeler.figures.DiagramFigure;
+
+/**
+ * The figure to display a <%=diagramConfiguration.getName()%>.
+ *
+ * @generated
+ */
+public class <%=diagramConfiguration.getPrefix()%>DiagramFigure extends DiagramFigure {
+
+<%	switch (diagramConfiguration.getLayout().getValue()) {
+		case LayoutType.CLASS_LAYOUT:
+		case LayoutType.TOOLBAR_LAYOUT:%>
+    /**
+     * @see org.topcased.modeler.figures.DiagramFigure#createContainer()
+     * @generated
+     */
+    protected IFigure createContainer()
+    {
+        Figure container = new Figure();
+        container.setLayoutManager(new ToolbarLayout());
+        container.setOpaque(true);
+        container.setBorder(new LineBorder(1));
+        return container;
+    }
+<%      	break;
+		case LayoutType.PORT_LAYOUT:%>
+    /**
+     * @see org.topcased.modeler.figures.DiagramFigure#createContainer()
+     * @generated
+     */
+    protected IFigure createContainer()
+    {
+        Figure container = new Figure();
+        container.setLayoutManager(new BorderAttachedLayout());
+        container.setOpaque(true);
+        container.setBorder(new LineBorder(1));
+        return container;
+    }
+<%      	break;
+    	default:
+			break;
+   }%>
+}

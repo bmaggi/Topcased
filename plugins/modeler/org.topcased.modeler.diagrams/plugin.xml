@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.17 2008/06/04 19:02:37 sgabel Exp $
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://www.topcased.org/Diagrams/1.0" 
+       class = "org.topcased.modeler.diagrams.model.provider.DiagramsItemProviderAdapterFactory"
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+  
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+       uri = "http://www.topcased.org/Diagrams/0.11"
+       class = "org.topcased.modeler.diagrams.model.DiagramsPackage"
+       genModel = "model/Diagrams.genmodel" />  
+    <package
+       uri = "http://www.topcased.org/Diagrams/1.0"
+       class = "org.topcased.modeler.diagrams.model.DiagramsPackage"
+       genModel = "model/Diagrams.genmodel" />  
+    <package
+       uri = "http://org.topcased.modeler.diagrams.model"
+       class = "org.topcased.modeler.diagrams.model.DiagramsPackage" />
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+    <parser
+       type="diagrams"
+       class="org.topcased.modeler.diagrams.model.util.DiagramsResourceFactoryImpl" />
+  </extension>
+
+
+  <extension
+    point = "org.eclipse.ui.newWizards">
+     <category
+           id="org.topcased.facilities.newModels"
+           name="Topcased Models"
+           parentCategory="org.topcased.facilities.newWizards">
+     </category>
+    <wizard
+      id = "org.topcased.modeler.diagrams.model.internal.presentation.DiagramsModelWizardID"
+      name = "%_UI_DiagramsModelWizard_label"
+      class = "org.topcased.modeler.diagrams.model.internal.presentation.DiagramsModelWizard"
+      category = "org.topcased.facilities.newWizards/org.topcased.facilities.newModels"
+      icon = "icons/full/obj16/DiagramsModelFile.gif">
+      <description>%_UI_DiagramsModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "org.topcased.modeler.diagrams.model.internal.presentation.DiagramsEditorID"
+        name = "%_UI_DiagramsEditor_label"
+        icon = "icons/full/obj16/DiagramsModelFile.gif"
+        extensions = "diagrams"
+        class = "org.topcased.modeler.diagrams.model.internal.presentation.DiagramsEditor" 
+        contributorClass="org.topcased.modeler.diagrams.model.internal.presentation.DiagramsActionBarContributor" >
+    </editor>
+  </extension>    
+</plugin>

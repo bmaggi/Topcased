@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="flow"
+    nsURI="http:///AADL/flow" nsPrefix="flow">
+  <eClassifiers xsi:type="ecore:EClass" name="FlowSpec" eSuperTypes="core.ecore#//PropertyHolder">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//FlowSpec"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Flows" eSuperTypes="core.ecore#//AObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contents" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="namespace" value="flows"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endToEndFlow" upperBound="-1"
+        eType="#//EndToEndFlow" volatile="true" transient="true" derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="flows#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowSourceImpl" upperBound="-1"
+        eType="#//FlowSourceImpl" volatile="true" transient="true" derived="true"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="flows#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowSinkImpl" upperBound="-1"
+        eType="#//FlowSinkImpl" volatile="true" transient="true" derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="flows#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowPathImpl" upperBound="-1"
+        eType="#//FlowPathImpl" volatile="true" transient="true" derived="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="flows#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowImpl" abstract="true" eSuperTypes="#//FlowSequence"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowSpecs" eSuperTypes="core.ecore#//AObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contents" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="namespace" value="flowSpecs"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowSinkSpec" upperBound="-1"
+        eType="#//FlowSinkSpec" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="flowSpecs#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowSourceSpec" upperBound="-1"
+        eType="#//FlowSourceSpec" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="flowSpecs#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowPathSpec" upperBound="-1"
+        eType="#//FlowPathSpec" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="flowSpecs#contents"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EndToEndFlow" eSuperTypes="#//FlowSequence"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowPoint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowSourceSpec" eSuperTypes="#//FlowSpec">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dst" lowerBound="1" eType="#//FlowPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dstContext" eType="ecore:EClass feature.ecore#//PortGroup"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowSinkSpec" eSuperTypes="#//FlowSpec">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="#//FlowPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="srcContext" eType="ecore:EClass feature.ecore#//PortGroup"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowPathSpec" eSuperTypes="#//FlowSpec">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="#//FlowPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dst" lowerBound="1" eType="#//FlowPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="srcContext" eType="ecore:EClass feature.ecore#//PortGroup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dstContext" eType="ecore:EClass feature.ecore#//PortGroup"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowSourceImpl" eSuperTypes="#//FlowImpl">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implement" lowerBound="1"
+        eType="#//FlowSourceSpec"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowSinkImpl" eSuperTypes="#//FlowImpl">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implement" lowerBound="1"
+        eType="#//FlowSinkSpec"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowPathImpl" eSuperTypes="#//FlowImpl">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implement" lowerBound="1"
+        eType="#//FlowPathSpec"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowElement" eSuperTypes="core.ecore#//AObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowSpec" eType="#//FlowSpec"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connection" eType="ecore:EClass core.ecore#//Connection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowContext" eType="ecore:EClass core.ecore#//Subcomponent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowSequence" eSuperTypes="core.ecore#//ModeMember">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowElement" upperBound="-1"
+        eType="#//FlowElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//FlowSequence"/>
+  </eClassifiers>
+</ecore:EPackage>

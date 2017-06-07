@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.topcased.docbook/src"
+    modelPluginID="org.topcased.docbook" modelName="Docbook" importerID="org.eclipse.xsd.ecore.importer"
+    complianceLevel="5.0" copyrightFields="false">
+  <foreignModel>docbook.xsd</foreignModel>
+  <genPackages prefix="Docbook" basePackage="org.docbook.ns" resource="XML" disposableProviderFactory="true"
+      ecorePackage="docbook.ecore#/">
+    <genClasses ecoreClass="docbook.ecore#//BookType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//BookType/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//BookType/info"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//BookType/chapter"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//ChapterType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute docbook.ecore#//ChapterType/mixed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//ChapterType/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//ChapterType/para"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//ChapterType/sect1"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference docbook.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//DocumentRoot/book"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//DocumentRoot/chapter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//DocumentRoot/info"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//DocumentRoot/para"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference docbook.ecore#//DocumentRoot/sect1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//DocumentRoot/title"/>
+    </genClasses>
+    <genClasses ecoreClass="docbook.ecore#//Sect1Type">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute docbook.ecore#//Sect1Type/mixed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Sect1Type/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute docbook.ecore#//Sect1Type/para"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

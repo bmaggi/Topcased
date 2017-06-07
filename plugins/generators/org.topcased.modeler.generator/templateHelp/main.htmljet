@@ -1,0 +1,12 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports=""
+	 class="MainHTML"
+	 version="$Id: main.htmljet,v 1.1 2005/06/28 06:06:08 matg Exp $" %>
+<%String type = (String) argument;%>
+<html>
+	<body>
+		<p align="center">TOPCASED <%=type.toUpperCase()%> Metamodel Documentation</p>
+		Enter the documentation for <%=type.toUpperCase()%> here.
+	</body>
+</html>

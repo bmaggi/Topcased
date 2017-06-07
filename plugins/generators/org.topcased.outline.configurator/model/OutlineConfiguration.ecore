@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="configurator"
+    nsURI="http://www.topcased.org/OutlineConfigurator/1.0" nsPrefix="outlineconfigurator">
+  <eClassifiers xsi:type="ecore:EClass" name="OutlineConfiguration">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="The outline configuration contains all necessary information in order to generate customize outline code. This is the root model object."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="createChild" eType="#//CreateChildMenuConfiguration"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genPackage" lowerBound="1"
+        eType="ecore:EClass ../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="package" eType="ecore:EDataType ../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <details key="documentation" value="The package in which the 'Create child' menu is generated. If empty, it is generated in the root package."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pluginClassName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateChildMenuConfiguration">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="The create child menu configuration contains the 'Create child' actions to customize"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//MenuItem" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" eType="ecore:EDataType ../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral="CreateChildMenu">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <details key="documentation" value="The class name that is generated. By default, the name is 'CreateChildMenu'."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateChildAction" eSuperTypes="#//MenuItem">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="A CreateChildAction represents an action to create a given typed child."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" lowerBound="1" eType="ecore:EClass ../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ChildActionType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Menu" eSuperTypes="#//MenuGroup">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="A Menu represents a JFace menu manager."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MenuItem" abstract="true">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="A MenuItem represents a JFace contribution item."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//MenuGroup"
+        changeable="false" eOpposite="#//MenuGroup/items"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MenuGroup" eSuperTypes="#//MenuItem">
+    <eAnnotations source="http://www.topcased.org/documentation">
+      <details key="documentation" value="A MenuGroup represents a JFace separator group."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//MenuItem" containment="true" eOpposite="#//MenuItem/parent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ChildActionType">
+    <eLiterals name="Exact" value="1"/>
+    <eLiterals name="Hierachical"/>
+  </eClassifiers>
+</ecore:EPackage>

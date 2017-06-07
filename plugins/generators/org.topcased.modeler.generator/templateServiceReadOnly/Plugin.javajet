@@ -1,0 +1,159 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.editorconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="Plugin"
+	 version="$Id: Plugin.javajet,v 1.2 2006/05/02 14:04:34 jako Exp $" %>
+<%@ include file="cartoucheAirbus.txt"%>
+
+<%EditorConfiguration configuration = (EditorConfiguration) argument;%>
+package <%=configuration.getProjectName()%>servicereadonly;
+
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
+
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.osgi.framework.BundleContext;
+
+/**
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ * 
+ * The main plugin class to be used in the desktop.
+ * @generated
+ */
+public class <%=configuration.getPrefix()%>ServicePlugin extends AbstractUIPlugin {
+	
+    //The shared instance.
+	private static <%=configuration.getPrefix()%>ServicePlugin plugin;
+	
+    //Resource bundle.
+	private ResourceBundle resourceBundle;
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * The constructor.
+	 * @generated
+	 */
+	public <%=configuration.getPrefix()%>ServicePlugin() {
+		super();
+		plugin = this;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * This method is called upon plug-in activation
+	 * @param context 
+	 * @throws Exception 
+	 * @generated
+	 */
+	public void start(BundleContext context) throws Exception {
+		super.start(context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * This method is called when the plug-in is stopped
+	 * @param context 
+	 * @throws Exception 
+	 * @generated
+	 */
+	public void stop(BundleContext context) throws Exception {
+		super.stop(context);
+		plugin = null;
+		resourceBundle = null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * Returns the shared instance.
+	 * @return the plugin instance
+	 * @generated
+	 */
+	public static <%=configuration.getPrefix()%>ServicePlugin getDefault() {
+		return plugin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * Returns the string from the plugin's resource bundle,
+	 * or 'key' if not found.
+	 * @param key a String
+	 * @return String
+	 * @generated
+	 */
+	public static String getResourceString(String key) {
+		ResourceBundle bundle = <%=configuration.getPrefix()%>ServicePlugin.getDefault().getResourceBundle();
+		try {
+			return (bundle != null) ? bundle.getString(key) : key;
+		} catch (MissingResourceException e) {
+			return key;
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * Returns the plugin's resource bundle,
+	 * @return a ResourceBundle
+	 * @generated
+	 */
+	public ResourceBundle getResourceBundle() {
+		try {
+			if (resourceBundle == null)
+				resourceBundle = ResourceBundle.getBundle("<%=configuration.getProjectName()%>servicereadonly.<%=configuration.getPrefix()%>ServicePluginResources");
+		} catch (MissingResourceException x) {
+			resourceBundle = null;
+		}
+		return resourceBundle;
+	}
+	
+	 /**
+     * Log a message with given level into the Eclipse log file
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param message the message to log
+     * @param level the message priority
+     * @generated
+     */
+    public static void log(String message, int level) {
+        IStatus status = null;
+        status = new Status(level, getId(), IStatus.OK, message, null);
+        log(status);
+    }
+    
+    /**
+     * Log an IStatus
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param status
+     * @generated
+     */
+    public static void log(IStatus status) {
+        ResourcesPlugin.getPlugin().getLog().log(status);
+    }
+    
+    /**
+     * @return the Plugin Id
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public static String getId() {
+        return getDefault().getBundle().getSymbolicName();
+    }
+
+}

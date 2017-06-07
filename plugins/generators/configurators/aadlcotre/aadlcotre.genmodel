@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.topcased.aadlcotre/src"
+    editDirectory="/org.topcased.aadlcotre/src" editorDirectory="/org.topcased.aadlcotre/src"
+    modelPluginID="org.topcased.aadlcotre" modelName="Aadlcotre" modelPluginClass="org.topcased.aadlcotre.AADLCOTREPlugin"
+    editPluginClass="" editorPluginClass="" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    usedGenPackages="../../../plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>aadlcotre.ecore</foreignModel>
+  <genPackages prefix="AADLCOTRE" basePackage="org.topcased" disposableProviderFactory="true"
+      generateExampleClass="false" ecorePackage="aadlcotre.ecore#/">
+    <genClasses ecoreClass="aadlcotre.ecore#//Identifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//Identifier/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="aadlcotre.ecore#//AADLDeclaration"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//AADLSpecification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//AADLSpecification/AADLDeclaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//AADLSpecification/instance"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//AccessPropertyAssociation"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//AdditionalMode"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//AnnexAssumesSubClause">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//AnnexAssumesSubClause/CotreAssumesConstructs"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//AnnexGaranteesSubClause">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//AnnexGaranteesSubClause/CotreGaranteesConstructs"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="aadlcotre.ecore#//AnnexSubclause"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//AnnexTypeSubClause">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//AnnexTypeSubClause/TypeConstruct"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//AppliesToMode">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//AppliesToMode/Mode"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//AppliesToModeAndTransition">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//AppliesToModeAndTransition/old"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//AppliesToModeAndTransition/new"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//BusImplementation">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//BusImplementation/specification"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//BusImplementationExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//BusInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//BusInstance/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//BusType"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//BusTypeExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//ClientServerSubprogram">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//ClientServerSubprogram/server"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ClientServerSubprogram/SubProgramSignature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ClientServerSubprogram/UniqueSubProgramName"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ClientServerSubprogramConnection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//ClientServerSubprogramConnection/sourceUniqueClientServerSubprogram"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//ClientServerSubprogramConnection/destUniqueClientServerSubprogram"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="aadlcotre.ecore#//ComponentClassifier"/>
+    <genClasses image="false" ecoreClass="aadlcotre.ecore#//ComponentImplementation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//ComponentImplementation/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ComponentImplementation/componentImplementationRefines"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ComponentImplementation/connections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ComponentImplementation/annexSubclauses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ComponentImplementation/modes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ComponentImplementation/implementationProperties"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="aadlcotre.ecore#//ComponentImplementationExtension">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//ComponentImplementationExtension/extendedComponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ComponentImplementationExtension/connectionExt"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ComponentInstancePropertyAssociation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//ComponentInstancePropertyAssociation/identifierBeforeColon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//ComponentInstancePropertyAssociation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//ComponentInstancePropertyAssociation/constant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//ComponentInstancePropertyAssociation/set_to"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ComponentInstancePropertyAssociation/pa_applies_to_modes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ComponentInstancePropertyAssociation/PropertyExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ComponentInstancePropertyAssociation/identifierPath"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="aadlcotre.ecore#//ComponentType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//ComponentType/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ComponentType/Feature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ComponentType/ComponentTypePropertyAssociation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ComponentType/AnnexSubclause"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ComponentType/subclasses"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="aadlcotre.ecore#//ComponentTypeExtension">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//ComponentTypeExtension/extendedComponentName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ComponentTypeExtension/refinement"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ComponentTypePropertyAssociation"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//Connection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//Connection/prefix"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//Connection/dc_pa"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//Connection/dc_applies"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ConnectionRefinement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//ConnectionRefinement/name"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//ConnectionRefinement/PropertyAssociation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ConnectionRefinement/dc_applies"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ConnectionType"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//ContainedPropertyAssociation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//ContainedPropertyAssociation/constant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//ContainedPropertyAssociation/setToListSetTo"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//ContainedPropertyAssociation/Subcomponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ContainedPropertyAssociation/PropertyExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ContainedPropertyAssociation/subcatm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ContainedPropertyAssociation/containedUnit"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//ContainedPropertyAssociation/PropertySet"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//DataClassifierReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//DataClassifierReference/dataUniqueComponentType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//DataClassifierReference/dataImplementation"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//DataImplementation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//DataImplementation/subProgramsBehaviour"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//DataImplementation/specification"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//DataImplementationExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//DataInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//DataInstance/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//DataType"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//DataTypeExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//DeviceImplementation">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//DeviceImplementation/specification"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//DeviceImplementationExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//DeviceInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//DeviceInstance/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//DeviceType"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//DeviceTypeExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//EventDataConnection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//EventDataConnection/data"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//EventDataConnection/event"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//EventDataConnection/connectDelayed"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="aadlcotre.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//Feature/refined"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//InitialMode"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//MemoryImplementation">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//MemoryImplementation/specification"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//MemoryImplementationExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//MemoryInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//MemoryInstance/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//MemoryType"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//MemoryTypeExtension"/>
+    <genClasses image="false" ecoreClass="aadlcotre.ecore#//Mode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//Mode/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//Mode/modePropertyAssociations"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ModeSpec">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ModeSpec/InitialMode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ModeSpec/AdditionalMode"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ModeSubclause">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ModeSubclause/ModeSpec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ModeSubclause/modeBehavior"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ModeTransition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ModeTransition/UniquePortIdentifier"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//ModeTransition/sources"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//ModeTransition/dest"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="aadlcotre.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//Parameter/name"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//Parameter/DataClassifierReference"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ProcessImplementation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ProcessImplementation/ThreadInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ProcessImplementation/DataInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ProcessImplementation/ThreadGroupInstance"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//ProcessImplementation/specification"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ProcessImplementationExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//ProcessInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//ProcessInstance/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ProcessorImplementation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ProcessorImplementation/ProcessInstance"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//ProcessorImplementation/specification"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ProcessorImplementationExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//ProcessorInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//ProcessorInstance/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ProcessorType"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//ProcessorTypeExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//ProcessType"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//ProcessTypeExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//PropertyAssociation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//PropertyAssociation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//PropertyAssociation/constant"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//PropertyAssociation/PropertyExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//PropertyAssociation/AppliesToMode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//PropertyAssociation/PropertySet"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//PropertyCategory">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//PropertyCategory/ConnectionType"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//PropertyCategory/ComponentType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="aadlcotre.ecore#//PropertyDeclaration"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//PropertyExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//PropertyExpression/value"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//PropertyNameDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//PropertyNameDeclaration/modifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//PropertyNameDeclaration/PropertyCategory"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//PropertyNameDeclaration/DefaultPropertyExpression"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//PropertyNameDeclaration/PropertyType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//PropertyNameDeclaration/definingIdentifierList"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//PropertySet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//PropertySet/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//PropertySet/PropertyDeclaration"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//PropertyType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//PropertyType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//PropertyTypeDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//PropertyTypeDeclaration/PropertyType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//PropertyTypeDeclaration/definingIdentifierList"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//Refinement"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//RequiredAccesBinding">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//RequiredAccesBinding/required"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//RequiredAccesBinding/dataorbus"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="aadlcotre.ecore#//Subcomponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//Subcomponent/refined"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//Subcomponent/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//Subcomponent/RequiredAccesBinding"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//Subcomponent/ContainedPropertyAssociation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//Subcomponent/modes"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//SubComponentAccess">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//SubComponentAccess/SubComponentAccessClassifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//SubComponentAccess/AccessPropertyAssociation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//SubComponentAccess/definingIdentifierList"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//SubComponentAccessClassifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//SubComponentAccessClassifier/data"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//SubComponentAccessClassifier/uniqueComponentType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//SubComponentAccessClassifier/componentImplementation"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//SubProgramSignature">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//SubProgramSignature/Parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//SubProgramSpec">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//SubProgramSpec/ssSubprogramSignature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//SubProgramSpec/subprogramPropertyAssociation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//SubProgramSpec/definingIdentifierList"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//SystemImplementation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//SystemImplementation/MemoryInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//SystemImplementation/DeviceInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//SystemImplementation/BusInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//SystemImplementation/ProcessorInstance"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//SystemImplementation/specification"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//SystemImplementationExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//SystemInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//SystemInstance/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//SystemInstance/ComponentInstancePropertyAssociation"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//SystemInstance/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//SystemType"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//SystemTypeExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//ThreadGroupImplementation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ThreadGroupImplementation/ThreadInstance"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//ThreadGroupImplementation/specification"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ThreadGroupImplementationExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//ThreadGroupInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//ThreadGroupInstance/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ThreadGroupType"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//ThreadGroupTypeExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//ThreadImplementation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//ThreadImplementation/threadBehaviour"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//ThreadImplementation/specification"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ThreadImplementationExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//ThreadInstance">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//ThreadInstance/classifier"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//ThreadType"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//ThreadTypeExtension"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//UniquePortIdentifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//UniquePortIdentifier/subCompId"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//UniqueSubProgramName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//UniqueSubProgramName/subProgramIdentifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//UniqueSubProgramName/dataTypeIdentifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//UniqueSubProgramName/packageIdentifier"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="aadlcotre.ecore#//AbstractState">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//AbstractState/name"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//Action/value"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//AssumesConstruct">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//AssumesConstruct/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//AssumesConstruct/externalContract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//AssumesConstruct/contratValue"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="aadlcotre.ecore#//BehaviorConstructs">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//BehaviorConstructs/cbVarsBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//BehaviorConstructs/inits"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//BehaviorWithoutSub">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//BehaviorWithoutSub/Exception"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//BehaviorWithoutSub/Transition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//BehaviorWithoutSub/listStates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//BehaviorWithoutSub/initial"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//BehaviorWithoutSub/final"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//BehaviorWithSub">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//BehaviorWithSub/OpSection"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//Exception">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//Exception/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//Exception/CbActions"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//Exception/dest"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//Expression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//Expression/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//Expression/value"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//Field">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//Field/name"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//Field/Type"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//FinalState"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//InitialState"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//OpSection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//OpSection/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//OpSection/Exception"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//OpSection/VarsDeclaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//OpSection/Transition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//OpSection/inits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//OpSection/listStates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//OpSection/initial"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//OpSection/final"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//State"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//Transition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//Transition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//Transition/transitionCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//Transition/Action"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//Transition/source"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference aadlcotre.ecore#//Transition/dest"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//Type/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="aadlcotre.ecore#//TypeConstruct"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//VarDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//VarDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//VarDeclaration/Type"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//CommentableObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aadlcotre.ecore#//CommentableObject/comment"/>
+    </genClasses>
+    <genClasses ecoreClass="aadlcotre.ecore#//InParameter"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//InOutParameter"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//OutParameter"/>
+    <genClasses ecoreClass="aadlcotre.ecore#//VarsDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aadlcotre.ecore#//VarsDeclaration/VarDeclaration"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

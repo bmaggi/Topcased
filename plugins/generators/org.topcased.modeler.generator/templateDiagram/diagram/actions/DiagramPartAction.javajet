@@ -1,0 +1,111 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="org.topcased.modeler.diagramconfigurator.* org.topcased.modeler.diagramconfigurator.PartAction"
+	 class="DiagramPartAction"
+	 version="$Id: DiagramPartAction.javajet,v 1.1 2007/04/18 15:02:40 jako Exp $" %>
+	 
+<%  PartAction partAction = (PartAction) argument;
+	PartConfiguration partConfiguration = (PartConfiguration) partAction.eContainer();
+	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) partConfiguration.eContainer();
+	ObjectConfiguration objectConfiguration = partConfiguration.getObject();
+	String partPrefix = partConfiguration.getPrefix();
+	String actionPrefix = partAction.getPrefix();%>
+	
+<%=diagramConfiguration.getJavaCopyrightText()%>
+
+package <%=diagramConfiguration.getBasePackage()%>.actions;
+
+import org.eclipse.gef.commands.CommandStack;
+import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.ui.IEditorActionDelegate;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IWorkbenchPart;
+
+import org.topcased.modeler.di.model.GraphElement;
+
+import <%=diagramConfiguration.getBasePackage()%>.commands.<%=actionPrefix%>Command;
+import <%=diagramConfiguration.getBasePackage()%>.edit.<%=partPrefix%>EditPart;
+import <%=diagramConfiguration.getProjectName()%>.editor.<%=diagramConfiguration.getPluginPrefix()%>Editor;
+	
+/**
+ * @generated
+ */
+public class <%=actionPrefix%>Action implements IEditorActionDelegate {
+
+	/**
+     * The model/figure object
+
+	 * @generated
+     */
+    private Object template;
+    
+    /**
+     * The EditPart object
+	 * @generated
+     */
+    private IEditorPart targetEditor;
+    
+    /**
+     * The WorkbenchPart object
+	 * @generated
+     */
+    private IWorkbenchPart targetPart;
+
+	/**
+	 * Constructor for <%=actionPrefix%>Action
+	 * @generated
+	 */
+	public <%=actionPrefix%>Action() {
+		super();
+	}
+	
+	/**
+	 * @generated
+	 */
+	public void setActiveEditor(IAction action, IEditorPart targetEditor) {
+		this.targetEditor = targetEditor;
+	}
+
+	/**
+	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
+	 * @generated
+	 */
+	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
+		this.targetPart = targetPart;
+	}
+
+	/**
+	 * @see IActionDelegate#run(IAction)
+	 * @generated
+	 */
+	public void run(IAction action) {
+		if(this.template != null) {
+			<%=actionPrefix%>Command cmd = new <%=actionPrefix%>Command();
+			cmd.setCurrentPart(this.template);
+			if(targetEditor instanceof <%=diagramConfiguration.getPluginPrefix()%>Editor) {
+				<%=diagramConfiguration.getPluginPrefix()%>Editor aEditor = (<%=diagramConfiguration.getPluginPrefix()%>Editor) targetEditor;
+				((CommandStack) aEditor.getAdapter(CommandStack.class)).execute(cmd);
+			}
+		}
+	}
+
+	/**
+	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
+	 * @generated
+	 */
+	public void selectionChanged(IAction action, ISelection selection) {
+		
+		if(selection instanceof IStructuredSelection)
+		{
+			Object first = ((IStructuredSelection) selection).getFirstElement();
+			if(first instanceof <%=partPrefix%>EditPart) {
+				if(((<%=partPrefix%>EditPart) first).getModel() instanceof GraphElement) {
+					this.template = ((<%=partPrefix%>EditPart) first).getModel();
+					action.setEnabled(true);
+				}
+			}
+		}
+	}
+}

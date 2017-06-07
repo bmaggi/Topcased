@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramconfigurator:DiagramConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagramconfigurator="http://www.topcased.org/diagramconfigurator/0.10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" projectName="org.topcased.modeler.uml.statemachinediagram" name="State Machine Diagram" package="statemachinediagram" prefix="STM" layout="ToolbarLayout" copyrightText="Copyright (c) 2006 AIRBUS FRANCE. All rights reserved. This program and the&#xA;accompanying materials are made available under the terms of the Eclipse&#xA;Public License v1.0 which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html">
+  <palette name="STMDiagramPalette">
+    <paletteCategories name="Objects">
+      <items name="Region" part="//@parts.1"/>
+      <items name="State" part="//@parts.3"/>
+      <items name="Composite State" part="//@parts.4">
+        <eAnnotations source="codeCustom">
+          <details key="initModelObject" value="element.createRegion(&quot;Region1&quot;);"/>
+        </eAnnotations>
+      </items>
+      <items name="Submachine State" part="//@parts.5">
+        <eAnnotations source="codeCustom">
+          <details key="initModelObject" value="// Set a temporary StateMachine so that the isSubmachineState returns true.&#xA;element.setSubmachine(UMLFactory.eINSTANCE.createStateMachine());"/>
+        </eAnnotations>
+      </items>
+      <items name="ConnectionPointReference" part="//@parts.18"/>
+      <items name="FinalState" part="//@parts.6"/>
+    </paletteCategories>
+    <paletteCategories name="Pseudostates">
+      <items name="Initial" part="//@parts.8">
+        <eAnnotations source="codeCustom">
+          <details key="initModelObject" value="element.setKind(PseudostateKind.INITIAL_LITERAL);"/>
+        </eAnnotations>
+      </items>
+      <items name="Deep History" part="//@parts.9">
+        <eAnnotations source="codeCustom">
+          <details key="initModelObject" value="element.setKind(PseudostateKind.DEEP_HISTORY_LITERAL);"/>
+        </eAnnotations>
+      </items>
+      <items name="Shallow History" part="//@parts.10">
+        <eAnnotations source="codeCustom">
+          <details key="initModelObject" value="element.setKind(PseudostateKind.SHALLOW_HISTORY_LITERAL);"/>
+        </eAnnotations>
+      </items>
+      <items name="Join" part="//@parts.11">
+        <eAnnotations source="codeCustom">
+          <details key="initModelObject" value="element.setKind(PseudostateKind.JOIN_LITERAL);"/>
+        </eAnnotations>
+      </items>
+      <items name="Fork" part="//@parts.12">
+        <eAnnotations source="codeCustom">
+          <details key="initModelObject" value="element.setKind(PseudostateKind.FORK_LITERAL);"/>
+        </eAnnotations>
+      </items>
+      <items name="Junction" part="//@parts.13">
+        <eAnnotations source="codeCustom">
+          <details key="initModelObject" value="element.setKind(PseudostateKind.JUNCTION_LITERAL);"/>
+        </eAnnotations>
+      </items>
+      <items name="Choice" part="//@parts.14">
+        <eAnnotations source="codeCustom">
+          <details key="initModelObject" value="element.setKind(PseudostateKind.CHOICE_LITERAL);"/>
+        </eAnnotations>
+      </items>
+      <items name="Entry Point" part="//@parts.15">
+        <eAnnotations source="codeCustom">
+          <details key="initModelObject" value="element.setKind(PseudostateKind.ENTRY_POINT_LITERAL);"/>
+        </eAnnotations>
+      </items>
+      <items name="Exit Point" part="//@parts.16">
+        <eAnnotations source="codeCustom">
+          <details key="initModelObject" value="element.setKind(PseudostateKind.EXIT_POINT_LITERAL);"/>
+        </eAnnotations>
+      </items>
+      <items name="Terminate" part="//@parts.17">
+        <eAnnotations source="codeCustom">
+          <details key="initModelObject" value="element.setKind(PseudostateKind.TERMINATE_LITERAL);"/>
+        </eAnnotations>
+      </items>
+    </paletteCategories>
+    <paletteCategories name="Connections">
+      <items name="Transition" part="//@parts.7"/>
+    </paletteCategories>
+    <paletteCategories name="Comment">
+      <items name="Comment" part="//@parts.19"/>
+      <items name="Comment Link" part="//@parts.20"/>
+    </paletteCategories>
+  </palette>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.1" defaultWidth="0" defaultHeight="0" minimumWidth="0" minimumHeight="0" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.2" defaultForegroundColor="200,200,200" defaultFont="Sans-regular-10" fontChangeable="false" lineStyle="DASH" prefix="Region" type="Container" childElements="//@parts.2" container="true" directEditable="false" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.3" defaultFont="Sans-regular-10" prefix="Vertex" type="Container" superType="//@parts.0" defaultWidth="0" defaultHeight="0" minimumWidth="0" minimumHeight="0" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.4" defaultFont="Sans-regular-10" prefix="State" type="State" superType="//@parts.2" maximumWidth="0" maximumHeight="0">
+    <constraint language="ocl" rule="self.isSimple=true"/>
+    <constraint language="ocl" rule="self.isSubmachineState=false"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.4" defaultFont="Sans-regular-10" prefix="CompositeState" type="Container" childElements="//@parts.1" superType="//@parts.2" container="true" layout="ToolbarLayout" defaultWidth="150" defaultHeight="100" minimumWidth="50" minimumHeight="30" maximumWidth="0" maximumHeight="0">
+    <constraint language="ocl" rule="self.isComposite=true"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.4" defaultFont="Sans-regular-10" prefix="SubmachineState" type="Container With Inner Label" childElements="//@parts.18" superType="//@parts.2" container="true" layout="PortLayout" defaultWidth="150" defaultHeight="100" minimumWidth="50" minimumHeight="30" maximumWidth="0" maximumHeight="0">
+    <constraint language="ocl" rule="self.isSubmachineState=true"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.6" defaultFont="Sans-regular-10" prefix="FinalState" superType="//@parts.3" defaultBackgroundColor="0,0,0" defaultWidth="40" defaultHeight="40" maximumWidth="100" maximumHeight="100"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.7" defaultFont="Sans-regular-10" prefix="Transition" targetDecoration="ARROW">
+    <sourceTargetCouple containerType="SOURCE_CONTAINER" autoRef="true" sourceNode="//@parts.2" targetNode="//@parts.2">
+      <containerObject href="UML.genmodel#//uml/Region"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Region/transition"/>
+      <refSourceToEdge xsi:type="ecore:EReference" href="UML.ecore#//Vertex/outgoing"/>
+      <refEdgeToSource xsi:type="ecore:EReference" href="UML.ecore#//Transition/source"/>
+      <refTargetToEdge xsi:type="ecore:EReference" href="UML.ecore#//Vertex/incoming"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//Transition/target"/>
+    </sourceTargetCouple>
+    <edgeObjects id="name" type="Middle">
+      <eStructuralFeature xsi:type="ecore:EAttribute" href="UML.ecore#//NamedElement/name"/>
+    </edgeObjects>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.5" foregroundColorChangeable="false" defaultFont="Sans-regular-10" fontChangeable="false" prefix="PseudostateInitial" superType="//@parts.2" defaultBackgroundColor="0,0,0" directEditable="false" defaultWidth="20" defaultHeight="20" maximumWidth="50" maximumHeight="50">
+    <constraint language="ocl" rule="self.kind=PseudostateKind::initial"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.5" defaultFont="Sans-regular-10" fontChangeable="false" prefix="PseudostateDeepHistory" superType="//@parts.2" directEditable="false" defaultWidth="40" defaultHeight="40" minimumWidth="40" minimumHeight="40" maximumWidth="100" maximumHeight="100">
+    <constraint language="ocl" rule="self.kind=PseudostateKind::deepHistory"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.5" defaultFont="Sans-regular-10" fontChangeable="false" prefix="PseudostateShallowHistory" superType="//@parts.2" directEditable="false" defaultWidth="40" defaultHeight="40" minimumWidth="40" minimumHeight="40" maximumWidth="100" maximumHeight="100">
+    <constraint language="ocl" rule="self.kind=PseudostateKind::shallowHistory"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.5" defaultFont="Sans-regular-10" fontChangeable="false" prefix="PseudostateJoin" superType="//@parts.2" defaultBackgroundColor="0,0,0" directEditable="false" defaultWidth="10" minimumWidth="10" minimumHeight="40" maximumWidth="10" maximumHeight="0">
+    <constraint language="ocl" rule="self.kind=PseudostateKind::join"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.5" defaultFont="Sans-regular-10" fontChangeable="false" prefix="PseudostateFork" superType="//@parts.2" defaultBackgroundColor="0,0,0" directEditable="false" defaultWidth="10" minimumWidth="10" minimumHeight="40" maximumWidth="10" maximumHeight="0">
+    <constraint language="ocl" rule="self.kind=PseudostateKind::fork"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.5" defaultFont="Sans-regular-10" fontChangeable="false" prefix="PseudostateJunction" superType="//@parts.2" defaultBackgroundColor="0,0,0" directEditable="false" defaultWidth="30" defaultHeight="30" minimumWidth="30" minimumHeight="30" maximumWidth="100" maximumHeight="100">
+    <constraint language="ocl" rule="self.kind=PseudostateKind::junction"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.5" defaultFont="Sans-regular-10" fontChangeable="false" prefix="PseudostateChoice" superType="//@parts.2" directEditable="false" defaultWidth="40" defaultHeight="30" minimumWidth="30" maximumWidth="120" maximumHeight="90">
+    <constraint language="ocl" rule="self.kind=PseudostateKind::choice"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.5" defaultFont="Sans-regular-10" fontChangeable="false" prefix="PseudostateEntryPoint" superType="//@parts.2" directEditable="false" defaultWidth="20" defaultHeight="20" maximumWidth="50" maximumHeight="50">
+    <constraint language="ocl" rule="self.kind=PseudostateKind::entryPoint"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.5" defaultFont="Sans-regular-10" fontChangeable="false" prefix="PseudostateExitPoint" superType="//@parts.2" directEditable="false" defaultWidth="20" defaultHeight="20" maximumWidth="50" maximumHeight="50">
+    <constraint language="ocl" rule="self.kind=PseudostateKind::exitPoint"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.5" defaultFont="Sans-regular-10" fontChangeable="false" lineWidth="2" prefix="PseudostateTerminate" superType="//@parts.2" directEditable="false" defaultWidth="30" defaultHeight="30" maximumWidth="100" maximumHeight="100">
+    <constraint language="ocl" rule="self.kind=PseudostateKind::terminate"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.8" defaultFont="Sans-regular-10" type="Port" superType="//@parts.2" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1" attachedToBorder="true"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.9" type="Comment" defaultBackgroundColor="255,195,0" defaultWidth="150" defaultHeight="25" minimumWidth="50" minimumHeight="25" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.10" defaultForegroundColor="255,195,0" lineStyle="CUSTOM">
+    <sourceTargetCouple sourceNode="//@parts.19" targetNode="//@parts.0">
+      <refSourceToTarget xsi:type="ecore:EReference" href="UML.ecore#//Comment/annotatedElement"/>
+    </sourceTargetCouple>
+  </parts>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/StateMachine"/>
+    <diagrams diagram="/"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Element"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Region"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Vertex"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/State"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Pseudostate"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/FinalState"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Transition"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/ConnectionPointReference"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Comment"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" name="CommentLink"/>
+  <genModel href="UML.genmodel#/"/>
+  <templateRootObject href="UML.genmodel#//uml/StateMachine"/>
+  <editorConfigurator href="UML.editorconfigurator#/"/>
+</diagramconfigurator:DiagramConfiguration>

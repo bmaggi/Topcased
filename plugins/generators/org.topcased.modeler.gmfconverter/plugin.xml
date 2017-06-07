@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution
+			id="org.topcased.gmfconverter.ExportContribution"
+			objectClass="org.eclipse.core.resources.IFile"
+			adaptable="true"
+			nameFilter="*.diagramconfigurator">
+			<action
+				id="org.topcased.gmfconverter.action.ExportAction"
+				class="org.topcased.gmfconverter.action.ExportAction"
+				enablesFor="1"
+				icon="icons/convert.gif"
+				label="Export to GMF configuration files"
+				menubarPath="org.topcased.facilities.menu.topcased/org.topcased.facilities.menu.generation/topcasedGroup"/>
+		</objectContribution>
+	</extension>
+
+</plugin>

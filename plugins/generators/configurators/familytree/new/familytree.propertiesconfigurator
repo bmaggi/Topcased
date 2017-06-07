@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertiesconfigurator:TabbedView xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:propertiesconfigurator="http://www.topcased.org/PropertiesViewConfiguration/1.0" projectName="org.topcased.modeler.familytreediagram.properties" id="org.topcased.modeler.familytreediagram.properties" name="FamilyTree Properties" basePackage="org.topcased.modeler.familytreediagram.properties">
+  <categories name="FamilyTree">
+    <tabs label="Model">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Name">
+        <feature href="familytree.genmodel#//familytree/FamilyTree/name"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="Person">
+    <tabs label="Model">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="First Name">
+        <feature href="familytree.genmodel#//familytree/Person/firstName"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.1/@tabs.0/@sections.0" label="Last Name">
+        <feature href="familytree.genmodel#//familytree/Person/lastName"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.1/@tabs.0/@sections.1" label="Birth Year">
+        <feature href="familytree.genmodel#//familytree/Person/birthYear"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.1/@tabs.0/@sections.2" label="Death Year">
+        <feature href="familytree.genmodel#//familytree/Person/deathYear"/>
+      </sections>
+    </tabs>
+    <tabs label="Children" afterTab="//@categories.4/@tabs.0" indented="true">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Children" multiline="true">
+        <feature href="familytree.genmodel#//familytree/Person/children"/>
+      </sections>
+    </tabs>
+    <tabs label="Parents" afterTab="//@categories.1/@tabs.2" indented="true">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Parents" multiline="true">
+        <feature href="familytree.genmodel#//familytree/Person/parents"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="Man">
+    <tabs label="Model">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.1/@tabs.0/@sections.3" label="Wife">
+        <feature href="familytree.genmodel#//familytree/Man/wife"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="Woman">
+    <tabs label="Model">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.1/@tabs.0/@sections.3" label="Husband">
+        <feature href="familytree.genmodel#//familytree/Woman/husband"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="Wedding">
+    <tabs label="Model">
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" label="Wife">
+        <feature href="familytree.genmodel#//familytree/Wedding/wife"/>
+      </sections>
+      <sections xsi:type="propertiesconfigurator:SingleFeatureSection" afterSection="//@categories.4/@tabs.0/@sections.0" label="Husband">
+        <feature href="familytree.genmodel#//familytree/Wedding/husband"/>
+      </sections>
+    </tabs>
+  </categories>
+  <categories name="All">
+    <tabs label="Advanced">
+      <sections xsi:type="propertiesconfigurator:AdvancedSection" label="AvancedLabel">
+        <input href="familytree.genmodel#//familytree/Wedding"/>
+        <input href="familytree.genmodel#//familytree/FamilyTree"/>
+        <input href="familytree.genmodel#//familytree/Person"/>
+        <input href="familytree.genmodel#//familytree/Man"/>
+        <input href="familytree.genmodel#//familytree/Woman"/>
+      </sections>
+    </tabs>
+  </categories>
+  <genModel href="familytree.genmodel#/"/>
+</propertiesconfigurator:TabbedView>

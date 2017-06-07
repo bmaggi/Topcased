@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.topcased.properties.configurator/src"
+    editDirectory="/org.topcased.properties.configurator/src" editorDirectory="/org.topcased.properties.configurator/src"
+    modelPluginID="org.topcased.properties.configurator" modelName="PropertiesViewConfiguration"
+    modelPluginClass="org.topcased.properties.configurator.internal.ConfiguratorPlugin"
+    editPluginClass="" editorPluginClass="" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    usedGenPackages="../../../plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel#//genmodel">
+  <foreignModel>PropertiesViewConfiguration.ecore</foreignModel>
+  <genPackages prefix="PropertiesConfigurator" basePackage="org.topcased.properties"
+      disposableProviderFactory="true" classPackageSuffix="internal.impl" presentationPackageSuffix="internal.presentation"
+      generateExampleClass="false" ecorePackage="PropertiesViewConfiguration.ecore#/">
+    <genClasses ecoreClass="PropertiesViewConfiguration.ecore#//TabbedView">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PropertiesViewConfiguration.ecore#//TabbedView/projectName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PropertiesViewConfiguration.ecore#//TabbedView/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PropertiesViewConfiguration.ecore#//TabbedView/categories"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PropertiesViewConfiguration.ecore#//TabbedView/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PropertiesViewConfiguration.ecore#//TabbedView/genModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PropertiesViewConfiguration.ecore#//TabbedView/basePackage"/>
+      <genOperations ecoreOperation="PropertiesViewConfiguration.ecore#//TabbedView/getProjectNameUnspaced"/>
+      <genOperations ecoreOperation="PropertiesViewConfiguration.ecore#//TabbedView/getIdUnspaced"/>
+      <genOperations ecoreOperation="PropertiesViewConfiguration.ecore#//TabbedView/replaceSpaces">
+        <genParameters ecoreParameter="PropertiesViewConfiguration.ecore#//TabbedView/replaceSpaces/toReplace"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="PropertiesViewConfiguration.ecore#//Tab" labelFeature="#//configurator/Tab/label">
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute PropertiesViewConfiguration.ecore#//Tab/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PropertiesViewConfiguration.ecore#//Tab/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PropertiesViewConfiguration.ecore#//Tab/sections"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PropertiesViewConfiguration.ecore#//Tab/category"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PropertiesViewConfiguration.ecore#//Tab/afterTab"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PropertiesViewConfiguration.ecore#//Tab/indented"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="PropertiesViewConfiguration.ecore#//AbstractSection"
+        labelFeature="#//configurator/AbstractSection/label">
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute PropertiesViewConfiguration.ecore#//AbstractSection/id"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PropertiesViewConfiguration.ecore#//AbstractSection/tab"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PropertiesViewConfiguration.ecore#//AbstractSection/afterSection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PropertiesViewConfiguration.ecore#//AbstractSection/label"/>
+      <genOperations ecoreOperation="PropertiesViewConfiguration.ecore#//AbstractSection/getClassName"/>
+    </genClasses>
+    <genClasses ecoreClass="PropertiesViewConfiguration.ecore#//Category">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PropertiesViewConfiguration.ecore#//Category/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PropertiesViewConfiguration.ecore#//Category/tabs"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PropertiesViewConfiguration.ecore#//Category/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="PropertiesViewConfiguration.ecore#//SingleFeatureSection"
+        labelFeature="#//configurator/AbstractSection/label">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PropertiesViewConfiguration.ecore#//SingleFeatureSection/feature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PropertiesViewConfiguration.ecore#//SingleFeatureSection/multiline"/>
+    </genClasses>
+    <genClasses ecoreClass="PropertiesViewConfiguration.ecore#//MultipleFeatureSection"
+        labelFeature="#//configurator/AbstractSection/label">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PropertiesViewConfiguration.ecore#//MultipleFeatureSection/features"/>
+    </genClasses>
+    <genClasses ecoreClass="PropertiesViewConfiguration.ecore#//AdvancedSection" labelFeature="#//configurator/AbstractSection/label">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PropertiesViewConfiguration.ecore#//AdvancedSection/input"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,62 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.topcased.modeler.editorconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="NodePreferencePage"
+	 version="$Id: NodePreferencePage.javajet,v 1.4 2009/01/14 18:04:01 tlandre Exp $" %>
+<%	NodePartConfiguration nodePartConfiguration = (NodePartConfiguration) argument;
+	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) nodePartConfiguration.eContainer();
+	ObjectConfiguration objectConfiguration = nodePartConfiguration.getObject();
+	String partPrefix = nodePartConfiguration.getPrefix();%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>.preferences;
+
+import org.topcased.modeler.preferences.AbstractNodePreferencePage;
+import org.eclipse.jface.preference.IPreferenceStore;
+import <%=diagramConfiguration.getEditorConfigurator().getProjectName()%>.<%=diagramConfiguration.getEditorConfigurator().getPrefix()%>Plugin;
+
+/**
+ * This class represents a preference page that is contributed to the Preferences or Property dialog. This page is used to modify
+ * preferences only. They are stored in the preference store that belongs to the main plug-in class. That way,
+ * preferences can be accessed directly via the preference store.
+ *
+ * @generated
+ */
+public class <%=partPrefix%>PreferencePage extends AbstractNodePreferencePage
+{
+	/**
+	 * @see org.topcased.modeler.preferences.AbstractNodePreferencePage#getNodeBackgroundColor()
+	 * @generated
+	 */
+	protected String getNodeBackgroundColor() 
+	{
+		return <%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_DEFAULT_BACKGROUND_COLOR;
+	}
+
+	/**
+	 * @see org.topcased.modeler.preferences.AbstractNodePreferencePage#getNodeFont()
+	 * @generated
+	 */
+	protected String getNodeFont() 
+	{
+		return  <%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_DEFAULT_FONT;
+	}
+
+	/**
+	 * @see org.topcased.modeler.preferences.AbstractNodePreferencePage#getNodeForegroundColor()
+	 * @generated
+	 */
+	protected String getNodeForegroundColor() 
+	{
+		return <%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_DEFAULT_FOREGROUND_COLOR;
+	}
+	
+	/**
+	 * @see org.topcased.facilities.preferences.AbstractTopcasedPreferencePage#getBundleId()
+	 * @generated
+	 */
+	protected String getBundleId()
+	{
+		return <%=diagramConfiguration.getEditorConfigurator().getPrefix()%>Plugin.getId();
+	}
+    
+ }

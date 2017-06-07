@@ -1,0 +1,79 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.modeler.diagramconfigurator.*"
+	 class="DiagramGraphConf"
+	 version="$Id: diagram.graphconfjet,v 1.6 2006/09/29 15:38:23 jako Exp $" %>
+<%	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) argument;%>
+<?xml version="1.0" encoding="UTF-8"?>
+<graphconf:DiagramGraphConf xmlns:graphconf="http://www.topcased.org/1.0/graphconf"
+    id="<%=diagramConfiguration.getBasePackage()%>"
+    defaultBackgroundColor="<%=diagramConfiguration.getDefaultBackgroundColorStringValue()%>"
+    defaultForegroundColor="<%=diagramConfiguration.getDefaultForegroundColorStringValue()%>"
+    defaultFont="<%=diagramConfiguration.getDefaultFontStringValue()%>">
+<%	for (Iterator itParts = diagramConfiguration.getParts().iterator(); itParts.hasNext(); )
+	{
+		PartConfiguration partConf = (PartConfiguration) itParts.next();
+		if (partConf instanceof NodePartConfiguration)
+		{
+			NodePartConfiguration nodePartConf = (NodePartConfiguration) partConf;
+			String bridge = "";
+			if (nodePartConf.getObject() instanceof ModelObjectConfiguration) {
+			
+				String type = ((ModelObjectConfiguration) nodePartConf.getObject()).getGenClass().getGenPackage().getRootGenPackage().getNSURI() + "#" + ((ModelObjectConfiguration) nodePartConf.getObject()).getGenClass().getEcoreClass().eResource().getURIFragment(((ModelObjectConfiguration) nodePartConf.getObject()).getGenClass().getEcoreClass());
+				bridge = "<bridge xsi:type=\"graphconf:EMFBridge\">\n            <type href=\"" + type + "\"/>\n        </bridge>";
+			}
+			else {
+				String type = nodePartConf.getObject().getName();
+				bridge = "<bridge xsi:type=\"graphconf:StringBridge\" type=\"" + type + "\"/>";
+			}%>
+    <node
+        presentation="<%=nodePartConf.getPresentation()%>"
+        defaultHeight="<%=nodePartConf.getDefaultHeight()%>"
+        defaultWidth="<%=nodePartConf.getDefaultWidth()%>"
+        minimumHeight="<%=nodePartConf.getMinimumHeight()%>"
+        minimumWidth="<%=nodePartConf.getMinimumWidth()%>"
+        maximumHeight="<%=nodePartConf.getMaximumHeight()%>"
+        maximumWidth="<%=nodePartConf.getMaximumWidth()%>"
+        defaultBackgroundColor="<%=nodePartConf.getDefaultBackgroundColorStringValue()%>"
+        defaultForegroundColor="<%=nodePartConf.getDefaultForegroundColorStringValue()%>"
+        defaultFont="<%=nodePartConf.getDefaultFontStringValue()%>"
+        lineWidth="<%=nodePartConf.getLineWidth()%>"
+        lineStyle="<%=nodePartConf.getLineStyle().getLiteral()%>"
+        isWidthResizable="<%=nodePartConf.getResizing().getValue() == ResizableType.WIDTH || nodePartConf.getResizing().getValue() == ResizableType.ALL%>"
+        isHeightResizable="<%=nodePartConf.getResizing().getValue() == ResizableType.HEIGHT || nodePartConf.getResizing().getValue() == ResizableType.ALL%>">
+        <%=bridge%>
+<%			for (Iterator itConstraints = nodePartConf.getConstraint().iterator(); itConstraints.hasNext(); ) {
+				Constraint constraint = (Constraint) itConstraints.next();%>
+        <constraint language="<%=constraint.getLanguage()%>" rule="<%=constraint.getRule()%>"/>
+<%			}%>
+    </node>
+<%		}
+		else if (partConf instanceof EdgePartConfiguration && partConf.getObject() != null)
+		{
+			EdgePartConfiguration edgePartConf = (EdgePartConfiguration) partConf;
+			String bridge = "";
+			if (edgePartConf.getObject() instanceof ModelObjectConfiguration) {
+				String type = ((ModelObjectConfiguration) edgePartConf.getObject()).getGenClass().getGenPackage().getRootGenPackage().getNSURI() + "#" + ((ModelObjectConfiguration) edgePartConf.getObject()).getGenClass().getEcoreClass().eResource().getURIFragment(((ModelObjectConfiguration) edgePartConf.getObject()).getGenClass().getEcoreClass());
+				bridge = "<bridge xsi:type=\"graphconf:EMFBridge\">\n            <type href=\"" + type + "\"/>\n        </bridge>";
+			}
+			else {
+				String type = edgePartConf.getObject().getName();
+				bridge = "<bridge xsi:type=\"graphconf:StringBridge\" type=\"" + type + "\"/>";
+			}%>
+    <edge
+        presentation="<%=edgePartConf.getPresentation()%>"
+        defaultForegroundColor="<%=edgePartConf.getDefaultForegroundColorStringValue()%>"
+        defaultFont="<%=edgePartConf.getDefaultFontStringValue()%>"
+        defaultRouter="<%=edgePartConf.getDefaultRouter().getLiteral()%>"
+        lineWidth="<%=edgePartConf.getLineWidth()%>"
+        lineStyle="<%=edgePartConf.getLineStyle().getLiteral()%>">
+        <%=bridge%>
+<%			for (Iterator itConstraints = edgePartConf.getConstraint().iterator(); itConstraints.hasNext(); ) {
+				Constraint constraint = (Constraint) itConstraints.next();%>
+        <constraint language="<%=constraint.getLanguage()%>" rule="<%=constraint.getRule()%>"/>
+<%			}%>
+    </edge>
+<%		}
+	}%>
+</graphconf:DiagramGraphConf>
+

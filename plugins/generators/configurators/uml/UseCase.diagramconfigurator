@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramconfigurator:DiagramConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagramconfigurator="http://www.topcased.org/diagramconfigurator/1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" projectName="org.topcased.modeler.uml" name="Use Case Diagram" package="usecasediagram" prefix="UseCase" copyrightText="Copyright (c) 2006 AIRBUS FRANCE. All rights reserved. This program and the&#xA;accompanying materials are made available under the terms of the Eclipse&#xA;Public License v1.0 which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html" samePluginAsEditor="true">
+  <palette name="UseCaseDiagramPalette">
+    <paletteCategories name="Objects">
+      <items name="Package" part="//@parts.1"/>
+      <items name="Actor" part="//@parts.2"/>
+      <items name="Use Case" part="//@parts.3"/>
+    </paletteCategories>
+    <paletteCategories name="Connections">
+      <items name="Association" part="//@parts.6"/>
+      <items name="Generalization" part="//@parts.7"/>
+      <items name="Include" part="//@parts.5"/>
+      <items name="Extend" part="//@parts.4"/>
+    </paletteCategories>
+    <paletteCategories name="Comment">
+      <items name="Comment" part="//@parts.8"/>
+      <items name="Comment Link" part="//@parts.9"/>
+    </paletteCategories>
+  </palette>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.1" defaultFont="Sans-regular-10" defaultWidth="0" defaultHeight="0" minimumWidth="0" minimumHeight="0" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.0" defaultFont="Sans-regular-10" type="Package" defaultBackgroundColor="244,164,96" defaultWidth="100" defaultHeight="80" minimumWidth="50" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.2" defaultFont="Sans-regular-10" type="Man" superType="//@parts.0" defaultWidth="80" defaultHeight="80" minimumWidth="50" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.7" defaultFont="Sans-regular-10" type="State" superType="//@parts.0" defaultWidth="120" defaultHeight="80" minimumWidth="50" minimumHeight="50"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.5" defaultFont="Sans-regular-10" targetDecoration="ARROW">
+    <sourceTargetCouple containerType="SOURCE" sourceNode="//@parts.3" targetNode="//@parts.3">
+      <containerObject href="UML.genmodel#//uml/UseCase"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//UseCase/extend"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//Extend/extendedCase"/>
+    </sourceTargetCouple>
+    <edgeObjects id="name" type="Middle">
+      <eStructuralFeature xsi:type="ecore:EAttribute" href="UML.ecore#//NamedElement/name"/>
+    </edgeObjects>
+    <edgeObjects id="extension" type="Target"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.6" defaultFont="Sans-regular-10" targetDecoration="ARROW">
+    <sourceTargetCouple containerType="SOURCE" sourceNode="//@parts.3" targetNode="//@parts.3">
+      <containerObject href="UML.genmodel#//uml/UseCase"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//UseCase/include"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//Include/addition"/>
+    </sourceTargetCouple>
+    <edgeObjects id="name" type="Middle">
+      <eStructuralFeature xsi:type="ecore:EAttribute" href="UML.ecore#//NamedElement/name"/>
+    </edgeObjects>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.3" defaultFont="Sans-regular-10">
+    <sourceTargetCouple containerType="SOURCE_CONTAINER" autoRef="true" sourceNode="//@parts.0" targetNode="//@parts.0">
+      <containerObject href="UML.genmodel#//uml/Package"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Package/packagedElement"/>
+    </sourceTargetCouple>
+    <edgeObjects id="srcCount"/>
+    <edgeObjects id="targetCount" type="Target"/>
+    <edgeObjects id="stereotype" type="Middle"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.4" defaultFont="Sans-regular-10" targetDecoration="TRIANGLE">
+    <sourceTargetCouple containerType="SOURCE" sourceNode="//@parts.0" targetNode="//@parts.0">
+      <containerObject href="UML.genmodel#//uml/Classifier"/>
+      <containerRef xsi:type="ecore:EReference" href="UML.ecore#//Classifier/generalization"/>
+      <refEdgeToTarget xsi:type="ecore:EReference" href="UML.ecore#//Generalization/general"/>
+    </sourceTargetCouple>
+    <edgeObjects id="stereotype" type="Middle"/>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" object="//@objects.8" defaultFont="Sans-regular-10" type="Comment" defaultBackgroundColor="255,195,0" defaultWidth="150" defaultHeight="25" minimumWidth="50" minimumHeight="25"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" object="//@objects.9" defaultForegroundColor="255,195,0" defaultFont="Sans-regular-10" lineStyle="CUSTOM">
+    <sourceTargetCouple sourceNode="//@parts.8" targetNode="//@parts.0">
+      <refSourceToTarget xsi:type="ecore:EReference" href="UML.ecore#//Comment/annotatedElement"/>
+    </sourceTargetCouple>
+  </parts>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Package"/>
+    <diagrams diagram="/"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Classifier"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Actor"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Association"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Generalization"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Extend"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Include"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/UseCase"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration">
+    <genClass href="UML.genmodel#//uml/Comment"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" name="CommentLink"/>
+  <genModel href="UML.genmodel#/"/>
+  <templateRootObject href="UML.genmodel#//uml/Package"/>
+  <editorConfigurator href="UML.editorconfigurator#/"/>
+</diagramconfigurator:DiagramConfiguration>

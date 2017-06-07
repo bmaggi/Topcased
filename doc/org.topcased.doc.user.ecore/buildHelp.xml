@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<project default="eclipsehelp">
+    <property environment="env"/>
+    <property name="ditaHome" value="${env.DITA_HOME}"/>
+    <property name="dita.temp.dir" value="${ditaHome}/temp"/>
+
+	<property name="helpbasedir" value="ditahelp" />
+	<property name="helptempdir" value="eclipsehelp" />
+	<property name="tocfile" value="toc.xml" />
+	<property name="csspath" value="css" />
+
+	<import file="${ditaHome}/build_dita2eclipsehelp.xml" />
+
+	<available file="./doc.zip" property="doc.zip.present"/>
+	
+	<target name="eclipsehelp" description="Build eclipse help plugin." unless="doc.zip.present">
+		<antcall target="dita2eclipsehelp">
+			<param name="args.csspath" value="${csspath}" />
+			<param name="args.copycss" value="yes" />
+			<param name="args.css" value="${helpbasedir}/${csspath}/visual.css" />
+			<param name="dita.eclipse.plugin" value="no" />
+			<param name="args.input" value="${helpbasedir}/toc.ditamap" />
+			<param name="output.dir" value="./${helptempdir}" />
+		</antcall>
+		
+		<echo>Copying table of content file at the root of the plugin</echo>
+		<copy file="eclipsehelp/toc.xml" todir="."/>
+	
+		<copy todir="${helptempdir}${file.separator}css" overwrite="yes">
+					<fileset dir="${helpbasedir}/${csspath}" includes="layout.css,visual.css" />
+		</copy>
+	
+		<echo>Zipping built help folder into doc.zip file at the root of the plugin</echo>
+		<zip destfile="doc.zip">
+			<fileset dir="${helptempdir}" id="helptempdir">
+			    <include name="**/*"/>
+			    <exclude name="${tocfile}"/>
+			    <exclude name="dita.list"/>
+			</fileset>
+		</zip>
+		
+		<echo>Deleting the directory in which help was built</echo>
+		<delete dir="${helptempdir}" />
+	</target>
+</project>

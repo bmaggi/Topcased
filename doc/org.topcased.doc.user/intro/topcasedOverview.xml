@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+    <extensionContent id="orgtopcaseddoc-introExtension" 
+                      alt-style="swt/tutorial.properties"
+                      style="css/sample.css" name="Sample Extension" path="overview/@">
+		<group style-id="content-group" id="orgtopcaseddocuser-introLink-group">
+       		<link label="TOPCASED Modeling Tools" 
+       		url="http://www.topcased.org/index.php?id_projet_pere=52" 
+       		id="orgtopcaseddocuser-introLink" style-id="content-link">
+          		<text>Get familiar with TOPCASED tools.</text>
+       		</link>
+       	</group>
+  	</extensionContent>
+</introContent>

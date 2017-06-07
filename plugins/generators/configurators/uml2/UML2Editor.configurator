@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurator:EditorConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:configurator="http://www.topcased.org/configurator/1.0" name="Generated UML2 Editor" projectName="org.topcased.modeler.uml2" prefix="UML2" extension="uml2" extensionDiagram="uml2di" pluginVersion="0.7.0">
+  <genModel href="UML2.genmodel#/"/>
+  <diagrams id="org.topcased.modeler.uml2.classdiagram" name="Class Diagram" package="classdiagram" prefix="Class">
+    <palette name="ClassDiagramPalette">
+      <paletteCategories name="Objects">
+        <items name="Package" part="//@diagrams.0/@parts.5"/>
+        <items name="Class" part="//@diagrams.0/@parts.6"/>
+        <items name="DataType" part="//@diagrams.0/@parts.8"/>
+        <items name="Interface" part="//@diagrams.0/@parts.7"/>
+        <items name="Operation" part="//@diagrams.0/@parts.9"/>
+        <items name="Property" part="//@diagrams.0/@parts.10"/>
+        <items name="InstanceSpecification" part="//@diagrams.0/@parts.11"/>
+      </paletteCategories>
+      <paletteCategories name="Connections">
+        <items name="Association" part="//@diagrams.0/@parts.13"/>
+        <items name="Generalization" part="//@diagrams.0/@parts.14"/>
+        <items name="Implementation" part="//@diagrams.0/@parts.15"/>
+        <items name="Dependency" part="//@diagrams.0/@parts.12"/>
+      </paletteCategories>
+      <paletteCategories name="Comment">
+        <items name="Comment" part="//@diagrams.0/@parts.16"/>
+        <items name="Comment link" part="//@diagrams.0/@parts.17"/>
+      </paletteCategories>
+    </palette>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.1"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.2" superType="//@diagrams.0/@parts.0"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.3" superType="//@diagrams.0/@parts.1"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.4" superType="//@diagrams.0/@parts.2"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.5" superType="//@diagrams.0/@parts.3"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.0" type="Package" superType="//@diagrams.0/@parts.1" layout="ToolbarLayout" defaultWidth="100" defaultHeight="80" minimumWidth="50" minimumHeight="50"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.6" type="Class" childElements="//@diagrams.0/@parts.10 //@diagrams.0/@parts.9" superType="//@diagrams.0/@parts.4" resizing="WIDTH" container="true" layout="ClassLayout" defaultWidth="100" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumHeight="-1"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.13" type="Class" childElements="//@diagrams.0/@parts.10 //@diagrams.0/@parts.9" superType="//@diagrams.0/@parts.3" container="true" layout="ClassLayout" defaultWidth="100" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumHeight="-1"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.10" type="Class" childElements="//@diagrams.0/@parts.10 //@diagrams.0/@parts.9" superType="//@diagrams.0/@parts.2" container="true" layout="ClassLayout" defaultWidth="100" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumHeight="-1"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.11" type="Label" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.12" type="Label" resizing="NONE" defaultWidth="-1" defaultHeight="-1" minimumWidth="-1" minimumHeight="-1" maximumWidth="-1" maximumHeight="-1"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.18" type="Class" superType="//@diagrams.0/@parts.1" layout="ClassLayout" defaultWidth="100" defaultHeight="-1" minimumWidth="50" minimumHeight="-1" maximumHeight="-1"/>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.17" targetDecoration="ARROW">
+      <sourceTargetCouple containerType="DIAGRAM" sourceNode="//@diagrams.0/@parts.1" targetNode="//@diagrams.0/@parts.1">
+        <containerObject href="UML2.genmodel#//uml2/Package"/>
+        <containerRef xsi:type="ecore:EReference" href="UML2.ecore#//Package/ownedMember"/>
+        <refEdgeToSource xsi:type="ecore:EReference" href="UML2.ecore#//Dependency/client"/>
+        <refEdgeToTarget xsi:type="ecore:EReference" href="UML2.ecore#//Dependency/supplier"/>
+      </sourceTargetCouple>
+    </parts>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.8">
+      <sourceTargetCouple containerType="DIAGRAM" autoRef="true" sourceNode="//@diagrams.0/@parts.2" targetNode="//@diagrams.0/@parts.2">
+        <containerObject href="UML2.genmodel#//uml2/Package"/>
+        <containerRef xsi:type="ecore:EReference" href="UML2.ecore#//Package/ownedMember"/>
+      </sourceTargetCouple>
+      <edgeObjects id="srcName"/>
+      <edgeObjects id="srcCount"/>
+      <edgeObjects type="Target" id="targetName"/>
+      <edgeObjects type="Target" id="targetCount"/>
+      <edgeObjects type="Middle" id="middleName"/>
+    </parts>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.9" targetDecoration="TRIANGLE" defaultRouter="TreeRouter">
+      <sourceTargetCouple containerType="SOURCE" sourceNode="//@diagrams.0/@parts.3" targetNode="//@diagrams.0/@parts.3">
+        <containerObject href="UML2.genmodel#//uml2/Classifier"/>
+        <containerRef xsi:type="ecore:EReference" href="UML2.ecore#//Classifier/generalization"/>
+        <refEdgeToTarget xsi:type="ecore:EReference" href="UML2.ecore#//Generalization/general"/>
+      </sourceTargetCouple>
+    </parts>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.19" targetDecoration="TRIANGLE">
+      <sourceTargetCouple containerType="SOURCE" sourceNode="//@diagrams.0/@parts.4" targetNode="//@diagrams.0/@parts.7">
+        <containerObject href="UML2.genmodel#//uml2/BehavioredClassifier"/>
+        <containerRef xsi:type="ecore:EReference" href="UML2.ecore#//BehavioredClassifier/implementation"/>
+        <refEdgeToTarget xsi:type="ecore:EReference" href="UML2.ecore#//Implementation/contract"/>
+      </sourceTargetCouple>
+    </parts>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.20" type="Comment" superType="//@diagrams.0/@parts.0" defaultWidth="150" defaultHeight="25" minimumWidth="50" minimumHeight="25" maximumWidth="-1"/>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.21">
+      <sourceTargetCouple sourceNode="//@diagrams.0/@parts.16" targetNode="//@diagrams.0/@parts.0">
+        <refSourceToTarget xsi:type="ecore:EReference" href="UML2.ecore#//Comment/annotatedElement"/>
+      </sourceTargetCouple>
+    </parts>
+  </diagrams>
+  <diagrams id="org.topcased.modeler.uml2.usecasediagram" name="Use Case Diagram" package="usecasediagram" prefix="UseCase">
+    <palette name="UseCaseDiagramPalette">
+      <paletteCategories name="Objects">
+        <items name="Package" part="//@diagrams.1/@parts.1"/>
+        <items name="Actor" part="//@diagrams.1/@parts.2"/>
+        <items name="Use Case" part="//@diagrams.1/@parts.3"/>
+      </paletteCategories>
+      <paletteCategories name="Connections">
+        <items name="Association" part="//@diagrams.1/@parts.6"/>
+        <items name="Generalization" part="//@diagrams.1/@parts.7"/>
+        <items name="Include" part="//@diagrams.1/@parts.5"/>
+        <items name="Extend" part="//@diagrams.1/@parts.4"/>
+      </paletteCategories>
+      <paletteCategories name="Comment">
+        <items name="Comment" part="//@diagrams.1/@parts.8"/>
+        <items name="Comment Link" part="//@diagrams.1/@parts.9"/>
+      </paletteCategories>
+    </palette>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.4"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.0" type="Package" defaultWidth="100" defaultHeight="80" minimumWidth="50" minimumHeight="50"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.7" type="Man" superType="//@diagrams.1/@parts.0" defaultWidth="80" defaultHeight="80" minimumWidth="50" minimumHeight="50"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.16" type="State" superType="//@diagrams.1/@parts.0" defaultWidth="120" defaultHeight="80" minimumWidth="50" minimumHeight="50"/>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.14" targetDecoration="ARROW">
+      <sourceTargetCouple containerType="SOURCE" sourceNode="//@diagrams.1/@parts.3" targetNode="//@diagrams.1/@parts.3">
+        <containerObject href="UML2.genmodel#//uml2/UseCase"/>
+        <containerRef xsi:type="ecore:EReference" href="UML2.ecore#//UseCase/extend"/>
+        <refEdgeToTarget xsi:type="ecore:EReference" href="UML2.ecore#//Extend/extendedCase"/>
+      </sourceTargetCouple>
+      <edgeObjects type="Middle" id="name">
+        <eStructuralFeature xsi:type="ecore:EAttribute" href="UML2.ecore#//NamedElement/name"/>
+      </edgeObjects>
+      <edgeObjects id="extension"/>
+    </parts>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.15" targetDecoration="ARROW">
+      <sourceTargetCouple containerType="SOURCE" sourceNode="//@diagrams.1/@parts.3" targetNode="//@diagrams.1/@parts.3">
+        <containerObject href="UML2.genmodel#//uml2/UseCase"/>
+        <containerRef xsi:type="ecore:EReference" href="UML2.ecore#//UseCase/include"/>
+        <refEdgeToTarget xsi:type="ecore:EReference" href="UML2.ecore#//Include/addition"/>
+      </sourceTargetCouple>
+      <edgeObjects type="Middle" id="name">
+        <eStructuralFeature xsi:type="ecore:EAttribute" href="UML2.ecore#//NamedElement/name"/>
+      </edgeObjects>
+    </parts>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.8">
+      <sourceTargetCouple containerType="SOURCE_CONTAINER" autoRef="true" sourceNode="//@diagrams.1/@parts.0" targetNode="//@diagrams.1/@parts.0">
+        <containerObject href="UML2.genmodel#//uml2/Package"/>
+        <containerRef xsi:type="ecore:EReference" href="UML2.ecore#//Package/ownedMember"/>
+      </sourceTargetCouple>
+    </parts>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.9" targetDecoration="TRIANGLE">
+      <sourceTargetCouple containerType="SOURCE" sourceNode="//@diagrams.1/@parts.0" targetNode="//@diagrams.1/@parts.0">
+        <containerObject href="UML2.genmodel#//uml2/Classifier"/>
+        <containerRef xsi:type="ecore:EReference" href="UML2.ecore#//Classifier/generalization"/>
+        <refEdgeToTarget xsi:type="ecore:EReference" href="UML2.ecore#//Generalization/general"/>
+      </sourceTargetCouple>
+    </parts>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.20" type="Comment" defaultWidth="150" defaultHeight="25" minimumWidth="50" minimumHeight="25" maximumHeight="-1"/>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.21">
+      <sourceTargetCouple sourceNode="//@diagrams.1/@parts.8" targetNode="//@diagrams.1/@parts.0">
+        <refSourceToTarget xsi:type="ecore:EReference" href="UML2.ecore#//Comment/annotatedElement"/>
+      </sourceTargetCouple>
+    </parts>
+  </diagrams>
+  <diagrams id="org.topcased.modeler.uml2.sequencediagram" name="Sequence Diagram" package="sequencediagram" prefix="Sequence">
+    <palette name="SequenceDiagramPalette">
+      <paletteCategories name="Objects">
+        <items name="Lifeline" part="//@diagrams.2/@parts.1"/>
+        <items name="Execution" part="//@diagrams.2/@parts.2"/>
+        <items name="Stop" part="//@diagrams.2/@parts.3"/>
+      </paletteCategories>
+      <paletteCategories name="Messages">
+        <items name="Call (sync.)" part="//@diagrams.2/@parts.4"/>
+        <items name="Call (async.)" part="//@diagrams.2/@parts.4"/>
+        <items name="Signal" part="//@diagrams.2/@parts.4"/>
+      </paletteCategories>
+      <paletteCategories name="Comment">
+        <items name="Comment" part="//@diagrams.2/@parts.5"/>
+        <items name="Comment Link" part="//@diagrams.2/@parts.6"/>
+      </paletteCategories>
+    </palette>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.1"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.23" childElements="//@diagrams.2/@parts.2 //@diagrams.2/@parts.3" superType="//@diagrams.2/@parts.0" container="true" defaultWidth="100" defaultHeight="300" minimumWidth="50" minimumHeight="50"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.24" superType="//@diagrams.2/@parts.0" resizing="HEIGHT" defaultWidth="20" defaultHeight="30" minimumWidth="20" minimumHeight="10" maximumWidth="20"/>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.25" superType="//@diagrams.2/@parts.0" resizing="NONE" defaultWidth="20" defaultHeight="20" minimumWidth="20" minimumHeight="20" maximumWidth="20" maximumHeight="20"/>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.26" targetDecoration="ARROW">
+      <sourceTargetCouple containerType="DIAGRAM" sourceNode="//@diagrams.2/@parts.1" targetNode="//@diagrams.2/@parts.1">
+        <containerObject href="UML2.genmodel#//uml2/Interaction"/>
+        <containerRef xsi:type="ecore:EReference" href="UML2.ecore#//Interaction/message"/>
+      </sourceTargetCouple>
+      <edgeObjects type="Middle" id="name">
+        <eStructuralFeature xsi:type="ecore:EAttribute" href="UML2.ecore#//NamedElement/name"/>
+      </edgeObjects>
+    </parts>
+    <parts xsi:type="configurator:NodePartConfiguration" object="//@objects.20" type="Comment" defaultWidth="150" defaultHeight="25" minimumWidth="50" minimumHeight="25"/>
+    <parts xsi:type="configurator:EdgePartConfiguration" object="//@objects.21">
+      <sourceTargetCouple sourceNode="//@diagrams.2/@parts.5" targetNode="//@diagrams.2/@parts.0">
+        <refSourceToTarget xsi:type="ecore:EReference" href="UML2.ecore#//Comment/annotatedElement"/>
+      </sourceTargetCouple>
+    </parts>
+  </diagrams>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Package"/>
+    <diagrams diagram="//@diagrams.0"/>
+    <diagrams diagram="//@diagrams.1"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Element"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/NamedElement"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Type"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Classifier"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/BehavioredClassifier"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Class"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Actor"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Association"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Generalization"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/DataType"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Operation"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Property"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Interface"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Extend"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Include"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/UseCase"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Dependency"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/InstanceSpecification"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Implementation"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Comment"/>
+  </objects>
+  <objects xsi:type="configurator:SimpleObjectConfiguration" name="CommentLink"/>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Interaction"/>
+    <diagrams diagram="//@diagrams.2"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Lifeline"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/ExecutionOccurrence"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Stop"/>
+  </objects>
+  <objects xsi:type="configurator:ModelObjectConfiguration">
+    <genClass href="UML2.genmodel#//uml2/Message"/>
+  </objects>
+</configurator:EditorConfiguration>

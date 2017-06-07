@@ -1,0 +1,53 @@
+<%@ jet
+	package="org.topcased.outline.generator.templates"
+	imports="java.util.* org.topcased.outline.configurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	class="ExactSwitch"
+	version="$Id: ExactSwitch.javajet,v 1.3 2007/06/13 08:40:57 jako Exp $" %>
+<%@ include file="cartoucheAirbus.txt"%>
+<% OutlineConfiguration outlineConfig = (OutlineConfiguration) argument;
+GenPackage genPackage = outlineConfig.getGenPackage(); %>
+package <%= outlineConfig.getUtilitiesPackageName() %>;
+
+import org.eclipse.emf.ecore.EObject;
+import <%= genPackage.getUtilitiesPackageName() %>.<%= outlineConfig.getGenPackage().getSwitchClassName() %>; 
+
+/**
+ * A customized <%= genPackage.getSwitchClassName() %>.<br>
+ * It works the same as the <%= genPackage.getSwitchClassName() %> but
+ * it does not proceed up the inheritance hierarchy.
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class Exact<%= genPackage.getSwitchClassName() %> extends <%= genPackage.getSwitchClassName() %>
+{
+
+<% for (Iterator i=genPackage.getAllSwitchGenClasses().iterator(); i.hasNext();) { GenClass genClass = (GenClass)i.next(); %>
+
+	/**
+	 * Returns the result of interpreting the object as an exact instance of '<em><%=genClass.getFormattedName()%></em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the given object.
+	 * @generated
+	 */
+	public Object case<%= genPackage.getClassUniqueName(genClass) %>(<%= genClass.getGenPackage().getInterfacePackageName() %>.<%= genClass.getInterfaceName() %> object)
+	{
+		return object;
+	}
+<% } %>
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the given object.
+	 * @generated
+	 */
+	public Object defaultCase(EObject object)
+	{
+		return object;
+	}
+}

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramconfigurator:DiagramConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagramconfigurator="http://www.topcased.org/diagramconfigurator/0.10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_9HLGETxHEd2MJI28awYe-A" projectName="org.topcased.modeler.uml.sequencediagram" name="Sequence Diagram" package="sequencediagram" prefix="Sequence" copyrightText="Copyright (c) 2006 AIRBUS FRANCE. All rights reserved. This program and the&#xA;accompanying materials are made available under the terms of the Eclipse&#xA;Public License v1.0 which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html">
+  <palette xmi:id="_9HM7QDxHEd2MJI28awYe-A" name="SequenceDiagramPalette">
+    <paletteCategories xmi:id="_9HNiUDxHEd2MJI28awYe-A" name="Objects">
+      <items xmi:id="_9HOJYDxHEd2MJI28awYe-A" name="Lifeline" part="_9HRMsDxHEd2MJI28awYe-A"/>
+      <items xmi:id="_9HOJYTxHEd2MJI28awYe-A" name="Execution" part="_9HRMsTxHEd2MJI28awYe-A"/>
+      <items xmi:id="_wj7DEDxWEd2pEJndG6lZwQ" name="StateInvariant" part="_l9RNcDxWEd2pEJndG6lZwQ"/>
+    </paletteCategories>
+    <paletteCategories xmi:id="_9HOJYzxHEd2MJI28awYe-A" name="Messages">
+      <items xmi:id="_9HOJZDxHEd2MJI28awYe-A" name="Call (sync.)" part="_9HSa0DxHEd2MJI28awYe-A"/>
+      <items xmi:id="_9HOJZTxHEd2MJI28awYe-A" name="Call (async.)" part="_9HSa0DxHEd2MJI28awYe-A"/>
+      <items xmi:id="_9HOJZjxHEd2MJI28awYe-A" name="Signal" part="_9HSa0DxHEd2MJI28awYe-A"/>
+      <items xmi:id="_9HOJYjxHEd2MJI28awYe-A" name="Delete Message" part="_9HRMsjxHEd2MJI28awYe-A"/>
+      <items xmi:id="_d_-9kEdpEd2CLKQL4rlwoQ" name="Create Message" part="_hFcSoEdpEd2CLKQL4rlwoQ"/>
+    </paletteCategories>
+    <paletteCategories xmi:id="_9HOwcDxHEd2MJI28awYe-A" name="Comment">
+      <items xmi:id="_9HOwcTxHEd2MJI28awYe-A" name="Comment" part="_9HRMszxHEd2MJI28awYe-A"/>
+      <items xmi:id="_9HOwcjxHEd2MJI28awYe-A" name="Comment Link" part="_9HnK8TxHEd2MJI28awYe-A"/>
+    </paletteCategories>
+    <paletteCategories xmi:id="_9HOwczxHEd2MJI28awYe-A" name="Fragments">
+      <items xmi:id="_9HOwdDxHEd2MJI28awYe-A" name="CombinedFragment" part="_9HRzwDxHEd2MJI28awYe-A"/>
+      <items xmi:id="_whyKMW6MEd2h6q9sxGWZHA" name="ConsiderIgnoreFragment" part="__R7dYG6PEd2h6q9sxGWZHA"/>
+      <items xmi:id="_67_MMFooEd2SH6TweG1m5Q" name="InteractionOperand" part="_DmW7UFopEd2SH6TweG1m5Q"/>
+      <items xmi:id="_0stDIU8qEd2LAIY2OB0c2A" name="Coregion" part="_6KKKUE8qEd2LAIY2OB0c2A"/>
+    </paletteCategories>
+    <paletteCategories xmi:id="_u3uzoVPnEd28DPVarfAQCA" name="TimeAndDuration">
+      <items xmi:id="_-g450FPnEd28DPVarfAQCA" name="Time Observation" part="_PnwUIFPoEd28DPVarfAQCA"/>
+      <items xmi:id="_hdS9sFibEd2Rv8AAhoYhyg" name="Time Constraint" part="_eubjsFibEd2Rv8AAhoYhyg"/>
+      <items xmi:id="_8tiF0FPnEd28DPVarfAQCA" name="Time Link" part="_RwF5oFPoEd28DPVarfAQCA"/>
+      <items xmi:id="_7_qh8FjDEd2Rv8AAhoYhyg" name="Duration Constraint" part="__q7aIFjAEd2Rv8AAhoYhyg"/>
+    </paletteCategories>
+  </palette>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_9HQloDxHEd2MJI28awYe-A" object="_9HnyADxHEd2MJI28awYe-A"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_9HRMsDxHEd2MJI28awYe-A" object="_9HoZETxHEd2MJI28awYe-A" defaultFont="Sans-regular-10" childElements="_9HRMsTxHEd2MJI28awYe-A _9HRMsjxHEd2MJI28awYe-A" superType="_9HQloDxHEd2MJI28awYe-A" defaultBackgroundColor="200,230,255" container="true" defaultWidth="100" defaultHeight="300" minimumWidth="50" minimumHeight="50" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_9HRMsTxHEd2MJI28awYe-A" object="_9HoZFDxHEd2MJI28awYe-A" defaultFont="Sans-regular-10" superType="_9HQloDxHEd2MJI28awYe-A" defaultBackgroundColor="200,255,200" resizing="HEIGHT" defaultWidth="20" maximumWidth="20" maximumHeight="2000"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_l9RNcDxWEd2pEJndG6lZwQ" object="_fT1bUDxWEd2pEJndG6lZwQ" type="BorderedLabel" superType="_9HQloDxHEd2MJI28awYe-A" resizing="NONE" defaultHeight="20"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_9HRMsjxHEd2MJI28awYe-A" object="_9HoZEzxHEd2MJI28awYe-A" defaultFont="Tahoma-regular-8" superType="_9HQloDxHEd2MJI28awYe-A" resizing="NONE" defaultWidth="20" defaultHeight="20" maximumWidth="20" maximumHeight="20"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_9HRMszxHEd2MJI28awYe-A" object="_9HoZFTxHEd2MJI28awYe-A" type="Comment" defaultBackgroundColor="255,195,0" defaultWidth="150" defaultHeight="25" minimumWidth="50" minimumHeight="25" maximumWidth="0" maximumHeight="0"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_9HRzwDxHEd2MJI28awYe-A" object="_9HpAIDxHEd2MJI28awYe-A" defaultFont="Sans-regular-10" childElements="_DmW7UFopEd2SH6TweG1m5Q" superType="_9HQloDxHEd2MJI28awYe-A" container="true" layout="ToolbarLayout" directEditable="false" defaultWidth="200" defaultHeight="100" minimumHeight="40" maximumWidth="3000" maximumHeight="5000"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_9HSa0DxHEd2MJI28awYe-A" object="_9HoZEjxHEd2MJI28awYe-A" defaultFont="Sans-regular-10" targetDecoration="ARROW">
+    <sourceTargetCouple xmi:id="_9HTo8DxHEd2MJI28awYe-A" containerType="DIAGRAM" sourceNode="_9HRMsDxHEd2MJI28awYe-A" targetNode="_9HRMsDxHEd2MJI28awYe-A">
+      <containerObject href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/Interaction"/>
+      <containerRef xsi:type="ecore:EReference" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Interaction/message"/>
+    </sourceTargetCouple>
+    <edgeObjects xmi:id="_9HnK8DxHEd2MJI28awYe-A" id="name" type="Middle">
+      <eStructuralFeature xsi:type="ecore:EAttribute" href="../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+    </edgeObjects>
+  </parts>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_9HnK8TxHEd2MJI28awYe-A" object="_9HpAITxHEd2MJI28awYe-A" defaultForegroundColor="255,195,0" lineStyle="CUSTOM">
+    <sourceTargetCouple xmi:id="_9HnK8jxHEd2MJI28awYe-A" sourceNode="_9HRMszxHEd2MJI28awYe-A" targetNode="_9HQloDxHEd2MJI28awYe-A">
+      <refSourceToTarget xsi:type="ecore:EReference" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Comment/annotatedElement"/>
+    </sourceTargetCouple>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_hFcSoEdpEd2CLKQL4rlwoQ" object="_mGMPsEdpEd2CLKQL4rlwoQ" superType="_9HQloDxHEd2MJI28awYe-A" resizing="NONE" defaultWidth="20" defaultHeight="20" maximumWidth="20" maximumHeight="20"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_6KKKUE8qEd2LAIY2OB0c2A" object="_9HpAIDxHEd2MJI28awYe-A" prefix="CoregionCombinedFragment" type="RectangleFigure" superType="_9HQloDxHEd2MJI28awYe-A" resizing="HEIGHT" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_PnwUIFPoEd28DPVarfAQCA" object="_F-qS8FPoEd28DPVarfAQCA" type="Label" resizing="WIDTH" defaultHeight="20"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="_RwF5oFPoEd28DPVarfAQCA" object="_IDRPAFPoEd28DPVarfAQCA">
+    <sourceTargetCouple xmi:id="_eCp3cFPoEd28DPVarfAQCA" sourceNode="_PnwUIFPoEd28DPVarfAQCA" targetNode="_9HRMsDxHEd2MJI28awYe-A">
+      <refSourceToTarget xsi:type="ecore:EReference" href="../../org.eclipse.uml2.uml/model/UML.ecore#//TimeObservation/event"/>
+    </sourceTargetCouple>
+    <sourceTargetCouple xmi:id="_5VQxAFieEd2Rv8AAhoYhyg" sourceNode="_eubjsFibEd2Rv8AAhoYhyg" targetNode="_9HRMsDxHEd2MJI28awYe-A">
+      <refSourceToTarget xsi:type="ecore:EReference" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Constraint/constrainedElement"/>
+    </sourceTargetCouple>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_eubjsFibEd2Rv8AAhoYhyg" object="_bzsQ4VibEd2Rv8AAhoYhyg" type="Label" resizing="WIDTH" directEditable="false" defaultHeight="20"/>
+  <parts xsi:type="diagramconfigurator:EdgePartConfiguration" xmi:id="__q7aIFjAEd2Rv8AAhoYhyg" object="_8V-3kFjAEd2Rv8AAhoYhyg" defaultRouter="TreeRouter">
+    <sourceTargetCouple xmi:id="_cLROIFjBEd2Rv8AAhoYhyg" containerType="DIAGRAM" autoRef="true" sourceNode="_9HRMsDxHEd2MJI28awYe-A" targetNode="_9HRMsDxHEd2MJI28awYe-A">
+      <containerObject href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/Interaction"/>
+      <containerRef xsi:type="ecore:EReference" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Namespace/ownedRule"/>
+    </sourceTargetCouple>
+  </parts>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="_DmW7UFopEd2SH6TweG1m5Q" object="_E0HH4FopEd2SH6TweG1m5Q" resizing="NONE" directEditable="false"/>
+  <parts xsi:type="diagramconfigurator:NodePartConfiguration" xmi:id="__R7dYG6PEd2h6q9sxGWZHA" object="_BJXgIG6QEd2h6q9sxGWZHA" superType="_9HRzwDxHEd2MJI28awYe-A" container="true" layout="ToolbarLayout" directEditable="false" defaultWidth="200" defaultHeight="100" minimumHeight="40" maximumWidth="1000" maximumHeight="500"/>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_9HnyADxHEd2MJI28awYe-A">
+    <genClass href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/Element"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_9HnyATxHEd2MJI28awYe-A">
+    <genClass href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/Interaction"/>
+    <diagrams xmi:id="_9HoZEDxHEd2MJI28awYe-A" diagram="_9HLGETxHEd2MJI28awYe-A"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_9HoZETxHEd2MJI28awYe-A">
+    <genClass href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/Lifeline"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_9HoZEjxHEd2MJI28awYe-A">
+    <genClass href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/Message"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_9HoZEzxHEd2MJI28awYe-A">
+    <genClass href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/DestructionEvent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_9HoZFDxHEd2MJI28awYe-A">
+    <genClass href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/BehaviorExecutionSpecification"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_fT1bUDxWEd2pEJndG6lZwQ">
+    <genClass href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/StateInvariant"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_9HoZFTxHEd2MJI28awYe-A">
+    <genClass href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/Comment"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_9HpAIDxHEd2MJI28awYe-A">
+    <genClass href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/CombinedFragment"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" xmi:id="_9HpAITxHEd2MJI28awYe-A" name="CommentLink"/>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_mGMPsEdpEd2CLKQL4rlwoQ">
+    <genClass href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/CreationEvent"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_F-qS8FPoEd28DPVarfAQCA">
+    <genClass href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/TimeObservation"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:SimpleObjectConfiguration" xmi:id="_IDRPAFPoEd28DPVarfAQCA" name="TimeLink"/>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_bzsQ4VibEd2Rv8AAhoYhyg">
+    <genClass href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/TimeConstraint"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_8V-3kFjAEd2Rv8AAhoYhyg">
+    <genClass href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/DurationConstraint"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_E0HH4FopEd2SH6TweG1m5Q">
+    <genClass href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/InteractionOperand"/>
+  </objects>
+  <objects xsi:type="diagramconfigurator:ModelObjectConfiguration" xmi:id="_BJXgIG6QEd2h6q9sxGWZHA">
+    <genClass href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/ConsiderIgnoreFragment"/>
+  </objects>
+  <genModel href="../../org.eclipse.uml2.uml/model/UML.genmodel#/"/>
+  <templateRootObject href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/Interaction"/>
+  <editorConfigurator href="UML.editorconfigurator#_67CpENCrEdu099f1-uS16A"/>
+</diagramconfigurator:DiagramConfiguration>

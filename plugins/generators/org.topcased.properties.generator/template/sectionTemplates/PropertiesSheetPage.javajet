@@ -1,0 +1,73 @@
+<%@ jet
+	 package="org.topcased.properties.generator.templates"
+	 imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.topcased.properties.configurator.* org.topcased.properties.configurator.util.GeneratorUtils"
+	 class="PropertiesSheetPage"
+	 version="$Id: PropertiesSheetPage.javajet,v 1.2 2007/03/05 10:36:12 alfredoserrano Exp $" %>
+<%
+  TabbedView tabbedView = (TabbedView) argument;
+  String thePackage = tabbedView.getProjectName();
+  String basePackage = tabbedView.getBasePackage();
+  if (basePackage != null && !basePackage.equals(""))
+  {
+  	thePackage = basePackage;
+  }
+  GenModel model = tabbedView.getGenModel();
+  GenPackage p = null;
+  List packages = model.getGenPackages();
+  String prefix = model.getModelName();
+  if(!packages.isEmpty())
+  {
+     p = (GenPackage)packages.get(0);
+     prefix = p.getPrefix();
+  }
+%>
+package <%=thePackage%>.sections.advanced;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
+import org.topcased.tabbedproperties.AbstractTabbedPropertySheetPage;
+
+import <%=p.getQualifiedItemProviderAdapterFactoryClassName()%>;
+
+/**
+ *  A property sheet page that provides a tabbed UI.
+ *
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ *
+ * @generated
+ */
+public class <%=GeneratorUtils.capName(prefix)%>PropertySheetPage extends AbstractTabbedPropertySheetPage
+{
+    /**
+     * Create a new tabbed property sheet page.
+ 	 *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+ 	 *
+     * @param editor The editor contributor of the property sheet page.
+     * @generated
+     */
+    public <%=prefix%>PropertySheetPage (ITabbedPropertySheetPageContributor editor) {
+        super(editor);
+    }
+    
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+ 	 *
+     * @see org.topcased.tabbedproperties.AbstractTabbedPropertySheetPage#getAdapterFactories()
+     * @generated
+     */
+    protected List getAdapterFactories()
+    {
+        List factories = new ArrayList();
+        factories.add(new <%=p.getItemProviderAdapterFactoryClassName()%>());
+        
+        factories.addAll(super.getAdapterFactories());
+
+        return factories;
+    }
+}

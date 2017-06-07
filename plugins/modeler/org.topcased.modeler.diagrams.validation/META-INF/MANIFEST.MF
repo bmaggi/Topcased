@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Metamodels DI OCL Rules
+Bundle-SymbolicName: org.topcased.modeler.diagrams.validation;singleton:=true
+Bundle-Version: 1.1.0.qualifier
+Require-Bundle: org.topcased.validation.ocl,
+ org.eclipse.ui,
+ org.topcased.modeler;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.topcased.modeler.diagrams.validation,
+ org.topcased.modeler.diagrams.validation.actions,
+ org.topcased.modeler.diagrams.validation.internal;x-internal:=true
+Bundle-Vendor: Topcased

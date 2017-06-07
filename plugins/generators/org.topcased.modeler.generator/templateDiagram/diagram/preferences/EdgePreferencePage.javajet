@@ -1,0 +1,185 @@
+<%@ jet
+	 package="org.topcased.modeler.generator.templates"
+	 imports="java.util.* org.topcased.modeler.diagramconfigurator.* org.topcased.modeler.editorconfigurator.* org.eclipse.emf.codegen.ecore.genmodel.*"
+	 class="EdgePreferencePage"
+	 version="$Id: EdgePreferencePage.javajet,v 1.4 2009/01/14 18:04:01 tlandre Exp $" %>
+<%	EdgePartConfiguration edgePartConfiguration = (EdgePartConfiguration) argument;
+	DiagramConfiguration diagramConfiguration = (DiagramConfiguration) edgePartConfiguration.eContainer();
+	ObjectConfiguration objectConfiguration = edgePartConfiguration.getObject();
+	String partPrefix = edgePartConfiguration.getPrefix();%>
+<%=diagramConfiguration.getJavaCopyrightText()%>
+package <%=diagramConfiguration.getBasePackage()%>.preferences;
+	 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.topcased.modeler.preferences.AbstractEdgePreferencePage;
+import <%=diagramConfiguration.getBasePackage()%>.preferences.<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants;
+import <%=diagramConfiguration.getBasePackage()%>.<%=diagramConfiguration.getPrefix()%>EdgeObjectConstants;
+import <%=diagramConfiguration.getEditorConfigurator().getProjectName()%>.<%=diagramConfiguration.getEditorConfigurator().getPrefix()%>Plugin;
+
+/**
+ * This class represents a preference page that is contributed to the Preferences dialog. This page is used to modify
+ * preferences only. They are stored in the preference store that belongs to the main plug-in class. That way,
+ * preferences can be accessed directly via the preference store.
+ *
+ * @generated
+ */
+public class <%=partPrefix%>PreferencePage extends AbstractEdgePreferencePage
+{
+	/**
+	 * @see org.topcased.modeler.preferences.AbstractEdgePreferencePage#getEdgeFont()
+	 * @generated
+	 */
+	protected String getEdgeFont() {
+		return <%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_EDGE_DEFAULT_FONT;
+	}
+
+	/**
+	 * @see org.topcased.modeler.preferences.AbstractEdgePreferencePage#getEdgeForegroundColor()
+	 * @generated
+	 */
+	protected String getEdgeForegroundColor() {
+		return <%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_EDGE_DEFAULT_FOREGROUND_COLOR;
+	}
+
+	/**
+	 * @see org.topcased.modeler.preferences.AbstractEdgePreferencePage#getEdgeRouter()
+	 * @generated
+	 */
+	protected String getEdgeRouter() {
+		return <%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_EDGE_DEFAULT_ROUTER;
+	}
+	
+	/**
+	 * @see org.topcased.modeler.preferences.AbstractEdgePreferencePage#getHiddenElements()
+	 * @generated
+	 */
+	protected List<String> getHiddenElements() {
+		List <String> choiceOfValues = new ArrayList<String>();
+		IPreferenceStore ps = getPreferenceStore();
+<%	
+		for (Iterator iter2 = edgePartConfiguration.getEdgeObjects().iterator(); iter2.hasNext();)
+		{
+			EdgeObject edgeObject = (EdgeObject) iter2.next();
+			String edgeObjectName = edgeObject.getId();
+%>			
+		if(!ps.getBoolean(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_DEFAULT_VISIBILITY))
+		{
+			choiceOfValues.add(<%=diagramConfiguration.getPrefix()%>EdgeObjectConstants.<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_ID);
+		}
+<%
+		}
+%>	
+		return choiceOfValues;
+	}
+
+	/**
+	 * @see org.topcased.modeler.preferences.AbstractEdgePreferencePage#getDefaultHiddenElements()
+	 * @generated
+	 */
+	protected List<String> getDefaultHiddenElements() 
+	{
+		List <String> choiceOfValues = new ArrayList<String>();
+		IPreferenceStore ps = getPreferenceStore();
+<%	
+		for (Iterator iter2 = edgePartConfiguration.getEdgeObjects().iterator(); iter2.hasNext();)
+		{
+			EdgeObject edgeObject = (EdgeObject) iter2.next();
+			String edgeObjectName = edgeObject.getId();
+%>		
+		if(!ps.getDefaultBoolean(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_DEFAULT_VISIBILITY))
+		{
+			choiceOfValues.add(<%=diagramConfiguration.getPrefix()%>EdgeObjectConstants.<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_ID);
+		}
+<%
+		}
+%>			
+		return choiceOfValues;
+	}
+	
+	/**
+	 * @see org.topcased.modeler.preferences.AbstractEdgePreferencePage#getVisibleElements()
+	 * @generated
+	 */
+	protected List<String> getVisibleElements() 
+	{
+		List <String> choiceOfValues = new ArrayList<String>();
+		IPreferenceStore ps = getPreferenceStore();
+<%	
+		for (Iterator iter2 = edgePartConfiguration.getEdgeObjects().iterator(); iter2.hasNext();)
+		{
+			EdgeObject edgeObject = (EdgeObject) iter2.next();
+			String edgeObjectName = edgeObject.getId();
+%>			
+		if(ps.getBoolean(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_DEFAULT_VISIBILITY))
+		{
+			choiceOfValues.add(<%=diagramConfiguration.getPrefix()%>EdgeObjectConstants.<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_ID);
+		}
+<%
+		}
+%>			
+		return choiceOfValues;
+	}
+	
+	/**
+	 * @see org.topcased.modeler.preferences.AbstractEdgePreferencePage#getDefaultVisibleElements()
+	 * @generated
+	 */
+	protected List<String> getDefaultVisibleElements() 
+	{
+		List <String> choiceOfValues = new ArrayList<String>();
+		IPreferenceStore ps = getPreferenceStore();
+<%	
+		for (Iterator iter2 = edgePartConfiguration.getEdgeObjects().iterator(); iter2.hasNext();)
+		{
+			EdgeObject edgeObject = (EdgeObject) iter2.next();
+			String edgeObjectName = edgeObject.getId();
+%>	
+		if(ps.getDefaultBoolean(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_DEFAULT_VISIBILITY))
+		{
+			choiceOfValues.add(<%=diagramConfiguration.getPrefix()%>EdgeObjectConstants.<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_ID);
+		}
+<%
+		}
+%>				
+		return choiceOfValues;
+	}
+
+	/**
+	 * @see org.topcased.modeler.preferences.AbstractEdgePreferencePage#storeEdgeObjectVisibility(java.util.List)
+	 * @generated
+	 */
+	protected void storeEdgeObjectVisibility(List<String> visibleElement) 
+	{
+		IPreferenceStore ps = getPreferenceStore();
+<%	
+		for (Iterator iter2 = edgePartConfiguration.getEdgeObjects().iterator(); iter2.hasNext();)
+		{
+			EdgeObject edgeObject = (EdgeObject) iter2.next();
+			String edgeObjectName = edgeObject.getId();
+%>	
+		if(visibleElement.contains(<%=diagramConfiguration.getPrefix()%>EdgeObjectConstants.<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_ID))
+		{
+			ps.setValue(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_DEFAULT_VISIBILITY, true);
+		}
+		else
+		{
+			ps.setValue(<%=diagramConfiguration.getPrefix()%>DiagramPreferenceConstants.<%=partPrefix.toUpperCase()%>_<%=edgeObjectName.toUpperCase()%>_EDGE_OBJECT_DEFAULT_VISIBILITY, false);			
+		}
+<%
+		}
+%>		
+	}
+	
+	/**
+	 * @see org.topcased.facilities.preferences.AbstractTopcasedPreferencePage#getBundleId()
+	 * @generated
+	 */
+	protected String getBundleId()
+	{
+		return <%=diagramConfiguration.getEditorConfigurator().getPrefix()%>Plugin.getId();
+	}
+ 
+ }
